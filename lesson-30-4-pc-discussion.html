@@ -1,0 +1,3050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 30.4 — Prince Caspian Discussion</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+*,*::before,*::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F0F2F8;
+  color: #0E1C42;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0 0 40px rgba(14, 28, 66, 0.08);
+}
+
+/* ═══════════ PROGRESS BAR ═══════════ */
+.progress-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: #0E1C42;
+  padding: 8px 20px 10px;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.progress-label {
+  font-size: 12px;
+  color: #55C8E8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+.progress-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #55C8E8, #7FD8F0, #C7922C);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+.progress-pct {
+  font-size: 13px;
+  color: #C7922C;
+  font-weight: 800;
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ═══════════ HEADER ═══════════ */
+.header {
+  background: #0E1C42;
+  border-bottom: 6px solid #55C8E8;
+  padding: 20px 28px 18px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #55C8E8, #7FD8F0, #55C8E8);
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.header-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.header-title em { color: #FFE9B8; font-style: italic; }
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(85, 200, 232, 0.15);
+  border: 1.5px solid rgba(85, 200, 232, 0.35);
+  border-radius: 28px;
+  padding: 6px 16px;
+}
+.header-badge-icon { font-size: 22px; }
+.header-badge-text { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ═══════════ INFO STRIP ═══════════ */
+.info-strip {
+  display: flex;
+  flex-wrap: wrap;
+  background: #FFFFFF;
+  border-bottom: 2px solid #E2E8F4;
+}
+.info-cell {
+  flex: 1;
+  min-width: 150px;
+  padding: 12px 16px;
+  border-right: 1px solid #E2E8F4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.info-cell:last-child { border-right: none; }
+.info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.info-label {
+  font-size: 10px;
+  color: #7A88A8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+.info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #3A4A6B; line-height: 1.3; }
+
+/* ═══════════ INTRO COLLAPSIBLE ═══════════ */
+.intro-section { transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease; overflow: hidden; }
+.intro-section.collapsed .intro-2col,
+.intro-section.collapsed .need-strip { display: none; }
+.intro-collapsed-bar {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 28px;
+  background: #FFF8F0;
+  border-bottom: 2px solid #F5E6C8;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.intro-collapsed-bar:hover { background: #FFF3DC; }
+.intro-section.collapsed .intro-collapsed-bar { display: flex; }
+.intro-collapsed-icon { font-size: 18px; }
+.intro-collapsed-text {
+  font-size: 14px;
+  color: #5A4A3A;
+  font-weight: 700;
+  flex: 1;
+}
+.intro-collapsed-toggle {
+  font-size: 12px;
+  color: #C7922C;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════ INTRO 2-COL ═══════════ */
+.intro-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 20px 28px 4px;
+}
+.intro-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+}
+.intro-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 2px solid;
+}
+.intro-card-head-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.intro-card-head-label {
+  font-size: 10px;
+  color: #7A88A8;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+}
+.intro-card-head-title { font-size: 18px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.intro-card-body { padding: 14px 18px; }
+.intro-card-body p { font-size: 15px; color: #3A4A6B; line-height: 1.65; margin-bottom: 8px; }
+.intro-card-body p:last-child { margin-bottom: 0; }
+.intro-card-body .obj-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+.intro-card-body .obj-line:last-child { margin-bottom: 0; }
+.intro-card-body .obj-icon { flex-shrink: 0; font-size: 17px; }
+.theme-question .intro-card-head { background: #FFF3DC; border-color: #F5E6C8; }
+.theme-question .intro-card-head-icon { background: #C7922C; }
+.theme-objectives .intro-card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-objectives .intro-card-head-icon { background: #55C8E8; }
+
+/* ═══════════ NEED STRIP ═══════════ */
+.need-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 28px 18px;
+}
+.need-strip-label {
+  font-size: 13px;
+  color: #3A4A6B;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.need-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #E3F8ED;
+  border: 1.5px solid #B8E8CF;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 13px;
+  color: #0E1C42;
+  font-weight: 700;
+}
+
+/* ═══════════ TAB BAR ═══════════ */
+.tab-bar {
+  position: sticky;
+  top: 38px;
+  z-index: 100;
+  background: #FFFFFF;
+  border-bottom: 3px solid #E2E8F4;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  box-shadow: 0 -4px 0 0 #0E1C42;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1;
+  min-width: 130px;
+  padding: 12px 8px 11px;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7A88A8;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  line-height: 1.3;
+  text-align: center;
+}
+.tab-btn:hover { color: #0E1C42; background: #EAF8FD; }
+.tab-btn.active {
+  color: #0E1C42;
+  border-bottom-color: #55C8E8;
+  background: #FFFFFF;
+}
+.tab-btn .tab-check {
+  display: none;
+  font-size: 12px;
+  color: #34B76F;
+  margin-left: 4px;
+  font-weight: 800;
+}
+.tab-btn.visited .tab-check { display: inline; }
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+
+/* ═══════════ VIDEO WRAP ═══════════ */
+.video-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid #E2E8F4;
+  box-shadow: 0 4px 20px rgba(14, 28, 66, 0.08);
+  background: #000;
+  margin: 0 0 22px;
+}
+.video-wrap-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  border-bottom: 2px solid rgba(85, 200, 232, 0.2);
+}
+.video-wrap-type {
+  font-size: 10px;
+  color: #55C8E8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: 'Nunito', sans-serif;
+}
+.video-placeholder-id {
+  font-size: 11px;
+  color: rgba(85, 200, 232, 0.4);
+  font-family: monospace;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+.video-teacher-notes {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(85, 200, 232, 0.25);
+  border-radius: 8px;
+  text-align: left;
+  max-width: 480px;
+}
+.video-teacher-notes-label {
+  font-size: 10px;
+  color: rgba(85, 200, 232, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  font-family: 'Nunito', sans-serif;
+}
+.video-teacher-notes-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.55;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ═══════════ ACTIVITY CARDS ═══════════ */
+.activity {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+}
+.activity.bl-cyan { border-left: 6px solid #55C8E8; }
+.activity.bl-gold { border-left: 6px solid #C7922C; }
+.activity.bl-green { border-left: 6px solid #34B76F; }
+.activity.bl-purple { border-left: 6px solid #8B6FC0; }
+.activity.bl-rose { border-left: 6px solid #c7627e; }
+.activity.bl-navy { border-left: 6px solid #0E1C42; }
+.activity-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E2E8F4;
+}
+.activity-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.activity-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.activity-sub { font-size: 12px; color: #7A88A8; }
+.activity-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  margin-left: auto;
+}
+.activity-body { padding: 18px 22px; }
+.activity-body p { font-size: 17px; color: #3A4A6B; line-height: 1.75; margin-bottom: 12px; }
+.activity-body p:last-child { margin-bottom: 0; }
+
+/* ═══════════ CALLOUTS ═══════════ */
+.callout {
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.callout:last-child { margin-bottom: 0; }
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #0E1C42; line-height: 1.65; margin: 0; }
+.callout-info { background: #EAF8FD; border: 2px solid #D6F2FB; }
+.callout-think { background: #FFF3DC; border: 2px solid #F5E6C8; }
+.callout-tip { background: #E3F8ED; border: 2px solid #B8E8CF; }
+.callout-vocab { background: #F0E8FF; border: 2px solid #D8CCF0; }
+.callout-submit { background: #FDE8F0; border: 2px solid #F0B8CA; }
+
+/* ═══════════ SOCRATIC BOX ═══════════ */
+.socratic-box {
+  background: linear-gradient(135deg, #F0E8FF 0%, #E8DCFA 100%);
+  border: 2px solid #D8CCF0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.socratic-box:last-child { margin-bottom: 0; }
+.socratic-label {
+  font-size: 12px;
+  color: #6B4FB0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.socratic-q {
+  font-size: 16px;
+  color: #0E1C42;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.socratic-q:last-child { margin-bottom: 0; }
+.socratic-q strong { font-style: normal; color: #0E1C42; }
+
+/* ═══════════ DOL & PRACTICE TASKS ═══════════ */
+.task-box {
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.task-box:last-child { margin-bottom: 0; }
+.task-label {
+  font-size: 12px;
+  color: #55C8E8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.task-sentence {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F4;
+  border-left: 4px solid #C7922C;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #0E1C42;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-family: 'Lora', Georgia, serif;
+}
+.task-sentence:last-child { margin-bottom: 0; }
+.task-instruction { font-size: 15px; color: #3A4A6B; line-height: 1.6; margin-bottom: 10px; }
+
+/* ═══════════ POETRY ═══════════ */
+.poem-box {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 2px solid #F5E6C8;
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 14px;
+}
+.poem-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 18px;
+  color: #0E1C42;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.poem-author {
+  font-size: 13px;
+  color: #7A88A8;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+.poem-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  color: #3A4A6B;
+  line-height: 1.8;
+  font-style: italic;
+  white-space: pre-line;
+}
+
+/* ═══════════ STORY JOURNEY TRACKER ═══════════ */
+.tracker-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+  margin-bottom: 22px;
+}
+.tracker-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #2D5016 0%, #4A7C2E 100%);
+  border-bottom: 2px solid #3A6B1E;
+}
+.tracker-header-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tracker-header-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+}
+.tracker-header-title { font-size: 17px; color: #fff; font-weight: 800; line-height: 1.2; }
+.scene-wrap {
+  width: 100%;
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  border-bottom: 3px solid #8B6F47;
+  background: linear-gradient(180deg, #c2ddf0 0%, #d4eaf7 30%, #a8d5a0 50%, #7db356 58%, #5a9a3a 65%, #4a7c2e 100%);
+  user-select: none;
+}
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+.hills-far {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background:
+    radial-gradient(ellipse 220px 60px at 10% 100%, #8abb6d 70%, transparent 71%),
+    radial-gradient(ellipse 300px 70px at 30% 100%, #79ad58 70%, transparent 71%),
+    radial-gradient(ellipse 250px 55px at 55% 100%, #8abb6d 70%, transparent 71%),
+    radial-gradient(ellipse 280px 65px at 78% 100%, #6fa04a 70%, transparent 71%),
+    radial-gradient(ellipse 200px 50px at 95% 100%, #8abb6d 70%, transparent 71%);
+}
+.path-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.tree, .house, .flower {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
+}
+.flower { filter: none; font-size: 12px; z-index: 2; }
+.lake {
+  position: absolute;
+  background: linear-gradient(180deg, rgba(135, 188, 222, 0.5), rgba(135, 188, 222, 0.3));
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 1;
+}
+.node {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  z-index: 5;
+  border: 3px solid #f5f0e6;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+}
+.node.done {
+  background: #4a7c2e;
+  border-color: #fde8a0;
+  box-shadow: 0 0 0 2px #4a7c2e, 0 2px 8px rgba(74, 124, 46, 0.45);
+  color: #fff;
+}
+.node.active {
+  background: #C7922C;
+  border-color: #fde8a0;
+  box-shadow: 0 0 0 3px #C7922C, 0 0 14px rgba(199, 146, 44, 0.5);
+  transform: scale(1.15);
+  color: #fff;
+}
+.node.upcoming { opacity: 0.55; }
+.character-token {
+  position: absolute;
+  font-size: 26px;
+  z-index: 20;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+  animation: hop 2s ease-in-out infinite;
+}
+@keyframes hop {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-5px) rotate(3deg); }
+}
+.title-plaque {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(253, 248, 240, 0.92);
+  border: 2px solid #c4a882;
+  border-radius: 8px;
+  padding: 3px 18px 4px;
+  z-index: 15;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+.title-plaque h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D5016;
+  line-height: 1.2;
+}
+.title-plaque h1 em { color: #C7922C; font-style: italic; }
+.tracker-chapter-label {
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #7A88A8;
+  font-weight: 600;
+  background: #FAFBFF;
+  border-top: 1px solid #E2E8F4;
+}
+.tracker-chapter-label strong { color: #C7922C; }
+
+/* ═══════════ KEY CONCEPT ═══════════ */
+.key-concept {
+  background: #FFF3DC;
+  border: 2px solid #F5E6C8;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.key-concept:last-child { margin-bottom: 0; }
+.key-concept-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.key-concept p { font-size: 15px; color: #0E1C42; line-height: 1.7; margin-bottom: 6px; }
+
+/* ═══════════ VOCABULARY FLIP CARDS ═══════════ */
+.vocab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 14px 0;
+}
+.flip-card {
+  perspective: 800px;
+  height: 175px;
+  cursor: pointer;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  text-align: center;
+  border: 2px solid #E2E8F4;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.06);
+}
+.flip-card-front {
+  background: #FFFFFF;
+  border-top: 5px solid #55C8E8;
+}
+.flip-card-front .fc-emoji { font-size: 28px; margin-bottom: 6px; }
+.flip-card-front .fc-word {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0E1C42;
+  margin-bottom: 4px;
+}
+.flip-card-front .fc-tap {
+  font-size: 11px;
+  color: #7A88A8;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.flip-card-back {
+  background: linear-gradient(145deg, #0E1C42, #1A2D5A);
+  border-color: #0E1C42;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def {
+  font-size: 13.5px;
+  color: #fff;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.flip-card-back .fc-word-back {
+  font-size: 10px;
+  color: #55C8E8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+/* ═══════════ COPYWORK ═══════════ */
+.copywork-box {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 2px solid #F5E6C8;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.copywork-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.copywork-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  color: #0E1C42;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.copywork-instruction { font-size: 14px; color: #3A4A6B; line-height: 1.5; }
+
+/* ═══════════ READING BOX ═══════════ */
+.reading-links {
+  background: #EAF8FD;
+  border: 2px solid #D6F2FB;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.reading-links-title {
+  font-size: 14px;
+  color: #1A6B8E;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.reading-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1.5px solid #B8E0F0;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #0E1C42;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.reading-link:last-child { margin-bottom: 0; }
+.reading-link:hover { background: #EAF8FD; border-color: #55C8E8; }
+.reading-link-icon { font-size: 20px; }
+
+/* ═══════════ RWM ═══════════ */
+.rwm-box {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.rwm-header {
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.rwm-sentence {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border-bottom: 2px solid #F5E6C8;
+  padding: 16px 20px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  color: #0E1C42;
+  line-height: 1.7;
+  font-style: italic;
+}
+.rwm-step {
+  padding: 14px 20px;
+  border-bottom: 1.5px solid #E2E8F4;
+}
+.rwm-step:last-child { border-bottom: none; }
+.rwm-step-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #55C8E8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.rwm-step-text { font-size: 15px; color: #3A4A6B; line-height: 1.6; }
+.rwm-frame {
+  background: #FAFBFF;
+  border: 1.5px dashed #C7922C;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 8px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  color: #C7922C;
+  font-style: italic;
+}
+
+/* ═══════════ FLUENCY ═══════════ */
+.fluency-passage {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 2px solid #F5E6C8;
+  border-left: 6px solid #C7922C;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  color: #0E1C42;
+  line-height: 1.85;
+  font-style: italic;
+}
+
+/* ═══════════ ASSIGNMENT QUESTIONS ═══════════ */
+.q-block {
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+.q-block:last-child { margin-bottom: 0; }
+.q-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #55C8E8;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.q-text { font-size: 16px; color: #0E1C42; line-height: 1.65; margin-bottom: 4px; }
+.q-hint { font-size: 14px; color: #7A88A8; font-style: italic; }
+.chapter-section-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 20px;
+  color: #0E1C42;
+  font-weight: 700;
+  margin: 18px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #55C8E8;
+}
+.chapter-section-title:first-child { margin-top: 6px; }
+
+/* ═══════════ TURN-IN CHECKLIST ═══════════ */
+.turn-in-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+  margin-top: 18px;
+}
+.turn-in-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #EAF8FD;
+  padding: 18px 22px;
+  border-bottom: 2px solid #D6F2FB;
+}
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label {
+  font-size: 11px;
+  color: #1A6B8E;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+.turn-in-header-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 22px;
+  color: #0E1C42;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.turn-in-body { padding: 18px 22px 20px; }
+.turn-in-intro { font-size: 15px; color: #3A4A6B; margin-bottom: 16px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: #FAFBFF;
+  border: 1.5px solid #E2E8F4;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #EAF8FD; border-color: #B8E0F0; }
+.turn-in-item.checked { background: #E3F8ED; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 2px solid #B8E0F0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check { background: #34B76F; border-color: #34B76F; }
+.turn-in-item-text { font-size: 15px; color: #0E1C42; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #3A4A6B; }
+
+/* ═══════════ QUOTE STRIP ═══════════ */
+.quote-strip {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border-bottom: 2px solid #F5E6C8;
+  padding: 14px 28px;
+  text-align: center;
+}
+.quote-strip-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #5A4A3A;
+  line-height: 1.6;
+}
+.quote-strip-attr {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  color: #7A88A8;
+  font-weight: 700;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════ NARRATIVE TRANSITION ═══════════ */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-transition-voice {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  color: #5A4A3A;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* ═══════════ OPEN BOOK CARD ═══════════ */
+.open-book-wrap {
+  position: relative;
+  margin-bottom: 22px;
+  padding: 10px 6px 6px;
+}
+.open-book-cover {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  right: 2px;
+  bottom: 0;
+  background: linear-gradient(145deg, #1E4010, #2D5016, #3D6020);
+  border-radius: 6px 20px 20px 6px;
+  box-shadow: 0 4px 20px rgba(30, 64, 16, 0.2);
+}
+.open-book-spine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 100%;
+  background: linear-gradient(90deg, #0E1C42, #162E0A, #2D5016, #162E0A, #0E1C42);
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+}
+.open-book-pages-3 {
+  position: absolute;
+  top: 3px;
+  left: 14px;
+  right: 14px;
+  bottom: 3px;
+  background: #E8E0D4;
+  border-radius: 3px 12px 12px 3px;
+  z-index: 2;
+}
+.open-book-pages-2 {
+  position: absolute;
+  top: 5px;
+  left: 16px;
+  right: 16px;
+  bottom: 4px;
+  background: #F0E8DC;
+  border-radius: 3px 10px 10px 3px;
+  z-index: 3;
+}
+.open-book-pages-1 {
+  position: absolute;
+  top: 7px;
+  left: 18px;
+  right: 18px;
+  bottom: 5px;
+  background: #F5EEE4;
+  border-radius: 3px 8px 8px 3px;
+  z-index: 4;
+}
+.open-book {
+  position: relative;
+  background: linear-gradient(170deg, #FFFDF8 0%, #FFF8F0 40%, #FFFDF8 100%);
+  border: none;
+  border-radius: 3px 6px 6px 3px;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 160px;
+  z-index: 5;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.open-book::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0,0,0,0.04) 20%,
+    rgba(0,0,0,0.07) 40%,
+    rgba(90,70,50,0.10) 50%,
+    rgba(0,0,0,0.07) 60%,
+    rgba(0,0,0,0.04) 80%,
+    transparent 100%
+  );
+  z-index: 6;
+  pointer-events: none;
+}
+.open-book::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 0;
+  width: 4px;
+  background: repeating-linear-gradient(180deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(200,185,165,0.3) 3px,
+    rgba(200,185,165,0.3) 4px
+  );
+  border-radius: 0 4px 4px 0;
+  z-index: 6;
+  pointer-events: none;
+}
+.open-book-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0.3;
+  position: relative;
+}
+.open-book-left::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 4px;
+  background: repeating-linear-gradient(180deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(200,185,165,0.3) 3px,
+    rgba(200,185,165,0.3) 4px
+  );
+  border-radius: 4px 0 0 4px;
+}
+.open-book-left-deco {
+  font-size: 48px;
+  filter: grayscale(30%);
+}
+.open-book-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 28px 24px 20px;
+}
+.open-book-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0E1C42;
+  margin-bottom: 4px;
+}
+.open-book-title em { color: #2D5016; }
+.open-book-chapter {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  color: #5A4A3A;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.open-book-prompt {
+  font-size: 14px;
+  color: #7A88A8;
+  font-weight: 600;
+}
+
+/* ═══════════ TAB NEXT BUTTON ═══════════ */
+.tab-next-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 30px;
+  background: linear-gradient(135deg, #55C8E8, #7FD8F0);
+  color: #0E1C42;
+  border: none;
+  border-radius: 28px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(85, 200, 232, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tab-next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(85, 200, 232, 0.4);
+}
+
+/* ═══════════ BACK TO TOP ═══════════ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  height: 44px;
+  padding: 0 18px 0 14px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  border: 2px solid #55C8E8;
+  font-size: 14px;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(14, 28, 66, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 500;
+  letter-spacing: 0.3px;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover {
+  box-shadow: 0 6px 24px rgba(14, 28, 66, 0.5);
+  transform: translateY(-3px);
+}
+
+/* ═══════════ CONFETTI ═══════════ */
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* ═══════════ GATHERED ANSWERS REVIEW ═══════════ */
+.gathered-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+  margin-top: 22px;
+}
+.gathered-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  padding: 16px 22px;
+  border-bottom: 2px solid rgba(85, 200, 232, 0.2);
+}
+.gathered-header-icon { font-size: 28px; line-height: 1; }
+.gathered-header-label {
+  font-size: 11px;
+  color: #55C8E8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+.gathered-header-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+.gathered-body { padding: 18px 22px 20px; }
+.gathered-intro { font-size: 15px; color: #3A4A6B; margin-bottom: 14px; line-height: 1.55; }
+.gathered-output {
+  width: 100%;
+  min-height: 300px;
+  padding: 16px 18px;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #0E1C42;
+  line-height: 1.65;
+  background: #FAFBFF;
+  resize: vertical;
+  white-space: pre-wrap;
+}
+.gathered-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.gathered-btn {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.gathered-btn:hover { transform: translateY(-2px); }
+.gathered-btn-copy {
+  background: linear-gradient(135deg, #55C8E8, #7FD8F0);
+  color: #0E1C42;
+  box-shadow: 0 4px 14px rgba(85, 200, 232, 0.25);
+}
+.gathered-btn-pdf {
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  border: 2px solid #55C8E8;
+  box-shadow: 0 4px 14px rgba(14, 28, 66, 0.25);
+}
+.gathered-copied {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #34B76F;
+  margin-top: 8px;
+  display: none;
+}
+.gathered-copied.show { display: block; }
+
+/* ═══════════ FOOTER ═══════════ */
+.footer {
+  background: #0E1C42;
+  border-top: 4px solid #55C8E8;
+  padding: 18px 28px;
+  text-align: center;
+}
+.footer-main { font-size: 14px; color: #fff; margin-bottom: 4px; }
+.footer-main span { color: #55C8E8; font-weight: 700; }
+.footer-sub { font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 2px; }
+.footer-copy { font-size: 11px; color: rgba(255, 255, 255, 0.3); }
+
+/* ═══════════ PAUSE & THINK SIDE BY SIDE ═══════════ */
+.pause-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 14px 0;
+}
+.pause-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 620px) {
+  .pause-columns { grid-template-columns: 1fr; }
+}
+
+/* ═══════════ FILL-IN-BLANK GAME ═══════════ */
+.fillin-game { margin: 14px 0; }
+.fillin-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #0E1C42;
+  flex-wrap: wrap;
+}
+.fillin-item:last-child { margin-bottom: 0; }
+.fillin-input {
+  display: inline-block;
+  width: 120px;
+  padding: 4px 10px;
+  border: 2px dashed #8B6FC0;
+  border-radius: 8px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #8B6FC0;
+  text-align: center;
+  background: #FAFBFF;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.fillin-input:focus { border-color: #55C8E8; background: #fff; }
+.fillin-input.correct { border-color: #34B76F; background: #E3F8ED; color: #1a5c2e; border-style: solid; }
+.fillin-input.wrong { border-color: #E8636B; background: #FFF0EC; animation: shake 0.4s ease; }
+.fillin-check-btn {
+  display: block;
+  margin: 14px auto 0;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #8B6FC0, #a88ad4);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.fillin-check-btn:hover { transform: translateY(-2px); }
+.fillin-feedback {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.fillin-feedback.show { display: block; }
+
+/* ═══════════ SHOW WHAT YOU KNOW (graded response) ═══════════ */
+.swyk {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 2px solid #F5E6C8;
+  border-left: 6px solid #C7922C;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-top: 16px;
+}
+.swyk-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.swyk-prompt {
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+/* ═══════════ PERSISTENT TEXTBOX PROMPT ═══════════ */
+.textbox-prompt {
+  font-size: 14px;
+  color: #0E1C42;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 8px 12px;
+  background: #EAF8FD;
+  border: 1.5px solid #D6F2FB;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  margin-top: 10px;
+}
+.textbox-prompt + .journal-box {
+  border-radius: 0 0 12px 12px;
+  margin-top: 0;
+}
+
+/* ═══════════ TODAY'S PATH ═══════════ */
+.todays-path {
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-top: 14px;
+}
+.todays-path-title {
+  font-size: 14px;
+  color: #0E1C42;
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.todays-path-steps {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #3A4A6B;
+  font-weight: 600;
+}
+.todays-path-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F4;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.todays-path-arrow { color: #B0B8CC; font-size: 11px; }
+
+/* ═══════════ DOL HIGHLIGHTER ═══════════ */
+.dol-model-label {
+  font-size: 12px;
+  color: #34B76F;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.dol-fix-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.dol-sentence-wrap {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F4;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #0E1C42;
+  line-height: 1.8;
+  font-family: 'Lora', Georgia, serif;
+}
+.dol-highlight-word {
+  display: inline;
+  padding: 2px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 1.5px solid transparent;
+}
+.dol-highlight-word:hover { background: #EAF8FD; }
+.dol-highlight-word.highlighted {
+  background: #E3F8ED;
+  border-color: #34B76F;
+  font-weight: 700;
+}
+.dol-highlight-word.key-reveal {
+  background: #FFF3DC;
+  border-color: #C7922C;
+  font-weight: 700;
+}
+.dol-hint {
+  font-size: 13px;
+  color: #7A88A8;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* ═══════════ VOCAB DECODE STEPS ═══════════ */
+.decode-steps { margin: 14px 0; }
+.decode-step {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+.decode-step:last-child { margin-bottom: 0; }
+.decode-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.decode-step-content { flex: 1; }
+.decode-step-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0E1C42;
+  margin-bottom: 4px;
+}
+.decode-step-text {
+  font-size: 14px;
+  color: #3A4A6B;
+  line-height: 1.55;
+}
+.decode-sentence {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 1.5px solid #F5E6C8;
+  border-left: 4px solid #C7922C;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.6;
+  font-style: italic;
+}
+.decode-word-parts {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+.decode-part {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.decode-part-root { background: #F0E8FF; color: #8B6FC0; border: 1.5px solid #D8CCF0; }
+.decode-part-affix { background: #EAF8FD; color: #1A6B8E; border: 1.5px solid #D6F2FB; }
+.decode-part-plus { color: #B0B8CC; font-size: 12px; font-weight: 800; }
+.decode-reveal {
+  display: none;
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: #E3F8ED;
+  border: 1.5px solid #B8E8CF;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0E1C42;
+  line-height: 1.5;
+}
+.decode-reveal.show { display: block; }
+.decode-try-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #55C8E8, #7FD8F0);
+  color: #0E1C42;
+  border: none;
+  border-radius: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* ═══════════ THINKING STOP ═══════════ */
+.thinking-stop {
+  background: #FAFBFF;
+  border: 2px dashed #D6F2FB;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #7A88A8;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ═══════════ JOURNAL TEXT BOXES ═══════════ */
+.journal-box {
+  width: 100%;
+  min-height: 70px;
+  padding: 12px 14px;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.6;
+  resize: vertical;
+  background: #FAFBFF;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+.journal-box:focus {
+  outline: none;
+  border-color: #55C8E8;
+  box-shadow: 0 0 0 3px rgba(85, 200, 232, 0.15);
+  background: #fff;
+}
+.journal-box::placeholder { color: #B0B8CC; font-style: italic; }
+.journal-label {
+  font-size: 12px;
+  color: #7A88A8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.journal-label .saved-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #B0B8CC;
+  transition: background 0.3s;
+}
+.journal-label .saved-dot.saved { background: #34B76F; }
+
+/* ═══════════ ROOT MATCH GAME ═══════════ */
+.root-match-game { margin: 14px 0; }
+.root-match-prompt {
+  font-size: 15px;
+  color: #3A4A6B;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.root-match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.root-match-item {
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #0E1C42;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s, border-color 0.2s, transform 0.15s;
+  user-select: none;
+}
+.root-match-item:hover { transform: translateY(-1px); border-color: #8B6FC0; }
+.root-match-item.selected { background: #F0E8FF; border-color: #8B6FC0; box-shadow: 0 0 0 3px rgba(139, 111, 192, 0.2); }
+.root-match-item.matched { background: #E3F8ED; border-color: #34B76F; pointer-events: none; opacity: 0.85; }
+.root-match-item.wrong-flash { background: #FFF0EC; border-color: #E8636B; animation: shake 0.4s ease; }
+.root-match-item.is-word { font-weight: 800; font-family: 'Lora', Georgia, serif; font-size: 16px; color: #8B6FC0; }
+.root-match-feedback {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.root-match-feedback.show { display: block; }
+
+/* ═══════════ DOWNLOAD BUTTON ═══════════ */
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  border: 2px solid #55C8E8;
+  border-radius: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(14, 28, 66, 0.25);
+}
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(14, 28, 66, 0.35);
+}
+.download-btn-icon { font-size: 22px; }
+.download-btn-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* ═══════════ WORD SORT GAME ═══════════ */
+.sort-game { margin: 14px 0; }
+.sort-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px;
+  background: #FAFBFF;
+  border: 2px dashed #D6F2FB;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  min-height: 52px;
+  justify-content: center;
+}
+.sort-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0E1C42;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s, border-color 0.2s;
+}
+.sort-chip:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(14,28,66,0.12); }
+.sort-chip.placed { opacity: 0.4; pointer-events: none; }
+.sort-chip.correct { background: #E3F8ED; border-color: #34B76F; color: #1a5c2e; }
+.sort-chip.wrong { background: #FFF0EC; border-color: #E8636B; color: #8a3030; animation: shake 0.4s ease; }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+.sort-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.sort-col {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 160px;
+}
+.sort-col-header {
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+}
+.sort-col-drop {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px;
+}
+.sort-col-drop .sort-chip { cursor: pointer; }
+.sort-col-drop .sort-chip:hover { transform: none; box-shadow: none; }
+.sort-score {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.sort-score.show { display: block; }
+.sort-check-btn {
+  display: block;
+  margin: 14px auto 0;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #55C8E8, #7FD8F0);
+  color: #0E1C42;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.sort-check-btn:hover { transform: translateY(-2px); }
+
+/* ═══════════ INTERJECTION SPOTTER GAME ═══════════ */
+.spotter-game { margin: 14px 0; }
+.spotter-sentence {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  line-height: 1.8;
+  font-size: 16px;
+  color: #0E1C42;
+}
+.spotter-word {
+  display: inline;
+  padding: 2px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border: 2px solid transparent;
+}
+.spotter-word:hover { background: #EAF8FD; border-color: #55C8E8; }
+.spotter-word.selected { background: #FFF3DC; border-color: #C7922C; font-weight: 700; }
+.spotter-word.correct-reveal { background: #E3F8ED; border-color: #34B76F; color: #1a5c2e; font-weight: 700; }
+.spotter-word.wrong-reveal { background: #FFF0EC; border-color: #E8636B; text-decoration: line-through; }
+.spotter-result {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 10px;
+  margin-top: 6px;
+  display: none;
+}
+.spotter-result.show { display: block; }
+.spotter-result.win { background: #E3F8ED; color: #1a5c2e; }
+.spotter-result.miss { background: #FFF3DC; color: #C7922C; }
+
+/* ═══════════ SENTENCE BUILDER ═══════════ */
+.builder-game { margin: 14px 0; }
+.builder-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 14px;
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  min-height: 52px;
+}
+.builder-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  padding: 8px 12px;
+  background: #FFFFFF;
+  border: 2px dashed #D6F2FB;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #7A88A8;
+  font-weight: 600;
+  min-height: 40px;
+  transition: border-color 0.2s;
+}
+.builder-slot.filled {
+  border-style: solid;
+  border-color: #55C8E8;
+  color: #0E1C42;
+  font-weight: 700;
+  background: #EAF8FD;
+  cursor: pointer;
+}
+.builder-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.builder-word {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0E1C42;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.builder-word:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(14,28,66,0.12); }
+.builder-word.used { opacity: 0.35; pointer-events: none; }
+.builder-result {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-top: 12px;
+  display: none;
+}
+.builder-result.show { display: block; }
+.builder-result.correct { background: #E3F8ED; color: #1a5c2e; }
+.builder-result.incorrect { background: #FFF0EC; color: #8a3030; }
+
+/* ═══════════ VOCAB MATCH GAME ═══════════ */
+.match-game { margin: 14px 0; }
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.match-item {
+  padding: 12px 14px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #0E1C42;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.5;
+  transition: background 0.15s, border-color 0.2s, transform 0.15s;
+  user-select: none;
+}
+.match-item:hover { transform: translateY(-1px); border-color: #55C8E8; }
+.match-item.selected { background: #EAF8FD; border-color: #55C8E8; box-shadow: 0 0 0 3px rgba(85,200,232,0.25); }
+.match-item.matched { background: #E3F8ED; border-color: #34B76F; pointer-events: none; opacity: 0.8; }
+.match-item.wrong-flash { background: #FFF0EC; border-color: #E8636B; animation: shake 0.4s ease; }
+.match-item.is-word { font-weight: 800; font-family: 'Lora', Georgia, serif; font-size: 16px; }
+.match-feedback {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.match-feedback.show { display: block; }
+
+/* ═══════════ DOL CHECKER ═══════════ */
+.dol-check-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #8B6FC0, #a88ad4);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.15s;
+}
+.dol-check-btn:hover { transform: translateY(-2px); }
+.dol-answer {
+  display: none;
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: #E3F8ED;
+  border: 2px solid #B8E8CF;
+  border-left: 4px solid #34B76F;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.65;
+}
+.dol-answer.show { display: block; }
+
+/* Writing Project step chips */
+.wp-step {
+  flex: 1 1 130px;
+  min-width: 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 6px 8px;
+  border-radius: 12px;
+  border: 2px solid #E2E8F4;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.2;
+}
+.wp-step.current { box-shadow: 0 0 0 3px rgba(199,146,44,0.25); border-color: #C7922C; }
+.wp-step.done { border-color: #34B76F; }
+.wp-step-mark { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+.wp-step-name { font-size: 13px; font-weight: 800; margin-bottom: 2px; }
+.wp-step-wk { font-size: 10px; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 165px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+}
+
+/* ═══════════ SOURCE CARDS ═══════════ */
+.source-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+}
+.source-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 2px solid #E2E8F4;
+}
+.source-card-header.source-a { background: linear-gradient(135deg, #EAF8FD, #D6F2FB); border-bottom-color: #D6F2FB; }
+.source-card-header.source-b { background: linear-gradient(135deg, #FFF3DC, #F5E6C8); border-bottom-color: #F5E6C8; }
+.source-card-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  color: #fff; font-size: 18px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.source-card-label { font-size: 10px; color: #7A88A8; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.source-card-title { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.source-card-body { padding: 16px 20px; }
+.source-card-meta { font-size: 13px; color: #7A88A8; font-style: italic; margin-bottom: 10px; }
+.source-card-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px; color: #0E1C42; line-height: 1.75; font-style: italic;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 1.5px solid #F5E6C8; border-left: 4px solid #C7922C; border-radius: 10px;
+  margin-bottom: 10px;
+}
+.source-card-note { font-size: 14px; color: #3A4A6B; line-height: 1.55; }
+
+/* ═══════════ COMMA INSERTER GAME ═══════════ */
+.comma-game { margin: 14px 0; }
+.comma-sentence-wrap {
+  background: #FFFFFF; border: 2px solid #E2E8F4; border-radius: 12px;
+  padding: 14px 16px; margin-bottom: 10px;
+  font-size: 16px; color: #0E1C42; line-height: 1.8; font-family: 'Lora', Georgia, serif;
+}
+.comma-slot {
+  display: inline; padding: 0 2px; cursor: pointer; font-weight: 800;
+  color: #B0B8CC; transition: background 0.15s, color 0.15s;
+}
+.comma-slot:hover { background: #EAF8FD; color: #55C8E8; }
+.comma-slot.inserted { color: #34B76F; }
+.comma-slot.wrong-flash { color: #E8636B; animation: shake 0.4s ease; }
+.comma-feedback { text-align: center; padding: 10px; font-size: 15px; font-weight: 700; color: #34B76F; display: none; }
+.comma-feedback.show { display: block; }
+</style>
+</head>
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🦁 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- PROGRESS BAR -->
+<div class="progress-wrap">
+  <span class="progress-label">📖 Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>
+    <div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div>
+  </div>
+  <!-- HERO BANNER SVG — Council & Gorge / Response & Reflection -->
+  <div style="margin:10px 0 14px;border-radius:14px;overflow:hidden;border:2px solid rgba(85,200,232,0.2);">
+    <svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;">
+      <defs>
+        <linearGradient id="nightGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0E1C30"/><stop offset="55%" stop-color="#1A3040"/><stop offset="100%" stop-color="#2D5016"/></linearGradient>
+        <linearGradient id="gorgeGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#162030"/><stop offset="100%" stop-color="#2D5016"/></linearGradient>
+        <radialGradient id="moonGlow" cx="160" cy="55" r="70" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FFE9B8" stop-opacity="0.55"/><stop offset="70%" stop-color="#FFE9B8" stop-opacity="0.1"/><stop offset="100%" stop-color="#FFE9B8" stop-opacity="0"/></radialGradient>
+        <radialGradient id="moonCore" cx="160" cy="55" r="22" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FFF8DC"/><stop offset="100%" stop-color="#E8D080"/></radialGradient>
+        <filter id="starGlow"><feGaussianBlur stdDeviation="1.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <linearGradient id="threadGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#C7922C" stop-opacity="0.9"/><stop offset="50%" stop-color="#FFE9B8" stop-opacity="1"/><stop offset="100%" stop-color="#C7922C" stop-opacity="0.9"/></linearGradient>
+      </defs>
+      <!-- Background — left: night council clearing -->
+      <rect x="0" y="0" width="460" height="260" fill="url(#nightGrad)"/>
+      <!-- Background — right: gorge scene -->
+      <rect x="460" y="0" width="460" height="260" fill="url(#gorgeGrad)"/>
+      <!-- Moon glow (left side) -->
+      <circle cx="160" cy="55" r="70" fill="url(#moonGlow)"/>
+      <circle cx="160" cy="55" r="22" fill="url(#moonCore)" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="5s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Stars (left) -->
+      <circle cx="60" cy="28" r="1.5" fill="#FFE9B8" opacity="0.8" filter="url(#starGlow)"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.8s" repeatCount="indefinite"/></circle>
+      <circle cx="110" cy="18" r="1.2" fill="#FFE9B8" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.4s" repeatCount="indefinite"/></circle>
+      <circle cx="230" cy="24" r="1.4" fill="#FFE9B8" opacity="0.75"><animate attributeName="opacity" values="0.75;0.25;0.75" dur="2.2s" repeatCount="indefinite"/></circle>
+      <circle cx="310" cy="14" r="1.1" fill="#FFE9B8" opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="4.1s" repeatCount="indefinite"/></circle>
+      <circle cx="380" cy="32" r="1.3" fill="#FFE9B8" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.0s" repeatCount="indefinite"/></circle>
+      <!-- Stars (right) -->
+      <circle cx="530" cy="20" r="1.2" fill="#FFE9B8" opacity="0.65"><animate attributeName="opacity" values="0.65;0.2;0.65" dur="3.7s" repeatCount="indefinite"/></circle>
+      <circle cx="620" cy="10" r="1.5" fill="#FFE9B8" opacity="0.7"><animate attributeName="opacity" values="0.7;0.25;0.7" dur="2.5s" repeatCount="indefinite"/></circle>
+      <circle cx="730" cy="28" r="1.1" fill="#FFE9B8" opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="4.5s" repeatCount="indefinite"/></circle>
+      <circle cx="820" cy="15" r="1.4" fill="#FFE9B8" opacity="0.75"><animate attributeName="opacity" values="0.75;0.2;0.75" dur="3.2s" repeatCount="indefinite"/></circle>
+      <circle cx="880" cy="38" r="1.2" fill="#FFE9B8" opacity="0.65"><animate attributeName="opacity" values="0.65;0.2;0.65" dur="2.9s" repeatCount="indefinite"/></circle>
+      <!-- Council clearing (left) — creature silhouettes in moonlit ring -->
+      <ellipse cx="210" cy="220" rx="180" ry="18" fill="#1a3820" opacity="0.7"/>
+      <!-- Ground mist -->
+      <ellipse cx="210" cy="215" rx="160" ry="8" fill="#7FD8F0" opacity="0.05"/>
+      <!-- Trees around clearing (left) -->
+      <polygon points="20,200 35,145 50,200" fill="#1E4010" opacity="0.9"/>
+      <polygon points="40,200 58,130 76,200" fill="#162E0A" opacity="0.85"/>
+      <polygon points="15,200 28,155 41,200" fill="#2D5016" opacity="0.7"/>
+      <polygon points="360,200 375,148 390,200" fill="#1E4010" opacity="0.85"/>
+      <polygon points="385,200 400,140 415,200" fill="#162E0A" opacity="0.8"/>
+      <!-- Creature silhouettes in council ring -->
+      <ellipse cx="140" cy="196" rx="8" ry="16" fill="#0A1408" opacity="0.85"/>
+      <circle cx="140" cy="178" r="7" fill="#0A1408" opacity="0.85"/>
+      <ellipse cx="185" cy="194" rx="7" ry="14" fill="#0A1408" opacity="0.8"/>
+      <circle cx="185" cy="179" r="6" fill="#0A1408" opacity="0.8"/>
+      <!-- centaur-ish silhouette -->
+      <ellipse cx="230" cy="188" rx="16" ry="10" fill="#0A1408" opacity="0.85"/>
+      <ellipse cx="230" cy="178" rx="8" ry="9" fill="#0A1408" opacity="0.85"/>
+      <circle cx="230" cy="168" r="6" fill="#0A1408" opacity="0.85"/>
+      <ellipse cx="278" cy="194" rx="7" ry="14" fill="#0A1408" opacity="0.8"/>
+      <circle cx="278" cy="179" r="7" fill="#0A1408" opacity="0.8"/>
+      <ellipse cx="320" cy="196" rx="6" ry="12" fill="#0A1408" opacity="0.75"/>
+      <circle cx="320" cy="183" r="5" fill="#0A1408" opacity="0.75"/>
+      <!-- Dividing border — dark forest strip -->
+      <rect x="448" y="0" width="24" height="260" fill="#0E1C18" opacity="0.6"/>
+      <!-- Right side: gorge with two paths -->
+      <!-- Gorge walls -->
+      <path d="M 472,260 L 500,160 L 560,120 L 600,100 L 620,80 L 640,100 L 680,120 L 740,160 L 760,260 Z" fill="#1a2e18" opacity="0.9"/>
+      <!-- Left path (down) -->
+      <path d="M 576,260 C 580,220 572,180 560,150 C 548,120 540,100 545,80" fill="none" stroke="#3A6A2E" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+      <!-- Right path (up) -->
+      <path d="M 648,260 C 644,220 652,180 664,150 C 676,120 684,100 680,80" fill="none" stroke="#4A7C2E" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+      <!-- Gorge rocky outcrops -->
+      <polygon points="472,260 520,200 540,260" fill="#162810" opacity="0.8"/>
+      <polygon points="740,260 760,195 780,260" fill="#162810" opacity="0.8"/>
+      <!-- Trees on gorge rims -->
+      <polygon points="490,200 505,155 520,200" fill="#1E4010" opacity="0.85"/>
+      <polygon points="760,200 775,148 790,200" fill="#2D5016" opacity="0.85"/>
+      <polygon points="810,200 830,140 850,200" fill="#1E4010" opacity="0.8"/>
+      <polygon points="850,200 865,155 880,200" fill="#2D5016" opacity="0.75"/>
+      <polygon points="880,195 895,150 910,195" fill="#162E0A" opacity="0.7"/>
+      <!-- Figures at gorge (Peter leading, Edmund) -->
+      <ellipse cx="612" cy="210" rx="7" ry="13" fill="#0A1408" opacity="0.85"/>
+      <circle cx="612" cy="196" r="6" fill="#0A1408" opacity="0.85"/>
+      <ellipse cx="630" cy="214" rx="6" ry="11" fill="#0A1408" opacity="0.8"/>
+      <circle cx="630" cy="202" r="5" fill="#0A1408" opacity="0.8"/>
+      <!-- Golden thread connecting both scenes -->
+      <path d="M 390,130 C 420,118 440,110 460,115 C 480,120 498,125 520,120" fill="none" stroke="url(#threadGrad)" stroke-width="2.5" stroke-linecap="round" opacity="0.85">
+        <animate attributeName="stroke-opacity" values="0.85;0.4;0.85" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="2.5;3.5;2.5" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <!-- Thread sparkle dots -->
+      <circle cx="435" cy="113" r="2.5" fill="#FFE9B8" opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.8s" repeatCount="indefinite"/></circle>
+      <circle cx="458" cy="115" r="2" fill="#FFE9B8" opacity="0.7"><animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.2s" repeatCount="indefinite"/></circle>
+      <circle cx="482" cy="120" r="2.5" fill="#FFE9B8" opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/></circle>
+    </svg>
+  </div>
+  <div class="header-title"><em>Prince Caspian</em> &mdash; Week 30 &middot; Day 4</div>
+  <div class="header-badge"><span class="header-badge-icon">🦁</span><span class="header-badge-text">Lesson 30.4</span></div>
+</div>
+
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📚</div><div><div class="info-label">Unit</div><div class="info-value">Unit 5</div><div class="info-detail">Prince Caspian (Lewis)</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#EAF8FD;">📅</div><div><div class="info-label">Week</div><div class="info-value">Week 30</div><div class="info-detail">Lesson 30.4 · Day 4</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#FFF3DC;">📖</div><div><div class="info-label">Reading</div><div class="info-value">Chapters 13&ndash;15</div><div class="info-detail">Response &amp; Reflection</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#F0E8FF;">✏️</div><div><div class="info-label">Focus</div><div class="info-value">Complex Sentences</div><div class="info-detail">Explain &amp; teach the concept</div></div></div>
+</div>
+
+<!-- QUOTE STRIP -->
+<div class="quote-strip">
+  <div class="quote-strip-text">&ldquo;You come of the Lord Adam and the Lady Eve. And that is both honour enough to erect the head of the poorest beggar, and shame enough to bow the shoulders of the greatest emperor on earth.&rdquo;</div>
+  <div class="quote-strip-attr">&mdash; Aslan, <em>Prince Caspian</em> by C.&thinsp;S. Lewis</div>
+</div>
+
+<!-- INTRO -->
+<div class="intro-section" id="introSection">
+  <div class="intro-collapsed-bar" onclick="expandIntro()">
+    <span class="intro-collapsed-icon">🎯</span>
+    <span class="intro-collapsed-text">Today&rsquo;s Objectives &amp; Path</span>
+    <span class="intro-collapsed-toggle">&#9660; Expand</span>
+  </div>
+  <div class="intro-2col">
+    <div class="intro-card theme-question">
+      <div class="intro-card-head"><div class="intro-card-head-icon">&#10067;</div><div><div class="intro-card-head-label">Big Question</div><div class="intro-card-head-title">Today&rsquo;s Wonder</div></div></div>
+      <div class="intro-card-body"><p>These final chapters bring everything together: combat and betrayal, Aslan&rsquo;s justice, Caspian&rsquo;s crowning, and Peter and Susan&rsquo;s farewell. Today ask yourself: <strong>What has this story been about?</strong></p></div>
+    </div>
+    <div class="intro-card theme-objectives">
+      <div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Objectives</div><div class="intro-card-head-title">By the end of this lesson&hellip;</div></div></div>
+      <div class="intro-card-body">
+        <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>explain</em> what <em>Prince Caspian</em> says about true leadership and loyalty using evidence from Chapters 13&ndash;15 and the whole novel.</span></div>
+        <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>explain</em> dialogue punctuation rules and apply them in a fix-it challenge.</span></div>
+        <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Vocabulary:</strong> I will <em>explain</em> my understanding of unit vocabulary using the choice board.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="todays-path">
+    <div class="todays-path-title">🗺️ Today&rsquo;s Path</div>
+    <div class="todays-path-steps">
+      <span class="todays-path-step">🌅 Warm up with poetry &amp; DOL</span>
+      <span class="todays-path-arrow">&rarr;</span>
+      <span class="todays-path-step">🔤 Practice word study skills</span>
+      <span class="todays-path-arrow">&rarr;</span>
+      <span class="todays-path-step">📖 Review Chapters 13&ndash;15</span>
+      <span class="todays-path-arrow">&rarr;</span>
+      <span class="todays-path-step">📬 Final response &amp; submit</span>
+    </div>
+  </div>
+  <div class="need-strip">
+    <span class="need-strip-label">You&rsquo;ll need:</span>
+    <span class="need-chip">📗 Prince Caspian</span>
+    <span class="need-chip">📓 Reading Journal</span>
+    <span class="need-chip">✏️ Pencil</span>
+  </div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🌅 Warm-Up<span class="tab-check">&#10003;</span></button>
+  <button class="tab-btn" data-tab="words" onclick="switchTab('words')">🔤 Word Study<span class="tab-check">&#10003;</span></button>
+  <button class="tab-btn" data-tab="reading" onclick="switchTab('reading')">📖 Reading<span class="tab-check">&#10003;</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">📬 Assignment<span class="tab-check">&#10003;</span></button>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB 1: WARM-UP                             -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-warmup">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Welcome &middot; Day 4 of 4</div><div class="video-wrap-title">Welcome to Lesson 30.4!</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Teacher welcome &mdash; reflection day</div><div class="video-placeholder-id"><!-- slot: 30-4-welcome --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Welcome to Lesson 30.4 &mdash; the week and unit closer for <em>Prince Caspian</em><br>&bull; This week students read Chs. 13&ndash;15: the single combat, the battle, Aslan&rsquo;s revel, and the farewells<br>&bull; Big question: What has <em>Prince Caspian</em> been about? Leadership, loyalty, honor, and growing up<br>&bull; Today: reflect on the whole novel, explain vocabulary from the full unit, and write a final literary analysis paragraph<br>&bull; ~1&ndash;2 minutes</div></div></div></div>
+  </div>
+
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">1</div><div><div class="activity-title">✏️ Daily Oral Language</div><div class="activity-sub">Study the model, then fix the sentence.</div></div></div>
+    <div class="activity-body">
+      <p>The first sentence is <strong>correct</strong>. Tap the highlighted parts to see what&rsquo;s right. Then use the model to fix the broken sentence below.</p>
+      <div class="task-box">
+        <div class="dol-model-label">&#10003; Correct Model &mdash; Capitalization, Commas &amp; Dialogue Punctuation</div>
+        <div class="dol-sentence-wrap" id="dolModel">
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'&quot;Trumpkin&quot; is a proper noun &mdash; always capitalized.')">Trumpkin</span>
+          <span> stared at </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'&quot;Aslan&quot; is a proper noun &mdash; always capitalized.')">Aslan</span>
+          <span> in amazement and stammered</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'A comma after &quot;stammered&quot; introduces a direct quotation.')">,</span>
+          <span> </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Opening quotation mark begins the character&rsquo;s exact words.')">&ldquo;</span>
+          <span>I see that you are no common beast</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'A period ends the statement. It goes inside the closing quotation mark.')">.</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Closing quotation mark ends the character&rsquo;s exact words.')">&rdquo;</span>
+        </div>
+        <div id="dolExplain" style="min-height:24px;margin-top:6px;font-size:13px;color:#34B76F;font-weight:700;"></div>
+        <div class="dol-hint">Tap highlighted parts to see what&rsquo;s correct.</div>
+        <div class="dol-fix-label">🔧 Now fix this one &mdash; rewrite it correctly in your journal</div>
+        <div class="dol-sentence-wrap" style="border-left:4px solid #C7922C;">
+          caspian looked at nikabrik sadly and said he had gone sour inside from long suffering and hateing
+        </div>
+        <div class="dol-hint">Find: two missing capital letters, a missing comma, missing quotation marks, and one spelling error (hateing).</div>
+        <button class="dol-check-btn" style="margin-top:12px;" onclick="document.getElementById('dolAns').classList.toggle('show')">🔍 Check My Work</button>
+        <div class="dol-answer" id="dolAns">
+          <p style="margin-bottom:6px;"><strong>Corrected:</strong> <strong>C</strong>aspian looked at <strong>N</strong>ikabrik sadly and said<strong>,</strong> <strong>&ldquo;</strong>He had gone sour inside from long suffering and <strong>hating</strong>.<strong>&rdquo;</strong></p>
+          <p style="font-size:13px;color:#7A88A8;font-style:italic;">Capital C on &ldquo;Caspian&rdquo; (proper noun, start of sentence). Capital N on &ldquo;Nikabrik&rdquo; (proper noun). Comma after &ldquo;said&rdquo; (before a direct quotation). Opening and closing quotation marks around the exact words spoken. &ldquo;Hating&rdquo; drops the silent -e before adding -ing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity bl-gold">
+    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">2</div><div><div class="activity-title">🌿 Poetry Corner</div><div class="activity-sub">Read, think, and respond.</div></div></div>
+    <div class="activity-body">
+      <p>Today&rsquo;s poem comes from Alfred, Lord Tennyson &mdash; written as an old man looking toward the end of a long voyage. Read it slowly. Think about Peter and Susan, who have come to the end of their Narnian journeys.</p>
+      <div class="poem-box">
+        <div class="poem-title">Crossing the Bar (first stanza)</div>
+        <div class="poem-author">Alfred, Lord Tennyson (1889)</div>
+        <div class="poem-text">Sunset and evening star,
+      And one clear call for me!
+And may there be no moaning of the bar,
+      When I put out to sea.</div>
+      </div>
+      <div class="socratic-box">
+        <div class="socratic-label">🤔 Think &amp; Respond</div>
+        <p class="socratic-q"><strong>A &ldquo;bar&rdquo; is a sandbar &mdash; a crossing point, a threshold. Tennyson writes about going through it without sadness or struggle. How does this connect to Peter and Susan&rsquo;s farewell at the end of <em>Prince Caspian</em>?</strong> What does it mean to leave something behind without mourning it? Is that possible?</p>
+      </div>
+      <div class="journal-label"><span>📓 Your Thinking</span><span class="saved-dot" id="dot-poetry"></span></div>
+      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="Tennyson writes about a crossing without sadness. Peter and Susan's farewell is like this because... Both the poem and the novel show that endings can be..." oninput="autoSave(this,'dot-poetry');"></textarea>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">You&rsquo;ve warmed up your thinking. Now let&rsquo;s review the vocabulary from the full <em>Prince Caspian</em> unit before you step into the final reflection questions.</p>
+    <button class="tab-next-btn" onclick="switchTab('words')">Continue to 🔤 Word Study &rarr;</button>
+  </div>
+</div><!-- /tab-warmup -->
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB 2: WORD STUDY                          -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-words">
+
+  <div class="activity bl-purple">
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">1</div><div><div class="activity-title">🌱 Morphology: Teach It</div><div class="activity-sub">Explain word bases to a younger student</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">🌱</span><div><div class="video-wrap-type">Morphology &middot; Day 4 Explain</div><div class="video-wrap-title">Word Bases: reg/rect, domin, voc/vok &mdash; Unit Review</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🌱</div><div class="video-placeholder-text">Teacher reviews the week&rsquo;s word bases</div><div class="video-placeholder-id"><!-- slot: 30-4-morphology --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 4 morphology: cumulative unit review &mdash; explain your favorite root from the unit<br>&bull; Roots from W26&ndash;30: rupt (break), duct (lead), form (shape), reg/rect (rule/right), domin (master), voc/vok (voice/call)<br>&bull; Model what a good explanation sounds like: name the root, give its meaning, give 2&ndash;3 examples<br>&bull; Connect to vocabulary: coronation, proclamation, allegiance, treason, sovereign<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+      </div>
+      <p>Over this unit you have studied Latin and Greek roots that appear throughout <em>Prince Caspian</em>. Today, choose your favorite root from the whole unit and explain it &mdash; as if you are teaching a younger student who has never heard of it.</p>
+      <div class="key-concept">
+        <div class="key-concept-label">📌 Roots From This Unit (W26&ndash;30)</div>
+        <p><strong>rupt</strong> = break &nbsp;|&nbsp; <strong>duct</strong> = lead &nbsp;|&nbsp; <strong>form</strong> = shape<br><strong>reg / rect</strong> = rule, right &nbsp;|&nbsp; <strong>domin</strong> = master &nbsp;|&nbsp; <strong>voc / vok</strong> = voice, call</p>
+        <p style="font-size:13px;color:#7A88A8;margin-top:6px;">Connections to the novel: <em>coronation</em> (rule), <em>proclamation</em> (voice/call), <em>dominion</em> (master), <em>corrupt</em> (broken inside), <em>sovereign</em> (one who rules above all)</p>
+      </div>
+      <div class="callout callout-think" style="margin-top:14px;">
+        <span class="callout-icon">💭</span>
+        <p>Pick <strong>ONE</strong> root from the list above. In your own words: (1) what does it mean? (2) give two words that contain it. (3) How does knowing this root help you read more powerfully?</p>
+      </div>
+      <p style="margin-top:14px;">Warm up first &mdash; match each word to its meaning:</p>
+      <div class="root-match-game" id="rootMatchGame">
+        <div class="root-match-grid" id="rootMatchGrid">
+          <div class="root-match-item is-word" data-match="reg1" onclick="rootMatchClick(this)">sovereign</div>
+          <div class="root-match-item is-word" data-match="voc1" onclick="rootMatchClick(this)">proclamation</div>
+          <div class="root-match-item is-word" data-match="dom1" onclick="rootMatchClick(this)">dominion</div>
+          <div class="root-match-item is-word" data-match="rupt1" onclick="rootMatchClick(this)">corrupt</div>
+          <div class="root-match-item" data-match="rupt1" onclick="rootMatchClick(this)">broken inside by evil or wrong</div>
+          <div class="root-match-item" data-match="reg1" onclick="rootMatchClick(this)">one who rules above all others</div>
+          <div class="root-match-item" data-match="voc1" onclick="rootMatchClick(this)">a public announcement called out to all</div>
+          <div class="root-match-item" data-match="dom1" onclick="rootMatchClick(this)">power and control over a territory</div>
+        </div>
+        <div class="root-match-feedback" id="rootMatchFeedback">🌱 All matched! Now write your own explanation below.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">2</div><div><div class="activity-title">🔤 Vocabulary: Choice Board</div><div class="activity-sub">Choose one activity from the full unit vocabulary list.</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">🔤</span><div><div class="video-wrap-type">Vocabulary &middot; Day 4 Choice</div><div class="video-wrap-title">Unit Vocabulary &mdash; Prince Caspian (Weeks 26&ndash;30)</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔤</div><div class="video-placeholder-text">Teacher introduces the vocabulary choice board</div><div class="video-placeholder-id"><!-- slot: 30-4-vocabulary --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 4 vocabulary: choice board &mdash; full unit vocabulary review<br>&bull; All unit words reviewed today: precipice, bivouac, luminous, sentient, revelry, sentinel, sorcery, allegiance, treason, challenge, combat, dictate, marshal, hauberk, treachery, sufficient, coronation, lineage, proclamation, woebegone<br>&bull; Remind students they know many of these &mdash; they&rsquo;ve built up a strong word bank across five weeks<br>&bull; Explain the four choice board options; encourage Option C (root connection) or D (teach it) to go deeper<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+      </div>
+      <div class="key-concept">
+        <div class="key-concept-label">📌 Unit Vocabulary &mdash; <em>Prince Caspian</em> Weeks 26&ndash;30</div>
+        <p style="font-size:13.5px;line-height:1.8;"><strong>Precipice</strong> &mdash; the edge of a steep cliff<br><strong>Bivouac</strong> &mdash; a temporary camp with little shelter<br><strong>Luminous</strong> &mdash; glowing with light<br><strong>Sentient</strong> &mdash; able to feel and experience things<br><strong>Revelry</strong> &mdash; lively, noisy celebration<br><strong>Sentinel</strong> &mdash; a guard or lookout<br><strong>Sorcery</strong> &mdash; the use of dark or evil magic<br><strong>Allegiance</strong> &mdash; loyalty to a person, group, or cause<br><strong>Treason</strong> &mdash; betraying one&rsquo;s country or king<br><strong>Challenge</strong> &mdash; a formal call to single combat<br><strong>Combat</strong> &mdash; armed fighting between opponents<br><strong>Dictate</strong> &mdash; to give orders that must be obeyed<br><strong>Marshal</strong> &mdash; to arrange or lead troops into order<br><strong>Hauberk</strong> &mdash; a coat of chainmail armor<br><strong>Treachery</strong> &mdash; a secret betrayal; acting against those who trusted you<br><strong>Sufficient</strong> &mdash; enough for the purpose<br><strong>Coronation</strong> &mdash; the ceremony of crowning a king or queen<br><strong>Lineage</strong> &mdash; one&rsquo;s line of ancestors; family descent<br><strong>Proclamation</strong> &mdash; an official public announcement<br><strong>Woebegone</strong> &mdash; looking sad or miserable</p>
+      </div>
+      <p style="margin-top:14px;"><strong>Choose ONE option below.</strong> You may use any word from the full unit list above. Write your response in the Show What You Know box.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;">
+        <div class="task-box" style="border-left:4px solid #2D5016;margin-bottom:0;">
+          <div class="task-label" style="color:#2D5016;">✍️ Option A &mdash; Write Sentences</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:0;">Choose <strong>2</strong> vocabulary words. Write one original sentence for each that shows you understand what the word means.</p>
+        </div>
+        <div class="task-box" style="border-left:4px solid #C7922C;margin-bottom:0;">
+          <div class="task-label" style="color:#C7922C;">📖 Option B &mdash; Find It in Reading</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:0;">Find one of this week&rsquo;s words (or a related word) in your reading. Write the sentence where it appears and explain what it means in that context.</p>
+        </div>
+        <div class="task-box" style="border-left:4px solid #8B6FC0;margin-bottom:0;">
+          <div class="task-label" style="color:#8B6FC0;">🔤 Option C &mdash; Connect to a Root</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:0;">Choose one vocabulary word and connect it to a root, prefix, or suffix you know. Explain how the word parts help you understand the meaning.</p>
+        </div>
+        <div class="task-box" style="border-left:4px solid #55C8E8;margin-bottom:0;">
+          <div class="task-label" style="color:#1A6B8E;">💬 Option D &mdash; Teach It</div>
+          <p style="font-size:14px;color:#3A4A6B;margin:0;">Explain <strong>2</strong> vocabulary words as if you&rsquo;re teaching them to a younger student. Use simple words and give an example for each.</p>
+        </div>
+      </div>
+      <div class="swyk">
+        <div class="swyk-label">🔤 Show What You Know &mdash; Vocabulary Choice Board</div>
+        <div class="swyk-prompt">Write your Choice Board response here. Start by telling me which option you chose (A, B, C, or D).</div>
+        <div class="textbox-prompt">Which option did you choose? Then write your full response.</div>
+        <textarea class="journal-box" id="journal-vocabulary" data-label="Vocabulary SWYK: Choice Board" placeholder="I chose Option [A/B/C/D].&#10;&#10;[Your response here...]" oninput="autoSave(this,'dot-vocabulary');gatherAnswers();"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity bl-navy">
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">3</div><div><div class="activity-title">✏️ Grammar: Dialogue Punctuation Wrap-Up</div><div class="activity-sub">Fix sentences with dialogue errors.</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">✏️</span><div><div class="video-wrap-type">Grammar &middot; Day 4 Explain</div><div class="video-wrap-title">Dialogue Punctuation &mdash; Wrap-Up Challenge</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">✏️</div><div class="video-placeholder-text">Teacher reviews dialogue punctuation rules</div><div class="video-placeholder-id"><!-- slot: 30-4-grammar --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 4 grammar = dialogue punctuation wrap-up<br>&bull; Review: commas/periods go inside closing quotation marks; new speaker = new paragraph (students fix in journal); comma after dialogue tag when tag comes before speech; period inside closing marks at sentence end<br>&bull; Students fix 3 sentences with dialogue errors<br>&bull; Connect to final chapters &mdash; Ch. 13&ndash;15 are full of spoken challenges, farewells, and declarations<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+      </div>
+      <p>Chapters 13&ndash;15 are full of dialogue &mdash; challenges, proclamations, and farewells. Punctuating dialogue correctly is how a writer shows the reader exactly who is speaking and when.</p>
+      <div class="callout callout-info">
+        <span class="callout-icon">💡</span>
+        <p><strong>Rule reminder:</strong> Periods and commas always go <em>inside</em> the closing quotation mark. Use a comma after a dialogue tag when the speech follows it (&ldquo;He said, &lsquo;&hellip;&rsquo;&rdquo;). Use a period inside the final quotation mark to end the sentence.</p>
+      </div>
+      <p>Fix these sentences &mdash; each one has a dialogue punctuation error. Rewrite them correctly in your journal.</p>
+      <div class="spotter-game" id="depClauseSpotter">
+        <div class="spotter-sentence" id="depClause1" style="padding:14px;font-size:15px;">
+          <strong style="color:#3A4A6B;">1.</strong> Peter said &ldquo;I have come to give you a challenge&rdquo;.
+          <div class="spotter-result" id="depClause1-result"></div>
+        </div>
+        <div class="spotter-sentence" id="depClause2" style="padding:14px;font-size:15px;">
+          <strong style="color:#3A4A6B;">2.</strong> &ldquo;Oh, Peter&rdquo; said Lucy &ldquo;What awful bad luck&rdquo;.
+          <div class="spotter-result" id="depClause2-result"></div>
+        </div>
+        <div class="spotter-sentence" id="depClause3" style="padding:14px;font-size:15px;">
+          <strong style="color:#3A4A6B;">3.</strong> Aslan said, &ldquo;You come of the Lord Adam and the Lady Eve&rdquo;
+          <div class="spotter-result" id="depClause3-result"></div>
+        </div>
+      </div>
+      <button class="dol-check-btn" style="margin-top:12px;" onclick="document.getElementById('grammarAns').classList.toggle('show')">🔍 Check My Work</button>
+      <div class="dol-answer" id="grammarAns">
+        <p style="margin-bottom:6px;"><strong>1.</strong> Peter said<strong>,</strong> &ldquo;I have come to give you a challenge<strong>.</strong>&rdquo; &nbsp;<em>(comma after dialogue tag; period moves inside closing quotation mark)</em></p>
+        <p style="margin-bottom:6px;"><strong>2.</strong> &ldquo;Oh, Peter<strong>,</strong>&rdquo; said Lucy<strong>.</strong> &ldquo;What awful bad luck<strong>.</strong>&rdquo; &nbsp;<em>(comma inside first closing mark; period ends the tag; period inside final closing mark)</em></p>
+        <p style="margin-bottom:6px;"><strong>3.</strong> Aslan said, &ldquo;You come of the Lord Adam and the Lady Eve<strong>.&rdquo;</strong> &nbsp;<em>(period belongs inside the closing quotation mark)</em></p>
+        <p style="font-size:13px;color:#7A88A8;font-style:italic;">Punctuation always goes inside the closing quotation mark in American English. This rule applies to periods and commas every time.</p>
+      </div>
+      <p style="margin-top:10px;font-size:14px;color:#7A88A8;font-style:italic;">This is practice &mdash; not graded. Your graded response today is the Vocabulary Choice Board above.</p>
+    </div>
+  </div>
+
+  <div class="activity bl-rose">
+    <div class="activity-head"><div class="activity-num" style="background:#c7627e;">4</div><div><div class="activity-title">🔠 Spelling &amp; Word Study: Unit Wrap-Up</div><div class="activity-sub">Cumulative review &mdash; roots, patterns, and word parts.</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">🔠</span><div><div class="video-wrap-type">Spelling &middot; Day 4 Wrap-Up</div><div class="video-wrap-title">Word Study: Cumulative Unit Review</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔠</div><div class="video-placeholder-text">Teacher reviews spelling patterns from the unit</div><div class="video-placeholder-id"><!-- slot: 30-4-spelling --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 4 spelling: cumulative unit review<br>&bull; Briefly review schwa, silent letters, and prefixes/suffixes from the unit<br>&bull; Remind students that knowing roots helps them spell: &ldquo;coronation&rdquo; comes from &ldquo;corona&rdquo; (crown), so the vowel is an o, not an a<br>&bull; Connect spelling to vocabulary: if you know the root, you can figure out the vowel<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+      </div>
+      <p>Over this unit you have studied spelling patterns, silent letters, prefixes, and the schwa. Today, use what you know to sort words from the unit.</p>
+      <div class="callout callout-think">
+        <span class="callout-icon">🤔</span>
+        <p>Think through this: when a word is hard to spell, what strategy helps most &mdash; breaking it into syllables, finding the root, or noticing a pattern? Which works best for you?</p>
+      </div>
+      <p style="margin-top:14px;"><strong>Challenge &mdash; Odd One Out:</strong> In each group below, one word follows a different word-building pattern than the others. Tap the one that doesn&rsquo;t fit.</p>
+      <div class="spotter-game" id="schwaSpotter">
+        <div class="spotter-sentence" id="schwa1" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:14px;">
+          <strong style="font-size:14px;color:#3A4A6B;">Group 1 &mdash; words with Latin roots:</strong>
+          <span class="spotter-word" onclick="schwaOdd(this,'schwa1')" data-correct="false" style="font-size:15px;font-weight:700;">coronation</span>
+          <span class="spotter-word" onclick="schwaOdd(this,'schwa1')" data-correct="false" style="font-size:15px;font-weight:700;">proclamation</span>
+          <span class="spotter-word" onclick="schwaOdd(this,'schwa1')" data-correct="true" style="font-size:15px;font-weight:700;">treachery</span>
+          <div class="spotter-result" id="schwa1-result"></div>
+        </div>
+        <div class="spotter-sentence" id="schwa2" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:14px;">
+          <strong style="font-size:14px;color:#3A4A6B;">Group 2 &mdash; words with -tion/-sion suffix:</strong>
+          <span class="spotter-word" onclick="schwaOdd(this,'schwa2')" data-correct="false" style="font-size:15px;font-weight:700;">coronation</span>
+          <span class="spotter-word" onclick="schwaOdd(this,'schwa2')" data-correct="true" style="font-size:15px;font-weight:700;">allegiance</span>
+          <span class="spotter-word" onclick="schwaOdd(this,'schwa2')" data-correct="false" style="font-size:15px;font-weight:700;">proclamation</span>
+          <div class="spotter-result" id="schwa2-result"></div>
+        </div>
+        <div class="spotter-sentence" id="schwa3" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:14px;">
+          <strong style="font-size:14px;color:#3A4A6B;">Group 3 &mdash; words that name acts of betrayal:</strong>
+          <span class="spotter-word" onclick="schwaOdd(this,'schwa3')" data-correct="false" style="font-size:15px;font-weight:700;">treason</span>
+          <span class="spotter-word" onclick="schwaOdd(this,'schwa3')" data-correct="false" style="font-size:15px;font-weight:700;">treachery</span>
+          <span class="spotter-word" onclick="schwaOdd(this,'schwa3')" data-correct="true" style="font-size:15px;font-weight:700;">lineage</span>
+          <div class="spotter-result" id="schwa3-result"></div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">This is practice &mdash; not graded. Your graded response today is the Vocabulary Choice Board above.</p>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">You&rsquo;ve reviewed the whole unit&rsquo;s vocabulary and word study. Now step back and look at the big picture of Chapters 13&ndash;15 before you write your final responses.</p>
+    <button class="tab-next-btn" onclick="switchTab('reading')">Continue to 📖 Reading &rarr;</button>
+  </div>
+</div><!-- /tab-words -->
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB 3: READING                             -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-reading">
+
+  <div class="tracker-card">
+    <div class="tracker-header"><div class="tracker-header-icon">🗺️</div><div><div class="tracker-header-label">Your Story Journey</div><div class="tracker-header-title">The Children Return to Narnia</div></div></div>
+    <div class="scene-wrap" id="scene">
+      <div class="title-plaque"><h1>Prince <em>Caspian</em></h1></div>
+      <div style="position:absolute;top:6px;left:14%;font-size:10px;color:#C7922C;opacity:0.7;">✦</div>
+      <div style="position:absolute;top:4px;left:30%;font-size:8px;color:#FFE9B8;opacity:0.6;">✦</div>
+      <div style="position:absolute;top:8px;left:72%;font-size:10px;color:#C7922C;opacity:0.7;">✦</div>
+      <div style="position:absolute;top:3px;left:88%;font-size:9px;color:#FFE9B8;opacity:0.65;">✦</div>
+      <div style="position:absolute;top:5px;left:53%;font-size:22px;color:#C7922C;opacity:1;text-shadow:0 0 8px rgba(199,146,44,0.8);">👑</div>
+      <div style="position:absolute;top:28px;left:51%;font-size:9px;color:#FFE9B8;opacity:0.9;font-weight:700;letter-spacing:0.5px;">NARNIA</div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(180deg,transparent,rgba(20,48,16,0.8));"></div>
+      <div style="position:absolute;bottom:52px;left:3%;font-size:18px;">🌲</div>
+      <div style="position:absolute;bottom:50px;left:20%;font-size:16px;">🏰</div>
+      <div style="position:absolute;bottom:53px;left:38%;font-size:18px;">⚔️</div>
+      <div style="position:absolute;bottom:50px;left:57%;font-size:16px;">🦁</div>
+      <div style="position:absolute;bottom:53px;left:74%;font-size:18px;">👑</div>
+      <svg viewBox="0 0 1400 210" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;">
+        <path d="M -20,178 C 80,176 160,156 280,145 C 400,134 480,145 600,132 C 720,119 800,115 920,106 C 1040,97 1120,102 1240,96 C 1340,90 1400,85 1430,82" fill="none" stroke="rgba(199,146,44,0.25)" stroke-width="14" stroke-linecap="round"/>
+        <path d="M -20,178 C 80,176 160,156 280,145 C 400,134 480,145 600,132 C 720,119 800,115 920,106 C 1040,97 1120,102 1240,96 C 1340,90 1400,85 1430,82" fill="none" stroke="#C7922C" stroke-width="6" stroke-linecap="round" stroke-dasharray="5 9" opacity="0.6"/>
+      </svg>
+      <div class="character-token" id="characterToken">🦁</div>
+    </div>
+    <div class="tracker-chapter-label">📍 You are here: <strong>Chapters 13&ndash;15 &mdash; Response &amp; Reflection</strong></div>
+  </div>
+
+  <div class="activity bl-purple">
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">1</div><div><div class="activity-title">📚 What Good Readers Do</div><div class="activity-sub">Step back and look at the whole story.</div></div></div>
+    <div class="activity-body">
+      <p>Good readers think about the whole story. As you look back across <em>Prince Caspian</em>, notice how characters changed &mdash; Caspian grew into a king, Peter learned to let go, and loyalty was tested in every chapter.</p>
+      <div class="socratic-box">
+        <div class="socratic-label">🧠 Ask yourself:</div>
+        <p class="socratic-q"><strong>These final chapters bring everything together: Peter&rsquo;s honor in combat, the treachery of Glozelle and Sopespian, Aslan&rsquo;s justice, Caspian&rsquo;s crowning, Reepicheep&rsquo;s loyalty, and Peter and Susan&rsquo;s farewell. What has this story been about?</strong></p>
+      </div>
+      <div class="thinking-stop">💭 Hold these questions in mind as you review the chapters and write your final literary response.</div>
+    </div>
+  </div>
+
+  <div class="video-wrap">
+    <div class="video-wrap-header"><span style="font-size:20px;">📖</span><div><div class="video-wrap-type">Reading &middot; Chapters 13&ndash;15 Review</div><div class="video-wrap-title">Stepping Back: Honor, Loyalty &amp; Farewell</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📖</div><div class="video-placeholder-text">Teacher reviews Chapters 13&ndash;15 themes</div><div class="video-placeholder-id"><!-- slot: 30-4-reading --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Week review: Chs. 13&ndash;15<br>&bull; Ch. 13: Peter&rsquo;s single combat with Miraz; the treachery of Glozelle and Sopespian; Peter&rsquo;s honor (he steps back when Miraz falls); the great battle<br>&bull; Ch. 14: Aslan&rsquo;s revel &mdash; he wakes the trees, frees the schoolchildren, topples Telmar tyranny; Bacchus and the wild feast<br>&bull; Ch. 15: Caspian crowned; Aslan tells Caspian his ancestors were pirates but he comes from Adam and Eve; Reepicheep&rsquo;s tail; Peter and Susan&rsquo;s farewell &mdash; they will not return to Narnia<br>&bull; Big question: What does the whole novel say about leadership, loyalty, and growing up?<br>&bull; ~3&ndash;4 minutes</div></div></div></div>
+  </div>
+
+  <div class="activity bl-green">
+    <div class="activity-head"><div class="activity-num" style="background:#34B76F;">2</div><div><div class="activity-title">📗 Chapters 13&ndash;15: Review</div><div class="activity-sub">Think before you write.</div></div></div>
+    <div class="activity-body">
+      <div class="open-book-wrap">
+        <div class="open-book-cover"></div>
+        <div class="open-book-spine"></div>
+        <div class="open-book-pages-3"></div>
+        <div class="open-book-pages-2"></div>
+        <div class="open-book-pages-1"></div>
+        <div class="open-book">
+          <div class="open-book-left"><span class="open-book-left-deco">⚔️</span></div>
+          <div class="open-book-right">
+            <div class="open-book-title"><em>Prince Caspian</em></div>
+            <div class="open-book-chapter">Chapters 13&ndash;15: Response &amp; Reflection</div>
+            <div class="open-book-prompt">Flip back through the final chapters before you answer.</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <span class="callout-icon">💭</span>
+        <p>Before you answer the questions on the Assignment tab, think about these three chapters together. You don&rsquo;t need to write anything here &mdash; just think.</p>
+      </div>
+      <div class="pause-columns">
+        <div class="pause-col">
+          <div class="socratic-box" style="margin-bottom:0;">
+            <div class="socratic-label">🤔 Chapter 10</div>
+            <p class="socratic-q">Lucy finally finds Aslan. He says he is not bigger &mdash; but she is older. What does that mean? What does their reunion say about trust?</p>
+          </div>
+        </div>
+        <div class="pause-col">
+          <div class="socratic-box" style="margin-bottom:0;">
+            <div class="socratic-label">🤔 Chapter 11</div>
+            <p class="socratic-q">How do Lucy, Susan, and Nikabrik each respond when they realize they were wrong? What&rsquo;s the difference between their choices?</p>
+          </div>
+        </div>
+      </div>
+      <div class="socratic-box" style="margin-top:14px;">
+        <div class="socratic-label">🤔 Chapter 12 &amp; Across the Week</div>
+        <p class="socratic-q">Nikabrik turns to dark magic. Peter admits his mistake to Caspian. Aslan says people can never know &ldquo;what would have happened.&rdquo; What do these three responses tell you about how C. S. Lewis thinks we should handle regret?</p>
+      </div>
+      <div class="thinking-stop">💭 Hold these thoughts &mdash; they&rsquo;re the foundation of your Assignment responses.</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">You&rsquo;ve thought through the whole novel. Now it&rsquo;s time to write your final literary response and close out <em>Prince Caspian</em> strong.</p>
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 📬 Assignment &rarr;</button>
+  </div>
+</div><!-- /tab-reading -->
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB 4: ASSIGNMENT                          -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap" style="margin-bottom:16px;">
+    <div class="video-wrap-header"><span style="font-size:20px;">📬</span><div><div class="video-wrap-type">Assignment &middot; Week Closer</div><div class="video-wrap-title">Your Final Submission &mdash; <em>Prince Caspian</em></div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📬</div><div class="video-placeholder-text">Teacher explains what to submit</div><div class="video-placeholder-id"><!-- slot: 30-4-assignment --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 4 submission: vocabulary choice board + 3 comprehension questions + final literary analysis paragraph<br>&bull; Questions focus on Ch. 13&ndash;15 but invite students to look across the whole novel<br>&bull; Writing Connection is the final literary analysis: theme and character for the whole book<br>&bull; Encourage students to take their time &mdash; this is the culminating response for the unit<br>&bull; ~1&ndash;2 minutes</div></div></div></div>
+  </div>
+
+  <div class="callout callout-info" style="margin:0 0 20px;">
+    <span class="callout-icon">📬</span>
+    <p><strong>This is the part you submit.</strong> Answer in complete sentences. Use evidence from Chapters 13&ndash;15 and from across the whole novel where asked. When you finish, copy or download your work at the bottom.</p>
+  </div>
+
+  <!-- Part A -->
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">A</div><div><div class="activity-title">📖 Part A: Chapter Thinking</div><div class="activity-sub">Answer using evidence from Chapters 13&ndash;15 and the whole novel.</div></div></div>
+    <div class="activity-body">
+
+      <div class="q-block"><div class="q-text"><span class="q-num">1</span>Peter fights with honor &mdash; stepping back when Miraz falls &mdash; while Glozelle and Sopespian betray their own king. Compare these two kinds of leadership. What does C. S. Lewis want us to understand about honor?</div><div class="q-hint">Look at what Peter does when he could take advantage &mdash; and what Glozelle and Sopespian do. What does the contrast teach?</div></div>
+      <div class="textbox-prompt">Use at least two specific details from Chapter 13 to support your comparison.</div>
+      <textarea class="journal-box" id="journal-q1" data-label="Q1: Peter's honor vs. Glozelle and Sopespian's treachery" placeholder="Peter shows honor when he... Even though he could have... Glozelle and Sopespian, on the other hand,... Lewis seems to be saying that true honor means..." oninput="autoSave(this,'dot-q1');gatherAnswers();"></textarea>
+
+      <div class="q-block" style="margin-top:16px;"><div class="q-text"><span class="q-num">2</span>Aslan tells Caspian that his ancestors were pirates &mdash; but also says he comes from &ldquo;the Lord Adam and the Lady Eve,&rdquo; which is &ldquo;honour enough.&rdquo; What is Aslan teaching Caspian about where real worth comes from?</div><div class="q-hint">Think about what Aslan is saying &mdash; it&rsquo;s not about your family&rsquo;s past. What does he think matters more?</div></div>
+      <div class="textbox-prompt">Explain what Aslan&rsquo;s words mean and why this lesson matters for Caspian becoming king.</div>
+      <textarea class="journal-box" id="journal-q2" data-label="Q2: Aslan's lesson about worth — Caspian's ancestors and Adam and Eve" placeholder="Aslan tells Caspian that his ancestors were pirates, which means... But then Aslan says that coming from Adam and Eve is enough because... This teaches Caspian that real worth comes from..." oninput="autoSave(this,'dot-q2');gatherAnswers();"></textarea>
+
+      <div class="q-block" style="margin-top:16px;"><div class="q-text"><span class="q-num">3</span>Think about the <strong>whole novel</strong>. What is C. S. Lewis saying about what it means to be a true king? Use evidence from at least two characters &mdash; Caspian, Peter, Miraz, or another character of your choice.</div><div class="q-hint">A true king in Lewis&rsquo;s view isn&rsquo;t just powerful. Look at what separates the good rulers from the bad ones across the whole story.</div></div>
+      <div class="textbox-prompt">Use at least two characters and draw on events from anywhere in the novel, not just the final chapters.</div>
+      <textarea class="journal-box" id="journal-q3" data-label="Q3: What makes a true king — evidence from the whole novel" placeholder="According to C.S. Lewis, a true king is someone who... Caspian shows this when he... Peter also shows this by... In contrast, Miraz fails as a king because... Lewis seems to believe that being a true king means..." oninput="autoSave(this,'dot-q3');gatherAnswers();"></textarea>
+    </div>
+  </div>
+
+  <!-- Part C -->
+  <div class="activity bl-gold">
+    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Final Literary Response</div><div class="activity-sub">Literary analysis &mdash; theme and character for the whole novel.</div></div></div>
+    <div class="activity-body">
+      <div class="callout callout-think">
+        <span class="callout-icon">💭</span>
+        <p>This is your final literary response for <em>Prince Caspian</em>. You have read the whole novel, studied its characters, and built strong reading and writing skills. Now put those ideas together in one well-crafted paragraph.</p>
+      </div>
+      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Choose <strong>ONE</strong> of these questions and write a complete paragraph (5&ndash;7 sentences): <strong>(1)</strong> What does <em>Prince Caspian</em> teach us about what makes a true leader? <strong>OR (2)</strong> What does the novel say about loyalty &mdash; who shows it, who betrays it, and why it matters? Use at least <strong>three pieces of evidence</strong> from the novel.</div><div class="q-hint">Start with a clear claim about the theme. Give three specific examples from the text. End with a sentence that explains why this matters.</div></div>
+      <div class="task-box" style="margin-bottom:12px;background:#FFF8F0;border-color:#F5E6C8;">
+        <div class="task-label">✏️ Sentence Frame (use this or write your own)</div>
+        <div class="task-sentence" style="border-left-color:#C7922C;font-size:14px;">In <em>Prince Caspian</em>, C. S. Lewis shows that [theme statement]. For example, [character] demonstrates this when ___. [Character 2] also shows this when ___. Even in the final chapters, ___. This matters because Lewis seems to be saying that ___.</div>
+      </div>
+      <div class="textbox-prompt">Write your final literary response here. Choose Question 1 (true leader) or Question 2 (loyalty). Aim for 5&ndash;7 sentences and at least three pieces of evidence.</div>
+      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Final literary analysis — theme and character" style="min-height:140px;" placeholder="I am answering Question [1 or 2].&#10;&#10;In Prince Caspian, C.S. Lewis shows that... For example,... Also,... Even in the final chapters,... This matters because Lewis seems to be saying that..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
+    </div>
+  </div>
+
+  <!-- Gathered Answers -->
+  <div class="gathered-card">
+    <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
+    <div class="gathered-body">
+      <p class="gathered-intro">Everything you typed is gathered below. Copy to paste into Canvas, or download as a PDF.</p>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn gathered-btn-copy" onclick="copyGathered()">📋 Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-pdf" onclick="downloadJournal()">📄 Download as PDF</button>
+      </div>
+      <div class="gathered-copied" id="gatheredCopied">&#10003; Copied to clipboard!</div>
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="turn-in-card" style="margin-top:18px;">
+    <div class="turn-in-header"><div class="turn-in-header-icon">📬</div><div><div class="turn-in-header-label">Ready?</div><div class="turn-in-header-title">Before You Submit</div></div></div>
+    <div class="turn-in-body">
+      <div class="turn-in-checklist" id="checklistItems">
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Vocabulary Choice Board &mdash; I chose one option and used words from the full unit list.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with evidence from Chapters 13&ndash;15 and the whole novel.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Final Literary Response &mdash; 5&ndash;7 sentences on theme and character with at least three pieces of evidence.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-main"><span>Optima Academy Online</span> &middot; 4th Grade ELA &middot; Week 30 &middot; Lesson 30.4</div>
+  <div class="footer-sub"><em>Prince Caspian</em> &mdash; Chapters 13&ndash;15: Response &amp; Reflection</div>
+  <div class="footer-copy">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+<script>
+/* TAB SWITCHING */
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('tab-'+tabId).classList.add('active');
+  var btn=document.querySelector('.tab-btn[data-tab="'+tabId+'"]');
+  btn.classList.add('active'); btn.classList.add('visited');
+  updateProgress();
+  var intro=document.getElementById('introSection');
+  if(tabId==='warmup'){intro.classList.remove('collapsed');}else{intro.classList.add('collapsed');}
+  if(tabId==='assignment'){gatherAnswers();}
+  document.getElementById('pageTop').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function expandIntro(){document.getElementById('introSection').classList.remove('collapsed');}
+
+/* GATHER ANSWERS */
+function gatherAnswers(){
+  var output='';
+  output+='LESSON 30.4 — Prince Caspian: Final Response & Reflection\n';
+  output+='════════════════════════════════════════\n\n';
+  output+='🔤 VOCABULARY SWYK: CHOICE BOARD\n────────────────────────────────\n';
+  var vEl=document.getElementById('journal-vocabulary');
+  if(vEl){output+='\n'+(vEl.getAttribute('data-label')||'Vocabulary SWYK')+'\n'+(vEl.value.trim()||'(no answer)')+'\n';}
+  output+='\n📖 CHAPTER THINKING\n────────────────────────────────\n';
+  ['journal-q1','journal-q2','journal-q3'].forEach(function(id){
+    var el=document.getElementById(id); if(!el)return;
+    output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
+  });
+  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
+  var wEl=document.getElementById('journal-writing');
+  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  output+='\n🎮 PRACTICE ACTIVITIES\n────────────────────────────────\n';
+  output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Word Base Match\n';
+  var cDone=0; for(var i=1;i<=5;i++){var s=document.getElementById('depClause'+i);if(s&&s.getAttribute('data-done')==='true')cDone++;}
+  output+=(cDone>=5?'✅':'⬜')+' Dependent Clause Spotter\n';
+  var sDone=0; for(var j=1;j<=3;j++){var sw=document.getElementById('schwa'+j);if(sw&&sw.getAttribute('data-done')==='true')sDone++;}
+  output+=(sDone>=3?'✅':'⬜')+' Schwa Odd One Out\n';
+  var g=document.getElementById('gatheredOutput'); if(g)g.value=output;
+}
+
+/* COPY */
+function copyGathered(){
+  var g=document.getElementById('gatheredOutput'); if(!g)return;
+  g.select(); g.setSelectionRange(0,99999);
+  try{navigator.clipboard.writeText(g.value).then(showCopied).catch(function(){document.execCommand('copy');showCopied();});}
+  catch(e){document.execCommand('copy');showCopied();}
+}
+function showCopied(){var m=document.getElementById('gatheredCopied');m.classList.add('show');setTimeout(function(){m.classList.remove('show');},2500);}
+
+/* PROGRESS */
+function updateProgress(){
+  var total=document.querySelectorAll('.tab-btn').length;
+  var visited=document.querySelectorAll('.tab-btn.visited').length;
+  var pct=Math.round((visited/total)*100);
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressPct').textContent=pct+'%';
+}
+document.querySelector('.tab-btn.active').classList.add('visited');
+updateProgress();
+(function(){var pw=document.querySelector('.progress-wrap'),tb=document.querySelector('.tab-bar');if(pw&&tb)tb.style.top=pw.offsetHeight+'px';})();
+
+/* CHECKLIST */
+function toggleCheck(item){
+  item.classList.toggle('checked');
+  var check=item.querySelector('.turn-in-check');
+  check.textContent=item.classList.contains('checked')?'✓':'';
+  var container=item.closest('.turn-in-checklist'); if(!container)return;
+  var all=container.querySelectorAll('.turn-in-item').length===container.querySelectorAll('.turn-in-item.checked').length;
+  if(all&&container.querySelectorAll('.turn-in-item').length>0)fireConfetti();
+}
+
+/* CONFETTI */
+function fireConfetti(){
+  var canvas=document.getElementById('confettiCanvas'),ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+  var colors=['#2D5016','#C7922C','#34B76F','#55C8E8','#FFE9B8','#4A7C2E'];
+  var emojis=['🦁','⚔️','🏰','👑','⭐','🌲'];
+  var particles=[];
+  for(var i=0;i<90;i++)particles.push({type:'square',x:Math.random()*canvas.width,y:-20-Math.random()*120,vx:(Math.random()-0.5)*6,vy:Math.random()*3.5+2,size:Math.random()*8+4,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.2});
+  for(var j=0;j<25;j++)particles.push({type:'emoji',emoji:emojis[Math.floor(Math.random()*emojis.length)],x:Math.random()*canvas.width,y:-30-Math.random()*150,vx:(Math.random()-0.5)*5,vy:Math.random()*3+1.5,size:Math.random()*10+22,rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.12});
+  var frame=0,totalFrames=300,fadeStart=240;
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    var alpha=frame>fadeStart?Math.max(0,1-((frame-fadeStart)/(totalFrames-fadeStart))):1;
+    ctx.globalAlpha=alpha;
+    particles.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=0.08;p.rot+=p.vrot;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);if(p.type==='emoji'){ctx.font=p.size+'px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.emoji,0,0);}else{ctx.fillStyle=p.color;ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);}ctx.restore();});
+    frame++; if(frame<totalFrames)requestAnimationFrame(animate);else{ctx.globalAlpha=1;ctx.clearRect(0,0,canvas.width,canvas.height);}
+  }
+  animate();
+}
+
+/* BACK TO TOP */
+(function(){
+  var btn=document.getElementById('backToTop'); if(!btn)return;
+  var inIframe=(function(){try{return window.self!==window.top;}catch(e){return true;}})();
+  btn.addEventListener('click',function(){
+    try{window.scrollTo({top:0,behavior:'smooth'});}catch(e){}
+    document.documentElement.scrollTop=0; document.body.scrollTop=0;
+    var top=document.getElementById('pageTop');
+    if(top&&top.scrollIntoView)try{top.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}
+    try{if(window.frameElement&&window.frameElement.scrollIntoView)window.frameElement.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}
+    if(inIframe)try{window.parent.postMessage({type:'optima-lesson:scroll-to-top'},'*');}catch(e){}
+  });
+  if(inIframe)setTimeout(function(){btn.classList.add('show');},1500);
+  else window.addEventListener('scroll',function(){btn.classList.toggle('show',window.pageYOffset>400);});
+})();
+
+/* SCHWA ODD ONE OUT */
+function schwaOdd(word,sentenceId){
+  var sentence=document.getElementById(sentenceId); if(sentence.getAttribute('data-done')==='true')return;
+  var isCorrect=word.getAttribute('data-correct')==='true';
+  var result=document.getElementById(sentenceId+'-result');
+  if(isCorrect){word.classList.add('correct-reveal');result.textContent='✅ Correct! That word doesn\'t have a schwa sound.';result.className='spotter-result show win';sentence.setAttribute('data-done','true');}
+  else{word.classList.add('wrong-reveal');result.textContent='🤔 That word does have a schwa. Look for the odd one out — a word with no unstressed "uh" sound.';result.className='spotter-result show miss';setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},2500);}
+}
+
+/* WORD BASE MATCH */
+var rootMatchFirst=null,rootMatchCount=0; window._rootMatchDone=false;
+function rootMatchClick(item){
+  if(item.classList.contains('matched'))return;
+  if(!rootMatchFirst){rootMatchFirst=item;item.classList.add('selected');return;}
+  if(rootMatchFirst===item){rootMatchFirst.classList.remove('selected');rootMatchFirst=null;return;}
+  var k1=rootMatchFirst.getAttribute('data-match'),k2=item.getAttribute('data-match');
+  if(k1===k2&&rootMatchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
+    rootMatchFirst.classList.remove('selected'); rootMatchFirst.classList.add('matched'); item.classList.add('matched'); rootMatchCount++; rootMatchFirst=null;
+    if(rootMatchCount>=4){var fb=document.getElementById('rootMatchFeedback');if(fb)fb.classList.add('show');window._rootMatchDone=true;}
+  } else {
+    item.classList.add('wrong-flash'); rootMatchFirst.classList.add('wrong-flash');
+    var a=rootMatchFirst,b=item; setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500); rootMatchFirst=null;
+  }
+}
+
+/* DEPENDENT CLAUSE SPOTTER */
+function clauseSpot(word,sentenceId){
+  var sentence=document.getElementById(sentenceId); if(sentence.getAttribute('data-done')==='true')return;
+  sentence.querySelectorAll('.spotter-word').forEach(function(w){w.classList.remove('selected');});
+  var result=document.getElementById(sentenceId+'-result');
+  var isCorrect=word.getAttribute('data-correct')==='true';
+  if(isCorrect){word.classList.add('correct-reveal');result.textContent='✅ That\'s the dependent clause! It can\'t stand alone as a sentence.';result.className='spotter-result show win';sentence.setAttribute('data-done','true');}
+  else{word.classList.add('wrong-reveal');result.textContent='🤔 That\'s the independent clause — it can stand alone. Look for the part that starts with because, although, when, even though, or if.';result.className='spotter-result show miss';setTimeout(function(){word.classList.remove('wrong-reveal');result.classList.remove('show');},2500);}
+}
+
+/* DOL HIGHLIGHTER */
+function dolHighlight(word,explanation){
+  word.classList.toggle('highlighted');
+  var explain=document.getElementById('dolExplain');
+  if(word.classList.contains('highlighted')&&explanation){explain.textContent='→ '+explanation;explain.style.opacity='1';}
+  else{if(document.querySelectorAll('#dolModel .highlighted').length===0)explain.textContent='';}
+}
+
+/* AUTO-SAVE */
+function autoSave(textarea,dotId){
+  var dot=document.getElementById(dotId); if(dot){dot.classList.add('saved');clearTimeout(textarea._saveTimeout);textarea._saveTimeout=setTimeout(function(){},300);}
+}
+
+/* DOWNLOAD PDF */
+function downloadJournal(){
+  gatherAnswers();
+  var sections=[
+    {title:'🔤 VOCABULARY SWYK: CHOICE BOARD',ids:['journal-vocabulary']},
+    {title:'📖 CHAPTER THINKING',ids:['journal-q1','journal-q2','journal-q3']},
+    {title:'✍️ WRITING CONNECTION',ids:['journal-writing']}
+  ];
+  var html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Lesson 30.4 — My Work</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#1a1a2e;line-height:1.7;}h1{font-size:22px;border-bottom:3px solid #2D5016;padding-bottom:8px;}h2{font-size:14px;color:#7A88A8;margin-bottom:24px;}.st{font-size:16px;font-weight:bold;color:#0E1C42;margin:28px 0 4px;padding:8px 0 4px;border-bottom:2px solid #E2E8F4;}.ql{font-size:13px;font-weight:bold;color:#3A4A6B;margin:16px 0 2px;}.qa{font-size:14px;color:#0E1C42;margin:0 0 4px;padding:6px 12px;background:#f8f9fc;border-left:3px solid #D6F2FB;border-radius:4px;white-space:pre-wrap;}.na{color:#B0B8CC;font-style:italic;}.gm{margin-top:28px;padding-top:12px;border-top:2px solid #E2E8F4;}.gt{font-size:16px;font-weight:bold;color:#0E1C42;margin-bottom:8px;}.gl{font-size:14px;margin-bottom:4px;}</style></head><body>';
+  html+='<h1>📓 My Work — Lesson 30.4</h1><h2>Prince Caspian — Chapters 13&ndash;15: Response &amp; Reflection</h2>';
+  sections.forEach(function(sec){
+    html+='<div class="st">'+sec.title+'</div>';
+    sec.ids.forEach(function(id){
+      var el=document.getElementById(id); if(!el)return;
+      var label=el.getAttribute('data-label')||id, val=el.value.trim();
+      html+='<div class="ql">'+label+'</div>';
+      html+='<div class="qa'+(val?'':' na')+'">'+(val?val.replace(/</g,'&lt;').replace(/>/g,'&gt;'):'(no answer)')+'</div>';
+    });
+  });
+  var cDone=0; for(var i=1;i<=5;i++){var s=document.getElementById('depClause'+i);if(s&&s.getAttribute('data-done')==='true')cDone++;}
+  var sDone=0; for(var j=1;j<=3;j++){var sw=document.getElementById('schwa'+j);if(sw&&sw.getAttribute('data-done')==='true')sDone++;}
+  html+='<div class="gm"><div class="gt">🎮 Mini-Game Results</div>';
+  html+='<div class="gl">'+(window._rootMatchDone?'✅':'⬜')+' Morphology Word Base Match</div>';
+  html+='<div class="gl">'+(cDone>=5?'✅':'⬜')+' Dependent Clause Spotter</div>';
+  html+='<div class="gl">'+(sDone>=3?'✅':'⬜')+' Schwa Odd One Out</div></div>';
+  html+='';
+  var win=window.open('','_blank'); win.document.write(html); win.document.close(); setTimeout(function(){win.print();},400);
+}
+
+/* STORY JOURNEY TRACKER */
+var TRACKER_TOTAL=5, TRACKER_PROGRESS=4.0;
+var trackerIcons=['🌲','🏰','⚔️','🦁','👑'];
+var trackerPos=[{x:6,y:148},{x:20,y:132},{x:35,y:140},{x:52,y:128},{x:68,y:136},{x:80,y:124},{x:88,y:118},{x:94,y:112}];
+(function renderTracker(){
+  var scene=document.getElementById('scene'); if(!scene)return;
+  var reached=Math.floor(TRACKER_PROGRESS*TRACKER_TOTAL);
+  var frac=(TRACKER_PROGRESS*TRACKER_TOTAL)-reached;
+  for(var i=0;i<TRACKER_TOTAL;i++){
+    var n=document.createElement('div');
+    var isDone=i<reached, isActive=i===reached;
+    n.className='node'+(isDone?' done':'')+(isActive?' active':'')+(!isDone&&!isActive?' upcoming':'');
+    n.style.left='calc('+trackerPos[i].x+'% - 15px)';
+    n.style.top=trackerPos[i].y+'px';
+    n.innerHTML=isDone?'\u2726':trackerIcons[i];
+    scene.appendChild(n);
+  }
+  var tok=document.getElementById('characterToken'); if(!tok)return;
+  var idx=Math.min(reached,TRACKER_TOTAL-1);
+  var tokX=trackerPos[idx].x, tokY=trackerPos[idx].y;
+  if(reached<TRACKER_TOTAL-1&&frac>0){tokX=trackerPos[idx].x+(trackerPos[idx+1].x-trackerPos[idx].x)*frac;tokY=trackerPos[idx].y+(trackerPos[idx+1].y-trackerPos[idx].y)*frac;}
+  tok.style.left='calc('+tokX+'% - 14px)'; tok.style.top=(tokY-36)+'px';
+})();
+
+/* VIDEO MANIFEST LOADER */
+(function(){
+  var SCRIPT_URL="https://raw.githubusercontent.com/optimaondemand/optima-assets/main/videos.js";
+  function loadVideos(){
+    if(!window.VIDEO_MANIFEST)return;
+    document.querySelectorAll('.video-placeholder').forEach(function(ph){
+      var comment=null;
+      ph.childNodes.forEach(function(node){
+        if(node.nodeType===1&&node.className==='video-placeholder-id'){
+          node.childNodes.forEach(function(c){if(c.nodeType===8&&/slot:/.test(c.nodeValue))comment=c.nodeValue.replace(/.*slot:\s*/,'').trim();});
+        }
+      });
+      if(!comment)return;
+      var entry=window.VIDEO_MANIFEST[comment]; if(!entry)return;
+      var ratioWrap=ph.parentElement; if(!ratioWrap)return;
+      if(entry.indexOf('<iframe')===0||entry.indexOf('<IFRAME')===0)ratioWrap.innerHTML=entry;
+      else ratioWrap.innerHTML='<iframe src="'+entry+'" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen></iframe>';
+    });
+  }
+  var s=document.createElement('script'); s.src=SCRIPT_URL; s.async=true; s.onload=loadVideos; s.onerror=function(){};
+  document.head.appendChild(s);
+})();
+</script>
+
+</html>

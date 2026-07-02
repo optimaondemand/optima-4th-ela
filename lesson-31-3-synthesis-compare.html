@@ -1,0 +1,3113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 31.3 — Year-End Synthesis: Applying Themes</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+*,*::before,*::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F0F2F8;
+  color: #0E1C42;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0 0 40px rgba(14, 28, 66, 0.08);
+}
+
+/* ═══════════ PROGRESS BAR ═══════════ */
+.progress-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: #0E1C42;
+  padding: 8px 20px 10px;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.progress-label {
+  font-size: 12px;
+  color: #55C8E8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+.progress-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #55C8E8, #7FD8F0, #C7922C);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+.progress-pct {
+  font-size: 13px;
+  color: #C7922C;
+  font-weight: 800;
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ═══════════ HEADER ═══════════ */
+.header {
+  background: #0E1C42;
+  border-bottom: 6px solid #55C8E8;
+  padding: 20px 28px 18px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #55C8E8, #7FD8F0, #55C8E8);
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.header-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.header-title em { color: #FFE9B8; font-style: italic; }
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(85, 200, 232, 0.15);
+  border: 1.5px solid rgba(85, 200, 232, 0.35);
+  border-radius: 28px;
+  padding: 6px 16px;
+}
+.header-badge-icon { font-size: 22px; }
+.header-badge-text { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ═══════════ INFO STRIP ═══════════ */
+.info-strip {
+  display: flex;
+  flex-wrap: wrap;
+  background: #FFFFFF;
+  border-bottom: 2px solid #E2E8F4;
+}
+.info-cell {
+  flex: 1;
+  min-width: 150px;
+  padding: 12px 16px;
+  border-right: 1px solid #E2E8F4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.info-cell:last-child { border-right: none; }
+.info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.info-label {
+  font-size: 10px;
+  color: #7A88A8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+.info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #3A4A6B; line-height: 1.3; }
+
+/* ═══════════ INTRO COLLAPSIBLE ═══════════ */
+.intro-section { transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease; overflow: hidden; }
+.intro-section.collapsed .intro-2col,
+.intro-section.collapsed .need-strip { display: none; }
+.intro-collapsed-bar {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 28px;
+  background: #FFF8F0;
+  border-bottom: 2px solid #F5E6C8;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.intro-collapsed-bar:hover { background: #FFF3DC; }
+.intro-section.collapsed .intro-collapsed-bar { display: flex; }
+.intro-collapsed-icon { font-size: 18px; }
+.intro-collapsed-text {
+  font-size: 14px;
+  color: #5A4A3A;
+  font-weight: 700;
+  flex: 1;
+}
+.intro-collapsed-toggle {
+  font-size: 12px;
+  color: #C7922C;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════ INTRO 2-COL ═══════════ */
+.intro-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 20px 28px 4px;
+}
+.intro-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+}
+.intro-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 2px solid;
+}
+.intro-card-head-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.intro-card-head-label {
+  font-size: 10px;
+  color: #7A88A8;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+}
+.intro-card-head-title { font-size: 18px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.intro-card-body { padding: 14px 18px; }
+.intro-card-body p { font-size: 15px; color: #3A4A6B; line-height: 1.65; margin-bottom: 8px; }
+.intro-card-body p:last-child { margin-bottom: 0; }
+.intro-card-body .obj-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+.intro-card-body .obj-line:last-child { margin-bottom: 0; }
+.intro-card-body .obj-icon { flex-shrink: 0; font-size: 17px; }
+.theme-question .intro-card-head { background: #FFF3DC; border-color: #F5E6C8; }
+.theme-question .intro-card-head-icon { background: #C7922C; }
+.theme-objectives .intro-card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-objectives .intro-card-head-icon { background: #55C8E8; }
+
+/* ═══════════ NEED STRIP ═══════════ */
+.need-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 28px 18px;
+}
+.need-strip-label {
+  font-size: 13px;
+  color: #3A4A6B;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.need-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #E3F8ED;
+  border: 1.5px solid #B8E8CF;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 13px;
+  color: #0E1C42;
+  font-weight: 700;
+}
+
+/* ═══════════ TAB BAR ═══════════ */
+.tab-bar {
+  position: sticky;
+  top: 38px;
+  z-index: 100;
+  background: #FFFFFF;
+  border-bottom: 3px solid #E2E8F4;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  box-shadow: 0 -4px 0 0 #0E1C42;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1;
+  min-width: 130px;
+  padding: 12px 8px 11px;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7A88A8;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  line-height: 1.3;
+  text-align: center;
+}
+.tab-btn:hover { color: #0E1C42; background: #EAF8FD; }
+.tab-btn.active {
+  color: #0E1C42;
+  border-bottom-color: #55C8E8;
+  background: #FFFFFF;
+}
+.tab-btn .tab-check {
+  display: none;
+  font-size: 12px;
+  color: #34B76F;
+  margin-left: 4px;
+  font-weight: 800;
+}
+.tab-btn.visited .tab-check { display: inline; }
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+
+/* ═══════════ VIDEO WRAP ═══════════ */
+.video-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid #E2E8F4;
+  box-shadow: 0 4px 20px rgba(14, 28, 66, 0.08);
+  background: #000;
+  margin: 0 0 22px;
+}
+.video-wrap-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  border-bottom: 2px solid rgba(85, 200, 232, 0.2);
+}
+.video-wrap-type {
+  font-size: 10px;
+  color: #55C8E8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: 'Nunito', sans-serif;
+}
+.video-placeholder-id {
+  font-size: 11px;
+  color: rgba(85, 200, 232, 0.4);
+  font-family: monospace;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+.video-teacher-notes {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(85, 200, 232, 0.25);
+  border-radius: 8px;
+  text-align: left;
+  max-width: 480px;
+}
+.video-teacher-notes-label {
+  font-size: 10px;
+  color: rgba(85, 200, 232, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  font-family: 'Nunito', sans-serif;
+}
+.video-teacher-notes-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.55;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ═══════════ ACTIVITY CARDS ═══════════ */
+.activity {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+}
+.activity.bl-cyan { border-left: 6px solid #55C8E8; }
+.activity.bl-gold { border-left: 6px solid #C7922C; }
+.activity.bl-green { border-left: 6px solid #34B76F; }
+.activity.bl-purple { border-left: 6px solid #8B6FC0; }
+.activity.bl-rose { border-left: 6px solid #c7627e; }
+.activity.bl-navy { border-left: 6px solid #0E1C42; }
+.activity-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E2E8F4;
+}
+.activity-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.activity-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.activity-sub { font-size: 12px; color: #7A88A8; }
+.activity-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  margin-left: auto;
+}
+.activity-body { padding: 18px 22px; }
+.activity-body p { font-size: 17px; color: #3A4A6B; line-height: 1.75; margin-bottom: 12px; }
+.activity-body p:last-child { margin-bottom: 0; }
+
+/* ═══════════ CALLOUTS ═══════════ */
+.callout {
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.callout:last-child { margin-bottom: 0; }
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #0E1C42; line-height: 1.65; margin: 0; }
+.callout-info { background: #EAF8FD; border: 2px solid #D6F2FB; }
+.callout-think { background: #FFF3DC; border: 2px solid #F5E6C8; }
+.callout-tip { background: #E3F8ED; border: 2px solid #B8E8CF; }
+.callout-vocab { background: #F0E8FF; border: 2px solid #D8CCF0; }
+.callout-submit { background: #FDE8F0; border: 2px solid #F0B8CA; }
+
+/* ═══════════ SOCRATIC BOX ═══════════ */
+.socratic-box {
+  background: linear-gradient(135deg, #F0E8FF 0%, #E8DCFA 100%);
+  border: 2px solid #D8CCF0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.socratic-box:last-child { margin-bottom: 0; }
+.socratic-label {
+  font-size: 12px;
+  color: #6B4FB0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.socratic-q {
+  font-size: 16px;
+  color: #0E1C42;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.socratic-q:last-child { margin-bottom: 0; }
+.socratic-q strong { font-style: normal; color: #0E1C42; }
+
+/* ═══════════ DOL & PRACTICE TASKS ═══════════ */
+.task-box {
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.task-box:last-child { margin-bottom: 0; }
+.task-label {
+  font-size: 12px;
+  color: #55C8E8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.task-sentence {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F4;
+  border-left: 4px solid #C7922C;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #0E1C42;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-family: 'Lora', Georgia, serif;
+}
+.task-sentence:last-child { margin-bottom: 0; }
+.task-instruction { font-size: 15px; color: #3A4A6B; line-height: 1.6; margin-bottom: 10px; }
+
+/* ═══════════ POETRY ═══════════ */
+.poem-box {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 2px solid #F5E6C8;
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 14px;
+}
+.poem-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 18px;
+  color: #0E1C42;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.poem-author {
+  font-size: 13px;
+  color: #7A88A8;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+.poem-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  color: #3A4A6B;
+  line-height: 1.8;
+  font-style: italic;
+  white-space: pre-line;
+}
+
+/* ═══════════ STORY JOURNEY TRACKER ═══════════ */
+.tracker-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+  margin-bottom: 22px;
+}
+.tracker-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #2D5016 0%, #4A7C2E 100%);
+  border-bottom: 2px solid #3A6B1E;
+}
+.tracker-header-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tracker-header-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+}
+.tracker-header-title { font-size: 17px; color: #fff; font-weight: 800; line-height: 1.2; }
+.scene-wrap {
+  width: 100%;
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  border-bottom: 3px solid #8B6F47;
+  background: linear-gradient(180deg, #c2ddf0 0%, #d4eaf7 30%, #a8d5a0 50%, #7db356 58%, #5a9a3a 65%, #4a7c2e 100%);
+  user-select: none;
+}
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+.hills-far {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background:
+    radial-gradient(ellipse 220px 60px at 10% 100%, #8abb6d 70%, transparent 71%),
+    radial-gradient(ellipse 300px 70px at 30% 100%, #79ad58 70%, transparent 71%),
+    radial-gradient(ellipse 250px 55px at 55% 100%, #8abb6d 70%, transparent 71%),
+    radial-gradient(ellipse 280px 65px at 78% 100%, #6fa04a 70%, transparent 71%),
+    radial-gradient(ellipse 200px 50px at 95% 100%, #8abb6d 70%, transparent 71%);
+}
+.path-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.tree, .house, .flower {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
+}
+.flower { filter: none; font-size: 12px; z-index: 2; }
+.lake {
+  position: absolute;
+  background: linear-gradient(180deg, rgba(135, 188, 222, 0.5), rgba(135, 188, 222, 0.3));
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 1;
+}
+.node {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  z-index: 5;
+  border: 3px solid #f5f0e6;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+}
+.node.done {
+  background: #4a7c2e;
+  border-color: #fde8a0;
+  box-shadow: 0 0 0 2px #4a7c2e, 0 2px 8px rgba(74, 124, 46, 0.45);
+  color: #fff;
+}
+.node.active {
+  background: #C7922C;
+  border-color: #fde8a0;
+  box-shadow: 0 0 0 3px #C7922C, 0 0 14px rgba(199, 146, 44, 0.5);
+  transform: scale(1.15);
+  color: #fff;
+}
+.node.upcoming { opacity: 0.55; }
+.character-token {
+  position: absolute;
+  font-size: 26px;
+  z-index: 20;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+  animation: hop 2s ease-in-out infinite;
+}
+@keyframes hop {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-5px) rotate(3deg); }
+}
+.title-plaque {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(253, 248, 240, 0.92);
+  border: 2px solid #c4a882;
+  border-radius: 8px;
+  padding: 3px 18px 4px;
+  z-index: 15;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+.title-plaque h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D5016;
+  line-height: 1.2;
+}
+.title-plaque h1 em { color: #C7922C; font-style: italic; }
+.tracker-chapter-label {
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #7A88A8;
+  font-weight: 600;
+  background: #FAFBFF;
+  border-top: 1px solid #E2E8F4;
+}
+.tracker-chapter-label strong { color: #C7922C; }
+
+/* ═══════════ KEY CONCEPT ═══════════ */
+.key-concept {
+  background: #FFF3DC;
+  border: 2px solid #F5E6C8;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.key-concept:last-child { margin-bottom: 0; }
+.key-concept-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.key-concept p { font-size: 15px; color: #0E1C42; line-height: 1.7; margin-bottom: 6px; }
+
+/* ═══════════ VOCABULARY FLIP CARDS ═══════════ */
+.vocab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 14px 0;
+}
+.flip-card {
+  perspective: 800px;
+  height: 175px;
+  cursor: pointer;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  text-align: center;
+  border: 2px solid #E2E8F4;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.06);
+}
+.flip-card-front {
+  background: #FFFFFF;
+  border-top: 5px solid #55C8E8;
+}
+.flip-card-front .fc-emoji { font-size: 28px; margin-bottom: 6px; }
+.flip-card-front .fc-word {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0E1C42;
+  margin-bottom: 4px;
+}
+.flip-card-front .fc-tap {
+  font-size: 11px;
+  color: #7A88A8;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.flip-card-back {
+  background: linear-gradient(145deg, #0E1C42, #1A2D5A);
+  border-color: #0E1C42;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def {
+  font-size: 13.5px;
+  color: #fff;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.flip-card-back .fc-word-back {
+  font-size: 10px;
+  color: #55C8E8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+/* ═══════════ COPYWORK ═══════════ */
+.copywork-box {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 2px solid #F5E6C8;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.copywork-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.copywork-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  color: #0E1C42;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.copywork-instruction { font-size: 14px; color: #3A4A6B; line-height: 1.5; }
+
+/* ═══════════ READING BOX ═══════════ */
+.reading-links {
+  background: #EAF8FD;
+  border: 2px solid #D6F2FB;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.reading-links-title {
+  font-size: 14px;
+  color: #1A6B8E;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.reading-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1.5px solid #B8E0F0;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #0E1C42;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.reading-link:last-child { margin-bottom: 0; }
+.reading-link:hover { background: #EAF8FD; border-color: #55C8E8; }
+.reading-link-icon { font-size: 20px; }
+
+/* ═══════════ RWM ═══════════ */
+.rwm-box {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.rwm-header {
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.rwm-sentence {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border-bottom: 2px solid #F5E6C8;
+  padding: 16px 20px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  color: #0E1C42;
+  line-height: 1.7;
+  font-style: italic;
+}
+.rwm-step {
+  padding: 14px 20px;
+  border-bottom: 1.5px solid #E2E8F4;
+}
+.rwm-step:last-child { border-bottom: none; }
+.rwm-step-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #55C8E8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.rwm-step-text { font-size: 15px; color: #3A4A6B; line-height: 1.6; }
+.rwm-frame {
+  background: #FAFBFF;
+  border: 1.5px dashed #C7922C;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 8px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  color: #C7922C;
+  font-style: italic;
+}
+
+/* ═══════════ FLUENCY ═══════════ */
+.fluency-passage {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 2px solid #F5E6C8;
+  border-left: 6px solid #C7922C;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  color: #0E1C42;
+  line-height: 1.85;
+  font-style: italic;
+}
+
+/* ═══════════ ASSIGNMENT QUESTIONS ═══════════ */
+.q-block {
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+.q-block:last-child { margin-bottom: 0; }
+.q-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #55C8E8;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.q-text { font-size: 16px; color: #0E1C42; line-height: 1.65; margin-bottom: 4px; }
+.q-hint { font-size: 14px; color: #7A88A8; font-style: italic; }
+.chapter-section-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 20px;
+  color: #0E1C42;
+  font-weight: 700;
+  margin: 18px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #55C8E8;
+}
+.chapter-section-title:first-child { margin-top: 6px; }
+
+/* ═══════════ TURN-IN CHECKLIST ═══════════ */
+.turn-in-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+  margin-top: 18px;
+}
+.turn-in-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #EAF8FD;
+  padding: 18px 22px;
+  border-bottom: 2px solid #D6F2FB;
+}
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label {
+  font-size: 11px;
+  color: #1A6B8E;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+.turn-in-header-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 22px;
+  color: #0E1C42;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.turn-in-body { padding: 18px 22px 20px; }
+.turn-in-intro { font-size: 15px; color: #3A4A6B; margin-bottom: 16px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: #FAFBFF;
+  border: 1.5px solid #E2E8F4;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #EAF8FD; border-color: #B8E0F0; }
+.turn-in-item.checked { background: #E3F8ED; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 2px solid #B8E0F0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check { background: #34B76F; border-color: #34B76F; }
+.turn-in-item-text { font-size: 15px; color: #0E1C42; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #3A4A6B; }
+
+/* ═══════════ QUOTE STRIP ═══════════ */
+.quote-strip {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border-bottom: 2px solid #F5E6C8;
+  padding: 14px 28px;
+  text-align: center;
+}
+.quote-strip-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #5A4A3A;
+  line-height: 1.6;
+}
+.quote-strip-attr {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  color: #7A88A8;
+  font-weight: 700;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════ NARRATIVE TRANSITION ═══════════ */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-transition-voice {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  color: #5A4A3A;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* ═══════════ OPEN BOOK CARD ═══════════ */
+.open-book-wrap {
+  position: relative;
+  margin-bottom: 22px;
+  padding: 10px 6px 6px;
+}
+.open-book-cover {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  right: 2px;
+  bottom: 0;
+  background: linear-gradient(145deg, #1E4010, #2D5016, #3D6020);
+  border-radius: 6px 20px 20px 6px;
+  box-shadow: 0 4px 20px rgba(30, 64, 16, 0.2);
+}
+.open-book-spine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 100%;
+  background: linear-gradient(90deg, #0E1C42, #162E0A, #2D5016, #162E0A, #0E1C42);
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+}
+.open-book-pages-3 {
+  position: absolute;
+  top: 3px;
+  left: 14px;
+  right: 14px;
+  bottom: 3px;
+  background: #E8E0D4;
+  border-radius: 3px 12px 12px 3px;
+  z-index: 2;
+}
+.open-book-pages-2 {
+  position: absolute;
+  top: 5px;
+  left: 16px;
+  right: 16px;
+  bottom: 4px;
+  background: #F0E8DC;
+  border-radius: 3px 10px 10px 3px;
+  z-index: 3;
+}
+.open-book-pages-1 {
+  position: absolute;
+  top: 7px;
+  left: 18px;
+  right: 18px;
+  bottom: 5px;
+  background: #F5EEE4;
+  border-radius: 3px 8px 8px 3px;
+  z-index: 4;
+}
+.open-book {
+  position: relative;
+  background: linear-gradient(170deg, #FFFDF8 0%, #FFF8F0 40%, #FFFDF8 100%);
+  border: none;
+  border-radius: 3px 6px 6px 3px;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 160px;
+  z-index: 5;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.open-book::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0,0,0,0.04) 20%,
+    rgba(0,0,0,0.07) 40%,
+    rgba(90,70,50,0.10) 50%,
+    rgba(0,0,0,0.07) 60%,
+    rgba(0,0,0,0.04) 80%,
+    transparent 100%
+  );
+  z-index: 6;
+  pointer-events: none;
+}
+.open-book::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 0;
+  width: 4px;
+  background: repeating-linear-gradient(180deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(200,185,165,0.3) 3px,
+    rgba(200,185,165,0.3) 4px
+  );
+  border-radius: 0 4px 4px 0;
+  z-index: 6;
+  pointer-events: none;
+}
+.open-book-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0.3;
+  position: relative;
+}
+.open-book-left::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 4px;
+  background: repeating-linear-gradient(180deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(200,185,165,0.3) 3px,
+    rgba(200,185,165,0.3) 4px
+  );
+  border-radius: 4px 0 0 4px;
+}
+.open-book-left-deco {
+  font-size: 48px;
+  filter: grayscale(30%);
+}
+.open-book-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 28px 24px 20px;
+}
+.open-book-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0E1C42;
+  margin-bottom: 4px;
+}
+.open-book-title em { color: #2D5016; }
+.open-book-chapter {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  color: #5A4A3A;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.open-book-prompt {
+  font-size: 14px;
+  color: #7A88A8;
+  font-weight: 600;
+}
+
+/* ═══════════ TAB NEXT BUTTON ═══════════ */
+.tab-next-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 30px;
+  background: linear-gradient(135deg, #55C8E8, #7FD8F0);
+  color: #0E1C42;
+  border: none;
+  border-radius: 28px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(85, 200, 232, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tab-next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(85, 200, 232, 0.4);
+}
+
+/* ═══════════ BACK TO TOP ═══════════ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  height: 44px;
+  padding: 0 18px 0 14px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  border: 2px solid #55C8E8;
+  font-size: 14px;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(14, 28, 66, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 500;
+  letter-spacing: 0.3px;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover {
+  box-shadow: 0 6px 24px rgba(14, 28, 66, 0.5);
+  transform: translateY(-3px);
+}
+
+/* ═══════════ CONFETTI ═══════════ */
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* ═══════════ GATHERED ANSWERS REVIEW ═══════════ */
+.gathered-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+  margin-top: 22px;
+}
+.gathered-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  padding: 16px 22px;
+  border-bottom: 2px solid rgba(85, 200, 232, 0.2);
+}
+.gathered-header-icon { font-size: 28px; line-height: 1; }
+.gathered-header-label {
+  font-size: 11px;
+  color: #55C8E8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+.gathered-header-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+.gathered-body { padding: 18px 22px 20px; }
+.gathered-intro { font-size: 15px; color: #3A4A6B; margin-bottom: 14px; line-height: 1.55; }
+.gathered-output {
+  width: 100%;
+  min-height: 300px;
+  padding: 16px 18px;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #0E1C42;
+  line-height: 1.65;
+  background: #FAFBFF;
+  resize: vertical;
+  white-space: pre-wrap;
+}
+.gathered-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.gathered-btn {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.gathered-btn:hover { transform: translateY(-2px); }
+.gathered-btn-copy {
+  background: linear-gradient(135deg, #55C8E8, #7FD8F0);
+  color: #0E1C42;
+  box-shadow: 0 4px 14px rgba(85, 200, 232, 0.25);
+}
+.gathered-btn-pdf {
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  border: 2px solid #55C8E8;
+  box-shadow: 0 4px 14px rgba(14, 28, 66, 0.25);
+}
+.gathered-copied {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #34B76F;
+  margin-top: 8px;
+  display: none;
+}
+.gathered-copied.show { display: block; }
+
+/* ═══════════ FOOTER ═══════════ */
+.footer {
+  background: #0E1C42;
+  border-top: 4px solid #55C8E8;
+  padding: 18px 28px;
+  text-align: center;
+}
+.footer-main { font-size: 14px; color: #fff; margin-bottom: 4px; }
+.footer-main span { color: #55C8E8; font-weight: 700; }
+.footer-sub { font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 2px; }
+.footer-copy { font-size: 11px; color: rgba(255, 255, 255, 0.3); }
+
+/* ═══════════ PAUSE & THINK SIDE BY SIDE ═══════════ */
+.pause-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 14px 0;
+}
+.pause-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 620px) {
+  .pause-columns { grid-template-columns: 1fr; }
+}
+
+/* ═══════════ FILL-IN-BLANK GAME ═══════════ */
+.fillin-game { margin: 14px 0; }
+.fillin-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #0E1C42;
+  flex-wrap: wrap;
+}
+.fillin-item:last-child { margin-bottom: 0; }
+.fillin-input {
+  display: inline-block;
+  width: 120px;
+  padding: 4px 10px;
+  border: 2px dashed #8B6FC0;
+  border-radius: 8px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #8B6FC0;
+  text-align: center;
+  background: #FAFBFF;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.fillin-input:focus { border-color: #55C8E8; background: #fff; }
+.fillin-input.correct { border-color: #34B76F; background: #E3F8ED; color: #1a5c2e; border-style: solid; }
+.fillin-input.wrong { border-color: #E8636B; background: #FFF0EC; animation: shake 0.4s ease; }
+.fillin-check-btn {
+  display: block;
+  margin: 14px auto 0;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #8B6FC0, #a88ad4);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.fillin-check-btn:hover { transform: translateY(-2px); }
+.fillin-feedback {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.fillin-feedback.show { display: block; }
+
+/* ═══════════ SHOW WHAT YOU KNOW (graded response) ═══════════ */
+.swyk {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 2px solid #F5E6C8;
+  border-left: 6px solid #C7922C;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-top: 16px;
+}
+.swyk-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.swyk-prompt {
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+/* ═══════════ PERSISTENT TEXTBOX PROMPT ═══════════ */
+.textbox-prompt {
+  font-size: 14px;
+  color: #0E1C42;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 8px 12px;
+  background: #EAF8FD;
+  border: 1.5px solid #D6F2FB;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  margin-top: 10px;
+}
+.textbox-prompt + .journal-box {
+  border-radius: 0 0 12px 12px;
+  margin-top: 0;
+}
+
+/* ═══════════ TODAY'S PATH ═══════════ */
+.todays-path {
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-top: 14px;
+}
+.todays-path-title {
+  font-size: 14px;
+  color: #0E1C42;
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.todays-path-steps {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #3A4A6B;
+  font-weight: 600;
+}
+.todays-path-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F4;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.todays-path-arrow { color: #B0B8CC; font-size: 11px; }
+
+/* ═══════════ DOL HIGHLIGHTER ═══════════ */
+.dol-model-label {
+  font-size: 12px;
+  color: #34B76F;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.dol-fix-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.dol-sentence-wrap {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F4;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #0E1C42;
+  line-height: 1.8;
+  font-family: 'Lora', Georgia, serif;
+}
+.dol-highlight-word {
+  display: inline;
+  padding: 2px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 1.5px solid transparent;
+}
+.dol-highlight-word:hover { background: #EAF8FD; }
+.dol-highlight-word.highlighted {
+  background: #E3F8ED;
+  border-color: #34B76F;
+  font-weight: 700;
+}
+.dol-highlight-word.key-reveal {
+  background: #FFF3DC;
+  border-color: #C7922C;
+  font-weight: 700;
+}
+.dol-hint {
+  font-size: 13px;
+  color: #7A88A8;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* ═══════════ VOCAB DECODE STEPS ═══════════ */
+.decode-steps { margin: 14px 0; }
+.decode-step {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+.decode-step:last-child { margin-bottom: 0; }
+.decode-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.decode-step-content { flex: 1; }
+.decode-step-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0E1C42;
+  margin-bottom: 4px;
+}
+.decode-step-text {
+  font-size: 14px;
+  color: #3A4A6B;
+  line-height: 1.55;
+}
+.decode-sentence {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 1.5px solid #F5E6C8;
+  border-left: 4px solid #C7922C;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.6;
+  font-style: italic;
+}
+.decode-word-parts {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+.decode-part {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.decode-part-root { background: #F0E8FF; color: #8B6FC0; border: 1.5px solid #D8CCF0; }
+.decode-part-affix { background: #EAF8FD; color: #1A6B8E; border: 1.5px solid #D6F2FB; }
+.decode-part-plus { color: #B0B8CC; font-size: 12px; font-weight: 800; }
+.decode-reveal {
+  display: none;
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: #E3F8ED;
+  border: 1.5px solid #B8E8CF;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0E1C42;
+  line-height: 1.5;
+}
+.decode-reveal.show { display: block; }
+.decode-try-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #55C8E8, #7FD8F0);
+  color: #0E1C42;
+  border: none;
+  border-radius: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* ═══════════ THINKING STOP ═══════════ */
+.thinking-stop {
+  background: #FAFBFF;
+  border: 2px dashed #D6F2FB;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #7A88A8;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ═══════════ JOURNAL TEXT BOXES ═══════════ */
+.journal-box {
+  width: 100%;
+  min-height: 70px;
+  padding: 12px 14px;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.6;
+  resize: vertical;
+  background: #FAFBFF;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+.journal-box:focus {
+  outline: none;
+  border-color: #55C8E8;
+  box-shadow: 0 0 0 3px rgba(85, 200, 232, 0.15);
+  background: #fff;
+}
+.journal-box::placeholder { color: #B0B8CC; font-style: italic; }
+.journal-label {
+  font-size: 12px;
+  color: #7A88A8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.journal-label .saved-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #B0B8CC;
+  transition: background 0.3s;
+}
+.journal-label .saved-dot.saved { background: #34B76F; }
+
+/* ═══════════ ROOT MATCH GAME ═══════════ */
+.root-match-game { margin: 14px 0; }
+.root-match-prompt {
+  font-size: 15px;
+  color: #3A4A6B;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.root-match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.root-match-item {
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #0E1C42;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s, border-color 0.2s, transform 0.15s;
+  user-select: none;
+}
+.root-match-item:hover { transform: translateY(-1px); border-color: #8B6FC0; }
+.root-match-item.selected { background: #F0E8FF; border-color: #8B6FC0; box-shadow: 0 0 0 3px rgba(139, 111, 192, 0.2); }
+.root-match-item.matched { background: #E3F8ED; border-color: #34B76F; pointer-events: none; opacity: 0.85; }
+.root-match-item.wrong-flash { background: #FFF0EC; border-color: #E8636B; animation: shake 0.4s ease; }
+.root-match-item.is-word { font-weight: 800; font-family: 'Lora', Georgia, serif; font-size: 16px; color: #8B6FC0; }
+.root-match-feedback {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.root-match-feedback.show { display: block; }
+
+/* ═══════════ DOWNLOAD BUTTON ═══════════ */
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  border: 2px solid #55C8E8;
+  border-radius: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(14, 28, 66, 0.25);
+}
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(14, 28, 66, 0.35);
+}
+.download-btn-icon { font-size: 22px; }
+.download-btn-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* ═══════════ WORD SORT GAME ═══════════ */
+.sort-game { margin: 14px 0; }
+.sort-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px;
+  background: #FAFBFF;
+  border: 2px dashed #D6F2FB;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  min-height: 52px;
+  justify-content: center;
+}
+.sort-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0E1C42;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s, border-color 0.2s;
+}
+.sort-chip:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(14,28,66,0.12); }
+.sort-chip.placed { opacity: 0.4; pointer-events: none; }
+.sort-chip.correct { background: #E3F8ED; border-color: #34B76F; color: #1a5c2e; }
+.sort-chip.wrong { background: #FFF0EC; border-color: #E8636B; color: #8a3030; animation: shake 0.4s ease; }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+.sort-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.sort-col {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 160px;
+}
+.sort-col-header {
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+}
+.sort-col-drop {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px;
+}
+.sort-col-drop .sort-chip { cursor: pointer; }
+.sort-col-drop .sort-chip:hover { transform: none; box-shadow: none; }
+.sort-score {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.sort-score.show { display: block; }
+.sort-check-btn {
+  display: block;
+  margin: 14px auto 0;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #55C8E8, #7FD8F0);
+  color: #0E1C42;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.sort-check-btn:hover { transform: translateY(-2px); }
+
+/* ═══════════ INTERJECTION SPOTTER GAME ═══════════ */
+.spotter-game { margin: 14px 0; }
+.spotter-sentence {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  line-height: 1.8;
+  font-size: 16px;
+  color: #0E1C42;
+}
+.spotter-word {
+  display: inline;
+  padding: 2px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border: 2px solid transparent;
+}
+.spotter-word:hover { background: #EAF8FD; border-color: #55C8E8; }
+.spotter-word.selected { background: #FFF3DC; border-color: #C7922C; font-weight: 700; }
+.spotter-word.correct-reveal { background: #E3F8ED; border-color: #34B76F; color: #1a5c2e; font-weight: 700; }
+.spotter-word.wrong-reveal { background: #FFF0EC; border-color: #E8636B; text-decoration: line-through; }
+.spotter-result {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 10px;
+  margin-top: 6px;
+  display: none;
+}
+.spotter-result.show { display: block; }
+.spotter-result.win { background: #E3F8ED; color: #1a5c2e; }
+.spotter-result.miss { background: #FFF3DC; color: #C7922C; }
+
+/* ═══════════ SENTENCE BUILDER ═══════════ */
+.builder-game { margin: 14px 0; }
+.builder-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 14px;
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  min-height: 52px;
+}
+.builder-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  padding: 8px 12px;
+  background: #FFFFFF;
+  border: 2px dashed #D6F2FB;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #7A88A8;
+  font-weight: 600;
+  min-height: 40px;
+  transition: border-color 0.2s;
+}
+.builder-slot.filled {
+  border-style: solid;
+  border-color: #55C8E8;
+  color: #0E1C42;
+  font-weight: 700;
+  background: #EAF8FD;
+  cursor: pointer;
+}
+.builder-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.builder-word {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0E1C42;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.builder-word:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(14,28,66,0.12); }
+.builder-word.used { opacity: 0.35; pointer-events: none; }
+.builder-result {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-top: 12px;
+  display: none;
+}
+.builder-result.show { display: block; }
+.builder-result.correct { background: #E3F8ED; color: #1a5c2e; }
+.builder-result.incorrect { background: #FFF0EC; color: #8a3030; }
+
+/* ═══════════ VOCAB MATCH GAME ═══════════ */
+.match-game { margin: 14px 0; }
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.match-item {
+  padding: 12px 14px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #0E1C42;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.5;
+  transition: background 0.15s, border-color 0.2s, transform 0.15s;
+  user-select: none;
+}
+.match-item:hover { transform: translateY(-1px); border-color: #55C8E8; }
+.match-item.selected { background: #EAF8FD; border-color: #55C8E8; box-shadow: 0 0 0 3px rgba(85,200,232,0.25); }
+.match-item.matched { background: #E3F8ED; border-color: #34B76F; pointer-events: none; opacity: 0.8; }
+.match-item.wrong-flash { background: #FFF0EC; border-color: #E8636B; animation: shake 0.4s ease; }
+.match-item.is-word { font-weight: 800; font-family: 'Lora', Georgia, serif; font-size: 16px; }
+.match-feedback {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.match-feedback.show { display: block; }
+
+/* ═══════════ DOL CHECKER ═══════════ */
+.dol-check-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #8B6FC0, #a88ad4);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.15s;
+}
+.dol-check-btn:hover { transform: translateY(-2px); }
+.dol-answer {
+  display: none;
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: #E3F8ED;
+  border: 2px solid #B8E8CF;
+  border-left: 4px solid #34B76F;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.65;
+}
+.dol-answer.show { display: block; }
+
+/* Writing Project step chips */
+.wp-step {
+  flex: 1 1 130px;
+  min-width: 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 6px 8px;
+  border-radius: 12px;
+  border: 2px solid #E2E8F4;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.2;
+}
+.wp-step.current { box-shadow: 0 0 0 3px rgba(199,146,44,0.25); border-color: #C7922C; }
+.wp-step.done { border-color: #34B76F; }
+.wp-step-mark { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+.wp-step-name { font-size: 13px; font-weight: 800; margin-bottom: 2px; }
+.wp-step-wk { font-size: 10px; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 165px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+}
+
+/* ═══════════ SOURCE CARDS ═══════════ */
+.source-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+}
+.source-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 2px solid #E2E8F4;
+}
+.source-card-header.source-a { background: linear-gradient(135deg, #EAF8FD, #D6F2FB); border-bottom-color: #D6F2FB; }
+.source-card-header.source-b { background: linear-gradient(135deg, #FFF3DC, #F5E6C8); border-bottom-color: #F5E6C8; }
+.source-card-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  color: #fff; font-size: 18px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.source-card-label { font-size: 10px; color: #7A88A8; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.source-card-title { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.source-card-body { padding: 16px 20px; }
+.source-card-meta { font-size: 13px; color: #7A88A8; font-style: italic; margin-bottom: 10px; }
+.source-card-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px; color: #0E1C42; line-height: 1.75; font-style: italic;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 1.5px solid #F5E6C8; border-left: 4px solid #C7922C; border-radius: 10px;
+  margin-bottom: 10px;
+}
+.source-card-note { font-size: 14px; color: #3A4A6B; line-height: 1.55; }
+
+/* ═══════════ COMMA INSERTER GAME ═══════════ */
+.comma-game { margin: 14px 0; }
+.comma-sentence-wrap {
+  background: #FFFFFF; border: 2px solid #E2E8F4; border-radius: 12px;
+  padding: 14px 16px; margin-bottom: 10px;
+  font-size: 16px; color: #0E1C42; line-height: 1.8; font-family: 'Lora', Georgia, serif;
+}
+.comma-slot {
+  display: inline; padding: 0 2px; cursor: pointer; font-weight: 800;
+  color: #B0B8CC; transition: background 0.15s, color 0.15s;
+}
+.comma-slot:hover { background: #EAF8FD; color: #55C8E8; }
+.comma-slot.inserted { color: #34B76F; }
+.comma-slot.wrong-flash { color: #E8636B; animation: shake 0.4s ease; }
+.comma-feedback { text-align: center; padding: 10px; font-size: 15px; font-weight: 700; color: #34B76F; display: none; }
+.comma-feedback.show { display: block; }
+</style>
+</head>
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🦁 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- PROGRESS BAR -->
+<div class="progress-wrap">
+  <span class="progress-label">📖 Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>
+    <div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div>
+  </div>
+  <!-- HERO BANNER SVG — Year-End Synthesis: Three Novels, Three Themes -->
+  <div style="margin:10px 0 14px;border-radius:14px;overflow:hidden;border:2px solid rgba(85,200,232,0.2);">
+    <svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;">
+      <defs>
+        <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0A0E1A"/><stop offset="55%" stop-color="#0E1C2A"/><stop offset="100%" stop-color="#1A2D1A"/></linearGradient>
+        <linearGradient id="forestGround" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1A3A0A"/><stop offset="100%" stop-color="#0A1A06"/></linearGradient>
+        <radialGradient id="aslGlow" cx="460" cy="160" r="80" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FFE9B8" stop-opacity="0.55"/><stop offset="40%" stop-color="#C7922C" stop-opacity="0.25"/><stop offset="100%" stop-color="#C7922C" stop-opacity="0"/></radialGradient>
+        <radialGradient id="moonGlow" cx="760" cy="38" r="60" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8F4FF" stop-opacity="0.5"/><stop offset="100%" stop-color="#B8D8F0" stop-opacity="0"/></radialGradient>
+        <filter id="glowF"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="softGlow"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <!-- Night sky -->
+      <rect width="920" height="260" fill="url(#nightSky)"/>
+      <!-- Moon glow -->
+      <circle cx="760" cy="38" r="60" fill="url(#moonGlow)"/>
+      <circle cx="760" cy="38" r="22" fill="#E8F4FF" opacity="0.9" filter="url(#glowF)">
+        <animate attributeName="opacity" values="0.9;0.75;0.9" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Leopard constellation (cat-shaped star cluster) -->
+      <!-- Head -->
+      <circle cx="200" cy="30" r="2.2" fill="#FFE9B8" opacity="0.9"><animate attributeName="opacity" values="0.9;0.4;0.9" dur="2.3s" repeatCount="indefinite"/></circle>
+      <!-- Ears -->
+      <circle cx="194" cy="25" r="1.5" fill="#FFE9B8" opacity="0.7"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="3.1s" repeatCount="indefinite"/></circle>
+      <circle cx="207" cy="24" r="1.5" fill="#FFE9B8" opacity="0.8"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.7s" repeatCount="indefinite"/></circle>
+      <!-- Body -->
+      <circle cx="200" cy="38" r="1.8" fill="#FFE9B8" opacity="0.85"><animate attributeName="opacity" values="0.85;0.4;0.85" dur="4s" repeatCount="indefinite"/></circle>
+      <circle cx="210" cy="42" r="1.6" fill="#FFE9B8" opacity="0.75"><animate attributeName="opacity" values="0.75;0.3;0.75" dur="3.4s" repeatCount="indefinite"/></circle>
+      <circle cx="190" cy="43" r="1.4" fill="#FFE9B8" opacity="0.8"><animate attributeName="opacity" values="0.8;0.35;0.8" dur="2.9s" repeatCount="indefinite"/></circle>
+      <!-- Tail curve -->
+      <circle cx="217" cy="50" r="1.3" fill="#FFE9B8" opacity="0.7"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="3.7s" repeatCount="indefinite"/></circle>
+      <circle cx="222" cy="45" r="1.2" fill="#FFE9B8" opacity="0.65"><animate attributeName="opacity" values="0.65;0.25;0.65" dur="4.2s" repeatCount="indefinite"/></circle>
+      <!-- Other stars scattered -->
+      <circle cx="60" cy="20" r="1.2" fill="#FFE9B8" opacity="0.6"><animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/></circle>
+      <circle cx="120" cy="15" r="1.5" fill="#FFE9B8" opacity="0.7"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.5s" repeatCount="indefinite"/></circle>
+      <circle cx="340" cy="22" r="1.3" fill="#FFE9B8" opacity="0.65"><animate attributeName="opacity" values="0.65;0.25;0.65" dur="4.1s" repeatCount="indefinite"/></circle>
+      <circle cx="500" cy="18" r="1" fill="#FFE9B8" opacity="0.5"><animate attributeName="opacity" values="0.5;0.15;0.5" dur="3.6s" repeatCount="indefinite"/></circle>
+      <circle cx="620" cy="25" r="1.4" fill="#FFE9B8" opacity="0.7"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.8s" repeatCount="indefinite"/></circle>
+      <circle cx="850" cy="20" r="1.2" fill="#FFE9B8" opacity="0.55"><animate attributeName="opacity" values="0.55;0.2;0.55" dur="3.3s" repeatCount="indefinite"/></circle>
+      <circle cx="900" cy="40" r="1" fill="#FFE9B8" opacity="0.5"><animate attributeName="opacity" values="0.5;0.15;0.5" dur="4.4s" repeatCount="indefinite"/></circle>
+      <!-- Trees left framing -->
+      <polygon points="0,260 30,70 60,260" fill="#0A1806" opacity="0.95"/>
+      <polygon points="40,260 75,55 110,260" fill="#0E2008" opacity="0.9"/>
+      <polygon points="80,260 118,65 155,260" fill="#0A1806" opacity="0.95"/>
+      <polygon points="110,260 148,80 185,260" fill="#0E2008" opacity="0.85"/>
+      <!-- Trees right framing -->
+      <polygon points="760,260 798,60 835,260" fill="#0A1806" opacity="0.95"/>
+      <polygon points="800,260 838,70 875,260" fill="#0E2008" opacity="0.9"/>
+      <polygon points="845,260 880,55 920,260" fill="#0A1806" opacity="0.95"/>
+      <!-- Moonlit clearing ground -->
+      <ellipse cx="460" cy="230" rx="240" ry="45" fill="#1A3A0A" opacity="0.9"/>
+      <!-- Aslan golden glow (barely visible — just a suggestion of light) -->
+      <ellipse cx="460" cy="165" rx="75" ry="55" fill="url(#aslGlow)">
+        <animate attributeName="rx" values="75;82;75" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="ry" values="55;62;55" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <!-- Lucy figure (small, golden hair, standing in clearing) -->
+      <!-- Dress -->
+      <ellipse cx="370" cy="215" rx="7" ry="14" fill="#3A5A8A" opacity="0.85"/>
+      <!-- Body -->
+      <rect x="366" y="200" width="8" height="14" rx="2" fill="#3A5A8A" opacity="0.85"/>
+      <!-- Golden hair -->
+      <ellipse cx="370" cy="197" rx="6" ry="7" fill="#D4A843" opacity="0.9"/>
+      <!-- Face suggestion -->
+      <circle cx="370" cy="194" r="4" fill="#C8A882" opacity="0.75"/>
+      <!-- Swaying trees background (middle distance) -->
+      <polygon points="260,260 288,100 316,260" fill="#0E2A08" opacity="0.6">
+        <animateTransform attributeName="transform" type="rotate" values="-1,288,180;1,288,180;-1,288,180" dur="3.5s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="570,260 600,90 630,260" fill="#0E2A08" opacity="0.6">
+        <animateTransform attributeName="transform" type="rotate" values="1,600,180;-1,600,180;1,600,180" dur="4.1s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="680,260 710,105 740,260" fill="#0A1806" opacity="0.55">
+        <animateTransform attributeName="transform" type="rotate" values="-0.8,710,185;0.8,710,185;-0.8,710,185" dur="3.8s" repeatCount="indefinite"/>
+      </polygon>
+      <!-- Moonlight on ground (soft beam) -->
+      <ellipse cx="460" cy="240" rx="140" ry="20" fill="rgba(232,244,255,0.07)"/>
+    </svg>
+  </div>
+  <div class="header-title">Year-End Synthesis &mdash; Applying Themes Across Novels</div>
+  <div class="header-badge"><span class="header-badge-icon">📚</span><span class="header-badge-text">Lesson 31.3</span></div>
+</div>
+
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-cell"><div class="info-icon" style="background:#F9F3FF;">📚</div><div><div class="info-label">Unit</div><div class="info-value">Year-End Synthesis</div><div class="info-detail">Weeks 31–32</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#EAF8FD;">📅</div><div><div class="info-label">Week</div><div class="info-value">Week 31</div><div class="info-detail">Lesson 31.3 of 4</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#FFF3DC;">📖</div><div><div class="info-label">Reading</div><div class="info-value">Applying Themes</div><div class="info-detail">Year-End Synthesis</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#F0FFF4;">🔤</div><div><div class="info-label">Focus</div><div class="info-value">Spelling spiral</div><div class="info-detail">Morphology spiral</div></div></div>
+</div>
+
+<!-- QUOTE STRIP -->
+<div class="quote-strip"><span class="quote-text">&ldquo;A reader lives a thousand lives before he dies. The man who never reads lives only one.&rdquo;</span><span class="quote-attr">&mdash; George R.R. Martin</span></div>
+
+<!-- INTRO -->
+<div class="intro-section" id="introSection">
+  <div class="intro-collapsed-bar" onclick="expandIntro()">
+    <span class="intro-collapsed-icon">🎯</span>
+    <span class="intro-collapsed-text">Today&rsquo;s Objectives &amp; Path</span>
+    <span class="intro-collapsed-toggle">&#9660; Expand</span>
+  </div>
+  <div class="intro-2col">
+    <div class="intro-card theme-question">
+      <div class="intro-card-head"><div class="intro-card-head-icon">&#10067;</div><div><div class="intro-card-head-label">Big Question</div><div class="intro-card-head-title">Today&rsquo;s Wonder</div></div></div>
+      <div class="intro-card-body"><p>The war is won, Caspian is crowned, and Reepicheep gets his tail back. But then comes the hardest part. Today ask yourself: <strong>What do you carry with you when you have to say goodbye to a place you love?</strong></p></div>
+    </div>
+    <div class="intro-card theme-objectives">
+      <div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Objectives</div><div class="intro-card-head-title">By the end of this lesson&hellip;</div></div></div>
+      <div class="intro-card-body">
+        <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>use</em> evidence from three novels to build a comparison paragraph about theme.</span></div>
+        <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>write</em> my own complex sentences using dependent clauses.</span></div>
+        <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>apply</em> cumulative spelling words across the unit in a word-building review.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="todays-path">
+    <div class="todays-path-title">🗺️ Today&rsquo;s Path</div>
+    <div class="todays-path-steps">
+      <span class="todays-path-step">🌅 Warm up with copywork &amp; DOL</span>
+      <span class="todays-path-arrow">&rarr;</span>
+      <span class="todays-path-step">🔤 Practice word study skills</span>
+      <span class="todays-path-arrow">&rarr;</span>
+      <span class="todays-path-step">📚 Build your comparison</span>
+      <span class="todays-path-arrow">&rarr;</span>
+      <span class="todays-path-step">📬 Answer &amp; submit</span>
+    </div>
+  </div>
+  <div class="need-strip">
+    <span class="need-strip-label">You&rsquo;ll need:</span>
+    <span class="need-chip">📗 Prince Caspian</span>
+    <span class="need-chip">📓 Reading Journal</span>
+    <span class="need-chip">✏️ Pencil</span>
+  </div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🌅 Warm-Up<span class="tab-check">&#10003;</span></button>
+  <button class="tab-btn" data-tab="words" onclick="switchTab('words')">🔤 Word Study<span class="tab-check">&#10003;</span></button>
+  <button class="tab-btn" data-tab="reading" onclick="switchTab('reading')">📖 Reading<span class="tab-check">&#10003;</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">📬 Assignment<span class="tab-check">&#10003;</span></button>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB 1: WARM-UP                             -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-warmup">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Welcome &middot; Day 3 of 4</div><div class="video-wrap-title">Welcome to Lesson 31.3!</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Teacher welcome video</div><div class="video-placeholder-id"><!-- slot: 31-3-welcome --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Welcome to Lesson 31.3 &mdash; Year-End Synthesis Day 3!<br>&bull; Yesterday: you defined your theme and gathered evidence from two novels<br>&bull; Today: use that evidence to draft your comparison paragraph<br>&bull; Big question: What does your theme teach readers about life?<br>&bull; ~1&ndash;2 minutes</div></div></div></div>
+  </div>
+
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">1</div><div><div class="activity-title">✏️ Daily Oral Language</div><div class="activity-sub">Study the model, then fix the sentence.</div></div></div>
+    <div class="activity-body">
+      <p>The first sentence is <strong>correct</strong>. Tap the highlighted parts to see what&rsquo;s right. Then use the model to fix the broken sentence below.</p>
+      <div class="task-box">
+        <div class="dol-model-label">&#10003; Correct Model — Proper Nouns, Quotation Marks, Comma Before Quote</div>
+        <div class="dol-sentence-wrap" id="dolModel">
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'&quot;Aslan&quot; is a proper noun — always capitalized.')">Aslan</span>
+          <span> breathed on the </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'&quot;Mouse&quot; is used here as a title or name — capitalized as a proper noun.')">Mouse</span>
+          <span> and said</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'A comma separates the speaker tag from the direct quotation.')">,</span>
+          <span> </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Opening quotation mark begins the character's exact words.')">&ldquo;</span>
+          <span>You have conquered me. You have great hearts</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Period goes inside the closing quotation mark in American English.')">.</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Closing quotation mark ends the exact words spoken.')">&rdquo;</span>
+        </div>
+        <div id="dolExplain" style="min-height:24px;margin-top:6px;font-size:13px;color:#34B76F;font-weight:700;"></div>
+        <div class="dol-hint">Tap highlighted parts to see what&rsquo;s correct.</div>
+        <div class="dol-fix-label">🔧 Now fix this one &mdash; use the model above as your guide</div>
+        <div class="dol-sentence-wrap" style="border-left:4px solid #C7922C;">
+          annemarie ran through the dark forest and whispered i must be brave for ellen
+        </div>
+        <div class="dol-hint">Find the errors: <em>annemarie</em> &rarr; Annemarie (proper noun); missing comma after &ldquo;whispered&rdquo;; missing opening quotation mark before &ldquo;i&rdquo;; <em>i</em> &rarr; I (first-person pronoun always capitalized); <em>ellen</em> &rarr; Ellen (proper noun); missing period inside closing quotation mark; missing closing quotation mark.</div>
+        <button class="dol-check-btn" style="margin-top:12px;" onclick="document.getElementById('dolAns').classList.toggle('show')">🔍 Check My Work</button>
+        <div class="dol-answer" id="dolAns">
+          <p style="margin-bottom:6px;"><strong>Corrected:</strong> <strong>A</strong>nnemarie ran through the dark forest and whispered<strong>,</strong> &ldquo;<strong>I</strong> must be brave for <strong>E</strong>llen<strong>.</strong>&rdquo;</p>
+          <p style="font-size:13px;color:#7A88A8;font-style:italic;">Compare with the model: both sentences need a comma before the spoken words, opening and closing quotation marks, and a capital letter for the proper noun. In this sentence, &ldquo;Annemarie&rdquo; and &ldquo;Ellen&rdquo; are proper nouns; &ldquo;I&rdquo; is always capitalized; the period goes inside the closing quotation mark.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity bl-gold">
+    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">2</div><div><div class="activity-title">✍️ Copywork</div><div class="activity-sub">Copy carefully in cursive. Notice the craft.</div></div></div>
+    <div class="activity-body">
+      <p>This sentence from <em>Anne of Green Gables</em> is a beautiful example of contrast. Notice how the author sets two ideas side by side. Then copy it carefully <strong>in cursive</strong> into your reading journal.</p>
+      <div class="copywork-box">
+        <div class="copywork-label">📜 Copywork — Anne of Green Gables</div>
+        <div class="copywork-text">&ldquo;It was not a beautiful face, but it was a face full of life and gladness and imagination.&rdquo; &mdash; <em>Anne of Green Gables</em></div>
+        <div class="copywork-instruction">Copy this sentence carefully <strong>in cursive</strong> into your reading journal. Take your time.<br><br>
+        <strong>Craft Notice:</strong> Montgomery uses a contrast &mdash; &ldquo;not a beautiful face, but a face full of life.&rdquo; The &ldquo;not ___, but ___&rdquo; structure sets two opposing ideas side by side. It makes what <em>is</em> true stand out more vividly than a plain description would.</div>
+      </div>
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>As you copy, ask: <em>Why does Peter say this to Caspian? What does it tell you about Peter&rsquo;s character? What would it feel like to hear these words if you were Caspian?</em></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">Your hand is steady and your mind is warmed up. Now let&rsquo;s build the words and skills you&rsquo;ll need before opening the final chapter.</p>
+    <button class="tab-next-btn" onclick="switchTab('words')">Continue to 🔤 Word Study &rarr;</button>
+  </div>
+</div><!-- /tab-warmup -->
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB 2: WORD STUDY                          -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-words">
+
+  <div class="activity bl-purple">
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">1</div><div><div class="activity-title">🌱 Morphology: Word-Building — Use</div><div class="activity-sub">Choose the right prefix or suffix to build a real word.</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">🌱</span><div><div class="video-wrap-type">Morphology &middot; Day 3 Word-Building Review</div><div class="video-wrap-title">Cumulative Root Review: Match Words to Their Roots</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🌱</div><div class="video-placeholder-text">Teacher leads cumulative morphology review</div><div class="video-placeholder-id"><!-- slot: 31-3-morphology --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 3 morphology: spiral review &mdash; fill-in-the-blank root game<br>&bull; Students match root meanings to words from across all three novels<br>&bull; Roots covered: port (carry), tract (pull/draw), scrib/script (write), vis/vid (see), fin (end/limit)<br>&bull; No SWYK today (D3 SWYK = spelling)<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+      </div>
+      <p>This week we review roots from across all the novels you&rsquo;ve read this year. Each root has shown up in words from your reading. Match each word to its root &mdash; and think about how the root helps you understand what the word means.</p>
+      <div class="key-concept">
+        <div class="key-concept-label">📌 Root Fill-in-the-Blank: Spiral Review</div>
+        <p style="font-size:14px;line-height:1.8;">
+          <strong>transport</strong> &nbsp;|&nbsp; <strong>export</strong> &nbsp;|&nbsp; <strong>distract</strong> &nbsp;|&nbsp; <strong>extract</strong><br>
+          <strong>inscription</strong> &nbsp;|&nbsp; <strong>visible</strong> &nbsp;|&nbsp; <strong>infinite</strong> &nbsp;|&nbsp; <strong>final</strong>
+        </p>
+      </div>
+      <div id="wordBuildGame" style="margin-top:14px;">
+        <!-- Round 1: port -->
+        <div class="task-box" style="margin-bottom:12px;">
+          <div class="task-label">Which words contain the root <strong style="color:#8B6FC0;">port</strong> (carry)?</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+            <button class="sort-chip" onclick="wbClick(this,'port','transport','correct')" data-wb="port">transport</button>
+            <button class="sort-chip" onclick="wbClick(this,'port','export','correct')" data-wb="port">export</button>
+            <button class="sort-chip" onclick="wbClick(this,'port','distract','wrong')" data-wb="port">distract</button>
+          </div>
+          <div id="wbFeedback-port" style="font-size:13px;color:#34B76F;font-weight:700;margin-top:8px;display:none;">✅ <strong>transport</strong> = trans + port (carry across) &mdash; to carry goods or people from one place to another. <strong>export</strong> = ex + port (carry out) &mdash; to send goods out of a country.</div>
+        </div>
+        <!-- Round 2: tract -->
+        <div class="task-box" style="margin-bottom:12px;">
+          <div class="task-label">Which words contain the root <strong style="color:#8B6FC0;">tract</strong> (pull / draw)?</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+            <button class="sort-chip" onclick="wbClick(this,'tract','distract','correct')" data-wb="tract">distract</button>
+            <button class="sort-chip" onclick="wbClick(this,'tract','extract','correct')" data-wb="tract">extract</button>
+            <button class="sort-chip" onclick="wbClick(this,'tract','visible','wrong')" data-wb="tract">visible</button>
+          </div>
+          <div id="wbFeedback-tract" style="font-size:13px;color:#34B76F;font-weight:700;margin-top:8px;display:none;">✅ <strong>distract</strong> = dis + tract (pull away) &mdash; to pull attention away. <strong>extract</strong> = ex + tract (pull out) &mdash; to pull something out.</div>
+        </div>
+        <!-- Round 3: fin -->
+        <div class="task-box" style="margin-bottom:12px;">
+          <div class="task-label">Which words contain the root <strong style="color:#8B6FC0;">fin</strong> (end / limit)?</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+            <button class="sort-chip" onclick="wbClick(this,'fin','infinite','correct')" data-wb="fin">infinite</button>
+            <button class="sort-chip" onclick="wbClick(this,'fin','final','correct')" data-wb="fin">final</button>
+            <button class="sort-chip" onclick="wbClick(this,'fin','inscription','wrong')" data-wb="fin">inscription</button>
+          </div>
+          <div id="wbFeedback-fin" style="font-size:13px;color:#34B76F;font-weight:700;margin-top:8px;display:none;">✅ <strong>infinite</strong> = in + fin + ite (not limited) &mdash; having no end. <strong>final</strong> = fin + al (of the end) &mdash; last; coming at the end.</div>
+        </div>
+        <button class="fillin-check-btn" onclick="showAllWbFeedback()">🔍 Show Answers</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">2</div><div><div class="activity-title">🔤 Vocabulary: Use It — Cloze Sentences</div><div class="activity-sub">Fill in the correct vocabulary word for each sentence.</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">🔤</span><div><div class="video-wrap-type">Vocabulary &middot; Day 3 Use It</div><div class="video-wrap-title">Cross-Novel Vocabulary in Context</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔤</div><div class="video-placeholder-text">Teacher models cross-novel vocabulary in context</div><div class="video-placeholder-id"><!-- slot: 31-3-vocabulary --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 3 vocabulary: cloze sentences using words from all three novels<br>&bull; Words: solemnly (NTS), allegiance (PC), indignant (AoGG), conductor (FT)<br>&bull; Model thinking aloud with one sentence<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+      </div>
+      <p>These four words come from your three novels &mdash; <em>Anne of Green Gables</em>, <em>Number the Stars</em>, and <em>Prince Caspian</em>. Use each word to complete the sentence that fits.</p>
+      <div class="key-concept" style="margin-bottom:14px;">
+        <div class="key-concept-label">📌 Words Across Three Novels</div>
+        <p style="font-size:14px;line-height:1.7;">
+          <strong>solemnly</strong> &mdash; in a serious, formal way; without joking or lightness. (<em>Number the Stars</em>)<br>
+          <strong>allegiance</strong> &mdash; loyalty and commitment to a person, group, or cause. (<em>Prince Caspian</em>)<br>
+          <strong>indignant</strong> &mdash; feeling angry because something is unfair or wrong. (<em>Anne of Green Gables</em>)<br>
+          <strong>conductor</strong> &mdash; the leader of an escape route; someone who guides people to safety. (<em>Freedom Train</em>)
+        </p>
+      </div>
+      <div class="fillin-game" id="clozeGame">
+        <div class="fillin-item">1. Annemarie spoke <input class="fillin-input" id="cloze1" data-ans="solemnly" placeholder="________"> as she told Ellen what their plan would be.</div>
+        <div class="fillin-item">2. Reepicheep pledged his <input class="fillin-input" id="cloze2" data-ans="allegiance" placeholder="________"> to Aslan and the true king of Narnia.</div>
+        <div class="fillin-item">3. Anne felt deeply <input class="fillin-input" id="cloze3" data-ans="indignant" placeholder="________"> when she thought someone had questioned her honesty.</div>
+        <div class="fillin-item">4. Harriet Tubman became the most famous <input class="fillin-input" id="cloze4" data-ans="conductor" placeholder="________"> on the Underground Railroad.</div>
+      </div>
+      <button class="fillin-check-btn" onclick="checkCloze()">🔍 Check My Answers</button>
+      <div class="fillin-feedback" id="clozeFeedback"></div>
+    </div>
+  </div>
+
+  <div class="activity bl-navy">
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">3</div><div><div class="activity-title">✏️ Grammar: Write Using the Skill</div><div class="activity-sub">Write 2 sentences using grammar skills from this year.</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">✏️</span><div><div class="video-wrap-type">Grammar &middot; Day 3 Use</div><div class="video-wrap-title">Write Complex Sentences</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">✏️</div><div class="video-placeholder-text">Teacher models writing complex sentences</div><div class="video-placeholder-id"><!-- slot: 31-3-grammar --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 3 grammar = write using the skill<br>&bull; Students write 2 sentences using grammar skills they&rsquo;ve learned this year<br>&bull; Encourage variety: try a complex sentence, a sentence with dialogue, or a sentence with a strong verb<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+      </div>
+      <p>You&rsquo;ve studied grammar skills all year &mdash; from complex sentences to interjections to quotation marks. Today, show what you know by writing two strong sentences using any skill you&rsquo;ve practiced.</p>
+      <div class="callout callout-info">
+        <span class="callout-icon">✏️</span>
+        <p>Write <strong>2 sentences</strong> using grammar skills you&rsquo;ve learned this year. Try to use a <em>different skill</em> in each sentence. Write in your reading journal.</p>
+      </div>
+      <div class="task-box" style="margin-bottom:10px;background:#FFF8F0;border-color:#F5E6C8;">
+        <div class="task-label">Grammar Skills to Choose From</div>
+        <p style="font-size:14px;color:#3A4A6B;line-height:1.9;">
+          ✏️ Complex sentence (because, although, when, even though&hellip;)<br>
+          ✏️ Sentence with dialogue and correct quotation marks<br>
+          ✏️ Sentence with an interjection (Oh! Well, &hellip;)<br>
+          ✏️ Sentence with a strong past-tense verb<br>
+          ✏️ Sentence with an appositive (a phrase that renames a noun)
+        </p>
+      </div>
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Your sentences can be about anything &mdash; characters from your novels, something you know, or a made-up situation. The goal is to show you can use the skill correctly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity bl-rose">
+    <div class="activity-head"><div class="activity-num" style="background:#c7627e;">4</div><div><div class="activity-title">🔠 Spelling: SWYK — Spiral Review</div><div class="activity-sub">Choose three words from this year and show what you know.</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">🔠</span><div><div class="video-wrap-type">Spelling &middot; Day 3 SWYK</div><div class="video-wrap-title">Spelling Spiral Review — Show What You Know</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔠</div><div class="video-placeholder-text">Teacher introduces cumulative spelling review</div><div class="video-placeholder-id"><!-- slot: 31-3-spelling --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 3 spelling: SWYK &mdash; spiral review<br>&bull; Students choose THREE words from any spelling pattern studied this year<br>&bull; For each: write the word, name the pattern, use it in a sentence<br>&bull; ~3 minutes</div></div></div></div>
+      </div>
+      <p>Before the SWYK below, use this quick self-check to warm up. Type each word from memory, then reveal to check. These words come from patterns you&rsquo;ve studied across the year.</p>
+      <div id="spellingTest" style="margin-top:14px;">
+        <!-- Spelling test items generated in JS below -->
+      </div>
+      <div class="swyk" style="margin-top:14px;">
+        <div class="swyk-label">🔠 Show What You Know &mdash; Spelling SWYK</div>
+        <div class="swyk-prompt">Choose <strong>THREE words</strong> from any spelling pattern you&rsquo;ve studied this year. For each word: write the word, name the pattern it follows, and use it in a sentence.</div>
+        <div class="textbox-prompt">For each of your three words: write the word, name the pattern, and use it in a sentence. Any spelling pattern from this year counts.</div>
+        <textarea class="journal-box" id="journal-spelling" data-label="SWYK: Spelling Spiral Review" placeholder="Word 1: ________&#10;Pattern: ________&#10;Sentence: ________&#10;&#10;Word 2: ________&#10;Pattern: ________&#10;Sentence: ________&#10;&#10;Word 3: ________&#10;Pattern: ________&#10;Sentence: ________" oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">Your vocabulary is sharp, your roots are solid, and your spelling SWYK is saved. Now let&rsquo;s put all that reading knowledge to work in your comparison.</p>
+    <button class="tab-next-btn" onclick="switchTab('reading')">Continue to 📖 Reading &rarr;</button>
+  </div>
+</div><!-- /tab-words -->
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB 3: READING                             -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-reading">
+
+  <div class="tracker-card">
+    <div class="tracker-header"><div class="tracker-header-icon">🗺️</div><div><div class="tracker-header-label">Your Story Journey</div><div class="tracker-header-title">Year-End Synthesis — Three Novels, One Theme</div></div></div>
+    <div class="scene-wrap" id="scene">
+      <div class="title-plaque"><h1>Year-End <em>Synthesis</em></h1></div>
+      <div style="position:absolute;top:6px;left:14%;font-size:10px;color:#C7922C;opacity:0.7;">✦</div>
+      <div style="position:absolute;top:4px;left:30%;font-size:8px;color:#FFE9B8;opacity:0.6;">✦</div>
+      <div style="position:absolute;top:8px;left:72%;font-size:10px;color:#C7922C;opacity:0.7;">✦</div>
+      <div style="position:absolute;top:3px;left:88%;font-size:9px;color:#FFE9B8;opacity:0.65;">✦</div>
+      <div style="position:absolute;top:5px;left:53%;font-size:22px;color:#C7922C;opacity:1;text-shadow:0 0 8px rgba(199,146,44,0.8);">👑</div>
+      <div style="position:absolute;top:28px;left:51%;font-size:9px;color:#FFE9B8;opacity:0.9;font-weight:700;letter-spacing:0.5px;">NARNIA</div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(180deg,transparent,rgba(20,48,16,0.8));"></div>
+      <div style="position:absolute;bottom:52px;left:3%;font-size:18px;">🌲</div>
+      <div style="position:absolute;bottom:50px;left:20%;font-size:16px;">🏰</div>
+      <div style="position:absolute;bottom:53px;left:38%;font-size:18px;">⚔️</div>
+      <div style="position:absolute;bottom:50px;left:57%;font-size:16px;">🦁</div>
+      <div style="position:absolute;bottom:53px;left:74%;font-size:18px;">👑</div>
+      <svg viewBox="0 0 1400 210" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;">
+        <path d="M -20,178 C 80,176 160,156 280,145 C 400,134 480,145 600,132 C 720,119 800,115 920,106 C 1040,97 1120,102 1240,96 C 1340,90 1400,85 1430,82" fill="none" stroke="rgba(199,146,44,0.25)" stroke-width="14" stroke-linecap="round"/>
+        <path d="M -20,178 C 80,176 160,156 280,145 C 400,134 480,145 600,132 C 720,119 800,115 920,106 C 1040,97 1120,102 1240,96 C 1340,90 1400,85 1430,82" fill="none" stroke="#C7922C" stroke-width="6" stroke-linecap="round" stroke-dasharray="5 9" opacity="0.6"/>
+      </svg>
+      <div class="character-token" id="characterToken">🦁</div>
+    </div>
+    <div class="tracker-chapter-label">📍 You are here: <strong>Week 31 &mdash; Year-End Synthesis: Applying Themes</strong></div>
+  </div>
+
+  <div class="video-wrap">
+    <div class="video-wrap-header"><span style="font-size:20px;">📖</span><div><div class="video-wrap-type">Reading &middot; Week 31</div><div class="video-wrap-title">Build Your Comparison</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📖</div><div class="video-placeholder-text">Teacher introduces the comparison activity</div><div class="video-placeholder-id"><!-- slot: 31-3-reading --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Today: no new reading! Students use their three novels and D2 evidence to draft a comparison paragraph<br>&bull; Remind students: theme statement + evidence from both novels + explanation of similarities AND differences<br>&bull; Point out the body paragraph organizer on this tab<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+  </div>
+
+  <div class="activity bl-purple">
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">1</div><div><div class="activity-title">📚 What Good Readers Do</div><div class="activity-sub">Apply what you notice</div></div></div>
+    <div class="activity-body">
+      <p>Good readers apply what they notice. You&rsquo;ve defined your theme and identified evidence. Today, <strong>USE</strong> what you&rsquo;ve gathered to build your comparison. The strongest writing doesn&rsquo;t just list examples &mdash; it explains what those examples <strong>MEAN</strong>.</p>
+      <div class="socratic-box">
+        <div class="socratic-label">🧠 As you draft today, ask yourself:</div>
+        <p class="socratic-q"><strong>Do I have evidence from BOTH novels? Or am I leaning on just one?</strong></p>
+        <p class="socratic-q"><strong>Am I explaining HOW the characters are similar or different &mdash; or just saying THAT they are?</strong></p>
+        <p class="socratic-q"><strong>Does my paragraph have a theme statement, evidence, and an explanation? Or is it missing a piece?</strong></p>
+      </div>
+      <div class="thinking-stop">💭 These questions will guide your comparison paragraph. Keep them in mind as you write.</div>
+    </div>
+  </div>
+
+  <div class="activity bl-green">
+    <div class="activity-head"><div class="activity-num" style="background:#34B76F;">2</div><div><div class="activity-title">📗 Open Your Book</div><div class="activity-sub">Your Novel Shelf — Three Novels, One Theme</div></div></div>
+    <div class="activity-body">
+      <div class="open-book-wrap">
+        <div class="open-book-cover"></div>
+        <div class="open-book-spine"></div>
+        <div class="open-book-pages-3"></div>
+        <div class="open-book-pages-2"></div>
+        <div class="open-book-pages-1"></div>
+        <div class="open-book">
+          <div class="open-book-left"><span class="open-book-left-deco">⚔️</span></div>
+          <div class="open-book-right">
+            <div class="open-book-title">Your Novel Shelf 📚</div>
+            <div class="open-book-chapter">Anne of Green Gables &bull; Number the Stars &bull; Prince Caspian</div>
+            <div class="open-book-prompt">Use your novels as evidence sources. Today, you build your comparison.</div>
+          </div>
+        </div>
+      </div>
+      <div class="reading-links">
+        <div class="reading-links-title">📖 Chapter Access</div>
+        <a class="reading-link" href="#" target="_blank"><span class="reading-link-icon">👩‍🦰</span> Anne of Green Gables (your physical book)</a>
+        <a class="reading-link" href="#" target="_blank"><span class="reading-link-icon">⭐</span> Number the Stars (your physical book)</a>
+        <a class="reading-link" href="#" target="_blank"><span class="reading-link-icon">🦁</span> Prince Caspian (your physical book)</a>
+      </div>
+      <div class="callout callout-info">
+        <span class="callout-icon">📖</span>
+        <p><strong>Today, no new reading.</strong> Use your three novels and the evidence you gathered yesterday. Your job today is to put that evidence to work by drafting the body of your comparison paragraph.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">3</div><div><div class="activity-title">🏗️ Build Your Comparison</div><div class="activity-sub">Use your evidence to draft the body of your paragraph.</div></div></div>
+    <div class="activity-body">
+      <p>Before you write your comparison paragraph in the Assignment tab, use this organizer to plan. A strong comparison paragraph does three things: states the theme, shares evidence from both novels, and explains how the characters are similar <em>and</em> different.</p>
+      <div class="task-box" style="background:#EAF8FD;border-color:#55C8E8;margin-bottom:14px;">
+        <div class="task-label">📝 Comparison Paragraph Planner</div>
+        <p style="font-size:14px;line-height:1.9;margin-bottom:6px;">
+          <strong>My theme:</strong> _______________________________________________<br>
+          <strong>Novel 1:</strong> ______________________ &nbsp; <strong>Character:</strong> ______________________<br>
+          <strong>Evidence:</strong> _______________________________________________<br>
+          <strong>Novel 2:</strong> ______________________ &nbsp; <strong>Character:</strong> ______________________<br>
+          <strong>Evidence:</strong> _______________________________________________<br>
+          <strong>How are they SIMILAR?</strong> _______________________________________<br>
+          <strong>How are they DIFFERENT?</strong> _______________________________________
+        </p>
+        <p style="font-size:13px;color:#7A88A8;font-style:italic;">Write these notes in your reading journal before you go to the Assignment tab.</p>
+      </div>
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>The strongest comparisons don&rsquo;t just say &ldquo;Character A and Character B both show courage.&rdquo; They explain <em>how</em>: &ldquo;Anne shows courage by speaking honestly even when it costs her, while Annemarie shows courage by acting quietly even when she is afraid.&rdquo;</p>
+      </div>
+      <div class="thinking-stop">💭 When your planner is ready, continue to the Assignment tab to write your paragraph.</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">Your planner is ready and your evidence is in hand. Now head to the Assignment tab to write your comparison paragraph.</p>
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 📬 Assignment &rarr;</button>
+  </div>
+</div><!-- /tab-reading -->
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB 4: ASSIGNMENT                          -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap" style="margin-bottom:16px;">
+    <div class="video-wrap-header"><span style="font-size:20px;">📬</span><div><div class="video-wrap-type">Assignment &middot; Overview</div><div class="video-wrap-title">What You&rsquo;re Submitting Today</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📬</div><div class="video-placeholder-text">Teacher explains what to submit</div><div class="video-placeholder-id"><!-- slot: 31-3-assignment --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">📋 Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Today&rsquo;s submission: spelling SWYK + comparison paragraph + self-assessment + third novel connection + concluding thought<br>&bull; Remind students: evidence from BOTH novels must appear in the paragraph<br>&bull; RWM is also on this tab today<br>&bull; ~1&ndash;2 minutes</div></div></div></div>
+  </div>
+
+  <!-- RWM -->
+  <div class="rwm-box" style="margin-bottom:20px;">
+    <div class="rwm-header">&#9997;&#65039; RWM &mdash; Read Like a Reader, Read Like a Writer, Mimic</div>
+    <div class="rwm-sentence">&ldquo;Annemarie relaxed the clenched fingers of her right hand, which still gripped Ellen&rsquo;s necklace.&rdquo;</div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">📖 Read Like a Reader</div>
+      <div class="rwm-step-text">This sentence comes from <em>Number the Stars</em>. Annemarie has just been through something frightening. What is happening in this moment? Why is she still gripping Ellen&rsquo;s necklace? What does that detail tell you about how much Ellen matters to her?</div>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">✏️ Read Like a Writer</div>
+      <div class="rwm-step-text">Notice the contrast between &ldquo;relaxed&rdquo; and &ldquo;clenched.&rdquo; The word &ldquo;clenched&rdquo; tells us her hand was tight &mdash; tense, desperate, holding on. The word &ldquo;relaxed&rdquo; tells us the danger is over. But the necklace is still there. How does the contrast between &ldquo;relaxed&rdquo; and &ldquo;clenched&rdquo; show what Annemarie is feeling &mdash; both then and now?</div>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">🖊️ Mimic</div>
+      <div class="rwm-step-text">Write your own sentence using the same pattern: a character releases tension, but something still shows what they were holding on to.</div>
+      <div class="rwm-frame">[Character] [released/loosened/relaxed] the [tense body part], which still [held/gripped/clutched] [object].</div>
+    </div>
+  </div>
+  <div class="journal-label"><span>📓 Your Mimic Sentence</span><span class="saved-dot" id="dot-rwm"></span></div>
+  <textarea class="journal-box" id="journal-rwm" data-label="RWM Mimic" placeholder="[Character] relaxed the clenched ___, which still gripped ___." oninput="autoSave(this,'dot-rwm');"></textarea>
+
+  <div class="callout callout-info" style="margin:20px 0;">
+    <span class="callout-icon">📬</span>
+    <p><strong>This is the part you submit.</strong> Answer in complete sentences. Use evidence from your novels. When you finish, copy or download your work at the bottom.</p>
+  </div>
+
+  <!-- Part A -->
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">A</div><div><div class="activity-title">📖 Part A: Chapter Thinking</div><div class="activity-sub">Answer in complete sentences using evidence from your novels.</div></div></div>
+    <div class="activity-body">
+
+      <div class="q-block"><div class="q-text"><span class="q-num">1</span>Write a comparison paragraph (5&ndash;7 sentences) that compares how <strong>TWO characters from TWO different novels</strong> show your theme. Include: your theme statement, evidence from both novels, and an explanation of how they are similar and different.</div><div class="q-hint">Use your planner from the Reading tab. Start with your theme, then move to your evidence. Don&rsquo;t just list &mdash; explain.</div></div>
+      <div class="textbox-prompt">Include your theme statement, evidence from BOTH novels, and an explanation of how the characters are similar AND different.</div>
+      <textarea class="journal-box" id="journal-q1" data-label="Q1: Comparison Paragraph Draft" placeholder="The theme of ___ appears in both ___ and ___. In [Novel 1], [Character] shows this theme when... In [Novel 2], [Character] shows this theme when... Both characters are similar because... However, they are different in that..." oninput="autoSave(this,'dot-q1');gatherAnswers();"></textarea>
+
+      <div class="q-block" style="margin-top:16px;"><div class="q-text"><span class="q-num">2</span>Reread your paragraph. Does it include evidence from <strong>BOTH</strong> novels? Does it explain <strong>HOW</strong> the characters are similar and different &mdash; not just <strong>THAT</strong> they are? What is one thing you could add or change to make it stronger?</div><div class="q-hint">Read it like a reader who hasn&rsquo;t studied your novel. Would they understand why these two characters are being compared?</div></div>
+      <div class="textbox-prompt">Self-assess your paragraph honestly. What is one specific change that would make it stronger?</div>
+      <textarea class="journal-box" id="journal-q2" data-label="Q2: Self-Assessment" placeholder="My paragraph [does / does not] include evidence from both novels because... The part that explains HOW they are similar or different is... One thing I could add or change is..." oninput="autoSave(this,'dot-q2');gatherAnswers();"></textarea>
+
+      <div class="q-block" style="margin-top:16px;"><div class="q-text"><span class="q-num">3</span>Think about your theme across <strong>ALL THREE</strong> novels. Is there a character from the <strong>THIRD</strong> novel who also shows this theme? How does their example compare to the two you already wrote about?</div><div class="q-hint">Your third novel might be <em>Anne of Green Gables</em>, <em>Number the Stars</em>, or <em>Prince Caspian</em> &mdash; whichever one you didn&rsquo;t use in your paragraph. You don&rsquo;t need to write a full paragraph &mdash; just 3&ndash;4 sentences connecting this third character to your theme.</div></div>
+      <div class="textbox-prompt">Name the character, the novel, and explain how they also show your theme. How are they similar to or different from your first two characters?</div>
+      <textarea class="journal-box" id="journal-q3" data-label="Q3: Third Novel Connection" placeholder="A character from [Novel 3] who also shows this theme is... They show the theme when... Compared to [Character 1] and [Character 2], this character is [similar/different] because..." oninput="autoSave(this,'dot-q3');gatherAnswers();"></textarea>
+    </div>
+  </div>
+
+  <!-- Part C -->
+  <div class="activity bl-gold">
+    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Write your concluding thought.</div></div></div>
+    <div class="activity-body">
+      <div class="callout callout-think">
+        <span class="callout-icon">💭</span>
+        <p>You&rsquo;ve compared characters and traced a theme across multiple novels. Now step back: what does your theme actually teach readers about life? The best concluding sentences go beyond the story and say something true about the world.</p>
+      </div>
+      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write one sentence that could be your <strong>CONCLUDING thought</strong> &mdash; what does your theme teach readers about life?</div><div class="q-hint">Don&rsquo;t just restate your theme. Go one level deeper: what does it mean for readers, not just for characters?</div></div>
+      <div class="textbox-prompt">Write one strong concluding sentence. Make it about what readers can take from this theme — not just what characters learned.</div>
+      <textarea class="journal-box" id="journal-writing" data-label="Writing: Concluding Thought" placeholder="This theme teaches readers that... / Across these three novels, readers learn that... / What these stories show us is that..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
+    </div>
+  </div>
+
+  <!-- Gathered Answers -->
+  <div class="gathered-card">
+    <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
+    <div class="gathered-body">
+      <p class="gathered-intro">Everything you typed is gathered below. Copy to paste into Canvas, or download as a PDF.</p>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn gathered-btn-copy" onclick="copyGathered()">📋 Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-pdf" onclick="downloadJournal()">📄 Download as PDF</button>
+      </div>
+      <div class="gathered-copied" id="gatheredCopied">&#10003; Copied to clipboard!</div>
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="turn-in-card" style="margin-top:18px;">
+    <div class="turn-in-header"><div class="turn-in-header-icon">📬</div><div><div class="turn-in-header-label">Ready?</div><div class="turn-in-header-title">Before You Submit</div></div></div>
+    <div class="turn-in-body">
+      <div class="turn-in-checklist" id="checklistItems">
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Spelling SWYK with three words and their patterns.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my comparison paragraph with evidence from two novels.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the self-assessment and third novel connection.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-main"><span>Optima Academy Online</span> &middot; 4th Grade ELA &middot; Week 31 &middot; Lesson 31.3</div>
+  <div class="footer-sub">Year-End Synthesis &mdash; Applying Themes Across Novels</div>
+  <div class="footer-copy">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+<script>
+/* TAB SWITCHING */
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('tab-'+tabId).classList.add('active');
+  var btn=document.querySelector('.tab-btn[data-tab="'+tabId+'"]');
+  btn.classList.add('active'); btn.classList.add('visited');
+  updateProgress();
+  var intro=document.getElementById('introSection');
+  if(tabId==='warmup'){intro.classList.remove('collapsed');}else{intro.classList.add('collapsed');}
+  if(tabId==='assignment'){gatherAnswers();}
+  document.getElementById('pageTop').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function expandIntro(){document.getElementById('introSection').classList.remove('collapsed');}
+
+/* GATHER ANSWERS */
+function gatherAnswers(){
+  var output='';
+  output+='LESSON 31.3 — Year-End Synthesis: Applying Themes\n';
+  output+='════════════════════════════════════════\n\n';
+  output+='🔤 SPELLING SWYK\n────────────────────────────────\n';
+  var gEl=document.getElementById('journal-spelling');
+  if(gEl){output+='\n'+(gEl.getAttribute('data-label')||'Spelling SWYK: Root Word Review')+'\n'+(gEl.value.trim()||'(no answer)')+'\n';}
+  output+='\n📖 CHAPTER THINKING\n────────────────────────────────\n';
+  ['journal-q1','journal-q2','journal-q3'].forEach(function(id){
+    var el=document.getElementById(id); if(!el)return;
+    output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
+  });
+  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
+  var wEl=document.getElementById('journal-writing');
+  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  output+='\n🎮 PRACTICE ACTIVITIES\n────────────────────────────────\n';
+  output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Root Fill-in-the-Blank\n';
+  output+=(window._clozeDone?'✅':'⬜')+' Vocabulary Cloze: Cross-Novel Words\n';
+  output+=(window._spellTestDone?'✅':'⬜')+' Spelling Self-Check Warm-Up\n';
+  var g=document.getElementById('gatheredOutput'); if(g)g.value=output;
+}
+
+/* COPY */
+function copyGathered(){
+  var g=document.getElementById('gatheredOutput'); if(!g)return;
+  g.select(); g.setSelectionRange(0,99999);
+  try{navigator.clipboard.writeText(g.value).then(showCopied).catch(function(){document.execCommand('copy');showCopied();});}
+  catch(e){document.execCommand('copy');showCopied();}
+}
+function showCopied(){var m=document.getElementById('gatheredCopied');m.classList.add('show');setTimeout(function(){m.classList.remove('show');},2500);}
+
+/* PROGRESS */
+function updateProgress(){
+  var total=document.querySelectorAll('.tab-btn').length;
+  var visited=document.querySelectorAll('.tab-btn.visited').length;
+  var pct=Math.round((visited/total)*100);
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressPct').textContent=pct+'%';
+}
+document.querySelector('.tab-btn.active').classList.add('visited');
+updateProgress();
+(function(){var pw=document.querySelector('.progress-wrap'),tb=document.querySelector('.tab-bar');if(pw&&tb)tb.style.top=pw.offsetHeight+'px';})();
+
+/* CHECKLIST */
+function toggleCheck(item){
+  item.classList.toggle('checked');
+  var check=item.querySelector('.turn-in-check');
+  check.textContent=item.classList.contains('checked')?'✓':'';
+  var container=item.closest('.turn-in-checklist'); if(!container)return;
+  var all=container.querySelectorAll('.turn-in-item').length===container.querySelectorAll('.turn-in-item.checked').length;
+  if(all&&container.querySelectorAll('.turn-in-item').length>0)fireConfetti();
+}
+
+/* CONFETTI */
+function fireConfetti(){
+  var canvas=document.getElementById('confettiCanvas'),ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+  var colors=['#0E1C42','#F9A825','#34B76F','#55C8E8','#FFE9B8','#00695C'];
+  var emojis=['📚','🐭','👩‍🦰','⭐','🦁','✨'];
+  var particles=[];
+  for(var i=0;i<90;i++)particles.push({type:'square',x:Math.random()*canvas.width,y:-20-Math.random()*120,vx:(Math.random()-0.5)*6,vy:Math.random()*3.5+2,size:Math.random()*8+4,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.2});
+  for(var j=0;j<25;j++)particles.push({type:'emoji',emoji:emojis[Math.floor(Math.random()*emojis.length)],x:Math.random()*canvas.width,y:-30-Math.random()*150,vx:(Math.random()-0.5)*5,vy:Math.random()*3+1.5,size:Math.random()*10+22,rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.12});
+  var frame=0,totalFrames=300,fadeStart=240;
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    var alpha=frame>fadeStart?Math.max(0,1-((frame-fadeStart)/(totalFrames-fadeStart))):1;
+    ctx.globalAlpha=alpha;
+    particles.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=0.08;p.rot+=p.vrot;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);if(p.type==='emoji'){ctx.font=p.size+'px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.emoji,0,0);}else{ctx.fillStyle=p.color;ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);}ctx.restore();});
+    frame++; if(frame<totalFrames)requestAnimationFrame(animate);else{ctx.globalAlpha=1;ctx.clearRect(0,0,canvas.width,canvas.height);}
+  }
+  animate();
+}
+
+/* BACK TO TOP */
+(function(){
+  var btn=document.getElementById('backToTop'); if(!btn)return;
+  var inIframe=(function(){try{return window.self!==window.top;}catch(e){return true;}})();
+  btn.addEventListener('click',function(){
+    try{window.scrollTo({top:0,behavior:'smooth'});}catch(e){}
+    document.documentElement.scrollTop=0; document.body.scrollTop=0;
+    var top=document.getElementById('pageTop');
+    if(top&&top.scrollIntoView)try{top.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}
+    try{if(window.frameElement&&window.frameElement.scrollIntoView)window.frameElement.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}
+    if(inIframe)try{window.parent.postMessage({type:'optima-lesson:scroll-to-top'},'*');}catch(e){}
+  });
+  if(inIframe)setTimeout(function(){btn.classList.add('show');},1500);
+  else window.addEventListener('scroll',function(){btn.classList.toggle('show',window.pageYOffset>400);});
+})();
+
+/* WORD BUILD GAME */
+window._rootMatchDone=false;
+var rootMatchFirst=null,rootMatchCount=0;
+function rootMatchClick(item){
+  if(item.classList.contains('matched'))return;
+  if(!rootMatchFirst){rootMatchFirst=item;item.classList.add('selected');return;}
+  if(rootMatchFirst===item){rootMatchFirst.classList.remove('selected');rootMatchFirst=null;return;}
+  var k1=rootMatchFirst.getAttribute('data-match'),k2=item.getAttribute('data-match');
+  if(k1===k2&&rootMatchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
+    rootMatchFirst.classList.remove('selected'); rootMatchFirst.classList.add('matched'); item.classList.add('matched'); rootMatchCount++; rootMatchFirst=null;
+    if(rootMatchCount>=4){var fb=document.getElementById('rootMatchFeedback');if(fb)fb.classList.add('show');window._rootMatchDone=true;}
+  } else {
+    item.classList.add('wrong-flash'); rootMatchFirst.classList.add('wrong-flash');
+    var a=rootMatchFirst,b=item; setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500); rootMatchFirst=null;
+  }
+}
+function wbClick(btn,base,affix,verdict){
+  if(btn.classList.contains('correct')||btn.classList.contains('wrong'))return;
+  btn.classList.add(verdict==='correct'?'correct':'wrong');
+  var fb=document.getElementById('wbFeedback-'+base);
+  // Count how many correct in this base group clicked
+  var allBtns=document.querySelectorAll('[data-wb="'+base+'"]');
+  var correctClicked=0,correctTotal=0;
+  allBtns.forEach(function(b){if(b.getAttribute('onclick')&&b.getAttribute('onclick').indexOf("'correct'")>-1)correctTotal++;if(b.classList.contains('correct'))correctClicked++;});
+  if(correctClicked>=correctTotal&&fb)fb.style.display='block';
+  window._rootMatchDone=true;
+}
+function showAllWbFeedback(){
+  ['port','tract','fin'].forEach(function(base){
+    var fb=document.getElementById('wbFeedback-'+base);if(fb)fb.style.display='block';
+  });
+  window._rootMatchDone=true;
+}
+
+/* CLOZE GAME */
+window._clozeDone=false;
+function checkCloze(){
+  var answers={cloze1:'solemnly',cloze2:'allegiance',cloze3:'indignant',cloze4:'conductor'};
+  var correct=0,total=4;
+  Object.keys(answers).forEach(function(id){
+    var el=document.getElementById(id); if(!el)return;
+    var val=el.value.trim().toLowerCase();
+    if(val===answers[id]){el.classList.add('correct');el.classList.remove('wrong');correct++;}
+    else{el.classList.add('wrong');el.classList.remove('correct');}
+  });
+  var fb=document.getElementById('clozeFeedback');
+  if(fb){fb.textContent=correct===total?'🎉 All correct! You know your cross-novel vocabulary.':correct+' of '+total+' correct — check the ones in red and try again.';fb.classList.add('show');}
+  if(correct===total)window._clozeDone=true;
+}
+
+/* SPELLING TEST */
+window._spellTestDone=false;
+(function(){
+  var words=['interrupt','transform','conduct','sufficient','treachery','coronation','honourable','proclaimed','surrender','lineage'];
+  var container=document.getElementById('spellingTest'); if(!container)return;
+  var correct=0;
+  words.forEach(function(word,i){
+    var div=document.createElement('div');
+    div.className='task-box'; div.style.marginBottom='10px';
+    div.innerHTML='<div class="task-label">Word '+(i+1)+'</div>'+
+      '<div id="spword'+i+'" style="font-size:22px;font-weight:800;color:#2D5016;font-family:Lora,Georgia,serif;padding:8px 0 10px;letter-spacing:1px;">'+word+'</div>'+
+      '<button style="padding:5px 14px;background:#E2E8F4;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:8px;" onclick="hideSpWord('+i+',this)">Hide Word</button>'+
+      '<input id="spinput'+i+'" type="text" style="width:100%;padding:8px 12px;border:2px dashed #8B6FC0;border-radius:10px;font-size:16px;font-family:Lora,Georgia,serif;" placeholder="Type the word...">'+
+      '<button style="padding:5px 14px;background:linear-gradient(135deg,#8B6FC0,#a88ad4);color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;margin-top:6px;" onclick="checkSpWord('+i+',''+word+'',this)">Check</button>'+
+      '<div id="spresult'+i+'" style="margin-top:6px;font-size:13px;font-weight:700;display:none;"></div>';
+    container.appendChild(div);
+  });
+  var scoreDiv=document.createElement('div');
+  scoreDiv.id='spellScore'; scoreDiv.style='text-align:center;padding:10px;font-size:15px;font-weight:700;color:#34B76F;display:none;';
+  container.appendChild(scoreDiv);
+})();
+function hideSpWord(i,btn){
+  var w=document.getElementById('spword'+i); if(w)w.style.visibility='hidden';
+  btn.disabled=true; btn.textContent='Word hidden';
+}
+var _spellCorrect=0;
+function checkSpWord(i,correct,btn){
+  var inp=document.getElementById('spinput'+i);
+  var res=document.getElementById('spresult'+i);
+  if(!inp||!res)return;
+  var val=inp.value.trim().toLowerCase();
+  btn.disabled=true; inp.disabled=true;
+  var w=document.getElementById('spword'+i); if(w)w.style.visibility='visible';
+  if(val===correct){res.textContent='✅ Correct!';res.style.color='#34B76F';}
+  else{res.textContent='❌ The correct spelling is: '+correct;res.style.color='#E8636B';}
+  res.style.display='block';
+  _spellCorrect=(val===correct)?_spellCorrect+1:_spellCorrect;
+  // Check if all done
+  var allDone=true;
+  for(var j=0;j<10;j++){var inp2=document.getElementById('spinput'+j);if(inp2&&!inp2.disabled)allDone=false;}
+  if(allDone){
+    var sc=document.getElementById('spellScore');
+    if(sc){sc.textContent='🎉 Done! You spelled '+_spellCorrect+' of 10 correctly.';sc.style.display='block';}
+    window._spellTestDone=true;
+  }
+}
+
+/* SPELLING SORT — stub (not used D3 but referenced in old JS) */
+var sortSelected=null,sortPlaced=0,sortTotal=8;
+function pickSortChip(chip){}
+function dropSortChip(colDrop,colName){}
+
+/* VOCAB SORT — stub (not used D3) */
+var vocabSortSelected=null,vocabSortPlaced=0,vocabSortTotal=4;
+function pickVocabChip(chip){}
+function dropVocabChip(colDrop,colName){}
+
+/* WORD BASE MATCH — replaced by wbClick in D3 */
+
+/* DEPENDENT CLAUSE SPOTTER — not used D3 */
+function clauseSpot(word,sentenceId){}
+
+/* DOL HIGHLIGHTER */
+function dolHighlight(word,explanation){
+  word.classList.toggle('highlighted');
+  var explain=document.getElementById('dolExplain');
+  if(word.classList.contains('highlighted')&&explanation){explain.textContent='→ '+explanation;explain.style.opacity='1';}
+  else{if(document.querySelectorAll('#dolModel .highlighted').length===0)explain.textContent='';}
+}
+
+/* AUTO-SAVE */
+function autoSave(textarea,dotId){
+  var dot=document.getElementById(dotId); if(dot){dot.classList.add('saved');clearTimeout(textarea._saveTimeout);textarea._saveTimeout=setTimeout(function(){},300);}
+}
+
+/* DOWNLOAD PDF */
+function downloadJournal(){
+  gatherAnswers();
+  var sections=[
+    {title:'🔤 SPELLING SWYK',ids:['journal-spelling']},
+    {title:'📖 CROSS-NOVEL THINKING',ids:['journal-q1','journal-q2','journal-q3']},
+    {title:'✍️ WRITING CONNECTION',ids:['journal-writing']}
+  ];
+  var html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Lesson 31.3 — My Work</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#1a1a2e;line-height:1.7;}h1{font-size:22px;border-bottom:3px solid #2D5016;padding-bottom:8px;}h2{font-size:14px;color:#7A88A8;margin-bottom:24px;}.st{font-size:16px;font-weight:bold;color:#0E1C42;margin:28px 0 4px;padding:8px 0 4px;border-bottom:2px solid #E2E8F4;}.ql{font-size:13px;font-weight:bold;color:#3A4A6B;margin:16px 0 2px;}.qa{font-size:14px;color:#0E1C42;margin:0 0 4px;padding:6px 12px;background:#f8f9fc;border-left:3px solid #D6F2FB;border-radius:4px;white-space:pre-wrap;}.na{color:#B0B8CC;font-style:italic;}.gm{margin-top:28px;padding-top:12px;border-top:2px solid #E2E8F4;}.gt{font-size:16px;font-weight:bold;color:#0E1C42;margin-bottom:8px;}.gl{font-size:14px;margin-bottom:4px;}</style></head><body>';
+  html+='<h1>📓 My Work — Lesson 31.3</h1><h2>Year-End Synthesis — Applying Themes Across Novels</h2>';
+  sections.forEach(function(sec){
+    html+='<div class="st">'+sec.title+'</div>';
+    sec.ids.forEach(function(id){
+      var el=document.getElementById(id); if(!el)return;
+      var label=el.getAttribute('data-label')||id, val=el.value.trim();
+      html+='<div class="ql">'+label+'</div>';
+      html+='<div class="qa'+(val?'':' na')+'">'+(val?val.replace(/</g,'&lt;').replace(/>/g,'&gt;'):'(no answer)')+'</div>';
+    });
+  });
+  html+='<div class="gm"><div class="gt">🎮 Mini-Game Results</div>';
+  html+='<div class="gl">'+(window._rootMatchDone?'✅':'⬜')+' Morphology Word-Building Game</div>';
+  html+='<div class="gl">'+(window._clozeDone?'✅':'⬜')+' Vocabulary Cloze Fill-In</div>';
+  html+='<div class="gl">'+(window._spellTestDone?'✅':'⬜')+' Spelling Self-Check Test</div></div>';
+  html+='';
+  var win=window.open('','_blank'); win.document.write(html); win.document.close(); setTimeout(function(){win.print();},400);
+}
+
+/* STORY JOURNEY TRACKER */
+var TRACKER_TOTAL=5, TRACKER_PROGRESS=4.6;
+var trackerIcons=['📚','🐭','👩‍🦰','⭐','🦁'];
+var trackerPos=[{x:6,y:148},{x:20,y:132},{x:35,y:140},{x:52,y:128},{x:68,y:136},{x:80,y:124},{x:88,y:118},{x:94,y:112}];
+(function renderTracker(){
+  var scene=document.getElementById('scene'); if(!scene)return;
+  var reached=Math.floor(TRACKER_PROGRESS*TRACKER_TOTAL);
+  var frac=(TRACKER_PROGRESS*TRACKER_TOTAL)-reached;
+  for(var i=0;i<TRACKER_TOTAL;i++){
+    var n=document.createElement('div');
+    var isDone=i<reached, isActive=i===reached;
+    n.className='node'+(isDone?' done':'')+(isActive?' active':'')+(!isDone&&!isActive?' upcoming':'');
+    n.style.left='calc('+trackerPos[i].x+'% - 15px)';
+    n.style.top=trackerPos[i].y+'px';
+    n.innerHTML=isDone?'✦':trackerIcons[i];
+    scene.appendChild(n);
+  }
+  var tok=document.getElementById('characterToken'); if(!tok)return;
+  var idx=Math.min(reached,TRACKER_TOTAL-1);
+  var tokX=trackerPos[idx].x, tokY=trackerPos[idx].y;
+  if(reached<TRACKER_TOTAL-1&&frac>0){tokX=trackerPos[idx].x+(trackerPos[idx+1].x-trackerPos[idx].x)*frac;tokY=trackerPos[idx].y+(trackerPos[idx+1].y-trackerPos[idx].y)*frac;}
+  tok.style.left='calc('+tokX+'% - 14px)'; tok.style.top=(tokY-36)+'px';
+})();
+
+/* VIDEO MANIFEST LOADER */
+(function(){
+  var SCRIPT_URL="https://raw.githubusercontent.com/optimaondemand/optima-assets/main/videos.js";
+  function loadVideos(){
+    if(!window.VIDEO_MANIFEST)return;
+    document.querySelectorAll('.video-placeholder').forEach(function(ph){
+      var comment=null;
+      ph.childNodes.forEach(function(node){
+        if(node.nodeType===1&&node.className==='video-placeholder-id'){
+          node.childNodes.forEach(function(c){if(c.nodeType===8&&/slot:/.test(c.nodeValue))comment=c.nodeValue.replace(/.*slot:\s*/,'').trim();});
+        }
+      });
+      if(!comment)return;
+      var entry=window.VIDEO_MANIFEST[comment]; if(!entry)return;
+      var ratioWrap=ph.parentElement; if(!ratioWrap)return;
+      if(entry.indexOf('<iframe')===0||entry.indexOf('<IFRAME')===0)ratioWrap.innerHTML=entry;
+      else ratioWrap.innerHTML='<iframe src="'+entry+'" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen></iframe>';
+    });
+  }
+  var s=document.createElement('script'); s.src=SCRIPT_URL; s.async=true; s.onload=loadVideos; s.onerror=function(){};
+  document.head.appendChild(s);
+})();
+</script>
+
+</html>

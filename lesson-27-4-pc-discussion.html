@@ -1,0 +1,2674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optima Academy Online &mdash; Lesson 27.4: Prince Caspian Discussion</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+*,*::before,*::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F0F2F8;
+  color: #0E1C42;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0 0 40px rgba(14, 28, 66, 0.08);
+}
+
+/* ═══════════ PROGRESS BAR ═══════════ */
+.progress-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: #0E1C42;
+  padding: 8px 20px 10px;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.progress-label {
+  font-size: 12px;
+  color: #55C8E8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+.progress-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #55C8E8, #7FD8F0, #C7922C);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+.progress-pct {
+  font-size: 13px;
+  color: #C7922C;
+  font-weight: 800;
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ═══════════ HEADER ═══════════ */
+.header {
+  background: #0E1C42;
+  border-bottom: 6px solid #55C8E8;
+  padding: 20px 28px 18px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #55C8E8, #7FD8F0, #55C8E8);
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.header-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.header-title em { color: #FFE9B8; font-style: italic; }
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(85, 200, 232, 0.15);
+  border: 1.5px solid rgba(85, 200, 232, 0.35);
+  border-radius: 28px;
+  padding: 6px 16px;
+}
+.header-badge-icon { font-size: 22px; }
+.header-badge-text { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ═══════════ INFO STRIP ═══════════ */
+.info-strip {
+  display: flex;
+  flex-wrap: wrap;
+  background: #FFFFFF;
+  border-bottom: 2px solid #E2E8F4;
+}
+.info-cell {
+  flex: 1;
+  min-width: 150px;
+  padding: 12px 16px;
+  border-right: 1px solid #E2E8F4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.info-cell:last-child { border-right: none; }
+.info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.info-label {
+  font-size: 10px;
+  color: #7A88A8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+.info-value { font-size: 16px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #3A4A6B; line-height: 1.3; }
+
+/* ═══════════ INTRO COLLAPSIBLE ═══════════ */
+.intro-section { transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease; overflow: hidden; }
+.intro-section.collapsed .intro-2col,
+.intro-section.collapsed .need-strip,
+.intro-section.collapsed .todays-path { display: none; }
+.intro-collapsed-bar {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 28px;
+  background: #FFF8F0;
+  border-bottom: 2px solid #F5E6C8;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.intro-collapsed-bar:hover { background: #FFF3DC; }
+.intro-section.collapsed .intro-collapsed-bar { display: flex; }
+.intro-collapsed-icon { font-size: 18px; }
+.intro-collapsed-text {
+  font-size: 14px;
+  color: #5A4A3A;
+  font-weight: 700;
+  flex: 1;
+}
+.intro-collapsed-toggle {
+  font-size: 12px;
+  color: #C7922C;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════ INTRO 2-COL ═══════════ */
+.intro-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 20px 28px 4px;
+}
+.intro-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+}
+.intro-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 2px solid;
+}
+.intro-card-head-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.intro-card-head-label {
+  font-size: 10px;
+  color: #7A88A8;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+}
+.intro-card-head-title { font-size: 18px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.intro-card-body { padding: 14px 18px; }
+.intro-card-body p { font-size: 15px; color: #3A4A6B; line-height: 1.65; margin-bottom: 8px; }
+.intro-card-body p:last-child { margin-bottom: 0; }
+.intro-card-body .obj-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+.intro-card-body .obj-line:last-child { margin-bottom: 0; }
+.intro-card-body .obj-icon { flex-shrink: 0; font-size: 17px; }
+.theme-question .intro-card-head { background: #FFF3DC; border-color: #F5E6C8; }
+.theme-question .intro-card-head-icon { background: #C7922C; }
+.theme-objectives .intro-card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-objectives .intro-card-head-icon { background: #55C8E8; }
+
+/* ═══════════ NEED STRIP ═══════════ */
+.need-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 28px 18px;
+}
+.need-strip-label {
+  font-size: 13px;
+  color: #3A4A6B;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.need-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #E3F8ED;
+  border: 1.5px solid #B8E8CF;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 13px;
+  color: #0E1C42;
+  font-weight: 700;
+}
+
+/* ═══════════ TAB BAR ═══════════ */
+.tab-bar {
+  position: sticky;
+  top: 38px;
+  z-index: 100;
+  background: #FFFFFF;
+  border-bottom: 3px solid #E2E8F4;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  box-shadow: 0 -4px 0 0 #0E1C42;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1;
+  min-width: 130px;
+  padding: 12px 8px 11px;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7A88A8;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  line-height: 1.3;
+  text-align: center;
+}
+.tab-btn:hover { color: #0E1C42; background: #EAF8FD; }
+.tab-btn.active {
+  color: #0E1C42;
+  border-bottom-color: #55C8E8;
+  background: #FFFFFF;
+}
+.tab-btn .tab-check {
+  display: none;
+  font-size: 12px;
+  color: #34B76F;
+  margin-left: 4px;
+  font-weight: 800;
+}
+.tab-btn.visited .tab-check { display: inline; }
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+
+/* ═══════════ VIDEO WRAP ═══════════ */
+.video-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid #E2E8F4;
+  box-shadow: 0 4px 20px rgba(14, 28, 66, 0.08);
+  background: #000;
+  margin: 0 0 22px;
+}
+.video-wrap-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  border-bottom: 2px solid rgba(85, 200, 232, 0.2);
+}
+.video-wrap-type {
+  font-size: 10px;
+  color: #55C8E8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: 'Nunito', sans-serif;
+}
+.video-placeholder-id {
+  font-size: 11px;
+  color: rgba(85, 200, 232, 0.4);
+  font-family: monospace;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+.video-teacher-notes {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(85, 200, 232, 0.25);
+  border-radius: 8px;
+  text-align: left;
+  max-width: 480px;
+}
+.video-teacher-notes-label {
+  font-size: 10px;
+  color: rgba(85, 200, 232, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  font-family: 'Nunito', sans-serif;
+}
+.video-teacher-notes-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.55;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ═══════════ ACTIVITY CARDS ═══════════ */
+.activity {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+}
+.activity.bl-cyan { border-left: 6px solid #55C8E8; }
+.activity.bl-gold { border-left: 6px solid #C7922C; }
+.activity.bl-green { border-left: 6px solid #34B76F; }
+.activity.bl-purple { border-left: 6px solid #8B6FC0; }
+.activity.bl-rose { border-left: 6px solid #c7627e; }
+.activity.bl-navy { border-left: 6px solid #0E1C42; }
+.activity-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E2E8F4;
+}
+.activity-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.activity-title { font-size: 19px; color: #0E1C42; font-weight: 800; line-height: 1.2; }
+.activity-sub { font-size: 12px; color: #7A88A8; }
+.activity-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  margin-left: auto;
+}
+.activity-body { padding: 18px 22px; }
+.activity-body p { font-size: 17px; color: #3A4A6B; line-height: 1.75; margin-bottom: 12px; }
+.activity-body p:last-child { margin-bottom: 0; }
+
+/* ═══════════ CALLOUTS ═══════════ */
+.callout {
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.callout:last-child { margin-bottom: 0; }
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #0E1C42; line-height: 1.65; margin: 0; }
+.callout-info { background: #EAF8FD; border: 2px solid #D6F2FB; }
+.callout-think { background: #FFF3DC; border: 2px solid #F5E6C8; }
+.callout-tip { background: #E3F8ED; border: 2px solid #B8E8CF; }
+.callout-vocab { background: #F0E8FF; border: 2px solid #D8CCF0; }
+.callout-submit { background: #FDE8F0; border: 2px solid #F0B8CA; }
+
+/* ═══════════ SOCRATIC BOX ═══════════ */
+.socratic-box {
+  background: linear-gradient(135deg, #F0E8FF 0%, #E8DCFA 100%);
+  border: 2px solid #D8CCF0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.socratic-box:last-child { margin-bottom: 0; }
+.socratic-label {
+  font-size: 12px;
+  color: #6B4FB0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.socratic-q {
+  font-size: 16px;
+  color: #0E1C42;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.socratic-q:last-child { margin-bottom: 0; }
+.socratic-q strong { font-style: normal; color: #0E1C42; }
+
+/* ═══════════ DOL & PRACTICE TASKS ═══════════ */
+.task-box {
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.task-box:last-child { margin-bottom: 0; }
+.task-label {
+  font-size: 12px;
+  color: #55C8E8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.task-sentence {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F4;
+  border-left: 4px solid #C7922C;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #0E1C42;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-family: 'Lora', Georgia, serif;
+}
+.task-sentence:last-child { margin-bottom: 0; }
+.task-instruction { font-size: 15px; color: #3A4A6B; line-height: 1.6; margin-bottom: 10px; }
+
+/* ═══════════ STORY JOURNEY TRACKER ═══════════ */
+.tracker-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+  margin-bottom: 22px;
+}
+.tracker-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #2d5016 0%, #4a7c2e 100%);
+  border-bottom: 2px solid #3a6b1e;
+}
+.tracker-header-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tracker-header-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+}
+.tracker-header-title { font-size: 17px; color: #fff; font-weight: 800; line-height: 1.2; }
+.scene-wrap {
+  width: 100%;
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  border-bottom: 3px solid #8b6f47;
+  user-select: none;
+}
+.tree, .flower {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
+}
+.flower { filter: none; font-size: 12px; z-index: 2; }
+.path-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.node {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  z-index: 5;
+  border: 3px solid #f5f0e6;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+}
+.node.done {
+  background: #4a7c2e;
+  border-color: #fde8a0;
+  box-shadow: 0 0 0 2px #4a7c2e, 0 2px 8px rgba(74, 124, 46, 0.45);
+  color: #fff;
+}
+.node.active {
+  background: #C7922C;
+  border-color: #fde8a0;
+  box-shadow: 0 0 0 3px #C7922C, 0 0 14px rgba(199, 146, 44, 0.5);
+  transform: scale(1.15);
+  color: #fff;
+}
+.node.upcoming { opacity: 0.55; }
+.character-token {
+  position: absolute;
+  font-size: 26px;
+  z-index: 20;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+  animation: hop 2s ease-in-out infinite;
+}
+@keyframes hop {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-5px) rotate(3deg); }
+}
+.title-plaque {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(253, 248, 240, 0.92);
+  border: 2px solid #c4a882;
+  border-radius: 8px;
+  padding: 3px 18px 4px;
+  z-index: 15;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+.title-plaque h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2d5016;
+  line-height: 1.2;
+}
+.title-plaque h1 em { color: #C7922C; font-style: italic; }
+.tracker-chapter-label {
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #7A88A8;
+  font-weight: 600;
+  background: #FAFBFF;
+  border-top: 1px solid #E2E8F4;
+}
+.tracker-chapter-label strong { color: #C7922C; }
+
+/* ═══════════ KEY CONCEPT ═══════════ */
+.key-concept {
+  background: #FFF3DC;
+  border: 2px solid #F5E6C8;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.key-concept:last-child { margin-bottom: 0; }
+.key-concept-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.key-concept p { font-size: 15px; color: #0E1C42; line-height: 1.7; margin-bottom: 6px; }
+
+/* ═══════════ VOCABULARY FLIP CARDS ═══════════ */
+.vocab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 14px 0;
+}
+.flip-card {
+  perspective: 800px;
+  height: 175px;
+  cursor: pointer;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  text-align: center;
+  border: 2px solid #E2E8F4;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.06);
+}
+.flip-card-front {
+  background: #FFFFFF;
+  border-top: 5px solid #55C8E8;
+}
+.flip-card-front .fc-emoji { font-size: 28px; margin-bottom: 6px; }
+.flip-card-front .fc-word {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0E1C42;
+  margin-bottom: 4px;
+}
+.flip-card-front .fc-tap {
+  font-size: 11px;
+  color: #7A88A8;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.flip-card-back {
+  background: linear-gradient(145deg, #0E1C42, #1A2D5A);
+  border-color: #0E1C42;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def {
+  font-size: 13.5px;
+  color: #fff;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.flip-card-back .fc-word-back {
+  font-size: 10px;
+  color: #55C8E8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+/* ═══════════ COPYWORK ═══════════ */
+.copywork-box {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 2px solid #F5E6C8;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.copywork-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.copywork-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  color: #0E1C42;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.copywork-instruction { font-size: 14px; color: #3A4A6B; line-height: 1.5; }
+
+/* ═══════════ READING LINKS ═══════════ */
+.reading-links {
+  background: #EAF8FD;
+  border: 2px solid #D6F2FB;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.reading-links-title {
+  font-size: 14px;
+  color: #1A6B8E;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.reading-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1.5px solid #B8E0F0;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #0E1C42;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.reading-link:last-child { margin-bottom: 0; }
+.reading-link:hover { background: #EAF8FD; border-color: #55C8E8; }
+.reading-link-icon { font-size: 20px; }
+
+/* ═══════════ OPEN BOOK CARD ═══════════ */
+.open-book-wrap {
+  position: relative;
+  margin-bottom: 22px;
+  padding: 10px 6px 6px;
+}
+.open-book-cover {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  right: 2px;
+  bottom: 0;
+  background: linear-gradient(145deg, #1E4010, #2D5016, #3D6020);
+  border-radius: 6px 20px 20px 6px;
+  box-shadow: 0 4px 20px rgba(45, 80, 22, 0.2);
+}
+.open-book-spine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 100%;
+  background: linear-gradient(90deg, #0E2508, #162E0A, #1E4010, #162E0A, #0E2508);
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+}
+.open-book-pages-3 {
+  position: absolute;
+  top: 3px;
+  left: 14px;
+  right: 14px;
+  bottom: 3px;
+  background: #E8E0D4;
+  border-radius: 3px 12px 12px 3px;
+  z-index: 2;
+}
+.open-book-pages-2 {
+  position: absolute;
+  top: 5px;
+  left: 16px;
+  right: 16px;
+  bottom: 4px;
+  background: #F0E8DC;
+  border-radius: 3px 10px 10px 3px;
+  z-index: 3;
+}
+.open-book-pages-1 {
+  position: absolute;
+  top: 7px;
+  left: 18px;
+  right: 18px;
+  bottom: 5px;
+  background: #F5EEE4;
+  border-radius: 3px 8px 8px 3px;
+  z-index: 4;
+}
+.open-book {
+  position: relative;
+  background: linear-gradient(170deg, #FFFDF8 0%, #FFF8F0 40%, #FFFDF8 100%);
+  border: none;
+  border-radius: 3px 6px 6px 3px;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 160px;
+  z-index: 5;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.open-book::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.04) 20%, rgba(0,0,0,0.07) 40%, rgba(90,70,50,0.10) 50%, rgba(0,0,0,0.07) 60%, rgba(0,0,0,0.04) 80%, transparent 100%);
+  z-index: 6;
+  pointer-events: none;
+}
+.open-book::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 0;
+  width: 4px;
+  background: repeating-linear-gradient(180deg, transparent 0px, transparent 3px, rgba(200,185,165,0.3) 3px, rgba(200,185,165,0.3) 4px);
+  border-radius: 0 4px 4px 0;
+  z-index: 6;
+  pointer-events: none;
+}
+.open-book-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0.3;
+  position: relative;
+}
+.open-book-left::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 4px;
+  background: repeating-linear-gradient(180deg, transparent 0px, transparent 3px, rgba(200,185,165,0.3) 3px, rgba(200,185,165,0.3) 4px);
+  border-radius: 4px 0 0 4px;
+}
+.open-book-left-deco { font-size: 48px; filter: grayscale(30%); }
+.open-book-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 28px 24px 20px;
+}
+.open-book-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0E1C42;
+  margin-bottom: 4px;
+}
+.open-book-title em { color: #2D5016; }
+.open-book-chapter {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  color: #5A4A3A;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.open-book-prompt {
+  font-size: 14px;
+  color: #7A88A8;
+  font-weight: 600;
+}
+
+/* ═══════════ TAB NEXT BUTTON ═══════════ */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-transition-voice {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  color: #5A4A3A;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.tab-next-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 30px;
+  background: linear-gradient(135deg, #55C8E8, #7FD8F0);
+  color: #0E1C42;
+  border: none;
+  border-radius: 28px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(85, 200, 232, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tab-next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(85, 200, 232, 0.4);
+}
+
+/* ═══════════ BACK TO TOP ═══════════ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  height: 44px;
+  padding: 0 18px 0 14px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  border: 2px solid #55C8E8;
+  font-size: 14px;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(14, 28, 66, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 500;
+  letter-spacing: 0.3px;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 24px rgba(14, 28, 66, 0.5); transform: translateY(-3px); }
+
+/* ═══════════ CONFETTI ═══════════ */
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* ═══════════ GATHERED ANSWERS ═══════════ */
+.gathered-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+  margin-top: 22px;
+}
+.gathered-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  padding: 16px 22px;
+  border-bottom: 2px solid rgba(85, 200, 232, 0.2);
+}
+.gathered-header-icon { font-size: 28px; line-height: 1; }
+.gathered-header-label {
+  font-size: 11px;
+  color: #55C8E8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+.gathered-header-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+.gathered-body { padding: 18px 22px 20px; }
+.gathered-intro { font-size: 15px; color: #3A4A6B; margin-bottom: 14px; line-height: 1.55; }
+.gathered-output {
+  width: 100%;
+  min-height: 300px;
+  padding: 16px 18px;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #0E1C42;
+  line-height: 1.65;
+  background: #FAFBFF;
+  resize: vertical;
+  white-space: pre-wrap;
+}
+.gathered-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.gathered-btn {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.gathered-btn:hover { transform: translateY(-2px); }
+.gathered-btn-copy {
+  background: linear-gradient(135deg, #55C8E8, #7FD8F0);
+  color: #0E1C42;
+  box-shadow: 0 4px 14px rgba(85, 200, 232, 0.25);
+}
+.gathered-btn-pdf {
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  border: 2px solid #55C8E8;
+  box-shadow: 0 4px 14px rgba(14, 28, 66, 0.25);
+}
+.gathered-copied {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #34B76F;
+  margin-top: 8px;
+  display: none;
+}
+.gathered-copied.show { display: block; }
+
+/* ═══════════ QUOTE STRIP ═══════════ */
+.quote-strip {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border-bottom: 2px solid #F5E6C8;
+  padding: 14px 28px;
+  text-align: center;
+}
+.quote-strip-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #5A4A3A;
+  line-height: 1.6;
+}
+.quote-strip-attr {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  color: #7A88A8;
+  font-weight: 700;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════ TURN-IN CHECKLIST ═══════════ */
+.turn-in-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(14, 28, 66, 0.04);
+  margin-top: 18px;
+}
+.turn-in-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #EAF8FD;
+  padding: 18px 22px;
+  border-bottom: 2px solid #D6F2FB;
+}
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label {
+  font-size: 11px;
+  color: #1A6B8E;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+.turn-in-header-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 22px;
+  color: #0E1C42;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.turn-in-body { padding: 18px 22px 20px; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: #FAFBFF;
+  border: 1.5px solid #E2E8F4;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #EAF8FD; border-color: #B8E0F0; }
+.turn-in-item.checked { background: #E3F8ED; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 2px solid #B8E0F0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check { background: #34B76F; border-color: #34B76F; }
+.turn-in-item-text { font-size: 15px; color: #0E1C42; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #3A4A6B; }
+
+/* ═══════════ FOOTER ═══════════ */
+.footer {
+  background: #0E1C42;
+  border-top: 4px solid #55C8E8;
+  padding: 18px 28px;
+  text-align: center;
+}
+.footer-main { font-size: 14px; color: #fff; margin-bottom: 4px; }
+.footer-main span { color: #55C8E8; font-weight: 700; }
+.footer-sub { font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 2px; }
+.footer-copy { font-size: 11px; color: rgba(255, 255, 255, 0.3); }
+
+/* ═══════════ PAUSE COLUMNS ═══════════ */
+.pause-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 14px 0;
+}
+.pause-col { display: flex; flex-direction: column; gap: 10px; }
+@media (max-width: 620px) { .pause-columns { grid-template-columns: 1fr; } }
+
+/* ═══════════ FILL-IN-BLANK GAME ═══════════ */
+.fillin-game { margin: 14px 0; }
+.fillin-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #0E1C42;
+  flex-wrap: wrap;
+}
+.fillin-item:last-child { margin-bottom: 0; }
+.fillin-input {
+  display: inline-block;
+  width: 120px;
+  padding: 4px 10px;
+  border: 2px dashed #8B6FC0;
+  border-radius: 8px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #8B6FC0;
+  text-align: center;
+  background: #FAFBFF;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.fillin-input:focus { border-color: #55C8E8; background: #fff; }
+.fillin-input.correct { border-color: #34B76F; background: #E3F8ED; color: #1a5c2e; border-style: solid; }
+.fillin-input.wrong { border-color: #E8636B; background: #FFF0EC; animation: shake 0.4s ease; }
+.fillin-check-btn {
+  display: block;
+  margin: 14px auto 0;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #8B6FC0, #a88ad4);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.fillin-check-btn:hover { transform: translateY(-2px); }
+.fillin-feedback {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.fillin-feedback.show { display: block; }
+
+/* ═══════════ SHOW WHAT YOU KNOW ═══════════ */
+.swyk {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 2px solid #F5E6C8;
+  border-left: 6px solid #C7922C;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-top: 16px;
+}
+.swyk-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.swyk-prompt { font-size: 15px; color: #0E1C42; line-height: 1.6; margin-bottom: 8px; }
+
+/* ═══════════ TEXTBOX PROMPT ═══════════ */
+.textbox-prompt {
+  font-size: 14px;
+  color: #0E1C42;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 8px 12px;
+  background: #EAF8FD;
+  border: 1.5px solid #D6F2FB;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  margin-top: 10px;
+}
+.textbox-prompt + .journal-box { border-radius: 0 0 12px 12px; margin-top: 0; }
+
+/* ═══════════ TODAY'S PATH ═══════════ */
+.todays-path {
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-top: 14px;
+}
+.todays-path-title {
+  font-size: 14px;
+  color: #0E1C42;
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.todays-path-steps {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #3A4A6B;
+  font-weight: 600;
+}
+.todays-path-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F4;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.todays-path-arrow { color: #B0B8CC; font-size: 11px; }
+
+/* ═══════════ DOL ═══════════ */
+.dol-model-label {
+  font-size: 12px;
+  color: #34B76F;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.dol-fix-label {
+  font-size: 12px;
+  color: #C7922C;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.dol-sentence-wrap {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F4;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #0E1C42;
+  line-height: 1.8;
+  font-family: 'Lora', Georgia, serif;
+}
+.dol-highlight-word {
+  display: inline;
+  padding: 2px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 1.5px solid transparent;
+}
+.dol-highlight-word:hover { background: #EAF8FD; }
+.dol-highlight-word.highlighted {
+  background: #E3F8ED;
+  border-color: #34B76F;
+  font-weight: 700;
+}
+.dol-hint {
+  font-size: 13px;
+  color: #7A88A8;
+  font-style: italic;
+  margin-top: 8px;
+}
+.dol-check-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #8B6FC0, #a88ad4);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.15s;
+}
+.dol-check-btn:hover { transform: translateY(-2px); }
+.dol-answer {
+  display: none;
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: #E3F8ED;
+  border: 2px solid #B8E8CF;
+  border-left: 4px solid #34B76F;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.65;
+}
+.dol-answer.show { display: block; }
+
+/* ═══════════ THINKING STOP ═══════════ */
+.thinking-stop {
+  background: #FAFBFF;
+  border: 2px dashed #D6F2FB;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #7A88A8;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ═══════════ JOURNAL TEXT BOXES ═══════════ */
+.journal-box {
+  width: 100%;
+  min-height: 70px;
+  padding: 12px 14px;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.6;
+  resize: vertical;
+  background: #FAFBFF;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+.journal-box:focus {
+  outline: none;
+  border-color: #55C8E8;
+  box-shadow: 0 0 0 3px rgba(85, 200, 232, 0.15);
+  background: #fff;
+}
+.journal-box::placeholder { color: #B0B8CC; font-style: italic; }
+
+/* ═══════════ Q BLOCKS ═══════════ */
+.q-block {
+  background: #FAFBFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+.q-block:last-child { margin-bottom: 0; }
+.q-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #55C8E8;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.q-text { font-size: 16px; color: #0E1C42; line-height: 1.65; margin-bottom: 4px; }
+
+/* ═══════════ DECODE STEPS ═══════════ */
+.decode-steps { margin: 14px 0; }
+.decode-step {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+.decode-step:last-child { margin-bottom: 0; }
+.decode-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.decode-step-content { flex: 1; }
+.decode-step-title { font-size: 14px; font-weight: 800; color: #0E1C42; margin-bottom: 4px; }
+.decode-step-text { font-size: 14px; color: #3A4A6B; line-height: 1.55; }
+.decode-sentence {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border: 1.5px solid #F5E6C8;
+  border-left: 4px solid #C7922C;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  color: #0E1C42;
+  line-height: 1.6;
+  font-style: italic;
+}
+.decode-word-parts {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+.decode-part {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.decode-part-root { background: #F0E8FF; color: #8B6FC0; border: 1.5px solid #D8CCF0; }
+.decode-part-affix { background: #EAF8FD; color: #1A6B8E; border: 1.5px solid #D6F2FB; }
+.decode-part-plus { color: #B0B8CC; font-size: 12px; font-weight: 800; }
+.decode-reveal {
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: #E3F8ED;
+  border: 1.5px solid #B8E8CF;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0E1C42;
+  line-height: 1.5;
+}
+
+/* ═══════════ MATCH GAME ═══════════ */
+.match-game { margin: 14px 0; }
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.match-item {
+  padding: 12px 14px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #0E1C42;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.5;
+  transition: background 0.15s, border-color 0.2s, transform 0.15s;
+  user-select: none;
+}
+.match-item:hover { transform: translateY(-1px); border-color: #55C8E8; }
+.match-item.selected { background: #EAF8FD; border-color: #55C8E8; box-shadow: 0 0 0 3px rgba(85,200,232,0.25); }
+.match-item.matched { background: #E3F8ED; border-color: #34B76F; pointer-events: none; opacity: 0.8; }
+.match-item.wrong-flash { background: #FFF0EC; border-color: #E8636B; animation: shake 0.4s ease; }
+.match-item.is-word { font-weight: 800; font-family: 'Lora', Georgia, serif; font-size: 16px; }
+.match-feedback {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.match-feedback.show { display: block; }
+
+/* ═══════════ SPOTTER GAME ═══════════ */
+.spotter-game { margin: 14px 0; }
+.spotter-sentence {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  line-height: 1.8;
+  font-size: 16px;
+  color: #0E1C42;
+}
+.spotter-word {
+  display: inline;
+  padding: 2px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border: 2px solid transparent;
+}
+.spotter-word:hover { background: #EAF8FD; border-color: #55C8E8; }
+.spotter-word.correct-reveal { background: #E3F8ED; border-color: #34B76F; color: #1a5c2e; font-weight: 700; }
+.spotter-word.wrong-reveal { background: #FFF0EC; border-color: #E8636B; text-decoration: line-through; }
+.spotter-result {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 10px;
+  margin-top: 6px;
+  display: none;
+}
+.spotter-result.show { display: block; }
+.spotter-result.win { background: #E3F8ED; color: #1a5c2e; }
+.spotter-result.miss { background: #FFF3DC; color: #C7922C; }
+
+/* ═══════════ WORD SORT ═══════════ */
+.sort-game { margin: 14px 0; }
+.sort-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px;
+  background: #FAFBFF;
+  border: 2px dashed #D6F2FB;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  min-height: 52px;
+  justify-content: center;
+}
+.sort-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0E1C42;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s, border-color 0.2s;
+}
+.sort-chip:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(14,28,66,0.12); }
+.sort-chip.placed { opacity: 0.4; pointer-events: none; }
+.sort-chip.correct { background: #E3F8ED; border-color: #34B76F; color: #1a5c2e; }
+.sort-chip.wrong { background: #FFF0EC; border-color: #E8636B; color: #8a3030; animation: shake 0.4s ease; }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+.sort-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.sort-col {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 160px;
+}
+.sort-col-header {
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+}
+.sort-col-drop {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px;
+}
+.sort-score {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #34B76F;
+  display: none;
+}
+.sort-score.show { display: block; }
+
+/* ═══════════ CHOICE BOARD ═══════════ */
+.choice-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0;
+}
+.choice-card {
+  padding: 14px 16px;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  font-size: 14px;
+  color: #0E1C42;
+  line-height: 1.55;
+  font-weight: 600;
+  transition: border-color 0.2s, background 0.2s;
+}
+.choice-card:hover { border-color: #55C8E8; background: #EAF8FD; }
+.choice-card-num {
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+/* ═══════════ POEM BOX ═══════════ */
+.poem-box {
+  background: linear-gradient(135deg, #F0E8FF 0%, #E8DCFA 100%);
+  border: 2px solid #D8CCF0;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.poem-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0E1C42;
+  margin-bottom: 10px;
+}
+.poem-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  color: #3A4A6B;
+  line-height: 1.9;
+  font-style: italic;
+  white-space: pre-line;
+  margin-bottom: 8px;
+}
+.poem-attr {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  color: #7A88A8;
+  font-weight: 700;
+}
+
+/* ═══════════ RIDDLE GAME ═══════════ */
+.riddle-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+.riddle-card:last-child { margin-bottom: 0; }
+.riddle-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #0E1C42;
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  margin-right: 8px;
+}
+.riddle-clue {
+  font-size: 15px;
+  color: #3A4A6B;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.riddle-input {
+  width: 160px;
+  padding: 6px 12px;
+  border: 2px dashed #0E1C42;
+  border-radius: 8px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0E1C42;
+  text-align: center;
+  background: #FAFBFF;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.riddle-input:focus { border-color: #55C8E8; background: #fff; }
+.riddle-input.correct { border-color: #34B76F; background: #E3F8ED; color: #1a5c2e; border-style: solid; }
+.riddle-input.wrong { border-color: #E8636B; background: #FFF0EC; animation: shake 0.4s ease; }
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 165px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .choice-board { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">&#x1F4D6; Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">&#x1F4D6; Lesson Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>
+    <div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div>
+  </div>
+  <div class="header-title"><em>Prince Caspian</em> &mdash; Week 27 Discussion &amp; Reflection</div>
+  <div class="header-badge"><span class="header-badge-icon">&#x1F981;</span><span class="header-badge-text">Lesson 27.4</span></div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div style="border:3px solid #2D5016;border-radius:0;">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6A9FCC"/><stop offset="35%" stop-color="#87CEEB"/><stop offset="65%" stop-color="#B5D8A0"/><stop offset="100%" stop-color="#2D5016"/></linearGradient>
+    <linearGradient id="castleGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B8B7A"/><stop offset="100%" stop-color="#6B6B5A"/></linearGradient>
+    <linearGradient id="forestGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2D5016"/><stop offset="100%" stop-color="#1E4010"/></linearGradient>
+    <style>
+      @keyframes castleGlow{0%,100%{opacity:0.15}50%{opacity:0.35}}
+      @keyframes forestSway{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
+      @keyframes firefly{0%{opacity:0;transform:translate(0,0)}25%{opacity:0.8}50%{opacity:0.3;transform:translate(10px,-8px)}75%{opacity:0.9}100%{opacity:0;transform:translate(-5px,6px)}}
+    </style>
+  </defs>
+  <rect width="920" height="260" fill="url(#skyGrad)"/>
+  <!-- Distant mountains -->
+  <polygon points="0,120 60,80 130,100 200,60 280,90 360,70 440,100 460,120" fill="#7A8A6A" opacity="0.3"/>
+  <polygon points="460,120 540,75 620,95 700,55 780,85 860,65 920,95 920,120" fill="#7A8A6A" opacity="0.25"/>
+  <!-- Castle (Telmarine) on right -->
+  <g opacity="0.7">
+    <rect x="680" y="80" width="18" height="60" rx="2" fill="url(#castleGrad)"/>
+    <rect x="710" y="72" width="14" height="68" rx="2" fill="url(#castleGrad)"/>
+    <rect x="735" y="85" width="16" height="55" rx="2" fill="url(#castleGrad)"/>
+    <rect x="760" y="78" width="12" height="62" rx="2" fill="url(#castleGrad)"/>
+    <!-- Battlements -->
+    <rect x="675" y="75" width="28" height="8" rx="2" fill="#7A7A6A"/>
+    <rect x="706" y="67" width="22" height="8" rx="2" fill="#7A7A6A"/>
+    <rect x="731" y="80" width="24" height="8" rx="2" fill="#7A7A6A"/>
+    <rect x="756" y="73" width="20" height="8" rx="2" fill="#7A7A6A"/>
+    <!-- Tower tops -->
+    <polygon points="680,80 689,65 698,80" fill="#7A7A6A"/>
+    <polygon points="710,72 717,58 724,72" fill="#7A7A6A"/>
+    <polygon points="735,85 743,72 751,85" fill="#7A7A6A"/>
+    <polygon points="760,78 766,66 772,78" fill="#7A7A6A"/>
+    <!-- Castle wall connecting -->
+    <rect x="698" y="100" width="12" height="40" fill="#6B6B5A" opacity="0.6"/>
+    <rect x="724" y="105" width="11" height="35" fill="#6B6B5A" opacity="0.6"/>
+    <rect x="751" y="98" width="9" height="42" fill="#6B6B5A" opacity="0.6"/>
+  </g>
+  <!-- Castle golden glow -->
+  <ellipse cx="720" cy="90" rx="80" ry="60" fill="#C7922C" opacity="0.1" style="animation:castleGlow 4s ease-in-out infinite"/>
+  <!-- Deep forest (Old Narnians) on left -->
+  <g style="animation:forestSway 8s ease-in-out infinite">
+    <ellipse cx="50" cy="140" rx="55" ry="60" fill="#1E4010" opacity="0.95"/>
+    <ellipse cx="130" cy="132" rx="60" ry="68" fill="#2D5016" opacity="0.9"/>
+    <ellipse cx="220" cy="138" rx="52" ry="62" fill="#1E4010" opacity="0.95"/>
+    <ellipse cx="310" cy="130" rx="58" ry="70" fill="#3D6020" opacity="0.85"/>
+    <ellipse cx="400" cy="142" rx="50" ry="58" fill="#2D5016" opacity="0.9"/>
+    <ellipse cx="480" cy="136" rx="45" ry="54" fill="#1E4010" opacity="0.88"/>
+  </g>
+  <!-- Scattered trees on right side -->
+  <ellipse cx="600" cy="145" rx="35" ry="42" fill="#3D6020" opacity="0.5"/>
+  <ellipse cx="650" cy="148" rx="28" ry="35" fill="#2D5016" opacity="0.4"/>
+  <ellipse cx="830" cy="142" rx="40" ry="48" fill="#3D6020" opacity="0.45"/>
+  <ellipse cx="890" cy="148" rx="35" ry="42" fill="#2D5016" opacity="0.5"/>
+  <!-- Dividing line - clearing between two worlds -->
+  <rect x="500" y="100" width="3" height="160" fill="#C7922C" opacity="0.08" rx="1"/>
+  <!-- Fireflies in forest -->
+  <circle cx="80" cy="120" r="2" fill="#FFE9B8" style="animation:firefly 3s ease-in-out infinite"/>
+  <circle cx="200" cy="110" r="1.5" fill="#FFE9B8" style="animation:firefly 4s ease-in-out infinite 1s"/>
+  <circle cx="350" cy="115" r="2" fill="#FFE9B8" style="animation:firefly 3.5s ease-in-out infinite 0.5s"/>
+  <circle cx="150" cy="130" r="1.8" fill="#FFE9B8" style="animation:firefly 5s ease-in-out infinite 2s"/>
+  <circle cx="420" cy="125" r="1.5" fill="#FFE9B8" style="animation:firefly 4.5s ease-in-out infinite 1.5s"/>
+  <!-- Ground -->
+  <path d="M0,230 Q100,225 200,232 Q300,239 400,228 Q500,220 600,230 Q700,240 800,228 Q880,218 920,225 L920,260 L0,260Z" fill="#3D6020" opacity="0.7"/>
+  <path d="M0,245 Q150,240 300,248 Q450,255 600,245 Q750,235 920,242 L920,260 L0,260Z" fill="#2D5016" opacity="0.5"/>
+  <!-- Clouds -->
+  <ellipse cx="140" cy="25" rx="60" ry="14" fill="white" opacity="0.3"/>
+  <ellipse cx="500" cy="15" rx="75" ry="12" fill="white" opacity="0.25"/>
+  <ellipse cx="800" cy="28" rx="50" ry="11" fill="white" opacity="0.2"/>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">&#x1F4DA;</div><div><div class="info-label">Unit</div><div class="info-value">Unit 5</div><div class="info-detail">Prince Caspian (Lewis)</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#EAF8FD;">&#x1F4C5;</div><div><div class="info-label">Week</div><div class="info-value">Week 27</div><div class="info-detail">Lesson 27.4 of 4</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#FFF3DC;">&#x1F4D6;</div><div><div class="info-label">Reading</div><div class="info-value">Prince Caspian</div><div class="info-detail">Chs. 4&ndash;6 Reflection</div></div></div>
+  <div class="info-cell"><div class="info-icon" style="background:#F0E8FF;">&#x1F524;</div><div><div class="info-label">Focus</div><div class="info-value">But &amp; So</div><div class="info-detail">+ Character Tracking</div></div></div>
+</div>
+
+<!-- ═══════════ QUOTE STRIP ═══════════ -->
+<div class="quote-strip">
+  <div class="quote-strip-text">&ldquo;There once lived in the land of Narnia, in a great castle called Cair Paravel, a King and a Queen.&rdquo;</div>
+  <div class="quote-strip-attr">&mdash; C. S. Lewis (adapted)</div>
+</div>
+
+<!-- ═══════════ INTRO ═══════════ -->
+<div class="intro-section" id="introSection">
+  <div class="intro-collapsed-bar" onclick="expandIntro()">
+    <span class="intro-collapsed-icon">&#x1F3AF;</span>
+    <span class="intro-collapsed-text">Today&rsquo;s Objectives &amp; Path</span>
+    <span class="intro-collapsed-toggle">&#x25BC; Expand</span>
+  </div>
+  <div class="intro-2col">
+    <div class="intro-card theme-question">
+      <div class="intro-card-head"><div class="intro-card-head-icon">&#x2753;</div><div><div class="intro-card-head-label">Big Question</div><div class="intro-card-head-title">Today&rsquo;s Wonder</div></div></div>
+      <div class="intro-card-body"><p>Caspian started this week as a prince in a castle. By the end of Chapter 6, he&rsquo;s standing in a moonlit clearing surrounded by creatures he thought were only in stories. What changed &mdash; and what made the change possible?</p></div>
+    </div>
+    <div class="intro-card theme-objectives">
+      <div class="intro-card-head"><div class="intro-card-head-icon">&#x1F3AF;</div><div><div class="intro-card-head-label">Objectives</div><div class="intro-card-head-title">By the end of this lesson&hellip;</div></div></div>
+      <div class="intro-card-body">
+        <div class="obj-line"><span class="obj-icon">&#x1F4D6;</span><span><strong>Reading:</strong> I will <em>explain</em> how tracking multiple character groups helps me understand the story.</span></div>
+        <div class="obj-line"><span class="obj-icon">&#x270F;&#xFE0F;</span><span><strong>Grammar:</strong> I will <em>explain</em> how conjunctions (<em>but</em>/<em>so</em>) connect ideas and show relationships.</span></div>
+        <div class="obj-line"><span class="obj-icon">&#x1F524;</span><span><strong>Spelling:</strong> I will <em>explain</em> suffix rules for multisyllabic words.</span></div>
+        <div class="obj-line"><span class="obj-icon">&#x1F331;</span><span><strong>Word Study:</strong> I will show what I know about this week&rsquo;s vocabulary words.</span></div>
+        <div class="obj-line"><span class="obj-icon">&#x270D;&#xFE0F;</span><span><strong>Writing:</strong> I will write a character comparison paragraph.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="todays-path">
+    <div class="todays-path-title">&#x1F5FA;&#xFE0F; Today&rsquo;s Path</div>
+    <div class="todays-path-steps">
+      <span class="todays-path-step">&#x1F305; Warm up with DOL &amp; Poetry</span>
+      <span class="todays-path-arrow">&rarr;</span>
+      <span class="todays-path-step">&#x1F524; Show your word study skills</span>
+      <span class="todays-path-arrow">&rarr;</span>
+      <span class="todays-path-step">&#x1F4D6; Reflect across Chapters 4&ndash;6</span>
+      <span class="todays-path-arrow">&rarr;</span>
+      <span class="todays-path-step">&#x1F4EC; Answer &amp; submit</span>
+    </div>
+  </div>
+  <div class="need-strip">
+    <span class="need-strip-label">You&rsquo;ll need:</span>
+    <span class="need-chip">&#x1F4D3; Reading Journal</span>
+    <span class="need-chip">&#x270F;&#xFE0F; Pencil</span>
+    <span class="need-chip">&#x1F4D5; Your Novel</span>
+  </div>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">&#x1F305; Warm-Up<span class="tab-check">&#x2713;</span></button>
+  <button class="tab-btn" data-tab="words" onclick="switchTab('words')">&#x1F524; Word Study<span class="tab-check">&#x2713;</span></button>
+  <button class="tab-btn" data-tab="reading" onclick="switchTab('reading')">&#x1F4D6; Reading<span class="tab-check">&#x2713;</span></button>
+  <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">&#x1F4EC; Assignment<span class="tab-check">&#x2713;</span></button>
+</div>
+
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 1: WARM-UP                              -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-warmup">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div><div class="video-wrap-type">Welcome &middot; Day 4 of 4</div><div class="video-wrap-title">Welcome to Lesson 27.4!</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">&#x1F3AC;</div><div class="video-placeholder-text">Teacher welcome video</div><div class="video-placeholder-id"><!-- slot: 27-4-welcome --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">&#x1F4CB; Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Welcome to Lesson 27.4 &mdash; Day 4 of 4<br>&bull; &ldquo;This is our reflection day! Today we step back and look at everything that happened in Chapters 4&ndash;6.&rdquo;<br>&bull; ~1&ndash;2 minutes</div></div></div></div>
+  </div>
+
+  <!-- DOL -->
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">1</div><div><div class="activity-title">&#x270F;&#xFE0F; Daily Oral Language</div><div class="activity-sub">Study the model, then fix the sentence.</div></div></div>
+    <div class="activity-body">
+      <p>The first sentence is <strong>correct</strong>. Tap the parts you notice are done right. Then use it as a model to fix the second sentence.</p>
+
+      <div class="task-box">
+        <div class="dol-model-label">&#x2705; Correct Model &mdash; analytical sentence</div>
+        <div class="dol-sentence-wrap" id="dolModel">
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Capital M &mdash; start of sentence.')">Miraz</span>
+          <span> had </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Comma before the conjunction &ldquo;but&rdquo; when joining two complete sentences.')">power,</span>
+          <span> </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Conjunction &ldquo;but&rdquo; shows contrast &mdash; the second idea opposes the first.')">but</span>
+          <span> Caspian had something more valuable</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Em dash introduces an explanation or clarification.')"> &mdash; </span>
+          <span>the loyalty of creatures who believed in Old </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Capital N &mdash; &ldquo;Narnia&rdquo; is a proper noun (a place name).')">Narnia,</span>
+          <span> </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Conjunction &ldquo;so&rdquo; shows cause and effect &mdash; because of the loyalty, they followed him.')">so</span>
+          <span> they followed him </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Period ends the sentence.')">willingly.</span>
+        </div>
+        <div id="dolExplain" style="min-height:24px;margin-top:6px;font-size:13px;color:#34B76F;font-weight:700;transition:opacity 0.2s;"></div>
+        <div class="dol-hint">Tap the highlighted parts to see what&rsquo;s correct about them.</div>
+
+        <div class="dol-fix-label">&#x1F527; Now fix this one</div>
+        <div class="dol-sentence-wrap" style="border-left:4px solid #C7922C;">
+          miraz had power but caspian had something more valuable the loyalty of creatures who believed in old narnia so they followed him willingly
+        </div>
+        <div class="dol-hint">Use the model above to help you. Rewrite this sentence correctly in your notebook.</div>
+
+        <button class="dol-check-btn" style="margin-top:12px;" onclick="document.getElementById('dolAns').classList.toggle('show')">&#x1F50D; Check My Work</button>
+        <div class="dol-answer" id="dolAns">
+          <p style="margin-bottom:6px;"><strong>Corrected:</strong> <strong>M</strong>iraz had power<strong>,</strong> but <strong>C</strong>aspian had something more valuable<strong> &mdash; </strong>the loyalty of creatures who believed in <strong>O</strong>ld <strong>N</strong>arnia<strong>,</strong> so they followed him willingly<strong>.</strong></p>
+          <p style="font-size:13px;color:#7A88A8;font-style:italic;">Capital M on &ldquo;Miraz&rdquo; (start of sentence) and C on &ldquo;Caspian&rdquo; (proper noun). Capital O and N on &ldquo;Old Narnia&rdquo; (proper noun). Comma before &ldquo;but&rdquo; because it joins two complete sentences. Em dash before the explanation. Comma before &ldquo;so&rdquo; because it also joins two complete sentences. Period at the end.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POETRY CORNER -->
+  <div class="activity bl-purple">
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">2</div><div><div class="activity-title">&#x1F3AD; Poetry Corner</div><div class="activity-sub">A poem about loyalty and fellowship</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AD;</span><div><div class="video-wrap-type">Poetry &middot; Day 4</div><div class="video-wrap-title">The Ones Who Stay</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">&#x1F3AD;</div><div class="video-placeholder-text">Teacher reads and discusses the poem</div><div class="video-placeholder-id"><!-- slot: 27-4-poetry --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">&#x1F4CB; Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Read the poem aloud with expression<br>&bull; Connect to the loyalty theme &mdash; Trufflehunter, Cornelius, Glenstorm<br>&bull; Ask the Socratic question<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+      </div>
+
+      <div class="poem-box">
+        <div class="poem-title">The Ones Who Stay</div>
+        <div class="poem-text">Some follow for the crown,
+Some follow for the gold,
+But the ones who truly matter
+Are the ones who stay when told
+
+To leave, to run, to scatter &mdash;
+They plant their feet and say,
+&ldquo;We chose you not for power,
+But because you found the way.&rdquo;</div>
+        <div class="poem-attr">&mdash; For the Old Narnians</div>
+      </div>
+
+      <div class="socratic-box">
+        <div class="socratic-label">&#x1F9E0; Think deeper</div>
+        <p class="socratic-q">What kind of loyalty is the poet describing &mdash; <strong>earned or given freely?</strong> Think about the Old Narnians who chose to follow Caspian. Did he earn their loyalty, or did they give it freely? Is there a difference?</p>
+      </div>
+      <div class="thinking-stop">&#x1F4AD; Let this question sit with you &mdash; you don&rsquo;t need to write anything here.</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">Your mind is warmed up. Now let&rsquo;s show what you&rsquo;ve learned about words this week.</p>
+    <button class="tab-next-btn" onclick="switchTab('words')">Continue to &#x1F524; Word Study &rarr;</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 2: WORD STUDY                           -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-words">
+
+  <!-- MORPHOLOGY -->
+  <div class="activity bl-purple">
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">1</div><div><div class="activity-title">&#x1F331; Morphology: Word Bases</div><div class="activity-sub">Teach it to a younger student</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">&#x1F331;</span><div><div class="video-wrap-type">Morphology &middot; Explain</div><div class="video-wrap-title">Word Bases: port, tract, struct</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">&#x1F331;</div><div class="video-placeholder-text">Teacher reviews the three word bases from this week</div><div class="video-placeholder-id"><!-- slot: 27-4-morphology --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">&#x1F4CB; Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 4 morphology = word bases (EXPLAIN level)<br>&bull; Quick recap: port (carry), tract (pull/draw), struct (build)<br>&bull; Model the &ldquo;teach it&rdquo; activity<br>&bull; ~1&ndash;2 minutes</div></div></div></div>
+      </div>
+      <p>You&rsquo;ve worked with three word bases this week. Now imagine you&rsquo;re explaining one of them to a younger student who has never heard of word bases before.</p>
+
+      <div class="key-concept">
+        <div class="key-concept-label">&#x1F4CC; Quick Reminder</div>
+        <p><strong>port</strong> = carry &nbsp;|&nbsp; <strong>tract</strong> = pull or draw &nbsp;|&nbsp; <strong>struct</strong> = build</p>
+        <p style="font-size:13px;color:#7A88A8;">Examples: <em>transport</em> (carry across), <em>attract</em> (pull toward), <em>construct</em> (build together)</p>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;"><span class="callout-icon">&#x1F4AC;</span><p><strong>&ldquo;Teach It&rdquo; Card:</strong> Pick ONE word base (<em>port</em>, <em>tract</em>, or <em>struct</em>). Explain what it means and give an example word &mdash; as if you&rsquo;re teaching a 2nd grader. Think about it, then move on.</p></div>
+      <div class="thinking-stop">&#x1F4AD; No textbox here &mdash; just think through your explanation. You&rsquo;ll use this skill in your vocabulary choice board below.</div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY -->
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">2</div><div><div class="activity-title">&#x1F524; Vocabulary: Choice Board</div><div class="activity-sub">Choose how to show you know</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">&#x1F524;</span><div><div class="video-wrap-type">Vocabulary &middot; Choice Board</div><div class="video-wrap-title">Show What You Know Your Way</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">&#x1F524;</div><div class="video-placeholder-text">Teacher explains the vocabulary choice board</div><div class="video-placeholder-id"><!-- slot: 27-4-vocabulary --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">&#x1F4CB; Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 4 vocabulary = choice board<br>&bull; Review the 4 words briefly, then explain the 4 options<br>&bull; Students pick ONE and respond in the textbox<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+      </div>
+      <p>Here are your four vocabulary words from this week. Review them, then choose one activity from the Choice Board below.</p>
+
+      <div class="vocab-grid">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">&#x1F4DA;</div><div class="fc-word">tutor</div><div class="fc-tap">think first, then tap</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">tutor</div><div class="fc-def">A private teacher who gives individual instruction. Doctor Cornelius was Caspian&rsquo;s tutor.</div></div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">&#x1F451;</div><div class="fc-word">usurper</div><div class="fc-tap">think first, then tap</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">usurper</div><div class="fc-def">Someone who takes power or a throne without the right to it. Miraz is a usurper.</div></div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">&#x2B50;</div><div class="fc-word">astronomy</div><div class="fc-tap">think first, then tap</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">astronomy</div><div class="fc-def">The study of stars, planets, and the sky. Cornelius taught Caspian astronomy on the tower.</div></div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">&#x1F620;</div><div class="fc-word">sternly</div><div class="fc-tap">think first, then tap</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">sternly</div><div class="fc-def">In a serious, strict, or firm way. Miraz spoke sternly to Caspian about Old Narnia.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;"><span class="callout-icon">&#x1F3AF;</span><p><strong>Choice Board:</strong> Pick ONE activity below and complete it in the textbox.</p></div>
+
+      <div class="choice-board">
+        <div class="choice-card"><span class="choice-card-num">&#x1F4DD;</span> <strong>A.</strong> Write a short story (3&ndash;5 sentences) using all 4 vocabulary words.</div>
+        <div class="choice-card"><span class="choice-card-num">&#x1F3A8;</span> <strong>B.</strong> Draw and label scenes showing each word. Describe your drawings here.</div>
+        <div class="choice-card"><span class="choice-card-num">&#x1F4F0;</span> <strong>C.</strong> Create a vocab comic strip &mdash; describe each panel and the dialogue.</div>
+        <div class="choice-card"><span class="choice-card-num">&#x2753;</span> <strong>D.</strong> Write quiz questions for each word &mdash; with answer keys!</div>
+      </div>
+
+      <div class="swyk">
+        <div class="swyk-label">&#x1FAB6; Show What You Know</div>
+        <div class="swyk-prompt">Choose ONE activity from the Choice Board above. Complete it here.</div>
+        <div class="textbox-prompt">Tell which activity you chose (A, B, C, or D), then complete it.</div>
+        <textarea class="journal-box" id="journal-vocab" data-label="Vocabulary SWYK: Choice Board" placeholder="I chose activity ___. Here is my work..." oninput="autoSave(this);gatherAnswers();"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRAMMAR -->
+  <div class="activity bl-green">
+    <div class="activity-head"><div class="activity-num" style="background:#34B76F;">3</div><div><div class="activity-title">&#x270F;&#xFE0F; Grammar: Conjunctions But &amp; So</div><div class="activity-sub">Explain how they work differently</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">&#x270F;&#xFE0F;</span><div><div class="video-wrap-type">Grammar &middot; Conjunctions</div><div class="video-wrap-title">But vs. So &mdash; Teach It!</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">&#x270F;&#xFE0F;</div><div class="video-placeholder-text">Teacher explains the difference between but and so</div><div class="video-placeholder-id"><!-- slot: 27-4-grammar --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">&#x1F4CB; Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 4 grammar = conjunctions but/so (EXPLAIN level)<br>&bull; &ldquo;But&rdquo; shows contrast; &ldquo;so&rdquo; shows cause and effect<br>&bull; Model the &ldquo;Teach It&rdquo; card<br>&bull; ~2&ndash;3 minutes</div></div></div></div>
+      </div>
+      <p>You&rsquo;ve been using conjunctions all week. Now let&rsquo;s make sure you really understand the difference between <strong>but</strong> and <strong>so</strong>.</p>
+
+      <div class="key-concept">
+        <div class="key-concept-label">&#x1F4CC; The Difference</div>
+        <p><strong>But</strong> = contrast. The second idea surprises or opposes the first.</p>
+        <p><strong>So</strong> = cause and effect. The second idea happens <em>because of</em> the first.</p>
+      </div>
+
+      <div class="task-box" style="margin-top:14px;">
+        <div class="task-label">&#x1F4D6; Examples from Prince Caspian</div>
+        <div class="task-sentence">Miraz was king, <strong>but</strong> he had stolen the throne.</div>
+        <div class="task-sentence">Caspian learned the truth about his uncle, <strong>so</strong> he fled the castle.</div>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;"><span class="callout-icon">&#x1F4AC;</span><p><strong>&ldquo;Teach It&rdquo; Card:</strong> Imagine a younger student asks you: &ldquo;What&rsquo;s the difference between <em>but</em> and <em>so</em>?&rdquo; How would you explain it in your own words? Think about it &mdash; no writing needed.</p></div>
+      <div class="thinking-stop">&#x1F4AD; No textbox here &mdash; just think through your explanation. You&rsquo;ll use conjunctions in your writing assignment.</div>
+    </div>
+  </div>
+
+  <!-- SPELLING -->
+  <div class="activity bl-navy">
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">&#x1F520; Spelling: Suffix Rules</div><div class="activity-sub">Explain a rule in your own words</div></div></div>
+    <div class="activity-body">
+      <div class="video-wrap" style="margin-bottom:14px;">
+        <div class="video-wrap-header"><span style="font-size:20px;">&#x1F520;</span><div><div class="video-wrap-type">Spelling &middot; Explain</div><div class="video-wrap-title">Suffix Rules for Big Words</div></div></div>
+        <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">&#x1F520;</div><div class="video-placeholder-text">Teacher reviews suffix rules for multisyllabic words</div><div class="video-placeholder-id"><!-- slot: 27-4-spelling --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">&#x1F4CB; Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Day 4 spelling = suffix rules (EXPLAIN level)<br>&bull; Review key rules: drop silent e, double the consonant, change y to i<br>&bull; Students explain in own words<br>&bull; ~1&ndash;2 minutes</div></div></div></div>
+      </div>
+      <p>This week you&rsquo;ve practiced suffix rules with multisyllabic words. Let&rsquo;s review the big three rules.</p>
+
+      <div class="key-concept">
+        <div class="key-concept-label">&#x1F4CC; Three Suffix Rules</div>
+        <p><strong>1. Drop the silent e:</strong> <em>explore</em> + <em>-ing</em> = <em>exploring</em> (not <em>exploreing</em>)</p>
+        <p><strong>2. Double the final consonant:</strong> <em>begin</em> + <em>-ing</em> = <em>beginning</em> (stress on last syllable)</p>
+        <p><strong>3. Change y to i:</strong> <em>carry</em> + <em>-ed</em> = <em>carried</em> (not <em>carryed</em>)</p>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;"><span class="callout-icon">&#x1F9E0;</span><p><strong>Explain It:</strong> Pick ONE suffix rule. In your own words, explain how it works and give an example. Think about it &mdash; no writing needed here.</p></div>
+      <div class="thinking-stop">&#x1F4AD; No textbox here &mdash; just make sure you understand the rule well enough to explain it.</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">Your word skills are sharp. Now let&rsquo;s step back and reflect on everything you&rsquo;ve read this week.</p>
+    <button class="tab-next-btn" onclick="switchTab('reading')">Continue to &#x1F4D6; Reading &rarr;</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 3: READING                              -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-reading">
+
+  <!-- Story Journey Tracker -->
+  <div class="tracker-card">
+    <div class="tracker-header"><div class="tracker-header-icon">&#x1F5FA;&#xFE0F;</div><div><div class="tracker-header-label">Your Story Journey</div><div class="tracker-header-title">The Road to Narnia</div></div></div>
+    <div class="scene-wrap" id="scene" style="background:linear-gradient(180deg, #c2ddf0 0%, #d4eaf7 20%, #a8d5a0 45%, #4a7c2e 60%, #2D5016 80%, #1E4010 100%);border-bottom:3px solid #8B6914;">
+      <div class="title-plaque"><h1 style="color:#2d5016;">Prince <em>Caspian</em></h1></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(180deg,transparent,rgba(30,64,16,0.3));pointer-events:none;z-index:3;"></div>
+      <div class="tree" style="top:55px;left:4%;font-size:24px">&#x1F332;</div>
+      <div class="tree" style="top:60px;left:14%;font-size:22px">&#x1F332;</div>
+      <div class="tree" style="top:52px;left:25%;font-size:26px">&#x1F332;</div>
+      <div class="tree" style="top:58px;left:40%;font-size:22px">&#x1F332;</div>
+      <div class="tree" style="top:54px;left:55%;font-size:24px">&#x1F332;</div>
+      <div class="tree" style="top:60px;left:68%;font-size:22px">&#x1F332;</div>
+      <div class="tree" style="top:50px;left:80%;font-size:26px">&#x1F332;</div>
+      <div class="tree" style="top:56px;left:92%;font-size:22px">&#x1F332;</div>
+      <div class="flower" style="top:155px;left:22%;font-size:10px;">&#x1F344;</div>
+      <div class="flower" style="top:148px;left:48%;font-size:10px;">&#x1F31F;</div>
+      <div class="flower" style="top:160px;left:62%;font-size:9px;">&#x1F344;</div>
+      <div class="flower" style="top:145px;left:75%;font-size:11px;">&#x1F31F;</div>
+      <div class="flower" style="top:152px;left:88%;font-size:9px;">&#x1F344;</div>
+      <svg class="path-svg" viewBox="0 0 1400 210" preserveAspectRatio="none">
+        <path d="M -20,178 C 80,176 160,156 280,140 C 400,124 480,140 600,128 C 720,116 800,108 920,100 C 1040,92 1120,98 1240,92 C 1340,86 1400,82 1430,80" fill="none" stroke="#6B5010" stroke-width="14" stroke-linecap="round" opacity="0.4"/>
+        <path d="M -20,178 C 80,176 160,156 280,140 C 400,124 480,140 600,128 C 720,116 800,108 920,100 C 1040,92 1120,98 1240,92 C 1340,86 1400,82 1430,80" fill="none" stroke="#8B6914" stroke-width="7" stroke-linecap="round" stroke-dasharray="4 8" opacity="0.5"/>
+      </svg>
+      <div class="character-token" id="characterToken">&#x1F981;</div>
+    </div>
+    <div class="tracker-chapter-label">&#x1F4CD; Week 27 &mdash; <strong>Reflecting across Chapters 4&ndash;6</strong></div>
+  </div>
+
+  <!-- What Good Readers Do -->
+  <div class="activity bl-purple">
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">&#x1F4DA;</div><div><div class="activity-title">&#x1F4DA; What Good Readers Do</div><div class="activity-sub">Step back and see the big picture</div></div></div>
+    <div class="activity-body">
+      <p>Good readers step back and look at the big picture. This week you tracked Caspian&rsquo;s journey from a prince in a castle to a king gathering an army. You met Telmarines, a half-dwarf, Talking Badgers, Black and Red Dwarfs, Bears, Squirrels, Centaurs, and Fauns.</p>
+      <div class="socratic-box">
+        <div class="socratic-label">&#x1F9E0; Ask yourself:</div>
+        <p class="socratic-q">Why does Lewis introduce so <strong>MANY</strong> different characters? <strong>What is he building toward?</strong></p>
+      </div>
+      <div class="thinking-stop">&#x1F4AD; You don&rsquo;t need to write anything here &mdash; just hold this question in your mind as you reflect today.</div>
+    </div>
+  </div>
+
+  <!-- Reading video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F4D6;</span><div><div class="video-wrap-type">Reading &middot; Week Reflection</div><div class="video-wrap-title">Reflecting on Chapters 4&ndash;6</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">&#x1F4D6;</div><div class="video-placeholder-text">Teacher guides reflection across all three chapters</div><div class="video-placeholder-id"><!-- slot: 27-4-reading --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">&#x1F4CB; Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; Guide students to think across Chapters 4&ndash;6<br>&bull; How has Caspian changed? What groups are forming?<br>&bull; Preview what&rsquo;s coming next<br>&bull; ~3&ndash;4 minutes</div></div></div></div>
+  </div>
+
+  <!-- Discussion Prompts -->
+  <div class="activity bl-gold">
+    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">&#x1F4AC;</div><div><div class="activity-title">&#x1F4AC; Discussion Prompts</div><div class="activity-sub">Think deeply about this week&rsquo;s reading</div></div></div>
+    <div class="activity-body">
+      <div class="socratic-box" style="margin-bottom:16px;">
+        <div class="socratic-label">&#x1F4AD; Discussion 1</div>
+        <p class="socratic-q">Think about all the characters you&rsquo;ve met this week &mdash; from Miraz&rsquo;s court to the Old Narnians. <strong>If you had to sort them into two groups, what groups would you choose, and who goes where?</strong> Explain your thinking.</p>
+      </div>
+      <div class="socratic-box">
+        <div class="socratic-label">&#x1F4AD; Discussion 2</div>
+        <p class="socratic-q">Doctor Cornelius, Trufflehunter, and Glenstorm all choose to help Caspian, but for different reasons. <strong>What motivates each of them?</strong></p>
+      </div>
+      <div class="thinking-stop">&#x1F4AD; Think about these questions &mdash; you&rsquo;ll use your reflections in the Assignment tab.</div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <p class="tab-transition-voice">You&rsquo;ve reflected, you&rsquo;ve revisited, you&rsquo;ve thought about the big picture. Now show what you know.</p>
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to &#x1F4EC; Assignment &rarr;</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 4: ASSIGNMENT                           -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap" style="margin-bottom:16px;">
+    <div class="video-wrap-header"><span style="font-size:20px;">&#x1F4EC;</span><div><div class="video-wrap-type">Assignment &middot; Week Closer</div><div class="video-wrap-title">Your Week 27 Reflection</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">&#x1F4EC;</div><div class="video-placeholder-text">Teacher explains the week-closing assignment</div><div class="video-placeholder-id"><!-- slot: 27-4-assignment --></div><div class="video-teacher-notes"><div class="video-teacher-notes-label">&#x1F4CB; Teacher Recording Notes</div><div class="video-teacher-notes-text">&bull; This is the week closer &mdash; students reflect across Chapters 4&ndash;6<br>&bull; Remind them to use specific details from the reading<br>&bull; Emphasize the character comparison paragraph<br>&bull; ~1&ndash;2 minutes</div></div></div></div>
+  </div>
+
+  <div class="callout callout-info" style="margin-bottom:20px;">
+    <span class="callout-icon">&#x1F4EC;</span>
+    <p><strong>This is the part you submit.</strong> Type your answers below. When you&rsquo;re done, copy or download your work at the bottom.</p>
+  </div>
+
+  <!-- Part A -->
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">A</div><div><div class="activity-title">&#x1F4D6; Chapter Thinking &mdash; Week Reflection</div><div class="activity-sub">Answer in complete sentences with details from Chapters 4&ndash;6.</div></div></div>
+    <div class="activity-body">
+      <div class="q-block"><div class="q-text"><span class="q-num">1</span>This week, you tracked multiple groups of characters. Create a character web: put Caspian in the center, then list the characters/groups around him. For each one, write whether they are an <strong>ally</strong>, an <strong>enemy</strong>, or <strong>undecided</strong>, and give ONE reason.</div></div>
+      <div class="textbox-prompt">Include at least 5 characters or groups.</div>
+      <textarea class="journal-box" id="journal-q1" data-label="Q1: Character web — allies, enemies, undecided" placeholder="Caspian is in the center. Around him are..." oninput="autoSave(this);gatherAnswers();"></textarea>
+
+      <div class="q-block"><div class="q-text"><span class="q-num">2</span>Compare Doctor Cornelius and Glenstorm. Both are wise and both help Caspian &mdash; but they help in different ways. What does each one offer Caspian, and why does he need both of them?</div></div>
+      <div class="textbox-prompt">Think about the difference between knowledge from books and knowledge from the stars.</div>
+      <textarea class="journal-box" id="journal-q2" data-label="Q2: Comparing Doctor Cornelius and Glenstorm" placeholder="Doctor Cornelius helps Caspian by... Glenstorm helps by..." oninput="autoSave(this);gatherAnswers();"></textarea>
+
+      <div class="q-block"><div class="q-text"><span class="q-num">3</span>Caspian starts this week as a prince who only knows Old Narnia from stories. By the end of Chapter 6, he&rsquo;s seen Fauns dance in the moonlight. How has Caspian changed across these three chapters? What has he gained, and what has he lost?</div></div>
+      <div class="textbox-prompt">Think about what changed inside him, not just what happened.</div>
+      <textarea class="journal-box" id="journal-q3" data-label="Q3: How Caspian changed across Chapters 4–6" placeholder="At the beginning of Chapter 4, Caspian was... By the end of Chapter 6..." oninput="autoSave(this);gatherAnswers();"></textarea>
+    </div>
+  </div>
+
+  <!-- Part C -->
+  <div class="activity bl-gold">
+    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">&#x270D;&#xFE0F; Writing Connection &mdash; Character Comparison</div><div class="activity-sub">Write a full paragraph comparing two characters.</div></div></div>
+    <div class="activity-body">
+      <p>Write a full paragraph (5&ndash;7 sentences) comparing <strong>TWO characters</strong> from this week&rsquo;s reading. Your paragraph should:</p>
+      <div class="callout callout-tip" style="margin-top:10px;">
+        <span class="callout-icon">&#x2705;</span>
+        <div>
+          <p style="margin-bottom:6px;"><strong>1.</strong> Name the two characters</p>
+          <p style="margin-bottom:6px;"><strong>2.</strong> Explain ONE way they are similar</p>
+          <p style="margin-bottom:6px;"><strong>3.</strong> Explain ONE way they are different</p>
+          <p style="margin-bottom:6px;"><strong>4.</strong> Use at least TWO conjunctions (<em>but</em>, <em>so</em>)</p>
+          <p><strong>5.</strong> Include at least ONE detail from the text</p>
+        </div>
+      </div>
+      <div class="callout callout-info" style="margin-top:14px;">
+        <span class="callout-icon">&#x1F4DD;</span>
+        <p><strong>Sentence frame (if you need help):</strong> &ldquo;_____ and _____ are both _____, but they differ in _____. For example, _____ while _____. So, _____.&rdquo;</p>
+      </div>
+      <div class="textbox-prompt">Write your full character comparison paragraph (5&ndash;7 sentences).</div>
+      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Character Comparison Paragraph" placeholder="The two characters I am comparing are..." oninput="autoSave(this);gatherAnswers();" style="min-height:120px;"></textarea>
+    </div>
+  </div>
+
+  <!-- Gathered Answers -->
+  <div class="gathered-card">
+    <div class="gathered-header"><div class="gathered-header-icon">&#x1F4CB;</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
+    <div class="gathered-body">
+      <p class="gathered-intro">Everything you typed is gathered below. Copy to paste into Canvas, or download as a PDF.</p>
+      <textarea class="gathered-output" id="gatheredOutput" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn gathered-btn-copy" onclick="copyGathered()">&#x1F4CB; Copy to Clipboard</button>
+        <button class="gathered-btn gathered-btn-pdf" onclick="downloadJournal()">&#x1F4C4; Download as PDF</button>
+      </div>
+      <div class="gathered-copied" id="gatheredCopied">&#x2705; Copied to clipboard!</div>
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="turn-in-card" style="margin-top:18px;">
+    <div class="turn-in-header"><div class="turn-in-header-icon">&#x1F4EC;</div><div><div class="turn-in-header-label">Ready?</div><div class="turn-in-header-title">Before You Submit</div></div></div>
+    <div class="turn-in-body">
+      <div class="turn-in-checklist">
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I reflected on the discussion prompts for Chapters 4&ndash;6.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the vocabulary choice board and wrote my SWYK.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 comprehension questions with details from the chapters.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote my character comparison paragraph with at least 2 conjunctions.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-main"><span>Optima Academy Online</span> &middot; 4th Grade ELA &middot; Week 27 &middot; Lesson 27.4</div>
+  <div class="footer-sub"><em>Prince Caspian</em> &mdash; Chapters 4&ndash;6 Discussion &amp; Reflection</div>
+  <div class="footer-copy">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+<script>
+/* ===== TAB SWITCHING ===== */
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('tab-' + tabId).classList.add('active');
+  var btn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
+  btn.classList.add('active');
+  btn.classList.add('visited');
+  updateProgress();
+  var intro = document.getElementById('introSection');
+  if (tabId === 'warmup') { intro.classList.remove('collapsed'); }
+  else { intro.classList.add('collapsed'); }
+  if (tabId === 'assignment') { gatherAnswers(); }
+  document.getElementById('pageTop').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function expandIntro() { document.getElementById('introSection').classList.remove('collapsed'); }
+
+/* ===== GATHER ANSWERS ===== */
+function gatherAnswers() {
+  var output = '';
+  var sections = [
+    { title: 'CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
+    { title: 'VOCABULARY CHOICE BOARD', ids: ['journal-vocab'] },
+    { title: 'WRITING CONNECTION', ids: ['journal-writing'] }
+  ];
+  output += 'LESSON 27.4 — Prince Caspian, Chapters 4–6 Reflection\n';
+  output += '════════════════════════════════════════\n\n';
+  sections.forEach(function(sec) {
+    output += sec.title + '\n';
+    output += '──────────────────────────────\n';
+    sec.ids.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var label = el.getAttribute('data-label') || id;
+      var val = el.value.trim();
+      output += '\n' + label + '\n';
+      output += (val || '(no answer)') + '\n';
+    });
+    output += '\n';
+  });
+  var gathered = document.getElementById('gatheredOutput');
+  if (gathered) gathered.value = output;
+}
+
+/* ===== COPY ===== */
+function copyGathered() {
+  var gathered = document.getElementById('gatheredOutput');
+  if (!gathered) return;
+  gathered.select();
+  gathered.setSelectionRange(0, 99999);
+  try { navigator.clipboard.writeText(gathered.value).then(function() { showCopied(); }).catch(function() { document.execCommand('copy'); showCopied(); }); }
+  catch(e) { document.execCommand('copy'); showCopied(); }
+}
+function showCopied() {
+  var msg = document.getElementById('gatheredCopied');
+  msg.classList.add('show');
+  setTimeout(function() { msg.classList.remove('show'); }, 2500);
+}
+
+function updateProgress() {
+  var total = document.querySelectorAll('.tab-btn').length;
+  var visited = document.querySelectorAll('.tab-btn.visited').length;
+  var pct = Math.round((visited / total) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+}
+document.querySelector('.tab-btn.active').classList.add('visited');
+updateProgress();
+(function() {
+  var pw = document.querySelector('.progress-wrap');
+  var tb = document.querySelector('.tab-bar');
+  if (pw && tb) { tb.style.top = pw.offsetHeight + 'px'; }
+})();
+
+/* ===== TURN-IN CHECKLIST ===== */
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var check = item.querySelector('.turn-in-check');
+  check.textContent = item.classList.contains('checked') ? '✓' : '';
+  var container = item.closest('.turn-in-checklist');
+  if (!container) return;
+  var allChecked = container.querySelectorAll('.turn-in-item').length === container.querySelectorAll('.turn-in-item.checked').length;
+  if (allChecked && container.querySelectorAll('.turn-in-item').length > 0) { fireConfetti(); }
+}
+
+/* ===== CONFETTI ===== */
+function fireConfetti() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var colors = ['#55C8E8', '#C7922C', '#34B76F', '#8B6FC0', '#2D5016', '#FFE9B8'];
+  var emojis = ['🦁', '⚔️', '🏰', '🌲', '👑', '🌟'];
+  var particles = [];
+  for (var i = 0; i < 90; i++) {
+    particles.push({ type: 'square', x: Math.random() * canvas.width, y: -20 - Math.random() * 120, vx: (Math.random() - 0.5) * 6, vy: Math.random() * 3.5 + 2, size: Math.random() * 8 + 4, color: colors[Math.floor(Math.random() * colors.length)], rot: Math.random() * Math.PI * 2, vrot: (Math.random() - 0.5) * 0.2 });
+  }
+  for (var j = 0; j < 25; j++) {
+    particles.push({ type: 'emoji', emoji: emojis[Math.floor(Math.random() * emojis.length)], x: Math.random() * canvas.width, y: -30 - Math.random() * 150, vx: (Math.random() - 0.5) * 5, vy: Math.random() * 3 + 1.5, size: Math.random() * 10 + 22, rot: Math.random() * Math.PI * 2, vrot: (Math.random() - 0.5) * 0.12 });
+  }
+  var frame = 0; var totalFrames = 300; var fadeStart = 240;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var alpha = 1;
+    if (frame > fadeStart) { alpha = 1 - ((frame - fadeStart) / (totalFrames - fadeStart)); if (alpha < 0) alpha = 0; }
+    ctx.globalAlpha = alpha;
+    particles.forEach(function(p) {
+      p.x += p.vx; p.y += p.vy; p.vy += 0.08; p.rot += p.vrot;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      if (p.type === 'emoji') { ctx.font = p.size + 'px serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(p.emoji, 0, 0); }
+      else { ctx.fillStyle = p.color; ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size); }
+      ctx.restore();
+    });
+    frame++;
+    if (frame < totalFrames) { requestAnimationFrame(animate); } else { ctx.globalAlpha = 1; ctx.clearRect(0, 0, canvas.width, canvas.height); }
+  }
+  animate();
+}
+
+/* ===== BACK TO TOP ===== */
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() { try { return window.self !== window.top; } catch (e) { return true; } })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0; document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) { try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }
+    try { if (window.frameElement && window.frameElement.scrollIntoView) { window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); } } catch (e) {}
+    if (inIframe) { try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {} }
+  });
+  if (inIframe) { setTimeout(function() { btn.classList.add('show'); }, 1500); }
+  else { window.addEventListener('scroll', function() { btn.classList.toggle('show', window.pageYOffset > 400); }); }
+})();
+
+/* ===== DOL ===== */
+function dolHighlight(word, explanation) {
+  word.classList.toggle('highlighted');
+  var explain = document.getElementById('dolExplain');
+  if (word.classList.contains('highlighted') && explanation) {
+    explain.textContent = '→ ' + explanation; explain.style.opacity = '1';
+  } else {
+    var any = document.querySelectorAll('#dolModel .highlighted');
+    if (any.length === 0) { explain.textContent = ''; }
+  }
+}
+
+/* ===== AUTO-SAVE ===== */
+function autoSave(textarea) {}
+
+/* ===== DOWNLOAD AS PDF ===== */
+function downloadJournal() {
+  gatherAnswers();
+  var sections = [
+    { title: 'CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
+    { title: 'VOCABULARY CHOICE BOARD', ids: ['journal-vocab'] },
+    { title: 'WRITING CONNECTION', ids: ['journal-writing'] }
+  ];
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
+  html += '<title>Lesson 27.4 — My Work</title>';
+  html += '<style>';
+  html += 'body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#1a1a2e;line-height:1.7;}';
+  html += 'h1{font-size:22px;border-bottom:3px solid #55C8E8;padding-bottom:8px;margin-bottom:6px;}';
+  html += 'h2{font-size:14px;color:#7A88A8;margin-bottom:24px;}';
+  html += '.section-title{font-size:16px;font-weight:bold;color:#0E1C42;margin:28px 0 4px;padding:8px 0 4px;border-bottom:2px solid #E2E8F4;}';
+  html += '.q-label{font-size:13px;font-weight:bold;color:#3A4A6B;margin:16px 0 2px;}';
+  html += '.q-answer{font-size:14px;color:#0E1C42;margin:0 0 4px;padding:6px 12px;background:#f8f9fc;border-left:3px solid #D6F2FB;border-radius:4px;white-space:pre-wrap;}';
+  html += '.no-answer{color:#B0B8CC;font-style:italic;}';
+  html += '</style></head><body>';
+  html += '<h1>My Work — Lesson 27.4</h1>';
+  html += '<h2>Prince Caspian — Chapters 4–6 Reflection</h2>';
+  sections.forEach(function(sec) {
+    html += '<div class="section-title">' + sec.title + '</div>';
+    sec.ids.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var label = el.getAttribute('data-label') || id;
+      var val = el.value.trim();
+      html += '<div class="q-label">' + label + '</div>';
+      if (val) { html += '<div class="q-answer">' + val.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>'; }
+      else { html += '<div class="q-answer no-answer">(no answer)</div>'; }
+    });
+  });
+  html += '</body></html>';
+  var win = window.open('', '_blank');
+  win.document.write(html);
+  win.document.close();
+  setTimeout(function() { win.print(); }, 400);
+}
+
+/* ===== STORY JOURNEY TRACKER ===== */
+var TRACKER_TOTAL = 6;
+var TRACKER_PROGRESS = 1.6;
+var trackerIcons = ['🏝️', '🌲', '⛺', '🗿', '⚔️', '🏰'];
+var trackerPos = [
+  { x: 6, y: 142 }, { x: 20, y: 126 }, { x: 36, y: 136 },
+  { x: 52, y: 120 }, { x: 68, y: 130 }, { x: 84, y: 118 }
+];
+(function renderTracker() {
+  var scene = document.getElementById('scene');
+  if (!scene) return;
+  var reached = Math.floor(TRACKER_PROGRESS);
+  var frac = TRACKER_PROGRESS - reached;
+  for (var i = 0; i < TRACKER_TOTAL; i++) {
+    var n = document.createElement('div');
+    var isDone = (i + 1) <= reached;
+    var isActive = !isDone && (i === reached);
+    n.className = 'node' + (isDone ? ' done' : '') + (isActive ? ' active' : '') + (!isDone && !isActive ? ' upcoming' : '');
+    n.style.left = 'calc(' + trackerPos[i].x + '% - 15px)';
+    n.style.top = trackerPos[i].y + 'px';
+    n.innerHTML = isDone ? '✦' : trackerIcons[i];
+    scene.appendChild(n);
+  }
+  var tok = document.getElementById('characterToken');
+  if (!tok) return;
+  var tokX, tokY;
+  if (frac === 0 && reached > 0) {
+    var idx = reached - 1; tokX = trackerPos[idx].x; tokY = trackerPos[idx].y;
+  } else if (reached === 0) {
+    tokX = 0 + (trackerPos[0].x - 0) * frac; tokY = trackerPos[0].y;
+  } else {
+    var fromIdx = reached - 1; var toIdx = reached;
+    tokX = trackerPos[fromIdx].x + (trackerPos[toIdx].x - trackerPos[fromIdx].x) * frac;
+    tokY = trackerPos[fromIdx].y + (trackerPos[toIdx].y - trackerPos[fromIdx].y) * frac;
+  }
+  tok.style.left = 'calc(' + tokX + '% - 14px)';
+  tok.style.top = (tokY - 36) + 'px';
+})();
+
+/* ===== VIDEO MANIFEST LOADER ===== */
+(function() {
+  var SCRIPT_URL = "https://raw.githubusercontent.com/optimaondemand/optima-assets/main/videos.js";
+  function loadVideos() {
+    if (!window.VIDEO_MANIFEST) return;
+    document.querySelectorAll('.video-placeholder').forEach(function(ph) {
+      var comment = null;
+      ph.childNodes.forEach(function(node) {
+        if (node.nodeType === 1 && node.className === 'video-placeholder-id') {
+          node.childNodes.forEach(function(c) {
+            if (c.nodeType === 8 && /slot:/.test(c.nodeValue)) { comment = c.nodeValue.replace(/.*slot:\s*/, '').trim(); }
+          });
+        }
+      });
+      if (!comment) return;
+      var entry = window.VIDEO_MANIFEST[comment];
+      if (!entry) return;
+      var ratioWrap = ph.parentElement;
+      if (!ratioWrap) return;
+      if (entry.indexOf('<iframe') === 0 || entry.indexOf('<IFRAME') === 0) { ratioWrap.innerHTML = entry; }
+      else { ratioWrap.innerHTML = '<iframe src="' + entry + '" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen><\/iframe>'; }
+    });
+  }
+  var s = document.createElement('script');
+  s.src = SCRIPT_URL; s.async = true; s.onload = loadVideos;
+  s.onerror = function() {};
+  document.head.appendChild(s);
+})();
+</script>
+
+</body>
+</html>
