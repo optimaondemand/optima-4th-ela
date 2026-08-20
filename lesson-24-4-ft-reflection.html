@@ -1286,7 +1286,7 @@ window.addEventListener('beforeunload', function(e){
     e.preventDefault();
     e.returnValue = '';
   }
-});}
+});
 
 /* ── VOCABULARY CHOICE BOARD ── */
 function selectChoice(card){document.querySelectorAll('.choice-card').forEach(function(c){c.classList.remove('selected');});card.classList.add('selected');}
