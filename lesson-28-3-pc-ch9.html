@@ -3170,7 +3170,7 @@ window._spellTestDone=false;
       '<div id="spword'+i+'" style="font-size:22px;font-weight:800;color:#2D5016;font-family:Lora,Georgia,serif;padding:8px 0 10px;letter-spacing:1px;">'+word+'</div>'+
       '<button style="padding:5px 14px;background:#E2E8F4;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:8px;" onclick="hideSpWord('+i+',this)">Hide Word</button>'+
       '<input id="spinput'+i+'" type="text" style="width:100%;padding:8px 12px;border:2px dashed #8B6FC0;border-radius:10px;font-size:16px;font-family:Lora,Georgia,serif;" placeholder="Type the word...">'+
-      '<button style="padding:5px 14px;background:linear-gradient(135deg,#8B6FC0,#a88ad4);color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;margin-top:6px;" onclick="checkSpWord('+i+',''+word+'',this)">Check</button>'+
+      '<button style="padding:5px 14px;background:linear-gradient(135deg,#8B6FC0,#a88ad4);color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;margin-top:6px;" onclick="checkSpWord('+i+',&#39;'+word+'&#39;,this)">Check</button>'+
       '<div id="spresult'+i+'" style="margin-top:6px;font-size:13px;font-weight:700;display:none;"></div>';
     container.appendChild(div);
   });
@@ -3272,8 +3272,6 @@ window.addEventListener('beforeunload', function(e){
     e.returnValue = '';
   }
 });
-}
-
 /* DOWNLOAD PDF */
 function downloadJournal(){
   gatherAnswers();
@@ -3349,4 +3347,4 @@ var trackerPos=[{x:6,y:148},{x:20,y:132},{x:35,y:140},{x:52,y:128},{x:68,y:136},
 })();
 </script>
 </body>
-</html>                                                                                                                                                                                                          
+</html>

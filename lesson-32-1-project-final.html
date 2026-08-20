@@ -3232,7 +3232,8 @@ function fireConfetti(){
   var emojis=['📚','🐭','👩‍🦰','⭐','🦁','✨'];
   var particles=[];
   for(var i=0;i<90;i++)particles.push({type:'square',x:Math.random()*canvas.width,y:-20-Math.random()*120,vx:(Math.random()-0.5)*6,vy:Math.random()*3.5+2,size:Math.random()*8+4,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.2});
-  for(var j=0;j<25;j++)particles.push({type:'emoji',emoji:emojis[Math.floor(Math.random()*emojis.length)],x:Math.random()*canvas.width,y:-30-Math.random()*150,vx:(Math.random()-0.5)*5,vy:Math.random  var frame=0,totalFrames=300,fadeStart=240;
+  for(var j=0;j<25;j++)particles.push({type:'emoji',emoji:emojis[Math.floor(Math.random()*emojis.length)],x:Math.random()*canvas.width,y:-30-Math.random()*150,vx:(Math.random()-0.5)*5,vy:Math.random()*3+1.5,size:Math.random()*10+22,rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.12});
+  var frame=0,totalFrames=300,fadeStart=240;
   function animate(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     var alpha=frame>fadeStart?Math.max(0,1-((frame-fadeStart)/(totalFrames-fadeStart))):1;
@@ -3325,8 +3326,6 @@ window.addEventListener('beforeunload', function(e){
     e.returnValue = '';
   }
 });
-}
-
 /* DOWNLOAD JOURNAL */
 function downloadJournal(){
   var sections=[
