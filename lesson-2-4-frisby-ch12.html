@@ -2466,8 +2466,8 @@ body {
       <div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Objectives</div><div class="intro-card-head-title">By the end of this lesson&hellip;</div></div></div>
       <div class="intro-card-body">
         <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will explain how the author reveals a community through a new character.</span></div>
-        <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>explain</em> why nouns and subjects matter in writing.</span></div>
-        <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>use</em> open/closed syllables in a challenge.</span></div>
+        <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>explain</em> why action verbs and predicates matter in writing.</span></div>
+        <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>explain</em> VCCV syllable division in a challenge.</span></div>
       </div>
     </div>
   </div>
@@ -2631,22 +2631,37 @@ What a beautiful Pussy you are!”</div>
 
   <!-- GRAMMAR -->
   <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Nouns &amp; Subjects</div><div class="activity-sub">Explain why they matter.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Action Verbs &amp; Predicates</div><div class="activity-sub">Explain why they matter.</div></div></div>
     <div class="activity-body">
-            <p>Every sentence needs a subject — a noun the sentence is about. Without one, your reader doesn't know who or what you're talking about.</p>
+      <div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>Remember the Rule:</strong> An <strong>action verb</strong> tells what someone or something <em>does</em>. The <strong>predicate</strong> is the part of the sentence that contains the verb and tells what the subject does.</p></div>
+      <p>Strip the verb out of a sentence and watch what happens:</p>
       <div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
-        <div class="task-sentence" style="border-left-color:#C7922C;"><strong>Mrs. Frisby</strong> climbed the rosebush.</div>
+        <div class="task-sentence" style="border-left-color:#C7922C;"><strong>Isabella talked</strong> almost nonstop.</div>
       </div>
-      <p style="margin-top:10px;color:#3A4A6B;">Strip the subject out: <em>Climbed the rosebush.</em> Who climbed? You don't know.</p>
-      
+      <p style="margin-top:10px;color:#3A4A6B;">Without the verb: <em>Isabella almost nonstop.</em> What did she do? You don't know. The action verb <em>talked</em> makes the sentence move.</p>
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎯</span><p><strong>Practice!</strong> Read each sentence from Chapter 12. Tap the <strong>action verb</strong>.</p></div>
+      <div class="spotter-game" id="spotterGame">
+        <div class="spotter-sentence" id="spot1"><span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Isabella</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">talked</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">almost</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">nonstop.</span><div class="spotter-result" id="spot1-result"></div></div>
+        <div class="spotter-sentence" id="spot2"><span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Mrs.</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Frisby</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">followed</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Isabella</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">down</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">the</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">hall.</span><div class="spotter-result" id="spot2-result"></div></div>
+        <div class="spotter-sentence" id="spot3"><span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">The</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">children</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">played</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">in</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">the</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">classroom.</span><div class="spotter-result" id="spot3-result"></div></div>
+        <div class="spotter-sentence" id="spot4"><span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">She</span> <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="true">pointed</span> <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">to</span> <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">a</span> <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">small</span> <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">door.</span><div class="spotter-result" id="spot4-result"></div></div>
+      </div>
+      <div class="swyk">
+        <div class="swyk-label">🪶 Show What You Know</div>
+        <div class="swyk-prompt">Write your own sentence about Isabella or Mrs. Frisby using a strong action verb. Then explain: <strong>What is the action verb? How does it help your reader picture what's happening?</strong></div>
+        <div class="textbox-prompt">Write a sentence with a strong action verb and explain your choice.</div>
+        <div class="journal-label">📓 Your response <span class="saved-dot" id="dot-grammar"></span></div>
+        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: action verbs and predicates" placeholder="My sentence: ___ . The action verb is ___ because..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
+      </div>
     </div>
   </div>
 
   <!-- SPELLING -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Open &amp; Closed Syllables</div><div class="activity-sub">Sort the trickier words by first syllable.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: VCCV Syllable Division</div><div class="activity-sub">Sort the trickier VCCV words.</div></div></div>
     <div class="activity-body">
-            <p>You know the rule. Here's a challenge — some of these have more than two syllables.</p>
+<div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>Remember the Rule:</strong> When a word has the <strong>VCCV</strong> pattern (vowel–consonant–consonant–vowel), divide it <em>between the two consonants</em>. Example: <em>rab·bit</em>, <em>kit·ten</em>, <em>pep·per</em>.</p></div>
+      <p>You know the rule. Here's a challenge — sort these words by how the two consonants relate.</p>
 
       <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words by their first syllable.</p></div>
       <div class="sort-game" id="spellSort">
@@ -3230,7 +3245,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know the VCCV syllable division pattern.';
     sc.classList.add('show');
   }
 }

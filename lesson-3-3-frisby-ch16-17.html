@@ -2593,7 +2593,25 @@ body {
         <button class="fillin-check-btn" onclick="checkVocabCloze()">Check My Work</button>
         <div class="fillin-feedback" id="vocabClozeFeedback">📖 All correct!</div>
       </div>
-      
+
+<div style="margin-top:18px;padding:16px;background:linear-gradient(135deg,#F0E8FF,#E8DCFA);border:2px solid #D8CCF0;border-radius:12px;">
+<div style="text-align:center;font-size:18px;font-weight:700;color:#8B6FC0;margin-bottom:10px;">🎲 Vocab Dice Challenge!</div>
+<p style="font-size:14px;color:#3A4A6B;text-align:center;margin-bottom:12px;">Roll the dice to get a vocabulary word. Explain its meaning and use it in a sentence!</p>
+<div style="text-align:center;">
+<div id="vocabDice" style="font-size:56px;margin:10px 0;transition:transform 0.3s;">🎲</div>
+<button onclick="rollVocabDice()" id="vocabDiceBtn" style="background:linear-gradient(135deg,#8B6FC0,#6B4FB0);color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:15px;font-weight:700;cursor:pointer;">Roll!</button>
+<div id="vocabDiceCount" style="font-size:13px;color:#7A88A8;margin-top:6px;">0/4 words rolled</div>
+</div>
+<div id="vocabDiceBox" style="display:none;margin-top:14px;">
+<div id="vocabDiceWord" style="font-size:22px;font-weight:700;color:#8B6FC0;text-align:center;"></div>
+<div id="vocabDiceTask" style="font-size:14px;color:#3A4A6B;text-align:center;margin:6px 0;"></div>
+<div class="journal-label">📓 Your response <span class="saved-dot" id="dot-vocab-dice"></span></div>
+<textarea class="journal-box" id="journal-vocab-dice" data-label="Vocab Dice" placeholder="The word means... My sentence is..." oninput="autoSave(this,'dot-vocab-dice');" style="min-height:60px;"></textarea>
+<button onclick="checkVocabDice()" style="background:#8B6FC0;color:#fff;border:none;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;margin-top:8px;">Show Meaning</button>
+<div id="vocabDiceReveal" style="display:none;margin-top:8px;padding:10px;background:#E3F8ED;border-radius:8px;font-size:14px;color:#2D6A4F;font-weight:600;"></div>
+</div>
+</div>
+
     </div>
   </div>
 
@@ -2601,7 +2619,8 @@ body {
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Sentence Types</div><div class="activity-sub">Now write your own.</div></div></div>
     <div class="activity-body">
-            <p>You've defined nouns and subjects. You've identified them. Today, use them in your own writing.</p>
+            <div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>Remember the Rule:</strong> Every sentence has a <strong>type</strong> based on its purpose. <em>Declarative</em> = statement (.). <em>Interrogative</em> = question (?). <em>Exclamatory</em> = strong feeling (!). <em>Imperative</em> = command (. or !).</p></div>
+            <p>You've learned the four sentence types and identified them in the book. Today, use them in your own writing.</p>
       <div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
         <div class="task-sentence" style="border-left-color:#C7922C;">Use all four sentence types when you write — they make your story sound real.</div>
       </div>
@@ -2611,7 +2630,7 @@ body {
         <div class="spotter-sentence" id="spot2"><span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Can</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">you</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">hold</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">on?</span><div class="spotter-result" id="spot2-result"></div></div>
         <div class="spotter-sentence" id="spot3"><span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">Hurry!</span><div class="spotter-result" id="spot3-result"></div></div>
       </div>
-      <div class="callout callout-tip" style="margin-top:14px;"><span class="callout-icon">✍️</span><p>Write 3 sentences in your notebook: one about <strong>Timothy</strong>, one about <strong>Jeremy</strong>, and one about <strong>the cat</strong>. Each sentence must have a clear subject.</p></div>
+      <div class="callout callout-tip" style="margin-top:14px;"><span class="callout-icon">✍️</span><p>Write 3 sentences in your notebook: one <strong>declarative</strong>, one <strong>interrogative</strong>, and one <strong>exclamatory</strong> — all about something from today's chapters.</p></div>
       
     </div>
   </div>
@@ -2620,8 +2639,9 @@ body {
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Double-Consonant Division</div><div class="activity-sub">Write your own examples.</div></div></div>
     <div class="activity-body">
-            <p>You know the rule. A <strong>closed</strong> syllable ends with a consonant (short vowel). An <strong>open</strong> syllable ends with a vowel (long vowel).</p>
-      <div class="callout callout-tip" style="margin-top:12px;"><span class="callout-icon">✏️</span><p>In your notebook, write <strong>3 closed-syllable words</strong> and <strong>3 open-syllable words</strong>. Examples to start you off: <em>rab·bit, ba·by, win·ter, ti·ger</em>.</p></div>
+            <div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>The Rule:</strong> When a word has <strong>two consonants in the middle</strong> (the VCCV pattern), divide between the two consonants. Example: <em>rab·bit</em> → divide between the two <em>b</em>'s. Each syllable is closed, so the vowels stay <strong>short</strong>.</p></div>
+            <p>You know the rule: when you see <strong>two consonants in the middle</strong> of a word (VCCV pattern), divide between them. Each half is a closed syllable with a short vowel.</p>
+      <div class="callout callout-tip" style="margin-top:12px;"><span class="callout-icon">✏️</span><p>In your notebook, write <strong>3 double-consonant words</strong> and show where you would divide them. Examples: <em>rab·bit, let·ter, kit·ten</em>.</p></div>
       
       <div class="swyk">
         <div class="swyk-label">🪶 Show What You Know</div>
@@ -2719,10 +2739,19 @@ body {
   <div class="activity bl-purple">
     <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">📚</div><div><div class="activity-title">What Good Readers Do</div><div class="activity-sub">A thinking habit as you read</div></div></div>
     <div class="activity-body">
-      <p>Good readers notice turning points — moments when everything changes for a character. Sometimes a new skill or piece of knowledge shifts the whole story.</p>
+      <p>Good readers keep asking questions and revising predictions as the story unfolds. When you learn something new, update what you think will happen next.</p>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Think About It</div>
-        <p class="socratic-q">As you read today, ask yourself: <strong>What is the biggest turning point in these chapters? How does learning to read change everything for the rats?</strong></p>
+        <p class="socratic-q">As you read Chapters 16 &amp; 17, <strong>what new questions do you have? How have your predictions changed now that you know more about the rats' abilities?</strong></p>
+      </div>
+      <div class="callout callout-gold" style="margin-top:12px;margin-bottom:12px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #8B6FC0;border-radius:10px;padding:14px 18px;">
+        <span class="callout-icon">🔄</span>
+        <p style="font-size:15px;color:#0E1C42;line-height:1.6;margin-bottom:6px;"><strong>How to Do It:</strong></p>
+        <ol style="font-size:15px;color:#0E1C42;line-height:1.7;margin:0 0 0 18px;padding:0;">
+          <li><strong>Ask:</strong> Pause during reading to ask "What might happen next?"</li>
+          <li><strong>Check:</strong> Notice when the story confirms or surprises your prediction.</li>
+          <li><strong>Revise:</strong> Update your thinking — "Now I think ___ because ___."</li>
+        </ol>
       </div>
       <div class="thinking-stop">💭 Hold this question in your mind as you read.</div>
     </div>
@@ -3231,7 +3260,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know the double-consonant division pattern.';
     sc.classList.add('show');
   }
 }
@@ -3586,6 +3615,25 @@ const trackerPos = [
   s.onerror = function() { /* manifest not available yet — placeholders remain */ };
   document.head.appendChild(s);
 })();
+
+/* ───── VOCAB DICE GAME ───── */
+var vocabDiceWords=[
+{word:'snared',meaning:'caught or trapped, like in a snare'},
+{word:'experimenting',meaning:'trying new things to learn what happens'},
+{word:'recognition',meaning:'knowing or remembering something or someone'},
+{word:'futile',meaning:'pointless; having no chance of success'}
+];
+var vocabDiceUsed=[];
+function rollVocabDice(){
+var avail=vocabDiceWords.filter(function(w){return vocabDiceUsed.indexOf(w.word)===-1});
+if(avail.length===0){document.getElementById('vocabDiceBtn').disabled=true;document.getElementById('vocabDiceCount').textContent='🎉 All 4 words rolled!';return}
+var d=document.getElementById('vocabDice');var faces=['⚀','⚁','⚂','⚃','⚄','⚅'];var count=0;
+var spin=setInterval(function(){d.textContent=faces[Math.floor(Math.random()*6)];d.style.transform='rotate('+(count*30)+'deg)';count++;if(count>10){clearInterval(spin);d.style.transform='rotate(0deg)';var pick=avail[Math.floor(Math.random()*avail.length)];vocabDiceUsed.push(pick.word);document.getElementById('vocabDiceWord').textContent=pick.word;document.getElementById('vocabDiceTask').textContent='What does "'+pick.word+'" mean? Use it in a sentence about the story!';document.getElementById('vocabDiceBox').style.display='block';document.getElementById('vocabDiceReveal').style.display='none';document.getElementById('journal-vocab-dice').value='';var dot=document.getElementById('dot-vocab-dice');if(dot)dot.classList.remove('saved');document.getElementById('vocabDiceCount').textContent=vocabDiceUsed.length+'/'+vocabDiceWords.length+' words rolled';}},100);
+}
+function checkVocabDice(){
+var w=vocabDiceWords.find(function(x){return x.word===document.getElementById('vocabDiceWord').textContent});
+if(w){var r=document.getElementById('vocabDiceReveal');r.textContent='✅ '+w.word+' = '+w.meaning;r.style.display='block';}
+}
 
 </script>
 

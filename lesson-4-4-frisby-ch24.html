@@ -2611,7 +2611,7 @@ What a beautiful Pussy you are!”</div>
   <div class="activity bl-cyan">
     <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">2</div><div><div class="activity-title">🔤 Vocabulary</div><div class="activity-sub">Words from this week's chapters.</div></div></div>
     <div class="activity-body">
-            <p>It's the last day of Week 1. Pick ONE activity below to show what you've learned.</p>
+            <p>It's the last day of the week. Pick ONE activity below to show what you've learned.</p>
       <div class="callout callout-info"><span class="callout-icon">🪶</span><p><strong>This week's words:</strong> permanently · electrocuted · assorted · indignantly</p></div>
       <div style="margin:14px 0;">
         <div class="callout callout-tip" style="margin-bottom:8px;"><span class="callout-icon">✍️</span><p>Write 2 original sentences using two of this week's words.</p></div>
@@ -2634,19 +2634,47 @@ What a beautiful Pussy you are!”</div>
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Complete Sentences</div><div class="activity-sub">Explain why they matter.</div></div></div>
     <div class="activity-body">
-            <p>Every sentence needs a subject — a noun the sentence is about. Without one, your reader doesn't know who or what you're talking about.</p>
-      <div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
-        <div class="task-sentence" style="border-left-color:#C7922C;"><strong>Mrs. Frisby</strong> climbed the rosebush.</div>
-      </div>
-      <p style="margin-top:10px;color:#3A4A6B;">Strip the subject out: <em>Climbed the rosebush.</em> Who climbed? You don't know.</p>
-      
+<div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>Remember the Rule:</strong> A <strong>complete sentence</strong> needs a <em>subject</em> (who or what) + a <em>predicate</em> (what they do) + a complete thought. A <strong>fragment</strong> is missing one of these pieces.</p></div>
+            <p>You've learned what makes a sentence complete this week. Now explain why it matters — and show you can spot and fix fragments!</p>
+<div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
+<div class="task-sentence" style="border-left-color:#C7922C;"><em>Complete:</em> The rats planned their escape carefully.<br><em>Fragment:</em> Planned their escape carefully.<br><em>Fixed:</em> <strong>The rats</strong> planned their escape carefully.</div>
+</div>
+<p style="margin-top:10px;color:#3A4A6B;">Adding the missing subject or predicate turns a fragment into a complete sentence.</p>
+
+<div style="margin-top:18px;padding:16px;background:linear-gradient(135deg,#FFF8E8,#FFF2D6);border:2px solid #F5E6C8;border-radius:12px;">
+<div style="text-align:center;font-size:18px;font-weight:700;color:#C7922C;margin-bottom:10px;">🔧 Fragment Fixer!</div>
+<p style="font-size:14px;color:#3A4A6B;text-align:center;margin-bottom:12px;">Each card has a fragment from the story. Tap to reveal — then write the missing piece to make it complete!</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;" id="fragGrid">
+<div class="frag-card" onclick="flipFrag(this)" data-fragment="Ran through the tunnel." data-hint="Who ran? Add a subject!" style="background:#FAFBFF;border:2px solid #F5E6C8;border-radius:10px;padding:14px;text-align:center;cursor:pointer;transition:all 0.3s;">
+<div style="font-size:20px;font-weight:700;color:#C7922C;" class="frag-num">1</div>
+<div style="font-size:12px;color:#7A88A8;margin-top:4px;" class="frag-tap">tap to reveal fragment</div></div>
+<div class="frag-card" onclick="flipFrag(this)" data-fragment="The seven dead rats." data-hint="What about them? Add a predicate!" style="background:#FAFBFF;border:2px solid #F5E6C8;border-radius:10px;padding:14px;text-align:center;cursor:pointer;transition:all 0.3s;">
+<div style="font-size:20px;font-weight:700;color:#C7922C;" class="frag-num">2</div>
+<div style="font-size:12px;color:#7A88A8;margin-top:4px;" class="frag-tap">tap to reveal fragment</div></div>
+<div class="frag-card" onclick="flipFrag(this)" data-fragment="Because the exterminator came." data-hint="This is a dependent clause. What happened because of it?" style="background:#FAFBFF;border:2px solid #F5E6C8;border-radius:10px;padding:14px;text-align:center;cursor:pointer;transition:all 0.3s;">
+<div style="font-size:20px;font-weight:700;color:#C7922C;" class="frag-num">3</div>
+<div style="font-size:12px;color:#7A88A8;margin-top:4px;" class="frag-tap">tap to reveal fragment</div></div>
+<div class="frag-card" onclick="flipFrag(this)" data-fragment="Into the cold night air." data-hint="Who went into the cold night air?" style="background:#FAFBFF;border:2px solid #F5E6C8;border-radius:10px;padding:14px;text-align:center;cursor:pointer;transition:all 0.3s;">
+<div style="font-size:20px;font-weight:700;color:#C7922C;" class="frag-num">4</div>
+<div style="font-size:12px;color:#7A88A8;margin-top:4px;" class="frag-tap">tap to reveal fragment</div></div>
+</div>
+<div id="fragScore" style="text-align:center;font-size:14px;color:#C7922C;font-weight:700;margin-top:10px;">0/4 fragments revealed</div>
+<div id="fragWriteBox" style="display:none;margin-top:14px;">
+<div id="fragPrompt" style="font-size:16px;font-weight:700;color:#0E1C42;text-align:center;margin-bottom:4px;"></div>
+<div id="fragHint" style="font-size:14px;color:#3A4A6B;text-align:center;margin-bottom:8px;font-style:italic;"></div>
+<div class="journal-label">📓 Fix the fragment <span class="saved-dot" id="dot-frag"></span></div>
+<textarea class="journal-box" id="journal-frag" data-label="Fragment Fixer" placeholder="Complete sentence: ..." oninput="autoSave(this,'dot-frag');" style="min-height:50px;"></textarea>
+</div>
+</div>
+
     </div>
   </div>
 
   <!-- SPELLING -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Three Sounds of -ed</div><div class="activity-sub">Sort the trickier words by first syllable.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Three Sounds of -ed</div><div class="activity-sub">Sort the trickier -ed words by sound</div></div></div>
     <div class="activity-body">
+<div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>The Rule:</strong> The <strong>-ed</strong> ending makes three sounds: <strong>/t/</strong> after voiceless sounds (walked, jumped), <strong>/d/</strong> after voiced sounds (played, climbed), and <strong>/ĭd/</strong> after t or d (wanted, needed) — adding an extra syllable.</p></div>
             <p>You know the rule. Here's a challenge — some of these have more than two syllables.</p>
 
       <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words by their first syllable.</p></div>
@@ -2665,7 +2693,27 @@ What a beautiful Pussy you are!”</div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
-      
+
+<div style="margin-top:18px;padding:16px;background:linear-gradient(135deg,#E8F0FF,#D8E8FF);border:2px solid #C8DCEE;border-radius:12px;">
+<div style="text-align:center;font-size:18px;font-weight:700;color:#3D5285;margin-bottom:10px;">🎲 -ed Sound Dice!</div>
+<p style="font-size:14px;color:#3A4A6B;text-align:center;margin-bottom:12px;">Roll to get a word. Say it out loud — what sound does the -ed make?</p>
+<div style="text-align:center;">
+<div id="edDice" style="font-size:56px;margin:10px 0;transition:transform 0.3s;">🎲</div>
+<button onclick="rollEdDice()" id="edDiceBtn" style="background:linear-gradient(135deg,#3D5285,#2A3D6B);color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:15px;font-weight:700;cursor:pointer;">Roll!</button>
+<div id="edDiceCount" style="font-size:13px;color:#7A88A8;margin-top:6px;">0/6 words rolled</div>
+</div>
+<div id="edDiceBox" style="display:none;margin-top:14px;">
+<div id="edDiceWord" style="font-size:24px;font-weight:700;color:#0E1C42;text-align:center;"></div>
+<div style="font-size:14px;color:#3A4A6B;text-align:center;margin:6px 0;">Say it out loud! Does the -ed sound like /t/, /d/, or /ĭd/?</div>
+<div style="display:flex;gap:8px;justify-content:center;margin-top:10px;">
+<button class="ed-choice" onclick="checkEdChoice(this,'/t/')" style="background:#E8F0FF;border:2px solid #C8DCEE;border-radius:8px;padding:8px 18px;font-size:15px;font-weight:700;cursor:pointer;color:#3D5285;">/t/</button>
+<button class="ed-choice" onclick="checkEdChoice(this,'/d/')" style="background:#E8F0FF;border:2px solid #C8DCEE;border-radius:8px;padding:8px 18px;font-size:15px;font-weight:700;cursor:pointer;color:#3D5285;">/d/</button>
+<button class="ed-choice" onclick="checkEdChoice(this,'/ĭd/')" style="background:#E8F0FF;border:2px solid #C8DCEE;border-radius:8px;padding:8px 18px;font-size:15px;font-weight:700;cursor:pointer;color:#3D5285;">/ĭd/</button>
+</div>
+<div id="edDiceReveal" style="display:none;margin-top:8px;padding:10px;border-radius:8px;font-size:14px;font-weight:600;text-align:center;"></div>
+</div>
+</div>
+
     </div>
   </div>
 
@@ -2756,11 +2804,20 @@ What a beautiful Pussy you are!”</div>
   <div class="activity bl-purple">
     <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">📚</div><div><div class="activity-title">What Good Readers Do</div><div class="activity-sub">A thinking habit as you read</div></div></div>
     <div class="activity-body">
-      <p>Good readers think back at the end of the week. They notice how the story has changed since the first chapter — what new characters have appeared, what new problems have grown.</p>
+      <p>Good readers reflect on character motivations across the whole story. Looking back helps you see how characters' reasons and goals shaped every choice.</p>
+      <div class="key-concept" style="background:#F0E8FF;border-color:#D8CCF0;margin-bottom:14px;">
+        <div class="key-concept-label" style="color:#6B4FB0;">📗 How to Do It</div>
+        <ol style="margin:8px 0 0 18px;color:#3A4A6B;font-size:15px;line-height:1.7;">
+          <li><strong>Review:</strong> Think about the biggest choices characters made this week.</li>
+          <li><strong>Ask why:</strong> What motivated each choice? Fear? Love? A goal?</li>
+          <li><strong>Reflect:</strong> How did understanding motivation help you predict what happened?</li>
+        </ol>
+      </div>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Think About It</div>
-        <p class="socratic-q">Before you answer today's questions, think back: <strong>Where was Mrs. Frisby on the first page of Chapter 1? Where is she now? What has changed?</strong></p>
+        <p class="socratic-q">Think back across Chapters 19–24: <strong>What motivated the rats' plan for Thorn Valley? What motivated Mrs. Frisby to keep helping? How are their motivations similar or different?</strong></p>
       </div>
+      <div class="callout callout-info" style="margin-top:10px;"><span class="callout-icon">🎯</span><p><strong>Whole-book thinking:</strong> Think about every major decision in the story so far. Which character's motivation surprised you the most? Why?</p></div>
       <div class="thinking-stop">💭 Hold this question in your mind as you read.</div>
     </div>
   </div>
@@ -3231,7 +3288,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know the three sounds of -ed!';
     sc.classList.add('show');
   }
 }
@@ -3588,6 +3645,50 @@ const trackerPos = [
   s.onerror = function() { /* manifest not available yet — placeholders remain */ };
   document.head.appendChild(s);
 })();
+
+/* ───── FRAGMENT FIXER GAME ───── */
+var fragRevealed=0;
+function flipFrag(card){
+if(card.classList.contains('flipped'))return;
+card.classList.add('flipped');
+var n=card.querySelector('.frag-num');
+var t=card.querySelector('.frag-tap');
+n.textContent='"'+card.dataset.fragment+'"';
+n.style.fontSize='15px';n.style.color='#0E1C42';
+t.textContent='fragment revealed!';t.style.color='#C7922C';
+card.style.background='#FFF8E8';card.style.borderColor='#C7922C';
+fragRevealed++;
+document.getElementById('fragScore').textContent=fragRevealed+'/4 fragments revealed';
+document.getElementById('fragPrompt').textContent=card.dataset.fragment;
+document.getElementById('fragHint').textContent=card.dataset.hint;
+document.getElementById('fragWriteBox').style.display='block';
+document.getElementById('journal-frag').value='';
+var dot=document.getElementById('dot-frag');if(dot)dot.classList.remove('saved');
+if(fragRevealed===4)document.getElementById('fragScore').textContent='🎉 All 4 fragments revealed! Fix them all!';
+}
+
+/* ───── -ED SOUND DICE GAME ───── */
+var edWords=[
+{word:'watched',sound:'/t/'},{word:'opened',sound:'/d/'},{word:'wanted',sound:'/ĭd/'},
+{word:'jumped',sound:'/t/'},{word:'called',sound:'/d/'},{word:'started',sound:'/ĭd/'}
+];
+var edUsed=[];
+function rollEdDice(){
+var avail=edWords.filter(function(w){return edUsed.indexOf(w.word)===-1});
+if(avail.length===0){document.getElementById('edDiceBtn').disabled=true;document.getElementById('edDiceCount').textContent='🎉 All 6 words done!';return}
+var d=document.getElementById('edDice');var faces=['⚀','⚁','⚂','⚃','⚄','⚅'];var count=0;
+document.querySelectorAll('.ed-choice').forEach(function(b){b.style.background='#E8F0FF';b.style.borderColor='#C8DCEE';b.disabled=false;});
+document.getElementById('edDiceReveal').style.display='none';
+var spin=setInterval(function(){d.textContent=faces[Math.floor(Math.random()*6)];d.style.transform='rotate('+(count*30)+'deg)';count++;if(count>10){clearInterval(spin);d.style.transform='rotate(0deg)';var pick=avail[Math.floor(Math.random()*avail.length)];edUsed.push(pick.word);document.getElementById('edDiceWord').textContent=pick.word;document.getElementById('edDiceBox').style.display='block';document.getElementById('edDiceCount').textContent=edUsed.length+'/'+edWords.length+' words rolled';}},100);
+}
+function checkEdChoice(btn,choice){
+var w=edWords.find(function(x){return x.word===document.getElementById('edDiceWord').textContent});
+var r=document.getElementById('edDiceReveal');
+document.querySelectorAll('.ed-choice').forEach(function(b){b.disabled=true;});
+if(w&&choice===w.sound){btn.style.background='#E3F8ED';btn.style.borderColor='#34B76F';r.textContent='✅ Correct! "'+w.word+'" makes the '+w.sound+' sound.';r.style.background='#E3F8ED';r.style.color='#2D6A4F';}
+else{btn.style.background='#FFE8E8';btn.style.borderColor='#E74C3C';r.textContent='Not quite — "'+w.word+'" makes the '+w.sound+' sound.';r.style.background='#FFE8E8';r.style.color='#C0392B';}
+r.style.display='block';
+}
 
 </script>
 

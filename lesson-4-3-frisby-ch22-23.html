@@ -2589,7 +2589,25 @@ body {
         <button class="fillin-check-btn" onclick="checkVocabCloze()">Check My Work</button>
         <div class="fillin-feedback" id="vocabClozeFeedback">📖 All correct!</div>
       </div>
-      
+
+<div style="margin-top:18px;padding:16px;background:linear-gradient(135deg,#F0E8FF,#E8DCFA);border:2px solid #D8CCF0;border-radius:12px;">
+<div style="text-align:center;font-size:18px;font-weight:700;color:#8B6FC0;margin-bottom:10px;">🎲 Vocab Dice Challenge!</div>
+<p style="font-size:14px;color:#3A4A6B;text-align:center;margin-bottom:12px;">Roll the dice to get a vocabulary word. Explain its meaning and use it in a sentence!</p>
+<div style="text-align:center;">
+<div id="vocabDice" style="font-size:56px;margin:10px 0;transition:transform 0.3s;">🎲</div>
+<button onclick="rollVocabDice()" id="vocabDiceBtn" style="background:linear-gradient(135deg,#8B6FC0,#6B4FB0);color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:15px;font-weight:700;cursor:pointer;">Roll!</button>
+<div id="vocabDiceCount" style="font-size:13px;color:#7A88A8;margin-top:6px;">0/4 words rolled</div>
+</div>
+<div id="vocabDiceBox" style="display:none;margin-top:14px;">
+<div id="vocabDiceWord" style="font-size:22px;font-weight:700;color:#8B6FC0;text-align:center;"></div>
+<div id="vocabDiceTask" style="font-size:14px;color:#3A4A6B;text-align:center;margin:6px 0;"></div>
+<div class="journal-label">📓 Your response <span class="saved-dot" id="dot-vocab-dice"></span></div>
+<textarea class="journal-box" id="journal-vocab-dice" data-label="Vocab Dice" placeholder="The word means... My sentence is..." oninput="autoSave(this,'dot-vocab-dice');" style="min-height:60px;"></textarea>
+<button onclick="checkVocabDice()" style="background:#8B6FC0;color:#fff;border:none;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;margin-top:8px;">Show Meaning</button>
+<div id="vocabDiceReveal" style="display:none;margin-top:8px;padding:10px;background:#E3F8ED;border-radius:8px;font-size:14px;color:#2D6A4F;font-weight:600;"></div>
+</div>
+</div>
+
     </div>
   </div>
 
@@ -2597,7 +2615,8 @@ body {
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Complete Sentences</div><div class="activity-sub">Now write your own.</div></div></div>
     <div class="activity-body">
-            <p>You've defined nouns and subjects. You've identified them. Today, use them in your own writing.</p>
+      <div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>Remember the Rule:</strong> A <strong>complete sentence</strong> needs a <em>subject</em> (who or what) + a <em>predicate</em> (what they do) + a complete thought. A <strong>fragment</strong> is missing one of these pieces.</p></div>
+            <p>You've learned what makes a sentence complete. You've identified fragments. Today, use complete sentences in your own writing.</p>
       <div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
         <div class="task-sentence" style="border-left-color:#C7922C;">Use complete sentences when you write. Each one should stand on its own.</div>
       </div>
@@ -2607,7 +2626,7 @@ body {
         <div class="spotter-sentence" id="spot2"><span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Climbed</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">over</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">the</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">wall.</span><div class="spotter-result" id="spot2-result"></div></div>
         <div class="spotter-sentence" id="spot3"><span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">The</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">old</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">man</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">snored.</span><div class="spotter-result" id="spot3-result"></div></div>
       </div>
-      <div class="callout callout-tip" style="margin-top:14px;"><span class="callout-icon">✍️</span><p>Write 3 sentences in your notebook: one about <strong>Timothy</strong>, one about <strong>Jeremy</strong>, and one about <strong>the cat</strong>. Each sentence must have a clear subject.</p></div>
+      <div class="callout callout-tip" style="margin-top:14px;"><span class="callout-icon">✍️</span><p>Write 3 <strong>complete sentences</strong> about today's chapters. Then write 1 <strong>fragment</strong> on purpose and fix it by adding the missing piece.</p></div>
       
     </div>
   </div>
@@ -2616,14 +2635,15 @@ body {
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Three Sounds of -ed</div><div class="activity-sub">Write your own examples.</div></div></div>
     <div class="activity-body">
-            <p>You know the rule. A <strong>closed</strong> syllable ends with a consonant (short vowel). An <strong>open</strong> syllable ends with a vowel (long vowel).</p>
-      <div class="callout callout-tip" style="margin-top:12px;"><span class="callout-icon">✏️</span><p>In your notebook, write <strong>3 closed-syllable words</strong> and <strong>3 open-syllable words</strong>. Examples to start you off: <em>rab·bit, ba·by, win·ter, ti·ger</em>.</p></div>
+      <div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>The Rule:</strong> The <strong>-ed</strong> ending makes three sounds: <strong>/t/</strong> after voiceless sounds (walked, jumped), <strong>/d/</strong> after voiced sounds (played, climbed), and <strong>/ĭd/</strong> after t or d (wanted, needed) — adding an extra syllable.</p></div>
+            <p>You know the three sounds of <strong>-ed</strong>. Now find them in this week's reading!</p>
+      <div class="callout callout-tip" style="margin-top:12px;"><span class="callout-icon">✏️</span><p>In your notebook, write <strong>3 -ed words</strong> from today's chapters. Say each one out loud and write whether the -ed sounds like /t/, /d/, or /ĭd/.</p></div>
       
       <div class="swyk">
         <div class="swyk-label">🪶 Show What You Know</div>
         <div class="swyk-prompt">Pick TWO -ed words from this week's chapters (like <em>watched</em>, <em>opened</em>, or <em>wanted</em>). Say each one out loud and write which sound the -ed makes.</div>
         <div class="textbox-prompt">Say each word out loud and write the -ed sound you hear.</div>
-        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: VCCV syllable division" placeholder="Word 1: ___. The -ed sounds like ___. Word 2: ___..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
+        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: three sounds of -ed" placeholder="Word 1: ___. The -ed sounds like ___. Word 2: ___..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
       </div>
     </div>
   </div>
@@ -2715,10 +2735,18 @@ body {
   <div class="activity bl-purple">
     <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">📚</div><div><div class="activity-title">What Good Readers Do</div><div class="activity-sub">A thinking habit as you read</div></div></div>
     <div class="activity-body">
-      <p>Good readers think about how problems grow. The first problem in a book is rarely the only one — new trouble appears as the story moves.</p>
+      <p>Good readers keep asking <strong>why</strong> as the story unfolds. Understanding character motivation helps you predict what characters will do next.</p>
+      <div class="key-concept" style="background:#F0E8FF;border-color:#D8CCF0;margin-bottom:14px;">
+        <div class="key-concept-label" style="color:#6B4FB0;">🔍 How to Do It</div>
+        <ol style="margin:8px 0 0 18px;color:#3A4A6B;font-size:15px;line-height:1.7;">
+          <li><strong>Notice the action:</strong> "What does the character choose to do?"</li>
+          <li><strong>Ask why:</strong> "What reason, feeling, or goal drives this choice?"</li>
+          <li><strong>Find evidence:</strong> "What clues do the character's words and actions give you?"</li>
+        </ol>
+      </div>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Think About It</div>
-        <p class="socratic-q">As you read today, ask yourself: <strong>What new problem appears in these chapters? How does it connect to the first problem (Timothy's sickness)?</strong></p>
+        <p class="socratic-q">As you read Chapters 22 &amp; 23, ask: <strong>Why do the rats risk everything for their plan to move to Thorn Valley? What motivates Mrs. Frisby to keep helping even when it becomes dangerous?</strong></p>
       </div>
       <div class="thinking-stop">💭 Hold this question in your mind as you read.</div>
     </div>
@@ -3227,7 +3255,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know the three sounds of -ed!';
     sc.classList.add('show');
   }
 }
@@ -3582,6 +3610,25 @@ const trackerPos = [
   s.onerror = function() { /* manifest not available yet — placeholders remain */ };
   document.head.appendChild(s);
 })();
+
+/* ───── VOCAB DICE GAME ───── */
+var vocabDiceWords=[
+{word:'permanently',meaning:'lasting forever; not temporary'},
+{word:'electrocuted',meaning:'injured or killed by electric shock'},
+{word:'assorted',meaning:'a mix of different kinds'},
+{word:'indignantly',meaning:'in an angry way because something seems unfair'}
+];
+var vocabDiceUsed=[];
+function rollVocabDice(){
+var avail=vocabDiceWords.filter(function(w){return vocabDiceUsed.indexOf(w.word)===-1});
+if(avail.length===0){document.getElementById('vocabDiceBtn').disabled=true;document.getElementById('vocabDiceCount').textContent='🎉 All 4 words rolled!';return}
+var d=document.getElementById('vocabDice');var faces=['⚀','⚁','⚂','⚃','⚄','⚅'];var count=0;
+var spin=setInterval(function(){d.textContent=faces[Math.floor(Math.random()*6)];d.style.transform='rotate('+(count*30)+'deg)';count++;if(count>10){clearInterval(spin);d.style.transform='rotate(0deg)';var pick=avail[Math.floor(Math.random()*avail.length)];vocabDiceUsed.push(pick.word);document.getElementById('vocabDiceWord').textContent=pick.word;document.getElementById('vocabDiceTask').textContent='What does "'+pick.word+'" mean? Use it in a sentence about the story!';document.getElementById('vocabDiceBox').style.display='block';document.getElementById('vocabDiceReveal').style.display='none';document.getElementById('journal-vocab-dice').value='';var dot=document.getElementById('dot-vocab-dice');if(dot)dot.classList.remove('saved');document.getElementById('vocabDiceCount').textContent=vocabDiceUsed.length+'/'+vocabDiceWords.length+' words rolled';}},100);
+}
+function checkVocabDice(){
+var w=vocabDiceWords.find(function(x){return x.word===document.getElementById('vocabDiceWord').textContent});
+if(w){var r=document.getElementById('vocabDiceReveal');r.textContent='✅ '+w.word+' = '+w.meaning;r.style.display='block';}
+}
 
 </script>
 
