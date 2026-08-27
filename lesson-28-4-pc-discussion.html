@@ -3217,7 +3217,7 @@ function downloadJournal(){
   html+='<div class="gl">'+(window._rootMatchDone?'✅':'⬜')+' Morphology Word Base Match</div>';
   html+='<div class="gl">'+(cDone>=5?'✅':'⬜')+' Dependent Clause Spotter</div>';
   html+='<div class="gl">'+(sDone>=3?'✅':'⬜')+' Schwa Odd One Out</div></div>';
-  html+=' + '</body></html>';
+  html+='</body></html>';
   var win=window.open('','_blank'); win.document.write(html); win.document.close(); setTimeout(function(){win.print();},400);
 }
 

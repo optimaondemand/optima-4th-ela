@@ -3252,7 +3252,7 @@ function downloadJournal(){
   html+='<div class="gl">'+(window._rootMatchDone?'✅':'⬜')+' Morphology Word-Building Game</div>';
   html+='<div class="gl">'+(window._clozeDone?'✅':'⬜')+' Vocabulary Cloze Fill-In</div>';
   html+='<div class="gl">'+(window._spellTestDone?'✅':'⬜')+' Spelling Self-Check Test</div></div>';
-  html+=' + '</body></html>';
+  html+='</body></html>';
   var win=window.open('','_blank'); win.document.write(html); win.document.close(); setTimeout(function(){win.print();},400);
 }
 

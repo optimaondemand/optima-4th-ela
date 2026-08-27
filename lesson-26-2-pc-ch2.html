@@ -3238,7 +3238,7 @@ function downloadJournal(){
   html+='<div class="gl">'+(vocabSortPlaced>=vocabSortTotal?'✅':'⬜')+' Vocabulary Quick Sort</div>';
   html+='<div class="gl">'+(cDone>=5?'✅':'⬜')+' Conjunction Spotter</div>';
   html+='<div class="gl">'+(sortPlaced>=sortTotal?'✅':'⬜')+' Spelling Syllable Sort</div></div>';
-  html+=' + '</body></html>';
+  html+='</body></html>';
   var win=window.open('','_blank'); win.document.write(html); win.document.close(); setTimeout(function(){win.print();},400);
 }
 
