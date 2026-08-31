@@ -1959,6 +1959,10 @@ body {
 .spotter-result.show { display: block; }
 .spotter-result.win { background: #E3F8ED; color: #1a5c2e; }
 .spotter-result.miss { background: #FFF3DC; color: #C7922C; }
+.type-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.type-btn { padding: 6px 14px; border: 2px solid #D0D8E8; border-radius: 8px; background: #F8FAFF; color: #0E1C42; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.type-btn:hover:not(:disabled) { background: #EAF8FD; border-color: #55C8E8; }
+.type-btn:disabled { cursor: default; opacity: 0.7; }
 
 /* ═══════════ SENTENCE BUILDER ═══════════ */
 .builder-game { margin: 14px 0; }
@@ -2686,12 +2690,28 @@ body {
         <div class="task-sentence" style="border-left-color:#C7922C;">There are <strong>four sentence types</strong>: declarative (.), interrogative (?), exclamatory (!), and imperative (a command).</div>
       </div>
       <p style="margin-top:10px;color:#3A4A6B;"><em>Declarative</em>: makes a statement (Mrs. Frisby ran home.) — ends with a period.<br><em>Interrogative</em>: asks a question (Where did she go?) — ends with a question mark.<br><em>Exclamatory</em>: shows strong feeling (What a fast escape!) — ends with an exclamation point.<br><em>Imperative</em>: gives a command (Run faster.) — ends with a period or exclamation point.</p>
-      <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">🎮</span><p><strong>Sentence Type Spotter:</strong> Read each sentence below. Click the <strong>last word</strong> to spot the end punctuation — it tells you what type of sentence it is!</p></div>
+      <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">🎮</span><p><strong>Sentence Type Spotter:</strong> Read each sentence. Then click the button that names its <strong>type</strong> — declarative, interrogative, exclamatory, or imperative.</p></div>
       <div class="spotter-game" id="spotterGame">
-        <div class="spotter-sentence" id="spot1"><span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Mrs.</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Frisby</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">ran</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">home.</span><div class="spotter-result" id="spot1-result"></div></div>
-        <div class="spotter-sentence" id="spot2"><span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Where</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">are</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">the</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">rats?</span><div class="spotter-result" id="spot2-result"></div></div>
-        <div class="spotter-sentence" id="spot3"><span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">What</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">a</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">scary</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">escape!</span><div class="spotter-result" id="spot3-result"></div></div>
-        <div class="spotter-sentence" id="spot4"><span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">Run</span> <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">to</span> <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="false">the</span> <span class="spotter-word" onclick="spotterPick(this,'spot4')" data-correct="true">rosebush!</span><div class="spotter-result" id="spot4-result"></div></div>
+        <div class="spotter-sentence" id="spot1" data-answer="declarative">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">Mrs. Frisby ran home.</p>
+          <div class="type-btns"><button class="type-btn" onclick="typePick('spot1','declarative')">Declarative</button><button class="type-btn" onclick="typePick('spot1','interrogative')">Interrogative</button><button class="type-btn" onclick="typePick('spot1','exclamatory')">Exclamatory</button><button class="type-btn" onclick="typePick('spot1','imperative')">Imperative</button></div>
+          <div class="spotter-result" id="spot1-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot2" data-answer="interrogative">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">Where are the rats?</p>
+          <div class="type-btns"><button class="type-btn" onclick="typePick('spot2','declarative')">Declarative</button><button class="type-btn" onclick="typePick('spot2','interrogative')">Interrogative</button><button class="type-btn" onclick="typePick('spot2','exclamatory')">Exclamatory</button><button class="type-btn" onclick="typePick('spot2','imperative')">Imperative</button></div>
+          <div class="spotter-result" id="spot2-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot3" data-answer="exclamatory">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">What a scary escape!</p>
+          <div class="type-btns"><button class="type-btn" onclick="typePick('spot3','declarative')">Declarative</button><button class="type-btn" onclick="typePick('spot3','interrogative')">Interrogative</button><button class="type-btn" onclick="typePick('spot3','exclamatory')">Exclamatory</button><button class="type-btn" onclick="typePick('spot3','imperative')">Imperative</button></div>
+          <div class="spotter-result" id="spot3-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot4" data-answer="imperative">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">Run to the rosebush!</p>
+          <div class="type-btns"><button class="type-btn" onclick="typePick('spot4','declarative')">Declarative</button><button class="type-btn" onclick="typePick('spot4','interrogative')">Interrogative</button><button class="type-btn" onclick="typePick('spot4','exclamatory')">Exclamatory</button><button class="type-btn" onclick="typePick('spot4','imperative')">Imperative</button></div>
+          <div class="spotter-result" id="spot4-result"></div>
+        </div>
       </div>
 
     </div>
@@ -3083,7 +3103,7 @@ function gatherAnswers() {
     var s = document.getElementById('spot' + i);
     if (s && s.getAttribute('data-done') === 'true') spotDone++;
   }
-  output += (spotDone >= 3 ? '✅' : '⬜') + ' Sentence Type Spotter\n';
+  output += (spotDone >= 4 ? '✅' : '⬜') + ' Sentence Type Spotter\n';
   output += (sortPlaced >= sortTotal ? '✅' : '⬜') + ' Spelling Word Sort\n';
 
   var gathered = document.getElementById('gatheredOutput');
@@ -3765,31 +3785,43 @@ const trackerPos = [
 (function(){
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
-  /* — Spotter game — restore clicked results */
-  var spotterGame = document.getElementById('grammarGame');
+  /* — Sentence Type Spotter — restore completed answers */
+  var spotterGame = document.getElementById('spotterGame');
   if(spotterGame){
     try{
       var saved = JSON.parse(localStorage.getItem(k+'-spotterState') || 'null');
       if(saved){
-        var sentences = spotterGame.querySelectorAll('.spotter-sentence');
-        sentences.forEach(function(s){
+        spotterGame.querySelectorAll('.spotter-sentence').forEach(function(s){
           var sid = s.id;
           if(saved[sid]){
+            s.setAttribute('data-done','true');
             var res = s.querySelector('.spotter-result');
             if(res){ res.textContent = saved[sid]; res.classList.add('show','win'); }
+            var answer = s.getAttribute('data-answer');
+            s.querySelectorAll('.type-btn').forEach(function(b){
+              b.disabled = true;
+              if(b.textContent.toLowerCase() === answer){
+                b.style.background = '#E3F8ED';
+                b.style.borderColor = '#34B76F';
+                b.style.color = '#1a5c2e';
+                b.style.fontWeight = '700';
+              }
+            });
           }
         });
       }
     }catch(e){}
-    /* hook: wrap inline onclick to also save */
-    spotterGame.querySelectorAll('.spotter-word').forEach(function(w){
-      w.addEventListener('click', function(){
+    /* hook: save state after each pick */
+    spotterGame.querySelectorAll('.type-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
         setTimeout(function(){
           try{
             var state = {};
             spotterGame.querySelectorAll('.spotter-sentence').forEach(function(s){
-              var res = s.querySelector('.spotter-result');
-              if(res && res.classList.contains('show')){ state[s.id] = res.textContent; }
+              if(s.getAttribute('data-done') === 'true'){
+                var res = s.querySelector('.spotter-result');
+                if(res && res.classList.contains('show')){ state[s.id] = res.textContent; }
+              }
             });
             localStorage.setItem(k+'-spotterState', JSON.stringify(state));
           }catch(e){}
