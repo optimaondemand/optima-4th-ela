@@ -3334,32 +3334,43 @@ function rootMatchClick(item) {
   }
 }
 
-/* ───── INTERJECTION SPOTTER ───── */
-function spotterPick(word, sentenceId) {
+/* ───── SENTENCE TYPE SPOTTER ───── */
+function typePick(sentenceId, choice) {
   var sentence = document.getElementById(sentenceId);
   if (sentence.getAttribute('data-done') === 'true') return;
 
-  var words = sentence.querySelectorAll('.spotter-word');
-  words.forEach(function(w) { w.classList.remove('selected'); });
-
+  var answer = sentence.getAttribute('data-answer');
   var result = document.getElementById(sentenceId + '-result');
-  var isCorrect = word.getAttribute('data-correct') === 'true';
+  var btns = sentence.querySelectorAll('.type-btn');
 
-  if (isCorrect) {
-    word.classList.add('correct-reveal');
-    result.textContent = '✅ That\'s it! "' + word.textContent.replace(/[,!.]/g,'').trim() + '" is correct.';
+  if (choice === answer) {
+    btns.forEach(function(b) {
+      b.disabled = true;
+      if (b.textContent.toLowerCase() === answer) {
+        b.style.background = '#E3F8ED';
+        b.style.borderColor = '#34B76F';
+        b.style.color = '#1a5c2e';
+        b.style.fontWeight = '700';
+      }
+    });
+    result.textContent = '✅ Correct! This is a ' + answer + ' sentence.';
     result.className = 'spotter-result show win';
+    sentence.setAttribute('data-done', 'true');
   } else {
-    word.classList.add('wrong-reveal');
+    btns.forEach(function(b) {
+      if (b.textContent.toLowerCase() === choice) {
+        b.style.background = '#FFF0EC';
+        b.style.borderColor = '#E8636B';
+        setTimeout(function() {
+          b.style.background = '';
+          b.style.borderColor = '';
+        }, 1200);
+      }
+    });
     result.textContent = '🤔 Not quite — try again!';
     result.className = 'spotter-result show miss';
-    setTimeout(function() {
-      word.classList.remove('wrong-reveal');
-      result.classList.remove('show');
-    }, 1500);
-    return;
+    setTimeout(function() { result.classList.remove('show'); }, 1500);
   }
-  sentence.setAttribute('data-done', 'true');
 }
 
 /* ───── DOL HIGHLIGHTER ───── */
