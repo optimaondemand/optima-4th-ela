@@ -2507,21 +2507,18 @@ body {
     <div class="activity-head"><div class="activity-num" style="background:#C7922C;">2</div><div><div class="activity-title">🪶 Poetry Corner</div><div class="activity-sub">Read, then notice something the poet did.</div></div></div>
     <div class="activity-body">
       <div class="poem-box">
-        <div class="poem-title">The Owl and the Pussy-Cat</div>
-        <div class="poem-author">Edward Lear (excerpt)</div>
-        <div class="poem-text">The Owl and the Pussy-cat went to sea
-In a beautiful pea-green boat,
-They took some honey, and plenty of money,
-Wrapped up in a five-pound note.
-The Owl looked up to the stars above,
-And sang to a small guitar,
-“O lovely Pussy! O Pussy, my love,
-What a beautiful Pussy you are!”</div>
+        <div class="poem-title">The Falling Star</div>
+        <div class="poem-author">Sara Teasdale</div>
+        <div class="poem-text">I saw a star slide down the sky,
+Blinding the north as it went by,
+Too burning and too quick to hold,
+Too lovely to be bought or sold,
+Good only to make wishes on
+And then forever to be gone.</div>
       </div>
       <div class="socratic-box">
         <div class="socratic-label">🧠 Think About It</div>
-        <p class="socratic-q">Lear's owl is silly and tender. Mrs. Frisby's owl is wise and a little frightening. <strong>How does each writer make us feel about their owl?</strong></p>
-      </div>
+        <p class="socratic-q">The star is beautiful but disappears. Mrs. Frisby's time with the rats is the same—brief but unforgettable. <strong>What moment in the story felt “too lovely to be bought or sold”?</strong></p>
       <div class="thinking-stop">💭 Pause and think — no need to write here.</div>
     </div>
   </div>
@@ -2593,22 +2590,26 @@ What a beautiful Pussy you are!”</div>
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Proper Nouns</div><div class="activity-sub">Explain why they matter.</div></div></div>
     <div class="activity-body">
-            <p>Every sentence needs a subject — a noun the sentence is about. Without one, your reader doesn't know who or what you're talking about.</p>
-      <div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
-        <div class="task-sentence" style="border-left-color:#C7922C;"><strong>Mrs. Frisby</strong> climbed the rosebush.</div>
+            <p>This week you learned that <strong>proper nouns</strong> name specific people, places, and things — and they always start with a <strong>capital letter</strong>. Common nouns (mouse, farm, valley) do not.</p>
+      <div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Read each sentence. <strong>Click the proper noun</strong> — the word that names a specific person, place, or thing.</p></div>
+      <div class="spotter-game" id="spotterGame">
+        <div class="spotter-sentence" id="spot1" data-explain="'Dragon' is a proper noun here — it's the name of the Fitzgibbons' cat."><span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">The</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">cat</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">called</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="true">Dragon</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">prowled</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">outside.</span><div class="spotter-result" id="spot1-result"></div></div>
+        <div class="spotter-sentence" id="spot2" data-explain="'Timothy' is a proper noun — it names a specific character (Mrs. Frisby's son)."><span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">Her</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">son</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="true">Timothy</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">was</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">still</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">sick.</span><div class="spotter-result" id="spot2-result"></div></div>
+        <div class="spotter-sentence" id="spot3" data-explain="'Thorn Valley' is a proper noun — it names a specific place."><span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">The</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">colony</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">would</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">move</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">to</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="true">Thorn</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="true">Valley.</span><div class="spotter-result" id="spot3-result"></div></div>
+        <div class="spotter-sentence" id="spot4" data-explain="'Nicodemus' is a proper noun — it names a specific character (the leader of the rats)."><span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">The</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">leader</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="true">Nicodemus</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">made</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">the</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">plan.</span><div class="spotter-result" id="spot4-result"></div></div>
       </div>
-      <p style="margin-top:10px;color:#3A4A6B;">Strip the subject out: <em>Climbed the rosebush.</em> Who climbed? You don't know.</p>
+      <div class="callout callout-tip" style="margin-top:14px;"><span class="callout-icon">✍️</span><p><strong>Explain:</strong> Why do proper nouns need capital letters but common nouns don't? Write 1–2 sentences explaining the rule to a friend.</p></div>
       
     </div>
   </div>
 
   <!-- SPELLING -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Doubling Final Consonant</div><div class="activity-sub">Sort the trickier words by first syllable.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Doubling Final Consonant</div><div class="activity-sub">Show what you know — sort the tricky ones.</div></div></div>
     <div class="activity-body">
             <p>You know the rule. Here's a challenge — some of these have more than two syllables.</p>
 
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words by their first syllable.</p></div>
+      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words by whether the final consonant was doubled before the suffix.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
           <span class="sort-chip" data-group="double" onclick="pickSortChip(this)">hopped</span>
@@ -3264,32 +3265,30 @@ function rootMatchClick(item) {
   }
 }
 
-/* ───── INTERJECTION SPOTTER ───── */
-function spotterPick(word, sentenceId) {
+/* ───── PROPER NOUN SPOTTER ───── */
+function nounPick(word, sentenceId) {
   var sentence = document.getElementById(sentenceId);
   if (sentence.getAttribute('data-done') === 'true') return;
-
   var words = sentence.querySelectorAll('.spotter-word');
   words.forEach(function(w) { w.classList.remove('selected'); });
-
   var result = document.getElementById(sentenceId + '-result');
   var isCorrect = word.getAttribute('data-correct') === 'true';
-
   if (isCorrect) {
     word.classList.add('correct-reveal');
-    result.textContent = '✅ That\'s it! "' + word.textContent.replace(/[,!.]/g,'').trim() + '" is correct.';
+    words.forEach(function(w) { if (w.getAttribute('data-correct') === 'true') w.classList.add('correct-reveal'); });
+    var explain = sentence.getAttribute('data-explain');
+    result.textContent = '✅ ' + explain;
     result.className = 'spotter-result show win';
+    sentence.setAttribute('data-done', 'true');
   } else {
     word.classList.add('wrong-reveal');
-    result.textContent = '🤔 Not quite — try again!';
+    result.textContent = '🤔 That's a common noun. Look for a name — a specific person, place, or thing!';
     result.className = 'spotter-result show miss';
     setTimeout(function() {
       word.classList.remove('wrong-reveal');
       result.classList.remove('show');
     }, 1500);
-    return;
   }
-  sentence.setAttribute('data-done', 'true');
 }
 
 /* ───── DOL HIGHLIGHTER ───── */
@@ -3676,7 +3675,7 @@ const trackerPos = [
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
   /* — Spotter game — restore clicked results */
-  var spotterGame = document.getElementById('grammarGame');
+  var spotterGame = document.getElementById('spotterGame');
   if(spotterGame){
     try{
       var saved = JSON.parse(localStorage.getItem(k+'-spotterState') || 'null');

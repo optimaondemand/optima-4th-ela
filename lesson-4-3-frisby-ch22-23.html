@@ -1959,6 +1959,10 @@ body {
 .spotter-result.show { display: block; }
 .spotter-result.win { background: #E3F8ED; color: #1a5c2e; }
 .spotter-result.miss { background: #FFF3DC; color: #C7922C; }
+.frag-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.frag-btn { padding: 6px 14px; border: 2px solid #D0D8E8; border-radius: 8px; background: #F8FAFF; color: #0E1C42; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.frag-btn:hover:not(:disabled) { background: #EAF8FD; border-color: #55C8E8; }
+.frag-btn:disabled { cursor: default; opacity: 0.7; }
 
 /* ═══════════ SENTENCE BUILDER ═══════════ */
 .builder-game { margin: 14px 0; }
@@ -2578,10 +2582,29 @@ body {
         <div class="task-sentence" style="border-left-color:#C7922C;">Use complete sentences when you write. Each one should stand on its own.</div>
       </div>
       <p style="margin-top:10px;color:#3A4A6B;">Mix sentence lengths — but every sentence should be complete. If a thought feels incomplete, add a subject or a predicate.</p>
+      <div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Read each sentence. Decide — is it a <strong>complete sentence</strong> or a <strong>fragment</strong>?</p></div>
       <div class="spotter-game" id="spotterGame">
-        <div class="spotter-sentence" id="spot1"><span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">She</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">listened</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">carefully.</span><div class="spotter-result" id="spot1-result"></div></div>
-        <div class="spotter-sentence" id="spot2"><span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Climbed</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">over</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">the</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">wall.</span><div class="spotter-result" id="spot2-result"></div></div>
-        <div class="spotter-sentence" id="spot3"><span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">The</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">old</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">man</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">snored.</span><div class="spotter-result" id="spot3-result"></div></div>
+        <div class="spotter-sentence" id="spot1" data-answer="complete" data-explain="Correct! 'She crept through the shadows' has a subject (She) and a predicate (crept through the shadows).">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">She crept through the shadows.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="complete" onclick="fragPick('spot1','complete')">✓ Complete Sentence</button><button class="frag-btn" data-choice="fragment" onclick="fragPick('spot1','fragment')">✗ Fragment</button></div>
+          <div class="spotter-result" id="spot1-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot2" data-answer="fragment" data-explain="Correct! 'Climbed over the wall' has no subject — who climbed? It's a fragment.">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">Climbed over the wall.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="complete" onclick="fragPick('spot2','complete')">✓ Complete Sentence</button><button class="frag-btn" data-choice="fragment" onclick="fragPick('spot2','fragment')">✗ Fragment</button></div>
+          <div class="spotter-result" id="spot2-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot3" data-answer="complete" data-explain="Correct! 'The plan would work' has a subject (The plan) and a predicate (would work).">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">The plan would work.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="complete" onclick="fragPick('spot3','complete')">✓ Complete Sentence</button><button class="frag-btn" data-choice="fragment" onclick="fragPick('spot3','fragment')">✗ Fragment</button></div>
+          <div class="spotter-result" id="spot3-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot4" data-answer="fragment" data-explain="Correct! 'Brave and clever' has no subject and no predicate — it's just a description. It's a fragment.">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">Brave and clever.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="complete" onclick="fragPick('spot4','complete')">✓ Complete Sentence</button><button class="frag-btn" data-choice="fragment" onclick="fragPick('spot4','fragment')">✗ Fragment</button></div>
+          <div class="spotter-result" id="spot4-result"></div>
+        </div>
+      </div>
       </div>
       <div class="callout callout-tip" style="margin-top:14px;"><span class="callout-icon">✍️</span><p>Write 3 <strong>complete sentences</strong> about today's chapters. Then write 1 <strong>fragment</strong> on purpose and fix it by adding the missing piece.</p></div>
       
@@ -2590,17 +2613,40 @@ body {
 
   <!-- SPELLING -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Three Sounds of -ed</div><div class="activity-sub">Write your own examples.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Three Sounds of -ed</div><div class="activity-sub">Apply the rule to real reading.</div></div></div>
     <div class="activity-body">
       <div class="callout callout-gold" style="margin-bottom:14px;background:#FFF8E8;border:2px solid #F5E6C8;border-left:5px solid #C7922C;border-radius:10px;padding:14px 18px;"><span class="callout-icon">📖</span><p style="font-size:15px;color:#0E1C42;line-height:1.6;"><strong>The Rule:</strong> The <strong>-ed</strong> ending makes three sounds: <strong>/t/</strong> after voiceless sounds (walked, jumped), <strong>/d/</strong> after voiced sounds (played, climbed), and <strong>/ĭd/</strong> after t or d (wanted, needed) — adding an extra syllable.</p></div>
-            <p>You know the three sounds of <strong>-ed</strong>. Now find them in this week's reading!</p>
-      <div class="callout callout-tip" style="margin-top:12px;"><span class="callout-icon">✏️</span><p>In your notebook, write <strong>3 -ed words</strong> from today's chapters. Say each one out loud and write whether the -ed sounds like /t/, /d/, or /ĭd/.</p></div>
-      
+            <p>You know the three sounds of <strong>-ed</strong>. Now <strong>apply</strong> the rule to sentences from this week\'s chapters!</p>
+      <div class="callout callout-info" style="margin-top:12px;"><span class="callout-icon">\U0001f3af</span><p><strong>Directions:</strong> Read each sentence. The <strong style="color:#8B6FC0;">purple word</strong> ends in -ed. Say it out loud and pick the sound the -ed makes.</p></div>
+
+      <div id="edApplyGame" style="margin:14px 0;">
+        <div class="spotter-sentence" id="edA1" data-answer="/t/" data-explain="Correct! 'watched' → the -ed sounds like /t/ (after the voiceless 'ch' sound).">
+          <p style="font-size:16px;margin:0 0 8px;">Mrs. Frisby <strong style="color:#8B6FC0;">watched</strong> from the entrance.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="/t/" onclick="edApply('edA1','/t/')">sounds like /t/</button><button class="frag-btn" data-choice="/d/" onclick="edApply('edA1','/d/')">sounds like /d/</button><button class="frag-btn" data-choice="/\u012dd/" onclick="edApply('edA1','/\u012dd/')">sounds like /\u012dd/</button></div>
+          <div class="spotter-result" id="edA1-result"></div>
+        </div>
+        <div class="spotter-sentence" id="edA2" data-answer="/d/" data-explain="Correct! 'planned' → the -ed sounds like /d/ (after the voiced 'n' sound).">
+          <p style="font-size:16px;margin:0 0 8px;">The rats <strong style="color:#8B6FC0;">planned</strong> their move carefully.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="/t/" onclick="edApply('edA2','/t/')">sounds like /t/</button><button class="frag-btn" data-choice="/d/" onclick="edApply('edA2','/d/')">sounds like /d/</button><button class="frag-btn" data-choice="/\u012dd/" onclick="edApply('edA2','/\u012dd/')">sounds like /\u012dd/</button></div>
+          <div class="spotter-result" id="edA2-result"></div>
+        </div>
+        <div class="spotter-sentence" id="edA3" data-answer="/\u012dd/" data-explain="Correct! 'wanted' → the -ed sounds like /\u012dd/ and adds an extra syllable (after the 't' sound).">
+          <p style="font-size:16px;margin:0 0 8px;">She <strong style="color:#8B6FC0;">wanted</strong> to warn everyone.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="/t/" onclick="edApply('edA3','/t/')">sounds like /t/</button><button class="frag-btn" data-choice="/d/" onclick="edApply('edA3','/d/')">sounds like /d/</button><button class="frag-btn" data-choice="/\u012dd/" onclick="edApply('edA3','/\u012dd/')">sounds like /\u012dd/</button></div>
+          <div class="spotter-result" id="edA3-result"></div>
+        </div>
+        <div class="spotter-sentence" id="edA4" data-answer="/t/" data-explain="Correct! 'asked' → the -ed sounds like /t/ (after the voiceless 'k' sound).">
+          <p style="font-size:16px;margin:0 0 8px;">Justin <strong style="color:#8B6FC0;">asked</strong> about the plan.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="/t/" onclick="edApply('edA4','/t/')">sounds like /t/</button><button class="frag-btn" data-choice="/d/" onclick="edApply('edA4','/d/')">sounds like /d/</button><button class="frag-btn" data-choice="/\u012dd/" onclick="edApply('edA4','/\u012dd/')">sounds like /\u012dd/</button></div>
+          <div class="spotter-result" id="edA4-result"></div>
+        </div>
+      </div>
+
       <div class="swyk">
-        <div class="swyk-label">🪶 Show What You Know</div>
-        <div class="swyk-prompt">Pick TWO -ed words from this week's chapters (like <em>watched</em>, <em>opened</em>, or <em>wanted</em>). Say each one out loud and write which sound the -ed makes.</div>
-        <div class="textbox-prompt">Say each word out loud and write the -ed sound you hear.</div>
-        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: three sounds of -ed" placeholder="Word 1: ___. The -ed sounds like ___. Word 2: ___..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
+        <div class="swyk-label">\U0001fab6 Show What You Know</div>
+        <div class="swyk-prompt">Pick ONE more -ed word from today\'s chapters. Say it out loud and write which sound the -ed makes and why.</div>
+        <div class="textbox-prompt">My word is ___. The -ed sounds like ___ because...</div>
+        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: apply -ed sounds" placeholder="My word is ___. The -ed sounds like ___ because..." oninput="autoSave(this,\'dot-spelling\');gatherAnswers();"></textarea>
       </div>
     </div>
   </div>
@@ -3261,32 +3307,57 @@ function matchClick(item) {
   }
 }
 
-/* ───── INTERJECTION SPOTTER ───── */
-function spotterPick(word, sentenceId) {
+
+/* ───── -ED SOUND APPLY GAME ───── */
+function edApply(sentenceId, choice) {
   var sentence = document.getElementById(sentenceId);
   if (sentence.getAttribute('data-done') === 'true') return;
-
-  var words = sentence.querySelectorAll('.spotter-word');
-  words.forEach(function(w) { w.classList.remove('selected'); });
-
+  var answer = sentence.getAttribute('data-answer');
   var result = document.getElementById(sentenceId + '-result');
-  var isCorrect = word.getAttribute('data-correct') === 'true';
-
-  if (isCorrect) {
-    word.classList.add('correct-reveal');
-    result.textContent = '✅ That\'s it! "' + word.textContent.replace(/[,!.]/g,'').trim() + '" is correct.';
+  var btns = sentence.querySelectorAll('.frag-btn');
+  if (choice === answer) {
+    btns.forEach(function(b) {
+      b.disabled = true;
+      if (b.getAttribute('data-choice') === answer) {
+        b.style.background = '#E3F8ED'; b.style.borderColor = '#34B76F';
+        b.style.color = '#1a5c2e'; b.style.fontWeight = '700';
+      }
+    });
+    var explain = sentence.getAttribute('data-explain');
+    result.textContent = '✅ ' + explain;
     result.className = 'spotter-result show win';
+    sentence.setAttribute('data-done', 'true');
   } else {
-    word.classList.add('wrong-reveal');
+    result.textContent = '🤔 Not quite — say the word out loud and try again!';
+    result.className = 'spotter-result show miss';
+    setTimeout(function() { result.className = 'spotter-result'; result.textContent = ''; }, 1500);
+  }
+}
+
+/* ───── COMPLETE OR FRAGMENT PICKER ───── */
+function fragPick(sentenceId, choice) {
+  var sentence = document.getElementById(sentenceId);
+  if (sentence.getAttribute('data-done') === 'true') return;
+  var answer = sentence.getAttribute('data-answer');
+  var result = document.getElementById(sentenceId + '-result');
+  var btns = sentence.querySelectorAll('.frag-btn');
+  if (choice === answer) {
+    btns.forEach(function(b) {
+      b.disabled = true;
+      if (b.getAttribute('data-choice') === answer) {
+        b.style.background = '#E3F8ED'; b.style.borderColor = '#34B76F';
+        b.style.color = '#1a5c2e'; b.style.fontWeight = '700';
+      }
+    });
+    var explain = sentence.getAttribute('data-explain');
+    result.textContent = '✅ ' + explain;
+    result.className = 'spotter-result show win';
+    sentence.setAttribute('data-done', 'true');
+  } else {
     result.textContent = '🤔 Not quite — try again!';
     result.className = 'spotter-result show miss';
-    setTimeout(function() {
-      word.classList.remove('wrong-reveal');
-      result.classList.remove('show');
-    }, 1500);
-    return;
+    setTimeout(function() { result.className = 'spotter-result'; result.textContent = ''; }, 1500);
   }
-  sentence.setAttribute('data-done', 'true');
 }
 
 /* ───── DOL HIGHLIGHTER ───── */
@@ -3715,7 +3786,7 @@ if(w){var r=document.getElementById('vocabDiceReveal');r.textContent='✅ '+w.wo
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
   /* — Spotter game — restore clicked results */
-  var spotterGame = document.getElementById('grammarGame');
+  var spotterGame = document.getElementById('spotterGame');
   if(spotterGame){
     try{
       var saved = JSON.parse(localStorage.getItem(k+'-spotterState') || 'null');
@@ -3731,7 +3802,7 @@ if(w){var r=document.getElementById('vocabDiceReveal');r.textContent='✅ '+w.wo
       }
     }catch(e){}
     /* hook: wrap inline onclick to also save */
-    spotterGame.querySelectorAll('.spotter-word').forEach(function(w){
+    spotterGame.querySelectorAll('.frag-btn').forEach(function(w){
       w.addEventListener('click', function(){
         setTimeout(function(){
           try{

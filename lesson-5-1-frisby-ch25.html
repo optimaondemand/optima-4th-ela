@@ -2663,9 +2663,10 @@ body {
       </div>
       <p style="margin-top:10px;color:#3A4A6B;"><em>Common noun</em>: mouse, farm, valley<br><em>Proper noun</em>: <strong>Mrs. Frisby</strong>, <strong>Boniface Estate</strong>, <strong>Thorn Valley</strong><br>Names of people, places, and titles all get capital letters.</p>
       <div class="spotter-game" id="spotterGame">
-        <div class="spotter-sentence" id="spot1"><span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">The</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">mouse</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">lived</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">on</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">Fitzgibbon's</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">farm.</span><div class="spotter-result" id="spot1-result"></div></div>
-        <div class="spotter-sentence" id="spot2"><span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">Nicodemus</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">told</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">a</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">long</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">story.</span><div class="spotter-result" id="spot2-result"></div></div>
-        <div class="spotter-sentence" id="spot3"><span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">The</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">rats</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">moved</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">to</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">Thorn</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Valley.</span><div class="spotter-result" id="spot3-result"></div></div>
+        <div class="spotter-sentence" id="spot1" data-explain="'Fitzgibbon’s' is a proper noun — it names a specific family."><span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">The</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">mouse</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">lived</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">on</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="true">Fitzgibbon’s</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">farm.</span><div class="spotter-result" id="spot1-result"></div></div>
+        <div class="spotter-sentence" id="spot2" data-explain="'Nicodemus' is a proper noun — it names a specific character."><span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="true">Nicodemus</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">told</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">a</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">long</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">story.</span><div class="spotter-result" id="spot2-result"></div></div>
+        <div class="spotter-sentence" id="spot3" data-explain="'Thorn Valley' is a proper noun — it names a specific place."><span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">The</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">rats</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">moved</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">to</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="true">Thorn</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="true">Valley.</span><div class="spotter-result" id="spot3-result"></div></div>
+        <div class="spotter-sentence" id="spot4" data-explain="'Jeremy' is a proper noun — it names a specific character (the crow)."><span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">She</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">asked</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="true">Jeremy</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">for</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">help.</span><div class="spotter-result" id="spot4-result"></div></div>
       </div>
       
     </div>
@@ -3327,32 +3328,30 @@ function matchClick(item) {
   }
 }
 
-/* ───── INTERJECTION SPOTTER ───── */
-function spotterPick(word, sentenceId) {
+/* ───── PROPER NOUN SPOTTER ───── */
+function nounPick(word, sentenceId) {
   var sentence = document.getElementById(sentenceId);
   if (sentence.getAttribute('data-done') === 'true') return;
-
   var words = sentence.querySelectorAll('.spotter-word');
   words.forEach(function(w) { w.classList.remove('selected'); });
-
   var result = document.getElementById(sentenceId + '-result');
   var isCorrect = word.getAttribute('data-correct') === 'true';
-
   if (isCorrect) {
     word.classList.add('correct-reveal');
-    result.textContent = '✅ That\'s it! "' + word.textContent.replace(/[,!.]/g,'').trim() + '" is correct.';
+    words.forEach(function(w) { if (w.getAttribute('data-correct') === 'true') w.classList.add('correct-reveal'); });
+    var explain = sentence.getAttribute('data-explain');
+    result.textContent = '✅ ' + explain;
     result.className = 'spotter-result show win';
+    sentence.setAttribute('data-done', 'true');
   } else {
     word.classList.add('wrong-reveal');
-    result.textContent = '🤔 Not quite — try again!';
+    result.textContent = '🤔 That’s a common noun. Look for a name — a specific person, place, or thing!';
     result.className = 'spotter-result show miss';
     setTimeout(function() {
       word.classList.remove('wrong-reveal');
       result.classList.remove('show');
     }, 1500);
-    return;
   }
-  sentence.setAttribute('data-done', 'true');
 }
 
 /* ───── DOL HIGHLIGHTER ───── */
@@ -3739,7 +3738,7 @@ const trackerPos = [
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
   /* — Spotter game — restore clicked results */
-  var spotterGame = document.getElementById('grammarGame');
+  var spotterGame = document.getElementById('spotterGame');
   if(spotterGame){
     try{
       var saved = JSON.parse(localStorage.getItem(k+'-spotterState') || 'null');

@@ -1959,6 +1959,10 @@ body {
 .spotter-result.show { display: block; }
 .spotter-result.win { background: #E3F8ED; color: #1a5c2e; }
 .spotter-result.miss { background: #FFF3DC; color: #C7922C; }
+.frag-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.frag-btn { padding: 6px 14px; border: 2px solid #D0D8E8; border-radius: 8px; background: #F8FAFF; color: #0E1C42; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.frag-btn:hover:not(:disabled) { background: #EAF8FD; border-color: #55C8E8; }
+.frag-btn:disabled { cursor: default; opacity: 0.7; }
 
 /* ═══════════ SENTENCE BUILDER ═══════════ */
 .builder-game { margin: 14px 0; }
@@ -2674,10 +2678,29 @@ body {
         <div class="task-sentence" style="border-left-color:#C7922C;">A <strong>complete sentence</strong> has a <em>subject</em> (who or what) AND a <em>predicate</em> (what they do), and it expresses a complete thought.</div>
       </div>
       <p style="margin-top:10px;color:#3A4A6B;"><em>Complete</em>: Mrs. Frisby ran home. (subject + predicate + complete thought) ✓<br><em>Fragment</em>: Ran home. (no subject — incomplete) ✗<br><em>Fragment</em>: The brave little mouse. (no predicate — incomplete) ✗</p>
+      <div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Read each sentence. Decide — is it a <strong>complete sentence</strong> or a <strong>fragment</strong>?</p></div>
       <div class="spotter-game" id="spotterGame">
-        <div class="spotter-sentence" id="spot1"><span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Mrs.</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Frisby</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">found</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">a</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">key.</span><div class="spotter-result" id="spot1-result"></div></div>
-        <div class="spotter-sentence" id="spot2"><span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">After</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">the</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">long</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">night.</span><div class="spotter-result" id="spot2-result"></div></div>
-        <div class="spotter-sentence" id="spot3"><span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Justin</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">climbed</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">the</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">tunnel.</span><div class="spotter-result" id="spot3-result"></div></div>
+        <div class="spotter-sentence" id="spot1" data-answer="complete" data-explain="Correct! ‘Mrs. Frisby listened carefully’ has a subject (Mrs. Frisby) and a predicate (listened carefully).">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">Mrs. Frisby listened carefully.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="complete" onclick="fragPick('spot1','complete')">✓ Complete Sentence</button><button class="frag-btn" data-choice="fragment" onclick="fragPick('spot1','fragment')">✗ Fragment</button></div>
+          <div class="spotter-result" id="spot1-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot2" data-answer="fragment" data-explain="Correct! ‘Running through the tall grass’ has no subject — who is running? It’s a fragment.">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">Running through the tall grass.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="complete" onclick="fragPick('spot2','complete')">✓ Complete Sentence</button><button class="frag-btn" data-choice="fragment" onclick="fragPick('spot2','fragment')">✗ Fragment</button></div>
+          <div class="spotter-result" id="spot2-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot3" data-answer="complete" data-explain="Correct! ‘The rats built a new home’ has a subject (The rats) and a predicate (built a new home).">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">The rats built a new home.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="complete" onclick="fragPick('spot3','complete')">✓ Complete Sentence</button><button class="frag-btn" data-choice="fragment" onclick="fragPick('spot3','fragment')">✗ Fragment</button></div>
+          <div class="spotter-result" id="spot3-result"></div>
+        </div>
+        <div class="spotter-sentence" id="spot4" data-answer="fragment" data-explain="Correct! ‘Under the rosebush’ has no subject and no predicate — it’s a fragment.">
+          <p style="font-size:17px;font-weight:600;margin:0 0 8px;">Under the rosebush.</p>
+          <div class="frag-btns"><button class="frag-btn" data-choice="complete" onclick="fragPick('spot4','complete')">✓ Complete Sentence</button><button class="frag-btn" data-choice="fragment" onclick="fragPick('spot4','fragment')">✗ Fragment</button></div>
+          <div class="spotter-result" id="spot4-result"></div>
+        </div>
+      </div>
       </div>
       
     </div>
@@ -3340,32 +3363,30 @@ function matchClick(item) {
   }
 }
 
-/* ───── INTERJECTION SPOTTER ───── */
-function spotterPick(word, sentenceId) {
+/* ───── COMPLETE OR FRAGMENT PICKER ───── */
+function fragPick(sentenceId, choice) {
   var sentence = document.getElementById(sentenceId);
   if (sentence.getAttribute('data-done') === 'true') return;
-
-  var words = sentence.querySelectorAll('.spotter-word');
-  words.forEach(function(w) { w.classList.remove('selected'); });
-
+  var answer = sentence.getAttribute('data-answer');
   var result = document.getElementById(sentenceId + '-result');
-  var isCorrect = word.getAttribute('data-correct') === 'true';
-
-  if (isCorrect) {
-    word.classList.add('correct-reveal');
-    result.textContent = '✅ That\'s it! "' + word.textContent.replace(/[,!.]/g,'').trim() + '" is correct.';
+  var btns = sentence.querySelectorAll('.frag-btn');
+  if (choice === answer) {
+    btns.forEach(function(b) {
+      b.disabled = true;
+      if (b.getAttribute('data-choice') === answer) {
+        b.style.background = '#E3F8ED'; b.style.borderColor = '#34B76F';
+        b.style.color = '#1a5c2e'; b.style.fontWeight = '700';
+      }
+    });
+    var explain = sentence.getAttribute('data-explain');
+    result.textContent = '✅ ' + explain;
     result.className = 'spotter-result show win';
+    sentence.setAttribute('data-done', 'true');
   } else {
-    word.classList.add('wrong-reveal');
     result.textContent = '🤔 Not quite — try again!';
     result.className = 'spotter-result show miss';
-    setTimeout(function() {
-      word.classList.remove('wrong-reveal');
-      result.classList.remove('show');
-    }, 1500);
-    return;
+    setTimeout(function() { result.className = 'spotter-result'; result.textContent = ''; }, 1500);
   }
-  sentence.setAttribute('data-done', 'true');
 }
 
 /* ───── DOL HIGHLIGHTER ───── */
@@ -3752,7 +3773,7 @@ const trackerPos = [
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
   /* — Spotter game — restore clicked results */
-  var spotterGame = document.getElementById('grammarGame');
+  var spotterGame = document.getElementById('spotterGame');
   if(spotterGame){
     try{
       var saved = JSON.parse(localStorage.getItem(k+'-spotterState') || 'null');
@@ -3768,7 +3789,7 @@ const trackerPos = [
       }
     }catch(e){}
     /* hook: wrap inline onclick to also save */
-    spotterGame.querySelectorAll('.spotter-word').forEach(function(w){
+    spotterGame.querySelectorAll('.frag-btn').forEach(function(w){
       w.addEventListener('click', function(){
         setTimeout(function(){
           try{
