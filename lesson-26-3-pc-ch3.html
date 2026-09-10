@@ -1514,6 +1514,62 @@ body {
 
 @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
 
+/* ═══════════ RWM ═══════════ */
+.rwm-box {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F4;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.rwm-header {
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  color: #fff;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.rwm-sentence {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3DC 100%);
+  border-bottom: 2px solid #F5E6C8;
+  padding: 16px 20px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  color: #0E1C42;
+  line-height: 1.7;
+  font-style: italic;
+}
+.rwm-step {
+  padding: 14px 20px;
+  border-bottom: 1.5px solid #E2E8F4;
+}
+.rwm-step:last-child { border-bottom: none; }
+.rwm-step-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #55C8E8;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.rwm-step-text { font-size: 15px; color: #3A4A6B; line-height: 1.6; }
+.rwm-frame {
+  background: #FAFBFF;
+  border: 1.5px dashed #C7922C;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 8px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  color: #C7922C;
+  font-style: italic;
+}
+
 /* ═══════════ RESPONSIVE ═══════════ */
 @media (max-width: 620px) {
   .intro-2col { grid-template-columns: 1fr; }
@@ -2132,12 +2188,21 @@ body {
   
   <!-- What Good Readers Do (D3 = Tab 3) -->
   <div class="activity bl-purple">
-    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">&#x1F4DA;</div><div><div class="activity-title">&#x1F4DA; What Good Readers Do</div><div class="activity-sub">Your reading lens for this chapter</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">&#x1F4DA;</div><div><div class="activity-title">&#x1F4DA; What Good Readers Do</div><div class="activity-sub">Orient yourself in fantasy settings</div></div></div>
     <div class="activity-body">
       <p>Good readers use what they&rsquo;ve learned about a fantasy world to understand new events. You now know that hundreds of years have passed in Narnia. Today, a new character arrives &mdash; a Dwarf.</p>
+      <div class="callout callout-purple" style="margin:14px 0;background:#F4F0FA;border:2px solid #D6C8F0;border-left:5px solid #8B6FC0;border-radius:10px;padding:14px 18px;">
+  <span class="callout-icon">💡</span>
+  <p style="font-size:15px;color:#0E1C42;line-height:1.6;margin-bottom:6px;"><strong>How to Do It:</strong></p>
+  <ol style="font-size:15px;color:#0E1C42;line-height:1.7;margin:0 0 0 18px;padding:0;">
+    <li><strong>Listen to the newcomer:</strong> A character who lives in this world knows things you do not. Treat everything the Dwarf says about Narnia as brand-new information about the place.</li>
+    <li><strong>Collect the names you have never heard:</strong> When someone mentions a king, a people, or a group you do not know, keep a short list. Names tell you who holds power here now.</li>
+    <li><strong>Redraw your picture of the world:</strong> At the end of the chapter, change your idea of Narnia so it fits what you just learned. Ask yourself what is different from the Narnia you expected.</li>
+  </ol>
+</div>
       <div class="socratic-box">
         <div class="socratic-label">&#x1F9E0; As you read today, ask yourself:</div>
-        <p class="socratic-q"><strong>What does this character tell us about what Narnia has become? How has this world changed since the children were last here?</strong></p>
+        <p class="socratic-q"><strong>The Dwarf speaks about a king the children have never heard of. What can you learn about Narnia today just from the things he says about it?</strong></p>
       </div>
       <div class="thinking-stop">&#x1F4AD; Think about this as you read today &mdash; you don&rsquo;t need to write anything here.</div>
     </div>
@@ -2160,7 +2225,6 @@ body {
     </div>
   </div>
 
-  </div>
 
   <!-- Pause & Think -->
   <div class="pause-columns">
@@ -2177,6 +2241,31 @@ body {
         <p class="socratic-q">Trumpkin says he is &ldquo;a messenger of King Caspian&rsquo;s.&rdquo; The children have never heard of Caspian. <strong>What questions does this raise?</strong></p>
       </div>
       <div class="thinking-stop">&#x1F4AD; Pause and think about this &mdash; no need to write.</div>
+    </div>
+  </div>
+
+  <!-- RWM — Read like a Reader, Read like a Writer, Mimic -->
+  <div class="rwm-box">
+    <div class="rwm-header">&#x1F4D6; RWM &mdash; Read like a Reader, Read like a Writer, Mimic</div>
+    <div class="rwm-sentence">&ldquo;Like most Dwarfs he was very stocky and deep-chested.&rdquo;<div style="margin-top:10px;font-family:'Nunito',sans-serif;font-style:normal;font-size:13px;color:#7A88A8;font-weight:700;">&mdash; C. S. Lewis, <em>Prince Caspian</em>, Ch. 3</div></div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">&#x1F4D6; Read like a Reader</div>
+      <div class="rwm-step-text">The children have just cut the ropes off the prisoner they pulled out of the boat. This is the first good look they get at him. <strong>What does this sentence tell you about Dwarfs, not only about this one Dwarf?</strong></div>
+      <div class="textbox-prompt">Write 1&ndash;2 sentences explaining what this moment means and what it shows.</div>
+      <textarea class="journal-box" id="journal-rwm-reader" data-label="RWM &mdash; Read like a Reader" placeholder="This sentence shows..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">&#x270F;&#xFE0F; Read like a Writer</div>
+      <div class="rwm-step-text">Look at the first three words: <strong>Like most Dwarfs</strong>. Lewis never stops to tell you what a Dwarf is. He talks about Dwarfs the way you would talk about robins &mdash; as if everybody already knows. That is one way a fantasy author builds a world: name a rule about a whole people, then measure one character against it. You meet this Dwarf and learn something about every Dwarf in Narnia in the same breath. The two describing words are plain and physical, <em>stocky</em> and <em>deep-chested</em>, so the picture arrives fast.</div>
+      <div class="textbox-prompt">Write 1&ndash;2 sentences naming what the author did and why it works.</div>
+      <textarea class="journal-box" id="journal-rwm-writer" data-label="RWM &mdash; Read like a Writer" placeholder="The author used... This works because..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">&#x1F58A;&#xFE0F; Mimic</div>
+      <div class="rwm-step-text">Write one sentence that introduces a creature from a world of your own. Start with <strong>Like most</strong> so you name a rule about the whole people first. Then give two plain describing words joined by <strong>and</strong>. Do not explain what the creature is.</div>
+      <div class="rwm-frame">Like most ___, [character] was very ___ and ___.</div>
+      <div class="textbox-prompt">Write your own sentence below using the same pattern as the author.</div>
+      <textarea class="journal-box" id="journal-rwm-mimic" data-label="RWM &mdash; Mimic" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea>
     </div>
   </div>
 
@@ -2319,6 +2408,7 @@ function gatherAnswers() {
     { title: 'CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: 'SPELLING SWYK', ids: ['journal-spelling'] },
     { title: 'GRAMMAR (PRACTICE)', ids: ['journal-grammar'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: 'WRITING CONNECTION', ids: ['journal-writing'] }
   ];
   output += 'LESSON 26.3 — Prince Caspian, Chapter 3: The Dwarf\n';
@@ -2528,6 +2618,7 @@ function downloadJournal() {
     { title: 'CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: 'SPELLING SWYK', ids: ['journal-spelling'] },
     { title: 'GRAMMAR (PRACTICE)', ids: ['journal-grammar'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: 'WRITING CONNECTION', ids: ['journal-writing'] }
   ];
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
