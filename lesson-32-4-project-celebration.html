@@ -2647,7 +2647,7 @@ Frozen with snow.</div>
         <p class="socratic-q"><strong>Hughes says to &ldquo;hold fast to dreams.&rdquo;</strong> Think about the characters you read about this year. Which character held fast to a dream &mdash; even when it was hard? What was their dream, and what happened because they didn&rsquo;t let go?</p>
       </div>
       <div class="journal-label"><span>📓 Your Thinking</span><span class="saved-dot" id="dot-poetry"></span></div>
-      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection: Dreams" placeholder="The character who held fast to a dream was... Their dream was... They held on even when... Because they didn't let go..." oninput="autoSave(this,'dot-poetry');"></textarea>
+      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection: Dreams" placeholder="The character who held fast to a dream was... Their dream was... They held on even when... Because they didn't let go..." oninput="autoSave(this,'dot-poetry');gatherAnswers();"></textarea>
     </div>
   </div>
 
@@ -2998,6 +2998,9 @@ function gatherAnswers(){
   output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
   if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
+  var _xg0=document.getElementById('journal-poetry');
+  if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}
   output+='\n🎮 PRACTICE ACTIVITIES\n────────────────────────────────\n';
   output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Word Base Match\n';
   var cDone=0; for(var i=1;i<=5;i++){var s=document.getElementById('depClause'+i);if(s&&s.getAttribute('data-done')==='true')cDone++;}
@@ -3168,7 +3171,8 @@ function downloadJournal(){
   var sections=[
     {title:'🔤 VOCABULARY SWYK: CHOICE BOARD',ids:['journal-swyk']},
     {title:'📖 LOOKING BACK, LOOKING FORWARD',ids:['journal-q1','journal-q2','journal-q3']},
-    {title:'✍️ WRITING CONNECTION',ids:['journal-writing']}
+    {title:'✍️ WRITING CONNECTION',ids:['journal-writing']},
+    {title:'📜 POETRY CORNER',ids:['journal-poetry']}
   ];
   var html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Lesson 32.4 — My Work</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#1a1a2e;line-height:1.7;}h1{font-size:22px;border-bottom:3px solid #2D5016;padding-bottom:8px;}h2{font-size:14px;color:#7A88A8;margin-bottom:24px;}.st{font-size:16px;font-weight:bold;color:#0E1C42;margin:28px 0 4px;padding:8px 0 4px;border-bottom:2px solid #E2E8F4;}.ql{font-size:13px;font-weight:bold;color:#3A4A6B;margin:16px 0 2px;}.qa{font-size:14px;color:#0E1C42;margin:0 0 4px;padding:6px 12px;background:#f8f9fc;border-left:3px solid #D6F2FB;border-radius:4px;white-space:pre-wrap;}.na{color:#B0B8CC;font-style:italic;}.gm{margin-top:28px;padding-top:12px;border-top:2px solid #E2E8F4;}.gt{font-size:16px;font-weight:bold;color:#0E1C42;margin-bottom:8px;}.gl{font-size:14px;margin-bottom:4px;}</style></head><body>';
   html+='<h1>📓 My Work — Lesson 32.4</h1><h2>Year-End Celebration — Looking Back, Looking Forward</h2>';

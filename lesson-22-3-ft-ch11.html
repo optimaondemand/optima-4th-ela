@@ -2832,6 +2832,31 @@ body {
     </div>
   </div>
 
+  <!-- RWM -->
+  <div class="rwm-box">
+    <div class="rwm-header">📖 RWM &mdash; Read like a Reader, Read like a Writer, Mimic</div>
+    <div class="rwm-sentence">&ldquo;She was the most wanted woman in the country.&rdquo;<div style="margin-top:10px;font-family:'Nunito',sans-serif;font-style:normal;font-size:13px;color:#7A88A8;font-weight:700;">&mdash; narrator (about the reward), <em>Freedom Train</em>, Ch. 13</div></div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">📖 Read like a Reader</div>
+      <div class="rwm-step-text">Slave catchers are hunting Harriet. The reward for catching her has grown enormous, and the Underground Railroad now reaches all the way to Canada. She keeps going back anyway. <strong>What does this sentence tell you about the risk she is choosing every single time?</strong></div>
+      <div class="textbox-prompt">Write 1–2 sentences explaining what this moment means and what it shows.</div>
+      <textarea class="journal-box" id="journal-rwm-reader" data-label="RWM — Read like a Reader" placeholder="This sentence shows..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">✏️ Read like a Writer</div>
+      <div class="rwm-step-text">Sterling could have listed the reward, the posters, the number of men looking. Instead she writes one flat sentence and stops. Nothing in it is dramatic. The weight is all in what it makes you work out for yourself: if she is the <strong>most wanted</strong> person there is, then every trip back is a trip toward the people hunting her. Two choices do the lifting. <strong>Most wanted</strong> is a superlative &mdash; there is nobody above her on that list. <strong>In the country</strong> is the widest place she could have named; not the county, not the state. A plain sentence with a superlative in it lets the reader feel the size of a thing without being told to.</div>
+      <div class="textbox-prompt">Write 1–2 sentences naming what the author did and why it works.</div>
+      <textarea class="journal-box" id="journal-rwm-writer" data-label="RWM — Read like a Writer" placeholder="The author used... This works because..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">🖊️ Mimic</div>
+      <div class="rwm-step-text">Write one plain sentence that shows how big a person&rsquo;s danger or fame had become. Use a superlative &mdash; a <em>most</em> word &mdash; and name the widest place you honestly can. Do not add any dramatic words.</div>
+      <div class="rwm-frame">[Character] was the most ___ ___ in the ___.</div>
+      <div class="textbox-prompt">Write your own sentence below using the same pattern as the author.</div>
+      <textarea class="journal-box" id="journal-rwm-mimic" data-label="RWM — Mimic" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea>
+    </div>
+  </div>
+
   <div class="tab-next-wrap">
     <p class="tab-transition-voice">You&rsquo;ve read and noticed. Now answer the questions and submit your work.</p>
     <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 📬 Assignment →</button>
@@ -3005,6 +3030,7 @@ function gatherAnswers() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (MORPHOLOGY)', ids: ['journal-morph'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
     { title: '🔎 RESEARCH PROJECT (CUMULATIVE)', ids: ['journal-essay-draft'] },
     { title: '🔎 RESEARCH PROJECT (CUMULATIVE)', ids: ['journal-essay-draft'] }
@@ -3436,6 +3462,7 @@ function downloadJournal() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (MORPHOLOGY)', ids: ['journal-morph'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];
 

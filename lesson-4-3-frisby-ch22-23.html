@@ -2563,7 +2563,7 @@ body {
 <div id="vocabDiceWord" style="font-size:22px;font-weight:700;color:#8B6FC0;text-align:center;"></div>
 <div id="vocabDiceTask" style="font-size:14px;color:#3A4A6B;text-align:center;margin:6px 0;"></div>
 <div class="journal-label">📓 Your response <span class="saved-dot" id="dot-vocab-dice"></span></div>
-<textarea class="journal-box" id="journal-vocab-dice" data-label="Vocab Dice" placeholder="The word means... My sentence is..." oninput="autoSave(this,'dot-vocab-dice');" style="min-height:60px;"></textarea>
+<textarea class="journal-box" id="journal-vocab-dice" data-label="Vocab Dice" placeholder="The word means... My sentence is..." oninput="autoSave(this,'dot-vocab-dice');gatherAnswers();" style="min-height:60px;"></textarea>
 <button onclick="checkVocabDice()" style="background:#8B6FC0;color:#fff;border:none;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;margin-top:8px;">Show Meaning</button>
 <div id="vocabDiceReveal" style="display:none;margin-top:8px;padding:10px;background:#E3F8ED;border-radius:8px;font-size:14px;color:#2D6A4F;font-weight:600;"></div>
 </div>
@@ -3005,7 +3005,8 @@ function gatherAnswers() {
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (SPELLING)', ids: ['journal-spelling'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
+    { title: '🎲 VOCABULARY DICE', ids: ['journal-vocab-dice'] }
   ];
 
   output += 'LESSON 4.3 — Mrs. Frisby and the Rats of NIMH, Ch. 22 & 23 & 17 & 11 & 5\n';
@@ -3482,7 +3483,8 @@ function downloadJournal() {
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (SPELLING)', ids: ['journal-spelling'] },
     { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
+    { title: '🎲 VOCABULARY DICE', ids: ['journal-vocab-dice'] }
   ];
 
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';

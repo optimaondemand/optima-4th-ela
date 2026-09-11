@@ -2558,7 +2558,7 @@ body {
       
       <div class="swyk">
         <div class="swyk-label">🪶 Show What You Know</div>
-        <div class="swyk-prompt">Pick a word with <strong>form</strong>, <strong>flect</strong>, or <strong>flex</strong>. Write the word, explain the root, and use it in a sentence about Ch. 13-17.</div>
+        <div class="swyk-prompt">Pick a word with <strong>form</strong>, <strong>flect</strong>, or <strong>flex</strong>. Write the word, explain the root, and use it in a sentence about Ch. 1-4.</div>
         <div class="textbox-prompt">Pick form/flect/flex and use it in a sentence.</div>
         <textarea class="journal-box" id="journal-morph" data-label="Morphology SWYK: word parts" placeholder="My word is ___. The root means ___. My sentence is..." oninput="autoSave(this,'dot-morph');gatherAnswers();"></textarea>
       </div>
@@ -2832,6 +2832,31 @@ body {
     </div>
   </div>
 
+  <!-- RWM -->
+  <div class="rwm-box">
+    <div class="rwm-header">📖 RWM &mdash; Read like a Reader, Read like a Writer, Mimic</div>
+    <div class="rwm-sentence">&ldquo;We work from can to can&rsquo;t.&rdquo;<div style="margin-top:10px;font-family:'Nunito',sans-serif;font-style:normal;font-size:13px;color:#7A88A8;font-weight:700;">&mdash; older women, <em>Freedom Train</em>, Ch. 3</div></div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">📖 Read like a Reader</div>
+      <div class="rwm-step-text">There is no schoolhouse in this chapter, but Harriet is learning all day &mdash; from Daddy Ben, from the songs, from the news that passes through. The older women say this line about the workday. <strong>What does it tell you about how long that day is, and about the people who made up the saying?</strong></div>
+      <div class="textbox-prompt">Write 1–2 sentences explaining what this moment means and what it shows.</div>
+      <textarea class="journal-box" id="journal-rwm-reader" data-label="RWM — Read like a Reader" placeholder="This sentence shows..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">✏️ Read like a Writer</div>
+      <div class="rwm-step-text">Six words. Count them. Sterling keeps the saying exactly as the women said it, and the whole workday fits inside it. Look at what <strong>can</strong> and <strong>can&rsquo;t</strong> are doing &mdash; they are not naming times of day, they are standing in for them. You can work when you can see; you stop when you can&rsquo;t. The pair of opposites does the measuring. This is what a strong note looks like: the fact is <em>the workday runs from first light to full dark</em>, and the women said it in six words without losing anything. When you take notes, hunt for the shortest true way to say it.</div>
+      <div class="textbox-prompt">Write 1–2 sentences naming what the author did and why it works.</div>
+      <textarea class="journal-box" id="journal-rwm-writer" data-label="RWM — Read like a Writer" placeholder="The author used... This works because..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">🖊️ Mimic</div>
+      <div class="rwm-step-text">Write your own six-word saying about how long something lasts. Use a pair of opposite words to mark the beginning and the end, and let them do the measuring for you.</div>
+      <div class="rwm-frame">We ___ from [word] to [its opposite].</div>
+      <div class="textbox-prompt">Write your own sentence below using the same pattern as the author.</div>
+      <textarea class="journal-box" id="journal-rwm-mimic" data-label="RWM — Mimic" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea>
+    </div>
+  </div>
+
   <div class="tab-next-wrap">
     <p class="tab-transition-voice">You&rsquo;ve read and noticed. Now answer the questions and submit your work.</p>
     <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 📬 Assignment →</button>
@@ -3005,6 +3030,7 @@ function gatherAnswers() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (MORPHOLOGY)', ids: ['journal-morph'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
     { title: '🔎 RESEARCH PROJECT (CUMULATIVE)', ids: ['journal-essay-draft'] },
     { title: '🔎 RESEARCH PROJECT (CUMULATIVE)', ids: ['journal-essay-draft'] }
@@ -3436,6 +3462,7 @@ function downloadJournal() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (MORPHOLOGY)', ids: ['journal-morph'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];
 
@@ -3454,7 +3481,7 @@ function downloadJournal() {
   html += '.game-line{font-size:14px;margin-bottom:4px;}';
   html += '</style></head><body>';
   html += '<h1>📓 My Work — Lesson 20.3</h1>';
-  html += '<h2>Freedom Train — Ch. 1 & 2</h2>';
+  html += '<h2>Freedom Train — Ch. 3: School Days</h2>';
 
   sections.forEach(function(sec) {
     html += '<div class="section-title">' + sec.title + '</div>';

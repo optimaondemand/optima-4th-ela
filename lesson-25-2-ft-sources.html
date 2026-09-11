@@ -2229,7 +2229,7 @@ Ran looking for her freedom</div>
         <p class="socratic-q"><strong>What feeling or image stands out to you in this poem?</strong> The poet uses informal, rhythmic language &mdash; almost like a song. Why do you think Greenfield chose to write about Tubman this way instead of in formal English?</p>
       </div>
       <div class="journal-label"><span>📓 Your Thinking</span><span class="saved-dot" id="dot-poetry"></span></div>
-      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="The image/feeling that stands out to me is... I think the poet chose this style because..." oninput="autoSave(this,'dot-poetry');"></textarea>
+      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="The image/feeling that stands out to me is... I think the poet chose this style because..." oninput="autoSave(this,'dot-poetry');gatherAnswers();"></textarea>
     </div>
   </div>
 
@@ -2574,7 +2574,7 @@ Ran looking for her freedom</div>
     </div>
   </div>
   <div class="journal-label"><span>📓 Your Mimic Sentence</span><span class="saved-dot" id="dot-rwm"></span></div>
-  <textarea class="journal-box" id="journal-rwm" data-label="RWM Mimic" placeholder="[Name]'s [adjective] [group]..." oninput="autoSave(this,'dot-rwm');"></textarea>
+  <textarea class="journal-box" id="journal-rwm" data-label="RWM Mimic" placeholder="[Name]'s [adjective] [group]..." oninput="autoSave(this,'dot-rwm');gatherAnswers();"></textarea>
 
   <div class="callout callout-info" style="margin:20px 0;">
     <span class="callout-icon">📬</span>
@@ -2765,6 +2765,12 @@ function gatherAnswers() {
   output += '\n';
 
   // Mini-game results
+  output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
+  var _xg0=document.getElementById('journal-poetry');
+  if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}
+  output+='\n✏️ RWM — MIMIC SENTENCE\n────────────────────────────────\n';
+  var _xg1=document.getElementById('journal-rwm');
+  if(_xg1){output+='\n'+(_xg1.getAttribute('data-label')||'journal-rwm')+'\n'+(_xg1.value.trim()||'(no answer)')+'\n';}
   output += '🎮 PRACTICE ACTIVITIES\n';
   output += '────────────────────────────────\n';
   output += (window._rootMatchDone ? '✅' : '⬜') + ' Morphology Prefix Match\n';
@@ -3162,7 +3168,9 @@ function downloadJournal() {
   var sections = [
     { title: '📖 SOURCE THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '✏️ GRAMMAR SWYK: COMMAS IN A SERIES', ids: ['journal-grammar'] },
-    { title: '📝 WRITING CONNECTION: EDIT YOUR ESSAY', ids: ['journal-writing'] }
+    { title: '📝 WRITING CONNECTION: EDIT YOUR ESSAY', ids: ['journal-writing'] },
+    { title: '📜 POETRY CORNER', ids: ['journal-poetry'] },
+    { title: '✏️ RWM — MIMIC SENTENCE', ids: ['journal-rwm'] }
   ];
 
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';

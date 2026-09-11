@@ -728,7 +728,7 @@ And said: &ldquo;The way is clear.&rdquo;</div>
         <p class="socratic-q">How does this poem connect to what you read in <em>Freedom Train</em>? Does Sterling seem to agree with the poet?</p>
       </div>
       <div class="journal-label"><span>Your Reflection</span><span class="saved-dot" id="dot-poetry"></span></div>
-      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="The poem says Harriet left something harder than stone. I think that means..." oninput="autoSave(this,'dot-poetry');"></textarea>
+      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="The poem says Harriet left something harder than stone. I think that means..." oninput="autoSave(this,'dot-poetry');gatherAnswers();"></textarea>
     </div>
   </div>
 
@@ -1150,7 +1150,8 @@ function gatherAnswers(){
   var sections=[
     {title:'📖 WHOLE-BOOK THINKING',ids:['journal-q1','journal-q2','journal-q3']},
     {title:'🔤 WORD STUDY CONNECTION (VOCABULARY CHOICE)',ids:['journal-vocab']},
-    {title:'🪶 WRITING CONNECTION (RESEARCH CONCLUSION)',ids:['journal-writing']}
+    {title:'🪶 WRITING CONNECTION (RESEARCH CONCLUSION)',ids:['journal-writing']},
+    {title:'📜 POETRY CORNER',ids:['journal-poetry']}
   ];
   output+='LESSON 24.4 — Freedom Train: Final Reflection\n';
   output+='════════════════════════════════════════\n\n';
@@ -1347,7 +1348,8 @@ function downloadJournal(){
   var sections=[
     {title:'📖 WHOLE-BOOK THINKING',ids:['journal-q1','journal-q2','journal-q3']},
     {title:'🔤 VOCABULARY CHOICE BOARD',ids:['journal-vocab']},
-    {title:'🪶 RESEARCH ESSAY CONCLUSION',ids:['journal-writing']}
+    {title:'🪶 RESEARCH ESSAY CONCLUSION',ids:['journal-writing']},
+    {title:'📜 POETRY CORNER',ids:['journal-poetry']}
   ];
   var html='<!DOCTYPE html><html><head><meta charset="UTF-8">';
   html+='<title>Lesson 24.4 — My Work</title>';

@@ -2833,6 +2833,31 @@ body {
     </div>
   </div>
 
+  <!-- RWM -->
+  <div class="rwm-box">
+    <div class="rwm-header">📖 RWM &mdash; Read like a Reader, Read like a Writer, Mimic</div>
+    <div class="rwm-sentence">&ldquo;Follow the drinking gourd.&rdquo;<div style="margin-top:10px;font-family:'Nunito',sans-serif;font-style:normal;font-size:13px;color:#7A88A8;font-weight:700;">&mdash; spiritual code for the Big Dipper / North Star, <em>Freedom Train</em>, Ch. 7</div></div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">📖 Read like a Reader</div>
+      <div class="rwm-step-text">Harriet walks by night and hides by day. The North Star is the one star that does not move, so it tells her which way is north. A drinking gourd is a dried gourd with a handle, used as a dipper. <strong>Why would people sing directions instead of saying them out loud?</strong></div>
+      <div class="textbox-prompt">Write 1–2 sentences explaining what this moment means and what it shows.</div>
+      <textarea class="journal-box" id="journal-rwm-reader" data-label="RWM — Read like a Reader" placeholder="This sentence shows..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">✏️ Read like a Writer</div>
+      <div class="rwm-step-text">This week you have been working with transition words for time and sequence. This sentence has none of them, so we will study what it really does instead. Four words, and every one of them is ordinary. That is the whole trick. Anyone could overhear this line and hear only a song about a kitchen dipper. The people who needed it heard a map. Sterling does not stop to explain the code inside the sentence &mdash; the sentence stays plain, and the meaning sits underneath it. Notice too that it is a <strong>command</strong>: no <em>I</em>, no <em>she</em>, just <em>follow</em>. A command is the shortest way to give a direction, and the fastest thing to remember when you are walking in the dark.</div>
+      <div class="textbox-prompt">Write 1–2 sentences naming what the author did and why it works.</div>
+      <textarea class="journal-box" id="journal-rwm-writer" data-label="RWM — Read like a Writer" placeholder="The author used... This works because..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">🖊️ Mimic</div>
+      <div class="rwm-step-text">Write your own short coded command &mdash; three or four words &mdash; that sounds completely ordinary but carries a hidden direction. Then write the hidden meaning in the parentheses.</div>
+      <div class="rwm-frame">[Command verb] the [everyday object]. (Secretly it means: ___.)</div>
+      <div class="textbox-prompt">Write your own sentence below using the same pattern as the author.</div>
+      <textarea class="journal-box" id="journal-rwm-mimic" data-label="RWM — Mimic" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea>
+    </div>
+  </div>
+
   <div class="tab-next-wrap">
     <p class="tab-transition-voice">You&rsquo;ve read and noticed. Now answer the questions and submit your work.</p>
     <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 📬 Assignment →</button>
@@ -3006,6 +3031,7 @@ function gatherAnswers() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (MORPHOLOGY)', ids: ['journal-morph'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
     { title: '🔎 RESEARCH PROJECT (CUMULATIVE)', ids: ['journal-essay-draft'] },
     { title: '🔎 RESEARCH PROJECT (CUMULATIVE)', ids: ['journal-essay-draft'] }
@@ -3437,6 +3463,7 @@ function downloadJournal() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (MORPHOLOGY)', ids: ['journal-morph'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];
 
@@ -3455,7 +3482,7 @@ function downloadJournal() {
   html += '.game-line{font-size:14px;margin-bottom:4px;}';
   html += '</style></head><body>';
   html += '<h1>📓 My Work — Lesson 21.3</h1>';
-  html += '<h2>Freedom Train — Ch. 1 & 2</h2>';
+  html += '<h2>Freedom Train — Ch. 7: Following the Star</h2>';
 
   sections.forEach(function(sec) {
     html += '<div class="section-title">' + sec.title + '</div>';

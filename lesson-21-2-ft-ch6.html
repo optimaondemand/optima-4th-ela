@@ -2854,6 +2854,31 @@ And places with no carpet on the floor&mdash;</div>
     </div>
   </div>
 
+  <!-- RWM -->
+  <div class="rwm-box">
+    <div class="rwm-header">📖 RWM &mdash; Read like a Reader, Read like a Writer, Mimic</div>
+    <div class="rwm-sentence">&ldquo;I had a right to liberty or death.&rdquo;<div style="margin-top:10px;font-family:'Nunito',sans-serif;font-style:normal;font-size:13px;color:#7A88A8;font-weight:700;">&mdash; Harriet (quoted), <em>Freedom Train</em>, Ch. 6</div></div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">📖 Read like a Reader</div>
+      <div class="rwm-step-text">Harriet has heard she is to be sold south. She decides she will not go, and she leaves at night with one helper&rsquo;s name on a slip of paper. These are her own words about that decision. <strong>Why would she put liberty and death side by side instead of naming only the one she wanted?</strong></div>
+      <div class="textbox-prompt">Write 1–2 sentences explaining what this moment means and what it shows.</div>
+      <textarea class="journal-box" id="journal-rwm-reader" data-label="RWM — Read like a Reader" placeholder="This sentence shows..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">✏️ Read like a Writer</div>
+      <div class="rwm-step-text">This week&rsquo;s focus is transition words for time and sequence. This sentence uses none, and it does not walk you through steps, so we will study the move it actually makes. Harriet sets two things next to each other &mdash; <strong>liberty</strong> and <strong>death</strong> &mdash; and joins them with the small word <strong>or</strong>. That <em>or</em> says there is no third choice. Notice also <strong>had</strong>. Not <em>wanted</em>. Not <em>asked for</em>. She says the right was already hers, and that is the strongest word in the sentence. And she says <em>liberty</em>, a big formal word, instead of the everyday <em>freedom</em>. When you put two ends of a choice side by side, a reader feels how narrow the middle is.</div>
+      <div class="textbox-prompt">Write 1–2 sentences naming what the author did and why it works.</div>
+      <textarea class="journal-box" id="journal-rwm-writer" data-label="RWM — Read like a Writer" placeholder="The author used... This works because..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">🖊️ Mimic</div>
+      <div class="rwm-step-text">Write one sentence in which a person states a right they already have, and names the only two ways it can end. Use <em>had</em> and join the two with <em>or</em>.</div>
+      <div class="rwm-frame">I had a right to ___ or ___.</div>
+      <div class="textbox-prompt">Write your own sentence below using the same pattern as the author.</div>
+      <textarea class="journal-box" id="journal-rwm-mimic" data-label="RWM — Mimic" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea>
+    </div>
+  </div>
+
   <div class="tab-next-wrap">
     <p class="tab-transition-voice">You&rsquo;ve read and noticed. Now answer the questions and submit your work.</p>
     <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 📬 Assignment →</button>
@@ -3027,6 +3052,7 @@ function gatherAnswers() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (MORPHOLOGY)', ids: ['journal-morph'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
     { title: '🔎 RESEARCH PROJECT (CUMULATIVE)', ids: ['journal-essay-draft'] },
     { title: '🔎 RESEARCH PROJECT (CUMULATIVE)', ids: ['journal-essay-draft'] }
@@ -3458,6 +3484,7 @@ function downloadJournal() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (MORPHOLOGY)', ids: ['journal-morph'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];
 
@@ -3476,7 +3503,7 @@ function downloadJournal() {
   html += '.game-line{font-size:14px;margin-bottom:4px;}';
   html += '</style></head><body>';
   html += '<h1>📓 My Work — Lesson 21.2</h1>';
-  html += '<h2>Freedom Train — Ch. 1 & 2</h2>';
+  html += '<h2>Freedom Train — Ch. 6: Bound for the Promised Land</h2>';
 
   sections.forEach(function(sec) {
     html += '<div class="section-title">' + sec.title + '</div>';

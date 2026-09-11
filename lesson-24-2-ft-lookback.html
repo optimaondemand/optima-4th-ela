@@ -2102,7 +2102,7 @@ While follow eyes the steady keel, the vessel grim and daring;
         <p class="socratic-q">Whitman wrote this poem after Lincoln was assassinated &mdash; the war was won, but the president was dead. In Chapter 19, Sterling describes a similar bittersweet moment: the war ends, but Harriet is thrown off a train on her way home. <strong>What feeling do both the poem and the chapter share?</strong> What word would you use to describe it?</p>
       </div>
       <div class="journal-label"><span>📓 Your Thinking</span><span class="saved-dot" id="dot-poetry"></span></div>
-      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="Both the poem and the chapter share the feeling of... because..." oninput="autoSave(this,'dot-poetry');"></textarea>
+      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="Both the poem and the chapter share the feeling of... because..." oninput="autoSave(this,'dot-poetry');gatherAnswers();"></textarea>
     </div>
   </div>
 
@@ -2302,7 +2302,7 @@ While follow eyes the steady keel, the vessel grim and daring;
           </div>
         </div>
         <div class="journal-label"><span>📓 Your Mimic Sentence</span><span class="saved-dot" id="dot-rwm"></span></div>
-        <textarea class="journal-box" id="journal-rwm" data-label="RWM Mimic" placeholder="As the ___ moved ___, its ___ seemed to sing..." oninput="autoSave(this,'dot-rwm');"></textarea>
+        <textarea class="journal-box" id="journal-rwm" data-label="RWM Mimic" placeholder="As the ___ moved ___, its ___ seemed to sing..." oninput="autoSave(this,'dot-rwm');gatherAnswers();"></textarea>
       </div>
     </div>
   </div>
@@ -2604,6 +2604,12 @@ function gatherAnswers() {
   output += '\n';
 
   // Mini-game results
+  output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
+  var _xg0=document.getElementById('journal-poetry');
+  if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}
+  output+='\n✏️ RWM — MIMIC SENTENCE\n────────────────────────────────\n';
+  var _xg1=document.getElementById('journal-rwm');
+  if(_xg1){output+='\n'+(_xg1.getAttribute('data-label')||'journal-rwm')+'\n'+(_xg1.value.trim()||'(no answer)')+'\n';}
   output += '🎮 PRACTICE ACTIVITIES\n';
   output += '────────────────────────────────\n';
   output += (window._rootMatchDone ? '✅' : '⬜') + ' Morphology Root Match\n';
@@ -3003,7 +3009,9 @@ function downloadJournal() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '✏️ GRAMMAR SWYK: PREPOSITIONAL PHRASES', ids: ['journal-grammar'] },
-    { title: '🔎 WRITING CONNECTION: REVISE & EDIT', ids: ['journal-writing'] }
+    { title: '🔎 WRITING CONNECTION: REVISE & EDIT', ids: ['journal-writing'] },
+    { title: '📜 POETRY CORNER', ids: ['journal-poetry'] },
+    { title: '✏️ RWM — MIMIC SENTENCE', ids: ['journal-rwm'] }
   ];
 
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';

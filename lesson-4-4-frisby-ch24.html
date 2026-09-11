@@ -2621,7 +2621,7 @@ That kept so many warm.</div>
 <div id="fragPrompt" style="font-size:16px;font-weight:700;color:#0E1C42;text-align:center;margin-bottom:4px;"></div>
 <div id="fragHint" style="font-size:14px;color:#3A4A6B;text-align:center;margin-bottom:8px;font-style:italic;"></div>
 <div class="journal-label">📓 Fix the fragment <span class="saved-dot" id="dot-frag"></span></div>
-<textarea class="journal-box" id="journal-frag" data-label="Fragment Fixer" placeholder="Complete sentence: ..." oninput="autoSave(this,'dot-frag');" style="min-height:50px;"></textarea>
+<textarea class="journal-box" id="journal-frag" data-label="Fragment Fixer" placeholder="Complete sentence: ..." oninput="autoSave(this,'dot-frag');gatherAnswers();" style="min-height:50px;"></textarea>
 </div>
 </div>
 
@@ -2994,7 +2994,8 @@ function gatherAnswers() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (VOCABULARY)', ids: ['journal-vocab'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
+    { title: '✏️ FRAGMENT FIX', ids: ['journal-frag'] }
   ];
 
   output += 'LESSON 4.4 — Mrs. Frisby and the Rats of NIMH, Ch. 24\n';
@@ -3448,7 +3449,8 @@ function downloadJournal() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (VOCABULARY)', ids: ['journal-vocab'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
+    { title: '✏️ FRAGMENT FIX', ids: ['journal-frag'] }
   ];
 
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';

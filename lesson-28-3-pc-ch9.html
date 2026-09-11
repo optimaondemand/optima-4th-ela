@@ -2885,7 +2885,7 @@ body {
     </div>
   </div>
   <div class="journal-label"><span>📓 Your Mimic Sentence</span><span class="saved-dot" id="dot-rwm"></span></div>
-  <textarea class="journal-box" id="journal-rwm" data-label="RWM Mimic" placeholder="[Name] [action], [feeling]..." oninput="autoSave(this,'dot-rwm');"></textarea>
+  <textarea class="journal-box" id="journal-rwm" data-label="RWM Mimic" placeholder="[Name] [action], [feeling]..." oninput="autoSave(this,'dot-rwm');gatherAnswers();"></textarea>
 
   <div class="callout callout-info" style="margin:20px 0;">
     <span class="callout-icon">📬</span>
@@ -2996,6 +2996,9 @@ function gatherAnswers(){
   output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
   if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  output+='\n✏️ RWM — MIMIC SENTENCE\n────────────────────────────────\n';
+  var _xg0=document.getElementById('journal-rwm');
+  if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-rwm')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}
   output+='\n🎮 PRACTICE ACTIVITIES\n────────────────────────────────\n';
   output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Word-Building Game\n';
   output+=(window._clozeDone?'✅':'⬜')+' Vocabulary Cloze Fill-In\n';
@@ -3241,7 +3244,8 @@ function downloadJournal(){
   var sections=[
     {title:'🔠 SPELLING SWYK: SCHWA PATTERNS',ids:['journal-spelling']},
     {title:'📖 CHAPTER THINKING',ids:['journal-q1','journal-q2','journal-q3']},
-    {title:'✍️ WRITING CONNECTION',ids:['journal-writing']}
+    {title:'✍️ WRITING CONNECTION',ids:['journal-writing']},
+    {title:'✏️ RWM — MIMIC SENTENCE',ids:['journal-rwm']}
   ];
   var html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Lesson 28.3 — My Work</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#1a1a2e;line-height:1.7;}h1{font-size:22px;border-bottom:3px solid #2D5016;padding-bottom:8px;}h2{font-size:14px;color:#7A88A8;margin-bottom:24px;}.st{font-size:16px;font-weight:bold;color:#0E1C42;margin:28px 0 4px;padding:8px 0 4px;border-bottom:2px solid #E2E8F4;}.ql{font-size:13px;font-weight:bold;color:#3A4A6B;margin:16px 0 2px;}.qa{font-size:14px;color:#0E1C42;margin:0 0 4px;padding:6px 12px;background:#f8f9fc;border-left:3px solid #D6F2FB;border-radius:4px;white-space:pre-wrap;}.na{color:#B0B8CC;font-style:italic;}.gm{margin-top:28px;padding-top:12px;border-top:2px solid #E2E8F4;}.gt{font-size:16px;font-weight:bold;color:#0E1C42;margin-bottom:8px;}.gl{font-size:14px;margin-bottom:4px;}</style></head><body>';
   html+='<h1>📓 My Work — Lesson 28.3</h1><h2>Prince Caspian — Chapter 9: What Lucy Saw</h2>';

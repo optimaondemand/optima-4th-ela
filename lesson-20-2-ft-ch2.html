@@ -2582,7 +2582,7 @@ I know what the caged bird feels!</div>
       
       <div class="swyk">
         <div class="swyk-label">🪶 Show What You Know</div>
-        <div class="swyk-prompt">Pick a word with <strong>form</strong>, <strong>flect</strong>, or <strong>flex</strong>. Write the word, explain the root, and use it in a sentence about Ch. 13-17.</div>
+        <div class="swyk-prompt">Pick a word with <strong>form</strong>, <strong>flect</strong>, or <strong>flex</strong>. Write the word, explain the root, and use it in a sentence about Ch. 1-4.</div>
         <div class="textbox-prompt">Pick form/flect/flex and use it in a sentence.</div>
         <textarea class="journal-box" id="journal-morph" data-label="Morphology SWYK: word parts" placeholder="My word is ___. The root means ___. My sentence is..." oninput="autoSave(this,'dot-morph');gatherAnswers();"></textarea>
       </div>
@@ -2856,6 +2856,31 @@ I know what the caged bird feels!</div>
     </div>
   </div>
 
+  <!-- RWM -->
+  <div class="rwm-box">
+    <div class="rwm-header">📖 RWM &mdash; Read like a Reader, Read like a Writer, Mimic</div>
+    <div class="rwm-sentence">&ldquo;She would hide her face against his rough cotton shirt.&rdquo;<div style="margin-top:10px;font-family:'Nunito',sans-serif;font-style:normal;font-size:13px;color:#7A88A8;font-weight:700;">&mdash; Dorothy Sterling, <em>Freedom Train</em>, Ch. 2</div></div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">📖 Read like a Reader</div>
+      <div class="rwm-step-text">Harriet is small, and she is being moved from house to house. In this sentence she presses her face into someone&rsquo;s shirt. Sterling does not tell you Harriet is frightened or lonely. She gives you one thing you could touch. <strong>What does the shirt tell you that the word &lsquo;sad&rsquo; would not?</strong></div>
+      <div class="textbox-prompt">Write 1–2 sentences explaining what this moment means and what it shows.</div>
+      <textarea class="journal-box" id="journal-rwm-reader" data-label="RWM — Read like a Reader" placeholder="This sentence shows..." oninput="autoSave(this,'dot-rwm-reader');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">✏️ Read like a Writer</div>
+      <div class="rwm-step-text">Sterling picks <strong>one</strong> detail and lets it do all the work: <strong>rough cotton shirt</strong>. Three words, and you feel the scratch of it against a child&rsquo;s cheek. She could have written that Harriet was unhappy. Instead she chose a detail you can see and feel, and left the feeling for you to supply. This is also how good notes work. When you read for facts, you keep the detail you could touch &mdash; the shirt, the wagon, the price &mdash; and you let go of the general words. One solid detail holds more than a whole line of summary.</div>
+      <div class="textbox-prompt">Write 1–2 sentences naming what the author did and why it works.</div>
+      <textarea class="journal-box" id="journal-rwm-writer" data-label="RWM — Read like a Writer" placeholder="The author used... This works because..." oninput="autoSave(this,'dot-rwm-writer');gatherAnswers();"></textarea>
+    </div>
+    <div class="rwm-step">
+      <div class="rwm-step-label">🖊️ Mimic</div>
+      <div class="rwm-step-text">Write one sentence about a person going to someone for comfort. Do not name the feeling. Name one thing the reader could touch, and give it two describing words.</div>
+      <div class="rwm-frame">[Character] would ___ [his/her] ___ against the ___ ___ [noun].</div>
+      <div class="textbox-prompt">Write your own sentence below using the same pattern as the author.</div>
+      <textarea class="journal-box" id="journal-rwm-mimic" data-label="RWM — Mimic" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-rwm-mimic');gatherAnswers();"></textarea>
+    </div>
+  </div>
+
   <div class="tab-next-wrap">
     <p class="tab-transition-voice">You&rsquo;ve read and noticed. Now answer the questions and submit your work.</p>
     <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 📬 Assignment →</button>
@@ -3030,6 +3055,7 @@ function gatherAnswers() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (MORPHOLOGY)', ids: ['journal-morph'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
     { title: '🔎 RESEARCH PROJECT (CUMULATIVE)', ids: ['journal-essay-draft'] },
     { title: '🔎 RESEARCH PROJECT (CUMULATIVE)', ids: ['journal-essay-draft'] }
@@ -3461,6 +3487,7 @@ function downloadJournal() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (MORPHOLOGY)', ids: ['journal-morph'] },
+    { title: '📖 RWM SENTENCE STUDY', ids: ['journal-rwm-reader','journal-rwm-writer','journal-rwm-mimic'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];
 
@@ -3479,7 +3506,7 @@ function downloadJournal() {
   html += '.game-line{font-size:14px;margin-bottom:4px;}';
   html += '</style></head><body>';
   html += '<h1>📓 My Work — Lesson 20.2</h1>';
-  html += '<h2>Freedom Train — Ch. 1 & 2</h2>';
+  html += '<h2>Freedom Train — Ch. 2: Peck of Trouble</h2>';
 
   sections.forEach(function(sec) {
     html += '<div class="section-title">' + sec.title + '</div>';

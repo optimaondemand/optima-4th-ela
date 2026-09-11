@@ -2656,7 +2656,7 @@ The wind is passing by.</div>
         <p class="socratic-q"><strong>The trees in this poem tremble and bow &mdash; they respond to something powerful that can&rsquo;t be seen.</strong> In Chapter 11, the trees of Narnia wake up and dance when Aslan roars. How is Aslan&rsquo;s power like the wind in this poem? What do both passages say about what it means to feel something greater than yourself?</p>
       </div>
       <div class="journal-label"><span>📓 Your Thinking</span><span class="saved-dot" id="dot-poetry"></span></div>
-      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="The image or feeling that stands out to me is... This connects to Prince Caspian because..." oninput="autoSave(this,'dot-poetry');"></textarea>
+      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="The image or feeling that stands out to me is... This connects to Prince Caspian because..." oninput="autoSave(this,'dot-poetry');gatherAnswers();"></textarea>
     </div>
   </div>
 
@@ -2914,7 +2914,7 @@ The wind is passing by.</div>
     </div>
   </div>
   <div class="journal-label"><span>📓 Your Mimic Sentence</span><span class="saved-dot" id="dot-rwm"></span></div>
-  <textarea class="journal-box" id="journal-rwm" data-label="RWM Mimic" placeholder="[Your first observation]; [your second observation]." oninput="autoSave(this,'dot-rwm');"></textarea>
+  <textarea class="journal-box" id="journal-rwm" data-label="RWM Mimic" placeholder="[Your first observation]; [your second observation]." oninput="autoSave(this,'dot-rwm');gatherAnswers();"></textarea>
 
   <div class="callout callout-info" style="margin:20px 0;">
     <span class="callout-icon">📬</span>
@@ -3025,6 +3025,12 @@ function gatherAnswers(){
   output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
   if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
+  var _xg0=document.getElementById('journal-poetry');
+  if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}
+  output+='\n✏️ RWM — MIMIC SENTENCE\n────────────────────────────────\n';
+  var _xg1=document.getElementById('journal-rwm');
+  if(_xg1){output+='\n'+(_xg1.getAttribute('data-label')||'journal-rwm')+'\n'+(_xg1.value.trim()||'(no answer)')+'\n';}
   output+='\n🎮 PRACTICE ACTIVITIES\n────────────────────────────────\n';
   output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Latin Root Match\n';
   output+=(vocabSortPlaced>=vocabSortTotal?'✅':'⬜')+' Vocabulary Quick Sort\n';
@@ -3212,7 +3218,9 @@ function downloadJournal(){
   var sections=[
     {title:'✏️ GRAMMAR SWYK: COMMAS IN DATES & PLACES',ids:['journal-grammar']},
     {title:'📖 CHAPTER THINKING',ids:['journal-q1','journal-q2','journal-q3']},
-    {title:'✍️ WRITING CONNECTION',ids:['journal-writing']}
+    {title:'✍️ WRITING CONNECTION',ids:['journal-writing']},
+    {title:'📜 POETRY CORNER',ids:['journal-poetry']},
+    {title:'✏️ RWM — MIMIC SENTENCE',ids:['journal-rwm']}
   ];
   var html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Lesson 29.2 — My Work</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#1a1a2e;line-height:1.7;}h1{font-size:22px;border-bottom:3px solid #2D5016;padding-bottom:8px;}h2{font-size:14px;color:#7A88A8;margin-bottom:24px;}.st{font-size:16px;font-weight:bold;color:#0E1C42;margin:28px 0 4px;padding:8px 0 4px;border-bottom:2px solid #E2E8F4;}.ql{font-size:13px;font-weight:bold;color:#3A4A6B;margin:16px 0 2px;}.qa{font-size:14px;color:#0E1C42;margin:0 0 4px;padding:6px 12px;background:#f8f9fc;border-left:3px solid #D6F2FB;border-radius:4px;white-space:pre-wrap;}.na{color:#B0B8CC;font-style:italic;}.gm{margin-top:28px;padding-top:12px;border-top:2px solid #E2E8F4;}.gt{font-size:16px;font-weight:bold;color:#0E1C42;margin-bottom:8px;}.gl{font-size:14px;margin-bottom:4px;}</style></head><body>';
   html+='<h1>📓 My Work — Lesson 29.2</h1><h2>Prince Caspian — Chapter 11: The Lion Roars</h2>';

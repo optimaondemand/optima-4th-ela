@@ -3216,8 +3216,12 @@ function gatherAnswers(){
   output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
   if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  output+='\n📝 SHOW WHAT YOU KNOW\n────────────────────────────────\n';
+  var _xg0=document.getElementById('journal-swyk');
+  if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-swyk')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}
   output+='\n🎮 PRACTICE ACTIVITIES\n────────────────────────────────\n';
-  output+=(window._morphFillDone?'✅':'⬜')+' Morphology Fill-in-the-Blank\n';
+  output+=(window._rootMatchDone?'✅':'⬜')+' Morphology Root Match\n';
+  output+=(window._spotterDone?'✅':'⬜')+' Grammar Spotter\n';
   output+=(window._vocabMatchDone?'✅':'⬜')+' Vocabulary Word Match\n';
   output+=(sortPlaced>=sortTotal?'✅':'⬜')+' Spelling Word-Base Sort\n';
   var g=document.getElementById('gatheredOutput'); if(g)g.value=output;
@@ -3314,6 +3318,63 @@ function dolHighlight(word,explanation){
 /* AUTO-SAVE */
 /* ───── AUTO-SAVE ───── */
 /* Unique key derived from the page title so each lesson's data stays separate */
+/* ═══ MORPHOLOGY ROOT MATCH (ported from lesson-28-2) ═══ */
+var rootMatchFirst=null,rootMatchCount=0; window._rootMatchDone=false;
+function rootMatchClick(item){
+  if(item.classList.contains('matched'))return;
+  if(!rootMatchFirst){rootMatchFirst=item;item.classList.add('selected');return;}
+  if(rootMatchFirst===item){rootMatchFirst.classList.remove('selected');rootMatchFirst=null;return;}
+  var k1=rootMatchFirst.getAttribute('data-match'),k2=item.getAttribute('data-match');
+  if(k1===k2&&rootMatchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
+    rootMatchFirst.classList.remove('selected'); rootMatchFirst.classList.add('matched');
+    item.classList.add('matched'); rootMatchCount++; rootMatchFirst=null;
+    if(rootMatchCount>=6){var fb=document.getElementById('rootMatchFeedback');if(fb)fb.classList.add('show');window._rootMatchDone=true;}
+  } else {
+    item.classList.add('wrong-flash'); rootMatchFirst.classList.add('wrong-flash');
+    var a=rootMatchFirst,b=item;
+    setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);
+    rootMatchFirst=null;
+  }
+}
+
+/* ═══ VOCABULARY WORD MATCH (ported from rootMatchClick) ═══ */
+var vocabMatchFirst=null,vocabMatchCount=0; window._vocabMatchDone=false;
+function vocabMatchClick(item){
+  if(item.classList.contains('matched'))return;
+  if(!vocabMatchFirst){vocabMatchFirst=item;item.classList.add('selected');return;}
+  if(vocabMatchFirst===item){vocabMatchFirst.classList.remove('selected');vocabMatchFirst=null;return;}
+  var k1=vocabMatchFirst.getAttribute('data-match'),k2=item.getAttribute('data-match');
+  if(k1===k2&&vocabMatchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
+    vocabMatchFirst.classList.remove('selected'); vocabMatchFirst.classList.add('matched');
+    item.classList.add('matched'); vocabMatchCount++; vocabMatchFirst=null;
+    if(vocabMatchCount>=4){var fb=document.getElementById('vocabMatchFeedback');if(fb)fb.classList.add('show');window._vocabMatchDone=true;}
+  } else {
+    item.classList.add('wrong-flash'); vocabMatchFirst.classList.add('wrong-flash');
+    var a=vocabMatchFirst,b=item;
+    setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);
+    vocabMatchFirst=null;
+  }
+}
+
+/* ═══ GRAMMAR SPOTTER (ported from spotterPick) ═══ */
+var _spotterCount=0; window._spotterDone=false;
+function spotterClick(word,sentenceId){
+  var sentence=document.getElementById(sentenceId); if(!sentence)return;
+  if(sentence.getAttribute('data-done')==='true')return;
+  sentence.querySelectorAll('.spotter-word').forEach(function(w){w.classList.remove('selected');});
+  var result=document.getElementById(sentenceId+'-result');
+  if(word.getAttribute('data-correct')==='true'){
+    word.classList.add('correct-reveal');
+    if(result){result.textContent='✅ That\'s it! "'+word.textContent.replace(/[,!.]/g,'').trim()+'" is correct.';result.className='spotter-result show win';}
+    sentence.setAttribute('data-done','true');
+    _spotterCount++; if(_spotterCount>=5) window._spotterDone=true;
+  } else {
+    word.classList.add('wrong-reveal');
+    if(result){result.textContent='🤔 Not quite — try again!';result.className='spotter-result show miss';}
+    setTimeout(function(){word.classList.remove('wrong-reveal');if(result)result.classList.remove('show');},1500);
+  }
+}
+
 var _lessonKey = (document.title || 'ela-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
 function autoSave(el,dotId){

@@ -3293,7 +3293,7 @@ function nounPick(word, sentenceId) {
     sentence.setAttribute('data-done', 'true');
   } else {
     word.classList.add('wrong-reveal');
-    result.textContent = '🤔 That's a common noun. Look for a name — a specific person, place, or thing!';
+    result.textContent = '🤔 That\'s a common noun. Look for a name — a specific person, place, or thing!';
     result.className = 'spotter-result show miss';
     setTimeout(function() {
       word.classList.remove('wrong-reveal');

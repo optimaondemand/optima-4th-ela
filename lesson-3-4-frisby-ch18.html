@@ -2611,7 +2611,7 @@ To let a Beetle pass —</div>
 <div id="gramDiceType" style="font-size:20px;font-weight:700;color:#0E1C42;text-align:center;"></div>
 <div id="gramDiceTask" style="font-size:14px;color:#3A4A6B;text-align:center;margin:6px 0;"></div>
 <div class="journal-label">📓 Your sentence <span class="saved-dot" id="dot-gram-dice"></span></div>
-<textarea class="journal-box" id="journal-gram-dice" data-label="Grammar Dice" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-gram-dice');" style="min-height:50px;"></textarea>
+<textarea class="journal-box" id="journal-gram-dice" data-label="Grammar Dice" placeholder="Write your sentence here..." oninput="autoSave(this,'dot-gram-dice');gatherAnswers();" style="min-height:50px;"></textarea>
 </div>
 </div>
 
@@ -2990,7 +2990,8 @@ function gatherAnswers() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (VOCABULARY)', ids: ['journal-vocab'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
+    { title: '🎲 GRAMMAR DICE', ids: ['journal-gram-dice'] }
   ];
 
   output += 'LESSON 3.4 — Mrs. Frisby and the Rats of NIMH, Ch. 18\n';
@@ -3444,7 +3445,8 @@ function downloadJournal() {
   var sections = [
     { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔤 WORD STUDY CONNECTION (VOCABULARY)', ids: ['journal-vocab'] },
-    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
+    { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] },
+    { title: '🎲 GRAMMAR DICE', ids: ['journal-gram-dice'] }
   ];
 
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';

@@ -817,7 +817,7 @@ I, too, am America.</div>
         <p class="socratic-q">Harriet fought for a seat at that table &mdash; literally and figuratively. What would she say if she read this poem?</p>
       </div>
       <div class="journal-label"><span>Your Reflection</span><span class="saved-dot" id="dot-poetry"></span></div>
-      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="This poem connects to Harriet Tubman because..." oninput="autoSave(this,'dot-poetry');"></textarea>
+      <textarea class="journal-box" id="journal-poetry" data-label="Poetry Reflection" placeholder="This poem connects to Harriet Tubman because..." oninput="autoSave(this,'dot-poetry');gatherAnswers();"></textarea>
     </div>
   </div>
 
@@ -1088,7 +1088,7 @@ I, too, am America.</div>
       </div>
 
       <div class="journal-label"><span>Your Reflection</span><span class="saved-dot" id="dot-reflect"></span></div>
-      <textarea class="journal-box" id="journal-reflect" data-label="Unit Reflection" placeholder="The thing I will remember most about Harriet Tubman is..." oninput="autoSave(this,'dot-reflect');"></textarea>
+      <textarea class="journal-box" id="journal-reflect" data-label="Unit Reflection" placeholder="The thing I will remember most about Harriet Tubman is..." oninput="autoSave(this,'dot-reflect');gatherAnswers();"></textarea>
     </div>
   </div>
 
@@ -1231,7 +1231,9 @@ function gatherAnswers(){
   var sections=[
     {title:'\u{1F4D6} SOURCE THINKING',ids:['journal-q1','journal-q2','journal-q3']},
     {title:'\u{1F524} WORD STUDY CONNECTION (VOCABULARY CHOICE)',ids:['journal-vocab']},
-    {title:'\u{1FAB6} WRITING CONNECTION (ESSAY PRESENTATION)',ids:['journal-writing']}
+    {title:'\u{1FAB6} WRITING CONNECTION (ESSAY PRESENTATION)',ids:['journal-writing']},
+    {title:'📜 POETRY CORNER',ids:['journal-poetry']},
+    {title:'💭 REFLECTION',ids:['journal-reflect']}
   ];
   output+='LESSON 25.4 — Freedom Train: Comparing Sources (Unit Finale)\n';
   output+='════════════════════════════════════════\n\n';
@@ -1428,7 +1430,9 @@ function downloadJournal(){
   var sections=[
     {title:'\u{1F4D6} SOURCE THINKING',ids:['journal-q1','journal-q2','journal-q3']},
     {title:'\u{1F524} VOCABULARY CHOICE BOARD',ids:['journal-vocab']},
-    {title:'\u{1FAB6} ESSAY PRESENTATION SUMMARY',ids:['journal-writing']}
+    {title:'\u{1FAB6} ESSAY PRESENTATION SUMMARY',ids:['journal-writing']},
+    {title:'📜 POETRY CORNER',ids:['journal-poetry']},
+    {title:'💭 REFLECTION',ids:['journal-reflect']}
   ];
   var html='<!DOCTYPE html><html><head><meta charset="UTF-8">';
   html+='<title>Lesson 25.4 — My Work</title>';

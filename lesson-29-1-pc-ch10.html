@@ -2164,6 +2164,12 @@ body {
 }
 .morphfill-chip:hover { background: #E0D4FF; border-color: #6A3FC0; }
 .morphfill-result { font-size: 13px; margin-top: 6px; display: none; }
+.morphfill-chip.correct { background: #E3F8ED; border-color: #34B76F; color: #1a5c2e; font-weight: 800; }
+.morphfill-chip.wrong { background: #FFF0EC; border-color: #E8636B; animation: shake 0.4s ease; }
+.morphfill-chip.dimmed { opacity: 0.45; pointer-events: none; }
+.morphfill-result.show { display: block; padding: 6px 10px; border-radius: 8px; font-weight: 700; }
+.morphfill-result.win { background: #E3F8ED; color: #1a5c2e; }
+.morphfill-result.miss { background: #FFF3DC; color: #C7922C; }
 
 /* ═══════════ COMMA INSERTER GAME ═══════════ */
 .comma-game { margin: 14px 0; }
@@ -2723,7 +2729,7 @@ body {
       <!-- Fill-in-the-blank morphology game -->
       <div id="morphFill">
 
-        <div class="task-box morphfill-item" id="mf1" style="margin-bottom:14px;">
+        <div class="task-box morphfill-item" id="mf1" data-answer-correct="disrupt" style="margin-bottom:14px;">
           <p style="font-size:15px;color:#0E1C42;font-family:'Lora',Georgia,serif;">&ldquo;Aslan&rsquo;s roar seemed to _______ the silence of the forest all at once.&rdquo;</p>
           <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
             <button class="morphfill-chip" onclick="morphFillCheck('mf1',this,'disrupt')" data-answer="disrupt">disrupt</button>
@@ -2733,7 +2739,7 @@ body {
           <div class="morphfill-result" id="mf1-result"></div>
         </div>
 
-        <div class="task-box morphfill-item" id="mf2" style="margin-bottom:14px;">
+        <div class="task-box morphfill-item" id="mf2" data-answer-correct="introduce" style="margin-bottom:14px;">
           <p style="font-size:15px;color:#0E1C42;font-family:'Lora',Georgia,serif;">&ldquo;Aslan led the children through the forest, as if to _______ them to something new.&rdquo;</p>
           <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
             <button class="morphfill-chip" onclick="morphFillCheck('mf2',this,'introduce')" data-answer="introduce">introduce</button>
@@ -2743,7 +2749,7 @@ body {
           <div class="morphfill-result" id="mf2-result"></div>
         </div>
 
-        <div class="task-box morphfill-item" id="mf3" style="margin-bottom:14px;">
+        <div class="task-box morphfill-item" id="mf3" data-answer-correct="transform" style="margin-bottom:14px;">
           <p style="font-size:15px;color:#0E1C42;font-family:'Lora',Georgia,serif;">&ldquo;When Lucy saw Aslan, she felt something in her heart begin to _______.&rdquo;</p>
           <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
             <button class="morphfill-chip" onclick="morphFillCheck('mf3',this,'transform')" data-answer="transform">transform</button>
@@ -2753,7 +2759,7 @@ body {
           <div class="morphfill-result" id="mf3-result"></div>
         </div>
 
-        <div class="task-box morphfill-item" id="mf4" style="margin-bottom:14px;">
+        <div class="task-box morphfill-item" id="mf4" data-answer-correct="abrupt" style="margin-bottom:14px;">
           <p style="font-size:15px;color:#0E1C42;font-family:'Lora',Georgia,serif;">&ldquo;Edmund&rsquo;s protest was _______ &mdash; he stopped mid-sentence when he saw Lucy&rsquo;s face.&rdquo;</p>
           <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
             <button class="morphfill-chip" onclick="morphFillCheck('mf4',this,'abrupt')" data-answer="abrupt">abrupt</button>
@@ -3227,6 +3233,80 @@ function dolHighlight(word,explanation){
 /* AUTO-SAVE */
 /* ───── AUTO-SAVE ───── */
 /* Unique key derived from the page title so each lesson's data stays separate */
+/* ═══ VOCABULARY WORD MATCH (ported from rootMatchClick) ═══ */
+var vocabMatchFirst=null,vocabMatchCount=0; window._vocabMatchDone=false;
+function vocabMatchClick(item){
+  if(item.classList.contains('matched'))return;
+  if(!vocabMatchFirst){vocabMatchFirst=item;item.classList.add('selected');return;}
+  if(vocabMatchFirst===item){vocabMatchFirst.classList.remove('selected');vocabMatchFirst=null;return;}
+  var k1=vocabMatchFirst.getAttribute('data-match'),k2=item.getAttribute('data-match');
+  if(k1===k2&&vocabMatchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
+    vocabMatchFirst.classList.remove('selected'); vocabMatchFirst.classList.add('matched');
+    item.classList.add('matched'); vocabMatchCount++; vocabMatchFirst=null;
+    if(vocabMatchCount>=4){var fb=document.getElementById('vocabMatchFeedback');if(fb)fb.classList.add('show');window._vocabMatchDone=true;}
+  } else {
+    item.classList.add('wrong-flash'); vocabMatchFirst.classList.add('wrong-flash');
+    var a=vocabMatchFirst,b=item;
+    setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);
+    vocabMatchFirst=null;
+  }
+}
+
+/* ═══ MORPHOLOGY FILL-IN-THE-BLANK ═══ */
+/* The correct word is carried on each item as data-answer-correct.          */
+/* Chips are shuffled on load so their order gives nothing away.             */
+var _morphFillCount=0; window._morphFillDone=false;
+function morphFillCheck(itemId,chip,word){
+  var item=document.getElementById(itemId); if(!item)return;
+  if(item.getAttribute('data-done')==='true')return;
+  var result=document.getElementById(itemId+'-result');
+  if(word===item.getAttribute('data-answer-correct')){
+    chip.classList.add('correct'); item.setAttribute('data-done','true');
+    item.querySelectorAll('.morphfill-chip').forEach(function(c){if(c!==chip)c.classList.add('dimmed');});
+    if(result){result.textContent='✅ Yes — "'+word+'" is the one that fits.';result.className='morphfill-result show win';}
+    _morphFillCount++; if(_morphFillCount>=4) window._morphFillDone=true;
+  } else {
+    chip.classList.add('wrong');
+    if(result){result.textContent='🤔 Not that one — read the sentence again and think about what the word base means.';result.className='morphfill-result show miss';}
+    setTimeout(function(){chip.classList.remove('wrong');if(result)result.classList.remove('show');},1800);
+  }
+}
+document.querySelectorAll('.morphfill-item').forEach(function(item){
+  var first=item.querySelector('.morphfill-chip'); if(!first)return;
+  var row=first.parentNode;
+  Array.prototype.slice.call(row.querySelectorAll('.morphfill-chip'))
+    .sort(function(){return Math.random()-0.5;})
+    .forEach(function(c){row.appendChild(c);});
+});
+
+/* ═══ DOWNLOAD AS PDF (ported from lesson-28-3) ═══ */
+function downloadJournal(){
+  gatherAnswers();
+  var sections=[
+    {title:'🌱 MORPHOLOGY SWYK: WORD BASES',ids:['journal-morphology']},
+    {title:'📖 CHAPTER THINKING',ids:['journal-q1','journal-q2','journal-q3']},
+    {title:'✍️ WRITING CONNECTION',ids:['journal-writing']}
+  ];
+  var html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Lesson 29.1 — My Work</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#1a1a2e;line-height:1.7;}h1{font-size:22px;border-bottom:3px solid #2D5016;padding-bottom:8px;}h2{font-size:14px;color:#7A88A8;margin-bottom:24px;}.st{font-size:16px;font-weight:bold;color:#0E1C42;margin:28px 0 4px;padding:8px 0 4px;border-bottom:2px solid #E2E8F4;}.ql{font-size:13px;font-weight:bold;color:#3A4A6B;margin:16px 0 2px;}.qa{font-size:14px;color:#0E1C42;margin:0 0 4px;padding:6px 12px;background:#f8f9fc;border-left:3px solid #D6F2FB;border-radius:4px;white-space:pre-wrap;}.na{color:#B0B8CC;font-style:italic;}.gm{margin-top:28px;padding-top:12px;border-top:2px solid #E2E8F4;}.gt{font-size:16px;font-weight:bold;color:#0E1C42;margin-bottom:8px;}.gl{font-size:14px;margin-bottom:4px;}</style></head><body>';
+  html+='<h1>📓 My Work — Lesson 29.1</h1><h2>Prince Caspian — The Return of the Lion</h2>';
+  sections.forEach(function(sec){
+    html+='<div class="st">'+sec.title+'</div>';
+    sec.ids.forEach(function(id){
+      var el=document.getElementById(id); if(!el)return;
+      var label=el.getAttribute('data-label')||id, val=el.value.trim();
+      html+='<div class="ql">'+label+'</div>';
+      html+='<div class="qa'+(val?'':' na')+'">'+(val?val.replace(/</g,'&lt;').replace(/>/g,'&gt;'):'(no answer)')+'</div>';
+    });
+  });
+  html+='<div class="gm"><div class="gt">🎮 Mini-Game Results</div>';
+  html+='<div class="gl">'+(window._morphFillDone?'✅':'⬜')+' Morphology Fill-in-the-Blank</div>';
+  html+='<div class="gl">'+(window._vocabMatchDone?'✅':'⬜')+' Vocabulary Word Match</div>';
+  html+='<div class="gl">'+(sortPlaced>=sortTotal?'✅':'⬜')+' Spelling Word-Base Sort</div></div>';
+  html+='</body></html>';
+  var win=window.open('','_blank'); win.document.write(html); win.document.close();
+  setTimeout(function(){win.print();},400);
+}
+
 var _lessonKey = (document.title || 'ela-lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
 function autoSave(el,dotId){
