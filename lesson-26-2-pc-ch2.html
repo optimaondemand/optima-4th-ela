@@ -2964,19 +2964,7 @@ The past returns to those who know they must.</div>
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Connect the story to your own life.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>The children return to a place they loved &mdash; but it has completely changed. Think about a time <em>you</em> went back to a place you remembered and it looked different.</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write <strong>2&ndash;3 sentences</strong> about a time you went back to a place you remembered and it looked different. How did it feel?</div><div class="q-hint">It could be a playground, a grandparent&rsquo;s house, a school, or anywhere you went back to after time had passed.</div></div>
-      <div class="textbox-prompt">Write 2-3 sentences. Describe the place, what was different, and how it felt.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: A place that changed" placeholder="I remember going back to ___ and noticing that... It felt..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3045,9 +3033,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-poetry');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

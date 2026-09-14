@@ -3173,19 +3173,7 @@ body {
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#F9A825;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Connect your theme to real life.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>Every strong piece of writing has a title that does more than just name it. A great title for your comparison piece should hint at the theme and make a reader curious to learn more.</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write the title for your comparison piece. A good title names the theme and hints at what the reader will learn.</div><div class="q-hint">Think about the theme you are comparing. What title would make a reader curious to keep reading?</div></div>
-      <div class="textbox-prompt">Write a title that names your theme and hints at the idea you are comparing. Try two or three options and choose your best.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing: Title for Your Comparison" placeholder="Possible title 1: &#10;Possible title 2: &#10;My best title: &#10;I chose this because..." oninput="autoSave(this,’dot-writing’);gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3254,9 +3242,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n📝 SHOW WHAT YOU KNOW\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-swyk');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-swyk')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

@@ -2942,19 +2942,7 @@ The ones who called you won&rsquo;t be long.</div>
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Connect the story to your own thinking.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>Think about a time you had to do something difficult even though you didn&rsquo;t choose it &mdash; like a chore, a move, or helping with something unexpected.</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write <strong>2&ndash;3 sentences</strong> about how you felt. Use at least one <strong>complex sentence</strong> with a dependent clause (<em>because, although, when, even though</em>).</div><div class="q-hint">Think about what made it hard and how you handled it.</div></div>
-      <div class="textbox-prompt">Write 2&ndash;3 sentences. Include at least one dependent clause.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Answering an unchosen call" placeholder="When [something happened], I felt... Even though... because..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3023,9 +3011,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-poetry');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

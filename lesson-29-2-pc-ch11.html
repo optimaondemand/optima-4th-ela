@@ -2950,19 +2950,7 @@ The wind is passing by.</div>
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Connect the story to your own thinking.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>Peter admits he made mistakes as a leader. Think of a time when admitting a mistake was the right thing to do &mdash; for you, for someone you know, or for a character you&rsquo;ve read about.</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write <strong>3&ndash;4 sentences</strong> about why it&rsquo;s brave to say &ldquo;I was wrong.&rdquo; Use at least one <strong>comma in a date or place</strong> if you can fit one naturally.</div><div class="q-hint">Think about what makes admitting a mistake hard &mdash; and why doing it anyway matters.</div></div>
-      <div class="textbox-prompt">Write 3&ndash;4 sentences. Explain why saying &ldquo;I was wrong&rdquo; takes courage.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Why it's brave to admit mistakes" placeholder="Admitting a mistake is brave because... It can be hard when... But when someone says 'I was wrong,' it shows..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3031,9 +3019,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-poetry');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

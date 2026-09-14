@@ -2954,19 +2954,7 @@ Into the valley of Death
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Connect the story to your own thinking.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>Before the combat resumes, Peter tells Edmund, &ldquo;Give my love to everyone at home, Ed, if he gets me.&rdquo; This one quiet sentence says a great deal about Peter &mdash; his courage, his love for his family, and what he understands about the risk he is taking.</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write <strong>3&ndash;4 sentences</strong> about what this moment reveals about Peter. What kind of person says something like that before a fight?</div><div class="q-hint">Think about what Peter is feeling, what he knows might happen, and why he says this to Edmund specifically. What does it take to be calm and loving in a moment of danger?</div></div>
-      <div class="textbox-prompt">Write 3&ndash;4 sentences. What does Peter&rsquo;s goodbye to Edmund reveal about the kind of person he is?</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: What Peter's goodbye reveals about his character" placeholder="When Peter says 'Give my love to everyone at home,' he shows... This tells me that Peter is... A person who says this before a fight must be... I think Lewis included this moment because..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3035,9 +3023,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-poetry');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

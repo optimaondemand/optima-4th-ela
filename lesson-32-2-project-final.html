@@ -3140,19 +3140,7 @@ Nothing gold can stay.</div>
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#F9A825;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">What reading means to you.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>You have read five books, written about characters and themes, and reflected on your growth. Now write about what all of that means to you &mdash; not as a student, but as a reader and a person.</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write 2&ndash;3 sentences about <strong>what reading means to you</strong> after this year. This isn&rsquo;t about grades or assignments &mdash; it&rsquo;s about what reading does for you. Be real.</div><div class="q-hint">Think: did reading change how you see the world? Did a character teach you something? Did you discover you like a kind of story you didn&rsquo;t expect? Write what&rsquo;s true for you.</div></div>
-      <div class="textbox-prompt">Write 2&ndash;3 sentences about what reading means to you now.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing: What Reading Means to Me" placeholder="After this year, reading means... to me because... One thing I will take with me is..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3221,9 +3209,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-poetry');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

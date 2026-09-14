@@ -2933,19 +2933,7 @@ body {
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Respond to a moral question from Chapter 12.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>Even though Nikabrik betrayed Caspian, Caspian still feels sorry for him. Caspian says Nikabrik &ldquo;had gone sour inside from long suffering.&rdquo;</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write 3&ndash;4 sentences: Is it possible to feel sorry for someone who did something wrong? Why does Caspian react this way? Use at least one <strong>complex sentence</strong> in your response.</div><div class="q-hint">Think about what Caspian knows about Nikabrik's life. Does understanding why someone did something change how you feel about what they did?</div></div>
-      <div class="textbox-prompt">Respond to the question in 3–4 sentences. Use at least one complex sentence.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Feeling sorry for Nikabrik" placeholder="I think it [is / is not] possible to feel sorry for someone who did something wrong because... Caspian reacts with sadness because he knows... Even though Nikabrik betrayed him, Caspian..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3014,9 +3002,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n✏️ RWM — MIMIC SENTENCE\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-rwm');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-rwm')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

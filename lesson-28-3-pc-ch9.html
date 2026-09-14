@@ -2923,19 +2923,7 @@ body {
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Make a claim about leadership.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>Think about the vote in Chapter 9. A leader has to decide: follow the majority, or follow the one who might be right?</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write a claim about leadership: Should a leader follow the majority or the one who might be right? Use evidence from Chapter 9 to support your claim. Use at least one <strong>complex sentence</strong>.</div><div class="q-hint">State your claim clearly, then give specific evidence from the chapter. Use a complex sentence with a dependent clause.</div></div>
-      <div class="textbox-prompt">State your claim and support it with evidence from the chapter.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Leadership claim" placeholder="A good leader should... For example, in Chapter 9, Peter... This shows that... because..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3004,9 +2992,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n✏️ RWM — MIMIC SENTENCE\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-rwm');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-rwm')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

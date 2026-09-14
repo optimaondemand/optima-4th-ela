@@ -2932,19 +2932,7 @@ body {
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Write your concluding thought.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>A portfolio introduction tells readers who you are as a reader and what you&rsquo;ve learned. Think about how you have grown &mdash; not just what you read, but how you read it differently by the end of the year.</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write a <strong>2&ndash;3 sentence introduction for your portfolio</strong>: who you are as a reader, what you learned, and what you&rsquo;re proud of.</div><div class="q-hint">This introduction will sit at the top of your portfolio. Make it sound like <em>you</em>. Be honest and specific about what you learned or discovered about yourself as a reader.</div></div>
-      <div class="textbox-prompt">Write 2–3 sentences: who you are as a reader, what you learned this year, and what you're proud of.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing: Portfolio Introduction" placeholder="This year I discovered that I am a reader who... The most important thing I learned was... I am proud that..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3013,9 +3001,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n✏️ RWM — MIMIC SENTENCE\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-rwm');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-rwm')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

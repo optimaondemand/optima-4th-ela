@@ -3149,19 +3149,7 @@ And looked down one as far as I could</div>
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#F9A825;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Draft your opening statement.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>A strong comparison paragraph begins with a clear, confident opening statement. It names the theme and the novels you are comparing. It tells the reader exactly what you are going to prove.</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write one sentence that could be the <strong>OPENING</strong> of your comparison paragraph. This sentence should name your theme and the two novels you are comparing. Try a strong, clear statement.</div><div class="q-hint">Think: what are you arguing? What do both novels have in common? Try starting with &ldquo;Both [novel] and [novel] explore the theme of...&rdquo; or create your own opening.</div></div>
-      <div class="textbox-prompt">Write one strong opening sentence that names your theme and the two novels you are comparing.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing: Opening Statement" placeholder="Both [novel] and [novel] explore the theme of... through characters who... Another option: In [novel] and [novel], the theme of... appears when characters must..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3230,9 +3218,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-poetry');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

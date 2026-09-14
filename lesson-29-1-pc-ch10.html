@@ -3086,19 +3086,7 @@ body {
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Connect the story to your own thinking.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>Aslan tells Lucy: &ldquo;To know what would have happened, child? No. Nobody is ever told that.&rdquo; Think about what he means. Why can&rsquo;t we know what would have happened if we had made different choices?</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>Write <strong>3&ndash;4 sentences</strong> explaining what you think Aslan means. Why can&rsquo;t we know what would have happened if we made different choices? What do you think we <em>can</em> know?</div><div class="q-hint">Write 3&ndash;4 sentences. Explain what Aslan&rsquo;s words mean in your own words.</div></div>
-      <div class="textbox-prompt">Explain what you think Aslan means. Why is it impossible to know what would have happened? What can we focus on instead?</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: What Aslan means about what would have happened" placeholder="I think Aslan means that... We can't know what would have happened because... Instead of wondering about what might have been, we can..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3167,9 +3155,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n🎮 PRACTICE ACTIVITIES\n────────────────────────────────\n';
   output+=(window._morphFillDone?'✅':'⬜')+' Morphology Fill-in-the-Blank\n';
   output+=(window._vocabMatchDone?'✅':'⬜')+' Vocabulary Word Match\n';

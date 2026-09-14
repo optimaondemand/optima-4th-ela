@@ -2942,23 +2942,7 @@ If you can trust yourself when all men doubt you,
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Draft your theme paragraph.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>This week you&rsquo;ve been thinking about trust, forgiveness, and choosing the right path. Now it&rsquo;s time to put those ideas into a literary analysis paragraph.</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>What is C. S. Lewis saying about what happens when people refuse to trust &mdash; and what happens when they finally do? Write a draft theme paragraph using at least <strong>two examples from Chapters 10&ndash;12</strong>. Your paragraph should: (1) state a theme, (2) give two pieces of evidence, and (3) explain the connection.</div><div class="q-hint">Start with a clear statement of the theme. Then support it with two specific examples from the chapters.</div></div>
-      <div class="task-box" style="margin-bottom:12px;background:#FFF8F0;border-color:#F5E6C8;">
-        <div class="task-label">✏️ Sentence Frame (use this or write your own)</div>
-        <div class="task-sentence" style="border-left-color:#C7922C;font-size:14px;">In <em>Prince Caspian</em>, C. S. Lewis shows that when people refuse to trust, ___. For example, in Chapter _, ___ . In contrast, when [character] finally trusts, ___. This shows that Lewis believes ___.</div>
-      </div>
-      <div class="textbox-prompt">Write your theme paragraph draft here. Aim for 5&ndash;7 sentences.</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing Connection: Theme paragraph draft — trust and forgiveness" style="min-height:120px;" placeholder="In Prince Caspian, C.S. Lewis shows that when people refuse to trust... For example, in Chapter... In contrast, when [character] finally trusts,... This shows that Lewis believes..." oninput="autoSave(this,'dot-writing');gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3027,9 +3011,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n📜 POETRY CORNER\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-poetry');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-poetry')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}

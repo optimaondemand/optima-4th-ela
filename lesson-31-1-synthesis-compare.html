@@ -3213,19 +3213,7 @@ body {
   </div>
 
   <!-- Part C -->
-  <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#F9A825;">C</div><div><div class="activity-title">✍️ Part C: Writing Connection</div><div class="activity-sub">Connect your theme to real life.</div></div></div>
-    <div class="activity-body">
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p>You&rsquo;ve been reading about characters who show courage, loyalty, growth, and leadership. Now step outside the books. Think about what your chosen theme means in YOUR life.</p>
-      </div>
-      <div class="q-block"><div class="q-text"><span class="q-num">C</span>In <strong>2&ndash;3 sentences</strong>, explain what your chosen theme means to YOU &mdash; not just what it means in a book, but what it means in real life. Why does this theme matter?</div><div class="q-hint">Write 2&ndash;3 sentences connecting your theme to real life.</div></div>
-      <div class="textbox-prompt">Explain what your theme means in real life, not just in a novel. Why does it matter to you?</div>
-      <textarea class="journal-box" id="journal-writing" data-label="Writing: Theme in Real Life" placeholder="The theme of [courage/loyalty/etc.] matters because... In real life, this looks like... I think this theme is important because..." oninput="autoSave(this,’dot-writing’);gatherAnswers();"></textarea>
-    </div>
-  </div>
-
+  
   <!-- Gathered Answers -->
   <div class="gathered-card">
     <div class="gathered-header"><div class="gathered-header-icon">📋</div><div><div class="gathered-header-label">All Your Work</div><div class="gathered-header-title">Review, Copy, or Download</div></div></div>
@@ -3294,9 +3282,9 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
-  output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';
   var wEl=document.getElementById('journal-writing');
-  if(wEl){output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
+  if(wEl){
+    output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
   output+='\n📝 SHOW WHAT YOU KNOW\n────────────────────────────────\n';
   var _xg0=document.getElementById('journal-swyk');
   if(_xg0){output+='\n'+(_xg0.getAttribute('data-label')||'journal-swyk')+'\n'+(_xg0.value.trim()||'(no answer)')+'\n';}
