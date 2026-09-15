@@ -2727,8 +2727,8 @@ body {
 </div>
 <div class="key-concept">
         <div class="key-concept-label">📌 Three Bases to Know This Week</div>
-        <p><strong>spect</strong> = look / see &nbsp;|&nbsp; <strong>ject</strong> = throw &nbsp;|&nbsp; <strong>script / scribe</strong> = write</p>
-        <p style="font-size:13px;color:#7A88A8;margin-top:6px;"><em>inspect</em> = to look closely into &nbsp;&bull;&nbsp; <em>reject</em> = to throw back or refuse &nbsp;&bull;&nbsp; <em>manuscript</em> = something written by hand</p>
+        <p><strong>spect</strong> &nbsp;|&nbsp; <strong>ject</strong> &nbsp;|&nbsp; <strong>script / scribe</strong></p>
+        <p style="font-size:13px;color:#7A88A8;margin-top:6px;">You already know words built from all three: <em>inspect</em> &nbsp;&bull;&nbsp; <em>reject</em> &nbsp;&bull;&nbsp; <em>manuscript</em></p>
       </div>
       <p style="margin-top:14px;">Use the word bases to fill in the blanks. Tap the correct word for each sentence.</p>
 
@@ -2788,6 +2788,10 @@ body {
 <button class="dol-check-btn" onclick="document.getElementById('morphNotice').classList.toggle('show')">&#x1F52E; See if you were right</button>
 <div class="dol-answer" id="morphNotice">
 <p>A <strong>word base</strong> (or root) is the core part of a word that carries its main meaning. When you know the base, you can figure out unfamiliar words by pulling them apart.</p>
+<p style="margin:0 0 8px;"><strong>&#x1F4D6; Here is what each one means:</strong></p>
+<p><strong>spect</strong> = look / see &mdash; <em>inspect</em> (to look closely into)</p>
+<p><strong>ject</strong> = throw &mdash; <em>reject</em> (to throw back or refuse)</p>
+<p><strong>script / scribe</strong> = write &mdash; <em>manuscript</em> (something written by hand)</p>
 </div>
 
 <div class="swyk">
@@ -2921,11 +2925,13 @@ body {
 <div class="dol-answer" id="gramNotice">
 <p>A <strong>complex sentence</strong> has two parts working together:</p>
 <p>Tomorrow you&rsquo;ll practice identifying dependent clauses in sentences on your own. For today, just study these examples and notice how the pattern works.</p>
-<p>complete thought that can stand alone as a sentence.</p>
-<p>group of words that can&rsquo;t stand alone. It depends on the independent clause to make sense. Dependent clauses start with signal words like <em>because, although, when, even though, if, since</em>.</p>
+<p><strong>Independent clause</strong> &mdash; a complete thought that can stand alone as a sentence.</p>
+<p><strong>Dependent clause</strong> &mdash; a group of words that can&rsquo;t stand alone. It depends on the independent clause to make sense. Dependent clauses start with signal words like <em>because, although, when, even though, if, since</em>.</p>
 </div>
 
 
+      <div class="textbox-prompt">Explain it in your own words.</div>
+      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Complex Sentences — Define" placeholder="I think&hellip;" oninput="autoSave(this);gatherAnswers();"></textarea>
 </div>
   </div>
 
@@ -3187,6 +3193,11 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
+  var gRmEl=document.getElementById('journal-grammar');
+  if(gRmEl){
+    output+='\n✏️ GRAMMAR\n────────────────────────────────\n';
+    output+='\n'+(gRmEl.getAttribute('data-label')||'Grammar')+'\n'+(gRmEl.value.trim()||'(no answer)')+'\n';
+  }
   var wEl=document.getElementById('journal-writing');
   if(wEl){
     output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
@@ -3340,6 +3351,7 @@ function downloadJournal(){
   var sections=[
     {title:'🌱 MORPHOLOGY SWYK: WORD BASES',ids:['journal-morphology']},
     {title:'📖 CHAPTER THINKING',ids:['journal-q1','journal-q2','journal-q3']},
+    { title: '✏️ GRAMMAR', ids: ['journal-grammar'] },
     {title:'✍️ WRITING CONNECTION',ids:['journal-writing']}
   ];
   var html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Lesson 28.1 — My Work</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#1a1a2e;line-height:1.7;}h1{font-size:22px;border-bottom:3px solid #2D5016;padding-bottom:8px;}h2{font-size:14px;color:#7A88A8;margin-bottom:24px;}.st{font-size:16px;font-weight:bold;color:#0E1C42;margin:28px 0 4px;padding:8px 0 4px;border-bottom:2px solid #E2E8F4;}.ql{font-size:13px;font-weight:bold;color:#3A4A6B;margin:16px 0 2px;}.qa{font-size:14px;color:#0E1C42;margin:0 0 4px;padding:6px 12px;background:#f8f9fc;border-left:3px solid #D6F2FB;border-radius:4px;white-space:pre-wrap;}.na{color:#B0B8CC;font-style:italic;}.gm{margin-top:28px;padding-top:12px;border-top:2px solid #E2E8F4;}.gt{font-size:16px;font-weight:bold;color:#0E1C42;margin-bottom:8px;}.gl{font-size:14px;margin-bottom:4px;}</style></head><body>';

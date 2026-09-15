@@ -927,7 +927,9 @@ I, too, am America.</div>
       </div>
 
       <div class="callout callout-think"><span class="callout-icon">&#129300;</span><p><strong>Think about it:</strong> Read this sentence without commas and think about what could go wrong: <em>&ldquo;Harriet carried a lantern a pistol and medicine.&rdquo;</em> Is &ldquo;a lantern a pistol&rdquo; one item? Add the commas in your mind to see the three separate items.</p></div>
-    </div>
+          <div class="textbox-prompt">Explain it in your own words.</div>
+      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Commas in a Series" placeholder="I think&hellip;" oninput="autoSave(this);gatherAnswers();"></textarea>
+</div>
   </div>
 
   <!-- SPELLING -->
@@ -1240,8 +1242,9 @@ function gatherAnswers(){
     {title:'\u{1F524} WORD STUDY CONNECTION (VOCABULARY CHOICE)',ids:['journal-vocab']},
     {title:'\u{1FAB6} WRITING CONNECTION (ESSAY PRESENTATION)',ids:['journal-writing']},
     {title:'📜 POETRY CORNER',ids:['journal-poetry']},
-    {title:'💭 REFLECTION',ids:['journal-reflect']}
-  ];
+    {title:'💭 REFLECTION',ids:['journal-reflect']},
+    { title: '✏️ GRAMMAR', ids: ['journal-grammar'] }
+];
   output+='LESSON 25.4 — Freedom Train: Comparing Sources (Unit Finale)\n';
   output+='════════════════════════════════════════\n\n';
   sections.forEach(function(sec){

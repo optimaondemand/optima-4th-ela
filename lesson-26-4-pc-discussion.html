@@ -2389,7 +2389,9 @@ The trees lean close as if to say,
         <div class="socratic-label">&#x1F9E0; Think about it</div>
         <p class="socratic-q">What&rsquo;s different? <strong>How do conjunctions change the way this paragraph sounds and feels?</strong> Without them, each sentence stands alone &mdash; choppy and separate. With them, the ideas flow together and the characters feel connected.</p>
       </div>
-    </div>
+          <div class="textbox-prompt">Explain it in your own words.</div>
+      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Why Conjunctions Matter" placeholder="I think&hellip;" oninput="autoSave(this);gatherAnswers();"></textarea>
+</div>
   </div>
 
   <!-- SPELLING -->
@@ -2644,6 +2646,7 @@ function gatherAnswers() {
   var sections = [
     { title: 'CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: 'VOCABULARY CHOICE BOARD', ids: ['journal-vocab'] },
+    { title: '✏️ GRAMMAR', ids: ['journal-grammar'] },
     { title: 'WRITING CONNECTION', ids: ['journal-writing'] }
   ];
   output += 'LESSON 26.4 — Prince Caspian, Chapters 1–3 Reflection\n';

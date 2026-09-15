@@ -2386,7 +2386,9 @@ But because you found the way.&rdquo;</div>
 
       <div class="callout callout-think" style="margin-top:16px;"><span class="callout-icon">&#x1F4AC;</span><p><strong>&ldquo;Teach It&rdquo; Card:</strong> Imagine a younger student asks you: &ldquo;What&rsquo;s the difference between <em>but</em> and <em>so</em>?&rdquo; How would you explain it in your own words? Think about it &mdash; no writing needed.</p></div>
       <div class="thinking-stop">&#x1F4AD; No textbox here &mdash; just think through your explanation. You&rsquo;ll use conjunctions in your writing assignment.</div>
-    </div>
+          <div class="textbox-prompt">Explain it in your own words.</div>
+      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Conjunctions But & So" placeholder="I think&hellip;" oninput="autoSave(this);gatherAnswers();"></textarea>
+</div>
   </div>
 
   <!-- SPELLING -->
@@ -2612,6 +2614,7 @@ function gatherAnswers() {
   var sections = [
     { title: 'CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: 'VOCABULARY CHOICE BOARD', ids: ['journal-vocab'] },
+    { title: '✏️ GRAMMAR', ids: ['journal-grammar'] },
     { title: 'WRITING CONNECTION', ids: ['journal-writing'] }
   ];
   output += 'LESSON 27.4 — Prince Caspian, Chapters 4–6 Reflection\n';

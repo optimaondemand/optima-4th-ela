@@ -2628,7 +2628,9 @@ body {
 
       <div class="callout callout-tip"><span class="callout-icon">💡</span><p>Try listing actions (verbs), people (nouns), or descriptions (adjectives) in your series. Example starters: &ldquo;Tubman guided, protected, and...&rdquo; or &ldquo;The raid freed men, women, and...&rdquo;</p></div>
 
-    </div>
+          <div class="textbox-prompt">Write your sentences here.</div>
+      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Commas in a Series" placeholder="1. &#10;2. &#10;3. " oninput="autoSave(this);gatherAnswers();"></textarea>
+</div>
   </div>
 
   <!-- SPELLING — SWYK DAY -->
@@ -2947,6 +2949,7 @@ function gatherAnswers() {
   var sections = [
     { title: '📖 SOURCE THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
     { title: '🔠 WORD STUDY CONNECTION (SPELLING SWYK)', ids: ['journal-spelling'] },
+    { title: '✏️ GRAMMAR', ids: ['journal-grammar'] },
     { title: '🪶 WRITING CONNECTION', ids: ['journal-writing'] }
   ];
 

@@ -2747,7 +2747,9 @@ body {
         <span class="callout-icon">💡</span>
         <p>Write these 3 sentences in your reading journal. When you answer the comprehension questions later, try to use at least one complex sentence in your answer.</p>
       </div>
-    </div>
+          <div class="textbox-prompt">Write your sentences here.</div>
+      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Write Your Own — Use" placeholder="1. &#10;2. &#10;3. " oninput="autoSave(this);gatherAnswers();"></textarea>
+</div>
   </div>
 
   <div class="activity bl-rose">
@@ -3002,6 +3004,11 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
+  var gRmEl=document.getElementById('journal-grammar');
+  if(gRmEl){
+    output+='\n✏️ GRAMMAR\n────────────────────────────────\n';
+    output+='\n'+(gRmEl.getAttribute('data-label')||'Grammar')+'\n'+(gRmEl.value.trim()||'(no answer)')+'\n';
+  }
   var wEl=document.getElementById('journal-writing');
   if(wEl){
     output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
@@ -3253,6 +3260,7 @@ function downloadJournal(){
   var sections=[
     {title:'🔠 SPELLING SWYK: ROOT WORD REVIEW',ids:['journal-spelling']},
     {title:'📖 CHAPTER THINKING',ids:['journal-q1','journal-q2','journal-q3']},
+    { title: '✏️ GRAMMAR', ids: ['journal-grammar'] },
     {title:'✍️ WRITING CONNECTION',ids:['journal-writing']},
     {title:'✏️ RWM — MIMIC SENTENCE',ids:['journal-rwm']}
   ];

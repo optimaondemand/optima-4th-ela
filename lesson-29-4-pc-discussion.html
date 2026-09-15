@@ -2760,7 +2760,9 @@ If you can trust yourself when all men doubt you,
         <p style="font-size:13px;color:#7A88A8;font-style:italic;">Commas go between day and year, after the year when the sentence continues, and between a place name and its country or region.</p>
       </div>
       <p style="margin-top:10px;font-size:14px;color:#7A88A8;font-style:italic;">This is practice &mdash; not graded. Your graded response today is the Vocabulary Choice Board above.</p>
-    </div>
+          <div class="textbox-prompt">Explain it in your own words.</div>
+      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Explain It" placeholder="I think&hellip;" oninput="autoSave(this);gatherAnswers();"></textarea>
+</div>
   </div>
 
   <div class="activity bl-rose">
@@ -3011,6 +3013,11 @@ function gatherAnswers(){
     var el=document.getElementById(id); if(!el)return;
     output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
   });
+  var gRmEl=document.getElementById('journal-grammar');
+  if(gRmEl){
+    output+='\n✏️ GRAMMAR\n────────────────────────────────\n';
+    output+='\n'+(gRmEl.getAttribute('data-label')||'Grammar')+'\n'+(gRmEl.value.trim()||'(no answer)')+'\n';
+  }
   var wEl=document.getElementById('journal-writing');
   if(wEl){
     output+='\n✍️ WRITING CONNECTION\n────────────────────────────────\n';output+='\n'+(wEl.getAttribute('data-label')||'Writing')+'\n'+(wEl.value.trim()||'(no answer)')+'\n';}
@@ -3187,6 +3194,7 @@ function downloadJournal(){
   var sections=[
     {title:'🔤 VOCABULARY SWYK: CHOICE BOARD',ids:['journal-vocabulary']},
     {title:'📖 CHAPTER THINKING',ids:['journal-q1','journal-q2','journal-q3']},
+    { title: '✏️ GRAMMAR', ids: ['journal-grammar'] },
     {title:'✍️ WRITING CONNECTION',ids:['journal-writing']},
     {title:'📜 POETRY CORNER',ids:['journal-poetry']}
   ];
