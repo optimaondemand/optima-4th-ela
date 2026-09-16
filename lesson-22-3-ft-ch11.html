@@ -2677,42 +2677,21 @@ body {
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: find what was added and what it changed.</p></div>
-            <p>Both syllable types are everywhere. Look at these two groups of words:</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">Group A &mdash; verb &rarr; noun with -ion</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">act &rarr; act<strong style="color:#C7627E;">ion</strong> &middot; decide &rarr; decis<strong style="color:#C7627E;">ion</strong> &middot; create &rarr; creat<strong style="color:#C7627E;">ion</strong></p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">Group B &mdash; historical -ion words</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">emancipat<strong style="color:#C7922C;">ion</strong> &middot; abolit<strong style="color:#C7922C;">ion</strong> &middot; revolut<strong style="color:#C7922C;">ion</strong></p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">🔍 What do you notice?</div>
-        <p class="socratic-q">Say <em>act</em>. Now say <em>action</em>. What did the -ion suffix do to the verb?</p>
-        <p class="socratic-q">Say <em>decide</em>. Now <em>decision</em>. The verb ends in -ide; what happens when -ion is added?</p>
-        <p class="socratic-q">Why is -ion useful? (Hint: most -ion words name THINGS &mdash; they turn actions into things you can talk about.)</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>The suffix <strong>-ion</strong> turns a VERB into a NOUN.</p><p>Simple add-on: <em>act</em> &rarr; <em>action</em>, <em>protect</em> &rarr; <em>protection</em>.</p><p>Drop the silent <em>e</em>: <em>create</em> &rarr; <em>creation</em>, <em>educate</em> &rarr; <em>education</em>.</p><p>Change <em>-de</em> to <em>-sion</em>: <em>decide</em> &rarr; <em>decision</em>.</p><p>Lots of history words end in -ion: emancipation, abolition, revolution, declaration.</p></div>
+            <p>Recap: <strong>-ive</strong>, <strong>-al</strong> and <strong>-ic</strong> all turn a word into a describing word.</p>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">action</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">emancipation</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">decision</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">abolition</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">protection</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">revolution</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">secretive</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">political</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">expensive</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">heroic</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">supportive</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">coastal</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Everyday -ion words</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Historical -ion words</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">-ive words</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">-al / -ic words</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3300,7 +3279,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know your -ive, -al and -ic endings.';
     sc.classList.add('show');
   }
 }

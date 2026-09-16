@@ -2716,42 +2716,21 @@ While follow eyes the steady keel, the vessel grim and daring;</div>
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: meaning picks the spelling, not sound.</p></div>
-            <p>Both syllable types are everywhere. Look at these two groups of words:</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">Group A &mdash; consonant + le syllable</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">litt<strong style="color:#C7627E;">le</strong> &middot; simp<strong style="color:#C7627E;">le</strong> &middot; tab<strong style="color:#C7627E;">le</strong> &middot; gent<strong style="color:#C7627E;">le</strong></p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">Group B &mdash; final stable syllable in chapter words</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">can<strong style="color:#C7922C;">dle</strong> &middot; nee<strong style="color:#C7922C;">dle</strong> &middot; trou<strong style="color:#C7922C;">ble</strong> &middot; pud<strong style="color:#C7922C;">dle</strong></p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">🔍 What do you notice?</div>
-        <p class="socratic-q">Say <em>little</em>. The <em>-tle</em> at the end is a syllable by itself. What letter pattern is it?</p>
-        <p class="socratic-q">Say <em>candle</em>. Same pattern: consonant + l + e. The <em>-dle</em> is one syllable.</p>
-        <p class="socratic-q">Why does it help to know this pattern? (Hint: when you SEE consonant-le at the end of a word, you know how to break it into syllables for reading.)</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p><strong>Final stable syllable</strong>: a syllable that always works the same way at the END of a word. The <strong>consonant-le</strong> pattern is the most common: when a word ends in a consonant + l + e, that&rsquo;s one final syllable.</p><p>Examples: lit-<strong>tle</strong>, sim-<strong>ple</strong>, ta-<strong>ble</strong>, can-<strong>dle</strong>, gen-<strong>tle</strong>, han-<strong>dle</strong>.</p><p>The <em>e</em> at the end is silent. The syllable sounds like &lsquo;[consonant] + ul.&rsquo;</p></div>
+            <p>Recap: homophones sound identical, so only the <strong>sentence</strong> can tell you which spelling is right.</p>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">write</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">right</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">knew</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">new</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">would</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">wood</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">their names</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">gave to her</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">there it is</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">too dark</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">they&rsquo;re home</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">two years</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Consonant + LE (-tle, -ple, -tle)</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Consonant + LE (-dle, -ble)</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">THEIR / THERE / THEY&rsquo;RE</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">TO / TOO / TWO</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3334,7 +3313,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You can tell these sound-alikes apart.';
     sc.classList.add('show');
   }
 }

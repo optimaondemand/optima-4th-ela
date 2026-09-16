@@ -2719,42 +2719,21 @@ I lift my lamp beside the golden door!&rdquo;</div>
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F5C2;&#xFE0F;</span><p>Before you start: clap the beats, then decide where the splits go.</p></div>
-            <p>Both syllable types are everywhere. Look at these two groups of words:</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">Group A &mdash; familiar prefixes review</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;"><strong style="color:#C7627E;">re</strong>turn &middot; <strong style="color:#C7627E;">un</strong>safe &middot; <strong style="color:#C7627E;">dis</strong>appear &middot; <strong style="color:#C7627E;">mis</strong>understood</p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">Group B &mdash; familiar suffixes review</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">fright<strong style="color:#C7922C;">ened</strong> &middot; care<strong style="color:#C7922C;">ful</strong> &middot; danger<strong style="color:#C7922C;">ous</strong> &middot; quiet<strong style="color:#C7922C;">ly</strong></p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">🔍 What do you notice?</div>
-        <p class="socratic-q">Group A: say <em>un + safe</em>. What does the prefix <em>un-</em> do to the word?</p>
-        <p class="socratic-q">Group B: say <em>care + ful</em>. What does the suffix <em>-ful</em> do?</p>
-        <p class="socratic-q">Why does it help to know prefixes and suffixes when you read a novel? (Hint: you don&rsquo;t need to look up every word.)</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>You already know many <strong>prefixes</strong> and <strong>suffixes</strong>. This week, find them in words you meet in Ch. 5-8.</p><p>Common prefixes: <em>re-, un-, dis-, mis-, in-, pre-, ex-</em>.</p><p>Common suffixes: <em>-ed, -ing, -ful, -less, -ly, -ness, -tion, -able, -ible, -ous</em>.</p><p>Trick: when you meet a long word, look for the prefix and suffix. The middle is usually the root, and you can often guess the meaning from there.</p></div>
+            <p>Recap: a word ending in <strong>consonant + le</strong> takes that consonant with it into the final syllable &mdash; <em>ta&middot;ble</em>, <em>gen&middot;tle</em>.</p>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">table</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">puddle</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">apple</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">middle</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">little</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">candle</span>
           <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">simple</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">bubble</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">table</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">uncle</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">struggle</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Has a prefix</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Has a suffix</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">-tle / -ple / -cle</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">-dle / -ble / -gle</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3360,7 +3339,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You can hear which consonant-le ending a word takes.';
     sc.classList.add('show');
   }
 }

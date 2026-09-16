@@ -2740,7 +2740,7 @@ body {
       </div>
 
       <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>Both syllable types are everywhere. Look at these two groups of words:</p><p>A <strong>vowel team</strong> is two letters working together to make ONE vowel sound: <em>ea, ee, ai, ay, oa, ie, ue, ow</em>, and more.</p><p>Common patterns:<br><em>ea</em> &rarr; /ee/ (read, beach, reason)<br><em>ai</em> &rarr; long /a/ (rain, train, again)<br><em>oa</em> &rarr; long /o/ (toast, boat, coast)<br><em>ie</em> &rarr; long /ee/ or long /i/ (belief; pie)</p><p>When you see a big new word, look for vowel teams. They&rsquo;ll help you sound it out.</p></div>
+      <div class="dol-answer" id="spellReveal"><p>Look at these two groups of words:</p><p>A <strong>vowel team</strong> is two letters working together to make ONE vowel sound: <em>ea, ee, ai, ay, oa, ie, ue, ow</em>, and more.</p><p>Common patterns:<br><em>ea</em> &rarr; /ee/ (read, beach, reason)<br><em>ai</em> &rarr; long /a/ (rain, train, again)<br><em>oa</em> &rarr; long /o/ (toast, boat, coast)<br><em>ie</em> &rarr; long /ee/ or long /i/ (belief; pie)</p><p>When you see a big new word, look for vowel teams. They&rsquo;ll help you sound it out.</p></div>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
@@ -2748,13 +2748,13 @@ body {
           <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">read</span>
           <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">rain</span>
           <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">reason</span>
-          <span class="sort-chip" data-group="ai-other" onclick="pickSortChip(this)">Denmark</span>
-          <span class="sort-chip" data-group="oa" onclick="pickSortChip(this)">coast</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">defeat</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">coast</span>
           <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">waited</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">ea / ee (long e)</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">ai / ay / oa (long a or o)</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Long e (ea, ee, ie, ei)</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Long a or o (ai, ay, oa)</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3318,7 +3318,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know which vowel team makes which long sound.';
     sc.classList.add('show');
   }
 }

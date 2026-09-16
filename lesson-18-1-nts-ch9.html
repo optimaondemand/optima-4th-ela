@@ -2748,7 +2748,7 @@ body {
       </div>
 
       <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>Both syllable types are everywhere. Look at these two groups of words:</p><p><strong>Final stable syllable</strong>: a syllable that always works the same way at the END of a word. The <strong>consonant-le</strong> pattern is the most common: when a word ends in a consonant + l + e, that&rsquo;s one final syllable.</p><p>Examples: lit-<strong>tle</strong>, sim-<strong>ple</strong>, ta-<strong>ble</strong>, can-<strong>dle</strong>, gen-<strong>tle</strong>, han-<strong>dle</strong>.</p><p>The <em>e</em> at the end is silent. The syllable sounds like &lsquo;[consonant] + ul.&rsquo;</p></div>
+      <div class="dol-answer" id="spellReveal"><p>Look at these two groups of words:</p><p><strong>Final stable syllable</strong>: a syllable that always works the same way at the END of a word. The <strong>consonant-le</strong> pattern is the most common: when a word ends in a consonant + l + e, that&rsquo;s one final syllable.</p><p>Examples: lit-<strong>tle</strong>, sim-<strong>ple</strong>, ta-<strong>ble</strong>, can-<strong>dle</strong>, gen-<strong>tle</strong>, han-<strong>dle</strong>.</p><p>The <em>e</em> at the end is silent. The syllable sounds like &lsquo;[consonant] + ul.&rsquo;</p></div>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
@@ -2761,8 +2761,8 @@ body {
           <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">trouble</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Consonant + LE (-tle, -ple, -tle)</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Consonant + LE (-dle, -ble)</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">-tle / -ple / -cle</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">-dle / -ble / -gle</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3342,7 +3342,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You can hear which consonant-le ending a word takes.';
     sc.classList.add('show');
   }
 }

@@ -2873,16 +2873,16 @@ Nothing gold can stay.</div>
             <p>These ten words all turned up in your reading this year. Sort them by how ready you are to use them in your own writing &mdash; be honest.</p>
       <div class="sort-game" id="vocabSort">
         <div class="sort-bank" id="vocabSortBank">
-          <span class="sort-chip" data-group="use" onclick="pickSortChip(this)">indignant</span>
-          <span class="sort-chip" data-group="use" onclick="pickSortChip(this)">solemnly</span>
-          <span class="sort-chip" data-group="know" onclick="pickSortChip(this)">allegiance</span>
-          <span class="sort-chip" data-group="meet" onclick="pickSortChip(this)">sovereign</span>
-          <span class="sort-chip" data-group="use" onclick="pickSortChip(this)">warily</span>
-          <span class="sort-chip" data-group="know" onclick="pickSortChip(this)">occupation</span>
-          <span class="sort-chip" data-group="meet" onclick="pickSortChip(this)">emancipation</span>
-          <span class="sort-chip" data-group="know" onclick="pickSortChip(this)">vexed</span>
-          <span class="sort-chip" data-group="meet" onclick="pickSortChip(this)">plantation</span>
-          <span class="sort-chip" data-group="use" onclick="pickSortChip(this)">conductor</span>
+          <span class="sort-chip" data-group="use" onclick="pickVocabChip(this)">indignant</span>
+          <span class="sort-chip" data-group="use" onclick="pickVocabChip(this)">solemnly</span>
+          <span class="sort-chip" data-group="know" onclick="pickVocabChip(this)">allegiance</span>
+          <span class="sort-chip" data-group="meet" onclick="pickVocabChip(this)">sovereign</span>
+          <span class="sort-chip" data-group="use" onclick="pickVocabChip(this)">warily</span>
+          <span class="sort-chip" data-group="know" onclick="pickVocabChip(this)">occupation</span>
+          <span class="sort-chip" data-group="meet" onclick="pickVocabChip(this)">emancipation</span>
+          <span class="sort-chip" data-group="know" onclick="pickVocabChip(this)">vexed</span>
+          <span class="sort-chip" data-group="meet" onclick="pickVocabChip(this)">plantation</span>
+          <span class="sort-chip" data-group="use" onclick="pickVocabChip(this)">conductor</span>
         </div>
         <div class="sort-columns" style="grid-template-columns:1fr 1fr 1fr;">
           <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#0E1C42,#1A2D5A);font-size:11px;">I could use it tomorrow</div><div class="sort-col-drop" data-col="use" onclick="dropVocabChip(this,'use')"></div></div>
@@ -3304,7 +3304,7 @@ function dropSortChip(colDrop,colName){
   if(cg===colName){clone.classList.add('correct');sortSelected.classList.add('placed');colDrop.appendChild(clone);sortPlaced++;}
   else{clone.classList.add('wrong');colDrop.appendChild(clone);setTimeout(function(){if(colDrop.contains(clone))colDrop.removeChild(clone);},600);}
   sortSelected.style.outline=''; sortSelected=null;
-  if(sortPlaced>=sortTotal){var sc=document.getElementById('sortScore');if(sc){sc.textContent='🎉 All sorted! You know your Latin roots.';sc.classList.add('show');}}
+  if(sortPlaced>=sortTotal){var sc=document.getElementById('sortScore');if(sc){sc.textContent='🎉 All sorted! You know every suffix rule from this year.';sc.classList.add('show');}}
 }
 
 /* VOCAB SORT */

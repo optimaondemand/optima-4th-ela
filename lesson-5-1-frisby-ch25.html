@@ -2743,7 +2743,7 @@ body {
       </div>
 
       <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>Both syllable types are everywhere. Look at these two groups of words:</p><p>When a word has the pattern <strong>one-syllable, ends in CVC</strong> (consonant-vowel-consonant), you <em>double the final consonant</em> before adding <strong>-ed</strong> or <strong>-ing</strong>.</p><p>Examples: <em>hop → hopping, stop → stopped, run → running, sit → sitting.</em></p><p>If the word ends in a different pattern, you don't double.</p></div>
+      <div class="dol-answer" id="spellReveal"><p>Look at these two groups of words:</p><p>When a word has the pattern <strong>one-syllable, ends in CVC</strong> (consonant-vowel-consonant), you <em>double the final consonant</em> before adding <strong>-ed</strong> or <strong>-ing</strong>.</p><p>Examples: <em>hop → hopping, stop → stopped, run → running, sit → sitting.</em></p><p>If the word ends in a different pattern, you don't double.</p></div>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
@@ -3328,7 +3328,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know when a short word doubles its last letter.';
     sc.classList.add('show');
   }
 }

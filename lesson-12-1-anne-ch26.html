@@ -2741,7 +2741,7 @@ body {
       </div>
 
       <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>Both syllable types are everywhere. Look at these two groups of words:</p><p><strong>Drop the silent e</strong> before most vowel suffixes (-ing, -ed, -er, -able): <em>save &rarr; saving, hope &rarr; hoping, drive &rarr; driving</em>.</p><p><strong>BUT &mdash; keep the e</strong> after <strong>c</strong> or <strong>g</strong> when adding a suffix that starts with <strong>a</strong> or <strong>o</strong> (-able, -ous). The e keeps the c soft (/s/) and the g soft (/j/).</p><p><em>Examples:</em> notice &rarr; noticeable, manage &rarr; manageable, courage &rarr; courageous, outrage &rarr; outrageous, service &rarr; serviceable.</p></div>
+      <div class="dol-answer" id="spellReveal"><p>Look at these two groups of words:</p><p><strong>Drop the silent e</strong> before most vowel suffixes (-ing, -ed, -er, -able): <em>save &rarr; saving, hope &rarr; hoping, drive &rarr; driving</em>.</p><p><strong>BUT &mdash; keep the e</strong> after <strong>c</strong> or <strong>g</strong> when adding a suffix that starts with <strong>a</strong> or <strong>o</strong> (-able, -ous). The e keeps the c soft (/s/) and the g soft (/j/).</p><p><em>Examples:</em> notice &rarr; noticeable, manage &rarr; manageable, courage &rarr; courageous, outrage &rarr; outrageous, service &rarr; serviceable.</p></div>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
@@ -3318,7 +3318,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know when the e has to stay after ce or ge.';
     sc.classList.add('show');
   }
 }

@@ -2872,7 +2872,7 @@ body {
         </div>
         <div class="sort-columns">
           <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#55C8E8,#7FD8F0);">Possessive / Other</div><div class="sort-col-drop" data-col="possessive" onclick="dropSortChip(this,'possessive')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6FC0,#a88ad4);">Contraction / Other</div><div class="sort-col-drop" data-col="contraction" onclick="dropSortChip(this,'contraction')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6FC0,#a88ad4);">Contraction / Other</div><div class="sort-col-drop" data-col="contraction" onclick="dropSortChip(this,'contraction')"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6FC0,#a88ad4);">Comparison / Sequence</div><div class="sort-col-drop" data-col="comparison" onclick="dropSortChip(this,'comparison')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3269,7 +3269,7 @@ function fireConfetti() {
 /* ───── WORD SORT GAME ───── */
 var sortSelected = null;
 var sortPlaced = 0;
-var sortTotal = 4;
+var sortTotal = 6;
 
 function pickSortChip(chip) {
   if (chip.classList.contains('placed')) return;

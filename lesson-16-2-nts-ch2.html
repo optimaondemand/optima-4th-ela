@@ -2712,42 +2712,21 @@ And pile them high at Ypres and Verdun.</div>
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F442;</span><p>Before you start: find the lazy beat and notice its vowel is not what it looks like.</p></div>
-            <p>Both syllable types are everywhere. Look at these two groups of words:</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">Group A &mdash; vowel teams in everyday words</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">r<strong style="color:#C7627E;">ea</strong>d &middot; s<strong style="color:#C7627E;">ee</strong> &middot; t<strong style="color:#C7627E;">oa</strong>st &middot; r<strong style="color:#C7627E;">ai</strong>n</p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">Group B &mdash; vowel teams in academic words</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">occup<strong style="color:#C7922C;">ai</strong>n &mdash; wait, that&rsquo;s not a word. Look: occup<strong style="color:#C7922C;">a</strong>tion &middot; r<strong style="color:#C7922C;">ea</strong>son &middot; bel<strong style="color:#C7922C;">ie</strong>f</p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">🔍 What do you notice?</div>
-        <p class="socratic-q">Group A: say each word and listen. Which two letters make ONE vowel sound?</p>
-        <p class="socratic-q">Group B: longer academic words use the SAME vowel-team patterns. <em>Reason</em> has the same <strong>ea</strong> as <em>read</em>. Say it.</p>
-        <p class="socratic-q">Why is knowing vowel teams useful for reading big new words? (Hint: if you know <em>ea</em> = /ee/, you can sound out new words like <em>treaty</em>, <em>reason</em>, <em>defeat</em>.)</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>A <strong>vowel team</strong> is two letters working together to make ONE vowel sound: <em>ea, ee, ai, ay, oa, ie, ue, ow</em>, and more.</p><p>Common patterns:<br><em>ea</em> &rarr; /ee/ (read, beach, reason)<br><em>ai</em> &rarr; long /a/ (rain, train, again)<br><em>oa</em> &rarr; long /o/ (toast, boat, coast)<br><em>ie</em> &rarr; long /ee/ or long /i/ (belief; pie)</p><p>When you see a big new word, look for vowel teams. They&rsquo;ll help you sound it out.</p></div>
+            <p>Recap: the <strong>schwa</strong> is the lazy &ldquo;uh&rdquo; in an unstressed syllable, and long academic words are full of them.</p>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">problem</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">relocate</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">pencil</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">interrupt</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">circus</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">conduct</span>
+          <span class="sort-chip" data-group="every" onclick="pickSortChip(this)">problem</span>
+          <span class="sort-chip" data-group="acad" onclick="pickSortChip(this)">relocate</span>
+          <span class="sort-chip" data-group="every" onclick="pickSortChip(this)">pencil</span>
+          <span class="sort-chip" data-group="acad" onclick="pickSortChip(this)">interrupt</span>
+          <span class="sort-chip" data-group="every" onclick="pickSortChip(this)">circus</span>
+          <span class="sort-chip" data-group="acad" onclick="pickSortChip(this)">conduct</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">ea / ee (long e)</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">ai / ay / oa (long a or o)</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Everyday word (schwa)</div><div class="sort-col-drop" data-col="every" onclick="dropSortChip(this,'every')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Academic / historical word (schwa)</div><div class="sort-col-drop" data-col="acad" onclick="dropSortChip(this,'acad')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3351,7 +3330,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You can hear the schwa in everyday and academic words alike.';
     sc.classList.add('show');
   }
 }

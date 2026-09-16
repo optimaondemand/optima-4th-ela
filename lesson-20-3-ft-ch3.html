@@ -2679,42 +2679,21 @@ body {
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F5C2;&#xFE0F;</span><p>Before you start: clap the beats, then decide where the splits go.</p></div>
-            <p>Both syllable types are everywhere. Look at these two groups of words:</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">Group A &mdash; the THEIR / THERE / THEY&rsquo;RE family</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;"><strong style="color:#C7627E;">their</strong> dog &middot; <strong style="color:#C7627E;">there</strong> on the path &middot; <strong style="color:#C7627E;">they&rsquo;re</strong> running</p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">Group B &mdash; the TO / TOO / TWO family</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;"><strong style="color:#C7922C;">to</strong> the boat &middot; <strong style="color:#C7922C;">too</strong> dangerous &middot; <strong style="color:#C7922C;">two</strong> soldiers</p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">🔍 What do you notice?</div>
-        <p class="socratic-q">Say <em>their</em>, <em>there</em>, <em>they&rsquo;re</em>. They sound the same. But what does each MEAN?</p>
-        <p class="socratic-q">Say <em>to</em>, <em>too</em>, <em>two</em>. Same sound. Three different meanings.</p>
-        <p class="socratic-q">Why does it matter to spell these correctly? (Hint: a reader has to figure out which one you mean. Picking the right spelling does that for them.)</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p><strong>Homophones</strong> sound the same but have different meanings AND different spellings.</p><p><em>their</em> = belonging to them &nbsp;|&nbsp; <em>there</em> = a place &nbsp;|&nbsp; <em>they&rsquo;re</em> = they are (contraction with apostrophe)</p><p><em>to</em> = toward &nbsp;|&nbsp; <em>too</em> = also, or very &nbsp;|&nbsp; <em>two</em> = the number 2</p><p>Trick: read your sentence aloud and ask &lsquo;Does the meaning fit?&rsquo; If it&rsquo;s <em>they are</em>, write <em>they&rsquo;re</em>. If it&rsquo;s the number, write <em>two</em>.</p></div>
+            <p>Recap: long names and historical terms break into syllables by the same rules as any other word &mdash; find the vowels first.</p>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">their</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">to</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">there</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">too</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">they're</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">two</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">Delaware</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">abolition</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">Tubman</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">fugitive</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">Philadelphia</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">conductor</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">THEIR / THERE / THEY&rsquo;RE</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">TO / TOO / TWO</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Names (places, people)</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Historical terms</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3300,7 +3279,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You can break a long name or term into syllables.';
     sc.classList.add('show');
   }
 }

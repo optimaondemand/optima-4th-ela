@@ -2742,7 +2742,7 @@ body {
       </div>
 
       <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>Both syllable types are everywhere. Look at these two groups of words:</p><p>Most nouns just add <strong>-s</strong> for plural (cats, roads, books).</p><p>Nouns ending in <strong>-s, -x, -sh, -ch, -z</strong> add <strong>-es</strong> (boxes, brushes, churches) — because <em>-s</em> alone would be hard to say.</p><p>Nouns ending in a <strong>consonant + y</strong> change the <em>y</em> to <em>i</em> and add <strong>-es</strong> (puppy → puppies, story → stories).</p></div>
+      <div class="dol-answer" id="spellReveal"><p>Look at these two groups of words:</p><p>Most nouns just add <strong>-s</strong> for plural (cats, roads, books).</p><p>Nouns ending in <strong>-s, -x, -sh, -ch, -z</strong> add <strong>-es</strong> (boxes, brushes, churches) — because <em>-s</em> alone would be hard to say.</p><p>Nouns ending in a <strong>consonant + y</strong> change the <em>y</em> to <em>i</em> and add <strong>-es</strong> (puppy → puppies, story → stories).</p></div>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
@@ -2750,7 +2750,7 @@ body {
           <span class="sort-chip" data-group="regs" onclick="pickSortChip(this)">cats</span>
           <span class="sort-chip" data-group="ess" onclick="pickSortChip(this)">boxes</span>
           <span class="sort-chip" data-group="regs" onclick="pickSortChip(this)">roads</span>
-          <span class="sort-chip" data-group="ies" onclick="pickSortChip(this)">stories</span>
+          <span class="sort-chip" data-group="ess" onclick="pickSortChip(this)">stories</span>
           <span class="sort-chip" data-group="regs" onclick="pickSortChip(this)">trees</span>
           <span class="sort-chip" data-group="ess" onclick="pickSortChip(this)">brushes</span>
         </div>
@@ -3319,7 +3319,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know which plural ending each word takes.';
     sc.classList.add('show');
   }
 }

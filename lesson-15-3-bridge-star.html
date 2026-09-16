@@ -2691,42 +2691,21 @@ body {
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F442;</span><p>Before you start: count the sounds you hear, then the letters you see.</p></div>
-            <p>Both syllable types are everywhere. Look at these two groups of words:</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">Group A — just add -s</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">cat → cat<strong style="color:#C7627E;">s</strong> · road → road<strong style="color:#C7627E;">s</strong> · book → book<strong style="color:#C7627E;">s</strong> · tree → tree<strong style="color:#C7627E;">s</strong></p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">Group B — add -es OR change y to i + es</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">box → box<strong style="color:#C7922C;">es</strong> · brush → brush<strong style="color:#C7922C;">es</strong> · puppy → pupp<strong style="color:#C7922C;">ies</strong> · story → stor<strong style="color:#C7922C;">ies</strong></p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">🔍 What do you notice?</div>
-        <p class="socratic-q">Group A words: how do you make them plural? What changes?</p>
-        <p class="socratic-q">Group B: <em>box</em> and <em>brush</em> get -es. Why not just -s? (Try saying "boxs" — it doesn't work.)</p>
-        <p class="socratic-q">Group B: <em>puppy</em> becomes <em>puppies</em>. What changes about the ending? Look at the last letter of the singular.</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>Most nouns just add <strong>-s</strong> for plural (cats, roads, books).</p><p>Nouns ending in <strong>-s, -x, -sh, -ch, -z</strong> add <strong>-es</strong> (boxes, brushes, churches) — because <em>-s</em> alone would be hard to say.</p><p>Nouns ending in a <strong>consonant + y</strong> change the <em>y</em> to <em>i</em> and add <strong>-es</strong> (puppy → puppies, story → stories).</p></div>
+            <p>Recap: a <strong>vowel team</strong> is two letters making one vowel sound &mdash; <em>ea</em>, <em>ee</em>, <em>ie</em> and <em>ei</em> for long e; <em>ai</em>, <em>ay</em> and <em>oa</em> for long a or o.</p>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="regs" onclick="pickSortChip(this)">cats</span>
-          <span class="sort-chip" data-group="ess" onclick="pickSortChip(this)">boxes</span>
-          <span class="sort-chip" data-group="regs" onclick="pickSortChip(this)">roads</span>
-          <span class="sort-chip" data-group="ies" onclick="pickSortChip(this)">stories</span>
-          <span class="sort-chip" data-group="regs" onclick="pickSortChip(this)">trees</span>
-          <span class="sort-chip" data-group="ess" onclick="pickSortChip(this)">brushes</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">season</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">campaign</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">succeed</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">afraid</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">relieve</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">portrayed</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Just add -s</div><div class="sort-col-drop" data-col="regs" onclick="dropSortChip(this,'regs')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">-es or y→ies</div><div class="sort-col-drop" data-col="ess" onclick="dropSortChip(this,'ess')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Long e (ea, ee, ie, ei)</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Long a or o (ai, ay, oa)</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3316,7 +3295,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know which vowel team makes which long sound.';
     sc.classList.add('show');
   }
 }

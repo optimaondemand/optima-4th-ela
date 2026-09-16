@@ -2700,42 +2700,21 @@ And places with no carpet on the floor&mdash;</div>
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: find what was added and what it changed.</p></div>
-            <p>Both syllable types are everywhere. Look at these two groups of words:</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">Group A &mdash; Maryland names</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;"><strong style="color:#C7627E;">Mar-y-land</strong> &middot; <strong style="color:#C7627E;">Bro-das</strong> &middot; <strong style="color:#C7627E;">Bal-ti-more</strong></p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">Group B &mdash; historical terms</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;"><strong style="color:#C7922C;">plan-ta-tion</strong> &middot; <strong style="color:#C7922C;">slav-er-y</strong> &middot; <strong style="color:#C7922C;">free-dom</strong></p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">🔍 What do you notice?</div>
-        <p class="socratic-q">Say <em>Maryland</em> slowly. How many beats? Where do you naturally split it?</p>
-        <p class="socratic-q">Say <em>plantation</em>. Three beats: plan-ta-tion. Listen for the stressed syllable.</p>
-        <p class="socratic-q">Why does it help to break a long word into syllables? (Hint: you can spell pieces you can&rsquo;t spell whole.)</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>When you meet a long historical name or word, <strong>break it into syllables</strong>. Each syllable is one beat of sound, usually around one vowel sound.</p><p>Mar-y-land. Phil-a-del-phi-a. Plan-ta-tion. Un-der-ground.</p><p>Once you can SAY each syllable, you can spell each syllable. Then you put them together.</p><p>Trick: clap once for each syllable. <em>Mar-y-land</em> = clap, clap, clap.</p></div>
+            <p>Recap: <strong>-ion</strong> turns a verb into a noun &mdash; <em>protect &rarr; protection</em>, <em>decide &rarr; decision</em>.</p>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">creation</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">declaration</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">education</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">liberation</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">invitation</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">question</span>
           <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">plantation</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">direction</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">abolition</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">attention</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">rebellion</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Names (places, people)</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Historical terms</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Everyday -ion words</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Historical -ion words</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3322,7 +3301,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You know your -ion words.';
     sc.classList.add('show');
   }
 }

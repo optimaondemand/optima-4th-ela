@@ -3324,7 +3324,7 @@ function fireConfetti(){
 })();
 
 /* SPELLING SORT */
-var sortSelected=null,sortPlaced=0,sortTotal=8;
+var sortSelected=null,sortPlaced=0,sortTotal = 10;
 function pickSortChip(chip){if(chip.classList.contains('placed'))return;if(sortSelected)sortSelected.style.outline='';sortSelected=chip;chip.style.outline='3px solid #55C8E8';chip.style.outlineOffset='2px';}
 function dropSortChip(colDrop,colName){
   if(!sortSelected)return;

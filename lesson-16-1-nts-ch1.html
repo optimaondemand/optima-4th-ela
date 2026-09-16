@@ -2749,21 +2749,21 @@ body {
       </div>
 
       <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>Both syllable types are everywhere. Look at these two groups of words:</p><p>The <strong>schwa</strong> is the soft &lsquo;uh&rsquo; sound you hear in unstressed syllables: bAnAna, sofA, abOve, problEm.</p><p>In longer words, the schwa hides in the syllable that you&rsquo;re NOT stressing: <em>oc-cu-PA-tion</em> &mdash; the <em>a</em>&rsquo;s in <em>oc-</em> and <em>-cu-</em> sound like &lsquo;uh.&rsquo; But you still spell them with a real vowel.</p><p>Trick: think of a related word where the syllable IS stressed. <em>relate</em> (stress on -LATE) helps you spell <em>relocate</em>.</p></div>
+      <div class="dol-answer" id="spellReveal"><p>Look at these two groups of words:</p><p>The <strong>schwa</strong> is the soft &lsquo;uh&rsquo; sound you hear in unstressed syllables: bAnAna, sofA, abOve, problEm.</p><p>In longer words, the schwa hides in the syllable that you&rsquo;re NOT stressing: <em>oc-cu-PA-tion</em> &mdash; the <em>a</em>&rsquo;s in <em>oc-</em> and <em>-cu-</em> sound like &lsquo;uh.&rsquo; But you still spell them with a real vowel.</p><p>Trick: think of a related word where the syllable IS stressed. <em>relate</em> (stress on -LATE) helps you spell <em>relocate</em>.</p></div>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">banana</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">occupation</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">sofa</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">resistance</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">above</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">soldier</span>
+          <span class="sort-chip" data-group="every" onclick="pickSortChip(this)">banana</span>
+          <span class="sort-chip" data-group="acad" onclick="pickSortChip(this)">occupation</span>
+          <span class="sort-chip" data-group="every" onclick="pickSortChip(this)">sofa</span>
+          <span class="sort-chip" data-group="acad" onclick="pickSortChip(this)">resistance</span>
+          <span class="sort-chip" data-group="every" onclick="pickSortChip(this)">above</span>
+          <span class="sort-chip" data-group="acad" onclick="pickSortChip(this)">soldier</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Everyday word (schwa)</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Academic word (schwa)</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Everyday word (schwa)</div><div class="sort-col-drop" data-col="every" onclick="dropSortChip(this,'every')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Academic / historical word (schwa)</div><div class="sort-col-drop" data-col="acad" onclick="dropSortChip(this,'acad')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3341,7 +3341,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You can hear the schwa in everyday and academic words alike.';
     sc.classList.add('show');
   }
 }

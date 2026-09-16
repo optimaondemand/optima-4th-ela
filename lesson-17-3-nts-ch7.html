@@ -2698,42 +2698,21 @@ body {
     <div class="activity-body">
 <!-- spell-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F9E9;</span><p>Before you start: separate the front chunk from the base word.</p></div>
-            <p>Both syllable types are everywhere. Look at these two groups of words:</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">Group A &mdash; everyday words with schwa</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">abov<strong style="color:#C7627E;">e</strong> &middot; tabl<strong style="color:#C7627E;">e</strong> &middot; sof<strong style="color:#C7627E;">a</strong> &middot; ban<strong style="color:#C7627E;">a</strong>na</p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">Group B &mdash; historical/academic words with schwa</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">occup<strong style="color:#C7922C;">a</strong>tion &middot; resist<strong style="color:#C7922C;">a</strong>nce &middot; soldi<strong style="color:#C7922C;">e</strong>r &middot; r<strong style="color:#C7922C;">e</strong>locate</p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">🔍 What do you notice?</div>
-        <p class="socratic-q">Say <em>banana</em>. The middle <em>a</em> sounds like &lsquo;uh.&rsquo; That&rsquo;s the schwa.</p>
-        <p class="socratic-q">Now say <em>occupation</em>. Listen for the &lsquo;uh&rsquo; in <em>oc-cu-PA-tion</em>. Where is it?</p>
-        <p class="socratic-q">Schwa shows up in unstressed syllables of bigger words. Knowing this helps you SPELL the syllable even when you can&rsquo;t hear it clearly.</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>The <strong>schwa</strong> is the soft &lsquo;uh&rsquo; sound you hear in unstressed syllables: bAnAna, sofA, abOve, problEm.</p><p>In longer words, the schwa hides in the syllable that you&rsquo;re NOT stressing: <em>oc-cu-PA-tion</em> &mdash; the <em>a</em>&rsquo;s in <em>oc-</em> and <em>-cu-</em> sound like &lsquo;uh.&rsquo; But you still spell them with a real vowel.</p><p>Trick: think of a related word where the syllable IS stressed. <em>relate</em> (stress on -LATE) helps you spell <em>relocate</em>.</p></div>
+            <p>Recap: a <strong>prefix</strong> goes on the front and changes the meaning; a <strong>suffix</strong> goes on the back and often changes the kind of word.</p>
 
       <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
       <div class="sort-game" id="spellSort">
         <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">banana</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">occupation</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">sofa</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">resistance</span>
-          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">above</span>
-          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">soldier</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">mistrust</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">helpful</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">unlock</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">quickly</span>
+          <span class="sort-chip" data-group="ea" onclick="pickSortChip(this)">preview</span>
+          <span class="sort-chip" data-group="ai" onclick="pickSortChip(this)">kindness</span>
         </div>
         <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Everyday word (schwa)</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Academic word (schwa)</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Has a prefix</div><div class="sort-col-drop" data-col="ea" onclick="dropSortChip(this,'ea')"></div></div>
+          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Has a suffix</div><div class="sort-col-drop" data-col="ai" onclick="dropSortChip(this,'ai')"></div></div>
         </div>
         <div class="sort-score" id="sortScore"></div>
       </div>
@@ -3338,7 +3317,7 @@ function dropSortChip(colDrop, colName) {
 
   if (sortPlaced >= sortTotal) {
     var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know the "au" vs. "aw" pattern.';
+    sc.textContent = '🎉 All sorted correctly! You can tell a prefix from a suffix on sight.';
     sc.classList.add('show');
   }
 }
