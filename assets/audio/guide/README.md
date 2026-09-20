@@ -1,48 +1,64 @@
 # assets/audio/guide
 
 The **guiding voice** — the teacher's framing that the introduction
-videos were going to carry. This is a different job from the clips in
-`welcome/`, `watch/` and `poem/`, which read what is printed on the
-page. **A guide clip never reads the page.** It says why the work is
-there, what it has to do with today's chapter, and how the parts join.
+videos were going to carry. **A guide clip never reads the page.** It
+says why the work is there, what it has to do with today's chapter, and
+how the parts join.
 
-## turn/ — the three hand-offs between tabs
+One guiding voice at the head of every tab, which is what the videos
+were for:
 
-```
-turn/g4ela-<week>-<day>-1.mp3    warm-up    → word study
-turn/g4ela-<week>-<day>-2.mp3    word study → reading
-turn/g4ela-<week>-<day>-3.mp3    reading    → assignment
-```
+| Tab | Folder | File | Keyed by | Clips |
+|---|---|---|---|---|
+| Warm-Up | `welcome/` | `g4ela-<week>-<day>.mp3` | lesson | 128 |
+| Word Study | `turn/` | `g4ela-<week>-<day>-1.mp3` | lesson | 128 |
+| Reading | `turn/` | `g4ela-<week>-<day>-2.mp3` | lesson | 128 |
+| Assignment | `turn/` | `g4ela-<week>-<day>-3.mp3` | lesson | 128 |
+| *(Growing-Up Watch block)* | `watch/` | `g4ela-wk<week>.mp3` | week | 32 |
 
-So lesson 7.1 is `g4ela-7-1-1.mp3`, `g4ela-7-1-2.mp3`, `g4ela-7-1-3.mp3`.
-Three per lesson, 387 for the year, every one unique to that day's
-chapter.
+So lesson 7.1 is `welcome/g4ela-7-1.mp3` and `turn/g4ela-7-1-1.mp3`,
+`-2`, `-3`.
 
-The clip appears at the foot of its tab, just above the button that
-moves on — the moment it is talking about. Position 1 plays before the
-student has read anything, so its script only looks forward; position 3
-plays after the chapter and can look back.
+**The number in `turn/` is the tab the clip OPENS**, not the one it
+leaves: 1 opens Word Study, 2 opens Reading, 3 opens Assignment. Each
+clip plays at the top of the tab it is talking about. (They used to sit
+at the foot of the *previous* tab, pointing forward, which meant hearing
+"before you open the book" while looking at the word study — being told
+about a page you are not on.)
+
+Because a clip introduces what is in front of the student, the first
+one can only look forward; `-3`, at the top of Assignment, is the only
+one that can look back at the chapter.
 
 Drop a file in and the control appears. Take it away and it disappears.
-Nothing else to configure, and the Assignment tab has no hand-off
-because it is the last one.
+
+## Not here
+
+`../poem/` is the one remaining read-aloud: a recording of the poem
+itself, because there, reading the actual words is the point. Keyed by
+poem, not by lesson.
+
+The empty `../welcome/` and `../watch/` folders are the old read-aloud
+locations and are no longer used — safe to delete.
 
 ## Format
 
-Same as the read-aloud track: MP3, mono, 22.05 kHz, 48–64 kbps, about
-−16 LUFS. 15–25 seconds each, which is 40–75 words.
+MP3, mono, 22.05 kHz, 48–64 kbps, about −16 LUFS. 15–25 seconds, which
+is 40–75 words.
 
-## Scripts
+**Level them before filing.** ElevenLabs does not hold a consistent
+output level between generations — the first three clips came out at
+−16.3, −23.0 and −24.6 LUFS, an 8 dB spread that a student hears as
+one tab being much quieter than the last.
 
-Written per week and kept in the project:
+## Scripts and tools
 
 - `claude/g4-guide-voice-spec.md` — the design, the rules for writing
   one, and the ElevenLabs settings
-- `claude/g4-guide-scripts-wk07.md` — week 7, all twelve
-
-`tools/rename_guide_clips.py` files a folder of ElevenLabs downloads
-under these names. Run it with `--manifest tools/guide-manifest-wk07.csv`
-and no `--apply` first; it prints what it would do and changes nothing.
+- `claude/g4-guide-scripts-wk07.md` — week 7
+- `tools/rename_guide_clips.py` — files a folder of downloads under
+  these names. Run it without `--apply` first; it prints what it would
+  do and changes nothing.
 
 ## The rule that keeps this honest
 
