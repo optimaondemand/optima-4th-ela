@@ -2232,6 +2232,24 @@ body {
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
 <script>
+function _oaoSpotAll(word,sid){var s=document.getElementById(sid);
+if(!s||s.getAttribute('data-done')==='true')return;
+var res=document.getElementById(sid+'-result');
+if(word.classList.contains('correct-reveal'))return;
+if(word.getAttribute('data-correct')==='true'){word.classList.add('correct-reveal');
+var need=s.querySelectorAll('.spotter-word[data-correct="true"]').length;
+var got=s.querySelectorAll('.spotter-word.correct-reveal').length;
+if(got>=need){res.textContent='\u2705 That is all of them.';res.className='spotter-result show win';s.setAttribute('data-done','true');}
+else{res.textContent='\u2705 One down \u2014 keep looking.';res.className='spotter-result show win';}}
+else{word.classList.add('wrong-reveal');res.textContent='\uD83E\uDD14 Not that one \u2014 look again.';
+res.className='spotter-result show miss';setTimeout(function(){word.classList.remove('wrong-reveal');},600);}}
+</script>
+<script>
+function _oaoFbNear(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+</script>
+<script>
 (function () {
     "use strict";
     var playBtn  = document.getElementById("ora-play");
@@ -2882,124 +2900,18 @@ body {
 
   <!-- GRAMMAR: DEFINE (D1 = 3 example sentences, no spotter game) -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">3</div><div><div class="activity-title">✏️ Grammar: Complex Sentences — Define</div><div class="activity-sub">Day 1: Notice &mdash; work out the pattern before you are told it.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">3</div><div><div class="activity-title">✏️ Grammar: Complex Sentences</div><div class="activity-sub">Day 1: Notice &mdash; two versions of the same idea. Which one is stronger, and what did the structure do?</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Author's Editor</span></div></div></div>
     <div class="activity-body">
-<!-- grammar-notice-first -->
-<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;">
-<div class="key-concept-label" style="color:#3D5285;">&#x1F50E; What do you notice?</div>
-<p>Each sentence below is really more than one thought, joined together.</p>
-</div>
-<div class="key-concept">
-        <div class="key-concept-label">📌 The Two Parts</div>
-        <p><strong>Independent clause</strong></p>
-        <p><strong>Dependent clause</strong></p>
-      </div>
-      <p style="margin-top:14px;">Read these three example sentences from Chapter 7&rsquo;s world. In each one, the dependent clause is <em>italicized</em>. Notice what it adds to the meaning.</p>
-
-      <div class="task-box" style="background:#F0F4FF;border-color:#D0D8F0;margin-bottom:12px;">
-        <p style="font-size:15px;font-family:'Lora',Georgia,serif;color:#0E1C42;"><em>Although every group wanted something different,</em> Caspian had to make a decision for all of them.</p>
-        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">The dependent clause gives the contrast. It sets up the challenge Caspian faces before we learn what happens.</p>
-      </div>
-
-      <div class="task-box" style="background:#F0F4FF;border-color:#D0D8F0;margin-bottom:12px;">
-        <p style="font-size:15px;font-family:'Lora',Georgia,serif;color:#0E1C42;">Caspian decided to blow the Horn <em>because no other plan was certain to work.</em></p>
-        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">The dependent clause gives the reason. Without &ldquo;because no other plan was certain,&rdquo; we don&rsquo;t understand why Caspian made this choice.</p>
-      </div>
-
-      <div class="task-box" style="background:#F0F4FF;border-color:#D0D8F0;margin-bottom:16px;">
-        <p style="font-size:15px;font-family:'Lora',Georgia,serif;color:#0E1C42;">Trumpkin volunteered to go to Cair Paravel <em>even though he doubted the Horn would work.</em></p>
-        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">This dependent clause shows the contrast between what Trumpkin believes and what he does. It makes his loyalty stand out even more.</p>
-      </div>
-
-      <div class="callout callout-think">
-        <span class="callout-icon">💭</span>
-        <p><strong>Notice the pattern:</strong> In each sentence, the dependent clause adds information &mdash; a reason, a contrast, or a condition. The independent clause is the main action or idea. Together they make the sentence richer and more precise than either part alone.</p>
-      </div>
-<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4AD;</span><p><strong>Think it through.</strong></p>
-<ol style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;">
-<li>Where is the joint &mdash; which word or mark holds the halves together?</li>
-<li>Read each half on its own. Which ones could stand as sentences?</li>
-<li>What would be lost if you wrote them as two short sentences instead?</li>
-</ol></div>
-<button class="dol-check-btn" onclick="document.getElementById('gramNotice').classList.toggle('show')">&#x1F50D; Now check your thinking</button>
-<div class="dol-answer" id="gramNotice">
-<p>A <strong>complex sentence</strong> has two parts working together:</p>
-<p>Tomorrow you&rsquo;ll practice identifying dependent clauses in sentences on your own. For today, just study these examples and notice how the pattern works.</p>
-<p><strong>Independent clause</strong> &mdash; a complete thought that can stand alone as a sentence.</p>
-<p><strong>Dependent clause</strong> &mdash; a group of words that can&rsquo;t stand alone. It depends on the independent clause to make sense. Dependent clauses start with signal words like <em>because, although, when, even though, if, since</em>.</p>
-</div>
-
-
-      <div class="textbox-prompt">Explain it in your own words.</div>
-      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Complex Sentences — Define" placeholder="I think&hellip;" oninput="autoSave(this);gatherAnswers();"></textarea>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Same facts, different sentence</div><p>Both versions say exactly the same thing. They do not land the same way.</p></div><div class="key-concept" style="background:#FFF8F0;border-color:#F5E6C8;margin:14px 0;"><div class="key-concept-label" style="color:#8B6914;">🔎 Read both before you choose</div><p><strong>Before:</strong> <em>Caspian heard the horn. He knew help was coming.</em></p><p><strong>After:</strong> <em>When Caspian heard the horn, he knew help was coming.</em></p><p style="font-size:14px;color:#5A6785;">Nothing was added and nothing was cut. Only the joint changed.</p></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Tap the version you think is stronger &mdash; then be ready to say what the structure did to the meaning.</p></div><p style="font-size:14px;color:#3A4A6B;margin:10px 0 4px;">Tap the stronger version:</p><div class="spotter-game" id="g4w28pickGame"><div class="spotter-sentence" id="g4w28pick" style="line-height:2.6;"><span class="spotter-word" onclick="_oaoSpotAll(this,'g4w28pick')" data-correct="false">Caspian heard the horn. He knew help was coming.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w28pick')" data-correct="true">When Caspian heard the horn, he knew help was coming.</span><div class="spotter-result" id="g4w28pick-result"></div></div></div><button class="dol-check-btn" onclick="document.getElementById('g4w28Notice').classList.toggle('show')">&#x1F50D; Now check your thinking</button><div class="dol-answer" id="g4w28Notice"><p>The second is stronger here, and the reason is not that it is longer.</p><p><em>When</em> turns the first idea into a <strong>dependent clause</strong> &mdash; it can no longer stand alone, so it leans on the second half. That tells the reader which idea is the main one: <em>he knew help was coming</em>. The first version gives both ideas equal weight and leaves the reader to work out the link.</p><p>Two short sentences are not a mistake. But a complex sentence lets you <strong>choose</strong> which idea the reader leans on, and that choice is the author&rsquo;s.</p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Say what the word <em>when</em> did to the meaning. Which idea does the reader end up leaning on, and how do you know?</div><div class="textbox-prompt">Explain the effect, not just the label.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="Using when made... The idea the reader leans on is... I know because..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
 </div>
   </div>
 
   <!-- SPELLING: DEFINE / DISCOVER (D1 = discovery approach) -->
   <div class="activity bl-rose">
-    <div class="activity-head"><div class="activity-num" style="background:#c7627e;">4</div><div><div class="activity-title">🔠 Spelling: Schwa Sound &mdash; Discover</div><div class="activity-sub">Find the pattern before you learn the rule.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#c7627e;">4</div><div><div class="activity-title">🔠 Spelling: Schwa & Stress in Literary Vocabulary</div><div class="activity-sub">Day 1: Audit &mdash; a real draft, no hints. Find what is wrong and say why.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Spelling Level: Word Editor</span></div></div></div>
     <div class="activity-body">
-<!-- spell-notice-first -->
-<div class="key-concept NOTICEBOX" style="background:#EEF3FA;border-color:#C8D6EA;margin:0 0 14px;">
-<div class="key-concept-label" style="color:#0E1C42;">&#x1F442; Say them out loud</div>
-<p>Say these aloud and listen for the beat nobody stresses.</p>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Editor&rsquo;s desk</div><p>A passage from Chapter 7. One vowel in each long word has gone soft and lazy.</p></div><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4AD;</span><p><strong>Think it through.</strong></p><ol style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;"><li>Which syllable in each word is said with the most force?</li><li>Which vowel sounds like a vague <em>uh</em>?</li><li>Can your ear tell you how to spell that vowel?</li></ol></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Read it the way an editor reads: slowly, word by word. Tap what needs attention.</p></div><p style="font-size:14px;color:#3A4A6B;margin:10px 0 4px;">Tap every word containing an unstressed <strong>schwa</strong> vowel:</p><div class="spotter-game" id="s4w28aGame"><div class="spotter-sentence" id="s4w28a" style="line-height:2.6;"><span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">The</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="true">council</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">met</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">in</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="true">secret</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">to</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="true">consider</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">the</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="true">problem</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">of</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">the</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="true">usurper,</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">and</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">every</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">voice</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">spoke</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">of</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="true">loyalty</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">to</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">the</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">true</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w28a')" data-correct="false">king.</span><div class="spotter-result" id="s4w28a-result"></div></div></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Write the rule: why is a schwa vowel dangerous for a speller, and what can you do instead of listening?</div><div class="textbox-prompt">State the rule in your own words, as if writing it for another student.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="The rule is... A writer can check it by..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;">
-        <div class="task-box" style="background:#F0F4FF;border-color:#D0D8F0;">
-          <div style="font-weight:800;color:#2D5016;margin-bottom:8px;">Group A</div>
-          <p style="font-size:15px;line-height:2;font-family:'Lora',Georgia,serif;"><strong>a</strong>bout &nbsp; <strong>a</strong>fraid &nbsp; <strong>a</strong>way &nbsp; <strong>a</strong>lone</p>
-        </div>
-        <div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
-          <div style="font-weight:800;color:#C7922C;margin-bottom:8px;">Group B</div>
-          <p style="font-size:15px;line-height:2;font-family:'Lora',Georgia,serif;">op<strong>e</strong>n &nbsp; probl<strong>e</strong>m &nbsp; pers<strong>o</strong>n &nbsp; lem<strong>o</strong>n</p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">🧠 Discovery Questions</div>
-        <p class="socratic-q">Say each word out loud. Does the bolded vowel make its regular sound, or does it make a softer &ldquo;uh&rdquo; sound instead? Do you notice this same &ldquo;uh&rdquo; in both groups, even though different vowels are bolded?</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin-top:14px;" onclick="document.getElementById('schwaDef').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="schwaDef">
-        <p style="margin-bottom:8px;"><strong>The Schwa Sound (&#601;):</strong> In English, some vowels in unstressed syllables make a lazy &ldquo;uh&rdquo; sound. This sound is called the <strong>schwa</strong>. Any vowel &mdash; a, e, i, o, u &mdash; can make the schwa sound.</p>
-        <p style="font-size:13px;color:#7A88A8;font-style:italic;">In Group A: the <em>a</em> in a-bout, a-fraid, a-way, a-lone all say &ldquo;uh&rdquo; not the short-a or long-a sound.<br>In Group B: the <em>e</em> in o-pen and prob-lem says &ldquo;uh,&rdquo; and the <em>o</em> in per-son and lem-on says &ldquo;uh&rdquo; too.</p>
-      </div>
-
-      <p style="margin-top:16px;">Now sort these words by which vowel makes the schwa sound. Tap a word, then tap its column.</p>
-      
-<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F9D0;</span><p><strong>Work through these before you read on:</strong></p>
-<ul style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;">
-<li>Which beat is said quickly and quietly?</li>
-<li>What vowel sound do you actually hear there &mdash; or almost none?</li>
-<li>Does the spelling match what you hear?</li>
-</ul></div>
-<button class="dol-check-btn" onclick="document.getElementById('spellNotice').classList.toggle('show')">&#x1F442; Now name the pattern</button>
-<div class="dol-answer" id="spellNotice">
-<p>Before I tell you the rule, I want you to <strong>discover it yourself</strong>. Look at these two groups of words. The bolded vowel in each word makes a special sound. Say each word out loud slowly.</p>
-</div>
-
-<div class="sort-game" id="spellSort">
-        <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="a" onclick="pickSortChip(this)">about</span>
-          <span class="sort-chip" data-group="a" onclick="pickSortChip(this)">afraid</span>
-          <span class="sort-chip" data-group="e" onclick="pickSortChip(this)">problem</span>
-          <span class="sort-chip" data-group="e" onclick="pickSortChip(this)">open</span>
-          <span class="sort-chip" data-group="i" onclick="pickSortChip(this)">animal</span>
-          <span class="sort-chip" data-group="i" onclick="pickSortChip(this)">family</span>
-          <span class="sort-chip" data-group="o" onclick="pickSortChip(this)">person</span>
-          <span class="sort-chip" data-group="o" onclick="pickSortChip(this)">lemon</span>
-        </div>
-        <div class="sort-columns" style="grid-template-columns:1fr 1fr 1fr 1fr;">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#2D5016,#4A7C2E);">Schwa-a</div><div class="sort-col-drop" data-col="a" onclick="dropSortChip(this,'a')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#C7922C,#D4A843);">Schwa-e</div><div class="sort-col-drop" data-col="e" onclick="dropSortChip(this,'e')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6FC0,#a88ad4);">Schwa-i</div><div class="sort-col-drop" data-col="i" onclick="dropSortChip(this,'i')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#55C8E8,#7FD8F0);">Schwa-o</div><div class="sort-col-drop" data-col="o" onclick="dropSortChip(this,'o')"></div></div>
-        </div>
-        <div class="sort-score" id="sortScore"></div>
-      </div>
-      <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">a-bout (a), a-fraid (a), prob-lem (e), o-pen (e), an-i-mal (i), fam-i-ly (i), per-son (o), lem-on (o)</p>
-    </div>
   </div>
 
   <div class="tab-next-wrap">
@@ -3277,16 +3189,25 @@ function fireConfetti(){
 
 /* SPELLING SORT */
 var sortSelected=null,sortPlaced=0,sortTotal=8;
-function pickSortChip(chip){if(chip.classList.contains('placed'))return;if(sortSelected)sortSelected.style.outline='';sortSelected=chip;chip.style.outline='3px solid #55C8E8';chip.style.outlineOffset='2px';}
+
+function pickSortChip(chip){
+if(chip.classList.contains('placed'))return;
+var g=chip.closest('.sort-game');if(!g)return;
+if(g._oaoSel)g._oaoSel.style.outline='';
+g._oaoSel=chip;chip.style.outline='3px solid #55C8E8';chip.style.outlineOffset='2px';}
 function dropSortChip(colDrop,colName){
-  if(!sortSelected)return;
-  var cg=sortSelected.getAttribute('data-group');
-  var clone=sortSelected.cloneNode(true); clone.style.outline=''; clone.onclick=null; clone.style.cursor='default';
-  if(cg===colName){clone.classList.add('correct');sortSelected.classList.add('placed');colDrop.appendChild(clone);sortPlaced++;}
-  else{clone.classList.add('wrong');colDrop.appendChild(clone);setTimeout(function(){if(colDrop.contains(clone))colDrop.removeChild(clone);},600);}
-  sortSelected.style.outline=''; sortSelected=null;
-  if(sortPlaced>=sortTotal){var sc=document.getElementById('sortScore');if(sc){sc.textContent='🎉 All sorted! You know your schwa vowel patterns.';sc.classList.add('show');}}
-}
+var g=colDrop.closest('.sort-game');if(!g||!g._oaoSel)return;
+var sel=g._oaoSel;
+var clone=sel.cloneNode(true);clone.style.outline='';clone.onclick=null;clone.style.cursor='default';
+if(sel.getAttribute('data-group')===colName){clone.classList.add('correct');sel.classList.add('placed');colDrop.appendChild(clone);
+try{if(typeof sortPlaced!=='undefined')sortPlaced++;}catch(e){}}
+else{clone.classList.add('wrong');colDrop.appendChild(clone);
+setTimeout(function(){if(clone.parentNode===colDrop)colDrop.removeChild(clone);},600);}
+sel.style.outline='';g._oaoSel=null;
+var bank=g.querySelector('.sort-bank');if(!bank)return;
+if(bank.querySelectorAll('.sort-chip.placed').length>=bank.querySelectorAll('.sort-chip').length){
+var sc=g.querySelector('.sort-score');
+if(sc){sc.textContent=g.getAttribute('data-win')||'\uD83C\uDF89 All sorted correctly!';sc.classList.add('show');}}}
 
 /* DOL HIGHLIGHTER */
 function dolHighlight(word,explanation){
@@ -3301,22 +3222,33 @@ function dolHighlight(word,explanation){
 /* Unique key derived from the page title so each lesson's data stays separate */
 /* ═══ VOCABULARY WORD MATCH (ported from rootMatchClick) ═══ */
 var vocabMatchFirst=null,vocabMatchCount=0; window._vocabMatchDone=false;
-function vocabMatchClick(item){
-  if(item.classList.contains('matched'))return;
-  if(!vocabMatchFirst){vocabMatchFirst=item;item.classList.add('selected');return;}
-  if(vocabMatchFirst===item){vocabMatchFirst.classList.remove('selected');vocabMatchFirst=null;return;}
-  var k1=vocabMatchFirst.getAttribute('data-match'),k2=item.getAttribute('data-match');
-  if(k1===k2&&vocabMatchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
-    vocabMatchFirst.classList.remove('selected'); vocabMatchFirst.classList.add('matched');
-    item.classList.add('matched'); vocabMatchCount++; vocabMatchFirst=null;
-    if(vocabMatchCount>=4){var fb=document.getElementById('vocabMatchFeedback');if(fb)fb.classList.add('show');window._vocabMatchDone=true;}
-  } else {
-    item.classList.add('wrong-flash'); vocabMatchFirst.classList.add('wrong-flash');
-    var a=vocabMatchFirst,b=item;
-    setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);
-    vocabMatchFirst=null;
-  }
-}
+
+function _oaoFb(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+function _oaoBump(which){try{
+if(which==='matchCount'){if(typeof matchCount!=='undefined')matchCount++;}
+else if(which==='rootMatchCount'){if(typeof rootMatchCount!=='undefined')rootMatchCount++;}
+else if(which==='vocabMatchCount'){if(typeof vocabMatchCount!=='undefined')vocabMatchCount++;}
+}catch(e){}}
+function _oaoMatch(item,which){
+var g=item.closest('.match-grid, .root-match-grid'); if(!g)return;
+if(item.classList.contains('matched'))return;
+var isRoot=g.classList.contains('root-match-grid');
+var iSel=isRoot?'.root-match-item':'.match-item';
+var sel=g.querySelector(iSel+'.selected');
+if(!sel){item.classList.add('selected');return;}
+if(sel===item){sel.classList.remove('selected');return;}
+if(sel.getAttribute('data-match')===item.getAttribute('data-match')&&sel.classList.contains('is-word')!==item.classList.contains('is-word')){
+sel.classList.remove('selected');sel.classList.add('matched');item.classList.add('matched');
+_oaoBump(which);
+if(g.querySelectorAll(iSel+'.matched').length>=g.querySelectorAll(iSel).length){
+var fb=_oaoFb(g,isRoot?'.root-match-feedback':'.match-feedback');
+if(fb)fb.classList.add('show');
+if(which==='vocabMatchCount')window._vocabMatchDone=true;else window._fillinDone=true;}
+}else{item.classList.add('wrong-flash');sel.classList.add('wrong-flash');var a=sel,b=item;
+setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);}}
+function vocabMatchClick(item){_oaoMatch(item,'vocabMatchCount');}
 
 /* ═══ MORPHOLOGY FILL-IN-THE-BLANK ═══ */
 /* The correct word is carried on each item as data-answer-correct.          */
@@ -3467,117 +3399,126 @@ var trackerPos=[{x:6,y:148},{x:20,y:132},{x:35,y:140},{x:52,y:128},{x:68,y:136},
 (function(){
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
-  /* — Fill-in inputs — */
+  /* — Fill-in inputs — (scoped per game) */
   document.querySelectorAll('.fillin-input').forEach(function(inp){
     if(!inp.id) return;
     try{
       var v = localStorage.getItem(k+'-'+inp.id);
       if(v){
         inp.value = v;
-        var a = (inp.getAttribute('data-answer')||'').toLowerCase();
-        if(v.trim().toLowerCase() === a){
-          inp.classList.add('correct'); inp.disabled = true;
-        }
+        var a = (inp.getAttribute('data-answer')||inp.getAttribute('data-ans')||'').toLowerCase();
+        if(a && v.trim().toLowerCase() === a){ inp.classList.add('correct'); inp.disabled = true; }
       }
     }catch(e){}
     inp.addEventListener('input', function(){
       try{ localStorage.setItem(k+'-'+this.id, this.value); }catch(e){}
     });
   });
-  /* restore fillin feedback if all correct */
-  var allFillins = document.querySelectorAll('.fillin-input');
-  if(allFillins.length > 0){
+  /* restore each fill-in game's own feedback when THAT game is complete */
+  [].slice.call(document.querySelectorAll('.fillin-game')).forEach(function(g){
+    var ins = g.querySelectorAll('.fillin-input');
+    if(!ins.length) return;
     var allDone = true;
-    allFillins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
-    if(allDone){
-      var fb = document.getElementById('fillinFeedback');
-      if(fb) fb.classList.add('show');
-      if(typeof window._fillinDone !== 'undefined') window._fillinDone = true;
-    }
-  }
+    ins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
+    if(!allDone) return;
+    var fb = _oaoFbNear(g, '.fillin-feedback') || document.getElementById('fillinFeedback');
+    if(fb) fb.classList.add('show');
+    window._fillinDone = true;
+  });
 
-  /* — Sort game — */
-  var sortBank = document.getElementById('sortBank');
-  if(sortBank){
+  /* — Sort games — (scoped per game, one localStorage key each) */
+  var _sortGames = [].slice.call(document.querySelectorAll('.sort-game'));
+  _sortGames.forEach(function(g, gi){
+    var bank = g.querySelector('.sort-bank'); if(!bank) return;
+    var gk = g.id || ('sg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-sortState') || 'null');
+      raw = localStorage.getItem(k+'-sortState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-sortState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        saved.forEach(function(s){
-          var col = document.querySelector('.sort-col-drop[data-col="'+s.col+'"]');
+        saved.forEach(function(st){
+          var col = g.querySelector('.sort-col-drop[data-col="'+st.col+'"]');
           if(!col) return;
-          var chips = sortBank.querySelectorAll('.sort-chip');
-          chips.forEach(function(chip){
+          bank.querySelectorAll('.sort-chip').forEach(function(chip){
             if(chip.classList.contains('placed')) return;
-            if(chip.textContent.trim() === s.text && chip.getAttribute('data-group') === s.col){
+            if(chip.textContent.trim() === st.text && chip.getAttribute('data-group') === st.col){
               var cl = chip.cloneNode(true);
               cl.classList.add('correct');
               cl.style.outline = ''; cl.onclick = null; cl.style.cursor = 'default';
               col.appendChild(cl);
               chip.classList.add('placed');
-              if(typeof sortPlaced !== 'undefined') sortPlaced++;
+              try{ if(typeof sortPlaced !== 'undefined') sortPlaced++; }catch(e){}
             }
           });
         });
-        if(typeof sortPlaced !== 'undefined' && typeof sortTotal !== 'undefined' && sortPlaced >= sortTotal){
-          var sc = document.getElementById('sortScore');
-          if(sc){ sc.textContent = '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
+        if(bank.querySelectorAll('.sort-chip.placed').length >= bank.querySelectorAll('.sort-chip').length){
+          var sc = g.querySelector('.sort-score');
+          if(sc){ sc.textContent = g.getAttribute('data-win') || '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
         }
       }
     }catch(e){}
-    /* hook into dropSortChip to save state */
-    var origDrop = window.dropSortChip;
-    if(origDrop){
-      window.dropSortChip = function(col, colName){
-        origDrop(col, colName);
+  });
+  if(_sortGames.length){
+    ['dropSortChip','dropVocabChip'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(col, colName){
+        orig(col, colName);
         try{
+          var g = col.closest('.sort-game'); if(!g) return;
+          var gi = _sortGames.indexOf(g); var gk = g.id || ('sg'+(gi < 0 ? 0 : gi));
           var placed = [];
-          document.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
+          g.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
             placed.push({text: c.textContent.trim(), col: c.closest('.sort-col-drop').getAttribute('data-col')});
           });
-          localStorage.setItem(k+'-sortState', JSON.stringify(placed));
+          localStorage.setItem(k+'-sortState-'+gk, JSON.stringify(placed));
         }catch(e){}
       };
-    }
+    });
   }
 
-  /* — Match game — */
-  var matchGrid = document.getElementById('matchGrid');
-  if(matchGrid){
+  /* — Match games — (scoped per grid, one localStorage key each) */
+  var _matchGrids = [].slice.call(document.querySelectorAll('.match-grid'));
+  _matchGrids.forEach(function(g, gi){
+    var gk = g.id || ('mg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-matchState') || 'null');
+      raw = localStorage.getItem(k+'-matchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-matchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = matchGrid.querySelectorAll('.match-item');
+        var items = g.querySelectorAll('.match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){
-              it.classList.add('matched');
-            }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof matchCount !== 'undefined'){
-          matchCount = saved.length;
-          var total = typeof matchTotal !== 'undefined' ? matchTotal : 4;
-          if(matchCount >= total){
-            var fb = document.getElementById('matchFeedback');
-            if(fb) fb.classList.add('show');
-            if(typeof window._vocabMatchDone !== 'undefined') window._vocabMatchDone = true;
-          }
+        try{ if(typeof matchCount !== 'undefined') matchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.match-feedback');
+          if(fb) fb.classList.add('show');
+          window._vocabMatchDone = true;
         }
       }
     }catch(e){}
-    /* hook into matchClick to save state */
+  });
+  if(_matchGrids.length){
     var origMatch = window.matchClick;
     if(origMatch){
       window.matchClick = function(item){
         origMatch(item);
         try{
-          var matched = [];
-          var seen = {};
-          matchGrid.querySelectorAll('.match-item.matched').forEach(function(it){
+          var g = item.closest('.match-grid'); if(!g) return;
+          var gi = _matchGrids.indexOf(g); var gk = g.id || ('mg'+(gi < 0 ? 0 : gi));
+          var matched = [], seen = {};
+          g.querySelectorAll('.match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-matchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-matchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
     }
@@ -3622,41 +3563,48 @@ var trackerPos=[{x:6,y:148},{x:20,y:132},{x:35,y:140},{x:52,y:128},{x:68,y:136},
     });
   }
 
-  /* — Root-match game — same as vocab match but separate vars */
-  var rootGrid = document.querySelector('.root-match-grid');
-  if(rootGrid){
+  /* — Root-match games — (scoped per grid, one localStorage key each) */
+  var _rootGrids = [].slice.call(document.querySelectorAll('.root-match-grid'));
+  _rootGrids.forEach(function(g, gi){
+    var gk = g.id || ('rg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-rootMatchState') || 'null');
+      raw = localStorage.getItem(k+'-rootMatchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-rootMatchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = rootGrid.querySelectorAll('.root-match-item');
+        var items = g.querySelectorAll('.root-match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){ it.classList.add('matched'); }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof rootMatchCount !== 'undefined'){
-          rootMatchCount = saved.length;
-          if(rootMatchCount >= 4){
-            var fb = document.getElementById('rootMatchFeedback');
-            if(fb) fb.classList.add('show');
-          }
+        try{ if(typeof rootMatchCount !== 'undefined') rootMatchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.root-match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.root-match-feedback');
+          if(fb) fb.classList.add('show');
         }
       }
     }catch(e){}
-    var origRootMatch = window.rootMatchClick;
-    if(origRootMatch){
-      window.rootMatchClick = function(item){
-        origRootMatch(item);
+  });
+  if(_rootGrids.length){
+    ['rootMatchClick','vocabMatchClick'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(item){
+        orig(item);
         try{
+          var g = item.closest('.root-match-grid'); if(!g) return;
+          var gi = _rootGrids.indexOf(g); var gk = g.id || ('rg'+(gi < 0 ? 0 : gi));
           var matched = [], seen = {};
-          rootGrid.querySelectorAll('.root-match-item.matched').forEach(function(it){
+          g.querySelectorAll('.root-match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-rootMatchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-rootMatchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
-    }
+    });
   }
 
   /* — Comma game — restore inserted commas */

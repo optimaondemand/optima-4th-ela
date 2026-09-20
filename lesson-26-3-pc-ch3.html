@@ -1623,6 +1623,26 @@ body {
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
 <script>
+function checkFillIn(btn){
+var g=(btn&&btn.closest)?btn.closest('.fillin-game'):null;
+var scope=g||document;var all=true;
+scope.querySelectorAll('.fillin-input').forEach(function(inp){
+var answer=(inp.getAttribute('data-answer')||'').toLowerCase();
+var val=inp.value.trim().toLowerCase();
+if(val===answer){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;}
+else{inp.classList.remove('correct');inp.classList.add('wrong');all=false;
+setTimeout(function(){inp.classList.remove('wrong');},600);}});
+if(all){var fb=g?g.querySelector('.fillin-feedback'):document.getElementById('fillinFeedback');
+if(!fb)fb=document.getElementById('fillinFeedback');
+if(fb)fb.classList.add('show');window._fillinDone=true;}}
+</script>
+
+<script>
+function _oaoFbNear(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+</script>
+<script>
 (function () {
     "use strict";
     var playBtn  = document.getElementById("ora-play");
@@ -2115,39 +2135,19 @@ body {
   
   <!-- GRAMMAR -->
   <div class="activity bl-green">
-    <div class="activity-head"><div class="activity-num" style="background:#34B76F;">3</div><div><div class="activity-title">&#x270F;&#xFE0F; Grammar: Conjunctions (and / or)</div><div class="activity-sub">Write original sentences</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#34B76F;">3</div><div><div class="activity-title">&#x270F;&#xFE0F; Grammar: Conjunctions (and / or)</div><div class="activity-sub">Day 3: Apply &mdash; revise for effect, then defend the version you kept.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Author's Editor</span></div></div></div>
     <div class="activity-body">
-<!-- grammar-notice-first -->
-<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F50E;</span><p>Before you start: find the joining word and what it signals.</p></div>
-      <p>You can spot conjunctions. Now write your own!</p>
-
-      <div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
-        <div class="task-label">Example from Chapter 3</div>
-        <div class="task-sentence" style="border-left-color:#C7922C;">&ldquo;Susan&rsquo;s arrow struck the soldier&rsquo;s helmet, <strong>and</strong> he fell into the water.&rdquo;</div>
-      </div>
-
-      <p>Write <strong>3 sentences</strong> about Chapter 3. Each sentence must use <strong>&ldquo;and&rdquo;</strong> or <strong>&ldquo;or&rdquo;</strong> as a conjunction. Try to use both!</p>
-      <div class="textbox-prompt">Write 3 sentences using &ldquo;and&rdquo; or &ldquo;or&rdquo; &mdash; connect your ideas to Chapter 3.</div>
-      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Original conjunction sentences" placeholder="1. &#10;2. &#10;3. " oninput="autoSave(this);gatherAnswers();"></textarea>
-    </div>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Correct is not the goal</div><p>Joining two ideas with <em>and</em> is easy. Choosing which joint to use is the writing.</p></div><div class="key-concept" style="background:#FFF8F0;border-color:#F5E6C8;margin:14px 0;"><div class="key-concept-label" style="color:#8B6914;">🔎 A worked example</div><p><strong>Before:</strong> <em>Caspian was the rightful king. Miraz held the throne. The Old Narnians were in hiding.</em></p><p><strong>After:</strong> <em>Caspian was the rightful king, and Miraz held the throne, and the Old Narnians were in hiding.</em></p><p style="font-size:14px;color:#5A6785;">This version is grammatically fine and pedagogically useless &mdash; three <em>and</em>s in a row give every idea the same weight, which is the same as giving none of them any. A writer picks one idea to carry the sentence and subordinates the rest.</p></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Rewrite those three ideas as <strong>one sentence</strong> that does not use <em>and</em> three times. Then write a second version that puts a different idea in charge.</p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Give both versions, say which you kept, and explain which idea the reader ends up leaning on.</div><div class="textbox-prompt">Two versions, a choice, and the reason.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="Version A: ... Version B: ... I kept... because the reader leans on..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
+</div>
   </div>
 
   
   <!-- SPELLING -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">&#x1F520; Spelling: Fantasy Vocabulary Syllable Division</div><div class="activity-sub">Apply the pattern</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">&#x1F520; Spelling: Fantasy Vocabulary: Syllable Division & Morphology</div><div class="activity-sub">Day 3: Revise &mdash; study the edit, practise the move, then repair a passage.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Spelling Level: Word Editor</span></div></div></div>
     <div class="activity-body">
-<!-- spell-notice-first -->
-<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F5C2;&#xFE0F;</span><p>Before you start: clap the beats, then decide where the splits go.</p></div>
-      <p>You&rsquo;ve sorted and practiced these words. Now show you can use them!</p>
-
-      <div class="swyk">
-        <div class="swyk-label">&#x1FAB6; Show What You Know &mdash; Spelling</div>
-        <div class="swyk-prompt">Choose <strong>THREE</strong> words from this week&rsquo;s spelling list. Write each word, divide it into syllables, and use it in a sentence.</div>
-        <div class="textbox-prompt">Write 3 words, their syllable divisions, and sentences.</div>
-        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: syllable division + sentences" placeholder="Word 1: ___  Syllables: ___  Sentence: ...&#10;Word 2: ___  Syllables: ___  Sentence: ...&#10;Word 3: ___  Syllables: ___  Sentence: ..." oninput="autoSave(this);gatherAnswers();"></textarea>
-      </div>
-    </div>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Watch the editor work</div><p>A long word breaks at the parts before it breaks anywhere else.</p></div><div class="key-concept" style="background:#FFF8F0;border-color:#F5E6C8;margin:14px 0;"><div class="key-concept-label" style="color:#8B6914;">🔎 How the editor reads it</div><p><strong>Before:</strong> <em>un&middot;fa&middot;mi&middot;liar &mdash; four guesses</em></p><p><strong>After:</strong> <em>un + familiar &rarr; un&middot;fa&middot;mil&middot;iar</em></p><p style="font-size:14px;color:#5A6785;">Peel the prefix off first and what remains is a word you already know. Guessing at syllables from the outside is slower and less reliable than recognising the parts the writer built it from.</p></div><div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the <strong>base word</strong> left after you peel off the prefix and suffix.</p></div><div class="fillin-game" id="s4w26c"><div class="fillin-item">unfamiliar &rarr; <input class="fillin-input" id="s4w26cf1" data-answer="familiar" maxlength="24" placeholder="______"></div><div class="fillin-item">transported &rarr; <input class="fillin-input" id="s4w26cf2" data-answer="transport" maxlength="24" placeholder="______"></div><div class="fillin-item">discovered &rarr; <input class="fillin-input" id="s4w26cf3" data-answer="discover" maxlength="24" placeholder="______"></div><div class="fillin-item">deserted &rarr; <input class="fillin-input" id="s4w26cf4" data-answer="desert" maxlength="24" placeholder="______"></div><button class="fillin-check-btn" onclick="checkFillIn(this)">Check My Work</button><div class="fillin-feedback">✅ All correct!</div></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Now break these into parts: <em>transformation, unforgettable, disappearance.</em></p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Write each one as parts and say what the base means on its own.</div><div class="textbox-prompt">Give your corrections and justify every one.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="I changed ___ to ___ because..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
+</div>
   </div>
 
   <div class="tab-next-wrap">
@@ -2729,117 +2729,126 @@ var trackerPos = [
 (function(){
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
-  /* — Fill-in inputs — */
+  /* — Fill-in inputs — (scoped per game) */
   document.querySelectorAll('.fillin-input').forEach(function(inp){
     if(!inp.id) return;
     try{
       var v = localStorage.getItem(k+'-'+inp.id);
       if(v){
         inp.value = v;
-        var a = (inp.getAttribute('data-answer')||'').toLowerCase();
-        if(v.trim().toLowerCase() === a){
-          inp.classList.add('correct'); inp.disabled = true;
-        }
+        var a = (inp.getAttribute('data-answer')||inp.getAttribute('data-ans')||'').toLowerCase();
+        if(a && v.trim().toLowerCase() === a){ inp.classList.add('correct'); inp.disabled = true; }
       }
     }catch(e){}
     inp.addEventListener('input', function(){
       try{ localStorage.setItem(k+'-'+this.id, this.value); }catch(e){}
     });
   });
-  /* restore fillin feedback if all correct */
-  var allFillins = document.querySelectorAll('.fillin-input');
-  if(allFillins.length > 0){
+  /* restore each fill-in game's own feedback when THAT game is complete */
+  [].slice.call(document.querySelectorAll('.fillin-game')).forEach(function(g){
+    var ins = g.querySelectorAll('.fillin-input');
+    if(!ins.length) return;
     var allDone = true;
-    allFillins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
-    if(allDone){
-      var fb = document.getElementById('fillinFeedback');
-      if(fb) fb.classList.add('show');
-      if(typeof window._fillinDone !== 'undefined') window._fillinDone = true;
-    }
-  }
+    ins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
+    if(!allDone) return;
+    var fb = _oaoFbNear(g, '.fillin-feedback') || document.getElementById('fillinFeedback');
+    if(fb) fb.classList.add('show');
+    window._fillinDone = true;
+  });
 
-  /* — Sort game — */
-  var sortBank = document.getElementById('sortBank');
-  if(sortBank){
+  /* — Sort games — (scoped per game, one localStorage key each) */
+  var _sortGames = [].slice.call(document.querySelectorAll('.sort-game'));
+  _sortGames.forEach(function(g, gi){
+    var bank = g.querySelector('.sort-bank'); if(!bank) return;
+    var gk = g.id || ('sg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-sortState') || 'null');
+      raw = localStorage.getItem(k+'-sortState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-sortState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        saved.forEach(function(s){
-          var col = document.querySelector('.sort-col-drop[data-col="'+s.col+'"]');
+        saved.forEach(function(st){
+          var col = g.querySelector('.sort-col-drop[data-col="'+st.col+'"]');
           if(!col) return;
-          var chips = sortBank.querySelectorAll('.sort-chip');
-          chips.forEach(function(chip){
+          bank.querySelectorAll('.sort-chip').forEach(function(chip){
             if(chip.classList.contains('placed')) return;
-            if(chip.textContent.trim() === s.text && chip.getAttribute('data-group') === s.col){
+            if(chip.textContent.trim() === st.text && chip.getAttribute('data-group') === st.col){
               var cl = chip.cloneNode(true);
               cl.classList.add('correct');
               cl.style.outline = ''; cl.onclick = null; cl.style.cursor = 'default';
               col.appendChild(cl);
               chip.classList.add('placed');
-              if(typeof sortPlaced !== 'undefined') sortPlaced++;
+              try{ if(typeof sortPlaced !== 'undefined') sortPlaced++; }catch(e){}
             }
           });
         });
-        if(typeof sortPlaced !== 'undefined' && typeof sortTotal !== 'undefined' && sortPlaced >= sortTotal){
-          var sc = document.getElementById('sortScore');
-          if(sc){ sc.textContent = '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
+        if(bank.querySelectorAll('.sort-chip.placed').length >= bank.querySelectorAll('.sort-chip').length){
+          var sc = g.querySelector('.sort-score');
+          if(sc){ sc.textContent = g.getAttribute('data-win') || '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
         }
       }
     }catch(e){}
-    /* hook into dropSortChip to save state */
-    var origDrop = window.dropSortChip;
-    if(origDrop){
-      window.dropSortChip = function(col, colName){
-        origDrop(col, colName);
+  });
+  if(_sortGames.length){
+    ['dropSortChip','dropVocabChip'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(col, colName){
+        orig(col, colName);
         try{
+          var g = col.closest('.sort-game'); if(!g) return;
+          var gi = _sortGames.indexOf(g); var gk = g.id || ('sg'+(gi < 0 ? 0 : gi));
           var placed = [];
-          document.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
+          g.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
             placed.push({text: c.textContent.trim(), col: c.closest('.sort-col-drop').getAttribute('data-col')});
           });
-          localStorage.setItem(k+'-sortState', JSON.stringify(placed));
+          localStorage.setItem(k+'-sortState-'+gk, JSON.stringify(placed));
         }catch(e){}
       };
-    }
+    });
   }
 
-  /* — Match game — */
-  var matchGrid = document.getElementById('matchGrid');
-  if(matchGrid){
+  /* — Match games — (scoped per grid, one localStorage key each) */
+  var _matchGrids = [].slice.call(document.querySelectorAll('.match-grid'));
+  _matchGrids.forEach(function(g, gi){
+    var gk = g.id || ('mg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-matchState') || 'null');
+      raw = localStorage.getItem(k+'-matchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-matchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = matchGrid.querySelectorAll('.match-item');
+        var items = g.querySelectorAll('.match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){
-              it.classList.add('matched');
-            }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof matchCount !== 'undefined'){
-          matchCount = saved.length;
-          var total = typeof matchTotal !== 'undefined' ? matchTotal : 4;
-          if(matchCount >= total){
-            var fb = document.getElementById('matchFeedback');
-            if(fb) fb.classList.add('show');
-            if(typeof window._vocabMatchDone !== 'undefined') window._vocabMatchDone = true;
-          }
+        try{ if(typeof matchCount !== 'undefined') matchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.match-feedback');
+          if(fb) fb.classList.add('show');
+          window._vocabMatchDone = true;
         }
       }
     }catch(e){}
-    /* hook into matchClick to save state */
+  });
+  if(_matchGrids.length){
     var origMatch = window.matchClick;
     if(origMatch){
       window.matchClick = function(item){
         origMatch(item);
         try{
-          var matched = [];
-          var seen = {};
-          matchGrid.querySelectorAll('.match-item.matched').forEach(function(it){
+          var g = item.closest('.match-grid'); if(!g) return;
+          var gi = _matchGrids.indexOf(g); var gk = g.id || ('mg'+(gi < 0 ? 0 : gi));
+          var matched = [], seen = {};
+          g.querySelectorAll('.match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-matchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-matchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
     }

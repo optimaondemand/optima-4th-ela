@@ -2173,6 +2173,11 @@ body {
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
 <script>
+function _oaoFbNear(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+</script>
+<script>
 (function () {
     "use strict";
     var playBtn  = document.getElementById("ora-play");
@@ -2617,58 +2622,18 @@ And that has made all the difference.</div>
 
   <!-- GRAMMAR -->
   <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Proper Nouns</div><div class="activity-sub">Now spot the subject in sentences from the book.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Proper Nouns</div><div class="activity-sub">Day 3: Apply &mdash; you produce the form.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Grammar Detective</span></div></div></div>
     <div class="activity-body">
-<!-- grammar-notice-first -->
-<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: find the capitals and ask what earned them.</p></div>
-            <p>Remember: a <strong>noun</strong> is a person, place, animal, or thing. The <strong>subject</strong> is the noun the sentence is about.</p>
-      <div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
-        <div class="task-sentence" style="border-left-color:#C7922C;">Proper nouns name <strong>specific</strong> people, places, or things — and they always begin with capital letters.</div>
-      </div>
-      <p style="margin-top:10px;color:#3A4A6B;"><em>Common noun</em> + <em>proper noun</em>:<br>the doctor / <strong>Dr. Schultz</strong><br>the rats / <strong>Justin</strong>, <strong>Nicodemus</strong>, <strong>Brutus</strong><br>the city / <strong>Washington</strong></p>
-      <div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Read each sentence. <strong>Click the proper noun</strong> — the word that names a specific person, place, or thing.</p></div>
-      <div class="spotter-game" id="spotterGame">
-        <div class="spotter-sentence" id="spot1" data-explain="'Brutus' is a proper noun — it names a specific character."><span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="true">Brutus</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">stood</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">guard</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">at</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">the</span> <span class="spotter-word" onclick="nounPick(this,'spot1')" data-correct="false">entrance.</span><div class="spotter-result" id="spot1-result"></div></div>
-        <div class="spotter-sentence" id="spot2" data-explain="'Fitzgibbon' is a proper noun — it names a specific family."><span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">The</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">farm</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">belonged</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">to</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">the</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="true">Fitzgibbon</span> <span class="spotter-word" onclick="nounPick(this,'spot2')" data-correct="false">family.</span><div class="spotter-result" id="spot2-result"></div></div>
-        <div class="spotter-sentence" id="spot3" data-explain="'Arthur' is a proper noun — it names a specific character."><span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="true">Arthur</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">helped</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">carry</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">the</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">heavy</span> <span class="spotter-word" onclick="nounPick(this,'spot3')" data-correct="false">block.</span><div class="spotter-result" id="spot3-result"></div></div>
-        <div class="spotter-sentence" id="spot4" data-explain="'Thorn Valley' is a proper noun — it names a specific place."><span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">They</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">dreamed</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">of</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="false">reaching</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="true">Thorn</span> <span class="spotter-word" onclick="nounPick(this,'spot4')" data-correct="true">Valley.</span><div class="spotter-result" id="spot4-result"></div></div>
-      </div>
-      
-      <div class="swyk">
-        <div class="swyk-label">🪶 Show What You Know</div>
-        <div class="swyk-prompt">Read this sentence: <em>“The mouse climbed the tree.”</em> Rewrite it using TWO proper nouns — replace "the mouse" with a character name AND add a specific place name.</div>
-        <div class="textbox-prompt">Use two proper nouns. Each must have a capital letter.</div>
-        <textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK: subjects in sentences" placeholder="My sentence: ___ climbed the tree at ___." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea>
-      </div>
-    </div>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Your turn</div><p>Each sentence is missing a name. You supply it &mdash; capitalised correctly.</p></div><div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the <strong>proper noun</strong>, with its capital letter.</p></div><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4DA;</span><p><strong>Word bank:</strong> <strong>Jonathan</strong> &middot; <strong>Justin</strong> &middot; <strong>Nicodemus</strong> &middot; <strong>Thorn Valley</strong></p><p style="font-size:13px;color:#7A88A8;margin-top:4px;">Every answer below comes from this list.</p></div><div class="fillin-game" id="g4w5f"><div class="fillin-item">The rats planned to build a new home in <input class="fillin-input" id="g4w5ff1" data-answer="Thorn Valley" maxlength="24" placeholder="______">.</div><div class="fillin-item"><input class="fillin-input" id="g4w5ff2" data-answer="Nicodemus" maxlength="24" placeholder="______"> had written the whole history down.</div><div class="fillin-item"><input class="fillin-input" id="g4w5ff3" data-answer="Justin" maxlength="24" placeholder="______"> laughed even when the danger was worst.</div><div class="fillin-item">Mrs. Frisby learned at last what <input class="fillin-input" id="g4w5ff4" data-answer="Jonathan" maxlength="24" placeholder="______"> had done.</div><button class="fillin-check-btn" onclick="checkFillIn(this)">Check My Work</button><div class="fillin-feedback">✅ All correct!</div></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Write a sentence about Chapter 27 using one common noun and one proper noun. Label which is which.</div><div class="textbox-prompt">Write it, then explain your choice.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="My sentence is... I chose that form because..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
+</div>
   </div>
 
   <!-- SPELLING -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Doubling Final Consonant</div><div class="activity-sub">Apply the doubling rule to sort new words.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Doubling the Final Consonant</div><div class="activity-sub">Day 3: Apply &mdash; build the word yourself.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Spelling Level: Word Detective</span></div></div></div>
     <div class="activity-body">
-<!-- spell-notice-first -->
-<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: compare each base word with its longer form.</p></div>
-            <p>Recap: a one-syllable word ending consonant-vowel-consonant <strong>doubles</strong> the last letter before <em>-ed</em> or <em>-ing</em>: <em>hop &rarr; hopping</em>.</p>
-
-      <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words by whether the final consonant was doubled before the suffix.</p></div>
-      <div class="sort-game" id="spellSort">
-        <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="double" onclick="pickSortChip(this)">stopped</span>
-          <span class="sort-chip" data-group="no-double" onclick="pickSortChip(this)">jumped</span>
-          <span class="sort-chip" data-group="double" onclick="pickSortChip(this)">running</span>
-          <span class="sort-chip" data-group="no-double" onclick="pickSortChip(this)">walking</span>
-          <span class="sort-chip" data-group="double" onclick="pickSortChip(this)">hopping</span>
-          <span class="sort-chip" data-group="no-double" onclick="pickSortChip(this)">cleaned</span>
-        </div>
-        <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Doubled the consonant</div><div class="sort-col-drop" data-col="double" onclick="dropSortChip(this,'double')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Did NOT double</div><div class="sort-col-drop" data-col="no-double" onclick="dropSortChip(this,'no-double')"></div></div>
-        </div>
-        <div class="sort-score" id="sortScore"></div>
-      </div>
-      
-    </div>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Your turn to build</div><p>You decide whether to double.</p></div><div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the word with its suffix added.</p></div><div class="fillin-game" id="s4w5f"><div class="fillin-item">run + ing = <input class="fillin-input" id="s4w5ff1" data-answer="running" maxlength="24" placeholder="______"></div><div class="fillin-item">jump + ed = <input class="fillin-input" id="s4w5ff2" data-answer="jumped" maxlength="24" placeholder="______"></div><div class="fillin-item">stop + ed = <input class="fillin-input" id="s4w5ff3" data-answer="stopped" maxlength="24" placeholder="______"></div><div class="fillin-item">help + ing = <input class="fillin-input" id="s4w5ff4" data-answer="helping" maxlength="24" placeholder="______"></div><button class="fillin-check-btn" onclick="checkFillIn(this)">Check My Work</button><div class="fillin-feedback">✅ All correct!</div></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Pick a base word from Chapter 27, add -ing, and explain whether you doubled and why.</div><div class="textbox-prompt">Build one more and name the rule you used.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="My word is... The rule I used is..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
+</div>
   </div>
 
   <div class="tab-next-wrap">
@@ -3224,110 +3189,63 @@ var sortSelected = null;
 var sortPlaced = 0;
 var sortTotal = 6;
 
-function pickSortChip(chip) {
-  if (chip.classList.contains('placed')) return;
-  if (sortSelected) sortSelected.style.outline = '';
-  sortSelected = chip;
-  chip.style.outline = '3px solid #55C8E8';
-  chip.style.outlineOffset = '2px';
-}
 
-function dropSortChip(colDrop, colName) {
-  if (!sortSelected) return;
-  var correctGroup = sortSelected.getAttribute('data-group');
-  var clone = sortSelected.cloneNode(true);
-  clone.style.outline = '';
-  clone.onclick = null;
-  clone.style.cursor = 'default';
 
-  if (correctGroup === colName) {
-    clone.classList.add('correct');
-    sortSelected.classList.add('placed');
-    colDrop.appendChild(clone);
-    sortPlaced++;
-  } else {
-    clone.classList.add('wrong');
-    colDrop.appendChild(clone);
-    setTimeout(function() { colDrop.removeChild(clone); }, 600);
-  }
-  sortSelected.style.outline = '';
-  sortSelected = null;
-
-  if (sortPlaced >= sortTotal) {
-    var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know when a short word doubles its last letter.';
-    sc.classList.add('show');
-  }
-}
+function pickSortChip(chip){
+if(chip.classList.contains('placed'))return;
+var g=chip.closest('.sort-game');if(!g)return;
+if(g._oaoSel)g._oaoSel.style.outline='';
+g._oaoSel=chip;chip.style.outline='3px solid #55C8E8';chip.style.outlineOffset='2px';}
+function dropSortChip(colDrop,colName){
+var g=colDrop.closest('.sort-game');if(!g||!g._oaoSel)return;
+var sel=g._oaoSel;
+var clone=sel.cloneNode(true);clone.style.outline='';clone.onclick=null;clone.style.cursor='default';
+if(sel.getAttribute('data-group')===colName){clone.classList.add('correct');sel.classList.add('placed');colDrop.appendChild(clone);
+try{if(typeof sortPlaced!=='undefined')sortPlaced++;}catch(e){}}
+else{clone.classList.add('wrong');colDrop.appendChild(clone);
+setTimeout(function(){if(clone.parentNode===colDrop)colDrop.removeChild(clone);},600);}
+sel.style.outline='';g._oaoSel=null;
+var bank=g.querySelector('.sort-bank');if(!bank)return;
+if(bank.querySelectorAll('.sort-chip.placed').length>=bank.querySelectorAll('.sort-chip').length){
+var sc=g.querySelector('.sort-score');
+if(sc){sc.textContent=g.getAttribute('data-win')||'\uD83C\uDF89 All sorted correctly!';sc.classList.add('show');}}}
 
 /* ───── VOCAB MATCH GAME ───── */
 var matchFirst = null;
 var matchCount = 0;
 
-function matchClick(item) {
-  if (item.classList.contains('matched')) return;
 
-  if (!matchFirst) {
-    matchFirst = item;
-    item.classList.add('selected');
-    return;
-  }
-
-  if (matchFirst === item) {
-    matchFirst.classList.remove('selected');
-    matchFirst = null;
-    return;
-  }
-
-  var key1 = matchFirst.getAttribute('data-match');
-  var key2 = item.getAttribute('data-match');
-
-  if (key1 === key2 && matchFirst.classList.contains('is-word') !== item.classList.contains('is-word')) {
-    matchFirst.classList.remove('selected');
-    matchFirst.classList.add('matched');
-    item.classList.add('matched');
-    matchCount++;
-    matchFirst = null;
-    if (matchCount >= 4) {
-      document.getElementById('matchFeedback').classList.add('show');
-    }
-  } else {
-    item.classList.add('wrong-flash');
-    matchFirst.classList.add('wrong-flash');
-    var a = matchFirst;
-    var b = item;
-    setTimeout(function() {
-      a.classList.remove('wrong-flash', 'selected');
-      b.classList.remove('wrong-flash');
-    }, 500);
-    matchFirst = null;
-  }
-}
+function _oaoFb(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+function _oaoBump(which){try{
+if(which==='matchCount'){if(typeof matchCount!=='undefined')matchCount++;}
+else if(which==='rootMatchCount'){if(typeof rootMatchCount!=='undefined')rootMatchCount++;}
+else if(which==='vocabMatchCount'){if(typeof vocabMatchCount!=='undefined')vocabMatchCount++;}
+}catch(e){}}
+function _oaoMatch(item,which){
+var g=item.closest('.match-grid, .root-match-grid'); if(!g)return;
+if(item.classList.contains('matched'))return;
+var isRoot=g.classList.contains('root-match-grid');
+var iSel=isRoot?'.root-match-item':'.match-item';
+var sel=g.querySelector(iSel+'.selected');
+if(!sel){item.classList.add('selected');return;}
+if(sel===item){sel.classList.remove('selected');return;}
+if(sel.getAttribute('data-match')===item.getAttribute('data-match')&&sel.classList.contains('is-word')!==item.classList.contains('is-word')){
+sel.classList.remove('selected');sel.classList.add('matched');item.classList.add('matched');
+_oaoBump(which);
+if(g.querySelectorAll(iSel+'.matched').length>=g.querySelectorAll(iSel).length){
+var fb=_oaoFb(g,isRoot?'.root-match-feedback':'.match-feedback');
+if(fb)fb.classList.add('show');
+if(which==='vocabMatchCount')window._vocabMatchDone=true;else window._fillinDone=true;}
+}else{item.classList.add('wrong-flash');sel.classList.add('wrong-flash');var a=sel,b=item;
+setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);}}
+function matchClick(item){_oaoMatch(item,'matchCount');}
 
 
 var rootMatchFirst = null;
 var rootMatchCount = 0;
-function rootMatchClick(item) {
-  if (item.classList.contains('matched')) return;
-  if (!rootMatchFirst) { rootMatchFirst = item; item.classList.add('selected'); return; }
-  if (rootMatchFirst === item) { rootMatchFirst.classList.remove('selected'); rootMatchFirst = null; return; }
-  var k1 = rootMatchFirst.getAttribute('data-match');
-  var k2 = item.getAttribute('data-match');
-  if (k1 === k2 && rootMatchFirst.classList.contains('is-word') !== item.classList.contains('is-word')) {
-    rootMatchFirst.classList.remove('selected');
-    rootMatchFirst.classList.add('matched');
-    item.classList.add('matched');
-    rootMatchCount++;
-    rootMatchFirst = null;
-    if (rootMatchCount >= 4) { document.getElementById('rootMatchFeedback').classList.add('show'); window._fillinDone = true; }
-  } else {
-    item.classList.add('wrong-flash');
-    rootMatchFirst.classList.add('wrong-flash');
-    var a = rootMatchFirst, b = item;
-    setTimeout(function(){ a.classList.remove('wrong-flash','selected'); b.classList.remove('wrong-flash'); }, 500);
-    rootMatchFirst = null;
-  }
-}
+function rootMatchClick(item){_oaoMatch(item,'rootMatchCount');}
 
 /* ───── PROPER NOUN SPOTTER ───── */
 function nounPick(word, sentenceId) {
@@ -3425,28 +3343,18 @@ window.addEventListener('beforeunload', function(e){
 /* ───── FILL-IN-THE-ROOT GAME (MORPHOLOGY) ───── */
 window._fillinDone = false;
 
-function checkFillIn() {
-  var inputs = document.querySelectorAll('.fillin-input');
-  var allCorrect = true;
-  inputs.forEach(function(inp) {
-    var answer = inp.getAttribute('data-answer').toLowerCase();
-    var val = inp.value.trim().toLowerCase();
-    if (val === answer) {
-      inp.classList.remove('wrong');
-      inp.classList.add('correct');
-      inp.disabled = true;
-    } else {
-      inp.classList.remove('correct');
-      inp.classList.add('wrong');
-      allCorrect = false;
-      setTimeout(function() { inp.classList.remove('wrong'); }, 600);
-    }
-  });
-  if (allCorrect) {
-    document.getElementById('fillinFeedback').classList.add('show');
-    window._fillinDone = true;
-  }
-}
+function checkFillIn(btn){
+var g=(btn&&btn.closest)?btn.closest('.fillin-game'):null;
+var scope=g||document;var all=true;
+scope.querySelectorAll('.fillin-input').forEach(function(inp){
+var answer=(inp.getAttribute('data-answer')||'').toLowerCase();
+var val=inp.value.trim().toLowerCase();
+if(val===answer){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;}
+else{inp.classList.remove('correct');inp.classList.add('wrong');all=false;
+setTimeout(function(){inp.classList.remove('wrong');},600);}});
+if(all){var fb=g?_oaoFb(g,'.fillin-feedback'):document.getElementById('fillinFeedback');
+if(!fb)fb=document.getElementById('fillinFeedback');
+if(fb)fb.classList.add('show');window._fillinDone=true;}}
 
 /* ───── DOWNLOAD JOURNAL AS PDF ───── */
 function downloadJournal() {
@@ -3617,117 +3525,126 @@ const trackerPos = [
 (function(){
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
-  /* — Fill-in inputs — */
+  /* — Fill-in inputs — (scoped per game) */
   document.querySelectorAll('.fillin-input').forEach(function(inp){
     if(!inp.id) return;
     try{
       var v = localStorage.getItem(k+'-'+inp.id);
       if(v){
         inp.value = v;
-        var a = (inp.getAttribute('data-answer')||'').toLowerCase();
-        if(v.trim().toLowerCase() === a){
-          inp.classList.add('correct'); inp.disabled = true;
-        }
+        var a = (inp.getAttribute('data-answer')||inp.getAttribute('data-ans')||'').toLowerCase();
+        if(a && v.trim().toLowerCase() === a){ inp.classList.add('correct'); inp.disabled = true; }
       }
     }catch(e){}
     inp.addEventListener('input', function(){
       try{ localStorage.setItem(k+'-'+this.id, this.value); }catch(e){}
     });
   });
-  /* restore fillin feedback if all correct */
-  var allFillins = document.querySelectorAll('.fillin-input');
-  if(allFillins.length > 0){
+  /* restore each fill-in game's own feedback when THAT game is complete */
+  [].slice.call(document.querySelectorAll('.fillin-game')).forEach(function(g){
+    var ins = g.querySelectorAll('.fillin-input');
+    if(!ins.length) return;
     var allDone = true;
-    allFillins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
-    if(allDone){
-      var fb = document.getElementById('fillinFeedback');
-      if(fb) fb.classList.add('show');
-      if(typeof window._fillinDone !== 'undefined') window._fillinDone = true;
-    }
-  }
+    ins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
+    if(!allDone) return;
+    var fb = _oaoFbNear(g, '.fillin-feedback') || document.getElementById('fillinFeedback');
+    if(fb) fb.classList.add('show');
+    window._fillinDone = true;
+  });
 
-  /* — Sort game — */
-  var sortBank = document.getElementById('sortBank');
-  if(sortBank){
+  /* — Sort games — (scoped per game, one localStorage key each) */
+  var _sortGames = [].slice.call(document.querySelectorAll('.sort-game'));
+  _sortGames.forEach(function(g, gi){
+    var bank = g.querySelector('.sort-bank'); if(!bank) return;
+    var gk = g.id || ('sg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-sortState') || 'null');
+      raw = localStorage.getItem(k+'-sortState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-sortState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        saved.forEach(function(s){
-          var col = document.querySelector('.sort-col-drop[data-col="'+s.col+'"]');
+        saved.forEach(function(st){
+          var col = g.querySelector('.sort-col-drop[data-col="'+st.col+'"]');
           if(!col) return;
-          var chips = sortBank.querySelectorAll('.sort-chip');
-          chips.forEach(function(chip){
+          bank.querySelectorAll('.sort-chip').forEach(function(chip){
             if(chip.classList.contains('placed')) return;
-            if(chip.textContent.trim() === s.text && chip.getAttribute('data-group') === s.col){
+            if(chip.textContent.trim() === st.text && chip.getAttribute('data-group') === st.col){
               var cl = chip.cloneNode(true);
               cl.classList.add('correct');
               cl.style.outline = ''; cl.onclick = null; cl.style.cursor = 'default';
               col.appendChild(cl);
               chip.classList.add('placed');
-              if(typeof sortPlaced !== 'undefined') sortPlaced++;
+              try{ if(typeof sortPlaced !== 'undefined') sortPlaced++; }catch(e){}
             }
           });
         });
-        if(typeof sortPlaced !== 'undefined' && typeof sortTotal !== 'undefined' && sortPlaced >= sortTotal){
-          var sc = document.getElementById('sortScore');
-          if(sc){ sc.textContent = '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
+        if(bank.querySelectorAll('.sort-chip.placed').length >= bank.querySelectorAll('.sort-chip').length){
+          var sc = g.querySelector('.sort-score');
+          if(sc){ sc.textContent = g.getAttribute('data-win') || '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
         }
       }
     }catch(e){}
-    /* hook into dropSortChip to save state */
-    var origDrop = window.dropSortChip;
-    if(origDrop){
-      window.dropSortChip = function(col, colName){
-        origDrop(col, colName);
+  });
+  if(_sortGames.length){
+    ['dropSortChip','dropVocabChip'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(col, colName){
+        orig(col, colName);
         try{
+          var g = col.closest('.sort-game'); if(!g) return;
+          var gi = _sortGames.indexOf(g); var gk = g.id || ('sg'+(gi < 0 ? 0 : gi));
           var placed = [];
-          document.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
+          g.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
             placed.push({text: c.textContent.trim(), col: c.closest('.sort-col-drop').getAttribute('data-col')});
           });
-          localStorage.setItem(k+'-sortState', JSON.stringify(placed));
+          localStorage.setItem(k+'-sortState-'+gk, JSON.stringify(placed));
         }catch(e){}
       };
-    }
+    });
   }
 
-  /* — Match game — */
-  var matchGrid = document.getElementById('matchGrid');
-  if(matchGrid){
+  /* — Match games — (scoped per grid, one localStorage key each) */
+  var _matchGrids = [].slice.call(document.querySelectorAll('.match-grid'));
+  _matchGrids.forEach(function(g, gi){
+    var gk = g.id || ('mg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-matchState') || 'null');
+      raw = localStorage.getItem(k+'-matchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-matchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = matchGrid.querySelectorAll('.match-item');
+        var items = g.querySelectorAll('.match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){
-              it.classList.add('matched');
-            }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof matchCount !== 'undefined'){
-          matchCount = saved.length;
-          var total = typeof matchTotal !== 'undefined' ? matchTotal : 4;
-          if(matchCount >= total){
-            var fb = document.getElementById('matchFeedback');
-            if(fb) fb.classList.add('show');
-            if(typeof window._vocabMatchDone !== 'undefined') window._vocabMatchDone = true;
-          }
+        try{ if(typeof matchCount !== 'undefined') matchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.match-feedback');
+          if(fb) fb.classList.add('show');
+          window._vocabMatchDone = true;
         }
       }
     }catch(e){}
-    /* hook into matchClick to save state */
+  });
+  if(_matchGrids.length){
     var origMatch = window.matchClick;
     if(origMatch){
       window.matchClick = function(item){
         origMatch(item);
         try{
-          var matched = [];
-          var seen = {};
-          matchGrid.querySelectorAll('.match-item.matched').forEach(function(it){
+          var g = item.closest('.match-grid'); if(!g) return;
+          var gi = _matchGrids.indexOf(g); var gk = g.id || ('mg'+(gi < 0 ? 0 : gi));
+          var matched = [], seen = {};
+          g.querySelectorAll('.match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-matchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-matchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
     }
@@ -3772,41 +3689,48 @@ const trackerPos = [
     });
   }
 
-  /* — Root-match game — same as vocab match but separate vars */
-  var rootGrid = document.querySelector('.root-match-grid');
-  if(rootGrid){
+  /* — Root-match games — (scoped per grid, one localStorage key each) */
+  var _rootGrids = [].slice.call(document.querySelectorAll('.root-match-grid'));
+  _rootGrids.forEach(function(g, gi){
+    var gk = g.id || ('rg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-rootMatchState') || 'null');
+      raw = localStorage.getItem(k+'-rootMatchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-rootMatchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = rootGrid.querySelectorAll('.root-match-item');
+        var items = g.querySelectorAll('.root-match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){ it.classList.add('matched'); }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof rootMatchCount !== 'undefined'){
-          rootMatchCount = saved.length;
-          if(rootMatchCount >= 4){
-            var fb = document.getElementById('rootMatchFeedback');
-            if(fb) fb.classList.add('show');
-          }
+        try{ if(typeof rootMatchCount !== 'undefined') rootMatchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.root-match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.root-match-feedback');
+          if(fb) fb.classList.add('show');
         }
       }
     }catch(e){}
-    var origRootMatch = window.rootMatchClick;
-    if(origRootMatch){
-      window.rootMatchClick = function(item){
-        origRootMatch(item);
+  });
+  if(_rootGrids.length){
+    ['rootMatchClick','vocabMatchClick'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(item){
+        orig(item);
         try{
+          var g = item.closest('.root-match-grid'); if(!g) return;
+          var gi = _rootGrids.indexOf(g); var gk = g.id || ('rg'+(gi < 0 ? 0 : gi));
           var matched = [], seen = {};
-          rootGrid.querySelectorAll('.root-match-item.matched').forEach(function(it){
+          g.querySelectorAll('.root-match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-rootMatchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-rootMatchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
-    }
+    });
   }
 
   /* — Comma game — restore inserted commas */

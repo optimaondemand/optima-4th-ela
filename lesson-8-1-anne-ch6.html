@@ -2173,6 +2173,11 @@ body {
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
 <script>
+function _oaoFbNear(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+</script>
+<script>
 (function () {
     "use strict";
     var playBtn  = document.getElementById("ora-play");
@@ -2574,7 +2579,7 @@ body {
         <div class="fillin-item"><input class="fillin-input" id="fill2" data-answer="sub" maxlength="8" placeholder="______">merge — to sink under the surface</div>
         <div class="fillin-item"><input class="fillin-input" id="fill3" data-answer="inter" maxlength="8" placeholder="______">rupt — to break in between (someone talking)</div>
         <div class="fillin-item"><input class="fillin-input" id="fill4" data-answer="inter" maxlength="8" placeholder="______">national — between nations</div>
-        <button class="fillin-check-btn" onclick="checkFillIn()">Check My Work</button>
+        <button class="fillin-check-btn" onclick="checkFillIn(this)">Check My Work</button>
         <div class="fillin-feedback" id="fillinFeedback">🌱 All correct!</div>
       </div>
       
@@ -2685,81 +2690,18 @@ body {
 
   <!-- GRAMMAR -->
   <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Possessive Nouns</div><div class="activity-sub">Day 1: Notice &mdash; work out the pattern before you are told it.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Possessive Nouns</div><div class="activity-sub">Day 1: Notice &mdash; sort them first. The column labels are blank on purpose.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Grammar Detective</span></div></div></div>
     <div class="activity-body">
-<!-- grammar-notice-first -->
-<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;">
-<div class="key-concept-label" style="color:#3D5285;">&#x1F50E; What do you notice?</div>
-<p>Every word here has an apostrophe. Look at where it sits.</p>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; What do you notice?</div><p>Phrases from Chapter 6. Look carefully at where the apostrophe sits.</p></div><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4AD;</span><p><strong>Think it through.</strong></p><ol style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;"><li>Which ones show something belonging to <em>one</em> owner?</li><li>Which show something belonging to <em>more than one</em>?</li><li>What moved, and what stayed the same?</li></ol></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Drag each one into the column where you think it belongs, then name the two groups yourself.</p></div><div class="sort-game" id="g4w8S" data-win="🎉 All sorted. Now name the two groups."><div class="sort-bank" id="g4w8SBank"><span class="sort-chip" data-group="singular" onclick="pickSortChip(this)">Anne's trunk</span><span class="sort-chip" data-group="plural" onclick="pickSortChip(this)">the girls' room</span><span class="sort-chip" data-group="singular" onclick="pickSortChip(this)">Marilla's kitchen</span><span class="sort-chip" data-group="plural" onclick="pickSortChip(this)">the neighbours' gossip</span><span class="sort-chip" data-group="singular" onclick="pickSortChip(this)">Matthew's buggy</span><span class="sort-chip" data-group="plural" onclick="pickSortChip(this)">the horses' stable</span></div><div class="sort-columns"><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Group A</div><div class="sort-col-drop" data-col="singular" onclick="dropSortChip(this,'singular')"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Group B</div><div class="sort-col-drop" data-col="plural" onclick="dropSortChip(this,'plural')"></div></div></div><div class="sort-score" id="g4w8SScore"></div></div><button class="dol-check-btn" onclick="document.getElementById('g4w8SRev').classList.toggle('show')">&#x1F50D; Now check your thinking</button><div class="dol-answer" id="g4w8SRev"><p><strong>Group A: one owner.</strong> Add <strong>apostrophe + s</strong> &mdash; <em>Anne&rsquo;s trunk</em>.</p><p><strong>Group B: more than one owner.</strong> The word already ends in s, so the apostrophe goes <strong>after</strong> it &mdash; <em>the girls&rsquo; room</em>.</p><p>Say it aloud and both sound identical. Only the apostrophe tells the reader how many owners there are.</p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Name both groups, then explain what a reader learns from where the apostrophe sits.</div><div class="textbox-prompt">Name both groups and give the test you used.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="Group A are... Group B are... The way I can tell is..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
 </div>
-<div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
-        <div class="task-sentence" style="border-left-color:#C7922C;">A <strong>possessive noun</strong> shows that something belongs to someone or something. Add an apostrophe + <strong>s</strong>: <em>Anne&rsquo;s hair</em>, <em>Marilla&rsquo;s kitchen</em>, <em>the cat&rsquo;s tail</em>.</div>
-      </div>
-<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4AD;</span><p><strong>Think it through.</strong></p>
-<ol style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;">
-<li>What does each phrase tell you about who owns what?</li>
-<li>Is the apostrophe before the <em>s</em> or after it?</li>
-<li>What decides which side it goes on?</li>
-</ol></div>
-<button class="dol-check-btn" onclick="document.getElementById('gramNotice').classList.toggle('show')">&#x1F50D; Now check your thinking</button>
-<div class="dol-answer" id="gramNotice">
-<p>A <strong>noun</strong> is a person, place, animal, or thing. The <strong>subject</strong> of a sentence is the noun the sentence is about.</p>
-<p><em>Singular noun + &rsquo;s:</em> Anne &rarr; <strong>Anne&rsquo;s</strong> bedroom &nbsp;|&nbsp; Matthew &rarr; <strong>Matthew&rsquo;s</strong> kindness<br><em>Plural noun ending in s + just apostrophe:</em> the boys &rarr; <strong>the boys&rsquo;</strong> game &nbsp;|&nbsp; the orphans &rarr; <strong>the orphans&rsquo;</strong> asylum<br><em>Irregular plural + &rsquo;s:</em> children &rarr; <strong>children&rsquo;s</strong> shoes</p>
-</div>
-
-<div class="spotter-game" id="spotterGame">
-        <div class="spotter-sentence" id="spot1"><span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">Anne&rsquo;s</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">face</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">was</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">transfigured</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">with</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">hope.</span><div class="spotter-result" id="spot1-result"></div></div>
-        <div class="spotter-sentence" id="spot2"><span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Mrs.</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">Rachel&rsquo;s</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">words</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">stung</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Anne.</span><div class="spotter-result" id="spot2-result"></div></div>
-        <div class="spotter-sentence" id="spot3"><span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">Matthew&rsquo;s</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">kindness</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">changed</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Anne&rsquo;s</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">life.</span><div class="spotter-result" id="spot3-result"></div></div>
-      </div>
-      
-    </div>
   </div>
 
   <!-- SPELLING -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Possessives vs Plurals</div><div class="activity-sub">Discover the pattern by listening.</div></div></div>
-    <div class="activity-body"><!-- spell-notice-first -->
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">Group A &mdash; plural (more than one) &mdash; NO apostrophe</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">cat &rarr; cat<strong style="color:#C7627E;">s</strong> &middot; girl &rarr; girl<strong style="color:#C7627E;">s</strong> &middot; orphan &rarr; orphan<strong style="color:#C7627E;">s</strong> &middot; tree &rarr; tree<strong style="color:#C7627E;">s</strong></p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">Group B &mdash; possessive (belongs to) &mdash; WITH apostrophe</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">cat&rsquo;s tail &middot; girl<strong style="color:#C7922C;">&rsquo;s</strong> hair &middot; orphan<strong style="color:#C7922C;">&rsquo;s</strong> trunk &middot; tree<strong style="color:#C7922C;">&rsquo;s</strong> blossoms</p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">&#x1F440; Look at what changed</div>
-        <p class="socratic-q">Group A: what do all of these have in common? How does the -s change the meaning?</p>
-        <p class="socratic-q">Group B: each word has a tiny mark before the s. Where does the apostrophe sit, and what does it tell you?</p>
-        <p class="socratic-q">Look at <em>cats</em> vs. <em>cat&rsquo;s</em>. Both have an s. What is the apostrophe doing?</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>Look at these two groups of words:</p><p><strong>Plural</strong> = more than one. Just add <strong>-s</strong> (or -es). NO apostrophe.</p><p><strong>Possessive</strong> = belongs to. Add <strong>&rsquo;s</strong> (singular) or just <strong>&rsquo;</strong> (plural ending in s).</p><p>If you can replace the word with <em>belongs to</em>, use the apostrophe. If you mean <em>more than one</em>, leave it off.</p></div>
-
-      <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
-      <div class="sort-game" id="spellSort">
-        <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="plural" onclick="pickSortChip(this)">cats</span>
-          <span class="sort-chip" data-group="poss" onclick="pickSortChip(this)">cat's</span>
-          <span class="sort-chip" data-group="poss" onclick="pickSortChip(this)">Anne's</span>
-          <span class="sort-chip" data-group="plural" onclick="pickSortChip(this)">girls</span>
-          <span class="sort-chip" data-group="poss" onclick="pickSortChip(this)">Matthew's</span>
-          <span class="sort-chip" data-group="plural" onclick="pickSortChip(this)">orphans</span>
-        </div>
-        <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Plural (no apostrophe)</div><div class="sort-col-drop" data-col="plural" onclick="dropSortChip(this,'plural')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Possessive (apostrophe)</div><div class="sort-col-drop" data-col="poss" onclick="dropSortChip(this,'poss')"></div></div>
-        </div>
-        <div class="sort-score" id="sortScore"></div>
-      </div>
-      
-    </div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Possessives vs. Plurals</div><div class="activity-sub">Day 1: Notice &mdash; sort them first. The column labels are blank on purpose.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Spelling Level: Word Detective</span></div></div></div>
+    <div class="activity-body">
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; What do you notice?</div><p>Phrases from Chapter 6. They sound identical. Look at the apostrophe.</p></div><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4AD;</span><p><strong>Think it through.</strong></p><ol style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;"><li>Which of these mean <em>more than one</em>?</li><li>Which mean <em>belonging to</em>?</li><li>What is the only visible difference?</li></ol></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Sort each word into the column where you think it belongs, then name the two groups yourself.</p></div><div class="sort-game" id="s4w8S" data-win="🎉 All sorted. Now name the rule."><div class="sort-bank" id="s4w8SBank"><span class="sort-chip" data-group="plural" onclick="pickSortChip(this)">the girls laughed</span><span class="sort-chip" data-group="poss" onclick="pickSortChip(this)">the girl&rsquo;s trunk</span><span class="sort-chip" data-group="plural" onclick="pickSortChip(this)">two windows</span><span class="sort-chip" data-group="poss" onclick="pickSortChip(this)">the window&rsquo;s frame</span><span class="sort-chip" data-group="plural" onclick="pickSortChip(this)">the neighbours talked</span><span class="sort-chip" data-group="poss" onclick="pickSortChip(this)">the neighbour&rsquo;s gossip</span></div><div class="sort-columns"><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Group A: more than one</div><div class="sort-col-drop" data-col="plural" onclick="dropSortChip(this,'plural')"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Group B: belongs to</div><div class="sort-col-drop" data-col="poss" onclick="dropSortChip(this,'poss')"></div></div></div><div class="sort-score" id="s4w8SScore"></div></div><button class="dol-check-btn" onclick="document.getElementById('s4w8SR').classList.toggle('show')">&#x1F50D; Now check your thinking</button><div class="dol-answer" id="s4w8SR"><p><strong>Group A are plurals.</strong> More than one thing. No apostrophe, ever.</p><p><strong>Group B are possessives.</strong> Something belongs to someone, marked with <strong>apostrophe + s</strong>.</p><p>Say them aloud and they are identical. The apostrophe is doing work your ear cannot hear, which is exactly why this is the most common punctuation mistake in English.</p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Explain the difference between a plural and a possessive, and say why your ear cannot tell them apart.</div><div class="textbox-prompt">Name both groups and state the rule.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="Group A are... Group B are... The rule is..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
+</div>
   </div>
 
   <div class="tab-next-wrap">
@@ -3286,85 +3228,58 @@ var sortSelected = null;
 var sortPlaced = 0;
 var sortTotal = 6;
 
-function pickSortChip(chip) {
-  if (chip.classList.contains('placed')) return;
-  if (sortSelected) sortSelected.style.outline = '';
-  sortSelected = chip;
-  chip.style.outline = '3px solid #55C8E8';
-  chip.style.outlineOffset = '2px';
-}
 
-function dropSortChip(colDrop, colName) {
-  if (!sortSelected) return;
-  var correctGroup = sortSelected.getAttribute('data-group');
-  var clone = sortSelected.cloneNode(true);
-  clone.style.outline = '';
-  clone.onclick = null;
-  clone.style.cursor = 'default';
 
-  if (correctGroup === colName) {
-    clone.classList.add('correct');
-    sortSelected.classList.add('placed');
-    colDrop.appendChild(clone);
-    sortPlaced++;
-  } else {
-    clone.classList.add('wrong');
-    colDrop.appendChild(clone);
-    setTimeout(function() { colDrop.removeChild(clone); }, 600);
-  }
-  sortSelected.style.outline = '';
-  sortSelected = null;
-
-  if (sortPlaced >= sortTotal) {
-    var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know an apostrophe from an extra -s.';
-    sc.classList.add('show');
-  }
-}
+function pickSortChip(chip){
+if(chip.classList.contains('placed'))return;
+var g=chip.closest('.sort-game');if(!g)return;
+if(g._oaoSel)g._oaoSel.style.outline='';
+g._oaoSel=chip;chip.style.outline='3px solid #55C8E8';chip.style.outlineOffset='2px';}
+function dropSortChip(colDrop,colName){
+var g=colDrop.closest('.sort-game');if(!g||!g._oaoSel)return;
+var sel=g._oaoSel;
+var clone=sel.cloneNode(true);clone.style.outline='';clone.onclick=null;clone.style.cursor='default';
+if(sel.getAttribute('data-group')===colName){clone.classList.add('correct');sel.classList.add('placed');colDrop.appendChild(clone);
+try{if(typeof sortPlaced!=='undefined')sortPlaced++;}catch(e){}}
+else{clone.classList.add('wrong');colDrop.appendChild(clone);
+setTimeout(function(){if(clone.parentNode===colDrop)colDrop.removeChild(clone);},600);}
+sel.style.outline='';g._oaoSel=null;
+var bank=g.querySelector('.sort-bank');if(!bank)return;
+if(bank.querySelectorAll('.sort-chip.placed').length>=bank.querySelectorAll('.sort-chip').length){
+var sc=g.querySelector('.sort-score');
+if(sc){sc.textContent=g.getAttribute('data-win')||'\uD83C\uDF89 All sorted correctly!';sc.classList.add('show');}}}
 
 /* ───── VOCAB MATCH GAME ───── */
 var matchFirst = null;
 var matchCount = 0;
 
-function matchClick(item) {
-  if (item.classList.contains('matched')) return;
 
-  if (!matchFirst) {
-    matchFirst = item;
-    item.classList.add('selected');
-    return;
-  }
-
-  if (matchFirst === item) {
-    matchFirst.classList.remove('selected');
-    matchFirst = null;
-    return;
-  }
-
-  var key1 = matchFirst.getAttribute('data-match');
-  var key2 = item.getAttribute('data-match');
-
-  if (key1 === key2 && matchFirst.classList.contains('is-word') !== item.classList.contains('is-word')) {
-    matchFirst.classList.remove('selected');
-    matchFirst.classList.add('matched');
-    item.classList.add('matched');
-    matchCount++;
-    matchFirst = null;
-    if (matchCount >= 4) {
-      document.getElementById('matchFeedback').classList.add('show');
-    }
-  } else {
-    item.classList.add('wrong-flash');
-    matchFirst.classList.add('wrong-flash');
-    var a = matchFirst;
-    var b = item;
-    setTimeout(function() {
-      a.classList.remove('wrong-flash', 'selected');
-      b.classList.remove('wrong-flash');
-    }, 500);
-    matchFirst = null;
-  }
-}
+function _oaoFb(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+function _oaoBump(which){try{
+if(which==='matchCount'){if(typeof matchCount!=='undefined')matchCount++;}
+else if(which==='rootMatchCount'){if(typeof rootMatchCount!=='undefined')rootMatchCount++;}
+else if(which==='vocabMatchCount'){if(typeof vocabMatchCount!=='undefined')vocabMatchCount++;}
+}catch(e){}}
+function _oaoMatch(item,which){
+var g=item.closest('.match-grid, .root-match-grid'); if(!g)return;
+if(item.classList.contains('matched'))return;
+var isRoot=g.classList.contains('root-match-grid');
+var iSel=isRoot?'.root-match-item':'.match-item';
+var sel=g.querySelector(iSel+'.selected');
+if(!sel){item.classList.add('selected');return;}
+if(sel===item){sel.classList.remove('selected');return;}
+if(sel.getAttribute('data-match')===item.getAttribute('data-match')&&sel.classList.contains('is-word')!==item.classList.contains('is-word')){
+sel.classList.remove('selected');sel.classList.add('matched');item.classList.add('matched');
+_oaoBump(which);
+if(g.querySelectorAll(iSel+'.matched').length>=g.querySelectorAll(iSel).length){
+var fb=_oaoFb(g,isRoot?'.root-match-feedback':'.match-feedback');
+if(fb)fb.classList.add('show');
+if(which==='vocabMatchCount')window._vocabMatchDone=true;else window._fillinDone=true;}
+}else{item.classList.add('wrong-flash');sel.classList.add('wrong-flash');var a=sel,b=item;
+setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);}}
+function matchClick(item){_oaoMatch(item,'matchCount');}
 
 /* ───── INTERJECTION SPOTTER ───── */
 function spotterPick(word, sentenceId) {
@@ -3464,28 +3379,18 @@ window.addEventListener('beforeunload', function(e){
 /* ───── FILL-IN-THE-ROOT GAME (MORPHOLOGY) ───── */
 window._fillinDone = false;
 
-function checkFillIn() {
-  var inputs = document.querySelectorAll('.fillin-input');
-  var allCorrect = true;
-  inputs.forEach(function(inp) {
-    var answer = inp.getAttribute('data-answer').toLowerCase();
-    var val = inp.value.trim().toLowerCase();
-    if (val === answer) {
-      inp.classList.remove('wrong');
-      inp.classList.add('correct');
-      inp.disabled = true;
-    } else {
-      inp.classList.remove('correct');
-      inp.classList.add('wrong');
-      allCorrect = false;
-      setTimeout(function() { inp.classList.remove('wrong'); }, 600);
-    }
-  });
-  if (allCorrect) {
-    document.getElementById('fillinFeedback').classList.add('show');
-    window._fillinDone = true;
-  }
-}
+function checkFillIn(btn){
+var g=(btn&&btn.closest)?btn.closest('.fillin-game'):null;
+var scope=g||document;var all=true;
+scope.querySelectorAll('.fillin-input').forEach(function(inp){
+var answer=(inp.getAttribute('data-answer')||'').toLowerCase();
+var val=inp.value.trim().toLowerCase();
+if(val===answer){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;}
+else{inp.classList.remove('correct');inp.classList.add('wrong');all=false;
+setTimeout(function(){inp.classList.remove('wrong');},600);}});
+if(all){var fb=g?_oaoFb(g,'.fillin-feedback'):document.getElementById('fillinFeedback');
+if(!fb)fb=document.getElementById('fillinFeedback');
+if(fb)fb.classList.add('show');window._fillinDone=true;}}
 
 /* ───── DOWNLOAD JOURNAL AS PDF ───── */
 function downloadJournal() {
@@ -3655,117 +3560,126 @@ const trackerPos = [
 (function(){
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
-  /* — Fill-in inputs — */
+  /* — Fill-in inputs — (scoped per game) */
   document.querySelectorAll('.fillin-input').forEach(function(inp){
     if(!inp.id) return;
     try{
       var v = localStorage.getItem(k+'-'+inp.id);
       if(v){
         inp.value = v;
-        var a = (inp.getAttribute('data-answer')||'').toLowerCase();
-        if(v.trim().toLowerCase() === a){
-          inp.classList.add('correct'); inp.disabled = true;
-        }
+        var a = (inp.getAttribute('data-answer')||inp.getAttribute('data-ans')||'').toLowerCase();
+        if(a && v.trim().toLowerCase() === a){ inp.classList.add('correct'); inp.disabled = true; }
       }
     }catch(e){}
     inp.addEventListener('input', function(){
       try{ localStorage.setItem(k+'-'+this.id, this.value); }catch(e){}
     });
   });
-  /* restore fillin feedback if all correct */
-  var allFillins = document.querySelectorAll('.fillin-input');
-  if(allFillins.length > 0){
+  /* restore each fill-in game's own feedback when THAT game is complete */
+  [].slice.call(document.querySelectorAll('.fillin-game')).forEach(function(g){
+    var ins = g.querySelectorAll('.fillin-input');
+    if(!ins.length) return;
     var allDone = true;
-    allFillins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
-    if(allDone){
-      var fb = document.getElementById('fillinFeedback');
-      if(fb) fb.classList.add('show');
-      if(typeof window._fillinDone !== 'undefined') window._fillinDone = true;
-    }
-  }
+    ins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
+    if(!allDone) return;
+    var fb = _oaoFbNear(g, '.fillin-feedback') || document.getElementById('fillinFeedback');
+    if(fb) fb.classList.add('show');
+    window._fillinDone = true;
+  });
 
-  /* — Sort game — */
-  var sortBank = document.getElementById('sortBank');
-  if(sortBank){
+  /* — Sort games — (scoped per game, one localStorage key each) */
+  var _sortGames = [].slice.call(document.querySelectorAll('.sort-game'));
+  _sortGames.forEach(function(g, gi){
+    var bank = g.querySelector('.sort-bank'); if(!bank) return;
+    var gk = g.id || ('sg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-sortState') || 'null');
+      raw = localStorage.getItem(k+'-sortState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-sortState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        saved.forEach(function(s){
-          var col = document.querySelector('.sort-col-drop[data-col="'+s.col+'"]');
+        saved.forEach(function(st){
+          var col = g.querySelector('.sort-col-drop[data-col="'+st.col+'"]');
           if(!col) return;
-          var chips = sortBank.querySelectorAll('.sort-chip');
-          chips.forEach(function(chip){
+          bank.querySelectorAll('.sort-chip').forEach(function(chip){
             if(chip.classList.contains('placed')) return;
-            if(chip.textContent.trim() === s.text && chip.getAttribute('data-group') === s.col){
+            if(chip.textContent.trim() === st.text && chip.getAttribute('data-group') === st.col){
               var cl = chip.cloneNode(true);
               cl.classList.add('correct');
               cl.style.outline = ''; cl.onclick = null; cl.style.cursor = 'default';
               col.appendChild(cl);
               chip.classList.add('placed');
-              if(typeof sortPlaced !== 'undefined') sortPlaced++;
+              try{ if(typeof sortPlaced !== 'undefined') sortPlaced++; }catch(e){}
             }
           });
         });
-        if(typeof sortPlaced !== 'undefined' && typeof sortTotal !== 'undefined' && sortPlaced >= sortTotal){
-          var sc = document.getElementById('sortScore');
-          if(sc){ sc.textContent = '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
+        if(bank.querySelectorAll('.sort-chip.placed').length >= bank.querySelectorAll('.sort-chip').length){
+          var sc = g.querySelector('.sort-score');
+          if(sc){ sc.textContent = g.getAttribute('data-win') || '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
         }
       }
     }catch(e){}
-    /* hook into dropSortChip to save state */
-    var origDrop = window.dropSortChip;
-    if(origDrop){
-      window.dropSortChip = function(col, colName){
-        origDrop(col, colName);
+  });
+  if(_sortGames.length){
+    ['dropSortChip','dropVocabChip'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(col, colName){
+        orig(col, colName);
         try{
+          var g = col.closest('.sort-game'); if(!g) return;
+          var gi = _sortGames.indexOf(g); var gk = g.id || ('sg'+(gi < 0 ? 0 : gi));
           var placed = [];
-          document.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
+          g.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
             placed.push({text: c.textContent.trim(), col: c.closest('.sort-col-drop').getAttribute('data-col')});
           });
-          localStorage.setItem(k+'-sortState', JSON.stringify(placed));
+          localStorage.setItem(k+'-sortState-'+gk, JSON.stringify(placed));
         }catch(e){}
       };
-    }
+    });
   }
 
-  /* — Match game — */
-  var matchGrid = document.getElementById('matchGrid');
-  if(matchGrid){
+  /* — Match games — (scoped per grid, one localStorage key each) */
+  var _matchGrids = [].slice.call(document.querySelectorAll('.match-grid'));
+  _matchGrids.forEach(function(g, gi){
+    var gk = g.id || ('mg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-matchState') || 'null');
+      raw = localStorage.getItem(k+'-matchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-matchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = matchGrid.querySelectorAll('.match-item');
+        var items = g.querySelectorAll('.match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){
-              it.classList.add('matched');
-            }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof matchCount !== 'undefined'){
-          matchCount = saved.length;
-          var total = typeof matchTotal !== 'undefined' ? matchTotal : 4;
-          if(matchCount >= total){
-            var fb = document.getElementById('matchFeedback');
-            if(fb) fb.classList.add('show');
-            if(typeof window._vocabMatchDone !== 'undefined') window._vocabMatchDone = true;
-          }
+        try{ if(typeof matchCount !== 'undefined') matchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.match-feedback');
+          if(fb) fb.classList.add('show');
+          window._vocabMatchDone = true;
         }
       }
     }catch(e){}
-    /* hook into matchClick to save state */
+  });
+  if(_matchGrids.length){
     var origMatch = window.matchClick;
     if(origMatch){
       window.matchClick = function(item){
         origMatch(item);
         try{
-          var matched = [];
-          var seen = {};
-          matchGrid.querySelectorAll('.match-item.matched').forEach(function(it){
+          var g = item.closest('.match-grid'); if(!g) return;
+          var gi = _matchGrids.indexOf(g); var gk = g.id || ('mg'+(gi < 0 ? 0 : gi));
+          var matched = [], seen = {};
+          g.querySelectorAll('.match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-matchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-matchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
     }
@@ -3810,41 +3724,48 @@ const trackerPos = [
     });
   }
 
-  /* — Root-match game — same as vocab match but separate vars */
-  var rootGrid = document.querySelector('.root-match-grid');
-  if(rootGrid){
+  /* — Root-match games — (scoped per grid, one localStorage key each) */
+  var _rootGrids = [].slice.call(document.querySelectorAll('.root-match-grid'));
+  _rootGrids.forEach(function(g, gi){
+    var gk = g.id || ('rg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-rootMatchState') || 'null');
+      raw = localStorage.getItem(k+'-rootMatchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-rootMatchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = rootGrid.querySelectorAll('.root-match-item');
+        var items = g.querySelectorAll('.root-match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){ it.classList.add('matched'); }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof rootMatchCount !== 'undefined'){
-          rootMatchCount = saved.length;
-          if(rootMatchCount >= 4){
-            var fb = document.getElementById('rootMatchFeedback');
-            if(fb) fb.classList.add('show');
-          }
+        try{ if(typeof rootMatchCount !== 'undefined') rootMatchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.root-match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.root-match-feedback');
+          if(fb) fb.classList.add('show');
         }
       }
     }catch(e){}
-    var origRootMatch = window.rootMatchClick;
-    if(origRootMatch){
-      window.rootMatchClick = function(item){
-        origRootMatch(item);
+  });
+  if(_rootGrids.length){
+    ['rootMatchClick','vocabMatchClick'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(item){
+        orig(item);
         try{
+          var g = item.closest('.root-match-grid'); if(!g) return;
+          var gi = _rootGrids.indexOf(g); var gk = g.id || ('rg'+(gi < 0 ? 0 : gi));
           var matched = [], seen = {};
-          rootGrid.querySelectorAll('.root-match-item.matched').forEach(function(it){
+          g.querySelectorAll('.root-match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-rootMatchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-rootMatchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
-    }
+    });
   }
 
   /* — Comma game — restore inserted commas */

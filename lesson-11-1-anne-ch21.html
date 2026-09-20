@@ -2173,6 +2173,11 @@ body {
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
 <script>
+function _oaoFbNear(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+</script>
+<script>
 (function () {
     "use strict";
     var playBtn  = document.getElementById("ora-play");
@@ -2575,7 +2580,7 @@ body {
         <div class="fillin-item"><input class="fillin-input" id="fill2" data-answer="de" maxlength="8" placeholder="______">part &mdash; to leave; to go away</div>
         <div class="fillin-item"><input class="fillin-input" id="fill3" data-answer="de" maxlength="8" placeholder="______">scend &mdash; to go down</div>
         <div class="fillin-item"><input class="fillin-input" id="fill4" data-answer="anti" maxlength="8" placeholder="______">biotic &mdash; medicine that fights against bacteria</div>
-        <button class="fillin-check-btn" onclick="checkFillIn()">Check My Work</button>
+        <button class="fillin-check-btn" onclick="checkFillIn(this)">Check My Work</button>
         <div class="fillin-feedback" id="fillinFeedback">🌱 All correct!</div>
       </div>
       
@@ -2684,81 +2689,18 @@ body {
 
   <!-- GRAMMAR -->
   <div class="activity bl-gold">
-    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Past &amp; Future Tense Verbs</div><div class="activity-sub">Day 1: Notice &mdash; work out the pattern before you are told it.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Past & Future Tense Verbs</div><div class="activity-sub">Day 1: Notice &mdash; three columns this time. Sort by what each one is doing.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Sentence Surgeon</span></div></div></div>
     <div class="activity-body">
-<!-- grammar-notice-first -->
-<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;">
-<div class="key-concept-label" style="color:#3D5285;">&#x1F50E; What do you notice?</div>
-<p>Read each sentence straight through and listen for the moment it trips.</p>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; What do you notice?</div><p>The same action, told three ways. Sort by <em>when</em> it happens.</p></div><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4AD;</span><p><strong>Think it through.</strong></p><ol style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;"><li>Which have already happened?</li><li>Which are happening now?</li><li>Which have not happened yet?</li></ol></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Sort each one into the column where it belongs, then name the three groups yourself.</p></div><div class="sort-game" id="g4w11S" data-win="🎉 All sorted. Three different jobs."><div class="sort-bank" id="g4w11SBank"><span class="sort-chip" data-group="past" onclick="pickSortChip(this)">Anne baked a cake</span><span class="sort-chip" data-group="present" onclick="pickSortChip(this)">Anne bakes a cake</span><span class="sort-chip" data-group="future" onclick="pickSortChip(this)">Anne will bake a cake</span><span class="sort-chip" data-group="past" onclick="pickSortChip(this)">Diana arrived early</span><span class="sort-chip" data-group="present" onclick="pickSortChip(this)">Diana arrives early</span><span class="sort-chip" data-group="future" onclick="pickSortChip(this)">Diana will arrive early</span></div><div class="sort-columns"><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">Group 1</div><div class="sort-col-drop" data-col="past" onclick="dropSortChip(this,'past')"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">Group 2</div><div class="sort-col-drop" data-col="present" onclick="dropSortChip(this,'present')"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#3D5285,#5a76ad);">Group 3</div><div class="sort-col-drop" data-col="future" onclick="dropSortChip(this,'future')"></div></div></div><div class="sort-score" id="g4w11SScore"></div></div><button class="dol-check-btn" onclick="document.getElementById('g4w11SR').classList.toggle('show')">&#x1F50D; Now check your thinking</button><div class="dol-answer" id="g4w11SR"><p><strong>Past:</strong> already finished &mdash; usually -ed, but plenty are irregular.</p><p><strong>Present:</strong> happening now.</p><p><strong>Future:</strong> has not happened yet &mdash; formed with <strong>will</strong> + the plain verb. Notice the future never changes the verb itself.</p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Name all three tenses and say which one needs a helping word to exist.</div><div class="textbox-prompt">Name all three and give the test you used.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="Group 1 are... Group 2 are... Group 3 are... I can tell by..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
 </div>
-<div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
-        <div class="task-sentence" style="border-left-color:#C7922C;">A <strong>past-tense verb</strong> names an action that already happened. Most past-tense verbs end in <strong>-ed</strong>: <em>walked, baked, smiled</em>. Some are irregular: <em>ran, said, broke, ate</em>.</div>
-      </div>
-<div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4AD;</span><p><strong>Think it through.</strong></p>
-<ol style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;">
-<li>When does each one take place &mdash; past, now, or still to come?</li>
-<li>Does it stay in that time all the way to the end?</li>
-<li>What exactly would you change to make it stay put?</li>
-</ol></div>
-<button class="dol-check-btn" onclick="document.getElementById('gramNotice').classList.toggle('show')">&#x1F50D; Now check your thinking</button>
-<div class="dol-answer" id="gramNotice">
-<p>A <strong>noun</strong> is a person, place, animal, or thing. The <strong>subject</strong> of a sentence is the noun the sentence is about.</p>
-<p><em>Regular past tense:</em> Anne <strong>baked</strong> the cake. Mrs. Allan <strong>smiled</strong>. Marilla <strong>scolded</strong> Anne.<br><em>Irregular past tense:</em> Anne <strong>ran</strong> upstairs. Mrs. Allan <strong>said</strong> kind words. The cake <strong>was</strong> a disaster.<br>Past-tense verbs tell us the action is finished.</p>
-</div>
-
-<div class="spotter-game" id="spotterGame">
-        <div class="spotter-sentence" id="spot1"><span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Anne</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="true">baked</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">a</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">cake</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">for</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Mrs.</span> <span class="spotter-word" onclick="spotterPick(this,'spot1')" data-correct="false">Allan.</span><div class="spotter-result" id="spot1-result"></div></div>
-        <div class="spotter-sentence" id="spot2"><span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Marilla</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="true">scolded</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">Anne</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">for</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">the</span> <span class="spotter-word" onclick="spotterPick(this,'spot2')" data-correct="false">mistake.</span><div class="spotter-result" id="spot2-result"></div></div>
-        <div class="spotter-sentence" id="spot3"><span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Mrs.</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Allan</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="true">smiled</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">kindly</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">at</span> <span class="spotter-word" onclick="spotterPick(this,'spot3')" data-correct="false">Anne.</span><div class="spotter-result" id="spot3-result"></div></div>
-      </div>
-      
-    </div>
   </div>
 
   <!-- SPELLING -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: y &rarr; i Before Suffix</div><div class="activity-sub">Discover the pattern by listening.</div></div></div>
-    <div class="activity-body"><!-- spell-notice-first -->
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">Group A &mdash; vowel + y &rarr; just add the suffix (y STAYS)</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">play &rarr; play<strong style="color:#C7627E;">ed</strong> &middot; play<strong style="color:#C7627E;">s</strong> &middot; enjoy &rarr; enjoy<strong style="color:#C7627E;">ed</strong> &middot; key &rarr; key<strong style="color:#C7627E;">s</strong></p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">Group B &mdash; consonant + y &rarr; change y to i, then add suffix</div>
-          <p style="font-size:17px;font-weight:700;letter-spacing:0.5px;">baby &rarr; bab<strong style="color:#C7922C;">ies</strong> &middot; story &rarr; stor<strong style="color:#C7922C;">ies</strong> &middot; cry &rarr; cr<strong style="color:#C7922C;">ied</strong> &middot; happy &rarr; happ<strong style="color:#C7922C;">iness</strong></p>
-        </div>
-      </div>
-
-      <div class="socratic-box">
-        <div class="socratic-label">&#x1F440; Look at what changed</div>
-        <p class="socratic-q">Group A: look at the letter just before the <em>y</em>. Is it a vowel or a consonant? What happens to the y when you add a suffix?</p>
-        <p class="socratic-q">Group B: look at the letter just before the <em>y</em>. Vowel or consonant? What happens to the y when you add a suffix?</p>
-        <p class="socratic-q">Now look at <em>play&rarr;played</em> vs. <em>cry&rarr;cried</em>. Both add an ending. Why does play keep its y but cry change to i?</p>
-      </div>
-
-      <button class="dol-check-btn" style="margin:12px auto;display:block;" onclick="document.getElementById('spellReveal').classList.toggle('show')">🔍 See the Rule</button>
-      <div class="dol-answer" id="spellReveal"><p>Look at these two groups of words:</p><p>The rule depends on what comes BEFORE the y:</p><p><strong>Vowel + y</strong> (a, e, i, o, u + y): just add the suffix. The y <strong>stays</strong>. <em>play &rarr; played, enjoy &rarr; enjoyed, key &rarr; keys</em>.</p><p><strong>Consonant + y</strong>: change the y to <strong>i</strong>, then add the suffix. <em>baby &rarr; babies, cry &rarr; cried, happy &rarr; happiness</em>.</p><p>One exception: if the suffix starts with <strong>i</strong> (like -ing), the y <em>always</em> stays. <em>cry &rarr; crying, fly &rarr; flying</em>.</div>
-
-      <div class="callout callout-info" style="margin-top:16px;"><span class="callout-icon">🎮</span><p><strong>Practice:</strong> Sort these words using the pattern you discovered.</p></div>
-      <div class="sort-game" id="spellSort">
-        <div class="sort-bank" id="sortBank">
-          <span class="sort-chip" data-group="stays" onclick="pickSortChip(this)">played</span>
-          <span class="sort-chip" data-group="changes" onclick="pickSortChip(this)">babies</span>
-          <span class="sort-chip" data-group="stays" onclick="pickSortChip(this)">enjoyed</span>
-          <span class="sort-chip" data-group="changes" onclick="pickSortChip(this)">stories</span>
-          <span class="sort-chip" data-group="stays" onclick="pickSortChip(this)">keys</span>
-          <span class="sort-chip" data-group="changes" onclick="pickSortChip(this)">cried</span>
-        </div>
-        <div class="sort-columns">
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">y stays (vowel + y)</div><div class="sort-col-drop" data-col="stays" onclick="dropSortChip(this,'stays')"></div></div>
-          <div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">y &rarr; i (consonant + y)</div><div class="sort-col-drop" data-col="changes" onclick="dropSortChip(this,'changes')"></div></div>
-        </div>
-        <div class="sort-score" id="sortScore"></div>
-      </div>
-      
-    </div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Suffix Rule: y to i Before a Suffix</div><div class="activity-sub">Day 1: Notice &mdash; three columns this time. Sort by which case each one is.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Spelling Level: Word Surgeon</span></div></div></div>
+    <div class="activity-body">
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; What do you notice?</div><p>Base words from Chapter 21, each with a suffix added. Watch the y.</p></div><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4AD;</span><p><strong>Think it through.</strong></p><ol style="margin:6px 0 0 20px;font-size:15px;color:#3A4A6B;line-height:1.8;"><li>Which ones changed the y to i?</li><li>Which kept the y?</li><li>What letter comes before the y in each group?</li></ol></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Sort each word into the column where it belongs, then name the three cases yourself.</p></div><div class="sort-game" id="s4w11S" data-win="🎉 All sorted. Three cases of one rule."><div class="sort-bank" id="s4w11SBank"><span class="sort-chip" data-group="change" onclick="pickSortChip(this)">happy &rarr; happier</span><span class="sort-chip" data-group="vowel" onclick="pickSortChip(this)">play &rarr; played</span><span class="sort-chip" data-group="ing" onclick="pickSortChip(this)">carry &rarr; carrying</span><span class="sort-chip" data-group="change" onclick="pickSortChip(this)">story &rarr; stories</span><span class="sort-chip" data-group="vowel" onclick="pickSortChip(this)">joy &rarr; joyful</span><span class="sort-chip" data-group="ing" onclick="pickSortChip(this)">try &rarr; trying</span></div><div class="sort-columns"><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#4A7C2E,#6FA04A);">y &rarr; i</div><div class="sort-col-drop" data-col="change" onclick="dropSortChip(this,'change')"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#8B6914,#a87f1f);">y kept: vowel before it</div><div class="sort-col-drop" data-col="vowel" onclick="dropSortChip(this,'vowel')"></div></div><div class="sort-col"><div class="sort-col-header" style="background:linear-gradient(135deg,#3D5285,#5a76ad);">y kept: suffix is -ing</div><div class="sort-col-drop" data-col="ing" onclick="dropSortChip(this,'ing')"></div></div></div><div class="sort-score" id="s4w11SScore"></div></div><button class="dol-check-btn" onclick="document.getElementById('s4w11SR').classList.toggle('show')">&#x1F50D; Now check your thinking</button><div class="dol-answer" id="s4w11SR"><p><strong>Change y to i</strong> when a <strong>consonant</strong> comes before the y: <em>happy/happier</em>, <em>story/stories</em>.</p><p><strong>Keep the y</strong> when a <strong>vowel</strong> comes before it: <em>play/played</em>, <em>joy/joyful</em>. There is nothing to fix.</p><p><strong>Always keep the y before -ing</strong>, whatever comes before it &mdash; otherwise you would get <em>carriing</em>, with two i&rsquo;s in a row. English does not allow that.</p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Name all three cases, and explain why -ing is always an exception.</div><div class="textbox-prompt">Name all three cases and state the rule that covers them.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="Case 1 is... Case 2 is... Case 3 is... The rule is..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
+</div>
   </div>
 
   <div class="tab-next-wrap">
@@ -3286,85 +3228,58 @@ var sortSelected = null;
 var sortPlaced = 0;
 var sortTotal = 6;
 
-function pickSortChip(chip) {
-  if (chip.classList.contains('placed')) return;
-  if (sortSelected) sortSelected.style.outline = '';
-  sortSelected = chip;
-  chip.style.outline = '3px solid #55C8E8';
-  chip.style.outlineOffset = '2px';
-}
 
-function dropSortChip(colDrop, colName) {
-  if (!sortSelected) return;
-  var correctGroup = sortSelected.getAttribute('data-group');
-  var clone = sortSelected.cloneNode(true);
-  clone.style.outline = '';
-  clone.onclick = null;
-  clone.style.cursor = 'default';
 
-  if (correctGroup === colName) {
-    clone.classList.add('correct');
-    sortSelected.classList.add('placed');
-    colDrop.appendChild(clone);
-    sortPlaced++;
-  } else {
-    clone.classList.add('wrong');
-    colDrop.appendChild(clone);
-    setTimeout(function() { colDrop.removeChild(clone); }, 600);
-  }
-  sortSelected.style.outline = '';
-  sortSelected = null;
-
-  if (sortPlaced >= sortTotal) {
-    var sc = document.getElementById('sortScore');
-    sc.textContent = '🎉 All sorted correctly! You know when the y turns into an i.';
-    sc.classList.add('show');
-  }
-}
+function pickSortChip(chip){
+if(chip.classList.contains('placed'))return;
+var g=chip.closest('.sort-game');if(!g)return;
+if(g._oaoSel)g._oaoSel.style.outline='';
+g._oaoSel=chip;chip.style.outline='3px solid #55C8E8';chip.style.outlineOffset='2px';}
+function dropSortChip(colDrop,colName){
+var g=colDrop.closest('.sort-game');if(!g||!g._oaoSel)return;
+var sel=g._oaoSel;
+var clone=sel.cloneNode(true);clone.style.outline='';clone.onclick=null;clone.style.cursor='default';
+if(sel.getAttribute('data-group')===colName){clone.classList.add('correct');sel.classList.add('placed');colDrop.appendChild(clone);
+try{if(typeof sortPlaced!=='undefined')sortPlaced++;}catch(e){}}
+else{clone.classList.add('wrong');colDrop.appendChild(clone);
+setTimeout(function(){if(clone.parentNode===colDrop)colDrop.removeChild(clone);},600);}
+sel.style.outline='';g._oaoSel=null;
+var bank=g.querySelector('.sort-bank');if(!bank)return;
+if(bank.querySelectorAll('.sort-chip.placed').length>=bank.querySelectorAll('.sort-chip').length){
+var sc=g.querySelector('.sort-score');
+if(sc){sc.textContent=g.getAttribute('data-win')||'\uD83C\uDF89 All sorted correctly!';sc.classList.add('show');}}}
 
 /* ───── VOCAB MATCH GAME ───── */
 var matchFirst = null;
 var matchCount = 0;
 
-function matchClick(item) {
-  if (item.classList.contains('matched')) return;
 
-  if (!matchFirst) {
-    matchFirst = item;
-    item.classList.add('selected');
-    return;
-  }
-
-  if (matchFirst === item) {
-    matchFirst.classList.remove('selected');
-    matchFirst = null;
-    return;
-  }
-
-  var key1 = matchFirst.getAttribute('data-match');
-  var key2 = item.getAttribute('data-match');
-
-  if (key1 === key2 && matchFirst.classList.contains('is-word') !== item.classList.contains('is-word')) {
-    matchFirst.classList.remove('selected');
-    matchFirst.classList.add('matched');
-    item.classList.add('matched');
-    matchCount++;
-    matchFirst = null;
-    if (matchCount >= 4) {
-      document.getElementById('matchFeedback').classList.add('show');
-    }
-  } else {
-    item.classList.add('wrong-flash');
-    matchFirst.classList.add('wrong-flash');
-    var a = matchFirst;
-    var b = item;
-    setTimeout(function() {
-      a.classList.remove('wrong-flash', 'selected');
-      b.classList.remove('wrong-flash');
-    }, 500);
-    matchFirst = null;
-  }
-}
+function _oaoFb(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+function _oaoBump(which){try{
+if(which==='matchCount'){if(typeof matchCount!=='undefined')matchCount++;}
+else if(which==='rootMatchCount'){if(typeof rootMatchCount!=='undefined')rootMatchCount++;}
+else if(which==='vocabMatchCount'){if(typeof vocabMatchCount!=='undefined')vocabMatchCount++;}
+}catch(e){}}
+function _oaoMatch(item,which){
+var g=item.closest('.match-grid, .root-match-grid'); if(!g)return;
+if(item.classList.contains('matched'))return;
+var isRoot=g.classList.contains('root-match-grid');
+var iSel=isRoot?'.root-match-item':'.match-item';
+var sel=g.querySelector(iSel+'.selected');
+if(!sel){item.classList.add('selected');return;}
+if(sel===item){sel.classList.remove('selected');return;}
+if(sel.getAttribute('data-match')===item.getAttribute('data-match')&&sel.classList.contains('is-word')!==item.classList.contains('is-word')){
+sel.classList.remove('selected');sel.classList.add('matched');item.classList.add('matched');
+_oaoBump(which);
+if(g.querySelectorAll(iSel+'.matched').length>=g.querySelectorAll(iSel).length){
+var fb=_oaoFb(g,isRoot?'.root-match-feedback':'.match-feedback');
+if(fb)fb.classList.add('show');
+if(which==='vocabMatchCount')window._vocabMatchDone=true;else window._fillinDone=true;}
+}else{item.classList.add('wrong-flash');sel.classList.add('wrong-flash');var a=sel,b=item;
+setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);}}
+function matchClick(item){_oaoMatch(item,'matchCount');}
 
 /* ───── INTERJECTION SPOTTER ───── */
 function spotterPick(word, sentenceId) {
@@ -3464,28 +3379,18 @@ window.addEventListener('beforeunload', function(e){
 /* ───── FILL-IN-THE-ROOT GAME (MORPHOLOGY) ───── */
 window._fillinDone = false;
 
-function checkFillIn() {
-  var inputs = document.querySelectorAll('.fillin-input');
-  var allCorrect = true;
-  inputs.forEach(function(inp) {
-    var answer = inp.getAttribute('data-answer').toLowerCase();
-    var val = inp.value.trim().toLowerCase();
-    if (val === answer) {
-      inp.classList.remove('wrong');
-      inp.classList.add('correct');
-      inp.disabled = true;
-    } else {
-      inp.classList.remove('correct');
-      inp.classList.add('wrong');
-      allCorrect = false;
-      setTimeout(function() { inp.classList.remove('wrong'); }, 600);
-    }
-  });
-  if (allCorrect) {
-    document.getElementById('fillinFeedback').classList.add('show');
-    window._fillinDone = true;
-  }
-}
+function checkFillIn(btn){
+var g=(btn&&btn.closest)?btn.closest('.fillin-game'):null;
+var scope=g||document;var all=true;
+scope.querySelectorAll('.fillin-input').forEach(function(inp){
+var answer=(inp.getAttribute('data-answer')||'').toLowerCase();
+var val=inp.value.trim().toLowerCase();
+if(val===answer){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;}
+else{inp.classList.remove('correct');inp.classList.add('wrong');all=false;
+setTimeout(function(){inp.classList.remove('wrong');},600);}});
+if(all){var fb=g?_oaoFb(g,'.fillin-feedback'):document.getElementById('fillinFeedback');
+if(!fb)fb=document.getElementById('fillinFeedback');
+if(fb)fb.classList.add('show');window._fillinDone=true;}}
 
 /* ───── DOWNLOAD JOURNAL AS PDF ───── */
 function downloadJournal() {
@@ -3655,117 +3560,126 @@ const trackerPos = [
 (function(){
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
-  /* — Fill-in inputs — */
+  /* — Fill-in inputs — (scoped per game) */
   document.querySelectorAll('.fillin-input').forEach(function(inp){
     if(!inp.id) return;
     try{
       var v = localStorage.getItem(k+'-'+inp.id);
       if(v){
         inp.value = v;
-        var a = (inp.getAttribute('data-answer')||'').toLowerCase();
-        if(v.trim().toLowerCase() === a){
-          inp.classList.add('correct'); inp.disabled = true;
-        }
+        var a = (inp.getAttribute('data-answer')||inp.getAttribute('data-ans')||'').toLowerCase();
+        if(a && v.trim().toLowerCase() === a){ inp.classList.add('correct'); inp.disabled = true; }
       }
     }catch(e){}
     inp.addEventListener('input', function(){
       try{ localStorage.setItem(k+'-'+this.id, this.value); }catch(e){}
     });
   });
-  /* restore fillin feedback if all correct */
-  var allFillins = document.querySelectorAll('.fillin-input');
-  if(allFillins.length > 0){
+  /* restore each fill-in game's own feedback when THAT game is complete */
+  [].slice.call(document.querySelectorAll('.fillin-game')).forEach(function(g){
+    var ins = g.querySelectorAll('.fillin-input');
+    if(!ins.length) return;
     var allDone = true;
-    allFillins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
-    if(allDone){
-      var fb = document.getElementById('fillinFeedback');
-      if(fb) fb.classList.add('show');
-      if(typeof window._fillinDone !== 'undefined') window._fillinDone = true;
-    }
-  }
+    ins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
+    if(!allDone) return;
+    var fb = _oaoFbNear(g, '.fillin-feedback') || document.getElementById('fillinFeedback');
+    if(fb) fb.classList.add('show');
+    window._fillinDone = true;
+  });
 
-  /* — Sort game — */
-  var sortBank = document.getElementById('sortBank');
-  if(sortBank){
+  /* — Sort games — (scoped per game, one localStorage key each) */
+  var _sortGames = [].slice.call(document.querySelectorAll('.sort-game'));
+  _sortGames.forEach(function(g, gi){
+    var bank = g.querySelector('.sort-bank'); if(!bank) return;
+    var gk = g.id || ('sg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-sortState') || 'null');
+      raw = localStorage.getItem(k+'-sortState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-sortState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        saved.forEach(function(s){
-          var col = document.querySelector('.sort-col-drop[data-col="'+s.col+'"]');
+        saved.forEach(function(st){
+          var col = g.querySelector('.sort-col-drop[data-col="'+st.col+'"]');
           if(!col) return;
-          var chips = sortBank.querySelectorAll('.sort-chip');
-          chips.forEach(function(chip){
+          bank.querySelectorAll('.sort-chip').forEach(function(chip){
             if(chip.classList.contains('placed')) return;
-            if(chip.textContent.trim() === s.text && chip.getAttribute('data-group') === s.col){
+            if(chip.textContent.trim() === st.text && chip.getAttribute('data-group') === st.col){
               var cl = chip.cloneNode(true);
               cl.classList.add('correct');
               cl.style.outline = ''; cl.onclick = null; cl.style.cursor = 'default';
               col.appendChild(cl);
               chip.classList.add('placed');
-              if(typeof sortPlaced !== 'undefined') sortPlaced++;
+              try{ if(typeof sortPlaced !== 'undefined') sortPlaced++; }catch(e){}
             }
           });
         });
-        if(typeof sortPlaced !== 'undefined' && typeof sortTotal !== 'undefined' && sortPlaced >= sortTotal){
-          var sc = document.getElementById('sortScore');
-          if(sc){ sc.textContent = '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
+        if(bank.querySelectorAll('.sort-chip.placed').length >= bank.querySelectorAll('.sort-chip').length){
+          var sc = g.querySelector('.sort-score');
+          if(sc){ sc.textContent = g.getAttribute('data-win') || '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
         }
       }
     }catch(e){}
-    /* hook into dropSortChip to save state */
-    var origDrop = window.dropSortChip;
-    if(origDrop){
-      window.dropSortChip = function(col, colName){
-        origDrop(col, colName);
+  });
+  if(_sortGames.length){
+    ['dropSortChip','dropVocabChip'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(col, colName){
+        orig(col, colName);
         try{
+          var g = col.closest('.sort-game'); if(!g) return;
+          var gi = _sortGames.indexOf(g); var gk = g.id || ('sg'+(gi < 0 ? 0 : gi));
           var placed = [];
-          document.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
+          g.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
             placed.push({text: c.textContent.trim(), col: c.closest('.sort-col-drop').getAttribute('data-col')});
           });
-          localStorage.setItem(k+'-sortState', JSON.stringify(placed));
+          localStorage.setItem(k+'-sortState-'+gk, JSON.stringify(placed));
         }catch(e){}
       };
-    }
+    });
   }
 
-  /* — Match game — */
-  var matchGrid = document.getElementById('matchGrid');
-  if(matchGrid){
+  /* — Match games — (scoped per grid, one localStorage key each) */
+  var _matchGrids = [].slice.call(document.querySelectorAll('.match-grid'));
+  _matchGrids.forEach(function(g, gi){
+    var gk = g.id || ('mg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-matchState') || 'null');
+      raw = localStorage.getItem(k+'-matchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-matchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = matchGrid.querySelectorAll('.match-item');
+        var items = g.querySelectorAll('.match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){
-              it.classList.add('matched');
-            }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof matchCount !== 'undefined'){
-          matchCount = saved.length;
-          var total = typeof matchTotal !== 'undefined' ? matchTotal : 4;
-          if(matchCount >= total){
-            var fb = document.getElementById('matchFeedback');
-            if(fb) fb.classList.add('show');
-            if(typeof window._vocabMatchDone !== 'undefined') window._vocabMatchDone = true;
-          }
+        try{ if(typeof matchCount !== 'undefined') matchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.match-feedback');
+          if(fb) fb.classList.add('show');
+          window._vocabMatchDone = true;
         }
       }
     }catch(e){}
-    /* hook into matchClick to save state */
+  });
+  if(_matchGrids.length){
     var origMatch = window.matchClick;
     if(origMatch){
       window.matchClick = function(item){
         origMatch(item);
         try{
-          var matched = [];
-          var seen = {};
-          matchGrid.querySelectorAll('.match-item.matched').forEach(function(it){
+          var g = item.closest('.match-grid'); if(!g) return;
+          var gi = _matchGrids.indexOf(g); var gk = g.id || ('mg'+(gi < 0 ? 0 : gi));
+          var matched = [], seen = {};
+          g.querySelectorAll('.match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-matchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-matchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
     }
@@ -3810,41 +3724,48 @@ const trackerPos = [
     });
   }
 
-  /* — Root-match game — same as vocab match but separate vars */
-  var rootGrid = document.querySelector('.root-match-grid');
-  if(rootGrid){
+  /* — Root-match games — (scoped per grid, one localStorage key each) */
+  var _rootGrids = [].slice.call(document.querySelectorAll('.root-match-grid'));
+  _rootGrids.forEach(function(g, gi){
+    var gk = g.id || ('rg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-rootMatchState') || 'null');
+      raw = localStorage.getItem(k+'-rootMatchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-rootMatchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = rootGrid.querySelectorAll('.root-match-item');
+        var items = g.querySelectorAll('.root-match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){ it.classList.add('matched'); }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof rootMatchCount !== 'undefined'){
-          rootMatchCount = saved.length;
-          if(rootMatchCount >= 4){
-            var fb = document.getElementById('rootMatchFeedback');
-            if(fb) fb.classList.add('show');
-          }
+        try{ if(typeof rootMatchCount !== 'undefined') rootMatchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.root-match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.root-match-feedback');
+          if(fb) fb.classList.add('show');
         }
       }
     }catch(e){}
-    var origRootMatch = window.rootMatchClick;
-    if(origRootMatch){
-      window.rootMatchClick = function(item){
-        origRootMatch(item);
+  });
+  if(_rootGrids.length){
+    ['rootMatchClick','vocabMatchClick'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(item){
+        orig(item);
         try{
+          var g = item.closest('.root-match-grid'); if(!g) return;
+          var gi = _rootGrids.indexOf(g); var gk = g.id || ('rg'+(gi < 0 ? 0 : gi));
           var matched = [], seen = {};
-          rootGrid.querySelectorAll('.root-match-item.matched').forEach(function(it){
+          g.querySelectorAll('.root-match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-rootMatchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-rootMatchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
-    }
+    });
   }
 
   /* — Comma game — restore inserted commas */

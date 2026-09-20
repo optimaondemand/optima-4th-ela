@@ -2132,6 +2132,11 @@ body {
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
 <script>
+function _oaoFbNear(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+</script>
+<script>
 (function () {
     "use strict";
     var playBtn  = document.getElementById("ora-play");
@@ -2579,7 +2584,7 @@ body {
         <div class="fillin-item">Tubman&rsquo;s courage was almost <input class="fillin-input" id="fill2" data-answer="super" maxlength="8" placeholder="______">human &mdash; she kept going when others gave up.</div>
         <div class="fillin-item">The soldiers had to <input class="fillin-input" id="fill3" data-answer="sub" maxlength="8" placeholder="______">merge in the river to avoid being seen by Confederate scouts.</div>
         <div class="fillin-item">The raid required careful coordination between the scouts and the gunboats &mdash; it was truly an <input class="fillin-input" id="fill4" data-answer="inter" maxlength="8" placeholder="______">connected effort.</div>
-        <button class="fillin-check-btn" onclick="checkFillIn()">Check My Work</button>
+        <button class="fillin-check-btn" onclick="checkFillIn(this)">Check My Work</button>
         <div class="fillin-feedback" id="fillinFeedback">🌱 All correct! You know these prefixes.</div>
       </div>
 
@@ -2613,58 +2618,18 @@ body {
 
   <!-- GRAMMAR -->
   <div class="activity bl-green">
-    <div class="activity-head"><div class="activity-num" style="background:#34B76F;">3</div><div><div class="activity-title">✏️ Grammar: Commas in a Series</div><div class="activity-sub">Day 3 — Write your own sentences using commas in a series.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#34B76F;">3</div><div><div class="activity-title">✏️ Grammar: Commas in a Series</div><div class="activity-sub">Day 3: Apply &mdash; revise for effect, then defend the version you kept.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Author's Editor</span></div></div></div>
     <div class="activity-body">
-<!-- grammar-notice-first -->
-<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: count the items, then count the commas.</p></div>
-      
-      <p>When you list <strong>three or more items</strong> in a sentence, you separate them with commas. Place a comma after each item and use <em>and</em> or <em>or</em> before the last one.</p>
-      <div class="task-box" style="background:#FFF8F0;border-color:#F5E6C8;">
-        <div class="task-sentence" style="border-left-color:#34B76F;">The raid destroyed cotton<strong>,</strong> commissary stores<strong>,</strong> and lordly dwellings.</div>
-        <div class="task-instruction">Three items in the series: cotton, commissary stores, and lordly dwellings. Each item is separated by a comma.</div>
-      </div>
-
-      <div class="callout callout-info"><span class="callout-icon">✍️</span><p><strong>Your turn:</strong> Write <strong>3 original sentences</strong> about Harriet Tubman or the Combahee River Raid. Each sentence must include a <strong>comma-separated series</strong> of at least three items. Write in your reading journal.</p></div>
-
-      <div class="callout callout-tip"><span class="callout-icon">💡</span><p>Try listing actions (verbs), people (nouns), or descriptions (adjectives) in your series. Example starters: &ldquo;Tubman guided, protected, and...&rdquo; or &ldquo;The raid freed men, women, and...&rdquo;</p></div>
-
-          <div class="textbox-prompt">Write your sentences here.</div>
-      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Commas in a Series" placeholder="1. &#10;2. &#10;3. " oninput="autoSave(this);gatherAnswers();"></textarea>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Correct is not the goal</div><p>A list can be punctuated correctly and still be the wrong shape for what you mean.</p></div><div class="key-concept" style="background:#FFF8F0;border-color:#F5E6C8;margin:14px 0;"><div class="key-concept-label" style="color:#8B6914;">🔎 A worked example</div><p><strong>Before:</strong> <em>She was brave. She was careful. She was tired.</em></p><p><strong>After:</strong> <em>She was brave, careful, and very tired.</em></p><p style="font-size:14px;color:#5A6785;">Three sentences became one list, and the list does something the three sentences could not: it makes the three qualities feel simultaneous, all true at once, rather than three separate announcements. That is why a writer chooses a series &mdash; not to save space, but to fuse things together.</p></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Rewrite these as <strong>one sentence with a series</strong>: <em>The conductor carried a lantern. She carried a map. She carried a pistol.</em> Then write a second version that keeps them as separate sentences.</p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Give both versions, say which you kept, and explain what the series does that three sentences do not.</div><div class="textbox-prompt">Two versions, a choice, and the reason.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="Version A: ... Version B: ... I kept... because the reader leans on..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
 </div>
   </div>
 
   <!-- SPELLING — SWYK DAY -->
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Frequently Confused Words</div><div class="activity-sub">Day 3 — Show What You Know (today&rsquo;s graded response)</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Frequently Confused Words from Student Drafts</div><div class="activity-sub">Day 3: Revise &mdash; study the edit, practise the move, then repair a passage.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Spelling Level: Word Editor</span></div></div></div>
     <div class="activity-body">
-<!-- spell-notice-first -->
-<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F440;</span><p>Before you start: meaning picks the spelling, not sound.</p></div>
-      
-      <p>These word pairs sound alike but mean different things. Getting them right shows careful, polished writing.</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:14px 0;">
-        <div class="key-concept" style="margin-bottom:0;">
-          <div class="key-concept-label">their / there / they&rsquo;re</div>
-          <p style="font-size:14px;"><strong>their</strong> = belonging to them<br><strong>there</strong> = a place<br><strong>they&rsquo;re</strong> = they are</p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#EAF8FD;border-color:#D6F2FB;">
-          <div class="key-concept-label" style="color:#1A6B8E;">its / it&rsquo;s</div>
-          <p style="font-size:14px;"><strong>its</strong> = belonging to it<br><strong>it&rsquo;s</strong> = it is / it has</p>
-        </div>
-        <div class="key-concept" style="margin-bottom:0;background:#F0E8FF;border-color:#D8CCF0;">
-          <div class="key-concept-label" style="color:#8B6FC0;">your / you&rsquo;re</div>
-          <p style="font-size:14px;"><strong>your</strong> = belonging to you<br><strong>you&rsquo;re</strong> = you are</p>
-        </div>
-      </div>
-
-      <div class="swyk">
-        <div class="swyk-label">✏️ Show What You Know — Spelling</div>
-        <div class="swyk-prompt">Write <strong>THREE sentences</strong>. Each sentence must correctly use one of these frequently confused words: <em>their/there/they&rsquo;re, its/it&rsquo;s, your/you&rsquo;re</em>. <strong>Underline the word you chose.</strong></div>
-        <div class="textbox-prompt">Write three sentences. Each must use a different confused-word pair correctly. Underline the word you chose.</div>
-        <textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK: frequently confused words" placeholder="1. (their/there/they're): ___&#10;2. (its/it's): ___&#10;3. (your/you're): ___" oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
-      </div>
-
-    </div>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Watch the editor work</div><p>Confused words are the errors that survive to publication, because nothing flags them.</p></div><div class="key-concept" style="background:#FFF8F0;border-color:#F5E6C8;margin:14px 0;"><div class="key-concept-label" style="color:#8B6914;">🔎 How the editor fixes it</div><p><strong>Before:</strong> <em>Their evidence effects the account, and its clear that they&rsquo;re version is accurate.</em></p><p><strong>After:</strong> <em>Their evidence affects the account, and it&rsquo;s clear that their version is accurate.</em></p><p style="font-size:14px;color:#5A6785;"><em>Affect</em> is the verb, <em>effect</em> the noun. <em>It&rsquo;s</em> means <em>it is</em>; <em>its</em> shows possession. <em>They&rsquo;re</em> means <em>they are</em>. Three pairs, three meanings &mdash; read the sentence with the long form and the wrong one collapses.</p></div><div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the <strong>correct word</strong>.</p></div><div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">&#x1F4DA;</span><p><strong>Word bank:</strong> <strong>affect</strong> &middot; <strong>effect</strong> &middot; <strong>its</strong> &middot; <strong>it&rsquo;s</strong> &middot; <strong>their</strong> &middot; <strong>they&rsquo;re</strong></p><p style="font-size:13px;color:#7A88A8;margin-top:4px;">Every answer below comes from this list.</p></div><div class="fillin-game" id="s4w25c"><div class="fillin-item">The testimony will <input class="fillin-input" id="s4w25cf1" data-answer="affect" maxlength="24" placeholder="______"> the historian&rsquo;s conclusion.</div><div class="fillin-item">The <input class="fillin-input" id="s4w25cf2" data-answer="effect" maxlength="24" placeholder="______"> of the new source was immediate.</div><div class="fillin-item"><input class="fillin-input" id="s4w25cf3" data-answer="It&rsquo;s" maxlength="24" placeholder="______"> the only account written that year.</div><div class="fillin-item">The document lost <input class="fillin-input" id="s4w25cf4" data-answer="its" maxlength="24" placeholder="______"> final page.</div><button class="fillin-check-btn" onclick="checkFillIn(this)">Check My Work</button><div class="fillin-feedback">✅ All correct!</div></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Now correct this line: <em>Its there account, and the effect it has on us is that were more certain.</em></p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Write the corrected line and name the pair behind each fix.</div><div class="textbox-prompt">Give your corrections and justify every one.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="I changed ___ to ___ because..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
+</div>
   </div>
 
   <div class="tab-next-wrap">
@@ -3144,17 +3109,43 @@ window.addEventListener('beforeunload', function(e){
 });
 /* ───── FILL-IN-THE-PREFIX GAME (MORPHOLOGY) ───── */
 window._fillinDone = false;
-function checkFillIn() {
-  var inputs = document.querySelectorAll('#fillinGame .fillin-input');
-  var allCorrect = true;
-  inputs.forEach(function(inp) {
-    var answer = inp.getAttribute('data-answer').toLowerCase();
-    var val = inp.value.trim().toLowerCase();
-    if (val === answer) { inp.classList.remove('wrong'); inp.classList.add('correct'); inp.disabled = true; }
-    else { inp.classList.remove('correct'); inp.classList.add('wrong'); allCorrect = false; setTimeout(function() { inp.classList.remove('wrong'); }, 600); }
-  });
-  if (allCorrect) { document.getElementById('fillinFeedback').classList.add('show'); window._fillinDone = true; }
-}
+function _oaoFb(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+function _oaoBump(which){try{
+if(which==='matchCount'){if(typeof matchCount!=='undefined')matchCount++;}
+else if(which==='rootMatchCount'){if(typeof rootMatchCount!=='undefined')rootMatchCount++;}
+else if(which==='vocabMatchCount'){if(typeof vocabMatchCount!=='undefined')vocabMatchCount++;}
+}catch(e){}}
+function _oaoMatch(item,which){
+var g=item.closest('.match-grid, .root-match-grid'); if(!g)return;
+if(item.classList.contains('matched'))return;
+var isRoot=g.classList.contains('root-match-grid');
+var iSel=isRoot?'.root-match-item':'.match-item';
+var sel=g.querySelector(iSel+'.selected');
+if(!sel){item.classList.add('selected');return;}
+if(sel===item){sel.classList.remove('selected');return;}
+if(sel.getAttribute('data-match')===item.getAttribute('data-match')&&sel.classList.contains('is-word')!==item.classList.contains('is-word')){
+sel.classList.remove('selected');sel.classList.add('matched');item.classList.add('matched');
+_oaoBump(which);
+if(g.querySelectorAll(iSel+'.matched').length>=g.querySelectorAll(iSel).length){
+var fb=_oaoFb(g,isRoot?'.root-match-feedback':'.match-feedback');
+if(fb)fb.classList.add('show');
+if(which==='vocabMatchCount')window._vocabMatchDone=true;else window._fillinDone=true;}
+}else{item.classList.add('wrong-flash');sel.classList.add('wrong-flash');var a=sel,b=item;
+setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);}}
+function checkFillIn(btn){
+var g=(btn&&btn.closest)?btn.closest('.fillin-game'):null;
+var scope=g||document;var all=true;
+scope.querySelectorAll('.fillin-input').forEach(function(inp){
+var answer=(inp.getAttribute('data-answer')||'').toLowerCase();
+var val=inp.value.trim().toLowerCase();
+if(val===answer){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;}
+else{inp.classList.remove('correct');inp.classList.add('wrong');all=false;
+setTimeout(function(){inp.classList.remove('wrong');},600);}});
+if(all){var fb=g?_oaoFb(g,'.fillin-feedback'):document.getElementById('fillinFeedback');
+if(!fb)fb=document.getElementById('fillinFeedback');
+if(fb)fb.classList.add('show');window._fillinDone=true;}}
 
 /* ───── VOCAB CLOZE GAME ───── */
 window._vocabClozeDone = false;
@@ -3281,117 +3272,126 @@ const trackerPos = [
 (function(){
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
-  /* — Fill-in inputs — */
+  /* — Fill-in inputs — (scoped per game) */
   document.querySelectorAll('.fillin-input').forEach(function(inp){
     if(!inp.id) return;
     try{
       var v = localStorage.getItem(k+'-'+inp.id);
       if(v){
         inp.value = v;
-        var a = (inp.getAttribute('data-answer')||'').toLowerCase();
-        if(v.trim().toLowerCase() === a){
-          inp.classList.add('correct'); inp.disabled = true;
-        }
+        var a = (inp.getAttribute('data-answer')||inp.getAttribute('data-ans')||'').toLowerCase();
+        if(a && v.trim().toLowerCase() === a){ inp.classList.add('correct'); inp.disabled = true; }
       }
     }catch(e){}
     inp.addEventListener('input', function(){
       try{ localStorage.setItem(k+'-'+this.id, this.value); }catch(e){}
     });
   });
-  /* restore fillin feedback if all correct */
-  var allFillins = document.querySelectorAll('.fillin-input');
-  if(allFillins.length > 0){
+  /* restore each fill-in game's own feedback when THAT game is complete */
+  [].slice.call(document.querySelectorAll('.fillin-game')).forEach(function(g){
+    var ins = g.querySelectorAll('.fillin-input');
+    if(!ins.length) return;
     var allDone = true;
-    allFillins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
-    if(allDone){
-      var fb = document.getElementById('fillinFeedback');
-      if(fb) fb.classList.add('show');
-      if(typeof window._fillinDone !== 'undefined') window._fillinDone = true;
-    }
-  }
+    ins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
+    if(!allDone) return;
+    var fb = _oaoFbNear(g, '.fillin-feedback') || document.getElementById('fillinFeedback');
+    if(fb) fb.classList.add('show');
+    window._fillinDone = true;
+  });
 
-  /* — Sort game — */
-  var sortBank = document.getElementById('sortBank');
-  if(sortBank){
+  /* — Sort games — (scoped per game, one localStorage key each) */
+  var _sortGames = [].slice.call(document.querySelectorAll('.sort-game'));
+  _sortGames.forEach(function(g, gi){
+    var bank = g.querySelector('.sort-bank'); if(!bank) return;
+    var gk = g.id || ('sg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-sortState') || 'null');
+      raw = localStorage.getItem(k+'-sortState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-sortState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        saved.forEach(function(s){
-          var col = document.querySelector('.sort-col-drop[data-col="'+s.col+'"]');
+        saved.forEach(function(st){
+          var col = g.querySelector('.sort-col-drop[data-col="'+st.col+'"]');
           if(!col) return;
-          var chips = sortBank.querySelectorAll('.sort-chip');
-          chips.forEach(function(chip){
+          bank.querySelectorAll('.sort-chip').forEach(function(chip){
             if(chip.classList.contains('placed')) return;
-            if(chip.textContent.trim() === s.text && chip.getAttribute('data-group') === s.col){
+            if(chip.textContent.trim() === st.text && chip.getAttribute('data-group') === st.col){
               var cl = chip.cloneNode(true);
               cl.classList.add('correct');
               cl.style.outline = ''; cl.onclick = null; cl.style.cursor = 'default';
               col.appendChild(cl);
               chip.classList.add('placed');
-              if(typeof sortPlaced !== 'undefined') sortPlaced++;
+              try{ if(typeof sortPlaced !== 'undefined') sortPlaced++; }catch(e){}
             }
           });
         });
-        if(typeof sortPlaced !== 'undefined' && typeof sortTotal !== 'undefined' && sortPlaced >= sortTotal){
-          var sc = document.getElementById('sortScore');
-          if(sc){ sc.textContent = '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
+        if(bank.querySelectorAll('.sort-chip.placed').length >= bank.querySelectorAll('.sort-chip').length){
+          var sc = g.querySelector('.sort-score');
+          if(sc){ sc.textContent = g.getAttribute('data-win') || '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
         }
       }
     }catch(e){}
-    /* hook into dropSortChip to save state */
-    var origDrop = window.dropSortChip;
-    if(origDrop){
-      window.dropSortChip = function(col, colName){
-        origDrop(col, colName);
+  });
+  if(_sortGames.length){
+    ['dropSortChip','dropVocabChip'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(col, colName){
+        orig(col, colName);
         try{
+          var g = col.closest('.sort-game'); if(!g) return;
+          var gi = _sortGames.indexOf(g); var gk = g.id || ('sg'+(gi < 0 ? 0 : gi));
           var placed = [];
-          document.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
+          g.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
             placed.push({text: c.textContent.trim(), col: c.closest('.sort-col-drop').getAttribute('data-col')});
           });
-          localStorage.setItem(k+'-sortState', JSON.stringify(placed));
+          localStorage.setItem(k+'-sortState-'+gk, JSON.stringify(placed));
         }catch(e){}
       };
-    }
+    });
   }
 
-  /* — Match game — */
-  var matchGrid = document.getElementById('matchGrid');
-  if(matchGrid){
+  /* — Match games — (scoped per grid, one localStorage key each) */
+  var _matchGrids = [].slice.call(document.querySelectorAll('.match-grid'));
+  _matchGrids.forEach(function(g, gi){
+    var gk = g.id || ('mg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-matchState') || 'null');
+      raw = localStorage.getItem(k+'-matchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-matchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = matchGrid.querySelectorAll('.match-item');
+        var items = g.querySelectorAll('.match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){
-              it.classList.add('matched');
-            }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof matchCount !== 'undefined'){
-          matchCount = saved.length;
-          var total = typeof matchTotal !== 'undefined' ? matchTotal : 4;
-          if(matchCount >= total){
-            var fb = document.getElementById('matchFeedback');
-            if(fb) fb.classList.add('show');
-            if(typeof window._vocabMatchDone !== 'undefined') window._vocabMatchDone = true;
-          }
+        try{ if(typeof matchCount !== 'undefined') matchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.match-feedback');
+          if(fb) fb.classList.add('show');
+          window._vocabMatchDone = true;
         }
       }
     }catch(e){}
-    /* hook into matchClick to save state */
+  });
+  if(_matchGrids.length){
     var origMatch = window.matchClick;
     if(origMatch){
       window.matchClick = function(item){
         origMatch(item);
         try{
-          var matched = [];
-          var seen = {};
-          matchGrid.querySelectorAll('.match-item.matched').forEach(function(it){
+          var g = item.closest('.match-grid'); if(!g) return;
+          var gi = _matchGrids.indexOf(g); var gk = g.id || ('mg'+(gi < 0 ? 0 : gi));
+          var matched = [], seen = {};
+          g.querySelectorAll('.match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-matchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-matchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
     }
@@ -3436,41 +3436,48 @@ const trackerPos = [
     });
   }
 
-  /* — Root-match game — same as vocab match but separate vars */
-  var rootGrid = document.querySelector('.root-match-grid');
-  if(rootGrid){
+  /* — Root-match games — (scoped per grid, one localStorage key each) */
+  var _rootGrids = [].slice.call(document.querySelectorAll('.root-match-grid'));
+  _rootGrids.forEach(function(g, gi){
+    var gk = g.id || ('rg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-rootMatchState') || 'null');
+      raw = localStorage.getItem(k+'-rootMatchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-rootMatchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = rootGrid.querySelectorAll('.root-match-item');
+        var items = g.querySelectorAll('.root-match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){ it.classList.add('matched'); }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof rootMatchCount !== 'undefined'){
-          rootMatchCount = saved.length;
-          if(rootMatchCount >= 4){
-            var fb = document.getElementById('rootMatchFeedback');
-            if(fb) fb.classList.add('show');
-          }
+        try{ if(typeof rootMatchCount !== 'undefined') rootMatchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.root-match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.root-match-feedback');
+          if(fb) fb.classList.add('show');
         }
       }
     }catch(e){}
-    var origRootMatch = window.rootMatchClick;
-    if(origRootMatch){
-      window.rootMatchClick = function(item){
-        origRootMatch(item);
+  });
+  if(_rootGrids.length){
+    ['rootMatchClick','vocabMatchClick'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(item){
+        orig(item);
         try{
+          var g = item.closest('.root-match-grid'); if(!g) return;
+          var gi = _rootGrids.indexOf(g); var gk = g.id || ('rg'+(gi < 0 ? 0 : gi));
           var matched = [], seen = {};
-          rootGrid.querySelectorAll('.root-match-item.matched').forEach(function(it){
+          g.querySelectorAll('.root-match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-rootMatchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-rootMatchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
-    }
+    });
   }
 
   /* — Comma game — restore inserted commas */

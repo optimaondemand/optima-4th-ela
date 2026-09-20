@@ -2216,6 +2216,26 @@ body {
         <span id="ora-status" role="status" aria-live="polite"></span>
     </div>
 <script>
+function checkFillIn(btn){
+var g=(btn&&btn.closest)?btn.closest('.fillin-game'):null;
+var scope=g||document;var all=true;
+scope.querySelectorAll('.fillin-input').forEach(function(inp){
+var answer=(inp.getAttribute('data-answer')||'').toLowerCase();
+var val=inp.value.trim().toLowerCase();
+if(val===answer){inp.classList.remove('wrong');inp.classList.add('correct');inp.disabled=true;}
+else{inp.classList.remove('correct');inp.classList.add('wrong');all=false;
+setTimeout(function(){inp.classList.remove('wrong');},600);}});
+if(all){var fb=g?g.querySelector('.fillin-feedback'):document.getElementById('fillinFeedback');
+if(!fb)fb=document.getElementById('fillinFeedback');
+if(fb)fb.classList.add('show');window._fillinDone=true;}}
+</script>
+
+<script>
+function _oaoFbNear(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+</script>
+<script>
 (function () {
     "use strict";
     var playBtn  = document.getElementById("ora-play");
@@ -2717,50 +2737,17 @@ body {
   </div>
 
   <div class="activity bl-navy">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">3</div><div><div class="activity-title">✏️ Grammar: Write Using the Skill</div><div class="activity-sub">Write 2 sentences using grammar skills from this year.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">3</div><div><div class="activity-title">✏️ Grammar: Spiral Review</div><div class="activity-sub">Day 3: Apply &mdash; revise for effect, then defend the version you kept.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Author's Editor</span></div></div></div>
     <div class="activity-body">
-<!-- grammar-notice-first -->
-<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F50E;</span><p>Before you start: name the rule before you use it.</p></div>
-            <p>You&rsquo;ve studied grammar skills all year &mdash; from complex sentences to interjections to quotation marks. Today, show what you know by writing two strong sentences using any skill you&rsquo;ve practiced.</p>
-      <div class="callout callout-info">
-        <span class="callout-icon">✏️</span>
-        <p>Write <strong>2 sentences</strong> using grammar skills you&rsquo;ve learned this year. Try to use a <em>different skill</em> in each sentence. Write in your reading journal.</p>
-      </div>
-      <div class="task-box" style="margin-bottom:10px;background:#FFF8F0;border-color:#F5E6C8;">
-        <div class="task-label">Grammar Skills to Choose From</div>
-        <p style="font-size:14px;color:#3A4A6B;line-height:1.9;">
-          ✏️ Complex sentence (because, although, when, even though&hellip;)<br>
-          ✏️ Sentence with dialogue and correct quotation marks<br>
-          ✏️ Sentence with an interjection (Oh! Well, &hellip;)<br>
-          ✏️ Sentence with a strong past-tense verb<br>
-          ✏️ Sentence with an appositive (a phrase that renames a noun)
-        </p>
-      </div>
-      <div class="callout callout-tip">
-        <span class="callout-icon">💡</span>
-        <p>Your sentences can be about anything &mdash; characters from your novels, something you know, or a made-up situation. The goal is to show you can use the skill correctly.</p>
-      </div>
-          <div class="textbox-prompt">Write your sentences here.</div>
-      <textarea class="journal-box" id="journal-grammar" data-label="Grammar: Write Using the Skill" placeholder="1. &#10;2. &#10;3. " oninput="autoSave(this);gatherAnswers();"></textarea>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Correct is not the goal</div><p>Everything this year has been building to this: correct is the floor, not the goal.</p></div><div class="key-concept" style="background:#FFF8F0;border-color:#F5E6C8;margin:14px 0;"><div class="key-concept-label" style="color:#8B6914;">🔎 A worked example</div><p><strong>Before:</strong> <em>Caspian blew the horn. He was desperate. Help came. It came from another world. Nobody expected that.</em></p><p><strong>After:</strong> <em>Desperate, Caspian blew the horn &mdash; and help came, though not from any world he had imagined.</em></p><p style="font-size:14px;color:#5A6785;">Five sentences to one. Notice what survived and what was cut: <em>Nobody expected that</em> vanished because <em>though not from any world he had imagined</em> already carries it. Good revision removes what the structure now implies.</p></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Take five flat sentences from your own writing this year and revise them into two. Use at least one dependent clause and one conjunction.</p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Give the before and after, then name every grammar move you used and say why each earned its place.</div><div class="textbox-prompt">Two versions, a choice, and the reason.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="Version A: ... Version B: ... I kept... because the reader leans on..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
 </div>
   </div>
 
   <div class="activity bl-rose">
-    <div class="activity-head"><div class="activity-num" style="background:#c7627e;">4</div><div><div class="activity-title">🔠 Spelling: SWYK — Spiral Review</div><div class="activity-sub">Choose three words from this year and show what you know.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#c7627e;">4</div><div><div class="activity-title">🔠 Spelling: Editing for Spelling Patterns in Final Writing</div><div class="activity-sub">Day 3: Revise &mdash; study the edit, practise the move, then repair a passage.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Spelling Level: Word Editor</span></div></div></div>
     <div class="activity-body">
-<!-- spell-notice-first -->
-<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F5C2;&#xFE0F;</span><p>Before you start: name the pattern before you spell the word.</p></div>
-            <p>Before the SWYK below, use this quick self-check to warm up. Type each word from memory, then reveal to check. These words come from patterns you&rsquo;ve studied across the year.</p>
-      <div id="spellingTest" style="margin-top:14px;">
-        <!-- Spelling test items generated in JS below -->
-      </div>
-      <div class="swyk" style="margin-top:14px;">
-        <div class="swyk-label">🔠 Show What You Know &mdash; Spelling SWYK</div>
-        <div class="swyk-prompt">Choose <strong>THREE words</strong> from any spelling pattern you&rsquo;ve studied this year. For each word: write the word, name the pattern it follows, and use it in a sentence.</div>
-        <div class="textbox-prompt">For each of your three words: write the word, name the pattern, and use it in a sentence. Any spelling pattern from this year counts.</div>
-        <textarea class="journal-box" id="journal-spelling" data-label="SWYK: Spelling Spiral Review" placeholder="Word 1: ________&#10;Pattern: ________&#10;Sentence: ________&#10;&#10;Word 2: ________&#10;Pattern: ________&#10;Sentence: ________&#10;&#10;Word 3: ________&#10;Pattern: ________&#10;Sentence: ________" oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea>
-      </div>
-    </div>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Watch the editor work</div><p>Editing your own writing means looking for your own habits, not just reading it again.</p></div><div class="key-concept" style="background:#FFF8F0;border-color:#F5E6C8;margin:14px 0;"><div class="key-concept-label" style="color:#8B6914;">🔎 How the editor works</div><p><strong>Before:</strong> <em>Reading it through once more and hoping</em></p><p><strong>After:</strong> <em>Checking one pattern at a time, start to finish</em></p><p style="font-size:14px;color:#5A6785;">Reading straight through hides errors, because you read what you meant. An editor picks one pattern &mdash; suffix changes, say &mdash; and hunts only that, start to finish. Then picks the next. Slower, and it actually finds things.</p></div><div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the <strong>correct spelling</strong>.</p></div><div class="fillin-game" id="s4w31c"><div class="fillin-item"><input class="fillin-input" id="s4w31cf1" data-answer="courage" maxlength="24" placeholder="______"> &mdash; the quality both characters show</div><div class="fillin-item"><input class="fillin-input" id="s4w31cf2" data-answer="difference" maxlength="24" placeholder="______"> &mdash; what separates the two books</div><div class="fillin-item"><input class="fillin-input" id="s4w31cf3" data-answer="decision" maxlength="24" placeholder="______"> &mdash; the choice the character makes</div><div class="fillin-item"><input class="fillin-input" id="s4w31cf4" data-answer="character" maxlength="24" placeholder="______"> &mdash; the person in the story</div><button class="fillin-check-btn" onclick="checkFillIn(this)">Check My Work</button><div class="fillin-feedback">✅ All correct!</div></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Now correct this line: <em>The charecters decission shows real curage, and thats the diffrence.</em></p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Write the corrected line, then name the one pattern you would check first in your own final draft.</div><div class="textbox-prompt">Give your corrections and justify every one.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="I changed ___ to ___ because..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
+</div>
   </div>
 
   <div class="tab-next-wrap">
@@ -3087,19 +3074,33 @@ function fireConfetti(){
 /* WORD BUILD GAME */
 window._rootMatchDone=false;
 var rootMatchFirst=null,rootMatchCount=0;
-function rootMatchClick(item){
-  if(item.classList.contains('matched'))return;
-  if(!rootMatchFirst){rootMatchFirst=item;item.classList.add('selected');return;}
-  if(rootMatchFirst===item){rootMatchFirst.classList.remove('selected');rootMatchFirst=null;return;}
-  var k1=rootMatchFirst.getAttribute('data-match'),k2=item.getAttribute('data-match');
-  if(k1===k2&&rootMatchFirst.classList.contains('is-word')!==item.classList.contains('is-word')){
-    rootMatchFirst.classList.remove('selected'); rootMatchFirst.classList.add('matched'); item.classList.add('matched'); rootMatchCount++; rootMatchFirst=null;
-    if(rootMatchCount>=4){var fb=document.getElementById('rootMatchFeedback');if(fb)fb.classList.add('show');window._rootMatchDone=true;}
-  } else {
-    item.classList.add('wrong-flash'); rootMatchFirst.classList.add('wrong-flash');
-    var a=rootMatchFirst,b=item; setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500); rootMatchFirst=null;
-  }
-}
+
+function _oaoFb(g,sel){var all=[].slice.call(document.querySelectorAll(sel));
+for(var i=0;i<all.length;i++){if(g.compareDocumentPosition(all[i])&Node.DOCUMENT_POSITION_FOLLOWING)return all[i];}
+return all.length?all[all.length-1]:null;}
+function _oaoBump(which){try{
+if(which==='matchCount'){if(typeof matchCount!=='undefined')matchCount++;}
+else if(which==='rootMatchCount'){if(typeof rootMatchCount!=='undefined')rootMatchCount++;}
+else if(which==='vocabMatchCount'){if(typeof vocabMatchCount!=='undefined')vocabMatchCount++;}
+}catch(e){}}
+function _oaoMatch(item,which){
+var g=item.closest('.match-grid, .root-match-grid'); if(!g)return;
+if(item.classList.contains('matched'))return;
+var isRoot=g.classList.contains('root-match-grid');
+var iSel=isRoot?'.root-match-item':'.match-item';
+var sel=g.querySelector(iSel+'.selected');
+if(!sel){item.classList.add('selected');return;}
+if(sel===item){sel.classList.remove('selected');return;}
+if(sel.getAttribute('data-match')===item.getAttribute('data-match')&&sel.classList.contains('is-word')!==item.classList.contains('is-word')){
+sel.classList.remove('selected');sel.classList.add('matched');item.classList.add('matched');
+_oaoBump(which);
+if(g.querySelectorAll(iSel+'.matched').length>=g.querySelectorAll(iSel).length){
+var fb=_oaoFb(g,isRoot?'.root-match-feedback':'.match-feedback');
+if(fb)fb.classList.add('show');
+if(which==='vocabMatchCount')window._vocabMatchDone=true;else window._fillinDone=true;}
+}else{item.classList.add('wrong-flash');sel.classList.add('wrong-flash');var a=sel,b=item;
+setTimeout(function(){a.classList.remove('wrong-flash','selected');b.classList.remove('wrong-flash');},500);}}
+function rootMatchClick(item){_oaoMatch(item,'rootMatchCount');}
 function wbClick(btn,base,affix,verdict){
   if(btn.classList.contains('correct')||btn.classList.contains('wrong'))return;
   btn.classList.add(verdict==='correct'?'correct':'wrong');
@@ -3121,17 +3122,17 @@ function showAllWbFeedback(){
 /* CLOZE GAME */
 window._clozeDone=false;
 function checkCloze(){
-  var answers={cloze1:'solemnly',cloze2:'allegiance',cloze3:'indignant',cloze4:'conductor'};
-  var correct=0,total=4;
-  Object.keys(answers).forEach(function(id){
-    var el=document.getElementById(id); if(!el)return;
-    var val=el.value.trim().toLowerCase();
-    if(val===answers[id]){el.classList.add('correct');el.classList.remove('wrong');correct++;}
-    else{el.classList.add('wrong');el.classList.remove('correct');}
-  });
-  var fb=document.getElementById('clozeFeedback');
-  if(fb){fb.textContent=correct===total?'🎉 All correct! You know your cross-novel vocabulary.':correct+' of '+total+' correct — check the ones in red and try again.';fb.classList.add('show');}
-  if(correct===total)window._clozeDone=true;
+var g=document.getElementById('clozeGame');
+var ins=g?[].slice.call(g.querySelectorAll('.fillin-input')):[];
+var correct=0,total=ins.length;
+ins.forEach(function(el){
+var want=(el.getAttribute('data-ans')||'').trim().toLowerCase();
+var val=el.value.trim().toLowerCase();
+if(want&&val===want){el.classList.add('correct');el.classList.remove('wrong');correct++;}
+else{el.classList.add('wrong');el.classList.remove('correct');}});
+var fb=document.getElementById('clozeFeedback');
+if(fb){fb.textContent=correct===total?'🎉 All correct! You know your cross-novel vocabulary.':correct+' of '+total+' correct \u2014 check the ones in red and try again.';fb.classList.add('show');}
+if(correct===total)window._clozeDone=true;
 }
 
 /* SPELLING TEST */
@@ -3183,8 +3184,25 @@ function checkSpWord(i,correct,btn){
 
 /* SPELLING SORT — stub (not used D3 but referenced in old JS) */
 var sortSelected=null,sortPlaced=0,sortTotal=8;
-function pickSortChip(chip){}
-function dropSortChip(colDrop,colName){}
+
+function pickSortChip(chip){
+if(chip.classList.contains('placed'))return;
+var g=chip.closest('.sort-game');if(!g)return;
+if(g._oaoSel)g._oaoSel.style.outline='';
+g._oaoSel=chip;chip.style.outline='3px solid #55C8E8';chip.style.outlineOffset='2px';}
+function dropSortChip(colDrop,colName){
+var g=colDrop.closest('.sort-game');if(!g||!g._oaoSel)return;
+var sel=g._oaoSel;
+var clone=sel.cloneNode(true);clone.style.outline='';clone.onclick=null;clone.style.cursor='default';
+if(sel.getAttribute('data-group')===colName){clone.classList.add('correct');sel.classList.add('placed');colDrop.appendChild(clone);
+try{if(typeof sortPlaced!=='undefined')sortPlaced++;}catch(e){}}
+else{clone.classList.add('wrong');colDrop.appendChild(clone);
+setTimeout(function(){if(clone.parentNode===colDrop)colDrop.removeChild(clone);},600);}
+sel.style.outline='';g._oaoSel=null;
+var bank=g.querySelector('.sort-bank');if(!bank)return;
+if(bank.querySelectorAll('.sort-chip.placed').length>=bank.querySelectorAll('.sort-chip').length){
+var sc=g.querySelector('.sort-score');
+if(sc){sc.textContent=g.getAttribute('data-win')||'\uD83C\uDF89 All sorted correctly!';sc.classList.add('show');}}}
 
 /* VOCAB SORT — stub (not used D3) */
 var vocabSortSelected=null,vocabSortPlaced=0,vocabSortTotal=4;
@@ -3329,117 +3347,126 @@ var trackerPos=[{x:6,y:148},{x:20,y:132},{x:35,y:140},{x:52,y:128},{x:68,y:136},
 (function(){
   var k = typeof _lessonKey !== 'undefined' ? _lessonKey : (document.title||'lesson').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase();
 
-  /* — Fill-in inputs — */
+  /* — Fill-in inputs — (scoped per game) */
   document.querySelectorAll('.fillin-input').forEach(function(inp){
     if(!inp.id) return;
     try{
       var v = localStorage.getItem(k+'-'+inp.id);
       if(v){
         inp.value = v;
-        var a = (inp.getAttribute('data-answer')||'').toLowerCase();
-        if(v.trim().toLowerCase() === a){
-          inp.classList.add('correct'); inp.disabled = true;
-        }
+        var a = (inp.getAttribute('data-answer')||inp.getAttribute('data-ans')||'').toLowerCase();
+        if(a && v.trim().toLowerCase() === a){ inp.classList.add('correct'); inp.disabled = true; }
       }
     }catch(e){}
     inp.addEventListener('input', function(){
       try{ localStorage.setItem(k+'-'+this.id, this.value); }catch(e){}
     });
   });
-  /* restore fillin feedback if all correct */
-  var allFillins = document.querySelectorAll('.fillin-input');
-  if(allFillins.length > 0){
+  /* restore each fill-in game's own feedback when THAT game is complete */
+  [].slice.call(document.querySelectorAll('.fillin-game')).forEach(function(g){
+    var ins = g.querySelectorAll('.fillin-input');
+    if(!ins.length) return;
     var allDone = true;
-    allFillins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
-    if(allDone){
-      var fb = document.getElementById('fillinFeedback');
-      if(fb) fb.classList.add('show');
-      if(typeof window._fillinDone !== 'undefined') window._fillinDone = true;
-    }
-  }
+    ins.forEach(function(inp){ if(!inp.disabled) allDone = false; });
+    if(!allDone) return;
+    var fb = _oaoFbNear(g, '.fillin-feedback') || document.getElementById('fillinFeedback');
+    if(fb) fb.classList.add('show');
+    window._fillinDone = true;
+  });
 
-  /* — Sort game — */
-  var sortBank = document.getElementById('sortBank');
-  if(sortBank){
+  /* — Sort games — (scoped per game, one localStorage key each) */
+  var _sortGames = [].slice.call(document.querySelectorAll('.sort-game'));
+  _sortGames.forEach(function(g, gi){
+    var bank = g.querySelector('.sort-bank'); if(!bank) return;
+    var gk = g.id || ('sg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-sortState') || 'null');
+      raw = localStorage.getItem(k+'-sortState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-sortState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        saved.forEach(function(s){
-          var col = document.querySelector('.sort-col-drop[data-col="'+s.col+'"]');
+        saved.forEach(function(st){
+          var col = g.querySelector('.sort-col-drop[data-col="'+st.col+'"]');
           if(!col) return;
-          var chips = sortBank.querySelectorAll('.sort-chip');
-          chips.forEach(function(chip){
+          bank.querySelectorAll('.sort-chip').forEach(function(chip){
             if(chip.classList.contains('placed')) return;
-            if(chip.textContent.trim() === s.text && chip.getAttribute('data-group') === s.col){
+            if(chip.textContent.trim() === st.text && chip.getAttribute('data-group') === st.col){
               var cl = chip.cloneNode(true);
               cl.classList.add('correct');
               cl.style.outline = ''; cl.onclick = null; cl.style.cursor = 'default';
               col.appendChild(cl);
               chip.classList.add('placed');
-              if(typeof sortPlaced !== 'undefined') sortPlaced++;
+              try{ if(typeof sortPlaced !== 'undefined') sortPlaced++; }catch(e){}
             }
           });
         });
-        if(typeof sortPlaced !== 'undefined' && typeof sortTotal !== 'undefined' && sortPlaced >= sortTotal){
-          var sc = document.getElementById('sortScore');
-          if(sc){ sc.textContent = '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
+        if(bank.querySelectorAll('.sort-chip.placed').length >= bank.querySelectorAll('.sort-chip').length){
+          var sc = g.querySelector('.sort-score');
+          if(sc){ sc.textContent = g.getAttribute('data-win') || '\u{1F389} All sorted correctly!'; sc.classList.add('show'); }
         }
       }
     }catch(e){}
-    /* hook into dropSortChip to save state */
-    var origDrop = window.dropSortChip;
-    if(origDrop){
-      window.dropSortChip = function(col, colName){
-        origDrop(col, colName);
+  });
+  if(_sortGames.length){
+    ['dropSortChip','dropVocabChip'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(col, colName){
+        orig(col, colName);
         try{
+          var g = col.closest('.sort-game'); if(!g) return;
+          var gi = _sortGames.indexOf(g); var gk = g.id || ('sg'+(gi < 0 ? 0 : gi));
           var placed = [];
-          document.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
+          g.querySelectorAll('.sort-col-drop .sort-chip.correct').forEach(function(c){
             placed.push({text: c.textContent.trim(), col: c.closest('.sort-col-drop').getAttribute('data-col')});
           });
-          localStorage.setItem(k+'-sortState', JSON.stringify(placed));
+          localStorage.setItem(k+'-sortState-'+gk, JSON.stringify(placed));
         }catch(e){}
       };
-    }
+    });
   }
 
-  /* — Match game — */
-  var matchGrid = document.getElementById('matchGrid');
-  if(matchGrid){
+  /* — Match games — (scoped per grid, one localStorage key each) */
+  var _matchGrids = [].slice.call(document.querySelectorAll('.match-grid'));
+  _matchGrids.forEach(function(g, gi){
+    var gk = g.id || ('mg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-matchState') || 'null');
+      raw = localStorage.getItem(k+'-matchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-matchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = matchGrid.querySelectorAll('.match-item');
+        var items = g.querySelectorAll('.match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){
-              it.classList.add('matched');
-            }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof matchCount !== 'undefined'){
-          matchCount = saved.length;
-          var total = typeof matchTotal !== 'undefined' ? matchTotal : 4;
-          if(matchCount >= total){
-            var fb = document.getElementById('matchFeedback');
-            if(fb) fb.classList.add('show');
-            if(typeof window._vocabMatchDone !== 'undefined') window._vocabMatchDone = true;
-          }
+        try{ if(typeof matchCount !== 'undefined') matchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.match-feedback');
+          if(fb) fb.classList.add('show');
+          window._vocabMatchDone = true;
         }
       }
     }catch(e){}
-    /* hook into matchClick to save state */
+  });
+  if(_matchGrids.length){
     var origMatch = window.matchClick;
     if(origMatch){
       window.matchClick = function(item){
         origMatch(item);
         try{
-          var matched = [];
-          var seen = {};
-          matchGrid.querySelectorAll('.match-item.matched').forEach(function(it){
+          var g = item.closest('.match-grid'); if(!g) return;
+          var gi = _matchGrids.indexOf(g); var gk = g.id || ('mg'+(gi < 0 ? 0 : gi));
+          var matched = [], seen = {};
+          g.querySelectorAll('.match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-matchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-matchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
     }
@@ -3484,41 +3511,48 @@ var trackerPos=[{x:6,y:148},{x:20,y:132},{x:35,y:140},{x:52,y:128},{x:68,y:136},
     });
   }
 
-  /* — Root-match game — same as vocab match but separate vars */
-  var rootGrid = document.querySelector('.root-match-grid');
-  if(rootGrid){
+  /* — Root-match games — (scoped per grid, one localStorage key each) */
+  var _rootGrids = [].slice.call(document.querySelectorAll('.root-match-grid'));
+  _rootGrids.forEach(function(g, gi){
+    var gk = g.id || ('rg'+gi);
+    var raw = null;
     try{
-      var saved = JSON.parse(localStorage.getItem(k+'-rootMatchState') || 'null');
+      raw = localStorage.getItem(k+'-rootMatchState-'+gk);
+      if(raw === null && gi === 0) raw = localStorage.getItem(k+'-rootMatchState'); /* pre-scoping saves */
+    }catch(e){}
+    try{
+      var saved = JSON.parse(raw || 'null');
       if(saved && saved.length > 0){
-        var items = rootGrid.querySelectorAll('.root-match-item');
+        var items = g.querySelectorAll('.root-match-item');
         saved.forEach(function(mkey){
-          items.forEach(function(it){
-            if(it.getAttribute('data-match') === mkey){ it.classList.add('matched'); }
-          });
+          items.forEach(function(it){ if(it.getAttribute('data-match') === mkey) it.classList.add('matched'); });
         });
-        if(typeof rootMatchCount !== 'undefined'){
-          rootMatchCount = saved.length;
-          if(rootMatchCount >= 4){
-            var fb = document.getElementById('rootMatchFeedback');
-            if(fb) fb.classList.add('show');
-          }
+        try{ if(typeof rootMatchCount !== 'undefined') rootMatchCount += saved.length; }catch(e){}
+        if(g.querySelectorAll('.root-match-item.matched').length >= items.length){
+          var fb = _oaoFbNear(g, '.root-match-feedback');
+          if(fb) fb.classList.add('show');
         }
       }
     }catch(e){}
-    var origRootMatch = window.rootMatchClick;
-    if(origRootMatch){
-      window.rootMatchClick = function(item){
-        origRootMatch(item);
+  });
+  if(_rootGrids.length){
+    ['rootMatchClick','vocabMatchClick'].forEach(function(fn){
+      var orig = window[fn];
+      if(!orig) return;
+      window[fn] = function(item){
+        orig(item);
         try{
+          var g = item.closest('.root-match-grid'); if(!g) return;
+          var gi = _rootGrids.indexOf(g); var gk = g.id || ('rg'+(gi < 0 ? 0 : gi));
           var matched = [], seen = {};
-          rootGrid.querySelectorAll('.root-match-item.matched').forEach(function(it){
+          g.querySelectorAll('.root-match-item.matched').forEach(function(it){
             var mk = it.getAttribute('data-match');
             if(!seen[mk]){ matched.push(mk); seen[mk] = true; }
           });
-          localStorage.setItem(k+'-rootMatchState', JSON.stringify(matched));
+          localStorage.setItem(k+'-rootMatchState-'+gk, JSON.stringify(matched));
         }catch(e){}
       };
-    }
+    });
   }
 
   /* — Comma game — restore inserted commas */
