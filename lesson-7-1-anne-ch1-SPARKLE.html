@@ -4557,6 +4557,15 @@ document.addEventListener('DOMContentLoaded', function() {
 .spk-road-name{font-size:17px;font-weight:800;color:var(--spk-ink);}
 .spk-road-line{font-size:13px;color:var(--spk-muted);line-height:1.5;}
 .spk-road-laurel{position:absolute;top:10px;right:12px;opacity:.5;transition:opacity .25s,transform .25s;}
+/* the seal is absolutely positioned, so the card has to keep a lane
+   clear for it — without this the description runs underneath and the
+   last words of every line disappear behind the wax */
+.spk-road[data-tier="scholar"]{padding-right:76px;}
+@media(max-width:700px){
+  .spk-road[data-tier="scholar"]{padding-right:64px;}
+  .spk-road-laurel{top:8px;right:8px;}
+  .spk-road-laurel .spk-seal-img{width:40px;}
+}
 .spk-road[data-tier="scholar"]{
   background:linear-gradient(180deg,#FFFDF7,var(--spk-cream));border-color:#EBD9AF;
 }
@@ -5323,6 +5332,44 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
 }
 @media(max-width:700px){
   .spk-guide .spk-audio-btn{font-size:14px;padding:10px 18px 10px 12px;}
+}
+
+/* ── the Reading Road folds away ───────────────────────────── */
+.spk-fold{
+  display:flex;align-items:center;gap:14px;width:100%;
+  background:none;border:0;cursor:pointer;text-align:left;
+  padding:14px 18px;font:inherit;color:inherit;
+}
+.spk-fold:hover .spk-card-title{color:#8B6914;}
+.spk-fold:focus-visible{outline:2px solid var(--spk-gold);outline-offset:-3px;border-radius:10px;}
+.spk-fold-chev{
+  margin-left:auto;flex:none;width:11px;height:11px;
+  border-right:2.5px solid #A08A5C;border-bottom:2.5px solid #A08A5C;
+  transform:rotate(45deg) translate(-2px,-2px);
+  transition:transform .22s ease-out;
+}
+.spk-open-road .spk-fold-chev{transform:rotate(225deg) translate(-2px,-2px);}
+@media (prefers-reduced-motion: reduce){ .spk-fold-chev{transition:none;} }
+
+/* ── a guide clip that carries words of its own ────────────── */
+.spk-guide-wrap{margin:4px auto 22px;max-width:560px;}
+.spk-guide-wrap .spk-guide{margin:0 auto 8px;}
+.spk-note{
+  max-width:560px;margin:0 auto;
+  font-family:'Lora',Georgia,serif;font-size:14px;color:#5A4A2C;
+}
+.spk-note summary{
+  cursor:pointer;list-style:none;text-align:center;
+  font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.04em;color:#A08A5C;padding:4px 0;
+}
+.spk-note summary::-webkit-details-marker{display:none;}
+.spk-note summary:hover{color:#8B6914;}
+.spk-note summary:focus-visible{outline:2px solid var(--spk-gold);outline-offset:2px;border-radius:6px;}
+.spk-note-body{
+  background:#FFFCF4;border:1px solid #EADCBE;border-left:3px solid var(--spk-gold);
+  border-radius:8px;padding:12px 16px;margin-top:6px;line-height:1.6;
+  white-space:pre-line;
 }
 
 </style>
@@ -6455,12 +6502,18 @@ function buildJourney() {
   if (after) { after.remove(); after = null; }
   var card = document.createElement('div');
   card.className = 'spk-card spk-journey';
+  /* The map and the shelf are a keepsake, not a task — lovely to visit,
+     in the way every day. So the card folds, and remembers whether the
+     student left it open. Closed is the default: the road is still one
+     click away, and the chapter is the reason they came. */
   card.innerHTML =
-    '<div class="spk-card-head"><div class="spk-card-num">✦</div><div>' +
+    '<button type="button" class="spk-card-head spk-fold" id="spkRoadFold" aria-expanded="false" aria-controls="spkRoadBody">' +
+      '<div class="spk-card-num">✦</div><div>' +
       '<div class="spk-card-title">The Reading Road</div>' +
       '<div class="spk-card-sub">Thirty-two weeks, one road, six worlds — and the shelf you fill as you go</div>' +
-    '</div></div>' +
-    '<div class="spk-card-body spk-journey-body">' +
+      '</div><span class="spk-fold-chev" aria-hidden="true"></span>' +
+    '</button>' +
+    '<div class="spk-card-body spk-journey-body" id="spkRoadBody" hidden>' +
       '<div class="spk-map-wrap"><svg class="spk-map" id="spkMap" viewBox="0 0 900 660"></svg></div>' +
       '<div class="spk-here" id="spkHere"></div>' +
       '<div class="spk-shelf-head">Your shelf</div>' +
@@ -6485,7 +6538,20 @@ function buildJourney() {
     '</div>';
   if (after && after.nextSibling) after.parentNode.insertBefore(card, after.nextSibling);
   else panel.insertBefore(card, panel.firstChild);
-  drawMap(); drawShelf();
+  var fold = document.getElementById('spkRoadFold');
+  var body = document.getElementById('spkRoadBody');
+  var openRoad = Sparkle.get('oao.g4ela.roadOpen', false) === true;
+  function setFold(open) {
+    body.hidden = !open;
+    fold.setAttribute('aria-expanded', open ? 'true' : 'false');
+    card.classList.toggle('spk-open-road', open);
+    Sparkle.set('oao.g4ela.roadOpen', open);
+    /* the map measures itself off the DOM, so it can only be drawn
+       once the body is actually on the page */
+    if (open) { try { drawMap(); drawShelf(); } catch (e) {} }
+  }
+  fold.onclick = function () { setFold(body.hidden); };
+  setFold(openRoad);
 }
 
 /* ── §2.2 the painted board, lit up ─────────────────────────────
@@ -7015,7 +7081,11 @@ function sealCheck(quiet) {
     if (window.gatherAnswers) window.gatherAnswers();
   }
 }
-function drawMapIfPresent() { if (document.getElementById('spkMap')) drawMap(); }
+function drawMapIfPresent() {
+  var b = document.getElementById('spkRoadBody');
+  if (b && b.hidden) return;                 /* folded away — nothing to redraw */
+  if (document.getElementById('spkMap')) drawMap();
+}
 
 function words(s) { return (s.trim().match(/[A-Za-z0-9'’-]+/g) || []).length; }
 function hasQuote(s) {
@@ -7301,7 +7371,7 @@ var AUDIO = {
      claude/g4-audio-spec.md. */
   /* All three resolve from assets/audio/ on disk. Leave these empty;
      they exist only as an override for testing without files. */
-  clips: { welcome: '', poem: '', watch: '' }
+  clips: { welcome: '', poem: '' }
 };
 window.OAO_AUDIO = AUDIO;
 
@@ -7348,6 +7418,7 @@ function slug(s) {
    Together with the welcome at the top of Warm-Up, that is one guiding
    voice at the head of every tab — which is what the introduction
    videos were going to do. */
+var GUIDE_NOTE = null;   /* what the Growing-Up Watch block used to say */
 var GUIDE_TABS = [
   { tab:'words',      pos:1, label:'Before you begin the word work' },
   { tab:'reading',    pos:2, label:'Before you open the book' },
@@ -7365,7 +7436,27 @@ function buildGuide() {
     var ctl = audioControl('_guide' + g.pos, g.label, guideURL(g.pos));
     if (!ctl) return;
     ctl.classList.add('spk-guide');
-    panel.insertBefore(ctl, panel.firstChild);      /* the head of the tab */
+
+    var wrap = ctl;
+    /* the Reading clip carries what the Growing-Up Watch block used to
+       say, so its words go underneath it, folded */
+    if (g.tab === 'reading' && GUIDE_NOTE && GUIDE_NOTE.text) {
+      wrap = document.createElement('div');
+      wrap.className = 'spk-guide-wrap';
+      wrap.appendChild(ctl);
+      var det = document.createElement('details');
+      det.className = 'spk-note';
+      var sum = document.createElement('summary');
+      sum.textContent = 'Read it instead' +
+        (GUIDE_NOTE.title ? ' \u00b7 ' + titleCase(GUIDE_NOTE.title.toLowerCase()) : '');
+      det.appendChild(sum);
+      var body = document.createElement('div');
+      body.className = 'spk-note-body';
+      body.textContent = GUIDE_NOTE.text;        /* never innerHTML */
+      det.appendChild(body);
+      wrap.appendChild(det);
+    }
+    panel.insertBefore(wrap, panel.firstChild);     /* the head of the tab */
   });
 }
 
@@ -7378,7 +7469,6 @@ function audioURL(kind) {
      poem stays a read-aloud, because there reading the actual words is
      the whole point. */
   if (kind === 'welcome') return AUDIO.base + 'guide/welcome/g4ela-' + wk + '-' + dayNum(LESSON.day) + '.mp3';
-  if (kind === 'watch')   return AUDIO.base + 'guide/watch/g4ela-wk' + wk + '.mp3';
   if (kind === 'poem')    return AUDIO.base + 'poem/' + slug((DATA.poem || {}).title || '') + '.mp3';
   return '';
 }
@@ -7572,22 +7662,36 @@ function buildAudio() {
     });
   }
 
-  /* 3. Growing-Up Watch. The heading text varies by book, so the
-     block is found by its own title rather than a class that may
-     not survive the next template change. */
-  var watchBody = null;
+  /* 3. Growing-Up Watch is no longer a block on the page — the Reading
+     tab was carrying too much, and this is the part a teacher would
+     simply have said. It comes out, and its words go into the guiding
+     voice at the head of the tab instead.
+
+     They are not thrown away. The text is lifted out before the block
+     is removed and folded under the clip as a transcript, so a student
+     with the sound off, or on a lesson whose recording has not been
+     made yet, can still read what the clip says. Audio is never the
+     only copy. */
+  /* The thematic strand runs all year under a different name per book:
+       Virtue Watch      wk 1-5    (Mrs. Frisby)
+       Virtue Words      wk 6
+       Growing-Up Watch  wk 7-14   (Anne)
+       Courage Watch     wk 15-19  (Number the Stars)
+       Freedom Watch     wk 20-24  (Freedom Train)
+     and nothing after 24.1 — see claude/g4-virtue-strand-survey.md.
+     Match the family, not one name, or four fifths of the year is
+     missed. */
   var titles = document.querySelectorAll('.activity-title');
   for (var i = 0; i < titles.length; i++) {
-    if (/growing-up watch/i.test(titles[i].textContent || '')) {
-      var act = titles[i].closest('.activity');
-      watchBody = act && act.querySelector('.activity-body');
+    if (/\b(virtue|growing-up|courage|freedom|belief|character)\s+(watch|words)\b/i.test(titles[i].textContent || '')) {
+      var act = titles[i].closest('.activity'); if (!act) break;
+      var raw = (titles[i].textContent || '').trim();
+      var head = raw.indexOf(':') > -1 ? raw.split(':').slice(1).join(':').trim() : raw;
+      var body = act.querySelector('.activity-body');
+      GUIDE_NOTE = { title: head, text: body ? (body.innerText || body.textContent || '').trim() : '' };
+      act.remove();
       break;
     }
-  }
-  if (watchBody && !watchBody.querySelector('.spk-audio, .spk-media')) {
-    placeMedia('watch', 'Listen to this week’s Growing-Up Watch', watchBody, function (el) {
-      watchBody.insertBefore(el, watchBody.firstChild);
-    });
   }
 }
 
@@ -7829,10 +7933,78 @@ function dividerAfterOpening() {
   open.parentNode.insertBefore(d, open.nextSibling);
 }
 
+/* ══════════════════════════════════════════════════════════════
+   §2.14  DECLUTTER
+
+   Four small removals, all additive: the original file is untouched,
+   and dropping the sparkle layer puts every one of them back.
+   ══════════════════════════════════════════════════════════════ */
+function declutter() {
+  /* 1. Today's Path and the You'll-need strip. Both restate the tab bar
+     and the materials the student already has in front of them, and
+     they sit in the most valuable space on the page — above the fold,
+     before the lesson starts. */
+  ['.todays-path', '.need-strip'].forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) { el.remove(); });
+  });
+
+  /* 2. The "you don't have to write this down" reassurances. They sit
+     under prompts that are already marked as thinking prompts, so they
+     tell a student something the page has just told them — 295 times
+     across 102 of the 129 files, six different wordings, which is why
+     matching one string was not enough.
+
+     The rule is whole-line: a thinking-stop goes only when reassurance
+     is ALL it says. Anything that also carries a direction survives —
+     "Hold this question in your mind as you read", "you'll answer
+     these in the Assignment", every "Think: …" prompt. That leaves
+     181 of the 476 standing, which are the ones doing work. */
+  var FILLER = new RegExp(
+    '^(?:\\u{1F4AD}\\s*)?(?:' +
+      "pause and think(?: about this)?\\s*-\\s*no need to write(?: here)?" +
+      "|think about this as you read today\\s*-\\s*you don't need to write anything here" +
+      "|think:?\\s*no need to write\\s*-\\s*just carry this question into your reading" +
+      "|let this question sit with you\\s*-\\s*you don't need to write anything here" +
+    ')\\.?$', 'iu');
+  document.querySelectorAll('.thinking-stop').forEach(function (el) {
+    var t = (el.textContent || '')
+      .replace(/[\u2018\u2019]/g, "'")        /* curly apostrophes */
+      .replace(/[\u2013\u2014]/g, '-')        /* en and em dashes  */
+      .replace(/\s+/g, ' ').trim();
+    if (FILLER.test(t)) el.remove();
+  });
+}
+
+/* 3. Changing tabs used to jump to the top of the page. That is
+   disorienting: a student two thirds of the way down Word Study clicks
+   Reading and is thrown back to the header. The tab bar is sticky, so
+   there is nothing to go back up for. This holds the scroll position
+   across the switch by suppressing the original's scrollIntoView for
+   the length of the call, then putting the scroll back. */
+function hookTabScroll() {
+  if (typeof window.switchTab !== 'function') return;
+  var inner = window.switchTab;
+  window.switchTab = function (tabId) {
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var top = document.getElementById('pageTop');
+    var real = top && top.scrollIntoView;
+    if (real) top.scrollIntoView = function () {};     /* muzzle it */
+    try { return inner.apply(this, arguments); }
+    finally {
+      if (real) top.scrollIntoView = real;
+      /* the browser may still settle a frame later, so put it back
+         twice rather than fight the timing */
+      window.scrollTo(0, y);
+      requestAnimationFrame(function () { window.scrollTo(0, y); });
+    }
+  };
+}
+
 function boot() {
   try {
     document.body.classList.add('spk-warm');
-    hookProgress(); hookTabs(); hookGather();
+    hookProgress(); hookTabs(); hookGather(); hookTabScroll();
+    declutter();
     /* The "This week" dot row used to sit under the progress bar. Removed
        at Bethany's request — the header area was getting crowded, and the
        Reading Road on the Reading tab already shows where they are, at the
