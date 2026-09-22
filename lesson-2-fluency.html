@@ -2752,7 +2752,7 @@ g._oaoSel=chip;chip.style.outline='3px solid #55C8E8';chip.style.outlineOffset='
 function dropSortChip(colDrop,colName){
 var g=colDrop.closest('.sort-game');if(!g||!g._oaoSel)return;
 var sel=g._oaoSel;
-var clone=sel.cloneNode(true);clone.style.outline='';clone.onclick=null;clone.style.cursor='default';
+var clone=sel.cloneNode(true);clone.style.outline='';clone.onclick=null;clone.removeAttribute('onclick');clone.style.pointerEvents='none';clone.style.cursor='default';
 if(sel.getAttribute('data-group')===colName){clone.classList.add('correct');sel.classList.add('placed');colDrop.appendChild(clone);
 try{if(typeof sortPlaced!=='undefined')sortPlaced++;}catch(e){}}
 else{clone.classList.add('wrong');colDrop.appendChild(clone);
