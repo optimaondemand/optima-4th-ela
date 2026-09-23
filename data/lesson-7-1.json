@@ -1,0 +1,87 @@
+{
+  "dol": {
+    "a": {
+      "raw": "mrs rachel lynde walked through avonlea every morning",
+      "fixed": "<strong>Mrs. Rachel Lynde</strong> walked through <strong>Avonlea</strong> every <strong>morning.</strong>",
+      "why": "Capital letters on the title and names (Mrs. Rachel Lynde), a capital on the place name (Avonlea), a period at the end. Common nouns like \"morning\" stay lowercase."
+    },
+    "b": {
+      "raw": "the brook ran past mrs rachels door in lyndes hollow",
+      "fixed": "<strong>The</strong> brook ran past <strong>Mrs. Rachel’s</strong> door in <strong>Lynde’s Hollow.</strong>",
+      "why": "Capital at the start of the sentence, capitals on the title and names, apostrophes to show the door belongs to Mrs. Rachel and the hollow to the Lyndes, and a period at the end."
+    }
+  },
+  "scholar": {
+    "journal-q1": "… and name one thing the narrator tells you about Matthew that Mrs. Rachel does not know.",
+    "journal-q2": "… and for each detail, say what it makes you feel about living in Avonlea.",
+    "journal-q3": "… and quote the line that shows it most clearly."
+  },
+  "flags": {
+    "journal-q1": {
+      "quote": false,
+      "count": 0
+    },
+    "journal-q2": {
+      "quote": false,
+      "count": 2
+    },
+    "journal-q3": {
+      "quote": true,
+      "count": 0
+    }
+  },
+  "hints": {
+    "fill1": {
+      "h1": "The word means to join things together. Which of the two prefixes is spelled with an n?",
+      "h2": "c _ _",
+      "why": "<b>con-</b> means \"with\" or \"together,\" so <b>connect</b> is to join one thing together with another."
+    },
+    "fill2": {
+      "h1": "Say it out loud: com-bine. Listen to the letter just before the b.",
+      "h2": "c _ _",
+      "why": "<b>com-</b> means \"together.\" To <b>combine</b> is to bring things together into one."
+    },
+    "fill3": {
+      "h1": "A company is a group of people together. It takes the same prefix as combine.",
+      "h2": "c _ _",
+      "why": "<b>com-</b> means \"together,\" so <b>company</b> is the people who go along together."
+    },
+    "fill4": {
+      "h1": "To continue is to keep going with what you started. Same prefix as connect.",
+      "h2": "c _ _",
+      "why": "<b>con-</b> means \"with,\" so <b>continue</b> is to keep going with the thing you began."
+    }
+  },
+  "miss": {
+    "match": {
+      "placid": "Placid is about calm, not about company.",
+      "imagine": "Imagining happens in your head — look for the meaning about pictures in the mind.",
+      "companion": "A companion is a person, so its meaning should describe a person.",
+      "delight": "Delight is a feeling. Look for the meaning that names a feeling."
+    },
+    "sort": {
+      "child → children": "Children does not end in -s at all — the whole middle of the word changed.",
+      "woman → women": "Listen to the vowel: woman, women. The change is inside the word, not on the end.",
+      "foot → feet": "No ending was added here — oo simply became ee.",
+      "road → roads": "Roads is the ordinary -s rule, nothing surprising.",
+      "gable → gables": "Gables just adds -s. Nothing inside the word moved.",
+      "window → windows": "Windows adds -s like most nouns do.",
+      "cats": "Cat takes a plain -s — nothing hisses at the end.",
+      "roads": "Road takes a plain -s.",
+      "trees": "Tree takes a plain -s.",
+      "boxes": "Try saying \"boxs.\" The x makes you need the extra -es.",
+      "brushes": "Try saying \"brushs.\" The sh makes you need the extra -es.",
+      "stories": "Story ends in consonant + y, so the y became an i before -es."
+    }
+  },
+  "copia": {
+    "seed": "Mrs. Rachel Lynde <b data-verb>sat</b> at her window and watched the road.",
+    "eg": [
+      "Every afternoon, Mrs. Rachel Lynde sat at her window and watched the road.",
+      "Mrs. Rachel Lynde <i>perched</i> at her window and watched the road.",
+      "Mrs. Rachel Lynde sat at her window in Lynde’s Hollow and watched the road carefully."
+    ]
+  },
+  "writingFocus": "Voice",
+  "connector": "Last week you closed Mrs. Frisby and stood it on your shelf. Today we open a new one. Anne of Green Gables begins quietly — a woman at her window, a man driving past in his good suit, and a question she cannot leave alone. Watch how much Montgomery tells you about Avonlea before anybody in it says a word."
+}
