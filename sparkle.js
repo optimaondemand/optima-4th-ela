@@ -249,104 +249,35 @@ function owlDrawn(key, size) {
    HTML as data-* attributes; kept here so the demo file is
    readable in one place.
    ══════════════════════════════════════════════════════════════ */
-var DATA = {
-  /* §2.5 second DOL fix-it sentence, from Ch. 1 */
-  dol: {
-    a: { raw: 'mrs rachel lynde walked through avonlea every morning',
-         fixed: '<strong>Mrs. Rachel Lynde</strong> walked through <strong>Avonlea</strong> every <strong>morning.</strong>',
-         why: 'Capital letters on the title and names (Mrs. Rachel Lynde), a capital on the place name (Avonlea), a period at the end. Common nouns like "morning" stay lowercase.' },
-    b: { raw: 'the brook ran past mrs rachels door in lyndes hollow',
-         fixed: '<strong>The</strong> brook ran past <strong>Mrs. Rachel’s</strong> door in <strong>Lynde’s Hollow.</strong>',
-         why: 'Capital at the start of the sentence, capitals on the title and names, apostrophes to show the door belongs to Mrs. Rachel and the hollow to the Lyndes, and a period at the end.' }
-  },
+/* ── §1.3 the lesson's own content ──────────────────────────────
+   DATA is PER LESSON and lives in the lesson file, not here.
 
-  /* §2.5 Scholar variants of Chapter Thinking */
-  scholar: {
-    'journal-q1': '… and name one thing the narrator tells you about Matthew that Mrs. Rachel does not know.',
-    'journal-q2': '… and for each detail, say what it makes you feel about living in Avonlea.',
-    'journal-q3': '… and quote the line that shows it most clearly.'
-  },
+   This was the rollout's worst bug: DATA used to be ~98 lines of
+   lesson 7.1 written into this layer. Every sparkled lesson in the
+   year would have shown Mrs. Rachel's sentence, chapter one's hint
+   ladders and a connector about closing Mrs. Frisby — on lesson 12.3,
+   on lesson 20.1, everywhere. The layer rendered beautifully and said
+   the wrong thing, which is the worst failure mode available.
 
-  /* §2.6 coaching flags */
-  flags: {
-    'journal-q1': { quote: false, count: 0 },
-    'journal-q2': { quote: false, count: 2 },
-    'journal-q3': { quote: true,  count: 0 }
-  },
+   So it is a second JSON block in the lesson's own <head>, written by
+   tools/inject.py:
 
-  /* §2.7 hint ladders for the morphology fill-ins */
-  hints: {
-    fill1: { h1:'The word means to join things together. Which of the two prefixes is spelled with an n?',
-             h2:'c _ _', why:'<b>con-</b> means "with" or "together," so <b>connect</b> is to join one thing together with another.' },
-    fill2: { h1:'Say it out loud: com-bine. Listen to the letter just before the b.',
-             h2:'c _ _', why:'<b>com-</b> means "together." To <b>combine</b> is to bring things together into one.' },
-    fill3: { h1:'A company is a group of people together. It takes the same prefix as combine.',
-             h2:'c _ _', why:'<b>com-</b> means "together," so <b>company</b> is the people who go along together.' },
-    fill4: { h1:'To continue is to keep going with what you started. Same prefix as connect.',
-             h2:'c _ _', why:'<b>con-</b> means "with," so <b>continue</b> is to keep going with the thing you began.' }
-  },
+     <script type="application/json" id="oao-data"> { ... } </script>
 
-  /* §2.7 distractor lines */
-  miss: {
-    match: {
-      'placid':     'Placid is about calm, not about company.',
-      'imagine':    'Imagining happens in your head — look for the meaning about pictures in the mind.',
-      'companion':  'A companion is a person, so its meaning should describe a person.',
-      'delight':    'Delight is a feeling. Look for the meaning that names a feeling.'
-    },
-    sort: {
-      'child → children': 'Children does not end in -s at all — the whole middle of the word changed.',
-      'woman → women':    'Listen to the vowel: woman, women. The change is inside the word, not on the end.',
-      'foot → feet':      'No ending was added here — oo simply became ee.',
-      'road → roads':     'Roads is the ordinary -s rule, nothing surprising.',
-      'gable → gables':   'Gables just adds -s. Nothing inside the word moved.',
-      'window → windows': 'Windows adds -s like most nouns do.',
-      'cats':    'Cat takes a plain -s — nothing hisses at the end.',
-      'roads':   'Road takes a plain -s.',
-      'trees':   'Tree takes a plain -s.',
-      'boxes':   'Try saying "boxs." The x makes you need the extra -es.',
-      'brushes': 'Try saying "brushs." The sh makes you need the extra -es.',
-      'stories': 'Story ends in consonant + y, so the y became an i before -es.'
-    }
-  },
+   Everything in it is optional. A missing key costs exactly its own
+   feature — no DOL choice, no hint ladder, no copia card — and never
+   somebody else's lesson content. An EMPTY DATA is a valid lesson.
 
-  /* §2.8 copia */
-  copia: {
-    seed: 'Mrs. Rachel Lynde <b data-verb>sat</b> at her window and watched the road.',
-    eg: [
-      'Every afternoon, Mrs. Rachel Lynde sat at her window and watched the road.',
-      'Mrs. Rachel Lynde <i>perched</i> at her window and watched the road.',
-      'Mrs. Rachel Lynde sat at her window in Lynde’s Hollow and watched the road carefully.'
-    ]
-  },
-
-  /* the teacher's opening words. Every lesson gets one: it ties what
-     they just finished to what they are about to do, in the voice a
-     teacher would use standing at the front of the room. */
-  writingFocus: 'Voice',
-
-  connector: 'Last week you closed Mrs. Frisby and stood it on your shelf. Today we open a new one. ' +
-             'Anne of Green Gables begins quietly \u2014 a woman at her window, a man driving past in his ' +
-             'good suit, and a question she cannot leave alone. Watch how much Montgomery tells you about ' +
-             'Avonlea before anybody in it says a word.',
-
-  /* §2.9 memory work — Tennyson, "The Lady of Shalott" (1842, public domain) */
-  poem: {
-    title: 'The Lady of Shalott',
-    author: 'Alfred, Lord Tennyson',
-    lines: [
-      ['On either side the river lie', 0],
-      ['Long fields of barley and of rye,', 0],
-      ['That clothe the wold and meet the sky;', 0],
-      ['And thro’ the field the road runs by', 0],
-      ['To many-tower’d Camelot;', 1],
-      ['And up and down the people go,', 0],
-      ['Gazing where the lilies blow', 0],
-      ['Round an island there below,', 0],
-      ['The island of Shalott.', 1]
-    ]
-  }
-};
+   There is no `poem` key. The By Heart card belongs to
+   assets/js/oao-sparkle.js. */
+var DATA = {};
+try {
+  var dataEl = document.getElementById('oao-data');
+  if (dataEl) DATA = JSON.parse(dataEl.textContent) || {};
+} catch (e) {
+  if (window.console && console.warn) console.warn('[sparkle] DATA did not parse:', e);
+}
+window.OAO_DATA = DATA;
 
 /* ══════════════════════════════════════════════════════════════
    THE WRITING PROJECT
@@ -1521,6 +1452,7 @@ document.addEventListener('oao:bookfinished', function (e) {
 });
 
 function buildDolChoice() {
+  if (!DATA.dol || !DATA.dol.a || !DATA.dol.b) return;   /* no second sentence for this lesson */
   var label = document.querySelector('.dol-fix-label'); if (!label) return;
   var old = label.nextElementSibling;                       /* .dol-sentence-wrap  */
   var hint = old && old.nextElementSibling;                  /* .dol-hint           */
@@ -1633,6 +1565,7 @@ function laurelSVG(size) {
 }
 
 function buildTiers() {
+  if (!DATA.scholar) return;                            /* no Scholar clauses for this lesson */
   var q1 = document.getElementById('journal-q1'); if (!q1) return;
   var body = q1.closest('.activity-body');
   var firstBlock = body.querySelector('.q-block'); if (!firstBlock) return;
@@ -1758,7 +1691,7 @@ function coach(ta) {
   if (!ta) return;
   var line = ta.parentNode.querySelector('.spk-coach[data-for="' + ta.id + '"]');
   if (!line) return;
-  var flags = DATA.flags[ta.id] || {};
+  var flags = (DATA.flags || {})[ta.id] || {};
   var v = ta.value, w = words(v);
   var minW = currentTier() === 'scholar' ? 20 : 12;
   line.classList.remove('good');
@@ -1775,6 +1708,7 @@ function coach(ta) {
 }
 
 function buildCoaches() {
+  if (!DATA.flags) return;                              /* no coaching flags for this lesson */
   Object.keys(DATA.flags).forEach(function (id) {
     var ta = document.getElementById(id); if (!ta) return;
     var line = document.createElement('div');
@@ -1823,7 +1757,7 @@ window.checkFillIn = function (btn) {
     if (inp.disabled) return;
     var answer = (inp.getAttribute('data-answer') || '').toLowerCase();
     var val = inp.value.trim().toLowerCase();
-    var cfg = DATA.hints[inp.id];
+    var cfg = (DATA.hints || {})[inp.id];
     var slot = cfg ? hintSlot(inp) : null;
     if (val === answer) { if (slot) slot.remove(); return; }
     anyWrong = true;
@@ -1878,7 +1812,7 @@ window.matchClick = function (item) {
   if (after > before) { owlCorrect(); return r; }
   if (sel && sel !== item) {
     var wordEl = sel.classList.contains('is-word') ? sel : (item.classList.contains('is-word') ? item : null);
-    if (wordEl) missLine(grid.parentNode, DATA.miss.match[wordEl.textContent.trim()]);
+    if (wordEl) missLine(grid.parentNode, ((DATA.miss || {}).match || {})[wordEl.textContent.trim()]);
   }
   return r;
 };
@@ -1890,7 +1824,7 @@ window.dropSortChip = function (colDrop, colName) {
   var wrong = sel && sel.getAttribute('data-group') !== colName;
   var label = sel ? sel.textContent.trim() : '';
   var r = _origDrop.apply(this, arguments);
-  if (wrong) { missLine(g, DATA.miss.sort[label]); bumpHint('sort'); }
+  if (wrong) { missLine(g, ((DATA.miss || {}).sort || {})[label]); bumpHint('sort'); }
   else if (sel) { owlCorrect(); }
   return r;
 };
@@ -1899,6 +1833,7 @@ window.dropSortChip = function (colDrop, colName) {
    §2.8  COPIA
    ══════════════════════════════════════════════════════════════ */
 function buildCopia() {
+  if (!DATA.copia || !DATA.copia.seed) return;           /* no copia seed for this lesson */
   var panel = document.getElementById('tab-words'); if (!panel) return;
   var anchor = panel.querySelector('.tab-next-wrap'); if (!anchor) return;
   var card = document.createElement('div');
@@ -1986,26 +1921,15 @@ function fadeMask(lineWords, lineIdx, rung) {
 /* ══════════════════════════════════════════════════════════════
    §2.11  RECORDED VOICE
 
-   Three places get a recording: the welcome that opens the lesson,
-   the poem on the Reading tab, and the Growing-Up Watch intro.
+   Every recording is declared in the slot table below and keyed per
+   lesson. There is no poem clip here: the By Heart card and its
+   reading belong to assets/js/oao-sparkle.js.
 
-   They are keyed at three different rates, because they repeat at
-   three different rates:
-
-     welcome  per lesson   g4ela-7-1.mp3        128 clips a year
-     watch    per week     g4ela-wk7.mp3         32 clips a year
-     poem     per poem     lady-of-shalott.mp3    ~8 clips a year
-
-   A poem runs for a whole book arc, so one reading serves all eight
-   weeks of it — which is right, since it is the model a student
-   memorises against. Keying these by lesson instead would mean 384
-   recordings for the same result.
-
-   Nothing is per-lesson in the code: drop the file in the right
-   folder under the naming rule and the control appears. Take it away
-   and the control disappears. There is never a dead button, because
-   the control starts hidden and only shows once the browser has the
-   file's metadata in hand.
+   Nothing is per-lesson in the code: drop the file in the right folder
+   under the naming rule and the control appears. Take it away and the
+   control disappears. There is never a dead button, because the
+   control starts hidden and only shows once the browser has the file's
+   metadata in hand.
    ══════════════════════════════════════════════════════════════ */
 /* ══════════════════════════════════════════════════════════════
    §2.12  THE MEDIA SLOT TABLE
@@ -2064,9 +1988,6 @@ var MEDIA = {
       path:'guide/turn/g4ela-{w}-{d}-3',
       label:'Before you write' },
 
-    { id:'poem',    kind:'audio', at:{el:'spkPoem'},
-      path:'poem/{poem}', inline:true,
-      label:'Hear the poem read aloud' },
 
     /* ---- the sections: every one, all off until you give it a kind ----
        `section` matches the text of an .activity-title, so a clip lands
@@ -2124,24 +2045,12 @@ function mediaSlots() {
   });
 }
 
-/* "The Lady of Shalott" -> "lady-of-shalott". The leading article is
-   dropped: it keeps a folder of poems sorting by the word that
-   matters, and it is what the spec told the recordist to name the
-   file. (This function and the spec disagreed on exactly that point
-   for one build — the code kept the "the-", the spec did not, and the
-   first real recording landed under the spec's name and was not
-   found. The spec wins.) */
-function slug(s) {
-  return String(s).toLowerCase().replace(/[’']/g, '')
-    .replace(/^(the|a|an)\s+/, '')
-    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-
 function mediaPath(slot) {
   return String(slot.path || '')
     .replace('{w}', LESSON.week)
-    .replace('{d}', dayNum(LESSON.day))
-    .replace('{poem}', slug((DATA.poem || {}).title || ''));
+    .replace('{d}', dayNum(LESSON.day));
+  /* there is no {poem} token: the poem card and its clip belong to
+     assets/js/oao-sparkle.js, not to this layer. */
 }
 function mediaSrc(slot) {
   var p = mediaPath(slot); if (!p) return '';
@@ -2444,64 +2353,23 @@ window.OAO_MEDIA_FNS = { buildMedia: buildMedia, liftWatchBlock: liftWatchBlock,
 function buildGuide() { buildMedia(); }
 
 
-function buildMemory() {
-  var panel = document.getElementById('tab-reading'); if (!panel) return;
-  var anchor = panel.querySelector('.tab-next-wrap'); if (!anchor) return;
-  var st = memState(), rung = st[LESSON.book].rung;
+/* §2.9 memory work — REMOVED, deliberately.
 
-  var card = document.createElement('div');
-  card.className = 'spk-card';
-  card.innerHTML =
-    '<div class="spk-card-head"><div class="spk-card-num">♪</div><div>' +
-    '<div class="spk-card-title">By Heart · “' + DATA.poem.title + '”</div>' +
-    '<div class="spk-card-sub">' + DATA.poem.author + ' · one stanza, eight weeks, a little less each week</div>' +
-    '</div></div><div class="spk-card-body">' +
-    '<div class="spk-rung" id="spkRungLbl"></div>' +
-    '<div class="spk-poem" id="spkPoem"></div>' +
-    '<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">' +
-      '<button type="button" class="spk-btn" id="spkSaidIt">I said it aloud</button>' +
-      '<button type="button" class="spk-mini-btn" id="spkMore" style="margin-top:0;">Show a little more</button>' +
-      '<span id="spkMemNote" style="font-size:13px;color:#7A88A8;font-style:italic;"></span>' +
-    '</div></div>';
-  anchor.parentNode.insertBefore(card, anchor);
+   The "By Heart" card is NOT ours. `assets/js/oao-sparkle.js` already
+   ships it — one poem per book, an eight-rung ladder, a little less to
+   lean on each week — and 66 lesson files load it. This layer used to
+   build a SECOND card with a different poem, which meant two By Heart
+   cards on every day-2 and day-4 lesson.
 
-  function paint(r) {
-    var host = document.getElementById('spkPoem'); var s = '';
-    DATA.poem.lines.forEach(function (ln, li) {
-      var ws = ln[0].split(' ');
-      var hide = fadeMask(ws, li, r);
-      s += '<div class="' + (ln[1] ? 'ind' : '') + '">' + ws.map(function (w, wi) {
-        return '<w class="' + (hide[wi] ? 'faded' : '') + '">' + w + '</w>';
-      }).join(' ') + '</div>';
-    });
-    host.innerHTML = s;
-    document.getElementById('spkRungLbl').innerHTML =
-      'Rung ' + r + ' of 8' +
-      '<span style="text-transform:none;font-family:Lora,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:0;margin-left:8px;">' +
-      (r === 1 ? 'the whole stanza — read it aloud twice'
-               : r >= 8 ? 'first letters only — you have it'
-               : 'a little less to lean on') + '</span>';
-  }
-  paint(rung);
+   It went unnoticed because the demo was built on lesson 7.1, and days
+   1 and 3 are exactly the lessons that do NOT load the shipped script:
+   Poetry Corner lives on days 2 and 4. The empty space looked like a
+   gap to fill. It was not.
 
-  document.getElementById('spkMore').onclick = function () {
-    paint(Math.max(1, rung - 1));
-    setTimeout(function () { paint(rung); }, 8000);
-  };
-  document.getElementById('spkSaidIt').onclick = function () {
-    var m = memState(), today = new Date().toISOString().slice(0, 10);
-    var note = document.getElementById('spkMemNote');
-    if (m[LESSON.book].advancedOn === today) {
-      note.textContent = 'You have climbed a rung today already. Come back tomorrow.'; return;
-    }
-    if (m[LESSON.book].rung >= 8) { note.textContent = 'You know it by heart. Say it to someone.'; return; }
-    m[LESSON.book].rung += 1; m[LESSON.book].advancedOn = today;
-    Sparkle.set('oao.g4ela.memory', m);
-    rung = m[LESSON.book].rung; paint(rung);
-    note.textContent = 'A little less to lean on now.';
-    owlSay('Said aloud is how it sticks.');
-  };
-}
+   So: the shipped card is the poem system. Do not rebuild it here, and
+   do not add a poem key to DATA. If poetry needs changing, it changes
+   in assets/js/oao-sparkle.js, which is a conversation with Bethany,
+   not an edit. */
 
 /* ══════════════════════════════════════════════════════════════
    §2.10  ILLUMINATED PUBLISHING + MARGINALIA
@@ -2775,7 +2643,6 @@ function boot() {
     ['tiers',       buildTiers],
     ['coaches',     buildCoaches],
     ['copia',       buildCopia],
-    ['memory',      buildMemory],
     ['watch',       liftWatchBlock],
     ['media',       buildMedia],
     ['publish',     buildPublish],
