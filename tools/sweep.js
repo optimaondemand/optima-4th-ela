@@ -148,6 +148,7 @@ const errs = [];
   R['hint ladder'] = ladder;
   R['fill1 revealed+disabled'] = await page.evaluate(() => {
     const e = document.getElementById('fill1');
+    if (!e) return '(no fill-in on this lesson)';
     return [e.value, e.disabled, e.classList.contains('spk-revealed')];
   });
 
