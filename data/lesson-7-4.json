@@ -17,9 +17,18 @@
     "journal-q3": "… then explain how that moment fits what Anne told Marilla about her past today."
   },
   "flags": {
-    "journal-q1": { "quote": false, "count": 2 },
-    "journal-q2": { "quote": true,  "count": 0 },
-    "journal-q3": { "quote": false, "count": 0 }
+    "journal-q1": {
+      "quote": false,
+      "count": 2
+    },
+    "journal-q2": {
+      "quote": true,
+      "count": 0
+    },
+    "journal-q3": {
+      "quote": false,
+      "count": 0
+    }
   },
   "copia": {
     "seed": "Marilla <b data-verb>asked</b> no more questions.",
@@ -30,5 +39,11 @@
     ]
   },
   "writingFocus": "Voice",
-  "connector": "All week, people have been surprised by Anne: Mrs. Rachel, then Matthew, then Marilla. Today, on a long drive along the shore, Marilla finally asks her a plain question, and Anne answers it. Listen to how she tells her own story. By the end you should be able to say how the places she has lived made the girl who talked all the way to Green Gables."
+  "connector": "All week, people have been surprised by Anne: Mrs. Rachel, then Matthew, then Marilla. Today, on a long drive along the shore, Marilla finally asks her a plain question, and Anne answers it. Listen to how she tells her own story. By the end you should be able to say how the places she has lived made the girl who talked all the way to Green Gables.",
+  "transcripts": {
+    "welcome": "Last lesson of the week, and the question turns backwards. Where does a person come from — and how much does their past decide who they are now? By the end of today you will be able to explain how Anne's history shaped the girl who arrived at Green Gables. She has been telling you all week without saying it plainly. Today she says it plainly.",
+    "guide1": "Last lesson of the week. You've had three chapters of people being surprised by Anne. Today, Anne explains herself. Before that, one more pass at the words you've been working on all week. It's the last time you'll see them before you use them for real.",
+    "guide2": "Chapter five is a quieter one. Anne tells Marilla the story of her life so far, and it is not an easy story. Listen to how she tells it. She is not asking you to feel sorry for her. Notice the moments when she stops reporting what happened and starts telling you what she imagined instead. She has been doing that all week. Today you find out where it came from.",
+    "guide3": "That's the week. You met Anne through three people who didn't expect her, and then you heard her tell it herself. Four versions of the same girl. Now finish your answers, and give your own character a turn to speak — because by now you know that a person sounds like somebody long before they tell you who they are."
+  }
 }

@@ -2293,13 +2293,39 @@ function buildMedia() {
     if (slot.at && (slot.at.tab || slot.at.section)) el.classList.add('spk-guide');
 
     var wrap = el;
-    /* the Reading clip carries what the Watch block used to say, so
-       its words go underneath it, folded */
-    if (slot.id === 'guide2' && GUIDE_NOTE && GUIDE_NOTE.text) {
+    /* "Read along": the clip's own script, folded under it. Words come
+       from DATA.transcripts[slot.id] and appear only once the recording
+       is confirmed, so a clip that has not been made shows nothing. */
+    var words = (DATA.transcripts || {})[slot.id];
+    var watch = slot.id === 'guide2' && GUIDE_NOTE && GUIDE_NOTE.text;
+    if (words || watch) {
       wrap = document.createElement('div');
       wrap.className = 'spk-guide-wrap';
       wrap.setAttribute('data-spk-slot', slot.id);
       wrap.appendChild(el);
+    }
+    if (words) {
+      var ra = document.createElement('details');
+      ra.className = 'spk-note spk-readalong';
+      ra.hidden = true;
+      var raSum = document.createElement('summary');
+      raSum.textContent = 'Read along';
+      ra.appendChild(raSum);
+      var raBody = document.createElement('div');
+      raBody.className = 'spk-note-body';
+      raBody.textContent = words;                /* never innerHTML */
+      ra.appendChild(raBody);
+      wrap.appendChild(ra);
+      if (slot.kind === 'youtube' || !el.hidden) ra.hidden = false;
+      else if (window.MutationObserver) {
+        new MutationObserver(function (list, obs) {
+          if (!el.hidden) { ra.hidden = false; obs.disconnect(); }
+        }).observe(el, { attributes: true, attributeFilter: ['hidden'] });
+      }
+    }
+    /* the Reading clip carries what the Watch block used to say, so
+       its words go underneath it, folded */
+    if (watch) {
       var det = document.createElement('details');
       det.className = 'spk-note';
       var sum = document.createElement('summary');
