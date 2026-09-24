@@ -17,16 +17,25 @@
     "journal-q3": "… quote her new name exactly, and say what the plain name, the Avenue, leaves out."
   },
   "flags": {
-    "journal-q1": { "quote": false, "count": 2 },
-    "journal-q2": { "quote": false, "count": 3 },
-    "journal-q3": { "quote": true,  "count": 0 }
+    "journal-q1": {
+      "quote": false,
+      "count": 2
+    },
+    "journal-q2": {
+      "quote": false,
+      "count": 3
+    },
+    "journal-q3": {
+      "quote": true,
+      "count": 0
+    }
   },
   "miss": {
     "match": {
-      "placid":    "Placid is not a person or a happy feeling. Think of a pond with no ripples on it at all.",
-      "imagine":   "Imagine is something you do, so its meaning should start with “to.”",
+      "placid": "Placid is not a person or a happy feeling. Think of a pond with no ripples on it at all.",
+      "imagine": "Imagine is something you do, so its meaning should start with “to.”",
       "companion": "Hidden inside companion is an old word for bread: the person who shares your bread. Look for a person.",
-      "delight":   "Delight is a feeling, and a big one. Look for the meaning about joy."
+      "delight": "Delight is a feeling, and a big one. Look for the meaning about joy."
     }
   },
   "copia": {
@@ -38,5 +47,37 @@
     ]
   },
   "writingFocus": "Voice",
-  "connector": "Yesterday Mrs. Rachel sat at her window and could not work out where Matthew was going. Today you ride along with him. He drives eight miles to collect a boy, and finds somebody else waiting for him, somebody who does not stop talking. Listen to her closely. By the end of the chapter you should be able to hear Anne with your eyes shut."
+  "connector": "Yesterday Mrs. Rachel sat at her window and could not work out where Matthew was going. Today you ride along with him. He drives eight miles to collect a boy, and finds somebody else waiting for him, somebody who does not stop talking. Listen to her closely. By the end of the chapter you should be able to hear Anne with your eyes shut.",
+  "media": {
+    "wgrd": {
+      "kind": "audio"
+    },
+    "dol": {
+      "kind": "audio"
+    },
+    "morphology": {
+      "kind": "audio"
+    },
+    "vocabulary": {
+      "kind": "audio"
+    },
+    "grammar": {
+      "kind": "audio"
+    },
+    "spelling": {
+      "kind": "audio"
+    },
+    "read": {
+      "kind": "audio"
+    },
+    "chapter": {
+      "kind": "audio"
+    },
+    "wordconn": {
+      "kind": "audio"
+    },
+    "workshop": {
+      "kind": "audio"
+    }
+  }
 }
