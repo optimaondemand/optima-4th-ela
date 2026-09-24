@@ -1,3 +1,7 @@
 
 # local backups from the poetry-corner batch edit
 *.pcbak
+
+# full-size art originals and Office lock files stay local
+Planning docs/plates-originals/
+~$*
