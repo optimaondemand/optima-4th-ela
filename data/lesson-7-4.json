@@ -44,6 +44,48 @@
     "welcome": "Last lesson of the week, and the question turns backwards. Where does a person come from — and how much does their past decide who they are now? By the end of today you will be able to explain how Anne's history shaped the girl who arrived at Green Gables. She has been telling you all week without saying it plainly. Today she says it plainly.",
     "guide1": "Last lesson of the week. You've had three chapters of people being surprised by Anne. Today, Anne explains herself. Before that, one more pass at the words you've been working on all week. It's the last time you'll see them before you use them for real.",
     "guide2": "Chapter five is a quieter one. Anne tells Marilla the story of her life so far, and it is not an easy story. Listen to how she tells it. She is not asking you to feel sorry for her. Notice the moments when she stops reporting what happened and starts telling you what she imagined instead. She has been doing that all week. Today you find out where it came from.",
-    "guide3": "That's the week. You met Anne through three people who didn't expect her, and then you heard her tell it herself. Four versions of the same girl. Now finish your answers, and give your own character a turn to speak — because by now you know that a person sounds like somebody long before they tell you who they are."
+    "guide3": "That's the week. You met Anne through three people who didn't expect her, and then you heard her tell it herself. Four versions of the same girl. Now finish your answers, and give your own character a turn to speak — because by now you know that a person sounds like somebody long before they tell you who they are.",
+    "dol": "Today's model splits one speaker's words into two pieces, with her name in the middle. Your sentence to fix is simpler, but it uses the same parts. Look for a little word that should always stand tall, however many times it appears. Look for where the speaking stops and the telling begins. And make sure the pause sits inside the quotation marks.",
+    "morphology": "One last look at the word parts that mean with, or together. You have matched them and built with them, and now you match them again, quickly. Notice how fast it goes compared with the start of the week. That speed is the point. A word part you know by heart saves you time on every long word you meet from now on.",
+    "vocabulary": "Today you choose how to show what you know. There is no wrong choice, but there is a better one for you. If a word still feels slippery, pick the option where you explain it to someone younger. Teaching a word is the quickest way to find out whether you really own it, or whether it still owns you.",
+    "grammar": "Today you are the editor. Someone wrote a draft about this chapter and got some of the plurals wrong, and nobody is going to point to them for you. Read slowly, one sentence at a time, and listen for the words that sound almost right. Almost right is exactly how these mistakes sneak into real writing, including yours.",
+    "spelling": "A proofreader's job is to trust nothing. Some of these words are spelled perfectly, and some only look close. For each one, say the base word, look at how it ends, and decide what the plural should have been. If it matches, leave it alone. Tapping a word that was already right is its own kind of mistake.",
+    "wgrd": "It's the last lesson of the week, so today's reading move becomes a test. Think of one moment you know well from these chapters, and imagine somebody else telling it. Marilla would never tell Anne's story the way Anne does. Try that swap once in your head before you read, and the narrator's choices will suddenly be much easier to hear.",
+    "read": "One chapter today, and most of it is Anne talking. As you read, keep a list in your head of every home she mentions, and who she lived with there. There are more than you might expect. When you reach the stopping point at the end, you'll be asked what kept her going. The list will help you answer that honestly.",
+    "chapter": "The last question today reaches back across all five chapters, so this is your chance to think about the whole girl. Before you write, go back in your mind to the moment that surprised you most. Then ask yourself whether Anne was ever really talking about a road, or a tree, or a pond, or about something she needed.",
+    "wordconn": "Your vocabulary answer is saved. Here is why those four words were this week's words. Placid, imagine, companion, delight: they are almost a map of Anne. She lives by imagining, she finds delight nearly everywhere, she has never had a real companion, and placid is the one thing she never is. Try to see her in each of them.",
+    "workshop": "Today you give your character a past. Anne told Marilla hers on a long drive, and it changed how Marilla saw her, and how you did too. You only need three sentences. Where does your character come from, what have they been through, and what do they want most? That last one matters most. The rest of your story will run on it."
+  },
+  "media": {
+    "dol": {
+      "kind": "audio"
+    },
+    "morphology": {
+      "kind": "audio"
+    },
+    "vocabulary": {
+      "kind": "audio"
+    },
+    "grammar": {
+      "kind": "audio"
+    },
+    "spelling": {
+      "kind": "audio"
+    },
+    "wgrd": {
+      "kind": "audio"
+    },
+    "read": {
+      "kind": "audio"
+    },
+    "chapter": {
+      "kind": "audio"
+    },
+    "wordconn": {
+      "kind": "audio"
+    },
+    "workshop": {
+      "kind": "audio"
+    }
   }
 }

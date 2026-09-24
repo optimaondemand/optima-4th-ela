@@ -20,9 +20,9 @@ Each clip appears on the lesson the moment its file is in the folder, with no re
 | Lesson | Recorded | Still to record |
 |---|---|---|
 | 7.1 | all four | the welcome `g4ela-7-1` again, without "Good morning" |
-| 7.2 | the three `turn` clips | the welcome, plus the 10 section clips |
-| 7.3 | none | all four |
-| 7.4 | none | all four |
+| 7.2 | welcome, three `turn` clips, 8 section clips | `chapter` and `wordconn` |
+| 7.3 | the welcome | the three `turn` clips, plus the 10 section clips |
+| 7.4 | none | all four, plus the 10 section clips |
 
 **Changed since the first draft** (`claude/g4-guide-scripts-wk07.md`): the three Reading clips `g4ela-7-2-2`, `7-3-2` and `7-4-2` are rewritten. The Growing-Up Watch box has moved under the Reading clip, so that clip now carries the week's theme, *imagination and wonder*. The other thirteen are unchanged. If you have the old draft open, use this one.
 
@@ -158,6 +158,64 @@ Every file is named `g4ela-7-2.mp3`. Only the folder changes.
 
 > You've just watched Anne go from the worst evening of her life to a morning at a window, with the same house around her both times. That is the whole idea of perspective, in two chapters. Carry it into your answers. And carry it into your own story, where your character is starting to sound like somebody.
 
+
+## Lesson 7.3 — one clip for every section
+
+Ten more clips, all named `g4ela-7-3.mp3`. Only the folder changes, and the folders already exist.
+
+| Section | Tab | Save as |
+|---|---|---|
+| Daily Oral Language | Warm-Up | `C:\repos\optima-4th-ela\assets\audio\guide\dol\g4ela-7-3.mp3` |
+| Morphology | Word Study | `C:\repos\optima-4th-ela\assets\audio\guide\morph\g4ela-7-3.mp3` |
+| Vocabulary | Word Study | `C:\repos\optima-4th-ela\assets\audio\guide\vocab\g4ela-7-3.mp3` |
+| Grammar | Word Study | `C:\repos\optima-4th-ela\assets\audio\guide\grammar\g4ela-7-3.mp3` |
+| Spelling | Word Study | `C:\repos\optima-4th-ela\assets\audio\guide\spelling\g4ela-7-3.mp3` |
+| What Good Readers Do | Reading | `C:\repos\optima-4th-ela\assets\audio\guide\wgrd\g4ela-7-3.mp3` |
+| Read | Reading | `C:\repos\optima-4th-ela\assets\audio\guide\read\g4ela-7-3.mp3` |
+| Chapter Thinking | Assignment | `C:\repos\optima-4th-ela\assets\audio\guide\chapter\g4ela-7-3.mp3` |
+| Word Study Connection | Assignment | `C:\repos\optima-4th-ela\assets\audio\guide\wordconn\g4ela-7-3.mp3` |
+| Writer’s Workshop | Assignment | `C:\repos\optima-4th-ela\assets\audio\guide\workshop\g4ela-7-3.mp3` |
+
+### `dol\g4ela-7-3.mp3` — Daily Oral Language
+
+> This one is somebody talking again, but this time she says two things in a row, and each part needs its own ending. Watch where the strong feeling goes, and where the sentence takes a breath before the speaker. Two words have been squeezed short, and one little word is standing small where it should stand tall. The model shows you every piece.
+
+### `morph\g4ela-7-3.mp3` — Morphology
+
+> Today you build the words yourself. Here is the trick that decides it. Say the word out loud and feel your lips. If they press together for the next sound, the word part that means together ends with an m. If they don't, it ends with an n. Your mouth already knows the spelling. You just have to listen to it.
+
+### `vocab\g4ela-7-3.mp3` — Vocabulary
+
+> Knowing what a word means is one thing. Putting it into a sentence where it fits is harder, and it is the test that really counts. Read each sentence all the way to the end before you choose. The words around the gap are clues, and one of them usually tells you exactly what kind of word belongs there.
+
+### `grammar\g4ela-7-3.mp3` — Grammar
+
+> No word bank today, so every plural has to come from you. These are the words English refuses to make regular, and no rule will rescue you. You simply have to know them, the way you know your friends' names. Say each one out loud before you type it. If it sounds wrong with an ordinary ending, trust your ear.
+
+### `spelling\g4ela-7-3.mp3` — Spelling
+
+> Today you build the plurals yourself, and each one hides a small decision. Look at the very last letter of the word before you add anything. Is it a letter that needs an extra beat to say? Is it a y with a consonant right in front of it? That last letter makes the decision for you, if you let it.
+
+### `wgrd\g4ela-7-3.mp3` — What Good Readers Do
+
+> Writers hide opinions inside single words. When a dress is called ugly, or a face is called eager, somebody is doing the judging. Today two grown-ups look at the same girl, and they do not choose the same words for her. As you read, catch one word that belongs to Marilla and one that belongs to Matthew, and ask whose eyes the narrator lent you.
+
+### `read\g4ela-7-3.mp3` — Read
+
+> Give yourself time today. There are two places to stop, one at the end of each chapter, and they ask very different things. The first is about someone who wants to keep Anne and can hardly say why. The second is about a view from a window. Stop both times, even when you want to keep reading. The stopping is where the thinking happens.
+
+### `chapter\g4ela-7-3.mp3` — Chapter Thinking
+
+> Underneath these three questions is today's big one: does Montgomery tell you how Anne feels, or show you? When the second question asks for one sentence from Anne, choose one where she never names her feeling, but you know it anyway. That kind of sentence is your proof. It shows the feeling instead of telling it.
+
+### `wordconn\g4ela-7-3.mp3` — Word Study Connection
+
+> Your spelling answer is already saved, so here is the connection. All week, the last letter of a word has decided what happens to it. In these two chapters, one small fact decides what happens to Anne. She is a girl, not a boy. One detail at the end of a word, one detail about a person, and everything after it changes.
+
+### `workshop\g4ela-7-3.mp3` — Writer’s Workshop
+
+> Today's writing asks for the hardest feeling to show: disappointment. You just watched Anne take the worst news of her life, and Montgomery never once writes that she was sad. Borrow that. Let your character do something with their hands, or say one thing out loud, or go very quiet. Then stop, and let the reader feel it.
+
 ---
 
 ## Lesson 7.4 — Ch. 5, *Anne's History*
@@ -178,6 +236,64 @@ Every file is named `g4ela-7-2.mp3`. Only the folder changes.
 
 > That's the week. You met Anne through three people who didn't expect her, and then you heard her tell it herself. Four versions of the same girl. Now finish your answers, and give your own character a turn to speak — because by now you know that a person sounds like somebody long before they tell you who they are.
 
+
+## Lesson 7.4 — one clip for every section
+
+Ten more clips, all named `g4ela-7-4.mp3`. Only the folder changes, and the folders already exist.
+
+| Section | Tab | Save as |
+|---|---|---|
+| Daily Oral Language | Warm-Up | `C:\repos\optima-4th-ela\assets\audio\guide\dol\g4ela-7-4.mp3` |
+| Morphology | Word Study | `C:\repos\optima-4th-ela\assets\audio\guide\morph\g4ela-7-4.mp3` |
+| Vocabulary | Word Study | `C:\repos\optima-4th-ela\assets\audio\guide\vocab\g4ela-7-4.mp3` |
+| Grammar | Word Study | `C:\repos\optima-4th-ela\assets\audio\guide\grammar\g4ela-7-4.mp3` |
+| Spelling | Word Study | `C:\repos\optima-4th-ela\assets\audio\guide\spelling\g4ela-7-4.mp3` |
+| What Good Readers Do | Reading | `C:\repos\optima-4th-ela\assets\audio\guide\wgrd\g4ela-7-4.mp3` |
+| Read | Reading | `C:\repos\optima-4th-ela\assets\audio\guide\read\g4ela-7-4.mp3` |
+| Chapter Thinking | Assignment | `C:\repos\optima-4th-ela\assets\audio\guide\chapter\g4ela-7-4.mp3` |
+| Word Study Connection | Assignment | `C:\repos\optima-4th-ela\assets\audio\guide\wordconn\g4ela-7-4.mp3` |
+| Writer’s Workshop | Assignment | `C:\repos\optima-4th-ela\assets\audio\guide\workshop\g4ela-7-4.mp3` |
+
+### `dol\g4ela-7-4.mp3` — Daily Oral Language
+
+> Today's model splits one speaker's words into two pieces, with her name in the middle. Your sentence to fix is simpler, but it uses the same parts. Look for a little word that should always stand tall, however many times it appears. Look for where the speaking stops and the telling begins. And make sure the pause sits inside the quotation marks.
+
+### `morph\g4ela-7-4.mp3` — Morphology
+
+> One last look at the word parts that mean with, or together. You have matched them and built with them, and now you match them again, quickly. Notice how fast it goes compared with the start of the week. That speed is the point. A word part you know by heart saves you time on every long word you meet from now on.
+
+### `vocab\g4ela-7-4.mp3` — Vocabulary
+
+> Today you choose how to show what you know. There is no wrong choice, but there is a better one for you. If a word still feels slippery, pick the option where you explain it to someone younger. Teaching a word is the quickest way to find out whether you really own it, or whether it still owns you.
+
+### `grammar\g4ela-7-4.mp3` — Grammar
+
+> Today you are the editor. Someone wrote a draft about this chapter and got some of the plurals wrong, and nobody is going to point to them for you. Read slowly, one sentence at a time, and listen for the words that sound almost right. Almost right is exactly how these mistakes sneak into real writing, including yours.
+
+### `spelling\g4ela-7-4.mp3` — Spelling
+
+> A proofreader's job is to trust nothing. Some of these words are spelled perfectly, and some only look close. For each one, say the base word, look at how it ends, and decide what the plural should have been. If it matches, leave it alone. Tapping a word that was already right is its own kind of mistake.
+
+### `wgrd\g4ela-7-4.mp3` — What Good Readers Do
+
+> It's the last lesson of the week, so today's reading move becomes a test. Think of one moment you know well from these chapters, and imagine somebody else telling it. Marilla would never tell Anne's story the way Anne does. Try that swap once in your head before you read, and the narrator's choices will suddenly be much easier to hear.
+
+### `read\g4ela-7-4.mp3` — Read
+
+> One chapter today, and most of it is Anne talking. As you read, keep a list in your head of every home she mentions, and who she lived with there. There are more than you might expect. When you reach the stopping point at the end, you'll be asked what kept her going. The list will help you answer that honestly.
+
+### `chapter\g4ela-7-4.mp3` — Chapter Thinking
+
+> The last question today reaches back across all five chapters, so this is your chance to think about the whole girl. Before you write, go back in your mind to the moment that surprised you most. Then ask yourself whether Anne was ever really talking about a road, or a tree, or a pond, or about something she needed.
+
+### `wordconn\g4ela-7-4.mp3` — Word Study Connection
+
+> Your vocabulary answer is saved. Here is why those four words were this week's words. Placid, imagine, companion, delight: they are almost a map of Anne. She lives by imagining, she finds delight nearly everywhere, she has never had a real companion, and placid is the one thing she never is. Try to see her in each of them.
+
+### `workshop\g4ela-7-4.mp3` — Writer’s Workshop
+
+> Today you give your character a past. Anne told Marilla hers on a long drive, and it changed how Marilla saw her, and how you did too. You only need three sentences. Where does your character come from, what have they been through, and what do they want most? That last one matters most. The rest of your story will run on it.
+
 ---
 
-**Section clips:** 7.2 has one for every section (see its section above). The other lessons have section clips switched off, so they need nothing more. The poem recording belongs to the By Heart card, which already has its own supply list.
+**Section clips:** 7.2, 7.3 and 7.4 have one for every section (see each lesson above). 7.1 has them switched off. The poem recording belongs to the By Heart card, which already has its own supply list.
