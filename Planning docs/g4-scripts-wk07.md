@@ -11,13 +11,15 @@
 
 Each clip appears on the lesson the moment its file is in the folder, with no rebuild.
 
+**Never say "good morning"** or any time of day. Students work at any hour.
+
 **Settings** (never change them): Eleven Multilingual v2 · Stability 55 · Similarity 75 · Style 0–10 · Speaker boost on. Use the same voice as 7.1.
 
 **Status**
 
 | Lesson | Recorded | Still to record |
 |---|---|---|
-| 7.1 | all four | `g4ela-7-1-2` again: the file there is the old take of a rewritten script |
+| 7.1 | all four | the welcome `g4ela-7-1` again, without "Good morning" |
 | 7.2 | the three `turn` clips | the welcome, plus the 10 section clips |
 | 7.3 | none | all four |
 | 7.4 | none | all four |
@@ -39,15 +41,15 @@ A new student sees the welcome only after they've entered their name, which happ
 
 ## Lesson 7.1 — Ch. 1, *Mrs. Rachel Lynde Is Surprised*
 
-### `welcome\g4ela-7-1.mp3` — recorded
+### `welcome\g4ela-7-1.mp3` — **re-record** (opening "Good morning" removed)
 
-> Good morning. Here is today's question, and it is worth carrying with you: how does a writer make a place feel real — a place that only exists on paper? By the end of today you will be able to tell the difference between the way the narrator describes Avonlea and the way Mrs Rachel Lynde sees it. Those are not the same thing. You will also get to grips with some stubborn plurals — the ones that refuse to simply add an S.
+> Here is today's question, and it is worth carrying with you: how does a writer make a place feel real — a place that only exists on paper? By the end of today you will be able to tell the difference between the way the narrator describes Avonlea and the way Mrs Rachel Lynde sees it. Those are not the same thing. You will also get to grips with some stubborn plurals — the ones that refuse to simply add an S.
 
 ### `turn\g4ela-7-1-1.mp3` — opens Word Study · recorded
 
 > You've just been thinking about the difference between the narrator's voice and a character's voice. Hold on to that. Today's chapter is called *Mrs Rachel Lynde Is Surprised* — and somebody in it is going to be very sure she is right. Before we get there, a little work on words. It's shorter than you think, and you're going to need it.
 
-### `turn\g4ela-7-1-2.mp3` — opens Reading · **re-record**
+### `turn\g4ela-7-1-2.mp3` — opens Reading · recorded
 
 > Now open the book. Chapter one is mostly one woman at a window, watching a neighbour drive past in his good suit. Almost nothing happens. Everything gets set up. Read for what Mrs Rachel notices — and then notice what the narrator tells you that she never could. Those are two different voices, and they are both on the page.
 
