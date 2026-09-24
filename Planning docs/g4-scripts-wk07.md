@@ -21,7 +21,7 @@ Each clip appears on the lesson the moment its file is in the folder, with no re
 |---|---|---|
 | 7.1 | all four | the welcome `g4ela-7-1` again, without "Good morning" |
 | 7.2 | welcome, three `turn` clips, 8 section clips | `chapter` and `wordconn` |
-| 7.3 | the welcome | the three `turn` clips, plus the 10 section clips |
+| 7.3 | welcome, three `turn` clips | the 10 section clips |
 | 7.4 | none | all four, plus the 10 section clips |
 
 **Changed since the first draft** (`claude/g4-guide-scripts-wk07.md`): the three Reading clips `g4ela-7-2-2`, `7-3-2` and `7-4-2` are rewritten. The Growing-Up Watch box has moved under the Reading clip, so that clip now carries the week's theme, *imagination and wonder*. The other thirteen are unchanged. If you have the old draft open, use this one.
