@@ -450,6 +450,10 @@ function buildWritingProject() {
    §2.1  PROFILE + GREETING
    ══════════════════════════════════════════════════════════════ */
 function profile() { return Sparkle.get('oao.profile', null); }
+function storageWorks() {
+  try { var k = 'oao.__probe'; localStorage.setItem(k, '1'); localStorage.removeItem(k); return true; }
+  catch (e) { return false; }
+}
 
 /* ══════════════════════════════════════════════════════════════
    NAME CHECK
@@ -2662,8 +2666,13 @@ function boot() {
     ['writing',     buildWritingProject],
     ['journey',     buildJourney],
     ['greeting',    function () {
+        /* Ask for the name on whichever sparkled lesson a student
+           reaches first, not only on day 1: someone starting on day 2
+           would otherwise never see the greeting, the connector or the
+           welcome clip. Where storage is blocked the name cannot be
+           kept, so off day 1 we don't ask on every page load. */
         if (profile()) renderGreeting();
-        else if (LESSON.day === 1) showProfileCard(false);
+        else if (LESSON.day === 1 || storageWorks()) showProfileCard(false);
     }],
     ['dol',         buildDolChoice],
     ['tiers',       buildTiers],
