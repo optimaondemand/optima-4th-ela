@@ -47,53 +47,93 @@
     ]
   },
   "writingFocus": "Voice",
-  "connector": "Yesterday Mrs. Rachel sat at her window and could not work out where Matthew was going. Today you ride along with him. He drives eight miles to collect a boy, and finds somebody else waiting for him, somebody who does not stop talking. Listen to her closely. By the end of the chapter you should be able to hear Anne with your eyes shut.",
+  "connector": "It’s Matthew here. Yesterday Mrs. Rachel sat at her window wondering where I was off to in my good suit. Well, now you’ll find out. I drove to Bright River to fetch a boy. I’ll let the chapter tell you the rest. Listen closely to who does the talking on the way home. It wasn’t me.",
   "media": {
+    "welcome": {
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-welcome",
+      "label": "Matthew’s welcome"
+    },
     "wgrd": {
-      "kind": "audio"
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-wgrd",
+      "label": "Matthew · about today’s reading move"
     },
     "dol": {
-      "kind": "audio"
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-dol",
+      "label": "Matthew · about today’s sentence"
+    },
+    "guide1": {
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-guide1",
+      "label": "Matthew · before the word work"
     },
     "morphology": {
-      "kind": "audio"
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-morphology",
+      "label": "Matthew · about the word parts"
     },
     "vocabulary": {
-      "kind": "audio"
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-vocabulary",
+      "label": "Matthew · about today’s words"
     },
     "grammar": {
-      "kind": "audio"
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-grammar",
+      "label": "Matthew · about today’s grammar"
     },
     "spelling": {
-      "kind": "audio"
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-spelling",
+      "label": "Matthew · about today’s spelling"
+    },
+    "guide2": {
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-guide2",
+      "label": "Matthew · before you open the book"
     },
     "read": {
-      "kind": "audio"
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-read",
+      "label": "Matthew · before you read"
+    },
+    "guide3": {
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-guide3",
+      "label": "Matthew · before you write"
     },
     "chapter": {
-      "kind": "audio"
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-chapter",
+      "label": "Matthew · about the questions"
     },
     "wordconn": {
-      "kind": "audio"
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-wordconn",
+      "label": "Matthew · how it connects"
     },
     "workshop": {
-      "kind": "audio"
+      "kind": "audio",
+      "path": "guide/matthew/g4ela-7-2-workshop",
+      "label": "Matthew · about today’s writing"
     }
   },
   "transcripts": {
-    "welcome": "Today's question is about voice. Everybody you know sounds like themselves — so what is it, exactly, that makes Anne sound like Anne and like nobody else? By the end of the lesson you will be able to point to what makes her voice hers. Keep yesterday's plurals close as well. You will meet them again in the word work, before you open the book.",
-    "guide1": "Same skill as yesterday. Narrator, and character. Chapter two has the same shape of title as chapter one — somebody else gets surprised. Watch who. First, though, words. You're still on the word parts that mean with, or together, and today they matter more than usual, because chapter two is about two people meeting who were not expecting each other at all.",
-    "guide2": "Matthew goes to the station expecting a boy and finds a girl who does not stop talking. Listen to what she does on the drive home. A road under the trees, a pond, a view — Anne will not let any of them stay ordinary. Ask yourself why a girl with nothing of her own would want to give everything a name. And keep an eye on quiet Matthew while she does it.",
-    "guide3": "Matthew went for a boy and came home with Anne, and said almost nothing the whole way. Now the questions. As you answer, think about how much you knew about Matthew even though he barely spoke. That is voice. And it is what you're building into your own character today — not a description. A way of being in the world.",
-    "wgrd": "Here is a trick worth keeping for the rest of the year. A narrator can stand beside a character and say nothing, and you end up seeing through that character's eyes without noticing. Today you ride with Matthew. When a plain road suddenly sounds beautiful, stop and ask whose idea that was. The narrator's, or Anne's? The answer tells you whose eyes you are borrowing.",
-    "dol": "Today's broken sentence is somebody talking, and people talking are the hardest thing to punctuate. Something is missing around the words she says. Something is missing inside a word that has been squeezed short. And a little word at the very front wants a pause after it. Look hard at the model first. Everything you need is sitting in it.",
-    "morphology": "You know these two word parts already. Both mean with, or together. Here is why they are worth the practice. Once you can spot them, a long word stops being a wall and becomes two pieces you can take apart. And today's hidden surprise is the one that means bread. A companion, long ago, was simply someone you shared your bread with.",
-    "vocabulary": "Yesterday you pulled these four words apart. Today you only have to remember them. That is the real test of a word: not whether you understood it once, but whether it comes back when you need it. Match them quickly if you can. If one hesitates, notice which one. That is the word to use in a sentence of your own today.",
-    "grammar": "Most words make a plural the easy way. You add a letter and move on. The ones in today's sentence refuse. They change their middle, or grow an old ending, or keep a shape from hundreds of years ago. That is why readers trip on them and writers get them wrong. Hunt all three down, and don't stop at the first.",
-    "spelling": "Here is the secret behind this week's spelling. You can usually hear the rule before you see it. Say a word out loud with more than one, and listen. If your mouth needs an extra beat at the end, or if a y at the end of the word has to change, that word is doing something more than the ordinary. Let your ear find them.",
-    "read": "One chapter today, and most of it happens in a buggy. Two people who have never met sit side by side for eight miles, and only one of them talks. As you read, keep a rough count in your head of how many things Anne gives a new name to. Then, when the chapter ends, ask yourself what a girl who names everything might be hoping for.",
-    "chapter": "These three questions look simple, and they are, on the surface. Underneath them is a harder one. Is Anne as happy as she sounds? She talks and talks, and she names everything she sees. But go back to the very first thing she says to Matthew at the station. When you describe her, don't stop at what she looks like. Think about what she was afraid of.",
-    "wordconn": "Your grammar answer is already saved, so this is just a moment to connect it. All week you have been looking at words that break the ordinary rule. They were supposed to behave one way, and they turned out another. Today's chapter does the same thing with a person. Matthew was expecting a boy. The rule said a boy. What was waiting at the station was Anne.",
-    "workshop": "Here is one move to try from today's chapter. Anne does not just see a road. She gives it a name that nobody else would have thought of. That is voice, working on a single word. Before you write your two or three sentences, decide one thing your character would call by a name of their own. Then let them say it out loud."
+    "welcome": "Hello, it’s Matthew Cuthbert. Today I’ll be guiding you through your lesson. I’m not much of a talker, so I’ll keep it short. Today’s question is about voice, what makes a person sound like themselves and nobody else. I met someone once who sounded like nobody I’d ever heard. By the end of this lesson, you’ll be able to say what made her voice her own.",
+    "wgrd": "Now, here’s a thing I’ve noticed. When a story gets told about me, the teller knows things I never said out loud. That’s the narrator. Then there’s what I’m thinking, sitting on that buggy seat. That’s me. Keep the two apart today. When a plain old road starts sounding beautiful, ask yourself who’s doing the seeing. The narrator, or somebody else?",
+    "dol": "Marilla’s the one for rules, but I’ll do my best. The sentence you’re fixing is somebody talking, and excited about it. There’s a little word at the front that wants a pause after it. There’s a word squeezed short that’s lost its mark. And the talking itself wants something around it, both ends. Look at the one that’s done right first. It shows you every piece.",
+    "guide1": "Well now, words. I’m a farmer, not a scholar, but I know a good tool when I see one, and these word parts are tools. Two of them mean with, or together. I’ve been thinking about that word, together, more than usual lately. You’ll see why when you read. For now, work through these the way you’d work a field. One row at a time.",
+    "morphology": "Here’s something I didn’t know till lately. That word, companion. It comes from an old word for bread. A companion was somebody you shared your bread with. I like that. Sitting beside someone on a long drive is a bit like sharing bread, I suppose. Match up the parts, and notice how each one carries its own little piece of the meaning.",
+    "vocabulary": "Four words today, and you met every one of them yesterday. Placid. That was me, mostly, before this week. Imagine. That was never me, not much. Companion, and delight. Well, I’ll let you work out who those belong to. Match each one to its meaning. If one gives you trouble, don’t fret. Say it out loud, slowly, and it often comes back.",
+    "grammar": "Some words don’t do what you’d expect. You’d think one child, two childs. But no. They change on the inside instead. We had a bit of that at Green Gables this week, if I’m honest. Somebody arrived who wasn’t what we’d planned for. Look through the sentence and find every word that won’t follow the ordinary rule. There’s more than one.",
+    "spelling": "Marilla’s a great one for doing things properly, and she’d want these spelled right. Here’s how I’d go about it. Say the word as more than one, and listen. If your mouth needs an extra bit at the end, or a y at the end has to change its ways, that’s one to tap. The plain ones just add their letter and carry on.",
+    "guide2": "I’ll not tell you what happened at the station. That’s yours to read. But I’ll say this much. I drove eight miles there expecting one thing, and eight miles home with something quite different beside me. Listen to what she does with every plain thing we passed, the road, the pond, the trees. I’ve never looked at that road the same way since.",
+    "read": "Take your time with this chapter. It’s a long drive, and most of it is talk. As you go, keep a count of how many things get given a brand new name. I lost count myself, somewhere past the pond. And when you reach the end, sit still a moment before you go on. Ask yourself what somebody who names everything might be hoping for.",
+    "guide3": "Well, now you’ve read it. I went for a boy and came home with Anne, and I’d not change it. I didn’t say much on that drive. But I think you know me a little now anyway, just from what I did. That’s worth thinking on as you answer. You can know a person by what they do, not only by what they say.",
+    "chapter": "These questions look simple enough. But here’s the one underneath them. Was Anne as happy as she sounded? She talked and talked, and named everything she saw. But think back to what she told me first, at the station, about that cherry tree. When you describe her, don’t stop at her hair and her hat. Think on what she was afraid of.",
+    "wordconn": "Your grammar answer’s saved already, so here’s how I’d join it up. All week you’ve been looking at words that don’t follow the ordinary rule. Well, the ordinary plan at Green Gables was a boy. A boy to help me with the farm. And what was waiting for me at the station was Anne. Some things are worth the rule being broken.",
+    "workshop": "Now it’s your turn to make somebody talk. Anne didn’t just see a road. She gave it a name nobody else would have thought of. That’s her voice, in a handful of words. Before you write, decide on one thing your character would call by a name of their own. Then let them say it out loud. Don’t tell us about them. Let them talk."
   }
 }

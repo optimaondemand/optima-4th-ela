@@ -41,6 +41,8 @@ A new student sees the welcome only after they've entered their name, which happ
 
 ## Lesson 7.1 — Ch. 1, *Mrs. Rachel Lynde Is Surprised*
 
+> **Retired.** 7.1 is now guided by Mrs. Rachel Lynde. Her scripts are in `g4-scripts-rachel-7-1.md` and her clips go in `guide\rachel\`.
+
 ### `welcome\g4ela-7-1.mp3` — **re-record** (opening "Good morning" removed)
 
 > Here is today's question, and it is worth carrying with you: how does a writer make a place feel real — a place that only exists on paper? By the end of today you will be able to tell the difference between the way the narrator describes Avonlea and the way Mrs Rachel Lynde sees it. Those are not the same thing. You will also get to grips with some stubborn plurals — the ones that refuse to simply add an S.
@@ -60,6 +62,8 @@ A new student sees the welcome only after they've entered their name, which happ
 ---
 
 ## Lesson 7.2 — Ch. 2, *Matthew Cuthbert Is Surprised*
+
+> **Retired.** 7.2 is now guided by Matthew Cuthbert. His scripts are in `g4-scripts-matthew-7-2.md` and his clips go in `guide\matthew\`. The usual-voice scripts below, and the 7.2 section scripts further down, are no longer used.
 
 ### `welcome\g4ela-7-2.mp3`
 

@@ -1,9 +1,7 @@
-# Matthew mock-up — lesson 7.2 guide scripts
+# Lesson 7.2 guide scripts: Matthew Cuthbert
 
-**What this is:** a second, separate version of lesson 7.2 where the guiding voice is Matthew Cuthbert, in character throughout. It uses the same slots and scripting system as the real 7.2, but its own file, data and audio folder, so nothing here touches the real lesson.
+**What this is:** lesson 7.2 (Ch. 2, *Matthew Cuthbert Is Surprised*), guided in character by Matthew Cuthbert. It started as a separate mock-up and is now the real 7.2. The mock-up page is gone.
 
-- **Mock-up page:** `C:\repos\optima-4th-ela\mockup-7-2-matthew.html`. It isn't linked in Canvas.
-- **Its data:** `data\mockup-7-2-matthew.json`
 - **Save every clip in:** `C:\repos\optima-4th-ela\assets\audio\guide\matthew\`
 - **Voice:** choose one older, gentle, soft-spoken man's voice in ElevenLabs, different from the usual guide, and use it for all 14 clips. Settings are the same as always: Eleven Multilingual v2 · Stability 55 · Similarity 75 · Style 0–10 · Speaker boost on.
 
