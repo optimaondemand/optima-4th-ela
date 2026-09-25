@@ -146,6 +146,8 @@ Every file is named `g4ela-7-2.mp3`. Only the folder changes.
 
 ## Lesson 7.3 — Ch. 3 & 4, *Marilla Cuthbert Is Surprised; Morning at Green Gables*
 
+> **Retired.** 7.3 is now guided by Marilla Cuthbert. Her scripts are in `g4-scripts-marilla-7-3.md` and her clips go in `guide\marilla\`. The usual-voice scripts below, and the 7.3 section scripts further down, are no longer used.
+
 ### `welcome\g4ela-7-3.mp3`
 
 > Here is today's question, and it is a hard one. When somebody gets bad news, how does a writer show us how they feel — by telling us outright, or by letting us watch what they say and do? By the end of today you will be able to use the details on the page to explain how Anne takes the worst news of her life. Watch closely. It happens quickly.
