@@ -2296,17 +2296,34 @@ function buildMedia() {
     if (slot.inline) el.classList.add('spk-audio-inline');
     if (slot.at && (slot.at.tab || slot.at.section)) el.classList.add('spk-guide');
 
+    /* A section that plays audio may also carry a video. It is looked
+       for at the same name under assets/video/ (…/g4ela-7-3-grammar.mp4
+       beside …/g4ela-7-3-grammar.mp3) and, like the audio, stays hidden
+       unless the file is really there. Both present: both show, audio
+       first. DATA.media.<slot>.video:false switches the look-up off;
+       videoSrc gives an explicit file. */
+    var vid = null;
+    if (slot.kind === 'audio' && slot.video !== false) {
+      var vp = mediaPath(slot);
+      vid = videoControl(slot.label, slot.videoSrc || (vp ? MEDIA.videoBase + vp + '.mp4' : ''));
+      if (vid) {
+        vid.setAttribute('data-spk-slot', slot.id + '-video');
+        if (slot.at && (slot.at.tab || slot.at.section)) vid.classList.add('spk-guide');
+      }
+    }
+
     var wrap = el;
     /* "Read along": the clip's own script, folded under it. Words come
        from DATA.transcripts[slot.id] and appear only once the recording
        is confirmed, so a clip that has not been made shows nothing. */
     var words = (DATA.transcripts || {})[slot.id];
     var watch = slot.id === 'guide2' && GUIDE_NOTE && GUIDE_NOTE.text;
-    if (words || watch) {
+    if (words || watch || vid) {
       wrap = document.createElement('div');
       wrap.className = 'spk-guide-wrap';
       wrap.setAttribute('data-spk-slot', slot.id);
       wrap.appendChild(el);
+      if (vid) wrap.appendChild(vid);
     }
     if (words) {
       var ra = document.createElement('details');
@@ -2320,11 +2337,15 @@ function buildMedia() {
       raBody.textContent = words;                /* never innerHTML */
       ra.appendChild(raBody);
       wrap.appendChild(ra);
-      if (slot.kind === 'youtube' || !el.hidden) ra.hidden = false;
+      /* shown once either the clip or its video is confirmed */
+      var seen = [el].concat(vid ? [vid] : []);
+      var anyShown = function () { return seen.some(function (x) { return !x.hidden; }); };
+      if (slot.kind === 'youtube' || anyShown()) ra.hidden = false;
       else if (window.MutationObserver) {
-        new MutationObserver(function (list, obs) {
-          if (!el.hidden) { ra.hidden = false; obs.disconnect(); }
-        }).observe(el, { attributes: true, attributeFilter: ['hidden'] });
+        var raObs = new MutationObserver(function () {
+          if (anyShown()) { ra.hidden = false; raObs.disconnect(); }
+        });
+        seen.forEach(function (x) { raObs.observe(x, { attributes: true, attributeFilter: ['hidden'] }); });
       }
     }
     /* the Reading clip carries what the Watch block used to say, so
