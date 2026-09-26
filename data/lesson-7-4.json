@@ -126,6 +126,11 @@
       "kind": "audio",
       "path": "guide/anne/g4ela-7-4-workshop",
       "label": "Anne · about today’s writing"
+    },
+    "copia": {
+      "kind": "audio",
+      "path": "guide/anne/g4ela-7-4-copia",
+      "label": "Anne · about Say It Three Ways"
     }
   }
 }

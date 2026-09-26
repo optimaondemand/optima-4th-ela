@@ -1841,7 +1841,7 @@ function buildCopia() {
   var panel = document.getElementById('tab-words'); if (!panel) return;
   var anchor = panel.querySelector('.tab-next-wrap'); if (!anchor) return;
   var card = document.createElement('div');
-  card.className = 'spk-card';
+  card.className = 'spk-card spk-copia-card';
   var slots = [
     ['Change the opener', 'Start with a when or a where.'],
     ['Swap the verb', 'Find a stronger word than the one in bold.'],
@@ -2033,7 +2033,11 @@ var MEDIA = {
        so it mounts by selector, just under its header. On by default:
        its clip and its video each stay hidden until the file exists. */
     { id:'rwm',        kind:'audio', at:{sel:'.rwm-box'},               /* 48 */
-      path:'guide/rwm/g4ela-{w}-{d}',      label:'About Read like a Writer' }
+      path:'guide/rwm/g4ela-{w}-{d}',      label:'About Read like a Writer' },
+    /* Copia is built by this layer (buildCopia runs before buildMedia),
+       so it mounts under the card's own heading. On by default, like RWM. */
+    { id:'copia',      kind:'audio', at:{sel:'.spk-copia-card'},
+      path:'guide/copia/g4ela-{w}-{d}',    label:'About Say It Three Ways' }
   ]
 };
 window.OAO_MEDIA = MEDIA;
