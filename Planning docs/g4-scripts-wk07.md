@@ -226,6 +226,8 @@ Ten more clips, all named `g4ela-7-3.mp3`. Only the folder changes, and the fold
 
 ## Lesson 7.4 — Ch. 5, *Anne's History*
 
+> **Retired.** 7.4 is now guided by Anne herself. Her scripts are in `g4-scripts-anne-7-4.md` and her clips go in `guide\anne\`. The usual-voice scripts below, and the 7.4 section scripts further down, are no longer used.
+
 ### `welcome\g4ela-7-4.mp3`
 
 > Last lesson of the week, and the question turns backwards. Where does a person come from — and how much does their past decide who they are now? By the end of today you will be able to explain how Anne's history shaped the girl who arrived at Green Gables. She has been telling you all week without saying it plainly. Today she says it plainly.
