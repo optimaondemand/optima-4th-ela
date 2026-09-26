@@ -30,14 +30,6 @@
       "count": 0
     }
   },
-  "copia": {
-    "seed": "Marilla <b data-verb>asked</b> no more questions.",
-    "eg": [
-      "After hearing about Mrs. Hammond, Marilla asked no more questions.",
-      "Marilla <i>ventured</i> no more questions.",
-      "Marilla asked no more questions as the buggy rolled along the shore road."
-    ]
-  },
   "writingFocus": "Voice",
   "connector": "Oh, I do hope you don’t mind me guiding you. Marilla is taking me to see Mrs. Spencer, and I’ve decided not to think about what that means just yet. I’m Anne Shirley, Anne spelled with an e. My history isn’t very long, and it isn’t very romantic, but you may come along and hear it.",
   "transcripts": {
@@ -126,11 +118,6 @@
       "kind": "audio",
       "path": "guide/anne/g4ela-7-4-workshop",
       "label": "Anne · about today’s writing"
-    },
-    "copia": {
-      "kind": "audio",
-      "path": "guide/anne/g4ela-7-4-copia",
-      "label": "Anne · about Say It Three Ways"
     }
   }
 }

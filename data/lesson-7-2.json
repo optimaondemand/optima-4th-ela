@@ -38,14 +38,6 @@
       "delight": "Delight is a feeling, and a big one. Look for the meaning about joy."
     }
   },
-  "copia": {
-    "seed": "Matthew Cuthbert and the sorrel mare <b data-verb>jogged</b> comfortably over the eight miles to Bright River.",
-    "eg": [
-      "That afternoon, Matthew Cuthbert and the sorrel mare jogged comfortably over the eight miles to Bright River.",
-      "Matthew Cuthbert and the sorrel mare <i>trotted</i> comfortably over the eight miles to Bright River.",
-      "Matthew Cuthbert and the sorrel mare jogged comfortably over the eight miles to Bright River, past snug farmsteads and blossoming orchards."
-    ]
-  },
   "writingFocus": "Voice",
   "connector": "It’s Matthew here. Yesterday Mrs. Rachel sat at her window wondering where I was off to in my good suit. Well, now you’ll find out. I drove to Bright River to fetch a boy. I’ll let the chapter tell you the rest. Listen closely to who does the talking on the way home. It wasn’t me.",
   "media": {
@@ -123,11 +115,6 @@
       "kind": "audio",
       "path": "guide/matthew/g4ela-7-2-rwm",
       "label": "Matthew · about Read like a Writer"
-    },
-    "copia": {
-      "kind": "audio",
-      "path": "guide/matthew/g4ela-7-2-copia",
-      "label": "Matthew · about Say It Three Ways"
     }
   },
   "transcripts": {
