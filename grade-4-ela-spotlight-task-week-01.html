@@ -244,5 +244,6 @@ function toggleCheck(item){item.classList.toggle('checked');var c=item.querySele
 (function(){var btn=document.getElementById('backToTop');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('show',window.pageYOffset>400)});btn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};})();
 function fireConfetti(){var canvas=document.getElementById('confettiCanvas');var ctx=canvas.getContext('2d');canvas.width=innerWidth;canvas.height=innerHeight;var colors=['#ff3b30','#ff9500','#ffcc00','#34c759','#00c7be','#32ade6','#5856d6','#af52de'];var parts=[];for(var i=0;i<100;i++)parts.push({x:Math.random()*canvas.width,y:-20-Math.random()*120,vx:(Math.random()-.5)*6,vy:Math.random()*3+2,s:Math.random()*8+4,c:colors[Math.floor(Math.random()*colors.length)],r:Math.random()*6});var f=0;function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.globalAlpha=f>150?Math.max(0,1-(f-150)/60):1;parts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.08;p.r+=.08;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.fillStyle=p.c;ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s);ctx.restore();});if(f++<210)requestAnimationFrame(anim);else ctx.clearRect(0,0,canvas.width,canvas.height);}anim();}
 </script>
+<link rel="stylesheet" href="assets/css/readable.css">
 </body>
 </html>
