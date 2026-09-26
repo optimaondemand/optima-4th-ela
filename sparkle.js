@@ -2028,7 +2028,12 @@ var MEDIA = {
     { id:'copywork',   kind:'', at:{section:/copywork/i},               /* 18 */
       path:'guide/copywork/g4ela-{w}-{d}', label:'About today’s copywork' },
     { id:'shelf',      kind:'', at:{section:/your reading shelf/i},     /* 5 */
-      path:'guide/shelf/g4ela-{w}-{d}',    label:'About your shelf' }
+      path:'guide/shelf/g4ela-{w}-{d}',    label:'About your shelf' },
+    /* RWM is not an .activity: it is a .rwm-box inside the Reading tab,
+       so it mounts by selector, just under its header. On by default:
+       its clip and its video each stay hidden until the file exists. */
+    { id:'rwm',        kind:'audio', at:{sel:'.rwm-box'},               /* 48 */
+      path:'guide/rwm/g4ela-{w}-{d}',      label:'About Read like a Writer' }
   ]
 };
 window.OAO_MEDIA = MEDIA;
@@ -2258,6 +2263,11 @@ function mediaMount(slot) {
   if (at.el) {
     var e = document.getElementById(at.el);
     return e ? { host: e.parentNode, before: e.nextSibling } : null;
+  }
+  if (at.sel) {
+    var box = document.querySelector(at.sel); if (!box) return null;
+    var top = box.firstElementChild;
+    return { host: box, before: top ? top.nextSibling : box.firstChild };
   }
   if (at.tab) {
     var p = document.getElementById('tab-' + at.tab);
