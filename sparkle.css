@@ -7,13 +7,13 @@
    this adds the one face used for the owl's asides, and nothing else.
    If the import is blocked the stack falls back to Segoe Script and
    then to Lora italic, so an aside always still reads as an aside. */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap');
+/* (Caveat import removed: the asides now print in Lora italic, which reads more easily) */
 :root{
-  --spk-hand:'Caveat','Segoe Script','Bradley Hand','Lora',cursive;
+  --spk-hand:'Lora',Georgia,serif;   /* was Caveat: too hard to read */
 }
 :root{
   --spk-ink:#0E1C42; --spk-gold:#C7922C; --spk-cream:#FFF3DC;
-  --spk-muted:#7A88A8; --spk-ghost:#E2E8F4; --spk-green:#34B76F;
+  --spk-muted:#56627F; --spk-ghost:#E2E8F4; --spk-green:#34B76F;
 }
 
 .spk-greet-name{
@@ -21,7 +21,7 @@
   font-size:22px; padding:0 1px;
 }
 .spk-greet-edit{
-  background:none;border:none;color:#8FA3C8;cursor:pointer;font-size:14px;
+  background:none;border:none;color:#8FA3C8;cursor:pointer;font-size:16px;
   padding:0 2px;line-height:1;flex:none;
 }
 .spk-greet-edit:hover{color:#fff;}
@@ -33,57 +33,57 @@
   border-radius:12px; padding:22px 24px; margin:0 0 18px;
 }
 .spk-profile-card h3{
-  font-family:'Lora',Georgia,serif; font-size:20px; color:var(--spk-ink);
-  margin:0 0 4px; font-weight:700;
+  font-family:'Lora',Georgia,serif; font-size:24px; color:var(--spk-ink);
+  margin:0 0 6px; font-weight:700;
 }
-.spk-profile-card p.spk-sub{font-size:14px;color:var(--spk-muted);margin:0 0 14px;font-style:italic;}
+.spk-profile-card p.spk-sub{font-size:17px;color:var(--spk-muted);margin:0 0 14px;font-style:italic;}
 .spk-name-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
 .spk-name-input{
-  flex:1 1 220px; font-family:'Lora',Georgia,serif; font-size:17px;
-  padding:10px 14px; border:2px solid #E4D3AC; border-radius:8px;
+  flex:1 1 220px; font-family:'Lora',Georgia,serif; font-size:21px;
+  padding:12px 16px; border:2px solid #E4D3AC; border-radius:8px;
   background:#fff; color:var(--spk-ink);
 }
 .spk-name-input:focus{outline:none;border-color:var(--spk-gold);}
 .spk-btn{
   background:var(--spk-ink); color:#fff; border:none; border-radius:8px;
-  padding:11px 22px; font-family:'Nunito',sans-serif; font-weight:800;
-  font-size:14px; letter-spacing:.03em; cursor:pointer;
+  padding:13px 26px; font-family:'Nunito',sans-serif; font-weight:800;
+  font-size:17px; letter-spacing:.03em; cursor:pointer;
 }
 .spk-btn:hover{background:#16295c;}
 .spk-btn[disabled]{opacity:.45;cursor:not-allowed;}
-.spk-owl-label{font-size:14px;color:var(--spk-ink);margin:18px 0 8px;font-weight:700;}
+.spk-owl-label{font-size:18px;color:var(--spk-ink);margin:18px 0 8px;font-weight:700;}
 .spk-owl-row{display:flex;gap:12px;flex-wrap:wrap;}
 .spk-owl-pick{
   border:2px solid #E4D3AC;border-radius:10px;background:#fff;cursor:pointer;
-  padding:8px 10px 6px;width:88px;text-align:center;transition:border-color .2s,transform .2s;
+  padding:8px 10px 6px;width:104px;text-align:center;transition:border-color .2s,transform .2s;
 }
 .spk-owl-pick:hover{transform:translateY(-2px);}
 .spk-owl-pick.sel{border-color:var(--spk-gold);box-shadow:0 0 0 3px rgba(199,146,44,.18);}
 .spk-owl-pick svg{width:44px;height:44px;display:block;margin:0 auto;}
-.spk-owl-pick span{font-size:11px;color:var(--spk-muted);font-weight:700;letter-spacing:.03em;}
+.spk-owl-pick span{font-size:16px;color:var(--spk-muted);font-weight:700;letter-spacing:.03em;}
 
 /* ── 2.4 owl speech slip ───────────────────────────────────── */
 .spk-owl-slip{
   position:absolute; right:24px; bottom:16px; z-index:40;
   background:var(--spk-cream); color:var(--spk-ink);
   border:1px solid #E4D3AC; border-radius:8px; padding:6px 12px;
-  font-family:'Lora',Georgia,serif; font-style:italic; font-size:13px;
+  font-family:'Lora',Georgia,serif; font-style:italic; font-size:16px;
   white-space:nowrap; box-shadow:0 4px 14px rgba(14,28,66,.22);
   opacity:0; transform:translateY(-4px); pointer-events:none;
   transition:opacity .22s ease-out, transform .22s ease-out;
 }
 .spk-owl-slip.show{opacity:1;transform:translateY(0);}
-@media(max-width:700px){.spk-owl-slip{right:12px;bottom:10px;font-size:15px;}}
+@media(max-width:700px){.spk-owl-slip{right:12px;bottom:10px;font-size:17px;}}
 
 /* the owl writes rather than prints — asides only, never instructions,
    never anything a student has to be able to decode under pressure */
 .spk-owl-slip{
-  font-family:var(--spk-hand);font-style:normal;font-weight:600;
+  font-family:var(--spk-hand);font-style:italic;font-weight:500;
   font-size:18px;line-height:1.25;letter-spacing:.01em;color:#4A3C22;
   padding:7px 15px 5px;
 }
 .spk-companion-solo span{
-  font-family:var(--spk-hand);font-style:normal;font-weight:600;
+  font-family:var(--spk-hand);font-style:italic;font-weight:500;
   font-size:19px;line-height:1.35;color:#5A4A2C;
 }
 
@@ -95,15 +95,15 @@
 }
 .spk-track-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .spk-track-label{
-  font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;
+  font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;
   letter-spacing:.08em;text-transform:uppercase;color:var(--spk-muted);
   margin-right:4px;
 }
 .spk-dot{
   display:inline-flex;align-items:center;justify-content:center;
   min-width:44px;height:28px;padding:0 10px;border-radius:999px;
-  font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;
-  border:2px solid #CBD5E8;color:#9AA7C2;background:#fff;
+  font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;
+  border:2px solid #CBD5E8;color:#5E6B8A;background:#fff;
   cursor:default;transition:transform .18s ease-out;
 }
 .spk-dot.done{background:var(--spk-ink);border-color:var(--spk-ink);color:#fff;cursor:pointer;}
@@ -261,7 +261,7 @@
 .spk-book.no-cover.writing{width:26px;}
 .spk-book-spine{
   writing-mode:vertical-rl;transform:rotate(180deg);
-  font-family:'Lora',Georgia,serif;font-style:italic;font-size:10px;
+  font-family:'Lora',Georgia,serif;font-style:italic;font-size:16px;
   color:#B3A587;letter-spacing:.02em;padding:6px 0;text-align:center;line-height:1.15;
 }
 .spk-book.no-cover.read{border:none;background:var(--spk-ink);box-shadow:inset -3px 0 0 rgba(0,0,0,.22);}
@@ -274,7 +274,7 @@
 .spk-book-arriving{transform:translateY(14px) rotate(-4deg);opacity:0;filter:grayscale(1);}
 .spk-shelf-note{
   text-align:center;font-family:'Lora',Georgia,serif;font-style:italic;
-  font-size:12px;color:#9A8B6C;margin:10px 0 6px;
+  font-size:16px;color:#6E5C3A;margin:10px 0 6px;
 }
 .spk-companion-img{display:block;width:auto;height:auto;}
 
@@ -293,7 +293,7 @@
 }
 .spk-marginalia::before{
   content:'\261E';position:absolute;left:-1px;top:-14px;
-  color:var(--spk-gold);font-size:15px;background:#FFFDF7;padding:0 3px;
+  color:var(--spk-gold);font-size:17px;background:#FFFDF7;padding:0 3px;
 }
 .flip-card-back{transition:opacity .04s ease-in;}
 .tab-panel.spk-in{animation:spk-pagein .26s ease-out;}
@@ -312,13 +312,13 @@
 .spk-dol-card.chosen{background:#fff;border-color:var(--spk-gold);box-shadow:0 2px 10px rgba(199,146,44,.16);}
 .spk-dol-card.folded{display:none;}
 .spk-dol-tag{
-  font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;
+  font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;
   letter-spacing:.09em;text-transform:uppercase;color:var(--spk-muted);
   display:block;margin-bottom:5px;
 }
 .spk-dol-text{font-family:'Lora',Georgia,serif;font-size:16px;color:var(--spk-ink);line-height:1.55;}
 .spk-dol-swap{
-  background:none;border:none;color:var(--spk-muted);font-size:12px;
+  background:none;border:none;color:var(--spk-muted);font-size:16px;
   text-decoration:underline;cursor:pointer;padding:6px 0 0;font-family:'Nunito',sans-serif;
 }
 @media(max-width:700px){.spk-dol-choice{grid-template-columns:1fr;}}
@@ -328,7 +328,7 @@
 /* ── 2.2 week dots row ─────────────────────────────────────── */
 .spk-track-jump{
   margin-left:auto;background:none;border:none;cursor:pointer;
-  font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;
+  font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;
   color:var(--spk-gold);letter-spacing:.02em;padding:4px 2px;
 }
 .spk-track-jump:hover{color:var(--spk-ink);}
@@ -356,10 +356,10 @@
 }
 .spk-here{
   text-align:center;font-family:'Lora',Georgia,serif;font-style:italic;
-  font-size:14px;color:#8A7B5C;margin:12px 0 4px;
+  font-size:16px;color:#6A5A3A;margin:12px 0 4px;
 }
 .spk-shelf-head{
-  text-align:center;font-family:'Nunito',sans-serif;font-size:11px;
+  text-align:center;font-family:'Nunito',sans-serif;font-size:14px;
   font-weight:800;letter-spacing:.09em;text-transform:uppercase;
   color:var(--spk-muted);margin-top:18px;
 }
@@ -368,7 +368,7 @@
 /* ── 2.5 the two roads ─────────────────────────────────────── */
 .spk-roads{margin:0 0 18px;}
 .spk-roads-label{
-  font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;
+  font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;
   color:var(--spk-ink);margin-bottom:8px;
 }
 .spk-roads-cards{display:grid;grid-template-columns:1fr 1.25fr;gap:12px;}
@@ -380,7 +380,7 @@
 }
 .spk-road:hover{transform:translateY(-2px);}
 .spk-road-name{font-size:17px;font-weight:800;color:var(--spk-ink);}
-.spk-road-line{font-size:13px;color:var(--spk-muted);line-height:1.5;}
+.spk-road-line{font-size:16px;color:var(--spk-muted);line-height:1.5;}
 .spk-road-laurel{position:absolute;top:10px;right:12px;opacity:.5;transition:opacity .25s,transform .25s;}
 /* the seal is absolutely positioned, so the card has to keep a lane
    clear for it — without this the description runs underneath and the
@@ -400,12 +400,12 @@
 }
 .spk-road[data-tier="scholar"].on .spk-road-laurel{opacity:1;transform:scale(1.06);}
 .spk-road[data-tier="scholar"].on .spk-road-name{color:#8B6914;}
-.spk-roads-note{font-size:12px;color:var(--spk-muted);font-style:italic;margin-top:8px;}
+.spk-roads-note{font-size:16px;color:var(--spk-muted);font-style:italic;margin-top:8px;}
 @media(max-width:700px){.spk-roads-cards{grid-template-columns:1fr;}}
 
 .spk-scholar-add{
   display:block;margin-top:5px;padding-left:12px;border-left:2px solid var(--spk-gold);
-  font-family:'Lora',Georgia,serif;font-style:italic;color:#4A5A7E;font-size:15px;
+  font-family:'Lora',Georgia,serif;font-style:italic;color:#4A5A7E;font-size:17px;
 }
 
 /* the section itself lights up on the Scholar road */
@@ -432,7 +432,7 @@
 .spk-seal-strip{margin-top:12px;}
 .spk-seal-progress,.spk-seal-won{
   display:flex;gap:12px;align-items:center;
-  font-family:'Nunito',sans-serif;font-size:13px;line-height:1.5;
+  font-family:'Nunito',sans-serif;font-size:16px;line-height:1.5;
   border-radius:10px;padding:10px 14px;
 }
 .spk-seal-progress{background:#FAFBFF;border:1px dashed #D9C79E;color:var(--spk-muted);}
@@ -455,14 +455,14 @@
 
 /* ── 2.6 coaching line ─────────────────────────────────────── */
 .spk-coach{
-  font-family:'Nunito',sans-serif;font-size:13px;color:var(--spk-muted);
+  font-family:'Nunito',sans-serif;font-size:16px;color:var(--spk-muted);
   min-height:18px;margin:-8px 0 14px;padding-left:2px;transition:opacity .25s;
 }
 .spk-coach.good{color:var(--spk-green);font-weight:700;}
 
 /* ── 2.7 hint ladder ───────────────────────────────────────── */
 .spk-hint{
-  font-family:'Nunito',sans-serif;font-size:13px;line-height:1.5;
+  font-family:'Nunito',sans-serif;font-size:16px;line-height:1.5;
   margin:6px 0 0;padding:8px 12px;border-radius:8px;
   background:#FFFBF2;border-left:3px solid var(--spk-gold);color:#5A4A2A;
   animation:spk-unfold .32s ease-out;
@@ -472,7 +472,7 @@
 .spk-blanks{font-family:'Courier New',monospace;letter-spacing:.18em;font-weight:700;}
 .fillin-input.spk-revealed{background:#F2FAF5!important;border-color:#9ED9B8!important;color:#245C3C!important;}
 .spk-miss{
-  font-family:'Lora',Georgia,serif;font-style:italic;font-size:14px;
+  font-family:'Lora',Georgia,serif;font-style:italic;font-size:16px;
   color:#7A4A4A;background:#FFF6F6;border-left:3px solid #E2A8A8;
   border-radius:8px;padding:8px 12px;margin:8px 0 0;
   animation:spk-unfold .32s ease-out;
@@ -487,18 +487,18 @@
 .spk-copia-seed b{color:#8B6914;}
 .spk-copia-slot{margin-top:14px;}
 .spk-copia-slot-label{
-  font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--spk-ink);
+  font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;color:var(--spk-ink);
 }
-.spk-copia-slot-hint{font-size:13px;color:var(--spk-muted);font-style:italic;margin:2px 0 6px;}
+.spk-copia-slot-hint{font-size:16px;color:var(--spk-muted);font-style:italic;margin:2px 0 6px;}
 .spk-copia-eg{
-  font-family:'Lora',Georgia,serif;font-style:italic;font-size:15px;
+  font-family:'Lora',Georgia,serif;font-style:italic;font-size:17px;
   color:#4A5A7E;background:#FAFBFF;border-left:3px solid #CBD5E8;
   border-radius:8px;padding:8px 12px;margin-top:6px;
   animation:spk-unfold .32s ease-out;
 }
 .spk-mini-btn{
   background:#fff;border:2px solid #E6EBF5;border-radius:999px;
-  padding:5px 14px;font-family:'Nunito',sans-serif;font-size:12px;
+  padding:5px 14px;font-family:'Nunito',sans-serif;font-size:16px;
   font-weight:800;color:var(--spk-muted);cursor:pointer;margin-top:6px;
 }
 .spk-mini-btn:hover{border-color:var(--spk-gold);color:var(--spk-ink);}
@@ -513,7 +513,7 @@
 .spk-poem w{transition:color .3s;}
 .spk-poem w.faded{color:var(--spk-ghost);}
 .spk-rung{
-  font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;
+  font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;
   letter-spacing:.08em;text-transform:uppercase;color:var(--spk-muted);
 }
 
@@ -528,7 +528,7 @@
 }
 .spk-illum .spk-by{
   text-align:center;font-family:'Lora',Georgia,serif;font-style:italic;
-  font-size:14px;color:#8A7B5C;margin-bottom:22px;
+  font-size:16px;color:#6A5A3A;margin-bottom:22px;
 }
 .spk-illum-body{font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.85;color:#22304F;}
 .spk-illum-body::after{content:'';display:block;clear:both;}
@@ -538,7 +538,7 @@
 .spk-colophon{
   margin-top:24px;padding-top:12px;border-top:1px solid #E4D3AC;
   text-align:center;font-family:'Lora',Georgia,serif;font-style:italic;
-  font-size:12px;color:#A08F6C;
+  font-size:16px;color:#6E5C3A;
 }
 @media print{
   body *{visibility:hidden;}
@@ -563,7 +563,7 @@
   font-size:17px;flex:none;
 }
 .spk-card-title{font-family:'Nunito',sans-serif;font-size:17px;font-weight:800;color:var(--spk-ink);}
-.spk-card-sub{font-size:13px;color:var(--spk-muted);font-style:italic;}
+.spk-card-sub{font-size:16px;color:var(--spk-muted);font-style:italic;}
 .spk-card-body{padding:18px 20px;}
 
 @media (prefers-reduced-motion: reduce){
@@ -584,7 +584,7 @@
   display:flex;align-items:center;gap:14px;margin-top:18px;
   background:#fff;border:2px solid #E4D3AC;border-radius:10px;padding:10px 16px;
 }
-.spk-companion-solo span{font-size:14px;color:var(--spk-muted);font-style:italic;line-height:1.5;}
+.spk-companion-solo span{font-size:16px;color:var(--spk-muted);font-style:italic;line-height:1.5;}
 .spk-companion-solo .spk-companion-img{flex:none;height:76px;width:auto;}
 .spk-companion-solo svg{flex:none;}
 
@@ -613,7 +613,7 @@
     linear-gradient(90deg, transparent 54%, #D9C49A 60%, #D9C49A 84%, transparent 100%) 0 50%/100% 1px no-repeat;
 }
 .spk-plate-cap{
-  font-family:'Lora',Georgia,serif; font-style:italic; font-size:13.5px;
+  font-family:'Lora',Georgia,serif; font-style:italic; font-size:16px;
   color:#93815E; letter-spacing:.01em; max-width:520px; line-height:1.5;
 }
 /* the same picture on the left page of the open book */
@@ -717,7 +717,7 @@ body.spk-warm .spk-card-title{
   font-family:'Lora',Georgia,serif; font-weight:700; letter-spacing:0;
 }
 body.spk-warm .activity-sub,
-body.spk-warm .spk-card-sub{color:#96825F;}
+body.spk-warm .spk-card-sub{color:#6E5C3A;}
 
 /* a hand-set rule under each activity head */
 body.spk-warm .activity-head{
@@ -741,10 +741,10 @@ body.spk-warm .quote-strip{
   background:#FBF3E2; border-bottom:none; padding-bottom:4px;
 }
 body.spk-warm .quote-strip-text{font-size:21px;color:#4A3A22;}
-body.spk-warm .quote-strip-attr{color:#A08A62;}
+body.spk-warm .quote-strip-attr{color:#6E5C3A;}
 
 /* tabs: warm rail, gold current */
-body.spk-warm .tab-btn{color:#8A7550;}
+body.spk-warm .tab-btn{color:#6A5A3A;}
 body.spk-warm .tab-btn:hover{background:#FBF3E2;color:#3B2F1C;}
 body.spk-warm .tab-btn.active{color:#3B2F1C;border-bottom-color:#C7922C;}
 body.spk-warm .progress-fill{background:linear-gradient(90deg,#C7922C,#E0B457);}
@@ -768,7 +768,7 @@ body.spk-warm .turn-in-item{
   background:#FFFDF6;border-color:#E7D9BC;
 }
 body.spk-warm .thinking-stop{
-  background:#FBF3E2;border-color:#E0CDA6;color:#8A7550;
+  background:#FBF3E2;border-color:#E0CDA6;color:#6A5A3A;
 }
 body.spk-warm .flip-card-front{background:linear-gradient(160deg,#FFFDF6,#F7EFDD);}
 body.spk-warm .sort-chip{background:#FFFDF6;}
@@ -783,7 +783,7 @@ body.spk-warm .oao-read-aloud,
 body.spk-warm [class*="read-aloud"]{background:#FBF3E2!important;}
 
 body.spk-warm .open-book-title{color:#8A3A2E;}
-body.spk-warm .open-book-chapter{color:#96825F!important;}
+body.spk-warm .open-book-chapter{color:#6E5C3A!important;}
 body.spk-warm .open-book-prompt{color:#5A4A2E;}
 body.spk-warm .open-book,
 body.spk-warm .open-book-pages-1,
@@ -813,7 +813,7 @@ body.spk-warm .open-book-pages-3{background:#FFFDF4;}
 }
 .spk-open .spk-greet-edit{
   background:none;border:none;color:#BCA97F;cursor:pointer;
-  font-size:14px;padding:0 4px;line-height:1;vertical-align:2px;
+  font-size:16px;padding:0 4px;line-height:1;vertical-align:2px;
 }
 .spk-open .spk-greet-edit:hover{color:#8A6B22;}
 .spk-open-say{
@@ -846,8 +846,8 @@ body.spk-warm .open-book-pages-3{background:#FFFDF4;}
 }
 .spk-numeral svg{display:block;filter:drop-shadow(0 2px 5px rgba(14,28,66,.18));}
 .spk-numeral-word{
-  font-family:'Nunito',sans-serif; font-size:10.5px; font-weight:800;
-  letter-spacing:.22em; color:#A08A5C;
+  font-family:'Nunito',sans-serif; font-size:16px; font-weight:800;
+  letter-spacing:.22em; color:#6E5C3A;
 }
 @media(max-width:700px){
   .spk-numeral svg{width:62px;height:62px;}
@@ -890,20 +890,20 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
   border-radius:12px; padding:14px 18px; margin:0 0 16px;
 }
 .spk-goal-label{
-  font-family:'Nunito',sans-serif; font-size:11px; font-weight:800;
-  letter-spacing:.09em; text-transform:uppercase; color:#A8895A;
+  font-family:'Nunito',sans-serif; font-size:14px; font-weight:800;
+  letter-spacing:.09em; text-transform:uppercase; color:#7A5F30;
 }
 .spk-goal-title{
   font-family:'Lora',Georgia,serif; font-weight:700; font-size:21px;
   color:#33291B; margin-top:2px; line-height:1.25;
 }
 .spk-goal-gloss{
-  font-family:'Lora',Georgia,serif; font-style:italic; font-size:15px;
+  font-family:'Lora',Georgia,serif; font-style:italic; font-size:17px;
   color:#6F5C3C; margin-top:3px;
 }
 .spk-goal-meta{
-  font-family:'Nunito',sans-serif; font-size:13px; font-weight:700;
-  color:#8A7550; margin-top:9px; padding-top:9px;
+  font-family:'Nunito',sans-serif; font-size:16px; font-weight:700;
+  color:#6A5A3A; margin-top:9px; padding-top:9px;
   border-top:1px solid rgba(199,146,44,.3);
 }
 .spk-earlier{
@@ -911,7 +911,7 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
   padding:12px 16px; margin:0 0 16px;
 }
 .spk-earlier > summary{
-  cursor:pointer; font-family:'Nunito',sans-serif; font-size:13.5px;
+  cursor:pointer; font-family:'Nunito',sans-serif; font-size:16px;
   font-weight:800; color:#6F5C3C; list-style:none;
 }
 .spk-earlier > summary::-webkit-details-marker{display:none;}
@@ -919,11 +919,11 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
 .spk-earlier[open] > summary::before{content:'\25BE  ';}
 .spk-earlier-item{margin-top:12px;padding-left:12px;border-left:2px solid #E7D9BC;}
 .spk-earlier-when{
-  font-family:'Nunito',sans-serif; font-size:11px; font-weight:800;
-  letter-spacing:.06em; text-transform:uppercase; color:#A8895A;
+  font-family:'Nunito',sans-serif; font-size:14px; font-weight:800;
+  letter-spacing:.06em; text-transform:uppercase; color:#7A5F30;
 }
 .spk-earlier-text{
-  font-family:'Lora',Georgia,serif; font-size:15px; line-height:1.65;
+  font-family:'Lora',Georgia,serif; font-size:17px; line-height:1.65;
   color:#4A3D28; margin:4px 0 0; white-space:pre-wrap;
 }
 
@@ -932,28 +932,28 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
   margin-top:12px; padding-top:11px; border-top:1px solid rgba(199,146,44,.3);
 }
 .spk-keep-title{
-  font-family:'Nunito',sans-serif; font-size:13.5px; font-weight:800; color:#8A6B22;
+  font-family:'Nunito',sans-serif; font-size:16px; font-weight:800; color:#8A6B22;
 }
 .spk-keep p{
-  font-family:'Nunito',sans-serif; font-size:14px; line-height:1.6;
+  font-family:'Nunito',sans-serif; font-size:16px; line-height:1.6;
   color:#5A4A2E; margin:4px 0 0;
 }
 .spk-write-tools{
   display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:10px;
 }
-.spk-copy-writing{padding:9px 18px; font-size:13px;}
+.spk-copy-writing{padding:9px 18px; font-size:16px;}
 .spk-write-note{
-  font-family:'Lora',Georgia,serif; font-style:italic; font-size:13.5px; color:#8A7550;
+  font-family:'Lora',Georgia,serif; font-style:italic; font-size:16px; color:#6A5A3A;
 }
 .spk-earlier-caveat{
-  font-family:'Nunito',sans-serif; font-size:12.5px; color:#A8895A;
+  font-family:'Nunito',sans-serif; font-size:16px; color:#7A5F30;
   margin:8px 0 0; line-height:1.5;
 }
 
 .spk-name-warn{
   margin-top:10px; padding:9px 13px; border-radius:8px;
   background:#FFF4F1; border:1px solid #E8C4B8;
-  font-family:'Nunito',sans-serif; font-size:13.5px; color:#8A4A38;
+  font-family:'Nunito',sans-serif; font-size:16px; color:#8A4A38;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -1041,7 +1041,7 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
   display:inline-flex;align-items:center;gap:9px;flex:none;
   background:#FFFDF7;border:1.5px solid #E0CCA2;border-radius:999px;
   padding:7px 16px 7px 11px;cursor:pointer;
-  font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;
+  font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;
   color:#6E5A34;transition:border-color .18s,background .18s,transform .18s;
 }
 .spk-audio-btn:hover{border-color:var(--spk-gold);background:#FFF8E9;transform:translateY(-1px);}
@@ -1065,13 +1065,13 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
 }
 .spk-audio-bar i{display:block;height:100%;width:0;background:var(--spk-gold);transition:width .2s linear;}
 .spk-audio-time{
-  flex:none;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;
-  color:#A08A5C;min-width:30px;text-align:right;
+  flex:none;font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;
+  color:#6E5C3A;min-width:30px;text-align:right;
 }
 .spk-audio-inline{margin:12px auto 4px;}
 @media(max-width:700px){
   .spk-audio{gap:8px;}
-  .spk-audio-btn{font-size:12px;padding:6px 13px 6px 9px;}
+  .spk-audio-btn{font-size:16px;padding:6px 13px 6px 9px;}
 }
 @media (prefers-reduced-motion: reduce){
   .spk-audio-btn{transition:none;}
@@ -1096,7 +1096,7 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
 .spk-media-video:focus-visible{outline:2px solid var(--spk-gold);outline-offset:3px;}
 .spk-media-cap{
   margin:8px 2px 0;font-family:'Lora',Georgia,serif;font-style:italic;
-  font-size:13px;color:#8A7B5C;
+  font-size:16px;color:#6A5A3A;
 }
 @media(max-width:700px){
   .spk-media-tall .spk-media-video{max-height:360px;}
@@ -1115,7 +1115,7 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
   background:linear-gradient(180deg,#D8A63C,var(--spk-gold));
   border:1.5px solid #B07F1E;
   color:#FFFDF4;
-  font-size:15px;font-weight:800;letter-spacing:.01em;
+  font-size:17px;font-weight:800;letter-spacing:.01em;
   padding:11px 24px 11px 15px;gap:11px;
   box-shadow:0 3px 0 #9E721A, 0 6px 14px rgba(120,86,20,.28);
 }
@@ -1140,7 +1140,7 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
   box-shadow:5px 0 0 #B07F1E;
 }
 .spk-guide .spk-audio-bar{height:5px;background:#E6D3AC;}
-.spk-guide .spk-audio-time{font-size:12px;color:#8A7040;}
+.spk-guide .spk-audio-time{font-size:16px;color:#6A5528;}
 
 /* one slow breath when it first appears, so the eye finds it — then it
    stops and never nags again */
@@ -1156,7 +1156,7 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
   .spk-guide .spk-audio-btn{animation:none;transition:none;}
 }
 @media(max-width:700px){
-  .spk-guide .spk-audio-btn{font-size:14px;padding:10px 18px 10px 12px;}
+  .spk-guide .spk-audio-btn{font-size:16px;padding:10px 18px 10px 12px;}
 }
 
 /* ── the Reading Road folds away ───────────────────────────── */
@@ -1181,12 +1181,12 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
 .spk-guide-wrap .spk-guide{margin:0 auto 8px;}
 .spk-note{
   max-width:560px;margin:0 auto;
-  font-family:'Lora',Georgia,serif;font-size:14px;color:#5A4A2C;
+  font-family:'Lora',Georgia,serif;font-size:16px;color:#5A4A2C;
 }
 .spk-note summary{
   cursor:pointer;list-style:none;text-align:center;
-  font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;
-  letter-spacing:.04em;color:#A08A5C;padding:4px 0;
+  font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;
+  letter-spacing:.04em;color:#6E5C3A;padding:4px 0;
 }
 .spk-note summary::-webkit-details-marker{display:none;}
 .spk-note summary:hover{color:#8B6914;}
