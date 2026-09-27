@@ -1,0 +1,191 @@
+{
+ "connector": "Rachel Lynde here, and I don’t mind telling you I’ve been laid up with the grippe, or I’d have been over to Green Gables long ago. Imagine Marilla Cuthbert taking in an orphan, and a girl at that! I’ve heard such things. Well, I mean to see this child with my own two eyes and judge for myself. Somebody has to, and it may as well be me.",
+ "dol": {
+  "a": {
+   "raw": "mrs lyndes words about annes looks werent kind",
+   "fixed": "<strong>Mrs. Lynde’s</strong> words about <strong>Anne’s</strong> looks <strong>weren’t</strong> kind<strong>.</strong>",
+   "why": "A capital M and a period after Mrs., an apostrophe and s on Lynde’s and Anne’s to show belonging, an apostrophe in the contraction weren’t, and a period at the end."
+  },
+  "b": {
+   "raw": "marillas voice wasnt as sharp as mrs lyndes tongue",
+   "fixed": "<strong>Marilla’s</strong> voice <strong>wasn’t</strong> as sharp as <strong>Mrs. Lynde’s</strong> tongue<strong>.</strong>",
+   "why": "The same two jobs for the apostrophe: belonging in Marilla’s and Mrs. Lynde’s, and a squeezed-together word in wasn’t. Capitals on the names, a period after Mrs., and a period at the end."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and say which of Mrs. Rachel’s words hurt Anne most, and why that one.",
+  "journal-q2": "… then decide whether Marilla is only defending Anne, or remembering something about herself.",
+  "journal-q3": "… and say whether you think Anne is right, wrong, or both, with one detail to back it up."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "A train that runs below the streets. Which part means under?",
+   "why": "<b>sub-</b> + way: a <b>subway</b> runs under the ground."
+  },
+  "fill2": {
+   "h1": "Two people sit down, and the questions go back and forth between them.",
+   "why": "<b>inter-</b> + view: an <b>interview</b> happens between two people."
+  },
+  "fill3": {
+   "h1": "This smaller title sits below the main one.",
+   "why": "<b>sub-</b> + title: a <b>subtitle</b> sits under the title."
+  },
+  "fill4": {
+   "h1": "When people act with each other, something passes between them.",
+   "why": "<b>inter-</b> + act: to <b>interact</b> is to act between or with others."
+  },
+  "vfill1": {
+   "h1": "The gap tells how a face looks when hope arrives. Look for the bank word about changing.",
+   "why": "<b>transfigured</b> means changed in form, often lit up, like Anne’s face in Ch. 6."
+  },
+  "vfill2": {
+   "h1": "The gap describes a smile. Which bank word is about kindness?",
+   "why": "<b>benevolent</b> means kindly and meaning well, like Mrs. Spencer at her door."
+  },
+  "vfill3": {
+   "h1": "The temptation was too strong to say no to. Which bank word fits?",
+   "why": "<b>irresistible</b> means too tempting to resist."
+  },
+  "g4w8ff1": {
+   "h1": "One Anne owns the temper.",
+   "why": "One owner: add an apostrophe and s. <b>Anne’s</b> temper."
+  },
+  "g4w8ff2": {
+   "h1": "Girls already means more than one, and it already ends in s.",
+   "why": "A plural owner ending in s takes only the apostrophe: <b>girls’</b> dresses."
+  },
+  "g4w8ff3": {
+   "h1": "One Matthew, one owner.",
+   "why": "Add an apostrophe and s: <b>Matthew’s</b> kindness."
+  },
+  "g4w8ff4": {
+   "h1": "Horses is already more than one.",
+   "why": "The apostrophe goes after the s: the <b>horses’</b> breath."
+  },
+  "s4w8ff1": {
+   "h1": "Does anything belong to the girls here, or are they only walking?",
+   "why": "More than one, and nothing owned: <b>girls</b>, no apostrophe."
+  },
+  "s4w8ff2": {
+   "h1": "Look at the word right after the gap. Does it belong to Anne?",
+   "why": "The temper belongs to Anne: <b>Anne’s</b>."
+  },
+  "s4w8ff3": {
+   "h1": "Both of them were open. Is anything owned?",
+   "why": "Just more than one: <b>windows</b>."
+  },
+  "s4w8ff4": {
+   "h1": "One horse, and the breath belongs to it.",
+   "why": "One owner: <b>horse’s</b> breath."
+  }
+ },
+ "writingFocus": "Character",
+ "transcripts": {
+  "welcome": "Good day to you. Mrs. Rachel Lynde here, and I’ll be guiding your lesson. I’m off to Green Gables at last to look over this orphan of Marilla’s. Today’s question is what makes a person’s faults easy to forgive, and what makes them hard to like. I see you’ll be tracking somebody’s temper today. I can’t think whose. And you’ll write your own belonging words, apostrophes and all.",
+  "dol": "Now, this model sentence has my name at the end of it, and I’d like to know who’s been talking about me. Never mind. There are two kinds of little marks in today’s sentences. One kind squeezes two words into one. The other shows that something belongs to somebody. Your job is to tell them apart and put each where it goes. And capitals on names, mind. Mine especially.",
+  "guide1": "Word study. Now, I pride myself on knowing what goes on under every roof in Avonlea, and between every pair of neighbours, too. So these two word parts suit me down to the ground. One means under and the other means between. Today you type them in yourself, then the week’s words, then some belonging words. Mind you check your work as you go. I always check mine.",
+  "morphology": "Four words, each one missing its front part. Read the little description after each word first. It’s the best clue you’ll get. If the meaning has anything to do with being below, or smaller, or underneath, you know which part to reach for. If it’s about two people or two things with something going on in the middle, you’ll want the other one. Simple as that.",
+  "vocabulary": "There are four words in the bank and only three gaps, so one word won’t be used at all. Don’t let that fluster you. Read each sentence right through to the end, then ask what sort of word the gap is wanting. Try your choice in the sentence, out loud. If it sounds wrong, it is wrong. I’ve always said so, and I’ve seldom been mistaken.",
+  "grammar": "Every word in brackets is an owner, and you’re to show that it owns something. Before you type, look carefully at the word in the brackets. Is it one person or animal, or more than one? That decides where your apostrophe goes. And don’t go changing the word itself. Just give it what it needs. In my experience, most mistakes come from not looking properly.",
+  "spelling": "This one’s trickier, and I do like a puzzle. Some gaps want more than one of something. Some want something that belongs. You’ll have to read the rest of the sentence to know which. Look at the word right after the gap. Is it a thing being owned? Then decide. People sprinkle those little marks about like pepper, and I call it a disgrace.",
+  "guide2": "Here I am at Green Gables at last. Marilla says the child is out in the orchard. Now, this week’s watch is about having a temper, and having a reason. I’ve always said the two aren’t the same thing at all, whatever children may think. As you read, keep an eye on what sets a person off, and whether they’re right to be upset, even if they go about it wrong.",
+  "wgrd": "Here’s a thing I’ve noticed in all my years of watching my neighbours. Nobody changes in a straight line. They get better for a bit, and then somebody says the wrong thing, and back they go. Today, mark the moment somebody flares up, and write down what set it off. Then ask what they were guarding. People fight hardest over whatever hurts them most.",
+  "read": "There are two places to stop today, and both of them come near the end, so don’t rush past them. The first asks who has the harder time waiting. The second asks about saying sorry, and why it might be the hardest thing of all. Stop at both, and think before you go on. And keep your book close. You’ll want it for the questions.",
+  "rwm": "Well, I heard those words with my own ears, and I’ve never been spoken to so in all my life. But I’ll grant you this: you knew exactly who was talking. Try reading it with only the spoken words and nothing after them. It isn’t half so much, is it? When you write your own, keep the talking short, and let the body finish what the mouth began.",
+  "guide3": "Well! I’ve never been so insulted in all my born days. I only said what anybody could see, that she’s skinny and homely and her hair’s as red as carrots, and she flew at me, stamping and shouting. Marilla sent her to her room, and then took her part, if you please. I’ll not visit again in a hurry. Now, you tell me who was in the wrong.",
+  "chapter": "Three questions, and I’ve opinions on all of them. For the first, I want particulars. What did she do, and what did she say? For the second, Marilla scolded the child and then scolded me as well. Work out why she’d do both. The third is about an apology I still haven’t had. Why hasn’t she said it? I’d like to know that myself.",
+  "wordconn": "Your spelling answer is saved, so here’s how it fits. All week you’ve been deciding whether a word means more than one, or means belonging. It all comes down to one small mark. And one small remark of mine turned a whole visit upside down. Marilla says I was too hard on her. Well, I say a child ought to know the truth about her looks. You judge.",
+  "workshop": "Today you’re to write one sentence about your character, with a belonging word in it. Something that’s theirs. A fear, a friend, a hope, a temper. I’ve learned more about people from what’s theirs than from anything they say about themselves. Take Anne Shirley. That temper of hers told me more in one minute than a week of chatter would have. Pick the one thing that tells the most."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-welcome",
+   "label": "Mrs. Lynde’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-wgrd",
+   "label": "Mrs. Lynde · about today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-dol",
+   "label": "Mrs. Lynde · about today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-guide1",
+   "label": "Mrs. Lynde · before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-morphology",
+   "label": "Mrs. Lynde · about the word parts"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-vocabulary",
+   "label": "Mrs. Lynde · about today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-grammar",
+   "label": "Mrs. Lynde · about today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-spelling",
+   "label": "Mrs. Lynde · about today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-guide2",
+   "label": "Mrs. Lynde · before you open the book"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-read",
+   "label": "Mrs. Lynde · before you read"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-guide3",
+   "label": "Mrs. Lynde · before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-chapter",
+   "label": "Mrs. Lynde · about the questions"
+  },
+  "wordconn": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-wordconn",
+   "label": "Mrs. Lynde · how it connects"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-workshop",
+   "label": "Mrs. Lynde · about today’s writing"
+  },
+  "rwm": {
+   "kind": "audio",
+   "path": "guide/rachel/g4ela-8-3-rwm",
+   "label": "Mrs. Lynde · about Read like a Writer"
+  }
+ }
+}
