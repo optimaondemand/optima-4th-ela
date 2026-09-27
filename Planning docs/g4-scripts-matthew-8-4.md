@@ -34,7 +34,7 @@ The opening paragraph under the greeting is also in his voice (text only):
 
 ## `matthew\g4ela-8-4-dol.mp3` — Warm-Up · Daily Oral Language
 
-> Somebody’s talking again in this model, so look it over slowly. There are two little words squeezed short, each with its mark, and a pause just before the talking stops. Then you find out who said it. The one you’re fixing has nearly all the same pieces, and a couple of names that want standing up tall. Take your time. There’s no hurry.
+> Somebody’s talking again in this model, so look it over slowly. Two of the words have been cut short, and there’s a pause just before the talking stops. Then you find out who said it. The sentence you’re fixing works the same way, and it has a couple of names in it. Look at how the model treats a name before you start on yours. There’s no hurry.
 
 ## `matthew\g4ela-8-4-guide1.mp3` — Word Study tab
 
@@ -42,7 +42,7 @@ The opening paragraph under the greeting is also in his voice (text only):
 
 ## `matthew\g4ela-8-4-morphology.mp3` — Word Study · Morphology
 
-> You’ve matched these before, so this is a check on whether they stuck. Don’t hurry it. If one gives you pause, think of a longer word you know that has that piece in it, and say it out loud. Most times the meaning’s sitting right there, waiting on you. That’s how I learned my farm tools. By using them, not by reading about them.
+> You’ve matched these before, so this is a check on whether they stuck. Don’t hurry it. If one gives you pause, think of a longer word you know that uses it, and say that word out loud. Most times the meaning’s sitting right there, waiting on you. That’s how I learned my farm tools. By using them, not by reading about them.
 
 ## `matthew\g4ela-8-4-vocabulary.mp3` — Word Study · Vocabulary
 
@@ -50,11 +50,11 @@ The opening paragraph under the greeting is also in his voice (text only):
 
 ## `matthew\g4ela-8-4-grammar.mp3` — Word Study · Grammar
 
-> Somebody wrote a draft about the chapter, and some of the apostrophes are fine and some aren’t. Don’t go tapping everything with a mark. Read each sentence as if it were yours and you were about to hand it to Marilla. Would it pass? A sentence might be missing a mark it ought to have, or have one it shouldn’t.
+> Somebody wrote a draft about the chapter. Some of the apostrophes are right and some aren’t. Don’t go tapping every word that has one. Read each sentence as if it were yours and you were about to hand it to Marilla. Would it pass? A sentence might be missing an apostrophe it needs, or have one it doesn’t.
 
 ## `matthew\g4ela-8-4-spelling.mp3` — Word Study · Spelling
 
-> Same sort of job, different draft. Tap only the sentences where a mark is in the wrong place, or missing where it’s wanted. For each one, ask yourself whether the word is just more than one of something, or whether it owns something. That question settles most of them. Take your time over it. There’s no prize for finishing first.
+> Same sort of job, different draft. Tap only the sentences where an apostrophe is in the wrong place, or missing where it’s wanted. For each one, ask yourself whether the word is just more than one of something, or whether it owns something. That question settles most of them. Take your time over it. There’s no prize for finishing first.
 
 ## `matthew\g4ela-8-4-guide2.mp3` — Reading tab
 
