@@ -1,0 +1,123 @@
+{
+ "connector": "It’s Matthew. Things have been awful quiet at Green Gables, and I don’t rightly know why. Marilla’s got her lips pressed tight, and Anne hasn’t come down. I’m not one to go poking into things. But I’ll say this much. A house doesn’t feel right when somebody in it is unhappy. Come along, and let’s see if we can’t find out what’s wrong.",
+ "dol": {
+  "a": {
+   "raw": "its lovely to be home anne whispered to marilla",
+   "fixed": "<strong>“It’s</strong> lovely to be <strong>home,”</strong> <strong>Anne</strong> whispered to <strong>Marilla.</strong>",
+   "why": "An opening quotation mark and a capital, an apostrophe in the contraction It’s, a comma inside the closing quotation mark, capitals on the names Anne and Marilla, and a period at the end."
+  },
+  "b": {
+   "raw": "its time to go home marilla said to anne",
+   "fixed": "<strong>“It’s</strong> time to go <strong>home,”</strong> <strong>Marilla</strong> said to <strong>Anne.</strong>",
+   "why": "The same pieces: quotation marks around what is said, an apostrophe in It’s because it means it is, a comma inside the closing quotation mark, capitals on both names, and a period at the end."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and say what Matthew risks by going up, and why he thinks it is worth it.",
+  "journal-q2": "… then say whether you think Anne meant her apology, with one detail to back it up.",
+  "journal-q3": "… and name a moment when Marilla begins to belong to Anne, too."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "writingFocus": "Character",
+ "transcripts": {
+  "welcome": "Hello, it’s Matthew Cuthbert again, and I’ll be guiding you today. Here’s the question. By the end of this chapter, somebody calls Green Gables home. What had to happen first, for her to feel that way? You’ll look back over the whole week and measure how far somebody has come. And you’ll play editor, hunting down apostrophes that have gone astray, or gone missing altogether.",
+  "dol": "There’s somebody talking again in this model. Look it over slowly. There are two little words squeezed short, and each one has its mark. There’s a pause before the talking stops. Then comes the one who said it. The sentence you’re fixing has all the same pieces, near enough, and a couple of names that want standing up tall. Take your time. There’s no hurry.",
+  "guide1": "Well now, word study, and the last day of the week. The same word parts you’ve been working with, and then a choice about the week’s words, which I like. I’m not much for being told exactly what to do myself. Take the one that suits you. Just do it properly once you’ve picked it. Then two drafts to check over, like a careful editor.",
+  "morphology": "You’ve matched these before, so this is a check to see whether they stuck. Don’t hurry it. If one gives you pause, think of a longer word you know with that piece in it, and say it out loud. Most times the meaning’s sitting right there in the word, waiting for you. That’s how I learned my farm tools. By using them, not by reading about them.",
+  "vocabulary": "Four words, and you get to pick what to do with them. My advice, for what it’s worth, is to choose the one that makes you think a little. Explaining a word to somebody younger is harder than it sounds. Whichever you choose, use the word the way the book does, in a real sentence about a real feeling. That’s how a word becomes yours.",
+  "grammar": "Here’s a draft somebody wrote about the chapter. Some of the apostrophes are fine and some aren’t. Don’t go tapping everything that has a mark. Read each sentence as if it were yours and you were about to hand it to Marilla. Would it pass? Some are missing a mark that ought to be there, and some have one where it doesn’t belong.",
+  "spelling": "Same kind of job, a different draft. Tap only the ones with a mark in the wrong place, or with one missing where it’s wanted. For every sentence, ask yourself one thing. Is this word just more than one of something, or does it own something? That question settles most of them. Take your time over it. There’s no prize for finishing first.",
+  "guide2": "Anne hasn’t come down, and Marilla won’t say why. I’ve been hanging about the kitchen like a lost calf. This week’s watch is belonging, and I’ve been thinking on it. A person can live in a house and not belong to it, I suppose. As you read, watch for the small things. Belonging doesn’t come with a speech. It comes in some little thing a person does without thinking.",
+  "wgrd": "At the end of a week, it’s worth looking back down the road you came. Think where Anne was when Marilla drove her off to White Sands, and where she’s got to now. Then read today and find one small thing she does that proves she’s moved. And look at whoever’s standing next to her. When one person changes, the folks around them usually do too.",
+  "read": "There’s just one stop today, at the very end, so read straight through till you get there. It’s a short chapter, but a full one. When you reach the stop, don’t hurry on to the questions. Sit with it a moment. Think about what one small thing might mean to somebody who’s never had it. I’d wager you’ll know the moment when you get to it.",
+  "guide3": "Well, now you know. I went upstairs. I hadn’t been up there in four years, not since I helped Marilla paper the spare bedroom. I asked Anne if she’d just smooth it over with Rachel, and she said she’d do anything for me. Don’t tell Marilla I had a hand in it. She might think I was putting my oar in. Now, say what you noticed, and show it from the book.",
+  "chapter": "The first question’s about me, and I’ll admit it’s a bit awkward. Why would a shy old fellow climb those stairs? You’ll have to work that out. The second is about Anne saying sorry, and Marilla not liking the way she did it. Think about what Anne was doing with her imagination. And the last asks you to look back across the whole week. Pick your moment, and say why.",
+  "wordconn": "Your vocabulary answer is saved, so here’s how it fits. One of this week’s words was penitent, a word for somebody who’s truly sorry. Well, Anne said sorry to Rachel, and Rachel forgave her. That’s what mattered to me. Whether she was penitent, or just enjoying herself a good deal, I’ll leave for you to decide. You’ve read it. I only heard about it.",
+  "workshop": "Your job today is to decide how your character will change, from start to finish. Take Anne. When this week began, nobody at Green Gables had asked for her. Now she’s settled, and I think she knows she’s wanted. That’s a long way to come in five chapters. Your character needn’t travel so far. But they ought to finish the story a little different from how they started."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-welcome",
+   "label": "Matthew’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-wgrd",
+   "label": "Matthew · about today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-dol",
+   "label": "Matthew · about today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-guide1",
+   "label": "Matthew · before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-morphology",
+   "label": "Matthew · about the word parts"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-vocabulary",
+   "label": "Matthew · about today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-grammar",
+   "label": "Matthew · about today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-spelling",
+   "label": "Matthew · about today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-guide2",
+   "label": "Matthew · before you open the book"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-read",
+   "label": "Matthew · before you read"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-guide3",
+   "label": "Matthew · before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-chapter",
+   "label": "Matthew · about the questions"
+  },
+  "wordconn": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-wordconn",
+   "label": "Matthew · how it connects"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-8-4-workshop",
+   "label": "Matthew · about today’s writing"
+  }
+ }
+}
