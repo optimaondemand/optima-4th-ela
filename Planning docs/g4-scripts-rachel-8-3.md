@@ -9,7 +9,7 @@
 
 The opening paragraph under the greeting is also in her voice (text only):
 
-> Rachel Lynde here, and I don’t mind telling you I’ve been laid up with the grippe, or I’d have been over to Green Gables long ago. Imagine Marilla Cuthbert taking in an orphan, and a girl at that! I’ve heard such things. Well, I mean to see this child with my own two eyes and judge for myself. Somebody has to, and it may as well be me.
+> Rachel Lynde here. I’d have been over to Green Gables long ago if the grippe hadn’t laid me up. Marilla Cuthbert, taking in an orphan at her age, and a girl at that! I’ve heard such things. Well, I mean to see this child with my own two eyes and make up my own mind. Somebody has to, and it may as well be me.
 
 | # | Plays at | Save as |
 |---|---|---|
@@ -31,63 +31,63 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `rachel\g4ela-8-3-welcome.mp3` — Warm-Up (in the greeting)
 
-> Good day to you. Mrs. Rachel Lynde here, and I’ll be guiding your lesson. I’m off to Green Gables at last to look over this orphan of Marilla’s. Today’s question is what makes a person’s faults easy to forgive, and what makes them hard to like. I see you’ll be tracking somebody’s temper today. I can’t think whose. And you’ll write your own belonging words, apostrophes and all.
+> Good day. Mrs. Rachel Lynde here, and I’m guiding your lesson. I’m off to Green Gables at last to have a look at this orphan of Marilla’s. Today’s question is what makes a person’s faults easy to forgive, and what makes them hard to like. I see you’ll be tracking somebody’s temper today. I can’t think whose. You’ll be writing your own belonging words, too, apostrophes and all.
 
 ## `rachel\g4ela-8-3-dol.mp3` — Warm-Up · Daily Oral Language
 
-> Now, this model sentence has my name at the end of it, and I’d like to know who’s been talking about me. Never mind. There are two kinds of little marks in today’s sentences. One kind squeezes two words into one. The other shows that something belongs to somebody. Your job is to tell them apart and put each where it goes. And capitals on names, mind. Mine especially.
+> Now, this model sentence has my name at the end of it, and I’d like to know who’s been talking about me. Never mind. Today’s sentences have two kinds of little marks in them. One squeezes two words into one. The other shows that something belongs to somebody. Tell them apart and put each where it goes. And names get capitals. Mine especially.
 
 ## `rachel\g4ela-8-3-guide1.mp3` — Word Study tab
 
-> Word study. Now, I pride myself on knowing what goes on under every roof in Avonlea, and between every pair of neighbours, too. So these two word parts suit me down to the ground. One means under and the other means between. Today you type them in yourself, then the week’s words, then some belonging words. Mind you check your work as you go. I always check mine.
+> Word study. I pride myself on knowing what goes on under every roof in Avonlea, and between every pair of neighbours besides, so these two word parts suit me. One means under and the other means between. You type them in yourself today, and after that come the week’s words and some belonging words. Check your work as you go. I always check mine.
 
 ## `rachel\g4ela-8-3-morphology.mp3` — Word Study · Morphology
 
-> Four words, each one missing its front part. Read the little description after each word first. It’s the best clue you’ll get. If the meaning has anything to do with being below, or smaller, or underneath, you know which part to reach for. If it’s about two people or two things with something going on in the middle, you’ll want the other one. Simple as that.
+> Four words, each missing its front part. Read the little description after each one before anything else. It’s the best clue you’ll get. If the meaning has to do with being below, or smaller, or underneath, you know which part to reach for. If it’s about something going on in the middle, between two people or two things, you want the other one. Simple as that.
 
 ## `rachel\g4ela-8-3-vocabulary.mp3` — Word Study · Vocabulary
 
-> There are four words in the bank and only three gaps, so one word won’t be used at all. Don’t let that fluster you. Read each sentence right through to the end, then ask what sort of word the gap is wanting. Try your choice in the sentence, out loud. If it sounds wrong, it is wrong. I’ve always said so, and I’ve seldom been mistaken.
+> Four words in the bank and only three gaps, so one won’t get used at all. Don’t let that fluster you. Read each sentence through to the end, then ask what sort of word the gap wants. Try your choice out loud. If it sounds wrong, it is wrong. I’ve always said so, and I’m seldom mistaken.
 
 ## `rachel\g4ela-8-3-grammar.mp3` — Word Study · Grammar
 
-> Every word in brackets is an owner, and you’re to show that it owns something. Before you type, look carefully at the word in the brackets. Is it one person or animal, or more than one? That decides where your apostrophe goes. And don’t go changing the word itself. Just give it what it needs. In my experience, most mistakes come from not looking properly.
+> Every word in brackets is an owner, and you’re to show that it owns something. Look hard at that word before you type. Is it one person or animal, or more than one? That decides where your apostrophe goes. Don’t go changing the word itself, either. Just give it what it needs. Most mistakes, in my experience, come from not looking properly.
 
 ## `rachel\g4ela-8-3-spelling.mp3` — Word Study · Spelling
 
-> This one’s trickier, and I do like a puzzle. Some gaps want more than one of something. Some want something that belongs. You’ll have to read the rest of the sentence to know which. Look at the word right after the gap. Is it a thing being owned? Then decide. People sprinkle those little marks about like pepper, and I call it a disgrace.
+> This one’s trickier, and I do like a puzzle. Some gaps want more than one of something, and some want something that belongs. You’ll have to read the rest of the sentence to tell which. Look at the word right after the gap. Is it a thing being owned? Then decide. People sprinkle those little marks about like pepper, and I call it a disgrace.
 
 ## `rachel\g4ela-8-3-guide2.mp3` — Reading tab
 
-> Here I am at Green Gables at last. Marilla says the child is out in the orchard. Now, this week’s watch is about having a temper, and having a reason. I’ve always said the two aren’t the same thing at all, whatever children may think. As you read, keep an eye on what sets a person off, and whether they’re right to be upset, even if they go about it wrong.
+> Here I am at Green Gables at last, and Marilla says the child is out in the orchard. This week’s watch is about having a temper and having a reason. Those aren’t the same thing at all, whatever children think. As you read, keep an eye on what sets a person off. Ask whether they’re right to be upset, even if they go about it the wrong way.
 
 ## `rachel\g4ela-8-3-wgrd.mp3` — Reading · What Good Readers Do
 
-> Here’s a thing I’ve noticed in all my years of watching my neighbours. Nobody changes in a straight line. They get better for a bit, and then somebody says the wrong thing, and back they go. Today, mark the moment somebody flares up, and write down what set it off. Then ask what they were guarding. People fight hardest over whatever hurts them most.
+> I’ve spent a good many years watching my neighbours, and I’ll tell you something. Nobody changes in a straight line. They get better for a while, then somebody says the wrong thing and back they go. Today, mark the moment somebody flares up, and write down what set it off. Then ask what they were guarding. People fight hardest over whatever hurts them most.
 
 ## `rachel\g4ela-8-3-read.mp3` — Reading · Read: Ch. 9
 
-> There are two places to stop today, and both of them come near the end, so don’t rush past them. The first asks who has the harder time waiting. The second asks about saying sorry, and why it might be the hardest thing of all. Stop at both, and think before you go on. And keep your book close. You’ll want it for the questions.
+> Two stops today, and they both come near the end, so don’t rush past them. The first asks who has the harder time waiting. The second is about saying sorry, and why that might be the hardest thing of all. Stop at both and have a think before you go on. Keep your book close, too. You’ll want it for the questions.
 
 ## `rachel\g4ela-8-3-rwm.mp3` — Reading · Read like a Writer
 
-> Well, I heard those words with my own ears, and I’ve never been spoken to so in all my life. But I’ll grant you this: you knew exactly who was talking. Try reading it with only the spoken words and nothing after them. It isn’t half so much, is it? When you write your own, keep the talking short, and let the body finish what the mouth began.
+> Well, I heard those words with my own ears, and I’ve never been spoken to like that in all my life. I’ll grant you this much, though. You know exactly who’s talking. Try reading just the spoken words with nothing after them. It isn’t half so much, is it? When you write your own, keep the talking short and let the body finish what the mouth began.
 
 ## `rachel\g4ela-8-3-guide3.mp3` — Assignment tab
 
-> Well! I’ve never been so insulted in all my born days. I only said what anybody could see, that she’s skinny and homely and her hair’s as red as carrots, and she flew at me, stamping and shouting. Marilla sent her to her room, and then took her part, if you please. I’ll not visit again in a hurry. Now, you tell me who was in the wrong.
+> Well! I’ve never been so insulted in all my born days. I only said what anybody could see, that she’s skinny and homely with hair as red as carrots, and she flew at me, stamping and shouting. Marilla sent her to her room and then took her part, if you please. I’ll not visit again in a hurry. You tell me who was in the wrong.
 
 ## `rachel\g4ela-8-3-chapter.mp3` — Assignment · Chapter Thinking
 
-> Three questions, and I’ve opinions on all of them. For the first, I want particulars. What did she do, and what did she say? For the second, Marilla scolded the child and then scolded me as well. Work out why she’d do both. The third is about an apology I still haven’t had. Why hasn’t she said it? I’d like to know that myself.
+> Three questions, and I’ve an opinion on every one. For the first, I want particulars. What did she do, and what did she say? For the second, Marilla scolded the child and then turned round and scolded me. Work out why she’d do both. The third is about an apology I still haven’t had. Why hasn’t she said it? I’d like to know that myself.
 
 ## `rachel\g4ela-8-3-wordconn.mp3` — Assignment · Word Study Connection
 
-> Your spelling answer is saved, so here’s how it fits. All week you’ve been deciding whether a word means more than one, or means belonging. It all comes down to one small mark. And one small remark of mine turned a whole visit upside down. Marilla says I was too hard on her. Well, I say a child ought to know the truth about her looks. You judge.
+> Your spelling answer is saved, so here’s how it fits. All week you’ve been deciding whether a word means more than one or means belonging, and it all comes down to one small mark. Well, one small remark of mine turned a whole visit upside down. Marilla says I was too hard on her. I say a child ought to know the truth about her looks. You judge.
 
 ## `rachel\g4ela-8-3-workshop.mp3` — Assignment · Writer’s Workshop
 
-> Today you’re to write one sentence about your character, with a belonging word in it. Something that’s theirs. A fear, a friend, a hope, a temper. I’ve learned more about people from what’s theirs than from anything they say about themselves. Take Anne Shirley. That temper of hers told me more in one minute than a week of chatter would have. Pick the one thing that tells the most.
+> Today you’re writing one sentence about your character with a belonging word in it, something that’s theirs. It might be a fear, or a friend, or a temper. I’ve always learned more about people from what’s theirs than from anything they tell me. Take Anne Shirley. That temper of hers told me more in one minute than a week of chatter would have. Pick the thing that tells the most.
 
 ---
 
