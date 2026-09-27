@@ -9,7 +9,7 @@
 
 The opening paragraph under the greeting is also in her voice (text only):
 
-> Well, I’ve made up my mind, and I haven’t told the child yet. There’ll be time enough for that. First things first. A girl in my house will be brought up properly: clothes folded, prayers said, manners minded. I don’t expect it to be difficult. Come along and see how she gets on.
+> I’ve made up my mind about the child, though I haven’t told her yet. There’s time enough for that. What matters now is bringing her up properly, and I’ve a fair idea how it’s done. You start with the plain things, like folding your clothes and saying your prayers. I don’t expect much trouble. Come and see how she gets on.
 
 | # | Plays at | Save as |
 |---|---|---|
@@ -31,63 +31,63 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `marilla\g4ela-8-2-welcome.mp3` — Warm-Up (in the greeting)
 
-> Marilla Cuthbert here again. The child is staying at Green Gables, though she doesn’t know it yet, and now her bringing-up begins. Today’s question is what you do when everybody around you knows something you were never taught. You’ll watch for the moment an old habit bends to a new way. And you’ll hunt for the little marks that show a thing belongs to somebody, tucked in among the plain plurals.
+> Marilla Cuthbert again. The child is staying at Green Gables, though she doesn’t know it yet, so it’s time her bringing-up began. Today’s question is what you do when everybody around you knows something you were never taught. Keep an eye out for an old habit starting to bend. And in word study, there are little marks that show a thing belongs to somebody, hiding among the plain plurals.
 
 ## `marilla\g4ela-8-2-wgrd.mp3` — Warm-Up · What Good Readers Do
 
-> Everybody has habits. I’ve kept mine for years, and I’m not ashamed of one of them. That child has habits of her own, picked up in other people’s houses. Today, name one of her old ways at the start. Then watch for the moment somebody asks her to do it differently, and see whether she bends. Mind the piece she won’t give up, though. That piece is worth writing down.
+> Everybody has habits. I’ve kept mine for years, and I’m not ashamed of a single one. That child picked hers up in other people’s houses. Start by naming one of her old ways. Then watch for the moment somebody asks her to do it differently, and see whether she bends. There’ll be a piece she won’t give up, though. Write that piece down.
 
 ## `marilla\g4ela-8-2-dol.mp3` — Warm-Up · Daily Oral Language
 
-> One of today’s sentences asks a question, and the other tells you something. The model shows you how a question ends, and it isn’t with a plain dot. In the one you’re fixing, somebody owns something, and it wants its mark. There are two names in it, too, and names stand tall. Work it out neatly before you check. I’d rather see it slow and right than quick and careless.
+> One of today’s sentences asks a question, and the other just tells you something. Look at how the question ends. It isn’t with a plain dot. In the one you’re fixing, somebody owns something, and it wants its mark. There are two names in it as well, and names get capitals. Do it neatly before you check. I’d rather see it slow and right than quick and careless.
 
 ## `marilla\g4ela-8-2-guide1.mp3` — Word Study tab
 
-> Word study again. The same two word parts as before, the one for under and the one for between, and today you’ll match them to what they mean. I’ve been thinking about between myself. A child who’s been passed between one house and the next all her life needs a steady place. That’s what bringing-up is for. So steady work, then. One match at a time.
+> Same two word parts as yesterday, the one for under and the one for between. Today you’re matching them to what they mean. I’ve been thinking about between myself. That child has spent her whole life passed between one house and the next, and what she needs is a steady place. That’s what bringing-up is for. So, steady work. One match at a time.
 
 ## `marilla\g4ela-8-2-morphology.mp3` — Word Study · Morphology
 
-> Four pieces today, and every one of them carries a meaning of its own. Two belong at the front of a word and two at the back. Don’t match by guesswork. Think of a word you already know with that piece in it, then ask what the piece is doing there. If the word you thought of makes sense with the meaning you’ve chosen, you’ve most likely got it right.
+> Four pieces today, each with a meaning of its own. Two go at the front of a word and two at the back. Don’t guess. Think of a word you already know that has the piece in it, and ask what the piece is doing there. If that word makes sense with the meaning you picked, you’ve most likely got it.
 
 ## `marilla\g4ela-8-2-vocabulary.mp3` — Word Study · Vocabulary
 
-> You met these four words yesterday, so there’s no excuse for forgetting them. Before you tap, say each word aloud and try to remember the sentence it came in. A word remembered with its sentence stays put. A word remembered all by itself wanders off. If one won’t come to you, leave it for last. The others will narrow it down. That’s only sensible.
+> You met all four of these words yesterday, so I’ll hear no excuses. Before you tap anything, say each word out loud and try to remember the sentence it came from. A word you remember along with its sentence tends to stay put. On its own, it wanders off. If one won’t come, leave it for last, and the others will narrow it down. That’s only sensible.
 
 ## `marilla\g4ela-8-2-grammar.mp3` — Word Study · Grammar
 
-> There’s more than one to find in this sentence, so don’t stop at the first. Plenty of the words end in s, and most of them own nothing at all. Ask of each one: does something belong to it? If it does, tap it. If it’s simply more than one of a thing, leave it be. Read right to the very end before you decide you’re done.
+> There’s more than one to find here, so don’t stop at the first. Plenty of these words end in s, and most of them don’t own a thing. Ask each one whether something belongs to it. If it does, tap it. If it’s only more than one of something, leave it alone. And read to the very end before you decide you’re finished.
 
 ## `marilla\g4ela-8-2-spelling.mp3` — Word Study · Spelling
 
-> Same pattern, a different sentence. It’s a busy one, with plenty of things in it and plenty of people owning them. Tap only the words that show belonging. The plain plurals are just more than one of something, and they’re to be left alone. When you’ve finished, go back over every word you tapped and ask it one question. What do you own?
+> Same pattern, different sentence, and it’s a busy one. Tap only the words that show belonging. The plain plurals are just more than one of something, so leave them be. When you think you’re done, go back over every word you tapped and ask it one question: what do you own?
 
 ## `marilla\g4ela-8-2-guide2.mp3` — Reading tab
 
-> I’ve never brought up a child before, so I suppose we’re both beginners. But there are things any child ought to know, and I mean to see she knows them. This week’s watch is about learning what nobody taught you. As you read, notice what the child does when she doesn’t know something. Plenty of people bluff. Plenty sulk. Watch which she does, if either.
+> I’ve never brought up a child before, so I suppose the two of us are beginners. Still, there are things any child ought to know, and I mean to see she learns them. This week’s watch is about learning what nobody taught you. While you read, notice what she does when she doesn’t know something. Plenty of people bluff and plenty sulk. See which she does, if either.
 
 ## `marilla\g4ela-8-2-read.mp3` — Reading · Read: Ch. 7 & 8
 
-> There’s one place to stop, right after the first chapter. Don’t skip it. It asks what one odd little moment tells you about how the child thinks of grown-ups. Then read the second chapter straight through. Watch where her attention wanders, and when it does, notice what it wanders off to. A child’s daydreams can tell you a good deal about what she’s been missing.
+> There’s one place to stop, just after the first chapter, and I don’t want it skipped. It asks what one odd little moment tells you about how she thinks of grown-ups. After that, read the second chapter straight through. Her attention wanders a good deal. When it does, notice where it goes. A child’s daydreams can tell you what she’s been missing.
 
 ## `marilla\g4ela-8-2-rwm.mp3` — Reading · Read like a Writer
 
-> Before you answer, try reading this sentence without its last word. Then read it again with the word put back. Notice what changes, and ask yourself why the author saved that word for the very end. When you write your own, don’t pile on describing words. One well-chosen word, put in the right place, does more work than a whole handful. I’ve always found that true of talking, too.
+> Before you answer, try reading this sentence without its last word, and then again with the word put back. Something changes. Ask yourself why the author saved that word for the end. When you write your own, don’t pile on describing words. One good word in the right place does more than a handful. I’ve found that’s true of talking, too.
 
 ## `marilla\g4ela-8-2-guide3.mp3` — Assignment tab
 
-> Well. I told the child to say her prayers, and she told me she never said any. Never! Nobody had troubled to teach her. So I’ve given her the Lord’s Prayer to learn, and she’s learning it. Then she said she’d love to call me Aunt Marilla. I said no. I’m not her aunt, and that’s that. Now it’s your turn. Say what you found, and prove it from the book.
+> Well. I told the child to say her prayers, and she told me she never said any. Never! Nobody had troubled to teach her. So I’ve given her the Lord’s Prayer to learn, and she’s learning it. Then she said she’d love to call me Aunt Marilla. I said no. I’m not her aunt, and that’s the end of it. Your turn. Tell me what you noticed, and show me where it’s written.
 
 ## `marilla\g4ela-8-2-chapter.mp3` — Assignment · Chapter Thinking
 
-> The first question wants the reason she gave for never praying, and there’s more than one part to it, so find them all. For the second, think about what a make-believe friend can give a lonely child that nothing else does. And the third. She wanted to call me something, and I said no. Think about the word she wanted, and why a child with no family would want it so badly.
+> The first question wants the reason she gave for never praying. There’s more than one part to it, so find them all. For the second, think what a make-believe friend gives a lonely child that nothing else can. The third is about me. She wanted to call me something, and I said no. Think about the word she asked for, and why a child with no family would want it so badly.
 
 ## `marilla\g4ela-8-2-wordconn.mp3` — Assignment · Word Study Connection
 
-> Your grammar answer is saved, so here’s how it fits. All week, a little mark has shown that something belongs to somebody. Well, that child asked to call me Aunt. That’s a word that tells the world who you belong to, and who belongs to you. I told her I don’t hold with calling people names that don’t belong to them. I had my reasons. You may judge whether they were good ones.
+> Your grammar answer is saved, so let’s join it up. All week a little mark has been showing that something belongs to somebody. Well, that child asked to call me Aunt. It’s a word that tells people who you belong to. I told her I don’t hold with calling people names that don’t belong to them. I had my reasons. You can judge whether they were good ones.
 
 ## `marilla\g4ela-8-2-workshop.mp3` — Assignment · Writer’s Workshop
 
-> Today your character is alone, with nobody to talk to but themselves. I’d have thought that meant quiet. It doesn’t, not with that child. Left to herself, she made a friend of her own reflection in a bookcase door, and another of an echo in a little green valley. What would your character imagine, if nobody was watching? Let them wish for something in their own words.
+> Today your character is alone, with nobody to talk to but themselves. I’d have thought that meant quiet. Not with that child. Left to herself, she made a friend of her own reflection in a bookcase door, and another out of an echo in a little green valley. What would your character imagine if nobody was watching? Let them wish for something, in their own words.
 
 ---
 
