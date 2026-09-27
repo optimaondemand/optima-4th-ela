@@ -9,7 +9,7 @@
 
 The opening paragraph under the greeting is also in her voice (text only):
 
-> Rachel Lynde here. I’d have been over to Green Gables long ago if the grippe hadn’t laid me up. Marilla Cuthbert, taking in an orphan at her age, and a girl at that! I’ve heard such things. Well, I mean to see this child with my own two eyes and make up my own mind. Somebody has to, and it may as well be me.
+> Rachel Lynde here. I’d have been over to Green Gables long ago if the grippe hadn’t laid me up. Marilla has taken in an orphan, of all things! Well, I mean to see her for myself. And while I’m at it, I’ll help you through your lesson, because I’ve never yet seen a job that couldn’t be done better with a little good advice. Come along.
 
 | # | Plays at | Save as |
 |---|---|---|
@@ -31,63 +31,63 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `rachel\g4ela-8-3-welcome.mp3` — Warm-Up (in the greeting)
 
-> Good day. Mrs. Rachel Lynde here, and I’m guiding your lesson. I’m off to Green Gables at last to have a look at this orphan of Marilla’s. Today’s question is what makes a person’s faults easy to forgive, and what makes them hard to like. I see you’ll be tracking somebody’s temper today. I can’t think whose. And you’ll be writing words that show who owns what, apostrophes and all.
+> Mrs. Rachel Lynde here, and I’ll keep you on track today, never fear. Today’s question is what makes a person’s faults easy to forgive, and what makes them hard to like. I see you’ll be tracking somebody’s temper. I can’t think whose. You’ll be typing possessive words yourself, too, apostrophes and all. Mind you read every sentence right to the end before you answer.
 
 ## `rachel\g4ela-8-3-dol.mp3` — Warm-Up · Daily Oral Language
 
-> Now, this model sentence has my name at the end of it, and I’d like to know who’s been talking about me. Never mind. There are apostrophes in both of today’s sentences, and they aren’t all doing the same job. Some stand in for letters that have been left out. Some show that a thing belongs to somebody. Work out which is which. And capitals on names, mind. Mine especially.
+> Copy the sentence you’re fixing onto paper first, just as it’s printed. Then go hunting for apostrophes, one at a time. Each time you add one, ask yourself a question. Has a letter been left out here, or does somebody own something? Both need one, but for different reasons. Look at how the model writes Mrs., too. And capitals on names, mind. Mine especially.
 
 ## `rachel\g4ela-8-3-guide1.mp3` — Word Study tab
 
-> Word study. I pride myself on knowing what goes on under every roof in Avonlea, and between every pair of neighbours besides, so these two word parts suit me. One means under and the other means between. You type them in yourself today, then the week’s words, then some owners that need their apostrophes. Check your work as you go. I always check mine.
+> You type every answer yourself today, so here’s my best advice. After each one, read the whole sentence back to yourself before you move on. You’ll catch half your own mistakes that way, I promise you. I always read a letter over twice before I send it. It’s saved me more embarrassment than I can tell you.
 
 ## `rachel\g4ela-8-3-morphology.mp3` — Word Study · Morphology
 
-> Four words, each missing its front part. Read the little description after each one before anything else. It’s the best clue you’ll get. If the meaning has to do with being below, or smaller, or underneath, you know which part to reach for. If it’s about something going on in the middle, between two people or two things, you want the other one. Simple as that.
+> Read the clue after each word first. It tells you what the whole word means, and that’s your biggest help. Then ask yourself, is this about something under, or something between? Try the word out loud both ways if you’re not sure. One of them will sound like a word you’ve heard a hundred times. The other won’t sound like anything at all.
 
 ## `rachel\g4ela-8-3-vocabulary.mp3` — Word Study · Vocabulary
 
-> Four words in the bank and only three gaps, so one won’t get used at all. Don’t let that fluster you. Read each sentence through to the end, then ask what sort of word the gap wants. Try your choice out loud. If it sounds wrong, it is wrong. I’ve always said so, and I’m seldom mistaken.
+> Do the gap you’re surest of first, and cross that word off in your head. Now you’ve only three to choose from for the next one, and two for the last. That spare word is there to catch you out, so don’t let it. If two words both seem to fit, say the sentence out loud with each. Your ear usually knows.
 
 ## `rachel\g4ela-8-3-grammar.mp3` — Word Study · Grammar
 
-> Every word in brackets is an owner, and you’re to show that it owns something. Look hard at that word before you type. Is it one person or animal, or more than one? That decides where your apostrophe goes. Don’t go changing the word itself, either. Just give it what it needs. Most mistakes, in my experience, come from not looking properly.
+> Before you type, count the owners. Is there one, or more than one? Hold up a finger for each if it helps. Once you know how many, you know where the apostrophe goes. If you’ve forgotten how that works, go back to what the lesson taught you on the first day. There’s no shame in checking. I check everything, twice.
 
 ## `rachel\g4ela-8-3-spelling.mp3` — Word Study · Spelling
 
-> This one’s trickier, and I do like a puzzle. Some gaps want more than one of something, and some want something that belongs. You’ll have to read the rest of the sentence to tell which. Look at the word right after the gap. Is it a thing being owned? Then decide. People scatter apostrophes about like pepper, and I call it a disgrace.
+> This one’s a real puzzle, and I do like a puzzle. Some gaps want more than one of something and some want an owner. Here’s how to tell. Read past the gap to the next word. Could that next thing belong to it? Then you want an owner. If not, you just want more than one. People scatter apostrophes about like pepper, and I call it a disgrace.
 
 ## `rachel\g4ela-8-3-guide2.mp3` — Reading tab
 
-> Here I am at Green Gables at last, and Marilla says the child is out in the orchard. This week’s watch is about having a temper and having a reason. Those aren’t the same thing at all, whatever children think. As you read, keep an eye on what sets a person off. Ask whether they’re right to be upset, even if they go about it the wrong way.
+> Here I am at Green Gables at last. Marilla says the child is out in the orchard. This week’s watch is about having a temper and having a reason. Here’s how to keep track of it. Whenever somebody gets upset, ask two things. What set them off? And were they right to be upset? You can say yes to that even if they behaved badly.
 
 ## `rachel\g4ela-8-3-wgrd.mp3` — Reading · What Good Readers Do
 
-> I’ve spent a good many years watching my neighbours, and I’ll tell you something. Nobody changes in a straight line. They get better for a while, then somebody says the wrong thing and back they go. Today, mark the moment somebody flares up, and write down what set it off. Then ask what they were guarding. People fight hardest over whatever hurts them most.
+> Here’s a trick I’ve learned from years of watching my neighbours. When somebody flares up, don’t just look at the shouting. Look at the line just before it. Whatever was said right there is nearly always the cause. So when you reach a flare-up, stop, go back a few lines, and find what set it off. Then ask what they were protecting.
 
 ## `rachel\g4ela-8-3-read.mp3` — Reading · Read: Ch. 9
 
-> Two stops today, and they both come near the end, so don’t rush past them. The first asks who has the harder time waiting. The second is about saying sorry, and why that might be the hardest thing of all. Stop at both and have a think before you go on. Keep your book close, too. You’ll want it for the questions.
+> Read both stopping questions now, before you begin. Then you’ll know what to look for. They both come near the end of the chapter, so you can read the first part straight through. When you reach the first stop, don’t just think a quick answer. Think of a reason, too. Keep your book open when you’re done. You’ll want it for the questions.
 
 ## `rachel\g4ela-8-3-rwm.mp3` — Reading · Read like a Writer
 
-> Well, I heard those words with my own ears, and I’ve never been spoken to like that in all my life. I’ll grant you this much, though. You know exactly who’s talking. Try reading just the spoken words with nothing after them. It isn’t half so much, is it? When you write your own, keep the talking short and let the body finish what the mouth began.
+> I heard those words with my own ears, so I know how they sounded. In the first box, just tell me plainly what’s happening. In the second, look at everything after the words she shouts. What is her body doing, and why put it in? For the third, think of somebody you know with a temper, and write one line in their voice using the pattern.
 
 ## `rachel\g4ela-8-3-guide3.mp3` — Assignment tab
 
-> Well! I’ve never been so insulted in all my born days. I only said what anybody could see, that she’s skinny and homely with hair as red as carrots, and she flew at me, stamping and shouting. Marilla sent her to her room and then took her part, if you please. I’ll not visit again in a hurry. You tell me who was in the wrong.
+> Well! I’ve never been so insulted in all my born days. I only said what anybody could see, that she’s skinny and homely with hair as red as carrots, and she flew at me, stamping and shouting. Marilla took her part, if you please. Now, answer these questions, and quote the book. I want proof, written down, of who was in the wrong.
 
 ## `rachel\g4ela-8-3-chapter.mp3` — Assignment · Chapter Thinking
 
-> Three questions, and I’ve an opinion on every one. For the first, I want particulars. What did she do, and what did she say? For the second, Marilla scolded the child and then turned round and scolded me. Work out why she’d do both. The third is about an apology I still haven’t had. Why hasn’t she said it? I’d like to know that myself.
+> For the first question, go back and find the shouting. Copy two things exactly as they’re printed, one she did and one she said. For the second, find what Marilla said to me after the child went upstairs. Read it twice. It surprised me. For the third, you’ll need what the child told Marilla, because she certainly told me nothing. Look for her reasons.
 
 ## `rachel\g4ela-8-3-wordconn.mp3` — Assignment · Word Study Connection
 
-> Your spelling answer is saved, so here’s how it fits. All week you’ve been deciding whether a word means more than one or means belonging, and it all comes down to one apostrophe. Well, one remark of mine turned a whole visit upside down. Marilla says I was too hard on her. I say a child ought to know the truth about her looks. You judge.
+> Your spelling answer is saved, and it’ll show up with your other work. Read it over once before you hand it in, and check every apostrophe has a reason to be there. Here’s how it fits. All week you’ve been deciding what one apostrophe means. Well, one remark of mine turned a whole visit upside down. Small things matter. You judge whether mine did.
 
 ## `rachel\g4ela-8-3-workshop.mp3` — Assignment · Writer’s Workshop
 
-> Today you’re writing one sentence about your character that shows something belongs to them. It might be a fear, or a friend, or a temper. I’ve always learned more about people from what’s theirs than from anything they tell me. Take Anne Shirley. That temper of hers told me more in one minute than a week of chatter would have. Pick the thing that tells the most.
+> You’re to write one sentence about your character, showing something that belongs to them. Here’s how I’d choose. If they had to leave home in a hurry, what would they grab first? That’s theirs, and it tells you who they are. Put the owner’s name in front, with its apostrophe, and there’s your sentence. That child’s would be her temper, I expect.
 
 ---
 
