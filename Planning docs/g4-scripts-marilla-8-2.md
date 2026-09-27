@@ -31,7 +31,7 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `marilla\g4ela-8-2-welcome.mp3` — Warm-Up (in the greeting)
 
-> Marilla Cuthbert again. The child is staying at Green Gables, though she doesn’t know it yet, so it’s time her bringing-up began. Today’s question is what you do when everybody around you knows something you were never taught. Keep an eye out for an old habit starting to bend. And in word study, there are little marks that show a thing belongs to somebody, hiding among the plain plurals.
+> Marilla Cuthbert again. The child is staying at Green Gables, though she doesn’t know it yet, so it’s time her bringing-up began. Today’s question is what you do when everybody around you knows something you were never taught. Keep an eye out for an old habit starting to bend. And in word study, you’ll be picking out the words whose apostrophe shows they own something, hidden among the plain plurals.
 
 ## `marilla\g4ela-8-2-wgrd.mp3` — Warm-Up · What Good Readers Do
 
@@ -39,7 +39,7 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `marilla\g4ela-8-2-dol.mp3` — Warm-Up · Daily Oral Language
 
-> One of today’s sentences asks a question, and the other just tells you something. Look at how the question ends. It isn’t with a plain dot. In the one you’re fixing, somebody owns something, and it wants its mark. There are two names in it as well, and names get capitals. Do it neatly before you check. I’d rather see it slow and right than quick and careless.
+> One of today’s sentences asks a question, and the other just tells you something. Look at how the question ends. It isn’t with a plain dot. In the one you’re fixing, somebody owns something, and that needs an apostrophe. There are two people’s names in it as well, and a name begins with a capital. Do it neatly before you check. I’d rather see it slow and right than quick and careless.
 
 ## `marilla\g4ela-8-2-guide1.mp3` — Word Study tab
 
@@ -47,7 +47,7 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `marilla\g4ela-8-2-morphology.mp3` — Word Study · Morphology
 
-> Four pieces today, each with a meaning of its own. Two go at the front of a word and two at the back. Don’t guess. Think of a word you already know that has the piece in it, and ask what the piece is doing there. If that word makes sense with the meaning you picked, you’ve most likely got it.
+> Four bits of words today, and each has a meaning of its own. Two go at the front of a word and two at the back. Don’t guess. Think of a word you already know that has one of them in it, and ask what it’s doing there. If that word makes sense with the meaning you picked, you’ve most likely got it.
 
 ## `marilla\g4ela-8-2-vocabulary.mp3` — Word Study · Vocabulary
 
@@ -83,7 +83,7 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `marilla\g4ela-8-2-wordconn.mp3` — Assignment · Word Study Connection
 
-> Your grammar answer is saved, so let’s join it up. All week a little mark has been showing that something belongs to somebody. Well, that child asked to call me Aunt. It’s a word that tells people who you belong to. I told her I don’t hold with calling people names that don’t belong to them. I had my reasons. You can judge whether they were good ones.
+> Your grammar answer is saved, so let’s join it up. All week an apostrophe has been showing that something belongs to somebody. Well, that child asked to call me Aunt. It’s a word that tells people who you belong to. I told her I don’t hold with calling people names that don’t belong to them. I had my reasons. You can judge whether they were good ones.
 
 ## `marilla\g4ela-8-2-workshop.mp3` — Assignment · Writer’s Workshop
 
