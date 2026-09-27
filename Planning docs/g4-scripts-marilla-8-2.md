@@ -9,7 +9,7 @@
 
 The opening paragraph under the greeting is also in her voice (text only):
 
-> I’ve made up my mind about the child, though I haven’t told her yet. There’s time enough for that. What matters now is bringing her up properly, and I’ve a fair idea how it’s done. You start with the plain things, like folding your clothes and saying your prayers. I don’t expect much trouble. Come and see how she gets on.
+> I’ve made up my mind about the child, though I haven’t told her yet. Now her bringing-up begins, and I mean to do it properly. I’ll be beside you through this lesson, too. When something puzzles you, stop and read it again, slowly. That’s what I’ll be telling her, and it’s good advice for anybody. Come and see how she gets on.
 
 | # | Plays at | Save as |
 |---|---|---|
@@ -31,63 +31,63 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `marilla\g4ela-8-2-welcome.mp3` — Warm-Up (in the greeting)
 
-> Marilla Cuthbert again. The child is staying at Green Gables, though she doesn’t know it yet, so it’s time her bringing-up began. Today’s question is what you do when everybody around you knows something you were never taught. Keep an eye out for an old habit starting to bend. And in word study, you’ll be picking out the words whose apostrophe shows they own something, hidden among the plain plurals.
+> Marilla Cuthbert again, and I’ll be at your elbow all lesson. Today’s question is what you do when everybody around you knows something you were never taught. That’s a hard spot to be in, so don’t rush it. While you read, keep an eye out for an old habit starting to bend. And in word study, you’ll be hunting for the words whose apostrophe shows they own something.
 
 ## `marilla\g4ela-8-2-wgrd.mp3` — Warm-Up · What Good Readers Do
 
-> Everybody has habits. I’ve kept mine for years, and I’m not ashamed of a single one. That child picked hers up in other people’s houses. Start by naming one of her old ways. Then watch for the moment somebody asks her to do it differently, and see whether she bends. There’ll be a piece she won’t give up, though. Write that piece down.
+> Here’s how I’d go about it. Before you start the chapter, settle in your head how that child has always done things, in other people’s houses. One plain habit will do. Then, as you read, watch for somebody asking her to do it differently. Does she go along with it? Keep hold of the one thing she won’t give up. You needn’t write it. Just carry it with you.
 
 ## `marilla\g4ela-8-2-dol.mp3` — Warm-Up · Daily Oral Language
 
-> One of today’s sentences asks a question, and the other just tells you something. Look at how the question ends. It isn’t with a plain dot. In the one you’re fixing, somebody owns something, and that needs an apostrophe. There are two people’s names in it as well, and a name begins with a capital. Do it neatly before you check. I’d rather see it slow and right than quick and careless.
+> Tap the coloured words in the model first, and read what each one tells you. Then copy the second sentence onto paper just as it is, mistakes and all. Fix it one thing at a time. Start with the very first word. Then look for anybody who owns something, because that needs an apostrophe. Then the names. Check it once, at the end, and not before.
 
 ## `marilla\g4ela-8-2-guide1.mp3` — Word Study tab
 
-> Same two word parts as yesterday, the one for under and the one for between. Today you’re matching them to what they mean. I’ve been thinking about between myself. That child has spent her whole life passed between one house and the next, and what she needs is a steady place. That’s what bringing-up is for. So, steady work. One match at a time.
+> All four of today’s jobs are tapping jobs, matching or picking out words. If a match won’t go, don’t keep jabbing at it. Stop, read both sides again, and think. That child loses her way the minute her mind wanders, and so will you if you hurry. Go steadily. If one beats you, leave it and come back. The others will make it easier.
 
 ## `marilla\g4ela-8-2-morphology.mp3` — Word Study · Morphology
 
-> Four bits of words today, and each has a meaning of its own. Two go at the front of a word and two at the back. Don’t guess. Think of a word you already know that has one of them in it, and ask what it’s doing there. If that word makes sense with the meaning you picked, you’ve most likely got it.
+> Start with the two you’re surest of and match those first. Once they’re done, the other two have fewer places to go, and the answer often comes on its own. If you’re stuck, think of a long word you know that has the piece in it. Say that word out loud and ask what the piece is adding. Your own words will help you here.
 
 ## `marilla\g4ela-8-2-vocabulary.mp3` — Word Study · Vocabulary
 
-> You met all four of these words yesterday, so I’ll hear no excuses. Before you tap anything, say each word out loud and try to remember the sentence it came from. A word you remember along with its sentence tends to stay put. On its own, it wanders off. If one won’t come, leave it for last, and the others will narrow it down. That’s only sensible.
+> Try this before you tap anything. Cover the meanings with your hand and say what you think each word means. Then uncover them and match. If you get one wrong, a line will come up telling you why. Read it properly before you try again. That’s the bit that teaches you. Guessing until it turns green teaches you nothing at all.
 
 ## `marilla\g4ela-8-2-grammar.mp3` — Word Study · Grammar
 
-> There’s more than one to find here, so don’t stop at the first. Plenty of these words end in s, and most of them don’t own a thing. Ask each one whether something belongs to it. If it does, tap it. If it’s only more than one of something, leave it alone. And read to the very end before you decide you’re finished.
+> Go through the sentence one word at a time, with your finger if it helps. Every word ending in s, ask whether something belongs to it. Here’s a test I trust. See if you can turn it round with the word of. The buggy of Matthew. If that works, you’ve found an owner. If it only means more than one, leave it alone.
 
 ## `marilla\g4ela-8-2-spelling.mp3` — Word Study · Spelling
 
-> Same pattern, different sentence, and it’s a busy one. Tap only the words that show belonging. The plain plurals are just more than one of something, so leave them be. When you think you’re done, go back over every word you tapped and ask it one question: what do you own?
+> Tap the ones you’re sure of first, then go back for the ones you’re not. When you think you’re finished, go over what you’ve tapped. If one of them only means more than one of something, untap it. Then the question underneath wants one you tapped and one you left, so choose a pair you could explain to me without stumbling.
 
 ## `marilla\g4ela-8-2-guide2.mp3` — Reading tab
 
-> I’ve never brought up a child before, so I suppose the two of us are beginners. Still, there are things any child ought to know, and I mean to see she learns them. This week’s watch is about learning what nobody taught you. While you read, notice what she does when she doesn’t know something. Plenty of people bluff and plenty sulk. See which she does, if either.
+> I’ve never brought up a child before, so I suppose the two of us are beginners. This week’s watch is about learning what nobody taught you. If you come to a place where she’s plainly out of her depth, stop there a moment. Ask yourself what you’d do in her shoes. Would you own up, or bluff it? Then read on and see which she chooses.
 
 ## `marilla\g4ela-8-2-read.mp3` — Reading · Read: Ch. 7 & 8
 
-> There’s one place to stop, just after the first chapter, and I don’t want it skipped. It asks what one odd little moment tells you about how she thinks of grown-ups. After that, read the second chapter straight through. Her attention wanders a good deal. When it does, notice where it goes. A child’s daydreams can tell you what she’s been missing.
+> Read the stopping question now, before you start, so it’s already in your head. It comes at the end of the first chapter. Put a finger there, or a scrap of paper, so you don’t sail right past it. The second chapter is longer. If your mind wanders the way hers does, go back a paragraph. Nobody will think the worse of you.
 
 ## `marilla\g4ela-8-2-rwm.mp3` — Reading · Read like a Writer
 
-> Before you answer, try reading this sentence without its last word, and then again with the word put back. Something changes. Ask yourself why the author saved that word for the end. When you write your own, don’t pile on describing words. One good word in the right place does more than a handful. I’ve found that’s true of talking, too.
+> Three boxes, and each one wants something different. In the first, just say plainly what’s happening. Don’t dress it up. For the second, try the sentence without its last word, then with it. Say what the word changes. For the third, use the pattern under the box and put somebody you know into it. Somebody real is easier to write than somebody invented.
 
 ## `marilla\g4ela-8-2-guide3.mp3` — Assignment tab
 
-> Well. I told the child to say her prayers, and she told me she never said any. Never! Nobody had troubled to teach her. So I’ve given her the Lord’s Prayer to learn, and she’s learning it. Then she said she’d love to call me Aunt Marilla. I said no. I’m not her aunt, and that’s the end of it. Your turn. Tell me what you noticed, and show me where it’s written.
+> Well. I told the child to say her prayers, and she told me she never said any. Nobody had taught her. So she’s learning the Lord’s Prayer, and she asked if she might call me Aunt Marilla. I said no. Now, before you type a word, go back and find the places in the book you’ll need. Keep a finger on each one while you write.
 
 ## `marilla\g4ela-8-2-chapter.mp3` — Assignment · Chapter Thinking
 
-> The first question wants the reason she gave for never praying. There’s more than one part to it, so find them all. For the second, think what a make-believe friend gives a lonely child that nothing else can. The third is about me. She wanted to call me something, and I said no. Think about the word she asked for, and why a child with no family would want it so badly.
+> For the first question, find where she tells me why she never prays. There are two reasons, not one, so don’t stop at the first. For the second, think about what a real friend does for you, and what a make-believe one can’t. For the third, look hard at the word she wanted to call me. Start each answer with because, and it’ll keep you honest.
 
 ## `marilla\g4ela-8-2-wordconn.mp3` — Assignment · Word Study Connection
 
-> Your grammar answer is saved, so let’s join it up. All week an apostrophe has been showing that something belongs to somebody. Well, that child asked to call me Aunt. It’s a word that tells people who you belong to. I told her I don’t hold with calling people names that don’t belong to them. I had my reasons. You can judge whether they were good ones.
+> Your grammar answer is saved, and it’ll show up with the rest of your work. Read it over once before you hand it in. Did you explain why, and not just which? Here’s how it joins up. All week an apostrophe has been showing that something belongs to somebody. And that child asked to call me Aunt, a word for somebody you belong to.
 
 ## `marilla\g4ela-8-2-workshop.mp3` — Assignment · Writer’s Workshop
 
-> Today your character is alone, with nobody to talk to but themselves. I’d have thought that meant quiet. Not with that child. Left to herself, she made a friend of her own reflection in a bookcase door, and another out of an echo in a little green valley. What would your character imagine if nobody was watching? Let them wish for something, in their own words.
+> Here’s how I’d start. Put your character alone somewhere real, a bedroom or the top of the stairs. Then ask what they’d wish for, if nobody could hear. That child made friends out of a reflection and an echo when she was lonely. Your character might do something quite different. Borrow one of the sentence starters if you’re stuck. Write it in their words, not yours.
 
 ---
 
