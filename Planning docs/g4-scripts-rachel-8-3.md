@@ -31,15 +31,15 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `rachel\g4ela-8-3-welcome.mp3` — Warm-Up (in the greeting)
 
-> Good day. Mrs. Rachel Lynde here, and I’m guiding your lesson. I’m off to Green Gables at last to have a look at this orphan of Marilla’s. Today’s question is what makes a person’s faults easy to forgive, and what makes them hard to like. I see you’ll be tracking somebody’s temper today. I can’t think whose. You’ll be writing your own belonging words, too, apostrophes and all.
+> Good day. Mrs. Rachel Lynde here, and I’m guiding your lesson. I’m off to Green Gables at last to have a look at this orphan of Marilla’s. Today’s question is what makes a person’s faults easy to forgive, and what makes them hard to like. I see you’ll be tracking somebody’s temper today. I can’t think whose. And you’ll be writing words that show who owns what, apostrophes and all.
 
 ## `rachel\g4ela-8-3-dol.mp3` — Warm-Up · Daily Oral Language
 
-> Now, this model sentence has my name at the end of it, and I’d like to know who’s been talking about me. Never mind. Today’s sentences have two kinds of little marks in them. One squeezes two words into one. The other shows that something belongs to somebody. Tell them apart and put each where it goes. And names get capitals. Mine especially.
+> Now, this model sentence has my name at the end of it, and I’d like to know who’s been talking about me. Never mind. There are apostrophes in both of today’s sentences, and they aren’t all doing the same job. Some stand in for letters that have been left out. Some show that a thing belongs to somebody. Work out which is which. And capitals on names, mind. Mine especially.
 
 ## `rachel\g4ela-8-3-guide1.mp3` — Word Study tab
 
-> Word study. I pride myself on knowing what goes on under every roof in Avonlea, and between every pair of neighbours besides, so these two word parts suit me. One means under and the other means between. You type them in yourself today, and after that come the week’s words and some belonging words. Check your work as you go. I always check mine.
+> Word study. I pride myself on knowing what goes on under every roof in Avonlea, and between every pair of neighbours besides, so these two word parts suit me. One means under and the other means between. You type them in yourself today, then the week’s words, then some owners that need their apostrophes. Check your work as you go. I always check mine.
 
 ## `rachel\g4ela-8-3-morphology.mp3` — Word Study · Morphology
 
@@ -55,7 +55,7 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `rachel\g4ela-8-3-spelling.mp3` — Word Study · Spelling
 
-> This one’s trickier, and I do like a puzzle. Some gaps want more than one of something, and some want something that belongs. You’ll have to read the rest of the sentence to tell which. Look at the word right after the gap. Is it a thing being owned? Then decide. People sprinkle those little marks about like pepper, and I call it a disgrace.
+> This one’s trickier, and I do like a puzzle. Some gaps want more than one of something, and some want something that belongs. You’ll have to read the rest of the sentence to tell which. Look at the word right after the gap. Is it a thing being owned? Then decide. People scatter apostrophes about like pepper, and I call it a disgrace.
 
 ## `rachel\g4ela-8-3-guide2.mp3` — Reading tab
 
@@ -83,11 +83,11 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `rachel\g4ela-8-3-wordconn.mp3` — Assignment · Word Study Connection
 
-> Your spelling answer is saved, so here’s how it fits. All week you’ve been deciding whether a word means more than one or means belonging, and it all comes down to one small mark. Well, one small remark of mine turned a whole visit upside down. Marilla says I was too hard on her. I say a child ought to know the truth about her looks. You judge.
+> Your spelling answer is saved, so here’s how it fits. All week you’ve been deciding whether a word means more than one or means belonging, and it all comes down to one apostrophe. Well, one remark of mine turned a whole visit upside down. Marilla says I was too hard on her. I say a child ought to know the truth about her looks. You judge.
 
 ## `rachel\g4ela-8-3-workshop.mp3` — Assignment · Writer’s Workshop
 
-> Today you’re writing one sentence about your character with a belonging word in it, something that’s theirs. It might be a fear, or a friend, or a temper. I’ve always learned more about people from what’s theirs than from anything they tell me. Take Anne Shirley. That temper of hers told me more in one minute than a week of chatter would have. Pick the thing that tells the most.
+> Today you’re writing one sentence about your character that shows something belongs to them. It might be a fear, or a friend, or a temper. I’ve always learned more about people from what’s theirs than from anything they tell me. Take Anne Shirley. That temper of hers told me more in one minute than a week of chatter would have. Pick the thing that tells the most.
 
 ---
 
