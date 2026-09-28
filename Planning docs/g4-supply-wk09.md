@@ -1,6 +1,6 @@
 # Week 9 supply list — what you still owe
 
-Lessons 9.1–9.4 are built on `sparkle-layer` and pass the sweep. **They are not committed.** They work right now without anything below: each clip and plate appears on its own the moment its file is in the right folder. Nothing needs rebuilding.
+Lessons 9.1–9.4 are built, committed and pass the sweep. They work right now without anything below: each clip and plate appears on its own the moment its file is in the right folder. Nothing needs rebuilding.
 
 All paths are inside `C:\repos\optima-4th-ela`.
 
@@ -10,14 +10,14 @@ All paths are inside `C:\repos\optima-4th-ela`.
 |---|---|---|---|---|
 | 9.1 (Ch. 11) | Marilla | ✗ need `anne-ch11.png` | 15 (copia) | `Planning docs\g4-scripts-marilla-9-1.md` |
 | 9.2 (Ch. 12–13) | Diana — **new voice** | ✗ need `anne-ch12-13.png` | 15 (rwm) | `Planning docs\g4-scripts-diana-9-2.md` |
-| 9.3 (Ch. 14) | Marilla | ✗ need `anne-ch14.png` | 15 (rwm) | `Planning docs\g4-scripts-marilla-9-3.md` |
+| 9.3 (Ch. 14) | Anne | ✗ need `anne-ch14.png` | 15 (rwm) | `Planning docs\g4-scripts-anne-9-3.md` |
 | 9.4 (Ch. 15) | Gilbert — **new voice** | ✗ need `anne-ch15.png` | 14 | `Planning docs\g4-scripts-gilbert-9-4.md` |
 
 **59 audio clips and four plates.** Copia is on 9.1 only. RWM is on 9.2 and 9.3. 9.4 has neither. No poetry clips anywhere (the shipped By Heart card covers days 2 and 4).
 
 ## Where the files go
 
-- **Audio:** `assets\audio\guide\<folder>\<filename>.mp3` — folders `marilla`, `diana`, `gilbert`
+- **Audio:** `assets\audio\guide\<folder>\<filename>.mp3` — folders `marilla`, `diana`, `anne`, `gilbert`
 - **Video (optional):** the same filename as `.mp4` in `assets\video\guide\<folder>\`. A `.jpg` with the same name is its thumbnail.
 - **Plates:** `assets\plates\<filename>.png`
 - Each file stays hidden until it exists. If both an mp3 and an mp4 exist, both show. A misspelled name shows no error; the clip just never appears, so copy the names exactly. The manifests for the rename helper are in `tools\guide-manifest-<folder>-9-<d>.csv`.
@@ -43,11 +43,11 @@ welcome · wgrd · dol · guide1 · morphology · vocabulary · grammar · spell
 
 Each as `assets\audio\guide\diana\g4ela-9-2-<slot>.mp3`
 
-### 9.3 — Marilla, folder `marilla`
+### 9.3 — Anne, folder `anne` (the same Anne voice as 7.4)
 
 welcome · dol · guide1 · morphology · vocabulary · grammar · spelling · guide2 · wgrd · read · rwm · guide3 · chapter · wordconn · workshop
 
-Each as `assets\audio\guide\marilla\g4ela-9-3-<slot>.mp3`
+Each as `assets\audio\guide\anne\g4ela-9-3-<slot>.mp3`
 
 ### 9.4 — Gilbert, folder `gilbert`
 
@@ -89,7 +89,7 @@ The day's question is what inside Anne caused the slate to break on Gilbert's he
 
 Worth a look before students reach them:
 
-- **Epigraphs on 9.1, 9.2 and 9.3** were replaced with exact lines from the same chapter (the printed ones were altered or invented; see the drift list in the chat). 9.4's was already exact.
+- **Curriculum fixes (own commit, `7050883`).** The 14 slips from the drift list are fixed in the pre-sparkle markup: real DOL models on all four days (9.1's fix-it sentence changed to match: "anne sat on the bed looking sadly at the plain sleeves"), exact epigraphs, exact vocabulary sentences on 9.1, a Ch. 1–11 Growing-Up Watch on 9.1, "hat" for "brooch" in the 9.1 noun sort, Mrs. Barry not Mrs. Lynde on 9.2, a new 9.2 grammar spotter sentence (abstract nouns: friendship, happiness, hope), 9.3's grammar fill without the ridgepole or Josie Pye, a 9.3 vocab cloze that doesn't preview Ch. 15, 9.3 Pause labels in order, and "Week 9" on 9.4.
 - **Second DOL sentence on each day.** Mine, in the same error pattern as the printed one. 9.3's ("Marilla packed bread, cookies, and a pie into the basket") and 9.4's ("Ouch!" Gilbert yelled) are practice sentences, not quotes.
 - **Copia seed on 9.1** is Montgomery's exact sentence ("Anne clasped her hands and looked at the dresses"); the three worked examples are mine.
 - **Hint ladders** (9.1 morphology; all 15 blanks on 9.3) and **miss lines** (9.1 vocabulary match and both sorts; 9.2 vocabulary match). Derived from the answers on the page.
@@ -99,4 +99,3 @@ Worth a look before students reach them:
 
 - The welcome clip only plays for a student who has a profile. The profile is made on day 1.
 - The sweep's match/sort miss probes are pinned to week 7, so they print "(none)" here; I tested the week 9 miss lines with a separate script and they fire.
-- Nothing is committed. `git status` shows the four lessons, four data files, four manifests and four scripts docs as changes on `sparkle-layer`. There is also a stale `.git/index.lock` from a read-only git call, which will block a commit until it is deleted.

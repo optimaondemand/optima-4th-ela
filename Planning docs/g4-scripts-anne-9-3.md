@@ -67,7 +67,7 @@ The opening paragraph under the greeting is also in his voice (text only):
 
 ## `anne\g4ela-9-3-read.mp3` — Reading · Read: Ch. 14
 
-> Two stops, and mind the labels. The one printed first belongs at the end of the chapter, and the second belongs partway through, so take the partway one first. It asks whether getting what you want by telling somebody what they already believe really counts. The other you take when you’ve finished. Keep your book open beside you. The questions want the chain of events in order.
+> Two stops. The first comes partway through, right after somebody makes a confession, and it asks what that tells you about her and the truth. Don’t decide too quickly. The second is for when you’ve finished, and it asks whether getting what you want by telling somebody what they already believe really counts. Keep your book open beside you. The questions want the chain of events in order.
 
 ## `anne\g4ela-9-3-rwm.mp3` — Reading · Read like a Writer
 
