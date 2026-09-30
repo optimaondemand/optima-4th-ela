@@ -26,7 +26,7 @@ Her lines in Ch. 19, the ones the clips are built on (it is her only chapter so 
 
 The opening paragraph under the greeting is also in her voice (text only, 65 words):
 
-> I am Miss Josephine Barry, of Charlottetown, and I have come to Avonlea to stay a month with my nephew’s family. I have travelled all day, which at my time of life is not nothing, and I have been put in the spare-room bed, which is where a guest belongs. I understand there is a great-niece. I dare say I shall meet her at breakfast.
+> I am Miss Josephine Barry, of Charlottetown, and I have come to Avonlea to stay a month with my nephew’s family. I have traveled all day, which at my time of life is not nothing, and I have been put in the spare-room bed, which is where a guest belongs. I understand there is a great-niece. I dare say I shall meet her at breakfast.
 
 | # | Plays at | Save as |
 |---|---|---|
@@ -52,7 +52,7 @@ The opening paragraph under the greeting is also in her voice (text only, 65 wor
 
 ## `josephine\g4ela-10-3-dol.mp3` — Warm-Up · Daily Oral Language
 
-> The sentence you are to mend has me in it, spelt without a single capital letter. I never. The top sentence shows you how it ought to go: a name with its capital, a full stop at the end. The bottom one is two thoughts run together. Find where the first one ends and put a period there. Then the capitals. Every name gets one, and mine has two parts, so it gets two.
+> The sentence you are to mend has me in it, spelled without a single capital letter. I never. The top sentence shows you how it ought to go: a name with its capital, a full stop at the end. The bottom one is two thoughts run together. Find where the first one ends and put a period there. Then the capitals. Every name gets one, and mine has two parts, so it gets two.
 
 ## `josephine\g4ela-10-3-guide1.mp3` — Word Study tab
 
@@ -80,7 +80,7 @@ The opening paragraph under the greeting is also in her voice (text only, 65 wor
 
 ## `josephine\g4ela-10-3-wgrd.mp3` — Reading · What Good Readers Do
 
-> The page appears to think something is going to happen to me. I know only that I have travelled all day and gone to bed. When you reach the part where two people fall out, do what the box says. Write down what each one actually had in front of them, then find the piece one of them could not know. Judge nobody until you have done that. I did, and I was wrong.
+> The page appears to think something is going to happen to me. I know only that I have traveled all day and gone to bed. When you reach the part where two people fall out, do what the box says. Write down what each one actually had in front of them, then find the piece one of them could not know. Judge nobody until you have done that. I did, and I was wrong.
 
 ## `josephine\g4ela-10-3-read.mp3` — Reading · Read: Ch. 19
 

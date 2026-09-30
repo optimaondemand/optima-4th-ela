@@ -25,7 +25,7 @@ All paths are inside `C:\repos\optima-4th-ela`.
 ## Two new voices to pick
 
 - **Diana (folder `diana`).** A girl of about eleven, bright, loyal, a little giggly. She laughs before she speaks, says *awfully* and *jolly*, and is easily delighted. Look for a young, light, warm girl's voice with a smile in it, quicker than Anne's will be, never breathy or babyish.
-- **Gilbert (folder `gilbert`).** A boy of about thirteen, easy and teasing. Confident, quick, a grin in the voice, never mean. He says *awful* for *very* ("awful sorry") and *honest* for *honestly*. Look for a real boy's voice, not a man doing a boy, with a light, unhurried, good-humoured delivery. In weeks 13–14 he needs to sound steadier, so pick a voice that can do both.
+- **Gilbert (folder `gilbert`).** A boy of about thirteen, easy and teasing. Confident, quick, a grin in the voice, never mean. He says *awful* for *very* ("awful sorry") and *honest* for *honestly*. Look for a real boy's voice, not a man doing a boy, with a light, unhurried, good-humored delivery. In weeks 13–14 he needs to sound steadier, so pick a voice that can do both.
 
 Settings for every voice: Eleven Multilingual v2 · Stability 55 · Similarity 75 · Style 0–10 · Speaker boost on.
 
@@ -59,13 +59,13 @@ Each as `assets\audio\guide\gilbert\g4ela-9-4-<slot>.mp3`
 
 Paste this house-style block in front of each prompt:
 
-> Pen-and-ink line drawing with a light watercolor wash, in the manner of early-twentieth-century English children's book illustration — confident contour line, cross-hatching for shadow rather than solid black, colour laid on thin and slightly outside the line the way a real wash sits on paper. Warm sepia-black ink, never pure black. Muted, aged palette: sage green, dusty rose, soft ochre, faded slate blue, with one restrained note of antique gold. No modern saturation, no gradients, no gloss, no drop shadow, no vector-flat shapes, no digital outline glow. Transparent background — the artwork must sit directly on cream paper with no card, box, frame, panel or backing colour of any kind. Generous empty margin around the subject. No text, no lettering, no numerals, no signature. Nothing cropped at the edge.
+> Pen-and-ink line drawing with a light watercolor wash, in the manner of early-twentieth-century English children's book illustration — confident contour line, cross-hatching for shadow rather than solid black, color laid on thin and slightly outside the line the way a real wash sits on paper. Warm sepia-black ink, never pure black. Muted, aged palette: sage green, dusty rose, soft ochre, faded slate blue, with one restrained note of antique gold. No modern saturation, no gradients, no gloss, no drop shadow, no vector-flat shapes, no digital outline glow. Transparent background — the artwork must sit directly on cream paper with no card, box, frame, panel or backing color of any kind. Generous empty margin around the subject. No text, no lettering, no numerals, no signature. Nothing cropped at the edge.
 
 ### `anne-ch11.png`, lesson 9.1
 
 The day's question is how the author shows desire and disappointment at once, and the quote strip now reads *"But I'd rather look ridiculous when everybody else does than plain and sensible all by myself."*
 
-> A small, plain upstairs bedroom under a sloping gable roof, with one window letting in soft daylight. Three new dresses are spread out side by side on a narrow white bed: one snuff-brown gingham, one black-and-white check, one stiff dull blue, every one of them with tight, plain, narrow sleeves. A thin red-haired girl of eleven in a too-small dress stands at the foot of the bed with her hands clasped, looking down at them, her face caught between politeness and disappointment. A tall, thin, grey-haired woman in a dark dress stands in the doorway with her arms folded, waiting for thanks. Cool slate shadow in the corners, warm ochre light on the dresses. The sleeves are the point of the picture.
+> A small, plain upstairs bedroom under a sloping gable roof, with one window letting in soft daylight. Three new dresses are spread out side by side on a narrow white bed: one snuff-brown gingham, one black-and-white check, one stiff dull blue, every one of them with tight, plain, narrow sleeves. A thin red-haired girl of eleven in a too-small dress stands at the foot of the bed with her hands clasped, looking down at them, her face caught between politeness and disappointment. A tall, thin, gray-haired woman in a dark dress stands in the doorway with her arms folded, waiting for thanks. Cool slate shadow in the corners, warm ochre light on the dresses. The sleeves are the point of the picture.
 
 ### `anne-ch12-13.png`, lesson 9.2
 

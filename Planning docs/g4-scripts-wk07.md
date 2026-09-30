@@ -53,7 +53,7 @@ A new student sees the welcome only after they've entered their name, which happ
 
 ### `turn\g4ela-7-1-2.mp3` — opens Reading · recorded
 
-> Now open the book. Chapter one is mostly one woman at a window, watching a neighbour drive past in his good suit. Almost nothing happens. Everything gets set up. Read for what Mrs Rachel notices — and then notice what the narrator tells you that she never could. Those are two different voices, and they are both on the page.
+> Now open the book. Chapter one is mostly one woman at a window, watching a neighbor drive past in his good suit. Almost nothing happens. Everything gets set up. Read for what Mrs Rachel notices — and then notice what the narrator tells you that she never could. Those are two different voices, and they are both on the page.
 
 ### `turn\g4ela-7-1-3.mp3` — opens Assignment · recorded
 

@@ -4,7 +4,7 @@
 
 - **Save every clip in:** `C:\repos\optima-4th-ela\assets\audio\guide\gilbert\`
 - **Optional video:** same name, `.mp4`, in `C:\repos\optima-4th-ela\assets\video\guide\gilbert\` (a `.jpg` of the same name is its thumbnail). Each file stays hidden until it exists; if both exist, both show.
-- **Voice:** NEW. Gilbert Blythe: a boy of about thirteen, easy and teasing. Confident, quick, a grin in the voice, never mean. He says awful for very (“awful sorry”) and honest for honestly. Look for a real boy’s voice, not a man doing a boy, with a light, unhurried, good-humoured delivery; later in the unit he will need to sound steadier, so pick a voice that can do both. Settings as always: Eleven Multilingual v2 · Stability 55 · Similarity 75 · Style 0–10 · Speaker boost on.
+- **Voice:** NEW. Gilbert Blythe: a boy of about thirteen, easy and teasing. Confident, quick, a grin in the voice, never mean. He says awful for very (“awful sorry”) and honest for honestly. Look for a real boy’s voice, not a man doing a boy, with a light, unhurried, good-humored delivery; later in the unit he will need to sound steadier, so pick a voice that can do both. Settings as always: Eleven Multilingual v2 · Stability 55 · Similarity 75 · Style 0–10 · Speaker boost on.
 - No Read like a Writer box and no Copia, so 14 clips. Poetry stays off. Here What Good Readers Do sits on the Reading tab, after the Watch, so its clip plays there.
 
 The opening paragraph under the greeting is also in his voice (text only):
@@ -50,7 +50,7 @@ The opening paragraph under the greeting is also in his voice (text only):
 
 ## `gilbert\g4ela-9-4-grammar.mp3` — Word Study · Grammar
 
-> Somebody wrote a draft about the chapter and labelled the naming words. Some labels are wrong. Don’t trust them just because they sound sure. For each one, ask: could I drop this on my foot? If yes, it’s a thing, and check the label says so. If it’s a feeling, an idea, or a word for a bunch of people, it’s something else. Tap only the wrong ones. A right one tapped costs you.
+> Somebody wrote a draft about the chapter and labeled the naming words. Some labels are wrong. Don’t trust them just because they sound sure. For each one, ask: could I drop this on my foot? If yes, it’s a thing, and check the label says so. If it’s a feeling, an idea, or a word for a bunch of people, it’s something else. Tap only the wrong ones. A right one tapped costs you.
 
 ## `gilbert\g4ela-9-4-spelling.mp3` — Word Study · Spelling
 

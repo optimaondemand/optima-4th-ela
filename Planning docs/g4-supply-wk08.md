@@ -117,4 +117,4 @@ These are my wording, and worth a look before students reach them:
 ## Notes
 
 - The welcome clip only plays for a student who has a profile. The profile is made on day 1.
-- Curriculum fixes are in their own commits, separate from the sparkle commits. The 8.1 and 8.2 fixes landed inside the commit labelled "8.3" (`2514e2f`) because of a git lock clash with another session. The content is right; only the label is off.
+- Curriculum fixes are in their own commits, separate from the sparkle commits. The 8.1 and 8.2 fixes landed inside the commit labeled "8.3" (`2514e2f`) because of a git lock clash with another session. The content is right; only the label is off.

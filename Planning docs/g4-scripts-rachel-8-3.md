@@ -63,7 +63,7 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `rachel\g4ela-8-3-wgrd.mp3` — Reading · What Good Readers Do
 
-> Here’s a trick I’ve learned from years of watching my neighbours. When somebody flares up, don’t just look at the shouting. Look at the line just before it. Whatever was said right there is nearly always the cause. So when you reach a flare-up, stop, go back a few lines, and find what set it off. Then ask what they were protecting.
+> Here’s a trick I’ve learned from years of watching my neighbors. When somebody flares up, don’t just look at the shouting. Look at the line just before it. Whatever was said right there is nearly always the cause. So when you reach a flare-up, stop, go back a few lines, and find what set it off. Then ask what they were protecting.
 
 ## `rachel\g4ela-8-3-read.mp3` — Reading · Read: Ch. 9
 

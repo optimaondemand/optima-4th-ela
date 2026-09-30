@@ -39,7 +39,7 @@ The opening paragraph under the greeting is also in her voice (text only):
 
 ## `marilla\g4ela-8-2-dol.mp3` — Warm-Up · Daily Oral Language
 
-> Tap the coloured words in the model first, and read what each one tells you. Then copy the second sentence onto paper just as it is, mistakes and all. Fix it one thing at a time. Start with the very first word. Then look for anybody who owns something, because that needs an apostrophe. Then the names. Check it once, at the end, and not before.
+> Tap the colored words in the model first, and read what each one tells you. Then copy the second sentence onto paper just as it is, mistakes and all. Fix it one thing at a time. Start with the very first word. Then look for anybody who owns something, because that needs an apostrophe. Then the names. Check it once, at the end, and not before.
 
 ## `marilla\g4ela-8-2-guide1.mp3` — Word Study tab
 

@@ -49,7 +49,7 @@ Three worked examples the card shows:
 
 ## `marilla\g4ela-9-1-dol.mp3` — Warm-Up · Daily Oral Language
 
-> Tap the coloured parts of the model before you touch the second sentence, and read what each one tells you. The one you’re fixing starts with a person, and a person’s name starts with a capital letter. Then it tells you where she is, and after that what she was doing. Look at what the model puts between those two parts. Write yours in your notebook, check it against the model, then tap the button.
+> Tap the colored parts of the model before you touch the second sentence, and read what each one tells you. The one you’re fixing starts with a person, and a person’s name starts with a capital letter. Then it tells you where she is, and after that what she was doing. Look at what the model puts between those two parts. Write yours in your notebook, check it against the model, then tap the button.
 
 ## `marilla\g4ela-9-1-guide1.mp3` — Word Study tab
 

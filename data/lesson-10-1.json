@@ -1,5 +1,5 @@
 {
- "connector": "Hello, it’s Diana. I’m going to tea at Green Gables this afternoon, a proper invitation, and Mother says I’m to knock at the front door and not run into the kitchen the way I always do. I’ve got my second-best dress on. I’ve been practising sitting with my toes together. Anne will do all the talking. She always does, and I don’t mind one bit.",
+ "connector": "Hello, it’s Diana. I’m going to tea at Green Gables this afternoon, a proper invitation, and Mother says I’m to knock at the front door and not run into the kitchen the way I always do. I’ve got my second-best dress on. I’ve been practicing sitting with my toes together. Anne will do all the talking. She always does, and I don’t mind one bit.",
  "media": {
   "welcome": {
    "kind": "audio",
@@ -108,11 +108,11 @@
   }
  },
  "copia": {
-  "seed": "Anne <b data-verb>revelled</b> in the world of colour about her.",
+  "seed": "Anne <b data-verb>reveled</b> in the world of color about her.",
   "eg": [
-   "That October, Anne revelled in the world of colour about her.",
-   "Anne <i>drank in</i> the world of colour about her.",
-   "Anne revelled in the world of colour about her, with her arms full of maple boughs."
+   "That October, Anne reveled in the world of color about her.",
+   "Anne <i>drank in</i> the world of color about her.",
+   "Anne reveled in the world of color about her, with her arms full of maple boughs."
   ]
  },
  "scholar": {

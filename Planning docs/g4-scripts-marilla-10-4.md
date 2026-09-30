@@ -72,7 +72,7 @@ The opening paragraph under the greeting is also in her voice (text only, 67 wor
 
 ## `marilla\g4ela-10-4-spelling.mp3` — Word Study · Spelling
 
-> Some of those words are spelt right and some aren’t, and a wrong one can sound perfectly right, which is what makes it sneaky. Say each word. Then look at the letter making the sound, and the letter after it, and ask whether that’s how the rule spells it. Sound right, letter wrong: tap it. Right both ways: leave it alone. I’d like to catch you tapping a good one.
+> Some of those words are spelled right and some aren’t, and a wrong one can sound perfectly right, which is what makes it sneaky. Say each word. Then look at the letter making the sound, and the letter after it, and ask whether that’s how the rule spells it. Sound right, letter wrong: tap it. Right both ways: leave it alone. I’d like to catch you tapping a good one.
 
 ## `marilla\g4ela-10-4-guide2.mp3` — Reading tab
 

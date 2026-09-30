@@ -31,7 +31,7 @@ The opening paragraph under the greeting is also in his voice (text only):
 
 ## `anne\g4ela-9-3-welcome.mp3` — Warm-Up (in the greeting)
 
-> Hello, it’s Anne Shirley, and I’m guiding you again, which is a great honour. Today’s question is how one bad choice grows into a bigger trouble, and you’re to follow the chain link by link. I know something about that, though I’d rather not say what yet. In word study you build the answers yourself instead of sorting them. And the reading move isn’t in the warm-up today. It’s waiting on the Reading tab.
+> Hello, it’s Anne Shirley, and I’m guiding you again, which is a great honor. Today’s question is how one bad choice grows into a bigger trouble, and you’re to follow the chain link by link. I know something about that, though I’d rather not say what yet. In word study you build the answers yourself instead of sorting them. And the reading move isn’t in the warm-up today. It’s waiting on the Reading tab.
 
 ## `anne\g4ela-9-3-dol.mp3` — Warm-Up · Daily Oral Language
 
