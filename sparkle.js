@@ -2705,6 +2705,13 @@ function hookTabScroll() {
 function buildJournal() {
   if (!DATA.notes) return;
   window.downloadJournal = sparkleJournal;
+  /* the button now gives a journal, not a bare PDF of answers, so say so */
+  var btns = document.querySelectorAll('.gathered-btn-pdf');
+  for (var i = 0; i < btns.length; i++) btns[i].textContent = '\ud83d\udcd3 Download your ELA journal for the day';
+  var intros = document.querySelectorAll('.gathered-intro');
+  for (var j = 0; j < intros.length; j++) {
+    intros[j].textContent = intros[j].textContent.replace(/download as a PDF\./i, 'download your ELA journal for the day.');
+  }
 }
 
 function journalText(el) {
