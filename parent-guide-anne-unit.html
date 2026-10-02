@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anne of Green Gables Unit Guide · 4th Grade ELA · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green-bg:#E3F8ED; --plum-bg:#F1ECFA; --rose-bg:#FDEEEE;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+a{color:#1F6FA8;font-weight:700;}
+
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.3fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:250px;}
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.small{font-size:16px;color:var(--muted);}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.b-rose{background:var(--rose-bg);} .b-rose .box-label{color:#A8434A;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:14px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* rhythm */
+.rhythm{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px;}
+.rhythm div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;font-size:16px;}
+.rhythm b{display:block;font-family:"Lora",Georgia,serif;font-size:19px;color:var(--navy);}
+.routines{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;}
+.routines li{padding-left:30px;position:relative;font-size:17px;}
+.routines li span{position:absolute;left:0;top:0;}
+
+/* week map */
+.weeks{display:grid;gap:12px;}
+.wk{display:grid;grid-template-columns:96px 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.wk-n{background:var(--navy);color:#fff;text-align:center;padding:14px 6px;display:flex;flex-direction:column;justify-content:center;}
+.wk-n b{font-family:"Lora",Georgia,serif;font-size:30px;line-height:1;}
+.wk-n span{font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-top:4px;}
+.wk-body{padding:14px 18px;}
+.wk-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:4px;}
+.wk-ch{font-weight:900;color:var(--navy);font-size:18px;}
+.theme{font-size:14px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#1F8452;background:var(--green-bg);border-radius:999px;padding:2px 10px;}
+.wk-sum{margin:2px 0 8px;}
+.skills{display:flex;flex-wrap:wrap;gap:6px;}
+.sk{font-size:15px;font-weight:700;border-radius:8px;padding:3px 9px;background:var(--paper);border:1px solid var(--line);}
+.sk i{font-style:normal;color:var(--muted);font-weight:800;margin-right:4px;}
+.wk-link{display:inline-block;margin-top:8px;font-size:16px;}
+.wk-soon{display:inline-block;margin-top:8px;font-size:15px;color:var(--muted);font-weight:700;}
+
+/* writing path */
+.path{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-top:6px;}
+.step{text-align:center;border-radius:10px;padding:10px 4px;background:var(--plum-bg);font-size:15px;}
+.step b{display:block;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#6A4FA3;}
+.step.draft{background:var(--gold-bg);} .step.draft b{color:#9A6C14;}
+.step.pub{background:var(--green-bg);} .step.pub b{color:#1F8452;}
+
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:#34B76F;font-weight:900;font-size:19px;}
+.dont li::before{content:"✗";color:#C0545C;}
+
+.books{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.book{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.book b{font-family:"Lora",Georgia,serif;font-size:19px;color:var(--navy);display:block;}
+.book span{font-size:16px;}
+
+.pending{border:2px dashed var(--gold);background:var(--cream);}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .grid2,.grid3,.books,.routines{grid-template-columns:1fr;}
+  .rhythm{grid-template-columns:1fr 1fr;}
+  .path{grid-template-columns:repeat(4,1fr);}
+  .wk{grid-template-columns:72px 1fr;}
+  .wk-n b{font-size:24px;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card,.wk{break-inside:avoid;}
+  .card{margin-top:12px;padding:14px 16px;}
+  .hero,.wk-n{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 4th Grade ELA</div>
+      <h1>Unit 2: Anne of Green Gables</h1>
+      <div class="sub">Weeks 7–14 · All 38 chapters · L. M. Montgomery</div>
+      <div class="chips">
+        <span class="chip">8 weeks</span>
+        <span class="chip">32 lessons</span>
+        <span class="chip">1 story your student writes</span>
+        <span class="chip">1 poem learned by heart</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('https://optimaondemand.github.io/optima-4th-ela/assets/covers/anne.jpg');" role="img" aria-label="Anne of Green Gables cover"></div>
+  </header>
+
+  <!-- ABOUT THE BOOK -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📕</span><h2>About the Book</h2></div>
+    <p>Published in 1908 and set on Prince Edward Island, Canada, <em>Anne of Green Gables</em> follows an orphan girl who is sent by mistake to an elderly brother and sister, Matthew and Marilla Cuthbert, who had asked for a boy to help on the farm. Over eight weeks your student follows Anne from age 11 to 16 as she makes a best friend, makes plenty of mistakes, finds a rival in Gilbert Blythe, and grows into a young woman who knows who she is.</p>
+    <p>We read it because it is a classic with real literary language, and because Anne’s growing up gives fourth graders a lot to think and talk about: imagination, belonging, friendship, temper, courage, and learning from mistakes.</p>
+    <p class="quote">“Isn’t it splendid to think of all the things there are to find out about?”<small>Anne Shirley, Chapter 2</small></p>
+  </section>
+
+  <!-- HOW A WEEK WORKS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🗓️</span><h2>How a Week Works</h2></div>
+    <p>Every week has four lessons, one fluency reading, and a Check-In. Each lesson follows the same path, so your student always knows what comes next. Across the four days, the skills build:</p>
+    <div class="rhythm">
+      <div><b>Day 1</b>Learn it: define and explain</div>
+      <div><b>Day 2</b>Find it: identify and sort</div>
+      <div><b>Day 3</b>Use it: write and apply</div>
+      <div><b>Day 4</b>Prove it: revise and explain</div>
+    </div>
+    <ul class="routines">
+      <li><span>📚</span><strong>What Good Readers Do:</strong> one reading habit to watch for in the chapter</li>
+      <li><span>✏️</span><strong>Daily Oral Language:</strong> fix a sentence by copying a model from the novel</li>
+      <li><span>🔤</span><strong>Word study:</strong> prefixes and Latin roots, spelling patterns, and vocabulary from the chapters</li>
+      <li><span>🧩</span><strong>Grammar:</strong> taught with sentences from the book</li>
+      <li><span>🪶</span><strong>Read Like a Writer:</strong> study how Montgomery built a sentence, then copy the pattern</li>
+      <li><span>🎙️</span><strong>Fluency:</strong> a short passage read three times, then recorded</li>
+      <li><span>👩‍🦰</span><strong>Guide characters:</strong> Anne, Marilla, Matthew, Diana and others take turns guiding each lesson</li>
+      <li><span>✍️</span><strong>Writer’s Workshop:</strong> one realistic-fiction story built across the unit</li>
+    </ul>
+  </section>
+
+  <!-- WEEK MAP -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🗺️</span><h2>The Unit, Week by Week</h2></div>
+    <div class="weeks">
+
+      <div class="wk"><div class="wk-n"><b>7</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 1–5</span><span class="theme">Imagination &amp; wonder</span></div>
+        <p class="wk-sum">Anne arrives at Green Gables, but the Cuthberts were expecting a boy.</p>
+        <div class="skills"><span class="sk"><i>Reading</i>narrator vs. character</span><span class="sk"><i>Grammar</i>irregular plurals</span><span class="sk"><i>Spelling</i>-s, -es, -ies</span><span class="sk"><i>Word parts</i>con-, com-</span></div>
+        <a class="wk-link" href="parent-guide-week-7.html">Open the Week 7 guide →</a>
+      </div></div>
+
+      <div class="wk"><div class="wk-n"><b>8</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 6–10</span><span class="theme">Belonging</span></div>
+        <p class="wk-sum">Marilla decides to keep Anne. Anne loses her temper with Mrs. Rachel Lynde and has to apologize.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>possessive nouns</span><span class="sk"><i>Spelling</i>possessives vs. plurals</span><span class="sk"><i>Word parts</i>sub-, inter-</span></div>
+        <span class="wk-soon">Weekly guide coming soon</span>
+      </div></div>
+
+      <div class="wk"><div class="wk-n"><b>9</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 11–15</span><span class="theme">Friendship</span></div>
+        <p class="wk-sum">Anne finds a best friend in Diana Barry, is blamed for a lost brooch, and breaks her slate over Gilbert Blythe’s head.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>concrete &amp; abstract nouns</span><span class="sk"><i>Spelling</i>the schwa sound</span><span class="sk"><i>Word parts</i>over-, sub-, under-</span></div>
+        <span class="wk-soon">Weekly guide coming soon</span>
+      </div></div>
+
+      <div class="wk"><div class="wk-n"><b>10</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 16–20</span><span class="theme">Courage</span></div>
+        <p class="wk-sum">A tea party goes badly wrong, Anne saves Diana’s little sister, and her imagination scares her silly in the Haunted Wood. Your student starts drafting their story.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>present-tense verbs</span><span class="sk"><i>Spelling</i>hard &amp; soft c and g</span><span class="sk"><i>Word parts</i>il-, ir-, im-, in-</span></div>
+        <span class="wk-soon">Weekly guide coming soon</span>
+      </div></div>
+
+      <div class="wk"><div class="wk-n"><b>11</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 21–25</span><span class="theme">Being seen</span></div>
+        <p class="wk-sum">A cake gets the wrong flavoring, Anne takes a dare she regrets, a new teacher arrives, and Matthew buys Anne the puffed sleeves she has dreamed of.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>past &amp; future verbs</span><span class="sk"><i>Spelling</i>y → i before a suffix</span><span class="sk"><i>Word parts</i>anti-, de-</span></div>
+        <span class="wk-soon">Weekly guide coming soon</span>
+      </div></div>
+
+      <div class="wk"><div class="wk-n"><b>12</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 26–30</span><span class="theme">Learning from mistakes</span></div>
+        <p class="wk-sum">The Story Club, an accidental green hair dye, and a sinking boat. Anne starts to grow up, and starts studying for Queen’s Academy.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>irregular past verbs</span><span class="sk"><i>Spelling</i>keep the e after ce/ge</span><span class="sk"><i>Word roots</i>port, tract</span></div>
+        <span class="wk-soon">Weekly guide coming soon</span>
+      </div></div>
+
+      <div class="wk"><div class="wk-n"><b>13</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 31–34</span><span class="theme">Knowing who you are</span></div>
+        <p class="wk-sum">Anne passes the entrance exam at the top of the list, tied with Gilbert, and leaves home for Queen’s.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>linking verbs</span><span class="sk"><i>Spelling</i>-er and -est</span><span class="sk"><i>Word roots</i>spect, struct</span></div>
+        <span class="wk-soon">Weekly guide coming soon</span>
+      </div></div>
+
+      <div class="wk"><div class="wk-n"><b>14</b><span>Week</span></div><div class="wk-body">
+        <div class="wk-top"><span class="wk-ch">Chapters 35–38</span><span class="theme">The bend in the road</span></div>
+        <p class="wk-sum">Anne wins a scholarship, then gives it up to stay with Marilla after a loss at Green Gables. Your student publishes their story.</p>
+        <div class="skills"><span class="sk"><i>Grammar</i>main &amp; helping verbs</span><span class="sk"><i>Spelling</i>suffix-rule review</span><span class="sk"><i>Word roots</i>script/scribe, ject</span></div>
+        <span class="wk-soon">Weekly guide coming soon</span>
+      </div></div>
+
+    </div>
+  </section>
+
+  <!-- WRITING PROJECT -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student’s Story</h2><span class="tag">Writer’s Workshop</span></div>
+    <p>Across the unit, your student writes one realistic-fiction story about a kid who could be real, facing something kids really face. It will be about one page long, in five scenes. Each week adds one piece, with an example writer named Sam showing how it’s done.</p>
+    <div class="path">
+      <div class="step"><b>Wk 7</b>Voice</div>
+      <div class="step"><b>Wk 8</b>Character</div>
+      <div class="step"><b>Wk 9</b>Conflict</div>
+      <div class="step draft"><b>Wk 10</b>Draft the opening</div>
+      <div class="step draft"><b>Wk 11</b>Rising action</div>
+      <div class="step draft"><b>Wk 12</b>Revise</div>
+      <div class="step draft"><b>Wk 13</b>Edit</div>
+      <div class="step pub"><b>Wk 14</b>Publish</div>
+    </div>
+    <p class="small" style="margin-top:12px;">Weeks 7–9 are planning, and drafting starts in Week 10. The story box saves in the browser on the computer your student uses, so <strong>if your student switches computers, help them keep a copy somewhere else too</strong> (a document or a printout).</p>
+  </section>
+
+  <!-- POEM -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>By Heart: The Unit Poem</h2></div>
+    <div class="grid2" style="align-items:center;">
+      <div class="poem">Who has seen the wind?<br>Neither I nor you:<br>But when the leaves hang trembling,<br>The wind is passing through.<small>Christina Rossetti</small></div>
+      <div>
+        <p>Your student learns these four lines over the eight weeks. Each time the poem comes up, a few more words fade from the screen until they can say it from memory.</p>
+        <p><strong>How to help:</strong> Ask to hear it now and then. By Week 14 they should be able to say the whole thing to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WORK IS CHECKED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📋</span><h2>How Learning Is Checked</h2></div>
+    <div class="grid3">
+      <div class="box b-sky"><div class="box-label">Every lesson</div>Chapter questions answered with evidence from the book, plus word-study and writing responses, submitted in Canvas.</div>
+      <div class="box b-gold"><div class="box-label">Every week</div>A fluency recording, plus a <strong>Check-In</strong> (about 20–30 minutes) covering grammar, word parts, spelling, reading, and one short writing task.</div>
+      <div class="box b-green"><div class="box-label">End of unit</div>The finished realistic-fiction story, published in Week 14.</div>
+    </div>
+    <p class="small" style="margin-top:12px;">Lessons have built-in self-checks and hint buttons, so students can see right away whether they’re on track.</p>
+  </section>
+
+  <!-- HEADS UP -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💛</span><h2>Good to Know Ahead of Time</h2></div>
+    <div class="grid2">
+      <div class="box b-rose"><div class="box-label">Week 14 · Chapter 37</div>Matthew dies near the end of the book. Many readers find this the hardest chapter. It may help to read it together or check in afterward.</div>
+      <div class="box b-plum"><div class="box-label">Week 10 · Chapter 16</div>At a tea party, Anne mistakes currant wine for raspberry cordial and Diana goes home drunk. It’s played as a misunderstanding, and it causes a big rift between the families.</div>
+    </div>
+    <p class="small" style="margin-top:12px;">The language is from 1908, with long sentences and words like “kindred spirit” and “tragical.” Short read-alouds together can help a lot, especially in the first two weeks.</p>
+  </section>
+
+  <!-- HOW TO HELP -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🤝</span><h2>How to Help (Without Doing It for Them)</h2></div>
+    <div class="grid2">
+      <div>
+        <h3 style="font-size:19px;margin-bottom:6px;">Try this</h3>
+        <ul class="check">
+          <li>Ask “Where in the book does it say that?” when your student answers a question.</li>
+          <li>Point them to the hint buttons and self-checks before you step in.</li>
+          <li>Ask the questions in each weekly guide. Talking it through first makes the writing easier.</li>
+          <li>Be the audience for the fluency reading and the poem.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:19px;margin-bottom:6px;">Try to avoid</h3>
+        <ul class="check dont">
+          <li>Typing or wording answers for them. Teachers need to see your student’s own thinking.</li>
+          <li>Fixing their story draft. Revising and editing are lessons of their own in Weeks 12–13.</li>
+          <li>Reading ahead and sharing what happens next. The surprises are part of the fun.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKSHELF -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📚</span><h2>Family Bookshelf</h2><span class="tag">Optional</span></div>
+    <p class="small">For students who fall in love with Anne, or for reading aloud together:</p>
+    <div class="books">
+      <div class="book"><b>Anne of Avonlea</b><span>L. M. Montgomery. The next book: Anne at 16, teaching at the Avonlea school.</span></div>
+      <div class="book"><b>Emily of New Moon</b><span>L. M. Montgomery. Another orphan heroine on Prince Edward Island, who wants to be a writer.</span></div>
+      <div class="book"><b>The Secret Garden</b><span>Frances Hodgson Burnett. A lonely orphan, a hidden garden, and a friendship that changes everyone.</span></div>
+      <div class="book"><b>Heidi</b><span>Johanna Spyri. A girl sent to live with her grandfather in the Swiss Alps.</span></div>
+      <div class="book"><b>Pollyanna</b><span>Eleanor H. Porter. An orphan whose “glad game” wins over a whole town.</span></div>
+      <div class="book"><b>Little House in the Big Woods</b><span>Laura Ingalls Wilder. Farm life in the same era, told from a child’s point of view.</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT (pending) -->
+  <section class="card pending">
+    <div class="card-head"><span class="ico">📞</span><h2>Questions? Reach Your Teacher</h2></div>
+    <p>[Office hours and how to contact your teacher: to be filled in from the teacher’s Canvas posts.]</p>
+  </section>
+
+  <p class="foot">Optima Academy Online · 4th Grade ELA · Unit 2 Family Guide</p>
+</div>
+</body>
+</html>
