@@ -2682,6 +2682,147 @@ function hookTabScroll() {
   };
 }
 
+/* ══════════════════════════════════════════════════════════════
+   MY LEARNING JOURNAL
+   The Assignment tab's "Download as PDF" used to print only the
+   chapter answers. On a lesson whose DATA carries `notes`, it now
+   prints a journal page the student can keep: the day's Big
+   Question, one-line notes on what was taught (reading move,
+   vocabulary, word parts, grammar, spelling), everything they
+   typed, each under the question it answers, and their writing.
+   Lessons without `notes` keep the lesson's own download untouched,
+   so this rolls out lesson by lesson.
+
+   DATA.notes = {
+     wgrd:      "one line",
+     vocab:     [["word","short meaning"], ...],
+     wordParts: "one line",
+     grammar:   "one line",
+     spelling:  "one line",
+     more:      ["optional extra one-liners"]
+   }
+   ══════════════════════════════════════════════════════════════ */
+function buildJournal() {
+  if (!DATA.notes) return;
+  window.downloadJournal = sparkleJournal;
+}
+
+function journalText(el) {
+  return el ? (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim() : '';
+}
+
+/* the prompt a box answers: the nearest question before it, trying
+   the real question first and the hint line only as a fallback */
+function journalPrompt(field) {
+  if (field.id === 'my-story') return 'My story so far';
+  if (/^journal-copia/.test(field.id)) return field.getAttribute('data-label') || '';
+  var order = ['.q-text', '.swyk-prompt', '.rwm-step-label', '.task-instruction', '.textbox-prompt'];
+  var node = field.parentElement;
+  for (var up = 0; node && up < 5; up++, node = node.parentElement) {
+    for (var c = 0; c < order.length; c++) {
+      var found = node.querySelectorAll(order[c]), best = null;
+      for (var i = 0; i < found.length; i++) {
+        if (found[i].compareDocumentPosition(field) & Node.DOCUMENT_POSITION_FOLLOWING) best = found[i];
+      }
+      if (best) {
+        /* the Scholar road adds a clause to the question; keep it, set apart */
+        var extra = best.querySelector('.spk-scholar-add'), more = '';
+        if (extra && extra.style.display !== 'none') more = journalText(extra);
+        var copy = best.cloneNode(true), x = copy.querySelector('.spk-scholar-add');
+        if (x) x.remove();
+        var q = journalText(copy).replace(/^\d+[.)]?\s*/, '');
+        return more ? q + ' Scholar: ' + more.replace(/^[\u2026.\s]+/, '') : q;
+      }
+    }
+  }
+  return field.getAttribute('data-label') || '';
+}
+
+/* which part of the lesson a box sits in, e.g. "Grammar: Irregular Plural Nouns" */
+function journalSection(field) {
+  var act = field.closest('.activity');
+  var t = act ? act.querySelector('.activity-title') : null;
+  if (!t && field.closest('.spk-copia-card')) return 'Copia · Say It Three Ways';
+  return t ? journalText(t).replace(/^[^A-Za-z]+/, '') : '';
+}
+
+function sparkleJournal() {
+  try { if (window.gatherAnswers) window.gatherAnswers(); } catch (e) {}
+  var N = DATA.notes || {};
+  var p = profile();
+  var name = p && p.name ? p.name : '';
+  var bq = journalText(document.querySelector('.theme-question .intro-card-body p'));
+  var today = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+  var title = (LESSON.bookTitle || '') + (LESSON.chapters ? ' — ' + LESSON.chapters : '');
+
+  var TABS = [['tab-warmup', 'Warm-Up'], ['tab-words', 'Word Study'],
+              ['tab-reading', 'Reading'], ['tab-assignment', 'Chapter Thinking']];
+  var WRITING = /^(my-story|journal-writing|spk-)/;
+
+  var h = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>My Learning Journal — Lesson ' + esc(LID) + '</title><style>' +
+    "body{font-family:Georgia,'Lora',serif;max-width:720px;margin:36px auto;padding:0 24px;color:#1F2A44;line-height:1.6;font-size:16px}" +
+    'h1{font-size:26px;margin:0;color:#0E1C42}' +
+    '.sub{color:#5A4A2C;font-style:italic;margin:2px 0 4px}' +
+    '.meta{font-family:Arial,sans-serif;font-size:13px;color:#56627F;border-bottom:3px double #C7922C;padding-bottom:10px;margin-bottom:18px}' +
+    '.bq{background:#FFF7E6;border-left:5px solid #C7922C;padding:10px 14px;margin:0 0 20px;font-size:17px}' +
+    '.bq b{display:block;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8A6212}' +
+    'h2{font-size:19px;color:#0E1C42;margin:26px 0 8px;padding-bottom:4px;border-bottom:1px solid #E4D3AC}' +
+    'ul{margin:6px 0 0 0;padding-left:20px}li{margin:4px 0}' +
+    '.k{font-weight:bold;color:#0E1C42}' +
+    'h3{font-family:Arial,sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#56627F;margin:18px 0 4px}' +
+    '.s{font-style:italic;color:#6A5A3A;margin:16px 0 0;font-size:15px}' +
+    '.q{font-weight:bold;margin:12px 0 3px;font-size:15px}' +
+    '.a{white-space:pre-wrap;background:#FAFBFF;border-left:3px solid #9FB4D8;padding:6px 12px;border-radius:3px}' +
+    '.none{color:#8A93A8;font-style:italic}' +
+    '@media print{body{margin:0}h2{break-after:avoid}.q{break-after:avoid}}' +
+    '</style></head><body>';
+  h += '<h1>My Learning Journal</h1>';
+  h += '<div class="sub">Lesson ' + esc(LID) + (title ? ' · ' + esc(title) : '') + '</div>';
+  h += '<div class="meta">' + (name ? esc(name) + ' · ' : '') + esc(today) + '</div>';
+  if (bq) h += '<div class="bq"><b>Big Question</b>' + esc(bq) + '</div>';
+
+  /* what was taught, one line each */
+  var notes = '';
+  if (N.wgrd) notes += '<li><span class="k">What good readers do:</span> ' + esc(N.wgrd) + '</li>';
+  if (N.vocab && N.vocab.length) {
+    notes += '<li><span class="k">Vocabulary:</span><ul>';
+    N.vocab.forEach(function (v) { notes += '<li><span class="k">' + esc(v[0]) + '</span> — ' + esc(v[1]) + '</li>'; });
+    notes += '</ul></li>';
+  }
+  if (N.wordParts) notes += '<li><span class="k">Word parts:</span> ' + esc(N.wordParts) + '</li>';
+  if (N.grammar) notes += '<li><span class="k">Grammar:</span> ' + esc(N.grammar) + '</li>';
+  if (N.spelling) notes += '<li><span class="k">Spelling:</span> ' + esc(N.spelling) + '</li>';
+  (N.more || []).forEach(function (m) { notes += '<li>' + esc(m) + '</li>'; });
+  if (notes) h += '<h2>What I learned</h2><ul>' + notes + '</ul>';
+
+  /* everything they typed, in page order, under its question */
+  var thinking = '', writing = '';
+  TABS.forEach(function (t) {
+    var panel = document.getElementById(t[0]); if (!panel) return;
+    var part = '', lastSec = '';
+    panel.querySelectorAll('textarea[data-label], input[type="text"][data-label]').forEach(function (f) {
+      var val = (f.value || '').trim();
+      var sec = journalSection(f);
+      if (sec === t[1]) sec = '';
+      var block = (sec && sec !== lastSec ? '<div class="s">' + esc(sec) + '</div>' : '') +
+                  '<div class="q">' + esc(journalPrompt(f)) + '</div>' +
+                  (val ? '<div class="a">' + esc(val) + '</div>' : '<div class="a none">(not answered yet)</div>');
+      lastSec = sec;
+      if (WRITING.test(f.id || '')) writing += block; else part += block;
+    });
+    if (part) thinking += '<h3>' + t[1] + '</h3>' + part;
+  });
+  if (thinking) h += '<h2>My thinking</h2>' + thinking;
+  if (writing) h += '<h2>My writing</h2>' + writing;
+  h += '</body></html>';
+
+  var win = window.open('', '_blank');
+  if (!win) { alert('Please allow pop-ups so your journal can open.'); return; }
+  win.document.write(h);
+  win.document.close();
+  setTimeout(function () { try { win.focus(); win.print(); } catch (e) {} }, 400);
+}
+
 function boot() {
   /* Each step is isolated. Previously all eighteen sat inside one
      try/catch, so a lesson whose DATA was missing a key — no DOL pair,
@@ -2716,6 +2857,7 @@ function boot() {
     ['watch',       liftWatchBlock],
     ['media',       buildMedia],
     ['publish',     buildPublish],
+    ['journal',     buildJournal],
     ['marginalia',  marginalia],
     ['ornaments',   ornaments],
     ['seal',        function () { sealCheck(true); }],
