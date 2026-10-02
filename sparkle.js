@@ -2730,7 +2730,7 @@ function journalPrompt(field) {
         if (extra && extra.style.display !== 'none') more = journalText(extra);
         var copy = best.cloneNode(true), x = copy.querySelector('.spk-scholar-add');
         if (x) x.remove();
-        var q = journalText(copy).replace(/^\d+[.)]?\s*/, '');
+        var q = journalText(copy).replace(/^\d+[.)]?\s*/, '').replace(/^[^A-Za-z0-9\u201c"]+/, '');
         return more ? q + ' Scholar: ' + more.replace(/^[\u2026.\s]+/, '') : q;
       }
     }
@@ -2740,6 +2740,8 @@ function journalPrompt(field) {
 
 /* which part of the lesson a box sits in, e.g. "Grammar: Irregular Plural Nouns" */
 function journalSection(field) {
+  var rwm = field.closest('.rwm-box');
+  if (rwm) { var sen = journalText(rwm.querySelector('.rwm-sentence')); return 'Read like a Writer' + (sen ? ' · ' + sen : ''); }
   var act = field.closest('.activity');
   var t = act ? act.querySelector('.activity-title') : null;
   if (!t && field.closest('.spk-copia-card')) return 'Copia · Say It Three Ways';
