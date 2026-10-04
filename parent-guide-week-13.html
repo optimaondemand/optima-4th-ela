@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 13 Parent Guide · 4th Grade ELA · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+    <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 4th Grade ELA</div>
+      <h1>Week 13: Growing Up</h1>
+      <div class="sub"><em>Anne of Green Gables</em>, Chapters 31–34</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">Check-In at week’s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('https://optimaondemand.github.io/optima-4th-ela/assets/plates/anne-ch32.png');background-size:contain;" role="img" aria-label="Illustration from Anne of Green Gables, Chapter 32: Anne hears the pass list results"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📋</span><strong>Everything is gathered at the end.</strong> The bottom of the Assignment tab collects every answer from the lesson in one place.</li>
+      <li><span>📄</span><strong>Download as PDF</strong> saves that work as a “My Work” journal page. Use it (or Copy) to <strong>submit in Canvas</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>🔊</span><strong>Listen</strong> at the top reads the page aloud, with a speed control. <strong>Check My Work</strong> and hint buttons give instant feedback.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the novel and a paper reading journal nearby too.</li>
+    </ul>
+  </section>
+
+
+  <!-- AT A GLANCE -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>Anne is a teenager now. She grows taller and quieter, and Marilla realizes the little girl is gone. Anne passes the entrance exam for Queen’s Academy tied for first place with Gilbert, and the person she most wants to make proud is Matthew. She beats stage fright at a hotel concert, then leaves home for Queen’s, promising Marilla she is still the same Anne inside. This is also the week your student edits their story.</p>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>Stated and implied theme.</strong> Some life lessons a character says out loud. Others the story shows through what happens.</div>
+      <div class="box b-green"><div class="box-label">Growing-up theme</div><strong>Knowing who you are.</strong> Also: noticing your own change, who you want to tell first, and deciding what counts as rich.</div>
+    </div>
+    <p class="quote">“I’m not a bit changed—not really. I’m only just pruned down and branched out.”<small>Anne Shirley, Chapter 34</small></p>
+  </section>
+
+  <!-- DAY BY DAY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Writing project</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">13.1<span>Day 1</span></td>
+          <td><span class="ch">Ch. 31 · Where the Brook and River Meet</span><br>Anne grows two inches in a summer and talks less. A doctor orders more fresh air, and Marilla cries one night, missing the child Anne was.</td>
+          <td>Edit: every sentence starts with a capital and ends with the right mark.</td>
+        </tr>
+        <tr>
+          <td class="day-n">13.2<span>Day 2</span></td>
+          <td><span class="ch">Ch. 32 · The Pass List Is Out</span><br>The exam results come out: Anne and Gilbert tie for first. Matthew’s pride means more to her than the result.<br><span class="pill p-poem">By Heart poem</span></td>
+          <td>Edit: dialogue punctuation, with quotation marks, commas, and capitals.</td>
+        </tr>
+        <tr>
+          <td class="day-n">13.3<span>Day 3</span></td>
+          <td><span class="ch">Ch. 33 · The Hotel Concert</span><br>Anne freezes with stage fright at a fancy hotel, spots Gilbert in the audience, and recites beautifully. Riding home, she tells her friends they are already rich.</td>
+          <td>Edit: right word (their/there/they’re), spelling, and run-on sentences.</td>
+        </tr>
+        <tr>
+          <td class="day-n">13.4<span>Day 4</span></td>
+          <td><span class="ch">Ch. 34 · A Queen’s Girl</span><br>Anne tries on her new dress and comforts a tearful Marilla. She leaves for Queen’s Academy in town, gets homesick, and hears about a scholarship she’d love to win.<br><span class="pill p-poem">By Heart poem</span></td>
+          <td>Read it aloud: wherever you stumble, fix the sentence.</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">A short passage from Chapter 34, where Anne tells Marilla she’s still the same inside. Your student reads it three times (for accuracy, then smoothness, then expression), then <strong>records and submits in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point check on the week: grammar, word parts and vocabulary, spelling, reading, and one short writing response.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words">
+      <div class="word"><b>composure</b><span>staying calm and steady</span></div>
+      <div class="word"><b>ambition</b><span>a strong desire to achieve something important</span></div>
+      <div class="word"><b>broadminded</b><span>open to new ideas and other points of view</span></div>
+      <div class="word"><b>tactful</b><span>careful not to hurt other people’s feelings</span></div>
+    </div>
+    <div class="skills">
+      <div class="box b-sky"><div class="box-label">Word roots</div><strong>spect</strong> means “look.” <strong>struct</strong> means “build.”<span class="eg">inspect · respect · construct · instruct</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>-er and -est.</strong> Short words add the ending; long words use <em>more</em> and <em>most</em>. Consonant + y becomes i.<span class="eg">taller · happiest · more beautiful</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>Linking verbs</strong> don’t show action. They link the subject to a description.<span class="eg">Anne was proud · she seemed calm</span></div>
+    </div>
+  </section>
+
+  <!-- BY HEART -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>By Heart: This Unit’s Poem</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">Who has seen the wind?<br>Neither I nor you:<br>But when the leaves hang trembling,<br>The wind is passing through.<small>Christina Rossetti</small></div>
+      <div>
+        <p>This is the poem your student is memorizing across the Anne unit. It comes up on Days 2 and 4, and the unit ends next week.</p>
+        <p><strong>How to help:</strong> Ask your student to recite the whole poem for you, maybe for another family member too. If they joined this week, that’s fine. The poem starts from the full text for every new student.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASK AT HOME -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than “How was school?”</span></div>
+    <ol class="ask">
+      <li><span class="q">How has Anne changed since she first came to Green Gables? How is she the same?</span><span class="listen">Listen for: taller, quieter, fewer big words, but still imaginative and loving.</span></li>
+      <li><span class="q">When Anne passed the exam, who did she most want to tell, and why?</span><span class="listen">Listen for: Matthew, because she wanted to make him proud.</span></li>
+      <li><span class="q">Anne says she and her friends are already rich. What does she mean?</span><span class="listen">Listen for: youth, happiness, imagination, and beauty around them, not diamonds or money.</span></li>
+      <li><span class="q">Read me one line of dialogue from your story. Where do the quotation marks and commas go?</span><span class="listen">Listen for: marks around the spoken words, and a comma before “she said.”</span></li>
+    </ol>
+  </section>
+
+  <!-- TURN IN + TRY AT HOME -->
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check">
+        <li><strong>Each lesson:</strong> 3 chapter questions, a word-study response, and a writing sentence, copied or downloaded and then submitted in Canvas</li>
+        <li><strong>Fluency:</strong> one audio recording</li>
+        <li><strong>Check-In:</strong> at the end of the week</li>
+      </ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> complete sentences with details from the book. Several questions this week ask for an exact quote.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check">
+        <li><strong>Big, bigger, biggest.</strong> Compare three things at home: tall, taller, tallest; funny, funnier, funniest.</li>
+        <li><strong>What makes us rich?</strong> Like Anne, name things your family has that money can’t buy.</li>
+        <li><strong>Then and now.</strong> Look at an old photo together. How has your student changed, and what’s still the same?</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- NEED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong>The novel</strong> (<em>Anne of Green Gables</em>) · <strong>Reading journal</strong> · <strong>Pencil</strong> · <strong>A device that records audio</strong> for the fluency reading</p>
+    <p class="small">About the Writer’s Workshop: this is week 7 of the eight-week story, and it’s <strong>editing week</strong>. Your student checks capitals, word use, punctuation, and spelling, then reads the whole story aloud. Next week they publish it. The “My Story” box saves only in the browser on the computer your student uses, so help them keep a copy somewhere else. <strong>New this week?</strong> Your student can still write a short story by working through the Day 1 lessons in Weeks 7–12.</p>
+  </section>
+
+  <!-- NEXT WEEK -->
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 14</h2></div>
+    <p><strong>Chapters 35–38, the end of the book.</strong> Anne wins the Avery scholarship, then gives it up to stay home with Marilla, and Gilbert gives up a teaching job so Anne can have it. Your student publishes their finished story. Grammar moves on to <strong>main and helping verbs</strong>.</p>
+    <p class="small" style="color:#DCE6F7;"><strong>Heads-up:</strong> Matthew dies in Chapter 37. Many readers find it the hardest chapter in the book. You may want to read it together, or check in with your student afterward.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-anne-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole Anne of Green Gables unit →</a><br><br>Optima Academy Online · 4th Grade ELA · Week 13 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+</body>
+</html>
