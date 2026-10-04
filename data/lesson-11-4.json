@@ -1,0 +1,147 @@
+{
+ "connector": "Well now. It’s Matthew. The concert’s coming at Christmas, and the girls practice over at our place sometimes. I sit in the corner with my boots off and keep quiet. I’ve been watching Anne laughing along with them, and there’s something different about her I can’t put a name to. It ain’t her face. It’s something else. I’ll figure it out.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-welcome",
+   "label": "Matthew’s welcome"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-dol",
+   "label": "Matthew · about today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-guide1",
+   "label": "Matthew · before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-morphology",
+   "label": "Matthew · about the word parts"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-vocabulary",
+   "label": "Matthew · about today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-grammar",
+   "label": "Matthew · about today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-spelling",
+   "label": "Matthew · about today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-guide2",
+   "label": "Matthew · before you open the book"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-wgrd",
+   "label": "Matthew · about today’s reading move"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-read",
+   "label": "Matthew · before you read"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-guide3",
+   "label": "Matthew · before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-chapter",
+   "label": "Matthew · about the questions"
+  },
+  "wordconn": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-wordconn",
+   "label": "Matthew · about the word connection"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-11-4-workshop",
+   "label": "Matthew · about today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Well now, it’s Matthew. The question says I do the bravest thing. I dunno about bravest. It was the hardest, I’ll say that. Today there’s a sentence to fix, and word work where some of it is already right, so you leave that part alone. Then the chapter. You’ll see a dress in it. I’ll not say any more, or I’ll get flustered.",
+  "dol": "Well now, the top sentence is me, and it’s put together proper. A capital on my name, a capital on Anne’s, a capital on Christmas. The bottom one runs two things together, the unwrapping and the watching. One thing finishes and then the next one starts. Put a stop where the first is done. Then capitals on both names. I never was much for writing, but I can see where a thing ends.",
+  "guide1": "Four things to do, and in two of them some of it’s already right. I’d go careful there. When I went to the store, well, never mind about the store. I got flustered and said yes to things I didn’t want. Don’t you do that. Read each one through. If it’s right, leave it be. Only tap what’s wrong. The other two are matching and choosing. You’ll manage.",
+  "morphology": "Well now, this is the matching again. Two word parts and two roots, and you’ve seen them all week. Tap one, then tap its partner. If you’re not sure, say the whole word out loud, and think about going down the cellar stairs, or going away down the lane. Then ask which way the word points. I’m no scholar. But I know down from away, and so do you.",
+  "vocabulary": "Five ways to show you know your words, and you only pick one. Well now, I’d pick the one about teaching it to somebody younger. I learned more explaining things to Anne than I ever did at school, and I didn’t go long. Pick whichever one you can finish. Then do it all the way through. A thing half done is a thing you’ll be thinking about for days.",
+  "grammar": "These are sentences about Anne’s fall off the Barry roof, and after. Some tell the when right, and some don’t. Look for the word that says when, like yesterday or tomorrow. Then see if the doing word agrees with it. If the two of them argue, tap it. If they get along, leave them be. Marilla and I don’t always agree either, but we generally know when we don’t.",
+  "spelling": "Six words, and some of them are spelled wrong. Well now, a wrong word looks wrong if you look at it long enough. Say each one slowly and picture where the y went, or where it should have gone. If you’d be embarrassed to see it painted on a store sign, tap it. I’ve seen a few store signs in my time. Leave the good ones alone.",
+  "guide2": "There’s a box here about being seen. Well now, I dunno much about that. I’m not one people look at, and I like it that way. But I look. I’ve been looking at Anne for most of a year, and lately something has been bothering me about her that I can’t put my finger on. As you read, look at what I’m looking at. Then you’ll know what I know.",
+  "wgrd": "The box says try moving the scene somewhere else. Well now, I’ll help you. Put me in a store where a man’s behind the counter, and I do all right. Put me in a store I don’t usually go to, with somebody I don’t expect behind that counter, and, well. You’ll see. As you read, ask which parts could happen anywhere at all, and which parts only happen here.",
+  "read": "One stop, at the end. It asks why it was me that noticed. Well now, I’ve wondered that myself. Read the start slow, where I’m sitting in the corner. Then read the store part as fast as you like. It goes about as well as you’d expect. When you get to Christmas, slow down again. That’s the part I’d want you to see.",
+  "guide3": "Well now. A rake. And twenty pounds of brown sugar. Marilla’s never going to let me forget the sugar. Now you write about it. I guess you could make me sound foolish, and you’d not be wrong. But look at why I went at all. That’s the part worth writing about. Use the book. It’s got it about right, though I’d have left out the sugar.",
+  "chapter": "Three questions. The first is about what I noticed about Anne’s dresses. Look at the other girls, then look at Anne. The second is about the store, and why I got so mixed up. Look at who was behind the counter. The third is about the whole week, and who really saw Anne. You get to pick. I’d not pick me, if I were you. But you pick.",
+  "wordconn": "Your vocabulary answer is saved. Read it over now. If you picked a word for your own story character, well now, ask yourself if it fits them the way kindred fits Anne and Diana. If it nearly fits, that’s a guess. If it fits like a good boot, you’ve learned it. I’ve got one pair of boots that fits like that. You’ll know the feeling when you get there.",
+  "workshop": "Well now, today you just finish it. That’s all. Get to the end. It doesn’t need to be good yet. Anne wanted puffed sleeves for a long while, and it took me till Christmas. A rough ending is better than none. Write two or three sentences, what happened and how your kid feels. Then read the whole thing top to bottom. You might be surprised."
+ },
+ "writingFocus": "Rising Action",
+ "dol": {
+  "a": {
+   "raw": "anne unwrapped the dress matthew watched her happily from the kitchen corner",
+   "fixed": "<strong>Anne</strong> unwrapped the <strong>dress.</strong> <strong>Matthew</strong> watched her happily from the kitchen <strong>corner.</strong>",
+   "why": "Capital letters on the names Anne and Matthew, a period to close the first sentence, a capital M to start the next one, and a period at the end."
+  },
+  "b": {
+   "raw": "matthew drove to the store he bought a garden rake by mistake",
+   "fixed": "<strong>Matthew</strong> drove to the <strong>store.</strong> <strong>He</strong> bought a garden rake by <strong>mistake.</strong>",
+   "why": "The same pattern: a capital on Matthew, a period where the first thought ends, a capital H to start the next sentence, and a period at the end."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and say why Marilla hadn’t noticed it herself.",
+  "journal-q2": "… then say why he kept going anyway.",
+  "journal-q3": "… and say which of the three adults you think saw the most, and why."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 2
+  }
+ },
+ "notes": {
+  "wgrd": "To test a setting, move the scene somewhere else. If it wouldn’t happen the same way there, the place is doing real work.",
+  "vocab": [
+   [
+    "kindred",
+    "Alike in spirit; sharing the same feelings, ideas, or imagination."
+   ],
+   [
+    "precarious",
+    "Unsafe; dangerously unsteady; not securely held in place."
+   ],
+   [
+    "vivacious",
+    "Lively; full of energy and good spirits."
+   ],
+   [
+    "exquisite",
+    "Beautiful in a delicate, refined way; very fine."
+   ]
+  ],
+  "wordParts": "anti- means “against” or “opposite to” (antifreeze, antibody, antiseptic). de- means “away from” or “down” (depart, descend, decrease).",
+  "grammar": "Past tense tells what already happened: baked, arrived. Many past verbs end in -ed, but some don’t. Future tense tells what hasn’t happened yet: will + the plain verb, as in will bake.",
+  "spelling": "Change y to i before a suffix when a consonant comes before the y (happy → happier, story → stories). Keep the y when a vowel comes before it (play → played) and always before -ing (carry → carrying)."
+ }
+}

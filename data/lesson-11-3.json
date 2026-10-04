@@ -1,0 +1,203 @@
+{
+ "connector": "I’m Miss Stacy, the new teacher at the Avonlea school. I came at the end of the summer, while one of my pupils was at home with a broken ankle, so I met her late. When she did come back in October, I could tell at once she would be worth knowing. I like a pupil who notices things. I suspect you do too.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-welcome",
+   "label": "Miss Stacy’s welcome"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-dol",
+   "label": "Miss Stacy · about today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-guide1",
+   "label": "Miss Stacy · before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-morphology",
+   "label": "Miss Stacy · about the word parts"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-vocabulary",
+   "label": "Miss Stacy · about today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-grammar",
+   "label": "Miss Stacy · about today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-spelling",
+   "label": "Miss Stacy · about today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-guide2",
+   "label": "Miss Stacy · before you open the book"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-wgrd",
+   "label": "Miss Stacy · about today’s reading move"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-read",
+   "label": "Miss Stacy · before you read"
+  },
+  "rwm": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-rwm",
+   "label": "Miss Stacy · about Read like a Writer"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-guide3",
+   "label": "Miss Stacy · before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-chapter",
+   "label": "Miss Stacy · about the questions"
+  },
+  "wordconn": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-wordconn",
+   "label": "Miss Stacy · about the word connection"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/stacy/g4ela-11-3-workshop",
+   "label": "Miss Stacy · about today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "I’m Miss Stacy. Your question asks about the difference between a grown-up who notices you and one who doesn’t. I’m a teacher, so I had better have an answer, hadn’t I? Today the word work is mostly building, where you put the pieces together yourself. Then there’s a chapter about my schoolroom, and a concert. Keep an eye on who’s in the room.",
+  "dol": "The top sentence is a plain one, and every capital in it is earning its place. A title, a name, a day of the week. The bottom one is about my Friday afternoons, I think. It holds two thoughts, one that hasn’t happened yet and one that already has, and they’ve been run together. Find where the first one ends. Then look for every word that is somebody’s name, or a day’s.",
+  "guide1": "Today you build. You’ll type in a missing word part, fill in sentences, put a doing word into the time the bracket asks for, and add endings to words that end in y. Building is harder than spotting. When you spot, the answer is in front of you. When you build, it’s in you. Say each one aloud before you type. Your ear is a fine teacher. Better than me, some days.",
+  "morphology": "Four words, and each is missing its front. You know the two word parts by now. One means against, the other means away or down. Read the meaning after each blank first. Then ask which direction the meaning is pushing, against something, or away and down. Type the part that fits. On our field afternoons we look at a fern before we name it. Same here.",
+  "vocabulary": "Three sentences, three blanks, and four words in the bank. So one word is left over, and that’s on purpose. Read every sentence through before you choose. Then say it aloud with your word in the blank. If it sounds like something a real person would say about a real person, you’ve likely got it. One of these sentences comes from today’s chapter. Listen for it later.",
+  "grammar": "Each sentence names a time in brackets, past or future, and your job is to make the doing word fit it. Some of these are about things Anne and Diana have already done, and you’ll recognize them. Be careful with the past ones. Not every doing word just adds an ending. A few change on the inside. Put yesterday in front and listen. Then type.",
+  "spelling": "Two rules at once now. Look at the letter before the y. Then look at what’s being added. Both matter, and sometimes they pull different ways. I’d write each word on scrap paper first, the way you’d sketch a leaf before you draw it properly. If it looks strange, it probably is. Then type it. A good speller is mostly a careful looker.",
+  "guide2": "There’s a box here about being called by your right name. I take some trouble over names. A child who hears her name said carelessly learns she doesn’t matter much, and that’s a hard lesson to unlearn. So I listen to how each pupil says her own, and I say it back the same way. It costs nothing at all. As you read, watch for a name that matters to somebody.",
+  "wgrd": "The box says part of a setting is who’s there. A schoolroom full of children is a different place from the same room empty. Add a teacher who listens, and it changes again. Add an audience and a stage, and it changes again. So as you read, count who is in the room for each thing that happens. Then ask whether it would go the same way with different people there.",
+  "read": "Two stops. The first comes early, when Anne talks about her new teacher. That’s me, so I’ll try not to listen. Think about why something so small could feel so large to her. The second comes once the concert is underway. Ask yourself what Anne wants most out of it. The acting, or being seen? You’ll have to decide. I’m not sure Anne knows herself.",
+  "rwm": "That sentence is about me, which makes it rather awkward to read aloud. But look at how it’s put together. Two describing words up front, then with the happy gift of, and then what the person can do. It tells you what I’m like by what I do, not how I look. When you write yours, try the same. Pick someone you know, and name the thing they’re good at.",
+  "guide3": "Now it’s your turn to write, and I’ll tell you what I tell my class. Don’t write what you think I want. Write what you noticed, and then show me where in the book you noticed it. A good answer points. If you can put your finger on the line, you’ve got it. If you can’t, go back and look. Some of the best compositions I get come from children who looked twice.",
+  "chapter": "The first question asks for two things I do that Anne loves. I’d rather not guess at that myself, so look at what she tells Marilla. The second asks what the concert is for, and what parts Anne has. She has several, so count them all. The third asks why some grown-ups frown at my ways. They’re not wrong to be careful. Show both sides, in their own words.",
+  "wordconn": "Your spelling answer is saved. Read it again now that you know this chapter. Did you take a y word from it, the way the box asked? Then check your two endings the way you’d check a sum, one letter at a time. Did each one follow the rule you said it did? Nobody in my class has ever been marked down for checking twice. Quite the opposite.",
+  "workshop": "Today your kid has to do something. Not be rescued, not get lucky. Do. Anne in this chapter stops waiting and starts doing. She practices, she rehearses, she argues her case with Marilla. It doesn’t have to be grand. Getting up off the ground counts. Write the things your kid does, put a when word in front, and let somebody say one line. Then read it aloud."
+ },
+ "writingFocus": "Rising Action",
+ "dol": {
+  "a": {
+   "raw": "miss stacy will take us to the woods on friday she taught the lesson well",
+   "fixed": "<strong>Miss Stacy</strong> will take us to the woods on <strong>Friday.</strong> <strong>She</strong> taught the lesson <strong>well.</strong>",
+   "why": "Capitals on the title and name (Miss Stacy), a capital F on the day Friday, a period after the future-tense thought (will take), a capital S to start the past-tense one (taught), and a period at the end."
+  },
+  "b": {
+   "raw": "the concert will raise money for a flag anne practiced her recitation",
+   "fixed": "<strong>The</strong> concert will raise money for a <strong>flag.</strong> <strong>Anne</strong> practiced her <strong>recitation.</strong>",
+   "why": "The same pattern: a capital to start, a period after the future-tense thought (will raise), a capital A on Anne to start the past-tense one (practiced), and a period at the end."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and say which one you would want from a teacher of your own.",
+  "journal-q2": "… then say which of Anne’s parts you would most like to see, and why.",
+  "journal-q3": "… and say whether Miss Stacy should change anything to please them."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 2
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "This one means to go down in amount. Which word part means down?",
+   "why": "de- means down: de + crease = to go down."
+  },
+  "fill2": {
+   "h1": "This fights against germs. Which word part means against?",
+   "why": "anti- means against: anti + septic = against germs."
+  },
+  "fill3": {
+   "h1": "To defend is to push an attack away. Which word part means away?",
+   "why": "de- means away: de + fend = to push away."
+  },
+  "fill4": {
+   "h1": "Letting the air out makes it go down. Which word part means down?",
+   "why": "de- means down: de + flate = to let the air out."
+  },
+  "g4w11ff1": {
+   "h1": "The bracket says future. What one word goes in front of the plain verb when something hasn’t happened yet?",
+   "why": "Future = will + the plain verb: will apologize."
+  },
+  "g4w11ff2": {
+   "h1": "Drink doesn’t take -ed. Say it: today I drink, yesterday I …",
+   "why": "drink is irregular. Its past form is drank."
+  },
+  "g4w11ff3": {
+   "h1": "Future again. Keep decide exactly as it is and put one word in front.",
+   "why": "Future = will + the plain verb: will decide."
+  },
+  "g4w11ff4": {
+   "h1": "Break doesn’t take -ed either. Today I break, yesterday I …",
+   "why": "break is irregular. Its past form is broke."
+  },
+  "s4w11ff1": {
+   "h1": "What letter comes right before the y in happy? A vowel or a consonant?",
+   "why": "p is a consonant, so the y changes to i: happier."
+  },
+  "s4w11ff2": {
+   "h1": "Look at the suffix. What would land side by side if the y changed?",
+   "why": "Keep the y before -ing, or you’d get two i’s: carrying."
+  },
+  "s4w11ff3": {
+   "h1": "What letter comes right before the y in play?",
+   "why": "a is a vowel, so the y stays: played."
+  },
+  "s4w11ff4": {
+   "h1": "Is the letter before the y a vowel or a consonant? The suffix here is -es.",
+   "why": "r is a consonant, so y changes to i, then add -es: stories."
+  }
+ },
+ "notes": {
+  "wgrd": "Part of a setting is who is there. Change the people nearby and you change what happens.",
+  "vocab": [
+   [
+    "kindred",
+    "Alike in spirit; sharing the same feelings, ideas, or imagination."
+   ],
+   [
+    "precarious",
+    "Unsafe; dangerously unsteady; not securely held in place."
+   ],
+   [
+    "vivacious",
+    "Lively; full of energy and good spirits."
+   ],
+   [
+    "exquisite",
+    "Beautiful in a delicate, refined way; very fine."
+   ]
+  ],
+  "wordParts": "anti- means “against” or “opposite to” (antifreeze, antibody, antiseptic). de- means “away from” or “down” (depart, descend, decrease).",
+  "grammar": "Past tense tells what already happened: baked, arrived. Many past verbs end in -ed, but some don’t. Future tense tells what hasn’t happened yet: will + the plain verb, as in will bake.",
+  "spelling": "Change y to i before a suffix when a consonant comes before the y (happy → happier, story → stories). Keep the y when a vowel comes before it (play → played) and always before -ing (carry → carrying)."
+ }
+}
