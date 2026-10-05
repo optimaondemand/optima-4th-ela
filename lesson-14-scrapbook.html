@@ -385,6 +385,8 @@ button, input, textarea, select { font: inherit; }
 .video-placeholder-inner .vp-title { font-family: var(--f-display); font-size: 22px; }
 .video-placeholder-inner .vp-slot { font-family: monospace; font-size: 13px; color: #a9c6e0; margin-top: 4px; }
 .video-placeholder-inner .vp-notes { font-size: 15px; color: #d5dce6; margin-top: 10px; text-align: left; max-width: 60ch; border-left: 3px solid var(--gold); padding: 8px 12px; background: rgba(0,0,0,.2); border-radius: 6px; }
+.teacher-video { margin: 0 0 14px; }
+.teacher-video video { display: block; width: 100%; max-width: 860px; border-radius: 12px; background: #000; }
 .watch-first { font-family: var(--f-display); font-size: 20px; color: var(--gold-hi); margin: 0 0 6px; }
 
 /* ── guide clips: hidden until the file is confirmed, like the lessons ── */
@@ -491,6 +493,14 @@ button, input, textarea, select { font: inherit; }
       <div class="vp-slot">g4ela-anne-scrapbook</div>
       <div class="vp-notes"><strong>Teacher recording notes:</strong> About 3 minutes. What the scrapbook is and why it ends the Anne unit. A quick tour of the tray: pictures, clippings, keepsakes, ink. The order of the steps, and why the cover comes last. How to save the PDF in Step 8 and upload it to the Anne Scrapbook assignment in Canvas.</div>
     </div>
+    </div>
+
+    <!-- Teacher video from the repo: shown only once the file is confirmed playable -->
+    <div class="teacher-video" id="teacherVideo" hidden>
+      <p class="watch-first">Watch this first</p>
+      <video controls preload="metadata" playsinline poster="assets/video/teacher/g4ela-anne-scrapbook.jpg" aria-label="Watch this first: how to make your scrapbook">
+        <source src="assets/video/teacher/g4ela-anne-scrapbook.mp4" type="video/mp4">
+      </video>
     </div>
 
     <ol class="steps" id="steps"></ol>
@@ -1423,6 +1433,21 @@ renderPage();
 })();
 </script>
 
+<script>
+(function () {
+  var box = document.getElementById('teacherVideo');
+  var v = box && box.querySelector('video');
+  if (!v) return;
+  var show = function () {
+    if (!v.videoWidth || !box.hidden) return;
+    box.hidden = false;
+    document.querySelectorAll('.video-placeholder-wrap').forEach(function (w) { w.style.display = 'none'; var l = w.previousElementSibling; if (l && l.className === 'watch-first') l.remove(); });
+  };
+  /* the metadata may already be in by the time this runs */
+  if (v.readyState >= 1) show(); else v.addEventListener('loadedmetadata', show);
+})();
+</script>
+
 <!-- Video Manifest Loader (same as every G4 ELA lesson) -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -1435,6 +1460,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!m) return;
         var entry = manifest[m[1]];
         if (!entry || entry.status !== 'ready' || !entry.embed) return;
+        var tv = document.getElementById('teacherVideo');
+        if (tv && !tv.hidden) return;   /* the repo video is already showing */
         var temp = document.createElement('div');
         temp.innerHTML = entry.embed;
         var iframe = temp.querySelector('iframe');
