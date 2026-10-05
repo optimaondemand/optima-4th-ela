@@ -1,0 +1,197 @@
+{
+ "connector": "Josephine Barry, of Beechwood, in Charlottetown. You may remember me. I was jumped upon once, in the middle of the night, by two great girls, and I have not forgotten it. This autumn I have written to my niece and asked for both of them to come to town for the Exhibition. At my time of life one takes one’s amusements where one finds them.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-welcome",
+   "label": "Miss Barry’s welcome"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-dol",
+   "label": "Miss Barry · about today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-guide1",
+   "label": "Miss Barry · before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-morphology",
+   "label": "Miss Barry · about the word parts"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-vocabulary",
+   "label": "Miss Barry · about today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-grammar",
+   "label": "Miss Barry · about today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-spelling",
+   "label": "Miss Barry · about today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-guide2",
+   "label": "Miss Barry · before you open the book"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-wgrd",
+   "label": "Miss Barry · about today’s reading move"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-read",
+   "label": "Miss Barry · before you read"
+  },
+  "rwm": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-rwm",
+   "label": "Miss Barry · about Read like a Writer"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-guide3",
+   "label": "Miss Barry · before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-chapter",
+   "label": "Miss Barry · about the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/josephine/g4ela-12-3-workshop",
+   "label": "Miss Barry · about today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Josephine Barry. I have had two girls from Avonlea in my house this week, which is two more than usual. Your question asks what Anne discovers about herself in town. I asked her very nearly the same thing myself, and she made me wait for the answer. First, some word work, where you build the words yourself. Then the chapter. Then three sentences. Not four.",
+  "dol": "The top sentence is about me, and quite right too. I did keep them there all day. Count the capitals in it. A day of the week, a title, a name, and a show grand enough to deserve one. The bottom sentence is about the concert, and it has run two thoughts together, as young people do. Put a stop between them. And give the girl her capital.",
+  "guide1": "Building, today. You type every answer yourself, and there is nothing to choose from. A missing root, a missing word, a doing word put into the past, and a piece added onto the end. When I was young we did this sort of thing on a slate with no help whatever. You have a box that checks your work. Say each one aloud first. Then type it.",
+  "morphology": "Four words, and each has lost its back half. The front is there, and the meaning is there, so you are not entirely abandoned. Read each meaning slowly. Then ask yourself one question. Is something being carried here, or is something being pulled? There are only two roots to choose from. At my time of life, I find most questions come down to two choices.",
+  "vocabulary": "Three sentences, three blanks, and four words to choose from. One word is left over, which is perfectly in order. Read each sentence to the end before you choose. Then say it aloud with your word in the blank. If it sounds like something a sensible person would say, keep it. If it sounds like nonsense, I dare say it is.",
+  "grammar": "Four sentences, told as though they were happening now. Put each doing word into the past, where it belongs. None of them takes the usual ending, so do not try. Say yesterday in front of it, and listen. Your ear will tell you, if you let it. Then the box at the end asks for two sentences of your own about this chapter. Make them good ones.",
+  "spelling": "Four words, and a piece to add to each. Two rules at once. First, does the word end with a soft sound before its quiet e? Then, what letter does the new piece begin with? Both answers decide whether the e stays. Write each one out in full before you check. Carelessness in spelling is like carelessness in anything. It shows.",
+  "guide2": "There is a box here about learning from one’s mistakes. I have made a few myself, though I seldom admit it. Once I was very angry with two little girls for jumping on my bed. I meant to go home the very next day. Then one of them came to confess, and I unpacked. Watch for a mistake in this chapter that somebody quietly takes back.",
+  "wgrd": "The box says most chapters lean on one moment. Find it, and the rest falls into place. Anne will tell you a great deal about horses, and balloons, and ice cream at eleven o’clock at night. Not all of it matters equally. As you read, ask which moment the chapter would collapse without. I know which one I would choose. Whether she would choose the same, I cannot say.",
+  "read": "Two stops. The first comes when Anne gives her verdict on town life. I laughed, I am afraid. Think about what her answer tells you about her. The second comes at the very end, after she has left my house. I was not there for it, so you must tell me. Which part do you think she will remember longest?",
+  "rwm": "I was not in that lane, of course. I do not keep cows. But that sentence tells me more about the Anne-girl than an hour of her conversation. The cows plod along. She dreams. And her head is full of a battle. Three things, and not one word about the weather. When you write yours, choose your three as carefully, and leave the sunset out.",
+  "guide3": "Now you write, and I shall be particular. Say what happened plainly. If you are asked why, give a reason, and point to the line in the book that proves it. Do not decorate. I have read a great many stories by Avonlea girls, and the decoration was never the best part. The best part was always the one true thing in the middle.",
+  "chapter": "The first question asks for two things the girls did in town. I took them to most of them, so choose well. The second asks why the concert moved Anne so. She told me she did not see how she could ever go back to common life. I suggested ice cream. The third asks what she decided about town and country. Use her words, not mine.",
+  "workshop": "Today you swap. A dull doing word for a lively one. A line anybody might say for one only that person would say. And one small action that belongs to your character and nobody else. The Anne-girl kissed my wrinkled cheek on the veranda. Nobody else would have dared. Diana certainly did not. That is the sort of small thing that tells you exactly who someone is."
+ },
+ "writingFocus": "Revise",
+ "dol": {
+  "a": {
+   "raw": "anne saw the prima donna sing she felt enraptured by the music",
+   "fixed": "<strong>Anne</strong> saw the prima donna <strong>sing.</strong> <strong>She</strong> felt enraptured by the <strong>music.</strong>",
+   "why": "A capital on Anne, a period after sing to close the first thought, a capital S to start the next sentence, and a period at the end. Saw is the past of see; felt is the past of feel."
+  },
+  "b": {
+   "raw": "miss barry took the girls to a restaurant they ate ice cream at eleven o’clock",
+   "fixed": "<strong>Miss Barry</strong> took the girls to a <strong>restaurant.</strong> <strong>They</strong> ate ice cream at eleven <strong>o’clock.</strong>",
+   "why": "The same pattern: capitals on Miss and Barry, a period after restaurant, a capital T to start the next sentence, and a period at the end. Took and ate are both irregular past-tense verbs."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and say which one Anne seems to treasure more, and how you can tell.",
+  "journal-q2": "… and say how Miss Barry helps Anne come back down to “common life.”",
+  "journal-q3": "… and explain what the east gable stands for to Anne now."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 1
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "Bringing goods in from another country means carrying them in. Which root means to carry?",
+   "why": "port means to carry: im + port = to carry in."
+  },
+  "fill2": {
+   "h1": "To pull a tooth out. Which root means to pull?",
+   "why": "tract means to pull: ex + tract = to pull out."
+  },
+  "fill3": {
+   "h1": "Taking one number away is like pulling it out from under. Which root means to pull or draw?",
+   "why": "tract means to draw: sub + tract = to draw away from."
+  },
+  "fill4": {
+   "h1": "To carry the news back to someone. Which root means to carry?",
+   "why": "port means to carry: re + port = to carry back."
+  },
+  "g4w12fillf1": {
+   "h1": "Not runned. Say “Yesterday Anne ___ down the lane.” Only the vowel moves.",
+   "why": "run → ran: the u changes to a."
+  },
+  "g4w12fillf2": {
+   "h1": "Think of how know becomes knew. This verb works the same way.",
+   "why": "grow → grew."
+  },
+  "g4w12fillf3": {
+   "h1": "Not bringed. The past tense rhymes with thought.",
+   "why": "bring → brought: a whole new ending."
+  },
+  "g4w12fillf4": {
+   "h1": "Not sayed. It’s spelled with ai but sounds like “sed.”",
+   "why": "say → said."
+  },
+  "s4w12ff1": {
+   "h1": "The suffix starts with o. Without the e, would the g still sound soft?",
+   "why": "Keep the e before -ous: courage + ous = courageous, so the g stays soft."
+  },
+  "s4w12ff2": {
+   "h1": "The suffix starts with i. Can i keep the c soft by itself?",
+   "why": "Drop the e before -ing: notice → noticing."
+  },
+  "s4w12ff3": {
+   "h1": "-able starts with a. What happens to the g sound if the e goes?",
+   "why": "Keep the e before -able: manage + able = manageable."
+  },
+  "s4w12ff4": {
+   "h1": "-ing starts with i, and i keeps the g soft on its own.",
+   "why": "Drop the e before -ing: change → changing."
+  }
+ },
+ "notes": {
+  "wgrd": "Find the turning point, the one moment the chapter leans on. Then say what led up to it and what it changed.",
+  "vocab": [
+   [
+    "vanity",
+    "Too much pride in how one looks; caring too much about appearance."
+   ],
+   [
+    "implicitly",
+    "Without questioning; trusting completely."
+   ],
+   [
+    "epoch",
+    "A memorable period of time; a turning point."
+   ],
+   [
+    "diligent",
+    "Working hard and carefully; not giving up."
+   ]
+  ],
+  "wordParts": "port means “to carry” (transport, portable, export). tract means “to pull” or “to draw” (attract, distract, extract).",
+  "grammar": "Irregular past-tense verbs don’t just add -ed. Some change a vowel (sing → sang), some turn into a new word (go → went), and some don’t change at all (put → put).",
+  "spelling": "After ce or ge, keep the silent e when the suffix starts with a or o, so the c or g stays soft (courageous, manageable). Drop it when the suffix starts with e or i (noticing, changing)."
+ }
+}
