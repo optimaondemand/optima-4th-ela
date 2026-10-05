@@ -618,6 +618,16 @@ body {
 .spk-note summary::-webkit-details-marker{display:none;}
 .spk-note summary:hover{color:#8B6914;}
 .spk-note-body{background:#FFFCF4;border:1px solid #EADCBE;border-left:3px solid var(--spk-gold);border-radius:8px;padding:12px 16px;margin-top:6px;line-height:1.6;white-space:pre-line;text-align:left;}
+
+/* word bank under the flip card */
+.wbank { margin-top: 12px; display: grid; gap: 8px; }
+.wbank-h { font-size: 15px; color: var(--muted-l); font-weight: 700; }
+.wbank-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.wchip { border: 1.5px solid #E0CCA2; background: #FFFDF7; color: #6E5A34; border-radius: 999px; padding: 5px 13px; font-family: var(--f-body); font-size: 16px; font-weight: 700; cursor: pointer; }
+.wchip:hover { border-color: var(--gold-l); background: #FFF8E9; }
+.wchip.used { background: var(--gold-l); border-color: #B07F1E; color: #fff; }
+.wbank-hint { background: #F3FBFE; border-left: 3px solid var(--cyan); border-radius: 0 8px 8px 0; padding: 8px 12px; font-size: 16px; color: var(--navy); line-height: 1.45; }
+.wbank-hint[hidden] { display: none; }
 </style>
 </head>
 <body>
@@ -1133,6 +1143,34 @@ function bindCanvasPage() {
 }
 
 /* flip card: "Anne then" on the front (written at Arrival), "Anne now" on the back (written at the Bend) */
+/* Word banks for the flip card. Each word comes with where to look in the book. */
+var WORD_BANK = {
+  then: [
+    ["imaginative", "Ch. 2: she renames the Avenue “the White Way of Delight.”"],
+    ["talkative", "Ch. 2: she talks the whole drive home from Bright River."],
+    ["dramatic", "Ch. 3: she says she is “in the depths of despair.”"],
+    ["sensitive", "Ch. 3: she bursts into tears when she learns they wanted a boy."],
+    ["dreamy", "Ch. 4: she names the cherry tree outside her window the Snow Queen."],
+    ["hopeful", "Ch. 5: she says you can nearly always enjoy things if you make up your mind to."],
+    ["lonely", "Ch. 5: she says she could never have lived at Mrs. Hammond’s without her imagination."],
+    ["hot-tempered", "Ch. 9: she shouts at Mrs. Lynde for calling her freckled and redheaded."]
+  ],
+  now: [
+    ["hardworking", "Ch. 35: she works hard and steadily all winter at Queen’s."],
+    ["grown-up", "Ch. 31: Marilla notices she doesn’t chatter half as much."],
+    ["confident", "Ch. 33: she recites at the concert without a tremor."],
+    ["grateful", "Ch. 36: she wishes she could help Matthew more."],
+    ["loyal", "Ch. 38: she gives up the Avery scholarship to stay with Marilla."],
+    ["responsible", "Ch. 38: she stays home to teach and help Marilla keep Green Gables."],
+    ["forgiving", "Ch. 38: she becomes friends with Gilbert at last."],
+    ["hopeful", "Ch. 38: she believes the best lies around the bend."]
+  ]
+};
+function bankHTML(key) {
+  return '<div class="wbank" data-k="' + key + '"><div class="wbank-h">Need ideas? Tap a word to add it, or type your own.</div>' +
+    '<div class="wbank-chips">' + WORD_BANK[key].map(function (w, i) { return '<button type="button" class="wchip" data-i="' + i + '">' + esc(w[0]) + '</button>'; }).join("") + '</div>' +
+    '<div class="wbank-hint" hidden></div></div>';
+}
 function wordRowsHTML(arr, key, editable) {
   return '<div class="wordrows">' + arr.map(function (r, i) {
     if (!editable) return '<div class="wordrow"><div class="ro-word">' + (esc(r.w) || "…") + '</div><div class="ro-detail">' + (esc(r.d) || "") + '</div></div>';
@@ -1144,9 +1182,9 @@ function flipHTML(id) {
   var thenArr = S.pages.arrival.then, nowArr = S.pages.bend.now;
   var onBend = id === "bend", flipped = onBend && S.pages.bend.flipped;
   var front = '<div class="flip-face flip-front"><div class="flip-title">Who Anne Is at the Start <small>' + (onBend ? "your words from Step 1" : "three words, each with a detail") + '</small></div>' +
-    (onBend && !thenArr.some(function (r) { return r.w.trim(); }) ? '<div class="flip-empty">This side is still empty. Go back to Step 1, Anne Arrives, and fill it in first.</div>' : wordRowsHTML(thenArr, "then", !onBend)) + '</div>';
+    (onBend && !thenArr.some(function (r) { return r.w.trim(); }) ? '<div class="flip-empty">This side is still empty. Go back to Step 1, Anne Arrives, and fill it in first.</div>' : wordRowsHTML(thenArr, "then", !onBend) + (onBend ? "" : bankHTML("then"))) + '</div>';
   var back = '<div class="flip-face flip-back"><div class="flip-title">Who Anne Is at the End <small>three words, each with a detail</small></div>' +
-    (onBend ? wordRowsHTML(nowArr, "now", true) : '<div class="flip-empty">You’ll fill in this side at Step 5, The Bend in the Road.</div>') + '</div>';
+    (onBend ? wordRowsHTML(nowArr, "now", true) + bankHTML("now") : '<div class="flip-empty">You’ll fill in this side at Step 5, The Bend in the Road.</div>') + '</div>';
   return '<div class="flipzone"><div class="flipzone-head"><h3>' + (onBend ? "How Has Anne Changed?" : "Who Is Anne at the Start?") + '</h3>' +
     '<button type="button" class="btn-flip" id="flipBtn">' + (flipped ? "Turn back to the start" : (onBend ? "Turn the card over" : "Peek at the other side")) + '</button></div>' +
     '<div class="flip' + (flipped ? " flipped" : "") + '" id="flip"><div class="flip-inner">' + front + back + '</div></div></div>';
@@ -1158,6 +1196,25 @@ function bindFlip(id) {
     fl.classList.toggle("flipped", on);
     if (id === "bend") { S.pages.bend.flipped = on; save(); btn.textContent = on ? "Turn back to the start" : "Turn the card over"; }
     else btn.textContent = on ? "Back to the front" : "Peek at the other side";
+  });
+  $$(".wbank").forEach(function (bank) {
+    var key = bank.dataset.k, arr = key === "then" ? S.pages.arrival.then : S.pages.bend.now, hint = $(".wbank-hint", bank);
+    var mark = function () { $$(".wchip", bank).forEach(function (c) { var w = WORD_BANK[key][+c.dataset.i][0]; c.classList.toggle("used", arr.some(function (r) { return r.w.trim().toLowerCase() === w; })); }); };
+    mark();
+    $$(".wchip", bank).forEach(function (c) { c.addEventListener("click", function () {
+      var w = WORD_BANK[key][+c.dataset.i];
+      var at = -1;
+      arr.forEach(function (r, i) { if (r.w.trim().toLowerCase() === w[0]) at = i; });
+      if (at < 0) { for (var i = 0; i < arr.length; i++) if (!arr[i].w.trim()) { at = i; break; } }
+      if (at < 0) { hint.hidden = false; hint.innerHTML = "All three word spaces are full. Clear one to swap in <b>" + esc(w[0]) + "</b>."; return; }
+      arr[at].w = w[0];
+      var inp = $("#" + key + "W" + at); if (inp) inp.value = w[0];
+      hint.hidden = false;
+      hint.innerHTML = "<b>" + esc(w[0]) + "</b> · Where to look: " + esc(w[1]) + " Find it in your book, then write the detail in your own words.";
+      var ta = $("#" + key + "D" + at); if (ta) ta.focus();
+      mark(); touch();
+    }); });
+    $$("input", bank.parentNode).forEach(function (inp) { inp.addEventListener("input", mark); });
   });
   $$(".flip input, .flip textarea").forEach(function (el) {
     el.addEventListener("input", function () {
