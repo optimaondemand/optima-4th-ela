@@ -1143,32 +1143,14 @@ function bindCanvasPage() {
 }
 
 /* flip card: "Anne then" on the front (written at Arrival), "Anne now" on the back (written at the Bend) */
-/* Word banks for the flip card. Each word comes with where to look in the book. */
+/* Word banks for the flip card: words only, so students find the evidence themselves. */
 var WORD_BANK = {
-  then: [
-    ["imaginative", "Ch. 2: she renames the Avenue “the White Way of Delight.”"],
-    ["talkative", "Ch. 2: she talks the whole drive home from Bright River."],
-    ["dramatic", "Ch. 3: she says she is “in the depths of despair.”"],
-    ["sensitive", "Ch. 3: she bursts into tears when she learns they wanted a boy."],
-    ["dreamy", "Ch. 4: she names the cherry tree outside her window the Snow Queen."],
-    ["hopeful", "Ch. 5: she says you can nearly always enjoy things if you make up your mind to."],
-    ["lonely", "Ch. 5: she says she could never have lived at Mrs. Hammond’s without her imagination."],
-    ["hot-tempered", "Ch. 9: she shouts at Mrs. Lynde for calling her freckled and redheaded."]
-  ],
-  now: [
-    ["hardworking", "Ch. 35: she works hard and steadily all winter at Queen’s."],
-    ["grown-up", "Ch. 31: Marilla notices she doesn’t chatter half as much."],
-    ["confident", "Ch. 33: she recites at the concert without a tremor."],
-    ["grateful", "Ch. 36: she wishes she could help Matthew more."],
-    ["loyal", "Ch. 38: she gives up the Avery scholarship to stay with Marilla."],
-    ["responsible", "Ch. 38: she stays home to teach and help Marilla keep Green Gables."],
-    ["forgiving", "Ch. 38: she becomes friends with Gilbert at last."],
-    ["hopeful", "Ch. 38: she believes the best lies around the bend."]
-  ]
+  then: ["imaginative", "talkative", "dramatic", "sensitive", "dreamy", "hopeful", "lonely", "hot-tempered"],
+  now: ["hardworking", "grown-up", "confident", "grateful", "loyal", "responsible", "forgiving", "hopeful"]
 };
 function bankHTML(key) {
   return '<div class="wbank" data-k="' + key + '"><div class="wbank-h">Need ideas? Tap a word to add it, or type your own.</div>' +
-    '<div class="wbank-chips">' + WORD_BANK[key].map(function (w, i) { return '<button type="button" class="wchip" data-i="' + i + '">' + esc(w[0]) + '</button>'; }).join("") + '</div>' +
+    '<div class="wbank-chips">' + WORD_BANK[key].map(function (w, i) { return '<button type="button" class="wchip" data-i="' + i + '">' + esc(w) + '</button>'; }).join("") + '</div>' +
     '<div class="wbank-hint" hidden></div></div>';
 }
 function wordRowsHTML(arr, key, editable) {
@@ -1199,18 +1181,17 @@ function bindFlip(id) {
   });
   $$(".wbank").forEach(function (bank) {
     var key = bank.dataset.k, arr = key === "then" ? S.pages.arrival.then : S.pages.bend.now, hint = $(".wbank-hint", bank);
-    var mark = function () { $$(".wchip", bank).forEach(function (c) { var w = WORD_BANK[key][+c.dataset.i][0]; c.classList.toggle("used", arr.some(function (r) { return r.w.trim().toLowerCase() === w; })); }); };
+    var mark = function () { $$(".wchip", bank).forEach(function (c) { var w = WORD_BANK[key][+c.dataset.i]; c.classList.toggle("used", arr.some(function (r) { return r.w.trim().toLowerCase() === w; })); }); };
     mark();
     $$(".wchip", bank).forEach(function (c) { c.addEventListener("click", function () {
       var w = WORD_BANK[key][+c.dataset.i];
       var at = -1;
-      arr.forEach(function (r, i) { if (r.w.trim().toLowerCase() === w[0]) at = i; });
+      arr.forEach(function (r, i) { if (r.w.trim().toLowerCase() === w) at = i; });
       if (at < 0) { for (var i = 0; i < arr.length; i++) if (!arr[i].w.trim()) { at = i; break; } }
-      if (at < 0) { hint.hidden = false; hint.innerHTML = "All three word spaces are full. Clear one to swap in <b>" + esc(w[0]) + "</b>."; return; }
-      arr[at].w = w[0];
-      var inp = $("#" + key + "W" + at); if (inp) inp.value = w[0];
-      hint.hidden = false;
-      hint.innerHTML = "<b>" + esc(w[0]) + "</b> · Where to look: " + esc(w[1]) + " Find it in your book, then write the detail in your own words.";
+      if (at < 0) { hint.hidden = false; hint.innerHTML = "All three word spaces are full. Clear one to swap in <b>" + esc(w) + "</b>."; return; }
+      arr[at].w = w;
+      var inp = $("#" + key + "W" + at); if (inp) inp.value = w;
+      hint.hidden = true;
       var ta = $("#" + key + "D" + at); if (ta) ta.focus();
       mark(); touch();
     }); });
