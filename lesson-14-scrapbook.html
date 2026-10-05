@@ -939,8 +939,14 @@ function drawTabs() {
   }).join("");
 }
 $("#tabs").addEventListener("click", function (e) { var b = e.target.closest(".tab"); if (b) turnTo(+b.dataset.i); });
-$("#prevBtn").addEventListener("click", function () { turnTo(S.page - 1); });
-$("#nextBtn").addEventListener("click", function () { S.page === PAGES.length - 1 ? openBind() : turnTo(S.page + 1); });
+/* Previous / Next follow the assignment's steps (1 Arrival … 7 Cover, 8 Save), not the album order */
+function stepNeighbor(dir) {
+  var i = stepOf(curPage().id) + dir;
+  return (i >= 0 && i < STEPS.length) ? STEPS[i] : null;
+}
+var pageIndex = function (id) { return PAGES.findIndex(function (p) { return p.id === id; }); };
+$("#prevBtn").addEventListener("click", function () { var s = stepNeighbor(-1); if (s) turnTo(pageIndex(s.page)); });
+$("#nextBtn").addEventListener("click", function () { var s = stepNeighbor(1); if (!s) return; if (s.page === "bind") openBind(); else turnTo(pageIndex(s.page)); });
 function refreshProgress() { drawTabs(); drawVine(); }
 
 /* ── guide clip: built hidden, shown only once the browser confirms the file ── */
@@ -991,10 +997,13 @@ function pageHTML(p) {
 function renderPage() {
   var p = curPage();
   $("#pageShell").innerHTML = pageHTML(p);
-  $("#prevBtn").disabled = S.page === 0;
-  var last = S.page === PAGES.length - 1;
-  $("#nextBtn").textContent = last ? "Step 8: Save your PDF →" : "Next page →";
-  $("#nextBtn").classList.toggle("bind-btn", last);
+  var prev = stepNeighbor(-1), next = stepNeighbor(1);
+  var at = stepOf(p.id);
+  $("#prevBtn").disabled = !prev;
+  $("#prevBtn").textContent = prev ? "← Step " + at + ": " + prev.title : "← Previous step";
+  $("#nextBtn").disabled = !next;
+  $("#nextBtn").textContent = next ? "Step " + (at + 2) + ": " + next.title + " →" : "Next step →";
+  $("#nextBtn").classList.toggle("bind-btn", !!next && next.page === "bind");
   wireGuide($("#pageShell"));
   if (p.type === "cover") bindCover();
   else if (p.type === "map") bindMap();
