@@ -26,9 +26,11 @@
      this script and the old Poetry Corner comes back untouched.
 
    STORAGE
-     oao.g4ela.memory = { <arcId>: { rung:1..8, advancedOn:'YYYY-MM-DD' } }
-     One rung per calendar day, per arc. Two lessons in one sitting
-     still only advance once.
+     oao.g4ela.memory = { <arcId>: { rung:1..8, advancedOn:'YYYY-MM-DD',
+                                     extra:{ '<week>-<day>': n } } }
+     The LESSON sets the rung (see lessonRung): the poem fades week by
+     week. "I said it aloud" fades one more on that page, once a day.
+     rung is the arc's high-water mark, read by the weeks 31–32 card.
    ══════════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -171,6 +173,25 @@
   function ladderArc(week) {
     var a = arcOf(week);
     return a ? (LADDER_OF[a] || a) : null;
+  }
+
+  /* The rung THIS lesson sits on. The ladder is spread evenly over the
+     ladder arc's poetry days (two a week: day 2 and day 4), so the poem
+     fades week by week whether or not anyone pressed a button. Anne:
+     week 7 is rung 1, week 14 is rung 8. A lesson outside the ladder's
+     weeks gets rung 1.                                                 */
+  function lessonRung(arc, L) {
+    var weeks = [];
+    COURSE.forEach(function (c) {
+      if ((LADDER_OF[c.id] || c.id) !== arc) return;
+      for (var w = c.weeks[0]; w <= c.weeks[1]; w++) weeks.push(w);
+    });
+    weeks.sort(function (a, b) { return a - b; });
+    var i = weeks.indexOf(L && L.week);
+    if (i < 0) return 1;
+    var slots = weeks.length * 2;
+    var slot = i * 2 + ((L.day | 0) > 2 ? 1 : 0);
+    return Math.max(1, Math.min(8, 1 + Math.floor(slot * 8 / slots)));
   }
 
   /* ── §4  the ladder ─────────────────────────────────────────────── */
@@ -539,7 +560,7 @@
     card.className = 'activity bl-gold oao-bh-wrap';
     card.setAttribute('data-oao-byheart', arc);
 
-    if (POEMS[arc]) buildLadder(card, arc);
+    if (POEMS[arc]) buildLadder(card, arc, L);
     else buildRecital(card);
 
     /* Rescue anything in the old activity that is the student's, not
@@ -596,9 +617,21 @@
   }
 
   /* ── 6a  the eight-rung ladder ──────────────────────────────────── */
-  function buildLadder(card, arc) {
+  function buildLadder(card, arc, L) {
     var poem = POEMS[arc];
-    var rung = rungOf(arc);
+    /* The lesson sets the rung; "I said it aloud" lets a student fade
+       one more on this page (once a day). Saved per lesson, so going
+       back to an earlier week shows that week's rung, not a later one. */
+    var key = L.week + '-' + L.day;
+    var base = lessonRung(arc, L);
+    var m0 = memState();
+    if (!m0[arc]) m0[arc] = { rung: 1, advancedOn: null };
+    var bonus = (m0[arc].extra && m0[arc].extra[key]) || 0;
+    var rung = Math.min(8, base + bonus);
+    /* Keep the arc's high-water mark, which the weeks 31–32 card reads. */
+    if ((m0[arc].rung || 1) < rung) m0[arc].rung = rung;
+    if (m0[arc].rung >= 8) m0[arc].learned = true;
+    Sparkle.set('oao.g4ela.memory', m0);
 
     card.innerHTML =
       '<div class="oao-bh-head"><div class="oao-bh-num">♪</div><div>' +
@@ -649,7 +682,7 @@
       var m = memState();
       if (!m[arc]) m[arc] = { rung: 1, advancedOn: null };
       var today = new Date().toISOString().slice(0, 10);
-      if (m[arc].rung >= 8) {
+      if (rung >= 8) {
         m[arc].learned = true;
         Sparkle.set('oao.g4ela.memory', m);
         note.textContent = 'You know it by heart. Say it to someone.';
@@ -659,11 +692,13 @@
         note.textContent = 'You have climbed a rung today already. Come back tomorrow.';
         return;
       }
-      m[arc].rung += 1;
+      if (!m[arc].extra) m[arc].extra = {};
+      m[arc].extra[key] = (m[arc].extra[key] || 0) + 1;
+      rung = Math.min(8, base + m[arc].extra[key]);
       m[arc].advancedOn = today;
+      if ((m[arc].rung || 1) < rung) m[arc].rung = rung;
       if (m[arc].rung >= 8) m[arc].learned = true;
       Sparkle.set('oao.g4ela.memory', m);
-      rung = m[arc].rung;
       paint(rung);
       note.textContent = 'A little less to lean on now.';
       if (typeof window.owlSay === 'function') window.owlSay('Said aloud is how it sticks.');
