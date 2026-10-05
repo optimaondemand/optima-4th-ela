@@ -830,13 +830,13 @@ var STEPS = [
   { page: "arrival", title: "Anne arrives", todo: [
       "Add a picture from Ch. 2, 3–4 or 5 from the <b>Pictures</b> drawer.",
       "Snip a line from those chapters that shows who Anne is when she arrives.",
-      "On the <b>Anne then</b> card, write three words that describe Anne at the start. Under each word, write a detail from the book that proves it."] },
+      "On the <b>Who Anne Is at the Start</b> card, write three words that describe Anne when she arrives. Under each word, write a detail from the book that proves it."] },
   { page: "tp1", title: "Turning Point I", todo: TURN_TODO() },
   { page: "tp2", title: "Turning Point II", todo: TURN_TODO() },
   { page: "tp3", title: "Turning Point III", todo: TURN_TODO() },
   { page: "bend", title: "The bend in the road", todo: [
       "Add a picture and snip a line from Ch. 36, 37 or 38.",
-      "Read your <b>Anne then</b> card again. Then press <b>Turn the card over</b> and write three words for Anne now, each with a detail from the book.",
+      "Read the three words you wrote in Step 1. Then press <b>Turn the card over</b> and write three words for who Anne is at the end, each with a detail from the book.",
       "Write at least two sentences: what changed in Anne, and what stayed the same."] },
   { page: "map", title: "Anne’s Avonlea", todo: [
       "For each Turning Point, choose the place where it happened. Its pin drops onto the map. You can also drag a pin.",
@@ -1143,12 +1143,12 @@ function wordRowsHTML(arr, key, editable) {
 function flipHTML(id) {
   var thenArr = S.pages.arrival.then, nowArr = S.pages.bend.now;
   var onBend = id === "bend", flipped = onBend && S.pages.bend.flipped;
-  var front = '<div class="flip-face flip-front"><div class="flip-title">Anne then <small>' + (onBend ? "your words from Step 1" : "three words for Anne at the start") + '</small></div>' +
+  var front = '<div class="flip-face flip-front"><div class="flip-title">Who Anne Is at the Start <small>' + (onBend ? "your words from Step 1" : "three words, each with a detail") + '</small></div>' +
     (onBend && !thenArr.some(function (r) { return r.w.trim(); }) ? '<div class="flip-empty">This side is still empty. Go back to Step 1, Anne Arrives, and fill it in first.</div>' : wordRowsHTML(thenArr, "then", !onBend)) + '</div>';
-  var back = '<div class="flip-face flip-back"><div class="flip-title">Anne now <small>three words for Anne at the end</small></div>' +
+  var back = '<div class="flip-face flip-back"><div class="flip-title">Who Anne Is at the End <small>three words, each with a detail</small></div>' +
     (onBend ? wordRowsHTML(nowArr, "now", true) : '<div class="flip-empty">You’ll fill in this side at Step 5, The Bend in the Road.</div>') + '</div>';
-  return '<div class="flipzone"><div class="flipzone-head"><h3>' + (onBend ? "Turn the card over" : "The Anne then card") + '</h3>' +
-    '<button type="button" class="btn-flip" id="flipBtn">' + (flipped ? "Turn back to Anne then" : (onBend ? "Turn the card over" : "Peek at the other side")) + '</button></div>' +
+  return '<div class="flipzone"><div class="flipzone-head"><h3>' + (onBend ? "How Has Anne Changed?" : "Who Is Anne at the Start?") + '</h3>' +
+    '<button type="button" class="btn-flip" id="flipBtn">' + (flipped ? "Turn back to the start" : (onBend ? "Turn the card over" : "Peek at the other side")) + '</button></div>' +
     '<div class="flip' + (flipped ? " flipped" : "") + '" id="flip"><div class="flip-inner">' + front + back + '</div></div></div>';
 }
 function bindFlip(id) {
@@ -1156,8 +1156,8 @@ function bindFlip(id) {
   btn.addEventListener("click", function () {
     var on = !fl.classList.contains("flipped");
     fl.classList.toggle("flipped", on);
-    if (id === "bend") { S.pages.bend.flipped = on; save(); btn.textContent = on ? "Turn back to Anne then" : "Turn the card over"; }
-    else btn.textContent = on ? "Back to Anne then" : "Peek at the other side";
+    if (id === "bend") { S.pages.bend.flipped = on; save(); btn.textContent = on ? "Turn back to the start" : "Turn the card over"; }
+    else btn.textContent = on ? "Back to the front" : "Peek at the other side";
   });
   $$(".flip input, .flip textarea").forEach(function (el) {
     el.addEventListener("input", function () {
@@ -1258,8 +1258,8 @@ function drawTag() {
   var id = curPage().id, d = pdata();
   var row = function (ok, t) { return '<li class="' + (ok ? "done" : "") + '"><span class="box">' + (ok ? "✓" : "○") + '</span>' + t + '</li>'; };
   var rows = [row(has(d, "clip"), "A line from the book"), row(has(d, "photo"), "A picture of the moment")];
-  if (id === "arrival") rows.push(row(wordsDone(d.then), "Three words for Anne then, each with a detail"));
-  else if (id === "bend") { rows.push(row(wordsDone(d.now), "Three words for Anne now, each with a detail")); rows.push(row(twoSentences(d.caption), "Two sentences: what changed, what stayed")); }
+  if (id === "arrival") rows.push(row(wordsDone(d.then), "Three words for Anne at the start, each with a detail"));
+  else if (id === "bend") { rows.push(row(wordsDone(d.now), "Three words for Anne at the end, each with a detail")); rows.push(row(twoSentences(d.caption), "Two sentences: what changed, what stayed")); }
   else { rows.push(row(twoSentences(d.caption), "Two sentences on why it matters")); rows.push(row(has(d, "keep"), "A keepsake <i>(optional)</i>")); }
   tag.innerHTML = "<ul>" + rows.join("") + "</ul>";
 }
@@ -1570,11 +1570,11 @@ function sheetFor(p) {
     return '<div class="sheet">' + head + '<div class="scanvas">' + d.items.map(itemHTML).join("") + '</div><div class="scap" style="color:' + ink.color + '">' + esc(d.caption) + '</div></div>';
   }
   if (p.id === "arrival") {
-    return '<div class="sheet">' + head + '<div class="two"><div class="scanvas short">' + d.items.map(itemHTML).join("") + '</div>' + wl(d.then, "Anne then") + '</div></div>';
+    return '<div class="sheet">' + head + '<div class="two"><div class="scanvas short">' + d.items.map(itemHTML).join("") + '</div>' + wl(d.then, "Who Anne Is at the Start") + '</div></div>';
   }
   if (p.id === "bend") {
     var ink2 = INKS.filter(function (i) { return i.id === d.ink; })[0] || INKS[0];
-    return '<div class="sheet">' + head + '<div class="two"><div class="scanvas short">' + d.items.map(itemHTML).join("") + '</div><div style="display:grid;gap:2cqw">' + wl(S.pages.arrival.then, "Anne then") + wl(d.now, "Anne now") + '</div></div><div class="scap" style="color:' + ink2.color + '">' + esc(d.caption) + '</div></div>';
+    return '<div class="sheet">' + head + '<div class="two"><div class="scanvas short">' + d.items.map(itemHTML).join("") + '</div><div style="display:grid;gap:2cqw">' + wl(S.pages.arrival.then, "Who Anne Is at the Start") + wl(d.now, "Who Anne Is at the End") + '</div></div><div class="scap" style="color:' + ink2.color + '">' + esc(d.caption) + '</div></div>';
   }
   /* map */
   var pins = ["tp1", "tp2", "tp3"].map(function (t) {
