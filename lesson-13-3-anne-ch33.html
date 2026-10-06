@@ -2481,12 +2481,17 @@ return all.length?all[all.length-1]:null;}
       <div class="task-box">
         <div class="dol-model-label">✅ Correct Model — from the novel</div>
         <div class="dol-sentence-wrap" id="dolModel">
-          <span class="dol-highlight-word" onclick="dolHighlight(this,'A name — capital A.')">Anne</span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,'A LINKING verb &mdash; it connects Anne to her emotional state.')">felt</span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,'An adjective describing Anne &mdash; the linking verb &lsquo;felt&rsquo; connects them.')">nervous</span>
-          <span>before </span>
-          <span>her </span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,'Period ends the sentence.')">recitation.</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'A name &mdash; capital A.')">Anne</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'A LINKING verb &mdash; it connects Anne to what she was: the victim.')">was</span>
+          <span>the </span>
+          <span>victim </span>
+          <span>of </span>
+          <span>an </span>
+          <span>overwhelming </span>
+          <span>attack </span>
+          <span>of </span>
+          <span>stage </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Period ends the sentence.')">fright.</span>
         </div>
         <div id="dolExplain" style="min-height:24px;margin-top:6px;font-size:13px;color:#34B76F;font-weight:700;transition:opacity 0.2s;"></div>
         <div class="dol-hint">Tap the highlighted parts to see what's correct about them.</div>
@@ -2530,7 +2535,7 @@ return all.length?all[all.length-1]:null;}
         <p><strong>inspect</strong> = in- + spect (to look INTO) &nbsp;|&nbsp; <strong>respect</strong> = re- + spect (to look BACK at; to value) &nbsp;|&nbsp; <strong>construct</strong> = con- + struct (to build TOGETHER) &nbsp;|&nbsp; <strong>instruct</strong> = in- + struct (to build IN; to teach)</p>
       </div>
 
-      <div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the missing <strong>prefix</strong> at the start of each word.</p></div>
+      <div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the missing <strong>part</strong> of each word.</p></div>
       <div class="fillin-game" id="fillinGame">
         <div class="fillin-item">per<input class="fillin-input" id="fill1" data-answer="spect" maxlength="8" placeholder="______">ive &mdash; way of looking at something</div>
         <div class="fillin-item">spect<input class="fillin-input" id="fill2" data-answer="ator" maxlength="8" placeholder="______"> &mdash; one who looks (watches)</div>
@@ -2550,7 +2555,7 @@ return all.length?all[all.length-1]:null;}
             <p>Today, use this week's vocabulary in sentences. Each sentence is missing one word from the bank.</p>
       <div class="callout callout-info"><span class="callout-icon">📚</span><p><strong>Word bank:</strong> <strong>ambition</strong> · <strong>composure</strong> · <strong>broadminded</strong> · <strong>tactful</strong></p></div>
       <div class="fillin-game">
-        <div class="fillin-item" style="font-family:Lora,Georgia,serif;font-style:italic;">Anne went to bed full of <input class="fillin-input" id="vfill1" data-answer="ambition" maxlength="14" placeholder="______"> to win the Avery scholarship.</div>
+        <div class="fillin-item" style="font-family:Lora,Georgia,serif;font-style:italic;">Anne was full of <input class="fillin-input" id="vfill1" data-answer="ambition" maxlength="14" placeholder="______"> and wanted to do well at Queen&rsquo;s.</div>
         <div class="fillin-item" style="font-family:Lora,Georgia,serif;font-style:italic;">Jane sat with calm <input class="fillin-input" id="vfill2" data-answer="composure" maxlength="14" placeholder="______"> while Anne&rsquo;s heart pounded.</div>
         <div class="fillin-item" style="font-family:Lora,Georgia,serif;font-style:italic;">Miss Stacy&rsquo;s <input class="fillin-input" id="vfill3" data-answer="broadminded" maxlength="14" placeholder="______"> teaching let students explore new ideas.</div>
         <button class="fillin-check-btn" onclick="checkVocabCloze()">Check My Work</button>
@@ -2681,14 +2686,14 @@ return all.length?all[all.length-1]:null;}
       <div class="pause-columns">
         <div class="pause-col">
           <div class="socratic-box" style="margin-bottom:0;">
-            <div class="socratic-label">⏸️ Pause After Chapter 33</div>
+            <div class="socratic-label">⏸️ Partway through Chapter 33</div>
             <p class="socratic-q">Anne is frozen with stage fright. Then she sees Gilbert smiling at the back of the room. <strong>How does this small moment change Anne&rsquo;s state? What does her reaction reveal about how she has grown?</strong></p>
           </div>
           <div class="thinking-stop">💭 Pause and think about this — no need to write.</div>
         </div>
 <div class="pause-col">
           <div class="socratic-box" style="margin-bottom:0;">
-            <div class="socratic-label">⏸️ Pause later in Chapter 33</div>
+            <div class="socratic-label">⏸️ After Chapter 33</div>
             <p class="socratic-q">After the concert, Anne tells her friends they are rich already, counting years and happiness and imagination instead of money. <strong>Do you think Anne believes that, or is she talking herself into it?</strong></p>
           </div>
           <div class="thinking-stop">💭 Pause and think about this — no need to write.</div>
@@ -4230,4 +4235,5 @@ document.addEventListener('DOMContentLoaded', function() {
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',load);}else{load();}
 })();
 </script>
-</body></html>
+</body>
+</html>
