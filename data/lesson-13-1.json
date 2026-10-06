@@ -1,0 +1,195 @@
+{
+ "connector": "It’s Marilla. The Spencervale doctor sent word that Anne was to be kept out of doors all summer, with no books, and I did as I was told. She came back in September brown as a berry and two inches taller. Two inches. I’d made her new dresses longer, and they’re only just long enough. You’ll see what else changed. It isn’t only dresses.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-welcome",
+   "label": "Marilla’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-wgrd",
+   "label": "Marilla · about today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-dol",
+   "label": "Marilla · about today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-guide1",
+   "label": "Marilla · before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-morphology",
+   "label": "Marilla · about the word parts"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-vocabulary",
+   "label": "Marilla · about today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-grammar",
+   "label": "Marilla · about today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-spelling",
+   "label": "Marilla · about today’s spelling"
+  },
+  "copia": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-copia",
+   "label": "Marilla · about saying it three ways"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-guide2",
+   "label": "Marilla · before you open the book"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-read",
+   "label": "Marilla · before you read"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-guide3",
+   "label": "Marilla · before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-chapter",
+   "label": "Marilla · about the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/marilla/g4ela-13-1-workshop",
+   "label": "Marilla · about today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "It’s Marilla. That child grew two inches in one summer, and somewhere along the way she stopped chattering. I can’t say I expected to miss it. The question is how a girl can change and stay the same at once. First there are verbs that do nothing at all but join, and words that compare. Then the chapter. Watch what Anne says out loud, and what she only shows.",
+  "wgrd": "The box talks about the big idea of a story. Anne says hers right out loud in this chapter, and she says it to me. That’s the easy one. The harder one nobody says. Watch what she chooses, and how it turns out, and what the title is a picture of. A brook doesn’t ask permission to become a river. It simply does.",
+  "dol": "The top sentence is Miss Stacy’s opinion, by way of Anne, and I happen to agree with it. Short words are stronger. Find the joining word, and the two that compare. The bottom one is two sentences run together, and somebody’s name has lost its capital. I made those dresses myself, so you’ll forgive me for wanting it written properly.",
+  "guide1": "Four pieces of word work, and two of them ask you to sort into three piles, not two. That third pile is where the thinking is. Don’t push a word into a pile because it looks like its neighbor. Say it in a sentence first. I sort the mending the same way: what’s finished, what isn’t, and what I’m not sure of yet.",
+  "morphology": "Two old roots today, one that means to look and one that means to build. They don’t stand on their own; they live inside other words, the way a good habit lives inside a person. When a blank stumps you, ask whether the word is about seeing or about making. That will tell you which root belongs there.",
+  "vocabulary": "Four words, and two of them describe Miss Stacy. Mrs. Lynde has her doubts about Miss Stacy, which is reason enough to learn them. Read each sentence before you turn the card. Then, when you match, try each word against a person you know. If it fits nobody at all, you’ve likely got the wrong meaning.",
+  "grammar": "Some verbs do something. Some only join a person to a description and do no work at all, rather like certain neighbors I could name. A few go either way, depending on the sentence. For those, put each one in two sentences of your own and see whether it’s doing a job or just standing there. The box at the bottom has a test. Use it.",
+  "spelling": "Comparing words. Some take a short ending, some need more or most in front, and some have a y that must change first. Count the beats in the plain word before you decide. Clap them if you must; I won’t tell anyone. Anne used to pile on the longest words she could find. These days she counts more carefully, and so should you.",
+  "copia": "Here’s one plain sentence about a girl and some books. You’re to say it three ways: add a time, change the doing word, then stretch it out. Anne used to stretch every sentence until it snapped. Miss Stacy taught her better. Try all three, then ask which says the most with the least. That’s the one a sensible person would keep.",
+  "guide2": "There’s a box here about noticing your own change. Anne noticed hers, and said so. I noticed it too, standing beside her one day and finding I had to look up. I’ll not say what I did about it that night. Matthew caught me at it, and that’s more than enough witnesses. Read, and watch who sees the change, and who only feels it.",
+  "read": "Two stops. The first comes when she tells me what she’s been worrying over, on Sunday afternoons of all times. Listen for why growing up feels serious to her, not just that it does. The second comes near the end, and it’s about me. I’d rather you didn’t dwell on it. You will anyway. Keep an eye on how much she talks. Then on how much she doesn’t.",
+  "guide3": "Here’s where you write it down. I’ve no patience for answers that wander. Read the question, decide what it wants, and give it that, with something from the book to show you didn’t make it up. Anne is learning to be her own sharpest critic. Read over what you write once before you call it done. You’ll find something. Everybody does.",
+  "chapter": "The first question is about the doctor’s message. I took it seriously, and I’d do it again. The second wants two changes in her, one you could measure with a tape and one you’d only hear. The third is about me, and that night. Be fair to me. I’ll own I was enjoying being miserable, but the book doesn’t say I was wrong.",
+  "workshop": "Editing. This is the part of writing I understand best. It’s like going over a floor with a lamp after you’ve swept it: you find what you missed. Today it’s a capital at the start and a stop at the end of every sentence. Read one line at a time, slowly, with your finger under it. Slow is how you catch things. Fast is how you miss them."
+ },
+ "writingFocus": "Edit",
+ "dol": {
+  "a": {
+   "raw": "anne grew two inches her dresses seemed too short by autumn",
+   "fixed": "<strong>Anne</strong> grew two <strong>inches.</strong> <strong>Her</strong> dresses seemed too short by <strong>autumn.</strong>",
+   "why": "A capital on Anne, a period after inches, a capital H to start the second sentence, and a period at the end. Seemed is a linking verb."
+  },
+  "b": {
+   "raw": "marilla looked up at anne the girl was taller than she was",
+   "fixed": "<strong>Marilla</strong> looked up at <strong>Anne.</strong> <strong>The</strong> girl was taller than she <strong>was.</strong>",
+   "why": "Capitals on Marilla and Anne, a period after Anne, a capital T to start the next sentence, and a period at the end. Was links the girl to taller."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and say whether you think Marilla was right to take the message so seriously.",
+  "journal-q2": "… then say which change you think Anne herself would call the bigger one, and why.",
+  "journal-q3": "… and use one detail from the chapter to show whether Anne is still the child Marilla misses."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "This word is about looking closely at something. Which root means to look?",
+   "why": "spect means to look: in + spect = to look into."
+  },
+  "fill2": {
+   "h1": "To think well of someone, you look at them again with care. Which root means to look?",
+   "why": "spect means to look: re + spect = to look back at."
+  },
+  "fill3": {
+   "h1": "Builders put a house together, piece by piece. Which root means to build?",
+   "why": "struct means to build: con + struct = to build together."
+  },
+  "fill4": {
+   "h1": "A teacher builds knowledge into your mind. Which root means to build?",
+   "why": "struct means to build: in + struct = to build in, or to teach."
+  }
+ },
+ "miss": {
+  "match": {
+   "ambition": "Ambition is a wanting, not a way of treating people. Look for the meaning about a strong desire to achieve something.",
+   "composure": "Composure is what Jane had in the exam room and Anne wished she had. Look for the meaning about staying calm under pressure.",
+   "broadminded": "Broadminded is about how a person thinks, not how they handle feelings. Look for the meaning about being open to new ideas.",
+   "tactful": "Tactful is about not hurting anyone’s feelings. Look for the meaning about being careful and thoughtful with people."
+  },
+  "sort": {
+   "ran": "Can you watch someone do it? Ran is something a body does. Which column is for doing?",
+   "was": "Was does no work at all; it only joins. Try: Anne was tired. Which column is for joining?",
+   "felt": "Anne felt the cloth, or Anne felt foolish? It can do both jobs. Which column is for verbs that go either way?",
+   "studied": "Studying is work you could watch someone do at a desk. Which column is that?",
+   "seemed": "You can’t seem something with your hands. Seemed only joins a person to a description.",
+   "looked": "Anne looked out the window, or Anne looked tired? It can do both. Try swapping in was on each.",
+   "tall → taller": "Clap tall. One beat. Which column is for one-syllable words?",
+   "beautiful → more beautiful": "Clap beau-ti-ful. Three beats is too many for an ending. Which column puts a word in front instead?",
+   "happy → happier": "Hap-py: two beats, and it ends in y. The y changed before the ending went on. Which column is that?",
+   "fast → fastest": "One beat, and the ending went straight on. Which column is for one syllable?",
+   "difficult → most difficult": "Dif-fi-cult has three beats. Which column puts more or most in front?",
+   "pretty → prettiest": "Two beats, ending in y, and the y turned into i. Which column is that?"
+  }
+ },
+ "copia": {
+  "seed": "Anne <b data-verb>brought</b> her books down from the attic.",
+  "eg": [
+   "When September came, Anne brought her books down from the attic.",
+   "Anne <i>carried</i> her books down from the attic.",
+   "Anne brought her books down from the attic, glad to see their honest old faces once more."
+  ]
+ },
+ "notes": {
+  "wgrd": "A theme is the big idea a story teaches about life. Sometimes a character says it out loud; sometimes you work it out from what happens.",
+  "vocab": [
+   [
+    "ambition",
+    "A strong desire to achieve something important."
+   ],
+   [
+    "composure",
+    "Calmness; the ability to stay steady, especially under pressure."
+   ],
+   [
+    "broadminded",
+    "Open to new ideas; willing to consider different points of view."
+   ],
+   [
+    "tactful",
+    "Careful not to hurt other people’s feelings; thoughtful in dealing with people."
+   ]
+  ],
+  "wordParts": "spect means “to look” (inspect, respect). struct means “to build” (construct, instruct).",
+  "grammar": "A linking verb joins the subject to a word that describes or renames it: Anne was happy. Some verbs, like felt and looked, can do either job. The test: can you swap in was?",
+  "spelling": "One syllable: add -er or -est (small, smallest). Three or more syllables: use more or most (most difficult). Two syllables ending in y: change the y to i, then add the ending (funny, funnier)."
+ }
+}

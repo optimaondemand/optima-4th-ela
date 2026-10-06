@@ -1,0 +1,197 @@
+{
+ "connector": "Look here, it’s Gilbert Blythe. I don’t suppose Anne would want me introducing her chapter, but she isn’t speaking to me, so she can’t very well object. There’s a concert at the White Sands Hotel, and Anne’s to recite. I drove over. I sat at the back. That’s about all I’m going to tell you, honest.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-welcome",
+   "label": "Gilbert’s welcome"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-dol",
+   "label": "Gilbert · about today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-guide1",
+   "label": "Gilbert · before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-morphology",
+   "label": "Gilbert · about the word parts"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-vocabulary",
+   "label": "Gilbert · about today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-grammar",
+   "label": "Gilbert · about today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-spelling",
+   "label": "Gilbert · about today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-guide2",
+   "label": "Gilbert · before you open the book"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-wgrd",
+   "label": "Gilbert · about today’s reading move"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-read",
+   "label": "Gilbert · before you read"
+  },
+  "rwm": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-rwm",
+   "label": "Gilbert · about Read like a Writer"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-guide3",
+   "label": "Gilbert · before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-chapter",
+   "label": "Gilbert · about the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-13-3-workshop",
+   "label": "Gilbert · about today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Hi, it’s Gilbert. Today’s question is about one small moment at a concert, and what it shows about how Anne has grown. I was in the room for that moment, as it happens. First, some word work: building comparing words and filling in joining verbs. Then read the chapter, and decide for yourself what happened on that stage. I’ve got my own idea.",
+  "dol": "The top sentence is from the book, and from where I sat, it was awful true. Find the joining verb, and what it joins Anne to. The bottom one is two sentences that ran into each other. Split them, and give everybody their capitals, Anne included. She’d want hers. She’s particular about that sort of thing, and about how her name is spelled.",
+  "guide1": "Four pieces of word work, and most of them ask you to build something instead of just picking. That’s harder, but it’s the kind of hard that sticks. If a blank stumps you, say the whole sentence out loud. Your ear knows more than you think. Mine has gotten me out of a few tight spots at the blackboard, anyhow.",
+  "morphology": "These blanks don’t all sit in the same spot. Some are in the middle of a word and one is at the end, so read the whole line before you type. Ask whether the word is about looking or about building. A crowd at a ball game is doing one of those. A barn raising is doing the other.",
+  "vocabulary": "Three sentences, three blanks, and four words in the bank, so one gets left over. Read each sentence all the way through before you choose; the end of a sentence usually tells you more than the start. I’ll own up that one of these words fits me pretty well. I won’t say which. Anne would say it was the wrong one.",
+  "grammar": "Four blanks and four joining verbs, and each one gets used once. They’re close cousins, so try every choice in every blank and listen hard. Read the whole sentence, not just the words around the gap. Sometimes the end of it settles the matter, like a but halfway through that changes everything.",
+  "spelling": "Four comparing words to build, and two decisions every time: how many beats the plain word has, and whether there’s a y at the end that needs changing first. Do them in that order. Anne and I have spelled each other down more times than I can count. Whoever checks the second thing usually wins.",
+  "guide2": "There’s a box here about deciding what counts as rich. I wasn’t in the buggy going home, so I can’t tell you what was said there. But I saw that hotel, all lit up and dripping with diamonds, and I saw Anne in a plain white dress. Read, and watch what she decides is worth counting. I’d bet it isn’t the diamonds.",
+  "wgrd": "The box says some big ideas are never said out loud. That’s true at concerts, too. Nobody stands up and tells you what a moment meant; you have to work it out. So watch what Anne chooses, and what happens right after. Then write the sentence nobody in the chapter says. Don’t look to me for it. I was only smiling.",
+  "read": "Two stops. The first comes when Anne is up on that platform and can’t get a word out. Think about what changes for her, and what gets her started. The second stop comes on the drive home, after the concert. Listen to what she says she’s rich in, and ask whether she means it. I think she does. Honest.",
+  "rwm": "I like this sentence because Anne doesn’t argue. She just says it, flat out, and then backs it up with three things nobody can take away from her. Look at the one word that tells you how she said it. Take that away and she sounds like she’s guessing. When you write yours, choose your how-word carefully. Then give three reasons. Three’s a strong number.",
+  "guide3": "Now you write. Here’s how I’d go about it. Read the question twice, then find the spot in the chapter where the answer lives before you write a word. When a question asks for an exact moment, quote it. If you’re guessing why someone did something, say what in the book made you guess it. That’s what keeps it from being only a guess.",
+  "chapter": "The first question is about Anne’s dress and her beads, next to all those city jewels. The second asks what she sees from the stage, and wants you to quote it. I’ll admit I’m curious what you’ll say about that one. The third is about the drive home, where Jane wants diamonds and Anne doesn’t.",
+  "workshop": "Read slowly today, slower than feels right. You’re hunting three things: the wrong word that sounds like the right one, a spelling you wouldn’t bet a nickel on, and a sentence that ought to be two. When I’m not sure of a word, I look it up. There’s no shame in that. The shame is leaving it wrong when you could have checked."
+ },
+ "writingFocus": "Edit",
+ "dol": {
+  "a": {
+   "raw": "the audience seemed unfriendly anne was afraid for a moment",
+   "fixed": "<strong>The</strong> audience seemed <strong>unfriendly.</strong> <strong>Anne</strong> was afraid for a <strong>moment.</strong>",
+   "why": "A capital T to start, a period after unfriendly, a capital on Anne to start the second sentence, and a period at the end. Seemed and was are both linking verbs."
+  },
+  "b": {
+   "raw": "gilbert was at the back of the room he looked happy",
+   "fixed": "<strong>Gilbert</strong> was at the back of the <strong>room.</strong> <strong>He</strong> looked <strong>happy.</strong>",
+   "why": "A capital on Gilbert, a period after room, a capital H to start the next sentence, and a period at the end. Looked links he to happy."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and say what Anne decides about her pearl beads by the end of the chapter.",
+  "journal-q2": "… then say whether you think Anne read Gilbert’s smile correctly, and how the book lets you know.",
+  "journal-q3": "… and say which girl you agree with, and why."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "This word is about a way of seeing things. Which root means to look?",
+   "why": "spect means to look: per + spect + ive = a way of looking at something."
+  },
+  "fill2": {
+   "h1": "The root is already there. What ending turns it into a person who watches?",
+   "why": "spect means to look, and the ending ator means one who does it: a spectator is one who looks."
+  },
+  "fill3": {
+   "h1": "Taking apart something that was built. Which root means to build?",
+   "why": "struct means to build: de + struct + ion = the act of taking apart."
+  },
+  "fill4": {
+   "h1": "A bridge or a barn is a thing that was built. Which root means to build?",
+   "why": "struct means to build: struct + ure = a thing that is built."
+  },
+  "g4w13ff1": {
+   "h1": "Which joining verb simply says how things are, with no change and no doubt?",
+   "why": "Was links Anne to first in the class. Nothing changed, and nothing only seemed."
+  },
+  "g4w13ff2": {
+   "h1": "Her hands were shaking. Was she really calm, or only on the outside?",
+   "why": "Seemed shows how Marilla looked from outside, even though her hands told another story."
+  },
+  "g4w13ff3": {
+   "h1": "Green Gables wasn’t always Anne’s home. Which joining verb means something changed into something else?",
+   "why": "Became links Green Gables to the only home Anne wanted, and shows it changed over time."
+  },
+  "g4w13ff4": {
+   "h1": "This one is about what was going on inside Matthew. Which joining verb is about feelings?",
+   "why": "Felt links Matthew to prouder and tells what he felt inside."
+  },
+  "s4w13ff1": {
+   "h1": "Clap tall. How many beats?",
+   "why": "Tall has one syllable, so it takes the short ending: taller."
+  },
+  "s4w13ff2": {
+   "h1": "Two beats, and it ends in y. What happens to the y?",
+   "why": "Happy has two syllables and ends in y, so the y changes to i before the ending: happier."
+  },
+  "s4w13ff3": {
+   "h1": "Beau-ti-ful has three beats. Can it take an ending at all?",
+   "why": "Three syllables is too many for an ending, so it takes a word in front: more beautiful."
+  },
+  "s4w13ff4": {
+   "h1": "Two beats, ending in y, just like happy.",
+   "why": "Pretty has two syllables and ends in y, so the y changes to i: prettier."
+  }
+ },
+ "notes": {
+  "wgrd": "Some big ideas are never said out loud. Look at what a character chooses and what the story rewards, then write the sentence the book never wrote.",
+  "vocab": [
+   [
+    "ambition",
+    "A strong desire to achieve something important."
+   ],
+   [
+    "composure",
+    "Calmness; the ability to stay steady, especially under pressure."
+   ],
+   [
+    "broadminded",
+    "Open to new ideas; willing to consider different points of view."
+   ],
+   [
+    "tactful",
+    "Careful not to hurt other people’s feelings; thoughtful in dealing with people."
+   ]
+  ],
+  "wordParts": "spect means “to look” (inspect, respect). struct means “to build” (construct, instruct).",
+  "grammar": "A linking verb joins the subject to a word that describes or renames it: Anne was happy. Some verbs, like felt and looked, can do either job. The test: can you swap in was?",
+  "spelling": "One syllable: add -er or -est (small, smallest). Three or more syllables: use more or most (most difficult). Two syllables ending in y: change the y to i, then add the ending (funny, funnier)."
+ }
+}

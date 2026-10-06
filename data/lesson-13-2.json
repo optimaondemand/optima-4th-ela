@@ -1,0 +1,155 @@
+{
+ "connector": "Oh, it’s Diana, and I’ve run all the way, so you must forgive me for puffing. The Entrance is over and Anne is home, and now everybody is simply waiting for the pass list. Waiting is dreadful. Anne says she’d rather go to sleep and not wake up until it comes. I say we ought to haunt the post office. We are.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-welcome",
+   "label": "Diana’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-wgrd",
+   "label": "Diana · about today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-dol",
+   "label": "Diana · about today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-guide1",
+   "label": "Diana · before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-morphology",
+   "label": "Diana · about the word parts"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-vocabulary",
+   "label": "Diana · about today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-grammar",
+   "label": "Diana · about today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-spelling",
+   "label": "Diana · about today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-guide2",
+   "label": "Diana · before you open the book"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-read",
+   "label": "Diana · before you read"
+  },
+  "rwm": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-rwm",
+   "label": "Diana · about Read like a Writer"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-guide3",
+   "label": "Diana · before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-chapter",
+   "label": "Diana · about the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/diana/g4ela-13-2-workshop",
+   "label": "Diana · about today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Diana! This is the chapter where the pass list comes out, and I simply can’t keep still. The question is whose pride matters most to Anne when she sees her name. First there’s word work: find the verbs that only join, and the comparing words that went wrong. Then read it for yourself. I promised I wouldn’t spoil it, and I won’t. Nearly.",
+  "wgrd": "The box says one word isn’t enough, and I think that’s perfectly fair. If somebody asked me what this chapter is about, I’d say success and be done. But that’s only the topic. What does the chapter say success is for? Watch who Anne thinks of first. I know who I’d run to. I ran to Anne, didn’t I?",
+  "dol": "Anne said the top sentence the minute she got home from town, and I agree with every word, except perhaps for Orchard Slope. Find the joining word, and the two that mean the very most. The bottom sentence has two names wanting capitals, and two thoughts squeezed together with nothing between them. Give them each a little room.",
+  "guide1": "Four bits of word work, and two of them are tapping games with more than one right answer hiding. Don’t stop at the first one you find. That’s what I always do, and then I miss the rest and have to start over. Take each sentence one word at a time. Miss Stacy says slow and careful wins, and she’s generally right.",
+  "morphology": "A matching game with yesterday’s two roots and two new little front parts. I always mix up the one that means in with the one that means down or away. So I say a real word out loud first, one I know, and listen to what it means. Try it. It’s ever so much easier than staring.",
+  "vocabulary": "The same four words as yesterday, but no cards this time, so it’s all up to you. If you get stuck, picture somebody you know who fits the meaning. Jane Andrews fits one of them perfectly. Nothing rattles her. If nobody you know fits, try another meaning. It’s like choosing a dress, really.",
+  "grammar": "Two sentences, and the joining verbs are hiding among the doing ones. There’s more than one, so don’t stop when you find the first. Ask of each verb, could I watch somebody do it? If you couldn’t, it might be one that only joins. Then try putting was in its place and see if the sentence still holds together.",
+  "spelling": "This one’s a bit of a trick. Most of the comparing words are right, and you’re only to tap the ones that are made wrong. Say each one out loud. If it sounds like something a very little child would say, it probably is wrong. Count the beats in the plain word, too. That always tells.",
+  "guide2": "There’s a box here about who you want to tell first when something good happens. I know who Anne told, because I was there, running behind her across the yard. I never once thought she’d do anything else. I’d have done the very same thing, only with more shrieking. Read, and watch where her feet take her.",
+  "read": "Most of this chapter is waiting, and Anne’s letter to me from town, which I’ve read at least eleven times. Notice how frightened she is, and how she still manages to cheer up Moody Spurgeon. Then the pass list. There’s one stop, at the end. Before you get there, keep asking why she wanted it so badly. It wasn’t only Gilbert.",
+  "rwm": "That sentence is my favorite in the whole chapter. Look how it names two people and then goes back for one of them, as if it couldn’t help it. That little dash is doing such a lot. When you write yours, name two people, then pick one out on purpose. Your reader will know at once who matters most.",
+  "guide3": "Now the writing part. I always want to put everything in, every lovely little thing, and Miss Stacy always crosses most of it out. Answer just what the question asks, and show where in the chapter you found it. If you use somebody’s exact words, put them in quotation marks. Then read it over once before you say it’s finished.",
+  "chapter": "The first question is about the very words I said when I burst in, so do look at them closely. I was rather out of breath. The second asks about Anne’s other reason for working so hard, the nobler one. The third is about Matthew. He hardly ever says anything, so when he does, it’s worth listening to.",
+  "workshop": "Dialogue today, which is my favorite part of anybody’s story. Read every line out loud, the way I read Anne’s letter. Quotation marks around the words people say, a comma before the part that tells who said it, and a capital to start. If a line sounds like nobody would ever say it, change the words too, not just the marks."
+ },
+ "writingFocus": "Edit",
+ "dol": {
+  "a": {
+   "raw": "matthew was proud of anne his eyes were filled with joy",
+   "fixed": "<strong>Matthew</strong> was proud of <strong>Anne.</strong> <strong>His</strong> eyes were filled with <strong>joy.</strong>",
+   "why": "Capitals on Matthew and Anne, a period after Anne, a capital H to start the next sentence, and a period at the end. Was and were are linking verbs."
+  },
+  "b": {
+   "raw": "diana was breathless she had run all the way",
+   "fixed": "<strong>Diana</strong> was <strong>breathless.</strong> <strong>She</strong> had run all the <strong>way.</strong>",
+   "why": "A capital on Diana, a period after breathless, a capital S to start the next sentence, and a period at the end. Was links Diana to breathless."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and explain what being “ties” with Gilbert might mean to Anne, after everything between them.",
+  "journal-q2": "… and say whether you think beating Gilbert still matters to her as much as it used to.",
+  "journal-q3": "… then compare Matthew’s pride with Marilla’s, using what each one says or does."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 1
+  }
+ },
+ "miss": {
+  "match": {
+   "ambition": "Ambition is a wanting, not a way of treating people. Look for the meaning about a strong desire to achieve something.",
+   "composure": "Composure is what Jane had in the exam room and Anne wished she had. Look for the meaning about staying calm under pressure.",
+   "broadminded": "Broadminded is about how a person thinks, not how they handle feelings. Look for the meaning about being open to new ideas.",
+   "tactful": "Tactful is about not hurting anyone’s feelings. Look for the meaning about being careful and thoughtful with people."
+  }
+ },
+ "notes": {
+  "wgrd": "A topic is one word; a theme is a whole sentence. Success is a topic. What the book says about success is the theme.",
+  "vocab": [
+   [
+    "ambition",
+    "A strong desire to achieve something important."
+   ],
+   [
+    "composure",
+    "Calmness; the ability to stay steady, especially under pressure."
+   ],
+   [
+    "broadminded",
+    "Open to new ideas; willing to consider different points of view."
+   ],
+   [
+    "tactful",
+    "Careful not to hurt other people’s feelings; thoughtful in dealing with people."
+   ]
+  ],
+  "wordParts": "spect means “to look” (inspect, respect). struct means “to build” (construct, instruct).",
+  "grammar": "A linking verb joins the subject to a word that describes or renames it: Anne was happy. Some verbs, like felt and looked, can do either job. The test: can you swap in was?",
+  "spelling": "One syllable: add -er or -est (small, smallest). Three or more syllables: use more or most (most difficult). Two syllables ending in y: change the y to i, then add the ending (funny, funnier)."
+ }
+}
