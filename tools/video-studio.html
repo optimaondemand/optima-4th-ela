@@ -49,8 +49,9 @@ details.week>summary .cnt{font-weight:700;font-size:12px;color:var(--muted)}
 
 /* main */
 main{overflow:auto;padding:18px 22px 120px;min-width:0}
-.clip-head{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:12px}
-.clip-head h2{margin:0;font-size:22px;color:var(--navy)}
+.clip-head{display:block}
+.clip-head .chip{word-break:break-all;max-width:100%}
+.clip-head h2{margin:2px 0 4px;font-size:19px;line-height:1.25;color:var(--navy)}
 .clip-head .lt{color:var(--muted);font-size:14px;font-weight:700}
 .fname{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:6px}
 .chip{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
@@ -75,7 +76,15 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
 .prow{display:flex;gap:6px;margin-top:6px}
 .prow button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:6px;padding:5px 11px;cursor:pointer;font-weight:800}
 .prow button.on{background:var(--gold);color:var(--navy)}
+.ptext,#pEditBox{max-width:var(--pw,520px);margin:0 auto}
 .ptext{max-height:150px;overflow:auto;line-height:1.5;font-size:22px;scroll-behavior:auto;white-space:pre-wrap}
+.ptext{position:relative}
+.ptext.doc{white-space:normal}
+.ptext .ph{color:var(--gold);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.6px;margin:20px 0 6px;line-height:1.3}
+.ptext .ph:first-child{margin-top:0}
+.ptext .ph.here::before{content:'▶ ';}
+.ptext .pp{margin:0 0 12px;white-space:pre-wrap}
+.ptext .dim{opacity:.38}
 .ptext.empty{opacity:.6;font-size:15px;font-style:italic}
 .screen{position:relative;background:#111;border-radius:12px;overflow:hidden;aspect-ratio:16/9}
 .screen canvas,.screen video{width:100%;height:100%;display:block;object-fit:contain}
@@ -172,19 +181,6 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
   </aside>
 
   <main>
-    <div class="clip-head">
-      <div>
-        <div class="lt" id="selLesson">Pick a video from the list</div>
-        <h2 id="selLabel">—</h2>
-        <div class="fname">
-          <span class="chip mono" id="selFile">—</span>
-          <button class="btn sm" id="copyFile" title="Copy file name">Copy name</button>
-          <span class="chip mono" id="selFolder" title="Where it goes in optima-4th-ela">—</span>
-          <button class="btn sm" id="copyFolder">Copy folder</button>
-        </div>
-      </div>
-    </div>
-
     <div class="stage">
       <div>
         <div class="prompter">
@@ -195,9 +191,13 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
             <button id="pScroll" title="Scroll the script while recording">Auto-scroll</button>
             <button id="pSlower" title="Slower">−</button>
             <button id="pFaster" title="Faster">+</button>
+            <button id="pNarrow" title="Narrower lines, so your eyes move less">→←</button>
+            <button id="pWide" title="Wider lines">←→</button>
             <button id="pHide">Hide</button>
+            <button id="pView" hidden title="Switch between the whole lesson's script and just this video's">This clip only</button>
+            <button id="pDropL" hidden title="Forget the uploaded lesson script">Remove lesson script</button>
             <button id="pEdit" title="Type or paste a script for this video">Edit</button>
-            <label class="up" title="Upload .txt, .md or Word (.docx). A weekly script doc fills every clip it names.">Upload scripts<input type="file" id="pFile" accept=".txt,.md,.markdown,.docx,text/plain,text/markdown" multiple hidden></label>
+            <label class="up" title="Upload a lesson’s script doc (.txt, .md or Word). Every video in that lesson shows it, opened at its own part.">Upload scripts<input type="file" id="pFile" accept=".txt,.md,.markdown,.docx,text/plain,text/markdown" multiple hidden></label>
           </div>
           <div class="ptext" id="ptext"></div>
           <div id="pEditBox" hidden>
@@ -241,6 +241,18 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
       </div>
 
       <div>
+        <div class="panel clip-head">
+      <div>
+        <div class="lt" id="selLesson">Pick a video from the list</div>
+        <h2 id="selLabel">—</h2>
+        <div class="fname">
+          <span class="chip mono" id="selFile">—</span>
+          <button class="btn sm" id="copyFile" title="Copy file name">Copy name</button>
+          <span class="chip mono" id="selFolder" title="Where it goes in optima-4th-ela">—</span>
+          <button class="btn sm" id="copyFolder">Copy folder</button>
+        </div>
+      </div>
+    </div>
         <div class="panel">
           <h4>Background</h4>
           <div class="seg" id="bgMode">
@@ -329,7 +341,7 @@ DATA.lessons.forEach(function(L){
   var name = L.d==='fluency' ? 'Week '+L.w+' Fluency' : 'Lesson '+L.w+'.'+L.d;
   L.clips.forEach(function(c){
     CLIPS.push({path:c.path, label:c.label, script:c.script||'', notes:!!c.notes, done:!!c.done,
-      kind: c.id==='lesson'?'lesson':'section', week:L.w, group:'Week '+L.w, lesson:name+' · '+lt, lessonShort:name, id:c.id});
+      kind: c.id==='lesson'?'lesson':'section', week:L.w, group:'Week '+L.w, lesson:name+' · '+lt, lessonShort:name, id:c.id, lkey:L.w+'-'+L.d});
   });
 });
 (DATA.poems||[]).forEach(function(c){ CLIPS.push({path:c.path,label:c.label,script:c.script||'',done:!!c.done,kind:'other',week:999,group:'Poems',lesson:'By Heart poem film',lessonShort:'Poems',id:c.id}); });
@@ -419,25 +431,103 @@ $('pSmaller').onclick=function(){ pSize=Math.max(14,pSize-2); store.set('psize',
 $('pScroll').onclick=function(){ pAuto=!pAuto; store.set('pauto',pAuto); applyP(); };
 $('pFaster').onclick=function(){ pSpeed=Math.min(120,pSpeed+5); store.set('pspeed',pSpeed); toast('Scroll speed '+pSpeed); };
 $('pSlower').onclick=function(){ pSpeed=Math.max(5,pSpeed-5); store.set('pspeed',pSpeed); toast('Scroll speed '+pSpeed); };
+var pWidth=store.get('pwidth',520);
+function applyW(){ document.querySelector('.prompter').style.setProperty('--pw',pWidth+'px'); }
+$('pNarrow').onclick=function(){ pWidth=Math.max(280,pWidth-60); store.set('pwidth',pWidth); applyW(); };
+$('pWide').onclick=function(){ pWidth=Math.min(1200,pWidth+60); store.set('pwidth',pWidth); applyW(); };
+applyW();
 $('pHide').onclick=function(){ var t=$('ptext'); t.hidden=!t.hidden; this.textContent=t.hidden?'Show':'Hide'; };
 applyP();
 
 /* ---------- your own scripts ---------- */
 var myScripts = store.get('scripts', {});   // path -> text, kept in this browser
 function scriptFor(c){ return myScripts[c.path] != null ? myScripts[c.path] : c.script; }
+var lessonScripts = store.get('lscripts', {});   // "10-3" -> {name, text}: a whole lesson's script doc
+var viewClip = false;                              // true = show only this clip's own script
 function showScript(){
   if (!sel) return;
-  var c=byPath[sel], pt=$('ptext'), s=scriptFor(c);
+  var c=byPath[sel], pt=$('ptext');
+  var L = c.lkey && lessonScripts[c.lkey];
   $('pEditBox').hidden=true; pt.hidden=false; $('pHide').textContent='Hide';
+  $('pView').hidden = !L; $('pDropL').hidden = !L || viewClip;
+  $('pView').textContent = viewClip ? 'Whole lesson script' : 'This clip only';
+  if (L && !viewClip){ renderLessonDoc(c, L); return; }
+  var s=scriptFor(c);
+  pt.classList.remove('doc');
   if (s){ pt.textContent=s; pt.classList.remove('empty'); }
   else { pt.textContent='No script for this one yet. Press Edit to paste one, or Upload scripts.'; pt.classList.add('empty'); }
   $('pLbl').textContent = myScripts[c.path]!=null ? 'Your script' : (c.notes ? 'Notes from the lesson page' : 'Script');
   $('pReset').hidden = myScripts[c.path]==null;
   pt.scrollTop = 0;
 }
+
+/* ---- a whole lesson's script: shown in full, opened at this video's part ---- */
+var ALIASES = {
+  welcome:['welcome','greeting','hello','opening'], dol:['dol','daily oral','sentence'],
+  wgrd:['wgrd','what good readers','good readers','reading move'],
+  guide1:['guide1','guide 1','before the word','word work'], guide2:['guide2','guide 2','open the book','open your book','before you open'],
+  guide3:['guide3','guide 3','before you write'], morphology:['morphology','morph','word part','roots'],
+  vocabulary:['vocabulary','vocab',"today's words",'today’s words'], grammar:['grammar'], spelling:['spelling','spell'],
+  copia:['copia','three ways','say it three'], read:['before you read','read'], chapter:['chapter thinking','chapter','questions'],
+  workshop:["writer's workshop",'writer’s workshop','workshop','writing'], rwm:['read like a writer','rwm'],
+  wordconn:['word study connection','wordconn','how this connects'], poetry:['poetry','poem'], copywork:['copywork'], shelf:['shelf'],
+  lesson:['lesson video','introduction video','intro video','lesson intro','introduction']
+};
+function stripMd(t){ return cleanMd(t).replace(/^#{1,6}\s+/,'').trim(); }
+function headScore(h, c){
+  var hl=h.toLowerCase(), base=c.path.split('/').pop().toLowerCase(), best=0;
+  if (hl.indexOf(base)>-1) return 100;
+  if (c.id && c.id!=='lesson' && new RegExp('(^|[^a-z0-9])'+c.id+'([^a-z0-9]|$)').test(hl)) best=50;
+  var tail=(c.label.split('·')[1]||'').trim().toLowerCase();
+  if (tail && hl.indexOf(tail)>-1) best=Math.max(best,45);
+  (ALIASES[c.id]||[]).forEach(function(a){ if (hl.indexOf(a)>-1) best=Math.max(best,a.length); });
+  return best;
+}
+function isHeading(line, lessonClips){
+  var t=line.trim();
+  if (/^#{1,6}\s+/.test(t)) return true;
+  if (!t || t.length>90 || /[.!?"”’)]$/.test(t.replace(/\*+$/,''))) return false;
+  if (/^\*\*.+\*\*:?$/.test(t) || /:$/.test(t)) return true;
+  if (t===t.toUpperCase() && /[A-Z]{3}/.test(t)) return true;
+  return lessonClips.some(function(c){ return headScore(t,c)>=8; });
+}
+function renderLessonDoc(c, L){
+  var pt=$('ptext'), lessonClips=CLIPS.filter(function(x){ return x.lkey===c.lkey; });
+  var lines=L.text.replace(/\r/g,'').split('\n'), blocks=[], para=[];
+  function flush(){ if (para.length){ var t=stripMd(para.join('\n')); if(t) blocks.push({h:false,t:t}); para=[]; } }
+  lines.forEach(function(l){
+    if (/^\s*(---|\*\*\*)\s*$/.test(l)) { flush(); return; }
+    if (isHeading(l, lessonClips)){ flush(); blocks.push({h:true,t:stripMd(l).replace(/:$/,'')}); }
+    else if (!l.trim()) flush();
+    else para.push(l);
+  });
+  flush();
+  // which heading is this video's?
+  var target=-1, bestS=0;
+  blocks.forEach(function(b,i){ if(!b.h) return; var sc=headScore(b.t,c); if (sc>bestS){ bestS=sc; target=i; } });
+  pt.innerHTML=''; pt.classList.add('doc'); pt.classList.remove('empty');
+  var targetEl=null, inside=false;
+  blocks.forEach(function(b,i){
+    if (b.h) inside = (i===target);
+    var d=document.createElement('div'); d.className=b.h?'ph':'pp'; d.textContent=b.t;
+    if (target>-1 && !inside) d.classList.add('dim');
+    if (i===target){ d.classList.add('here'); targetEl=d; }
+    pt.appendChild(d);
+  });
+  $('pLbl').textContent = 'Lesson script · '+(L.name||c.lessonShort)+(target<0?' · couldn’t find this video’s part, scroll to it':'');
+  $('pReset').hidden = true;
+  pt.scrollTop = targetEl ? Math.max(0,targetEl.offsetTop-4) : 0;
+}
+$('pView').onclick=function(){ viewClip=!viewClip; showScript(); };
+$('pDropL').onclick=function(){
+  var c=byPath[sel]; if(!c||!c.lkey) return;
+  if (!confirm('Remove the uploaded script for '+c.lessonShort+'?')) return;
+  delete lessonScripts[c.lkey]; store.set('lscripts',lessonScripts); showScript(); toast('Lesson script removed');
+};
 function saveScripts(){ if(!store.set('scripts',myScripts)) toast('Browser storage is full; this script lasts until you close the tab'); }
 $('pEdit').onclick=function(){
   if (!sel) return;
+  viewClip=true; $('pView').textContent='Whole lesson script'; $('pDropL').hidden=true;
   $('pArea').value = scriptFor(byPath[sel]) || '';
   $('ptext').hidden=true; $('pEditBox').hidden=false; $('pArea').focus();
 };
@@ -491,36 +581,54 @@ function readFile(file){
   if (/\.docx$/i.test(file.name)) return docxText(file);
   return file.text();
 }
+var LKEYS={}; CLIPS.forEach(function(c){ if(c.lkey) LKEYS[c.lkey]=c.lessonShort; });
+function lessonOf(name, text){
+  var m, tries=[];
+  // file name: g4-scripts-josephine-10-3.md, Lesson 10.3 scripts.docx, 10_3.txt
+  var n=name.replace(/\.[a-z]+$/i,'');
+  if ((m=/(?:^|[^0-9])(\d{1,2})[\s._-]+(\d|fluency)(?![0-9])/i.exec(n.replace(/^g\d+[-_]/i,'')))) tries.push(m[1]+'-'+m[2].toLowerCase());
+  var head=text.slice(0,800);
+  if ((m=/g4ela-(\d{1,2})-(\d|fluency)/i.exec(head))) tries.push(m[1]+'-'+m[2].toLowerCase());
+  if ((m=/lesson\s+(\d{1,2})\.(\d)\b/i.exec(head))) tries.push(m[1]+'-'+m[2]);
+  if ((m=/week\s+(\d{1,2})\s+fluency/i.exec(head))) tries.push(m[1]+'-fluency');
+  for (var i=0;i<tries.length;i++) if (LKEYS[tries[i]]) return tries[i];
+  return null;
+}
 function applyText(name, text){
-  var lines=text.replace(/\r/g,'').split('\n'), sections=[], cur=null, filled=[];
-  lines.forEach(function(l){
-    var h=/^\s*#{1,6}\s+(.*)$/.exec(l);
-    if (h){ var hit=findBase(h[1]); cur = hit.length===1 ? {path:hit[0],body:[]} : null; if(cur) sections.push(cur); }
-    else if (cur) cur.body.push(l);
-  });
-  sections.forEach(function(s){
-    var t=cleanMd(s.body.join('\n')); if(!t) return;
-    myScripts[s.path]=t; if(filled.indexOf(s.path)<0) filled.push(s.path);
-  });
-  if (!filled.length){
-    var target = findBase(name)[0] || (findBase(text).length===1 ? findBase(text)[0] : sel);
-    var t=cleanMd(text.replace(/^\s*#{1,6}\s+.*$/m,''));   // drop a title line
-    if (target && t){ myScripts[target]=t; filled.push(target); }
+  // One clip named by the file and no sections: that clip's own script
+  var one=findBase(name);
+  var hasHeads=/^\s*#{1,6}\s+/m.test(text) || findBase(text).length>1;
+  if (one.length===1 && !hasHeads){
+    var t=cleanMd(text); if(!t) return null;
+    myScripts[one[0]]=t; return {clip:one[0]};
   }
-  return filled;
+  // Otherwise it is a lesson's script doc
+  var key=lessonOf(name,text) || (sel && byPath[sel].lkey);
+  if (!key || !text.trim()) return null;
+  lessonScripts[key]={name:LKEYS[key], text:text, file:name};
+  return {lesson:key};
 }
 $('pFile').onchange=function(){
   var files=[].slice.call(this.files); this.value='';
-  var all=[];
+  var got=[];
   Promise.all(files.map(function(f){
-    return readFile(f).then(function(t){ all=all.concat(applyText(f.name,t)); })
+    return readFile(f).then(function(t){ var r=applyText(f.name,t); if(r) got.push(r); })
       .catch(function(e){ toast('Could not read '+f.name); console.warn(e); });
   })).then(function(){
-    saveScripts(); showScript();
-    if (!all.length){ toast('No scripts found in that file'); return; }
-    var lessons={}; all.forEach(function(p){ lessons[byPath[p].lessonShort]=1; });
-    toast(all.length===1 ? 'Script added to '+byPath[all[0]].label : all.length+' scripts added ('+Object.keys(lessons).join(', ')+')');
-    if (all.indexOf(sel)<0) select(all[0]);
+    saveScripts();
+    if (!store.set('lscripts',lessonScripts)) toast('Browser storage is full; the script lasts until you close the tab');
+    if (!got.length){ toast('No script found in that file'); return; }
+    var ls=got.filter(function(r){return r.lesson;}).map(function(r){ return LKEYS[r.lesson]; });
+    var cs=got.filter(function(r){return r.clip;});
+    viewClip=false;
+    toast((ls.length?'Script added for '+ls.join(', '):'')+(ls.length&&cs.length?' · ':'')+(cs.length?cs.length+' clip script'+(cs.length>1?'s':''):''));
+    var cur=sel && byPath[sel];
+    var first=got[0];
+    if (first.lesson && !(cur && cur.lkey===first.lesson)){
+      var c=CLIPS.find(function(x){ return x.lkey===first.lesson; }); if (c) { select(c.path); return; }
+    }
+    if (first.clip && first.clip!==sel){ select(first.clip); return; }
+    showScript();
   });
 };
 
@@ -851,7 +959,6 @@ function startRec(){
   if (!sel){ toast('Pick a video from the list first'); return; }
   if (!camStream || !MIME){ return; }
   closeReview();
-  $('ptext').scrollTop=0;
   countdown(3,function(){
     var vs=out.captureStream(30);
     var tracks=vs.getVideoTracks().concat(micStream?micStream.getAudioTracks():[]);
