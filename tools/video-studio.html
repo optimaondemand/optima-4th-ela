@@ -94,6 +94,17 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
 .review video{width:100%;border-radius:8px;background:#000;max-height:360px}
 .review .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center}
 .review .meta{color:var(--muted);font-size:13px}
+.thumbs-h{display:flex;align-items:center;gap:8px;margin:12px 0 6px;font-weight:800;color:var(--navy);font-size:14px;flex-wrap:wrap}
+.thumbs-h .note{margin:0;font-weight:500}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}
+.thumbs .th{position:relative;cursor:pointer;border-radius:7px;overflow:hidden;border:3px solid transparent;background:#000;aspect-ratio:16/9}
+.thumbs .th img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs .th span{position:absolute;bottom:3px;right:4px;background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:0 5px;border-radius:4px}
+.thumbs .th.on{border-color:var(--gold)}
+.thumbs .th.on::after{content:'✓ Thumbnail';position:absolute;top:3px;left:4px;background:var(--gold);color:var(--navy);font-size:11px;font-weight:800;padding:0 6px;border-radius:4px}
+.take img{width:56px;height:32px;object-fit:cover;border-radius:4px;background:#000}
+.repo-ok{color:var(--green);font-weight:800}
+.repo-warn{color:var(--red);font-weight:700}
 
 .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
 .panel h4{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
@@ -108,6 +119,9 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
 .bgs .bg:hover .x{display:block}
 .bgs label.add{aspect-ratio:16/9;border:2px dashed #b7c0d6;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--muted);cursor:pointer;text-align:center}
 .field{display:grid;gap:4px;margin-bottom:9px;font-size:13px;font-weight:700;color:var(--muted)}
+.range-lbl{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--muted)}
+.range-lbl input{flex:1;accent-color:var(--navy)}
+#modelSel button{font-size:13px}
 .field select{padding:7px;border:1px solid var(--line);border-radius:8px;color:var(--ink)}
 .check{display:flex;gap:8px;align-items:center;font-size:14px;margin:6px 0}
 .note{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.4}
@@ -211,13 +225,18 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
         <div class="review" id="review" hidden>
           <h3 id="revTitle">Your take</h3>
           <video id="revVideo" controls playsinline></video>
+          <div class="thumbs-h">Pick the thumbnail
+            <button class="btn sm" id="thumbNow" title="Pause the player on the frame you want, then press this">Use the frame in the player</button>
+            <label class="btn sm">Upload an image<input type="file" id="thumbFile" accept="image/*" hidden></label>
+          </div>
+          <div class="thumbs" id="thumbs"></div>
           <div class="row">
             <button class="btn green" id="keepNext">✓ Keep it, next video</button>
             <button class="btn primary" id="dlNow">⬇ Download now</button>
             <button class="btn" id="redo">↺ Record again</button>
             <span class="meta" id="revMeta"></span>
           </div>
-          <div class="note">Kept takes wait in the tray at the bottom. Download them one at a time or all together as a zip.</div>
+          <div class="note" id="revNote">Kept takes wait in the tray at the bottom. Download them one at a time or all together as a zip.</div>
         </div>
       </div>
 
@@ -230,14 +249,36 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
             <button data-m="image" disabled>Image</button>
           </div>
           <div class="bgs" id="bgs"></div>
+          <div id="edgeBox">
+            <div class="field" style="margin-top:12px">Hair detail
+              <div class="seg" id="modelSel"><button data-k="detail">Detailed (best for hair)</button><button data-k="fast">Faster</button></div>
+            </div>
+            <div class="field">Edges <span class="range-lbl"><span>Tighter</span><input type="range" id="edgeR" min="-1" max="1" step="0.05"><span>Keep more hair</span></span></div>
+            <label class="check"><input type="checkbox" id="refine" checked> Snap edges to my hair (refine)</label>
+          </div>
           <div class="note" id="segNote">Loading the background tool…</div>
+        </div>
+        <div class="panel">
+          <h4>Touch-ups</h4>
+          <label class="check"><input type="checkbox" id="lightOn"> Lighting boost (adjusts automatically)</label>
+          <div class="field"><span class="range-lbl"><span>Gentle</span><input type="range" id="lightR" min="0.2" max="1" step="0.05"><span>Strong</span></span></div>
+          <label class="check"><input type="checkbox" id="softOn"> Soft focus</label>
+          <div class="field"><span class="range-lbl"><span>Subtle</span><input type="range" id="softR" min="0.2" max="1" step="0.05"><span>More</span></span></div>
+          <label class="check"><input type="checkbox" id="warmOn"> Warmer color</label>
+          <div class="note">Both work with or without a background. What you see is what records.</div>
+        </div>
+        <div class="panel" id="repoPanel">
+          <h4>Save straight into the repo</h4>
+          <div id="repoState" class="note" style="margin:0 0 8px">Not connected. Downloads go to your Downloads folder.</div>
+          <button class="btn primary" id="repoBtn">📁 Connect optima-4th-ela</button>
+          <div class="note">Pick <b>C:\repos\optima-4th-ela</b> once. After that, every save goes straight into the right <span class="mono">assets\video\…</span> folder with the right name. No Save As box.</div>
         </div>
         <div class="panel">
           <h4>Camera and mic</h4>
           <div class="field">Camera<select id="camSel"></select></div>
           <div class="field">Microphone<select id="micSel"></select></div>
           <label class="check"><input type="checkbox" id="mirror" checked> Mirror my preview (the video is saved unmirrored)</label>
-          <label class="check"><input type="checkbox" id="poster" checked> Also save a poster image (.jpg)</label>
+          <label class="check"><input type="checkbox" id="poster" checked> Also save the thumbnail (.jpg)</label>
           <div class="note" id="fmtNote"></div>
         </div>
       </div>
@@ -248,15 +289,25 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
 <div class="tray" id="tray">
   <div>
     <div class="ti" id="trayTitle">No takes kept yet</div>
-    <div class="tsub">Unzip into C:\repos\optima-4th-ela and every file lands in the right folder.</div>
+    <div class="tsub" id="traySub">Unzip into C:\repos\optima-4th-ela and every file lands in the right folder.</div>
   </div>
   <div class="sp">
     <button class="btn" id="trayToggle">Show takes</button>
+    <button class="btn gold" id="saveAllBtn" hidden disabled>📁 Save all to repo</button>
     <button class="btn gold" id="zipBtn" disabled>⬇ Download all as zip</button>
   </div>
   <div class="takes" id="takes"></div>
 </div>
 <div class="toast" id="toast"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="vsLight" color-interpolation-filters="sRGB">
+    <feComponentTransfer>
+      <feFuncR type="gamma" amplitude="1" exponent="1" offset="0"/>
+      <feFuncG type="gamma" amplitude="1" exponent="1" offset="0"/>
+      <feFuncB type="gamma" amplitude="1" exponent="1" offset="0"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
 
 <script src="video-shotlist.js"></script>
 <script src="vendor/jszip.min.js"></script>
@@ -478,60 +529,175 @@ var out=$('out'), octx=out.getContext('2d');
 var W=1280, H=720;
 var cam=document.createElement('video'); cam.muted=true; cam.playsInline=true;
 var camStream=null, micStream=null;
-var segW=384, segH=216;
+/* The cut-out. The model gives a rough "how sure am I this is you" map.
+   Two passes make it Teams-quality around hair:
+   1. the Detailed model (selfie_multiclass) knows hair as its own class;
+   2. a guided filter re-draws the map's edges along the real edges in
+      the camera picture, so strands that the model only half-saw stay in.
+   The Edges slider moves the cut-off: right keeps more of the fuzzy edge. */
+var segW=512, segH=288, N=segW*segH;
 var segCanvas=document.createElement('canvas'); segCanvas.width=segW; segCanvas.height=segH;
-var segCtx=segCanvas.getContext('2d',{willReadFrequently:false});
+var segCtx=segCanvas.getContext('2d',{willReadFrequently:true});
 var maskCanvas=document.createElement('canvas'); maskCanvas.width=segW; maskCanvas.height=segH;
 var maskCtx=maskCanvas.getContext('2d');
 var maskImg=maskCtx.createImageData(segW,segH);
-var prevMask=null;
+var GI=new Float32Array(N), GP=new Float32Array(N), PREV=null, Q=new Float32Array(N), ALPHA=new Float32Array(N);
+var lw=segW>>1, lh=segH>>1, LN=lw*lh;   // the filter's sums run at half size (fast guided filter)
+var lI=new Float32Array(LN), lP=new Float32Array(LN), bA=new Float32Array(LN), bB=new Float32Array(LN), bC=new Float32Array(LN), bD=new Float32Array(LN), bT=new Float32Array(LN), bE=new Float32Array(LN), bF=new Float32Array(LN);
 var person=document.createElement('canvas'); person.width=W; person.height=H;
 var pctx=person.getContext('2d');
-var segmenter=null, bgMode='none', bgImg=null, lastTs=0;
+var segmenter=null, segInvert=false, bgMode='none', bgImg=null, lastTs=0, haveMask=false;
+var edge=store.get('edge',0.3), refineOn=store.get('refine',true);
 
 function coverDraw(ctx, src, sw, sh){
   var s=Math.max(W/sw,H/sh), dw=sw*s, dh=sh*s;
   ctx.drawImage(src,(W-dw)/2,(H-dh)/2,dw,dh);
 }
+/* mean over a (2r+1)^2 window, edges handled by counting what's inside */
+function box(src,dst,r,w,h){
+  var x,y,sum,lo,hi;
+  for (y=0;y<h;y++){ var o=y*w; sum=0;
+    for (x=0;x<=r&&x<w;x++) sum+=src[o+x];
+    for (x=0;x<w;x++){ lo=x-r-1; hi=x+r;
+      if (x>0){ if(hi<w) sum+=src[o+hi]; if(lo>=0) sum-=src[o+lo]; }
+      bT[o+x]=sum/((hi<w?hi:w-1)-(lo+1>0?lo+1:0)+1); } }
+  for (x=0;x<w;x++){ sum=0;
+    for (y=0;y<=r&&y<h;y++) sum+=bT[y*w+x];
+    for (y=0;y<h;y++){ lo=y-r-1; hi=y+r;
+      if (y>0){ if(hi<h) sum+=bT[hi*w+x]; if(lo>=0) sum-=bT[lo*w+x]; }
+      dst[y*w+x]=sum/((hi<h?hi:h-1)-(lo+1>0?lo+1:0)+1); } }
+}
+/* Fast guided filter (He & Sun): work out the edge-following a,b at half size,
+   then apply them to the full-size picture so edges stay sharp. */
+function guided(I,P,r,eps,q){
+  var i,x,y;
+  for (y=0;y<lh;y++) for (x=0;x<lw;x++){
+    var j=(y*2)*segW+x*2, k=y*lw+x;
+    lI[k]=(I[j]+I[j+1]+I[j+segW]+I[j+segW+1])*0.25;
+    lP[k]=(P[j]+P[j+1]+P[j+segW]+P[j+segW+1])*0.25;
+  }
+  box(lI,bA,r,lw,lh); box(lP,bB,r,lw,lh);
+  for (i=0;i<LN;i++){ bE[i]=lI[i]*lI[i]; bF[i]=lI[i]*lP[i]; }
+  box(bE,bC,r,lw,lh); box(bF,bD,r,lw,lh);
+  for (i=0;i<LN;i++){
+    var mI=bA[i], a=(bD[i]-mI*bB[i])/(bC[i]-mI*mI+eps);
+    bE[i]=a; bF[i]=bB[i]-a*mI;
+  }
+  box(bE,bC,r,lw,lh); box(bF,bD,r,lw,lh);          // mean a, mean b (half size)
+  for (y=0;y<segH;y++){
+    var fy=Math.min(lh-1.001,Math.max(0,y*0.5-0.25)), y0=fy|0, ty=fy-y0, r0=y0*lw, r1=(y0+1)*lw;
+    for (x=0;x<segW;x++){
+      var fx=Math.min(lw-1.001,Math.max(0,x*0.5-0.25)), x0=fx|0, tx=fx-x0;
+      var A=(bC[r0+x0]*(1-tx)+bC[r0+x0+1]*tx)*(1-ty)+(bC[r1+x0]*(1-tx)+bC[r1+x0+1]*tx)*ty;
+      var B=(bD[r0+x0]*(1-tx)+bD[r0+x0+1]*tx)*(1-ty)+(bD[r1+x0]*(1-tx)+bD[r1+x0+1]*tx)*ty;
+      q[y*segW+x]=A*I[y*segW+x]+B;
+    }
+  }
+}
+function readGuide(){
+  var px=segCtx.getImageData(0,0,segW,segH).data;
+  for (var i=0,j=0;i<N;i++,j+=4) GI[i]=(0.299*px[j]+0.587*px[j+1]+0.114*px[j+2])/255;
+}
 function onMask(result){
   var m = result && result.confidenceMasks && result.confidenceMasks[0];
   if (!m) return;
-  var f = m.getAsFloat32Array(), d = maskImg.data;
-  if (!prevMask || prevMask.length!==f.length) prevMask=new Float32Array(f);
-  for (var i=0;i<f.length;i++){
-    var v = prevMask[i]*0.35 + f[i]*0.65; prevMask[i]=v;
-    var a = (v-0.35)/0.4; a = a<0?0:a>1?1:a;
-    d[i*4+3] = a*255;
+  var f = m.getAsFloat32Array(); if (f.length!==N) return;
+  var i;
+  if (!PREV) PREV=new Float32Array(N);
+  for (i=0;i<N;i++){ var v=segInvert?1-f[i]:f[i]; v = haveMask ? PREV[i]*0.3+v*0.7 : v; PREV[i]=v; GP[i]=v; }
+  haveMask=true;
+  var src=GP;
+  if (refineOn){ guided(GI,GP,4,0.003,Q); src=Q; }
+  var lo=0.42-0.22*edge, hi=lo+0.28, d=maskImg.data;
+  for (i=0;i<N;i++){
+    var t=(src[i]-lo)/(hi-lo); t=t<0?0:t>1?1:t; t=t*t*(3-2*t);
+    ALPHA[i]=t; d[i*4+3]=t*255;
   }
   maskCtx.putImageData(maskImg,0,0);
+}
+
+/* ---- touch-ups ---- */
+var lightOn=store.get('light',false), lightAmt=store.get('lightamt',0.6), softOn=store.get('soft',false), softAmt=store.get('softamt',0.5), warmOn=store.get('warm',false);
+var gammaNow=1, gammaSet=-1, frameN=0;
+var funcs=document.querySelectorAll('#vsLight feFuncR, #vsLight feFuncG, #vsLight feFuncB');
+function measureLight(){
+  // average brightness of YOU (mask-weighted), or of the middle of the frame
+  var sum=0, wsum=0, i, x, y;
+  if (haveMask && bgMode!=='none'){
+    for (i=0;i<N;i+=3){ var a=ALPHA[i]; sum+=GI[i]*a; wsum+=a; }
+  } else {
+    for (y=Math.floor(segH*0.15);y<segH*0.85;y+=2) for (x=Math.floor(segW*0.3);x<segW*0.7;x+=2){ i=y*segW+x; sum+=GI[i]; wsum+=1; }
+  }
+  if (wsum<50) return;
+  var L=Math.min(0.95,Math.max(0.03,sum/wsum)), target=0.5;
+  var e = L<target ? Math.log(target)/Math.log(L) : 1;     // gamma <1 lifts shadows and mid-tones, keeps highlights
+  e = Math.max(0.45,Math.min(1,e));
+  e = 1-(1-e)*lightAmt;
+  gammaNow += (e-gammaNow)*0.2;                              // ease, so it never flickers
+}
+function camFilter(extra){
+  var f='';
+  if (lightOn){
+    if (Math.abs(gammaNow-gammaSet)>0.004){ gammaSet=gammaNow; for (var i=0;i<funcs.length;i++) funcs[i].setAttribute('exponent',gammaSet.toFixed(3)); }
+    f+='url(#vsLight) contrast(1.06) saturate(1.08) ';
+  }
+  if (warmOn) f+='sepia(0.12) saturate(1.06) ';
+  if (extra) f+=extra;
+  return f.trim()||'none';
+}
+function drawCam(ctx,vw,vh){
+  ctx.filter=camFilter(); coverDraw(ctx,cam,vw,vh);
+  if (softOn){
+    ctx.save(); ctx.globalAlpha=0.22+0.38*softAmt; ctx.globalCompositeOperation='source-atop';
+    ctx.filter=camFilter('blur('+(2+3*softAmt).toFixed(1)+'px)'); coverDraw(ctx,cam,vw,vh);
+    ctx.restore();
+  }
+  ctx.filter='none';
 }
 function frame(){
   requestAnimationFrame(frame);
   if (!camStream || cam.readyState<2) return;
   var vw=cam.videoWidth, vh=cam.videoHeight;
-  if (bgMode==='none' || !segmenter){ coverDraw(octx,cam,vw,vh); }
-  else {
+  var useSeg = bgMode!=='none' && segmenter;
+  frameN++;
+  if (useSeg || (lightOn && frameN%6===0)){
     segCtx.drawImage(cam,0,0,segW,segH);
+    readGuide();
+  }
+  if (useSeg){
     var ts=performance.now(); if (ts<=lastTs) ts=lastTs+1; lastTs=ts;
     try { segmenter.segmentForVideo(segCanvas, ts, onMask); } catch(e){ console.warn(e); }
-    // background
-    if (bgMode==='blur'){ octx.filter='blur(14px)'; coverDraw(octx,cam,vw,vh); octx.filter='none'; }
-    else if (bgImg){ coverDraw(octx,bgImg,bgImg.naturalWidth||bgImg.width,bgImg.naturalHeight||bgImg.height); }
-    else { octx.fillStyle='#0E1C42'; octx.fillRect(0,0,W,H); }
-    // person
-    pctx.globalCompositeOperation='source-over';
-    pctx.clearRect(0,0,W,H);
-    coverDraw(pctx,cam,vw,vh);
-    pctx.globalCompositeOperation='destination-in';
-    pctx.filter='blur(3px)';
-    var s=Math.max(W/vw,H/vh), dw=vw*s, dh=vh*s;
-    pctx.drawImage(maskCanvas,(W-dw)/2,(H-dh)/2,dw,dh);
-    pctx.filter='none';
-    pctx.globalCompositeOperation='source-over';
-    octx.drawImage(person,0,0);
   }
+  if (lightOn && frameN%6===0) measureLight();
+  if (!useSeg){ octx.clearRect(0,0,W,H); drawCam(octx,vw,vh); return; }
+  // background
+  if (bgMode==='blur'){ octx.filter=camFilter('blur(16px)'); coverDraw(octx,cam,vw,vh); octx.filter='none'; }
+  else if (bgImg){ coverDraw(octx,bgImg,bgImg.naturalWidth||bgImg.width,bgImg.naturalHeight||bgImg.height); }
+  else { octx.fillStyle='#0E1C42'; octx.fillRect(0,0,W,H); }
+  // you
+  pctx.globalCompositeOperation='source-over';
+  pctx.clearRect(0,0,W,H);
+  drawCam(pctx,vw,vh);
+  pctx.globalCompositeOperation='destination-in';
+  pctx.filter='blur(1.2px)';
+  var s=Math.max(W/vw,H/vh), dw=vw*s, dh=vh*s;
+  pctx.drawImage(maskCanvas,(W-dw)/2,(H-dh)/2,dw,dh);
+  pctx.filter='none';
+  pctx.globalCompositeOperation='source-over';
+  octx.drawImage(person,0,0);
 }
 requestAnimationFrame(frame);
+
+/* controls */
+$('edgeR').value=edge; $('refine').checked=refineOn;
+$('edgeR').oninput=function(){ edge=+this.value; store.set('edge',edge); };
+$('refine').onchange=function(){ refineOn=this.checked; store.set('refine',refineOn); };
+$('lightOn').checked=lightOn; $('lightR').value=lightAmt; $('softOn').checked=softOn; $('softR').value=softAmt; $('warmOn').checked=warmOn;
+$('lightOn').onchange=function(){ lightOn=this.checked; store.set('light',lightOn); gammaNow=1; };
+$('lightR').oninput=function(){ lightAmt=+this.value; store.set('lightamt',lightAmt); };
+$('softOn').onchange=function(){ softOn=this.checked; store.set('soft',softOn); };
+$('softR').oninput=function(){ softAmt=+this.value; store.set('softamt',softAmt); };
+$('warmOn').onchange=function(){ warmOn=this.checked; store.set('warm',warmOn); };
 
 function listDevices(){
   if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) return;
@@ -577,6 +743,7 @@ function setMode(m){
   bgMode=m; store.set('bgmode',m);
   [].forEach.call($('bgMode').children,function(b){ b.classList.toggle('on',b.dataset.m===m); });
   $('bgs').style.display = m==='image' ? '' : 'none';
+  $('edgeBox').style.display = m==='none' ? 'none' : '';
   if (m==='image') loadBg();
 }
 [].forEach.call($('bgMode').children,function(b){ b.onclick=function(){ if(!b.disabled) setMode(b.dataset.m); }; });
@@ -618,23 +785,44 @@ function addBg(file){
 }
 renderBgs(); $('bgs').style.display='none';
 
-/* the segmentation model: loaded once, from Google's CDN, runs on this computer */
+/* the segmentation model: loaded from Google's CDN, runs on this computer.
+   Detailed = selfie_multiclass (hair is its own class; person = 1 - background).
+   Faster   = selfie_segmenter (person only). */
 var MP = window.VS_MP || 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14';
-var MODEL = window.VS_MODEL || 'https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/latest/selfie_segmenter.tflite';
-(window.VS_SEGMENTER ? Promise.resolve(window.VS_SEGMENTER) : import(MP+'/vision_bundle.mjs').then(function(mp){
-  return mp.FilesetResolver.forVisionTasks(MP+'/wasm').then(function(fs){
-    var opts=function(dlg){ return {baseOptions:{modelAssetPath:MODEL,delegate:dlg},runningMode:'VIDEO',outputCategoryMask:false,outputConfidenceMasks:true}; };
-    return mp.ImageSegmenter.createFromOptions(fs,opts('GPU')).catch(function(){ return mp.ImageSegmenter.createFromOptions(fs,opts('CPU')); });
+var MODELS = window.VS_MODELS || {
+  detail:'https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite',
+  fast:'https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/latest/selfie_segmenter.tflite'
+};
+var modelKind=store.get('model','detail'), mpLib=null, mpFiles=null, loadingModel=0;
+function markModel(){ [].forEach.call($('modelSel').children,function(b){ b.classList.toggle('on',b.dataset.k===modelKind); }); }
+function loadSegmenter(kind){
+  var my=++loadingModel;
+  $('segNote').textContent = kind==='detail' ? 'Loading the detailed hair model (a bigger download the first time, then Chrome keeps it)…' : 'Loading the faster model…';
+  if (window.VS_SEGMENTER) return Promise.resolve(window.VS_SEGMENTER).then(function(sg){ done(sg); });
+  var lib = mpLib ? Promise.resolve() : import(MP+'/vision_bundle.mjs').then(function(m){ mpLib=m; return m.FilesetResolver.forVisionTasks(MP+'/wasm'); }).then(function(fs){ mpFiles=fs; });
+  return lib.then(function(){
+    var opts=function(dlg){ return {baseOptions:{modelAssetPath:MODELS[kind],delegate:dlg},runningMode:'VIDEO',outputCategoryMask:false,outputConfidenceMasks:true}; };
+    return mpLib.ImageSegmenter.createFromOptions(mpFiles,opts('GPU')).catch(function(){ return mpLib.ImageSegmenter.createFromOptions(mpFiles,opts('CPU')); });
+  }).then(done).catch(function(e){
+    console.warn(e);
+    if (my!==loadingModel) return;
+    if (kind==='detail'){ modelKind='fast'; markModel(); return loadSegmenter('fast'); }
+    $('segNote').textContent='The background tool could not load (no internet, or the network blocked it). You can still record with your real background.';
   });
-})).then(function(s){
-  segmenter=s;
-  [].forEach.call($('bgMode').children,function(b){ b.disabled=false; });
-  $('segNote').textContent='Background tool ready. Even lighting on your face and a plain wall behind you give the cleanest edges.';
-  setMode(store.get('bgmode','none'));
-}).catch(function(e){
-  console.warn(e);
-  $('segNote').textContent='The background tool could not load (no internet, or the network blocked it). You can still record with your real background.';
-});
+  function done(sg){
+    if (my!==loadingModel){ try{ sg.close&&sg.close(); }catch(e){} return; }
+    var old=segmenter; segmenter=sg; PREV=null; haveMask=false;
+    if (old && old!==sg && old.close) try{ old.close(); }catch(e){}
+    var labels=[]; try{ labels=(sg.getLabels&&sg.getLabels())||[]; }catch(e){}
+    segInvert = !window.VS_SEGMENTER && (kind==='detail' || /background/i.test(labels[0]||''));
+    [].forEach.call($('bgMode').children,function(b){ b.disabled=false; });
+    $('segNote').textContent='Ready. Soft, even light on your face and a plain wall behind you give the cleanest edges. If hair still gets clipped, slide Edges toward “Keep more hair”.';
+    setMode(store.get('bgmode','none'));
+  }
+}
+[].forEach.call($('modelSel').children,function(b){ b.onclick=function(){ if(b.dataset.k===modelKind) return; modelKind=b.dataset.k; store.set('model',modelKind); markModel(); loadSegmenter(modelKind); }; });
+markModel();
+loadSegmenter(modelKind);
 
 /* ---------- recording ---------- */
 var MIME = (function(){
@@ -668,7 +856,7 @@ function startRec(){
     var vs=out.captureStream(30);
     var tracks=vs.getVideoTracks().concat(micStream?micStream.getAudioTracks():[]);
     var stream=new MediaStream(tracks);
-    chunks=[]; posterBlob=null;
+    chunks=[]; posterBlob=null; frames=[];
     try { recorder=new MediaRecorder(stream,{mimeType:MIME,videoBitsPerSecond:3000000,audioBitsPerSecond:128000}); }
     catch(e){ recorder=new MediaRecorder(stream); }
     recorder.ondataavailable=function(e){ if(e.data && e.data.size) chunks.push(e.data); };
@@ -678,19 +866,27 @@ function startRec(){
     recStart=performance.now(); setRecUI(true);
     timerId=setInterval(function(){ $('rectime').textContent=fmtT((performance.now()-recStart)/1000); },250);
     setTimeout(grabPoster,1200);
+    frameId=setInterval(grabFrame,1000);
     if (pAuto){ var pt=$('ptext'), acc=0, last=performance.now();
       scrollId=setInterval(function(){ var now=performance.now(); acc+=pSpeed*(now-last)/1000; last=now; var whole=Math.floor(acc); if(whole){ pt.scrollTop+=whole; acc-=whole; } },50); }
   });
 }
 function grabPoster(){ if (!recording) return; out.toBlob(function(b){ posterBlob=b; },'image/jpeg',0.86); }
-function stopRec(){ if (recorder && recorder.state!=='inactive') recorder.stop(); clearInterval(timerId); clearInterval(scrollId); setRecUI(false); }
+var frames=[], frameId=0;   // one still a second while recording: the thumbnail choices
+function grabFrame(){
+  if (!recording) return;
+  var t=(performance.now()-recStart)/1000;
+  out.toBlob(function(b){ if(b) frames.push({t:t,blob:b}); if(frames.length>240) frames=frames.filter(function(_,i){return i%2===0;}); },'image/jpeg',0.86);
+}
+function stopRec(){ if (recorder && recorder.state!=='inactive') recorder.stop(); clearInterval(timerId); clearInterval(frameId); clearInterval(scrollId); setRecUI(false); }
 function fmtT(s){ s=Math.round(s); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
 var review=null;
 function finishRec(){
   var dur=(performance.now()-recStart)/1000;
   var blob=new Blob(chunks,{type:MIME.split(';')[0]||'video/mp4'});
-  if (!posterBlob){ out.toBlob(function(b){ posterBlob=b; if(review) review.poster=b; },'image/jpeg',0.86); }
+  if (!posterBlob){ out.toBlob(function(b){ posterBlob=b; if(review && !review.poster) review.poster=b; },'image/jpeg',0.86); }
   review={path:current, blob:blob, poster:posterBlob, dur:dur};
+  buildThumbs(frames.slice(), posterBlob);
   var c=byPath[current];
   $('revTitle').textContent='Your take: '+c.label;
   if ($('revVideo').src) URL.revokeObjectURL($('revVideo').src);
@@ -699,6 +895,44 @@ function finishRec(){
   $('review').hidden=false;
   $('review').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
+var thumbURLs=[];
+function buildThumbs(fr, first){
+  thumbURLs.forEach(URL.revokeObjectURL); thumbURLs=[];
+  var box=$('thumbs'); box.innerHTML='';
+  var pick=[];
+  if (fr.length<=8) pick=fr;
+  else for (var i=0;i<8;i++) pick.push(fr[Math.round(i*(fr.length-1)/7)]);
+  if (!pick.length && first) pick=[{t:1.2,blob:first}];
+  pick.forEach(function(f,i){ addThumb(f.blob, fmtT(f.t), i===Math.min(1,pick.length-1)); });
+}
+function addThumb(blob, label, on){
+  var box=$('thumbs'), u=URL.createObjectURL(blob); thumbURLs.push(u);
+  var d=document.createElement('div'); d.className='th';
+  d.innerHTML='<img alt=""><span></span>'; d.firstChild.src=u; d.lastChild.textContent=label;
+  d.onclick=function(){ chooseThumb(d,blob); };
+  box.appendChild(d);
+  if (on) chooseThumb(d,blob);
+}
+function chooseThumb(el,blob){
+  [].forEach.call($('thumbs').children,function(c){ c.classList.remove('on'); });
+  el.classList.add('on');
+  if (review){ review.poster=blob; review.posterSet=true; }
+}
+$('thumbNow').onclick=function(){
+  var v=$('revVideo'); if(!review || !v.videoWidth) return;
+  v.pause();
+  var c=document.createElement('canvas'); c.width=v.videoWidth; c.height=v.videoHeight;
+  c.getContext('2d').drawImage(v,0,0);
+  c.toBlob(function(b){ if(b) addThumb(b, fmtT(v.currentTime||0), true); },'image/jpeg',0.88);
+};
+$('thumbFile').onchange=function(){
+  var f=this.files[0]; this.value=''; if(!f||!review) return;
+  var i=new Image(); i.onload=function(){
+    var c=document.createElement('canvas'); c.width=W; c.height=H; var x=c.getContext('2d');
+    var s=Math.max(W/i.width,H/i.height); x.drawImage(i,(W-i.width*s)/2,(H-i.height*s)/2,i.width*s,i.height*s);
+    c.toBlob(function(b){ addThumb(b,'yours',true); URL.revokeObjectURL(i.src); },'image/jpeg',0.88);
+  }; i.src=URL.createObjectURL(f);
+};
 function closeReview(){ $('review').hidden=true; review=null; var v=$('revVideo'); v.pause(); }
 $('recBtn').onclick=function(){ if (counting) return; recording?stopRec():startRec(); };
 document.addEventListener('keydown',function(e){
@@ -713,6 +947,7 @@ $('redo').onclick=function(){ closeReview(); startRec(); };
 var takes=[]; // {path, blob, poster, dur, saved}
 function keep(r){
   r.poster = r.poster || posterBlob;
+  r.thumbURL = null;
   takes = takes.filter(function(t){ return t.path!==r.path; });
   takes.push(r);
   keptPaths[r.path]=new Date().toISOString().slice(0,10); store.set('kept',keptPaths);
@@ -724,27 +959,131 @@ function save(blob,name){
   setTimeout(function(){ URL.revokeObjectURL(a.href); },4000);
 }
 function saveTake(t){
+  if (repo) return saveToRepo(t);
   var base=t.path.split('/').pop();
   save(t.blob, base+'.'+EXT);
   if ($('poster').checked && t.poster) setTimeout(function(){ save(t.poster, base+'.jpg'); },400);
   t.saved=true; renderTray();
+  return Promise.resolve(true);
 }
+
+/* ---- the repo folder: picked once, remembered in this browser ---- */
+var repo=null, FSA=!!window.showDirectoryPicker;
+function idb(){ return new Promise(function(res,rej){ var r=indexedDB.open('video-studio',1); r.onupgradeneeded=function(){ r.result.createObjectStore('kv'); }; r.onsuccess=function(){ res(r.result); }; r.onerror=function(){ rej(r.error); }; }); }
+function idbGet(k){ return idb().then(function(db){ return new Promise(function(res){ var q=db.transaction('kv').objectStore('kv').get(k); q.onsuccess=function(){ res(q.result); }; q.onerror=function(){ res(null); }; }); }).catch(function(){ return null; }); }
+function idbSet(k,v){ return idb().then(function(db){ return new Promise(function(res){ var tx=db.transaction('kv','readwrite'); tx.objectStore('kv').put(v,k); tx.oncomplete=function(){ res(true); }; tx.onerror=function(){ res(false); }; }); }).catch(function(){ return false; }); }
+function looksLikeRepo(h){ return h.getFileHandle('video-manifest.json').then(function(){ return true; },function(){ return false; }); }
+function setRepo(h){
+  repo=h;
+  $('repoState').innerHTML = h ? '<span class="repo-ok">✓ Connected to '+h.name.replace(/</g,'&lt;')+'</span>. Saves go straight into assets\\video\\…' : 'Not connected. Downloads go to your Downloads folder.';
+  $('repoBtn').textContent = h ? 'Change folder' : '📁 Connect optima-4th-ela';
+  $('repoBtn').className = h ? 'btn sm' : 'btn primary';
+  $('dlNow').textContent = h ? '📁 Save to repo' : '⬇ Download now';
+  $('revNote').textContent = h ? 'Save to repo puts the video and its thumbnail in the right folder. Or keep it now and save everything from the tray later.' : 'Kept takes wait in the tray at the bottom. Download them one at a time or all together as a zip.';
+  $('saveAllBtn').hidden = !h;
+  $('traySub').textContent = h ? 'Connected to '+h.name+'. Save all writes every kept take into its folder.' : 'Unzip into C:\\repos\\optima-4th-ela and every file lands in the right folder.';
+  renderTray();
+  if (h) scanRepo();
+}
+function scanRepo(){
+  // mark what is already on disk, so "Still needed" is true to today
+  var found={};
+  function walk(dir,prefix){
+    var out=[]; var it=dir.entries();
+    function next(){ return it.next().then(function(r){
+      if (r.done) return Promise.all(out);
+      var name=r.value[0], h=r.value[1];
+      if (h.kind==='directory') out.push(walk(h,prefix+name+'/'));
+      else if (/\.mp4$/i.test(name)) found[prefix+name.replace(/\.mp4$/i,'')]=1;
+      return next();
+    }); }
+    return next();
+  }
+  repo.getDirectoryHandle('assets').then(function(a){ return a.getDirectoryHandle('video'); })
+    .then(function(v){ return walk(v,''); })
+    .then(function(){ var n=0; CLIPS.forEach(function(c){ var was=c.done; c.done=!!found[c.path] || (c.kind==='lesson' && c.done); if(c.done&&!was) n++; }); renderList(); if(n) toast(n+' more found in the repo'); })
+    .catch(function(e){ console.warn('scan',e); });
+}
+function ensureWrite(){
+  if (!repo) return Promise.resolve(false);
+  return repo.queryPermission({mode:'readwrite'}).then(function(p){
+    if (p==='granted') return true;
+    return repo.requestPermission({mode:'readwrite'}).then(function(p2){ return p2==='granted'; });
+  });
+}
+function writeFile(rel, blob){
+  var parts=rel.split('/'), name=parts.pop();
+  return parts.reduce(function(pr,seg){ return pr.then(function(d){ return d.getDirectoryHandle(seg,{create:true}); }); }, Promise.resolve(repo))
+    .then(function(d){ return d.getFileHandle(name,{create:true}); })
+    .then(function(fh){ return fh.createWritable(); })
+    .then(function(w){ return w.write(blob).then(function(){ return w.close(); }); });
+}
+function existsIn(rel){
+  var parts=rel.split('/'), name=parts.pop();
+  return parts.reduce(function(pr,seg){ return pr.then(function(d){ return d.getDirectoryHandle(seg); }); }, Promise.resolve(repo))
+    .then(function(d){ return d.getFileHandle(name).then(function(){ return true; }); })
+    .catch(function(){ return false; });
+}
+function saveToRepo(t, quiet){
+  var c=byPath[t.path], rel=folderOf(c)+t.path.split('/').pop();
+  return ensureWrite().then(function(ok){
+    if (!ok){ toast('Chrome didn’t allow saving to the folder. Downloading instead.'); var r=repo; repo=null; return saveTake(t).then(function(){ repo=r; return false; }); }
+    return existsIn(rel+'.'+EXT).then(function(ex){
+      if (ex && !confirm(rel.split('/').pop()+'.'+EXT+' is already in the repo. Replace it?')) return false;
+      return writeFile(rel+'.'+EXT, t.blob)
+        .then(function(){ if ($('poster').checked && t.poster) return writeFile(rel+'.jpg', t.poster); })
+        .then(function(){ t.saved=true; c.done=true; renderTray(); renderList(); if(!quiet) toast('Saved to '+folderOf(c).replace(/\//g,'\\')); return true; });
+    });
+  }).catch(function(e){ console.warn(e); toast('Could not save: '+(e.message||e)); return false; });
+}
+$('repoBtn').onclick=function(){
+  if (!FSA) return;
+  window.showDirectoryPicker({id:'optima-4th-ela',mode:'readwrite'}).then(function(h){
+    return looksLikeRepo(h).then(function(ok){
+      if (!ok && !confirm('“'+h.name+'” has no video-manifest.json, so it doesn’t look like optima-4th-ela. Use it anyway?')) return;
+      idbSet('repo',h); setRepo(h); toast('Connected to '+h.name);
+    });
+  }).catch(function(e){ if (e && e.name!=='AbortError') toast('Could not open that folder'); });
+};
+$('saveAllBtn').onclick=function(){
+  var btn=this, todo=takes.filter(function(t){ return !t.saved; });
+  if (!todo.length){ toast('Everything kept is already saved'); return; }
+  btn.disabled=true;
+  todo.reduce(function(pr,t){ return pr.then(function(n){ return saveToRepo(t,true).then(function(ok){ return n+(ok?1:0); }); }); }, Promise.resolve(0))
+    .then(function(n){ toast(n+' saved into the repo'); }).finally(function(){ btn.disabled=false; renderTray(); });
+};
+if (!FSA){ $('repoPanel').querySelector('.note:last-child').textContent='Open this page in Chrome on your computer to save straight into the repo. Here, files go to Downloads.'; $('repoBtn').hidden=true; }
+else idbGet('repo').then(function(h){
+  if (!h) return;
+  h.queryPermission({mode:'readwrite'}).then(function(p){
+    if (p==='granted') setRepo(h);
+    else {
+      // Chrome forgets the OK between visits: one click brings it back
+      $('repoState').innerHTML='Last time: <b>'+h.name.replace(/</g,'&lt;')+'</b>. Chrome needs one click to reconnect.';
+      $('repoBtn').textContent='📁 Reconnect '+h.name; $('repoBtn').className='btn primary';
+      $('repoBtn').onclick=function(){ h.requestPermission({mode:'readwrite'}).then(function(p2){ if(p2==='granted'){ setRepo(h); $('repoBtn').onclick=connectNew; } }); };
+    }
+  });
+});
+var connectNew=$('repoBtn').onclick;
 $('keepNext').onclick=function(){ if(!review) return; keep(review); toast('Kept: '+review.path.split('/').pop()+'.'+EXT); var n=nextNeeded(); closeReview(); if(n) select(n); };
 $('dlNow').onclick=function(){ if(!review) return; var r=review; keep(r); saveTake(takes[takes.length-1]); var n=nextNeeded(); closeReview(); if(n) select(n); };
 function renderTray(){
   var n=takes.length, mb=takes.reduce(function(s,t){return s+t.blob.size;},0)/1048576;
   $('trayTitle').textContent = n ? n+' take'+(n>1?'s':'')+' kept · '+mb.toFixed(0)+' MB' : 'No takes kept yet';
-  $('zipBtn').disabled=!n;
+  $('zipBtn').disabled=!n; $('saveAllBtn').disabled=!takes.some(function(t){return !t.saved;});
   var box=$('takes'); box.innerHTML='';
   takes.forEach(function(t,i){
     var c=byPath[t.path];
     var r=document.createElement('div'); r.className='take';
-    r.innerHTML='<span class="mono grow"></span><span></span><span class="ok"></span><button class="btn sm">⬇ Download</button><button class="btn sm">Remove</button>';
-    r.children[0].textContent=folderOf(c)+t.path.split('/').pop()+'.'+EXT;
-    r.children[1].textContent=fmtT(t.dur);
-    r.children[2].textContent=t.saved?'saved':'';
-    r.children[3].onclick=function(){ saveTake(t); };
-    r.children[4].onclick=function(){ takes.splice(i,1); delete keptPaths[t.path]; store.set('kept',keptPaths); renderTray(); renderList(); };
+    r.innerHTML='<img alt=""><span class="mono grow"></span><span></span><span class="ok"></span><button class="btn sm"></button><button class="btn sm">Remove</button>';
+    if (t.poster){ if(!t.thumbURL) t.thumbURL=URL.createObjectURL(t.poster); r.children[0].src=t.thumbURL; } else r.children[0].hidden=true;
+    r.children[1].textContent=folderOf(c)+t.path.split('/').pop()+'.'+EXT;
+    r.children[2].textContent=fmtT(t.dur);
+    r.children[3].textContent=t.saved?'saved':'';
+    r.children[4].textContent=repo?'📁 Save':'⬇ Download';
+    r.children[4].onclick=function(){ saveTake(t); };
+    r.children[5].onclick=function(){ takes.splice(i,1); delete keptPaths[t.path]; store.set('kept',keptPaths); renderTray(); renderList(); };
     box.appendChild(r);
   });
   $('stKept').textContent=n;
