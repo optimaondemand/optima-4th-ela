@@ -2189,10 +2189,9 @@ function videoControl(label, src) {
   srcEl.addEventListener('error', fail);
   v.addEventListener('play', function () { audioStopAll(v); _nowPlaying = v; });
 
-  var cap = document.createElement('figcaption');
-  cap.className = 'spk-media-cap';
-  cap.textContent = label;
-  fig.appendChild(v); fig.appendChild(cap);
+  /* No caption: the films are of the teacher, not the character the
+     slot label names, and the label repeats the audio button above. */
+  fig.appendChild(v);
   return fig;
 }
 
