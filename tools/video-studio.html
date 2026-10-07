@@ -444,12 +444,21 @@ var myScripts = store.get('scripts', {});   // path -> text, kept in this browse
 function scriptFor(c){ return myScripts[c.path] != null ? myScripts[c.path] : c.script; }
 var lessonScripts = store.get('lscripts', {});   // "10-3" -> {name, text}: a whole lesson's script doc
 var viewClip = false;                              // true = show only this clip's own script
+/* Teacher scripts written for the lesson (Planning docs/teacher-video-scripts), built into
+   video-shotlist.js. An uploaded doc for the same lesson takes their place. */
+var TEACHER = DATA.teacherDocs || {};
+function lessonDocFor(c){
+  if (!c || !c.lkey) return null;
+  if (lessonScripts[c.lkey]) return lessonScripts[c.lkey];
+  if (TEACHER[c.lkey]) return {name:c.lessonShort, text:TEACHER[c.lkey], builtin:true};
+  return null;
+}
 function showScript(){
   if (!sel) return;
   var c=byPath[sel], pt=$('ptext');
-  var L = c.lkey && lessonScripts[c.lkey];
+  var L = lessonDocFor(c);
   $('pEditBox').hidden=true; pt.hidden=false; $('pHide').textContent='Hide';
-  $('pView').hidden = !L; $('pDropL').hidden = !L || viewClip;
+  $('pView').hidden = !L; $('pDropL').hidden = !L || viewClip || L.builtin;
   $('pView').textContent = viewClip ? 'Whole lesson script' : 'This clip only';
   if (L && !viewClip){ renderLessonDoc(c, L); return; }
   var s=scriptFor(c);
@@ -514,7 +523,7 @@ function renderLessonDoc(c, L){
     if (i===target){ d.classList.add('here'); targetEl=d; }
     pt.appendChild(d);
   });
-  $('pLbl').textContent = 'Lesson script · '+(L.name||c.lessonShort)+(target<0?' · couldn’t find this video’s part, scroll to it':'');
+  $('pLbl').textContent = (L.builtin?'Teacher script · ':'Lesson script · ')+(L.name||c.lessonShort)+(target<0?' · couldn’t find this video’s part, scroll to it':'');
   $('pReset').hidden = true;
   pt.scrollTop = targetEl ? Math.max(0,targetEl.offsetTop-4) : 0;
 }
