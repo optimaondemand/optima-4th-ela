@@ -49,9 +49,8 @@ details.week>summary .cnt{font-weight:700;font-size:12px;color:var(--muted)}
 
 /* main */
 main{overflow:auto;padding:18px 22px 120px;min-width:0}
-.clip-head{display:block}
-.clip-head .chip{word-break:break-all;max-width:100%}
-.clip-head h2{margin:2px 0 4px;font-size:19px;line-height:1.25;color:var(--navy)}
+.clip-head{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:12px}
+.clip-head h2{margin:0;font-size:22px;color:var(--navy)}
 .clip-head .lt{color:var(--muted);font-size:14px;font-weight:700}
 .fname{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:6px}
 .chip{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
@@ -76,7 +75,6 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
 .prow{display:flex;gap:6px;margin-top:6px}
 .prow button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:6px;padding:5px 11px;cursor:pointer;font-weight:800}
 .prow button.on{background:var(--gold);color:var(--navy)}
-.ptext,#pEditBox{max-width:var(--pw,520px);margin:0 auto}
 .ptext{max-height:150px;overflow:auto;line-height:1.5;font-size:22px;scroll-behavior:auto;white-space:pre-wrap}
 .ptext.empty{opacity:.6;font-size:15px;font-style:italic}
 .screen{position:relative;background:#111;border-radius:12px;overflow:hidden;aspect-ratio:16/9}
@@ -174,6 +172,19 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
   </aside>
 
   <main>
+    <div class="clip-head">
+      <div>
+        <div class="lt" id="selLesson">Pick a video from the list</div>
+        <h2 id="selLabel">—</h2>
+        <div class="fname">
+          <span class="chip mono" id="selFile">—</span>
+          <button class="btn sm" id="copyFile" title="Copy file name">Copy name</button>
+          <span class="chip mono" id="selFolder" title="Where it goes in optima-4th-ela">—</span>
+          <button class="btn sm" id="copyFolder">Copy folder</button>
+        </div>
+      </div>
+    </div>
+
     <div class="stage">
       <div>
         <div class="prompter">
@@ -184,8 +195,6 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
             <button id="pScroll" title="Scroll the script while recording">Auto-scroll</button>
             <button id="pSlower" title="Slower">−</button>
             <button id="pFaster" title="Faster">+</button>
-            <button id="pNarrow" title="Narrower lines, so your eyes move less">→←</button>
-            <button id="pWide" title="Wider lines">←→</button>
             <button id="pHide">Hide</button>
             <button id="pEdit" title="Type or paste a script for this video">Edit</button>
             <label class="up" title="Upload .txt, .md or Word (.docx). A weekly script doc fills every clip it names.">Upload scripts<input type="file" id="pFile" accept=".txt,.md,.markdown,.docx,text/plain,text/markdown" multiple hidden></label>
@@ -232,18 +241,6 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
       </div>
 
       <div>
-        <div class="panel clip-head">
-      <div>
-        <div class="lt" id="selLesson">Pick a video from the list</div>
-        <h2 id="selLabel">—</h2>
-        <div class="fname">
-          <span class="chip mono" id="selFile">—</span>
-          <button class="btn sm" id="copyFile" title="Copy file name">Copy name</button>
-          <span class="chip mono" id="selFolder" title="Where it goes in optima-4th-ela">—</span>
-          <button class="btn sm" id="copyFolder">Copy folder</button>
-        </div>
-      </div>
-    </div>
         <div class="panel">
           <h4>Background</h4>
           <div class="seg" id="bgMode">
@@ -422,11 +419,6 @@ $('pSmaller').onclick=function(){ pSize=Math.max(14,pSize-2); store.set('psize',
 $('pScroll').onclick=function(){ pAuto=!pAuto; store.set('pauto',pAuto); applyP(); };
 $('pFaster').onclick=function(){ pSpeed=Math.min(120,pSpeed+5); store.set('pspeed',pSpeed); toast('Scroll speed '+pSpeed); };
 $('pSlower').onclick=function(){ pSpeed=Math.max(5,pSpeed-5); store.set('pspeed',pSpeed); toast('Scroll speed '+pSpeed); };
-var pWidth=store.get('pwidth',520);
-function applyW(){ document.querySelector('.prompter').style.setProperty('--pw',pWidth+'px'); }
-$('pNarrow').onclick=function(){ pWidth=Math.max(280,pWidth-60); store.set('pwidth',pWidth); applyW(); };
-$('pWide').onclick=function(){ pWidth=Math.min(1200,pWidth+60); store.set('pwidth',pWidth); applyW(); };
-applyW();
 $('pHide').onclick=function(){ var t=$('ptext'); t.hidden=!t.hidden; this.textContent=t.hidden?'Show':'Hide'; };
 applyP();
 
@@ -859,6 +851,7 @@ function startRec(){
   if (!sel){ toast('Pick a video from the list first'); return; }
   if (!camStream || !MIME){ return; }
   closeReview();
+  $('ptext').scrollTop=0;
   countdown(3,function(){
     var vs=out.captureStream(30);
     var tracks=vs.getVideoTracks().concat(micStream?micStream.getAudioTracks():[]);
