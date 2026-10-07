@@ -2415,7 +2415,7 @@ return all.length?all[all.length-1]:null;}
       <div class="intro-card-body">
         <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will explain how Anne&rsquo;s feelings about Gilbert have changed across the novel.</span></div>
         <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Grammar:</strong> I will <em>define</em> main and helping verbs.</span></div>
-        <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>define</em> the rule for hard and soft <em>c</em> and <em>g</em>.</span></div>
+        <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Spelling:</strong> I will <em>name</em> the three suffix rules: doubling, drop the <em>e</em>, and <em>y</em> to <em>i</em>.</span></div>
       </div>
     </div>
   </div>
@@ -2503,12 +2503,9 @@ return all.length?all[all.length-1]:null;}
       <div class="task-box">
         <div class="dol-model-label">✅ Correct Model — from the novel</div>
         <div class="dol-sentence-wrap" id="dolModel">
-          <span class="dol-highlight-word" onclick="dolHighlight(this,'A name — capital A.')">Anne</span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,'A HELPING verb &mdash; it helps the main verb &lsquo;worked&rsquo;.')">has</span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,'The MAIN verb &mdash; the action.')">worked</span>
-          <span>hard </span>
-          <span>all </span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,'Period ends the sentence.')">winter.</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Capital I &mdash; the word I is always a capital.')">I</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'A HELPING verb &mdash; it helps the main verb &lsquo;worry&rsquo;.')">will</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'The MAIN verb, and a period ends the sentence.')">worry.</span>
         </div>
         <div id="dolExplain" style="min-height:24px;margin-top:6px;font-size:13px;color:#34B76F;font-weight:700;transition:opacity 0.2s;"></div>
         <div class="dol-hint">Tap the highlighted parts to see what's correct about them.</div>
@@ -2573,7 +2570,7 @@ return all.length?all[all.length-1]:null;}
 <p><strong>project</strong> &mdash; to throw forward</p>
 </div>
 
-<div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the missing <strong>prefix</strong> at the start of each word.</p></div>
+<div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the missing <strong>part</strong> of each word.</p></div>
       <div class="fillin-game" id="fillinGame">
         <div class="fillin-item">de<input class="fillin-input" id="fill1" data-answer="scribe" maxlength="8" placeholder="______"> &mdash; to write down what something is like</div>
         <div class="fillin-item">manu<input class="fillin-input" id="fill2" data-answer="script" maxlength="8" placeholder="______"> &mdash; written by hand (an author&rsquo;s draft)</div>
@@ -2788,7 +2785,7 @@ return all.length?all[all.length-1]:null;}
         <div class="pause-col">
           <div class="socratic-box" style="margin-bottom:0;">
             <div class="socratic-label">⏸️ Halfway through Ch. 35</div>
-            <p class="socratic-q">Anne tells Jane that the joy is in &ldquo;trying and winning, the best thing is trying and failing.&rdquo; <strong>What does this tell you about how Anne is growing up?</strong></p>
+            <p class="socratic-q">Anne tells her friends, &ldquo;Next to trying and winning, the best thing is trying and failing.&rdquo; <strong>What does this tell you about how Anne is growing up?</strong></p>
           </div>
           <div class="thinking-stop">💭 Pause and think about this — no need to write.</div>
         </div>
@@ -3008,7 +3005,7 @@ function gatherAnswers() {
     { title: '🪶 WRITING CONNECTION', ids: ['my-story','journal-writing'] }
   ];
 
-  output += 'LESSON 14.1 — Anne of Green Gables, Ch. 1 & 2\n';
+  output += 'LESSON 14.1 — Anne of Green Gables, Ch. 35\n';
   output += '════════════════════════════════════════\n\n';
 
   sections.forEach(function(sec) {
@@ -3415,7 +3412,7 @@ function downloadJournal() {
   html += '.game-line{font-size:14px;margin-bottom:4px;}';
   html += '</style></head><body>';
   html += '<h1>📓 My Work — Lesson 14.1</h1>';
-  html += '<h2>Anne of Green Gables — Ch. 1 & 2</h2>';
+  html += '<h2>Anne of Green Gables — Ch. 35</h2>';
 
   sections.forEach(function(sec) {
     html += '<div class="section-title">' + sec.title + '</div>';
@@ -4287,4 +4284,5 @@ document.addEventListener('DOMContentLoaded', function() {
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',load);}else{load();}
 })();
 </script>
-</body></html>
+</body>
+</html>
