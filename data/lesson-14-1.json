@@ -1,0 +1,195 @@
+{
+ "connector": "Gilbert Blythe here, at Queen’s. There are three of us in the running for the medal, and Anne Shirley is one of them, which surprises nobody who ever sat across the aisle from her in Avonlea school. On Fridays I walk Ruby Gillis to the train. Anne and I still don’t walk together. But something’s different this winter. See if you can spot it.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-welcome",
+   "label": "Gilbert’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-wgrd",
+   "label": "Gilbert · about today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-dol",
+   "label": "Gilbert · about today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-guide1",
+   "label": "Gilbert · before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-morphology",
+   "label": "Gilbert · about the word parts"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-vocabulary",
+   "label": "Gilbert · about today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-grammar",
+   "label": "Gilbert · about today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-spelling",
+   "label": "Gilbert · about today’s spelling"
+  },
+  "copia": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-copia",
+   "label": "Gilbert · about saying it three ways"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-guide2",
+   "label": "Gilbert · before you open the book"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-read",
+   "label": "Gilbert · before you read"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-guide3",
+   "label": "Gilbert · before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-chapter",
+   "label": "Gilbert · about the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/gilbert/g4ela-14-1-workshop",
+   "label": "Gilbert · about today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Hi, it’s Gilbert. Today’s question is about winning, and how wanting to win can change. I know a bit about that. I’ve been racing Anne Shirley since our first term in Avonlea school. First, some word work: two old roots, and verbs that come in pieces. Then the chapter, our winter at Queen’s. Watch what Anne wants now. It isn’t what it used to be.",
+  "wgrd": "The box asks you to hold two Annes side by side: the girl who came to Avonlea and the young lady at Queen’s. I can help with the first one. She once broke a slate over my head. This winter she nods to me in the hall. That isn’t the whole change, and it isn’t mine to explain. Find it in what she says and does.",
+  "dol": "The top sentence is three words long, and it’s Jane Andrews talking about exams. I’ll admit I felt the same way. Find the little helper word, and the word it’s helping. The bottom one is two sentences crammed together, the way people talk when they’re nervous. Pull them apart and give them their capitals. Getting the small things right is half of any exam.",
+  "guide1": "Four pieces of word work, and two of them ask you to sort into three groups instead of two. Don’t rush the third group. That’s where the thinking is. At Queen’s, the professors don’t much care whether you guessed right. They want to know how you knew. So for every one you place, be ready to say why. It’s a good habit, and a hard one.",
+  "morphology": "Two old roots today. One means to write, and one means to throw. They don’t stand on their own; they hide inside longer words, and you have to dig them out. When a blank stumps you, ask what the word is doing. Is somebody putting words on paper, or sending something flying? That tells you which root belongs. It works on Latin, too, I’m finding.",
+  "vocabulary": "Four new words, and each one has its sentence from the book sitting right on top. Read that sentence first, then take the word apart, then check. One of these words fits a girl I know rather too well. I won’t say which, or she’d prove it on the spot. The matching game at the end is quick. Don’t let quick turn into careless.",
+  "grammar": "Some verbs come in pieces: a helper out front, and the word that carries the meaning at the end. Sometimes the helpers stack up two deep. Sometimes there’s no helper at all. For each one, ask which word is doing the real work and which ones are only standing beside it. Then count the ones standing beside it. That count is your group.",
+  "spelling": "These are mistakes from real drafts, and three different rules got broken. Before you sort, say each word with its ending, then picture how it should look on the page. All three rules wake up at the same moment: when an ending meets a base word. Anne and I used to spell each other down at school. Whoever slowed down at that moment won.",
+  "copia": "Here’s a plain sentence about where Anne spent her spare hours this winter. Say it three ways: give it a new opener, swap the doing word, then add a where or a how. I hear Anne used to stretch sentences until they snapped. Miss Stacy taught us both to say a thing plainly first. Try all three, then pick the one that tells the most. It’s usually the one with the best verb.",
+  "guide2": "There’s a box here about a rivalry without bitterness. I can only tell you my half. For years Anne wouldn’t look at me. This winter, when I pass her on the stairs at Queen’s, she doesn’t look away. We’re still racing, believe me. But it feels like racing someone, not fighting them. Read, and see what she wants out of it now. I’d like to know myself.",
+  "read": "Two stops. The first comes when the girls are fretting about exams and Anne says something about trying and failing. Ask yourself whether she means it. The second stop comes at the very end, when she’s looking out a window. Watch what she’s dreaming about. I wasn’t there for either of those, so you’ll know more than I do. That doesn’t happen to me often.",
+  "guide3": "Now you write. Here’s how I go about it at Queen’s. Read the question twice. Decide exactly what it’s asking. Answer that, and nothing else, then prove it with something from the book. If a question asks for a quote, copy the words exactly, commas and all. The professors notice, and so will your teacher. Then read it back once. You’ll always find something.",
+  "chapter": "The first question is about Ruby and me, and what Anne wishes she had instead. Don’t ask me; I didn’t know. The second wants you to set the slate day beside this winter, and to quote the book. The third is about her dreaming at the window. Use what the book says she sees, not what you guess she sees.",
+  "workshop": "Publishing starts with the ending. I like that. An ending is where a reader decides what the whole story meant. Your rough last scene has been waiting a long time. Today you replace it, using one move. Pick the move that fits your character, not the one that sounds fanciest. Then read your first line and your last line together. They should sound like they know each other."
+ },
+ "writingFocus": "Publish",
+ "dol": {
+  "a": {
+   "raw": "anne and gilbert have studied together for months they will graduate in june",
+   "fixed": "<strong>Anne</strong> and <strong>Gilbert</strong> have studied together for <strong>months.</strong> <strong>They</strong> will graduate in <strong>June.</strong>",
+   "why": "Capitals on Anne, Gilbert and June, a period after months, a capital T to start the second sentence, and a period at the end. Have studied and will graduate are helping verb + main verb."
+  },
+  "b": {
+   "raw": "the exams will start next week jane has lost seven pounds",
+   "fixed": "<strong>The</strong> exams will start next <strong>week.</strong> <strong>Jane</strong> has lost seven <strong>pounds.</strong>",
+   "why": "A capital T to start, a period after week, a capital on Jane to start the second sentence, and a period at the end. Will start and has lost are helping verb + main verb."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… then say whether you think Gilbert would want the same thing, using one clue from the chapter.",
+  "journal-q2": "… and explain which word in your quote shows the change most clearly.",
+  "journal-q3": "… and compare her dream with what she wanted the day she first came to Green Gables."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "This word is about putting what you see into words on paper. Which root means to write?",
+   "why": "scribe means to write: de + scribe = to write down about."
+  },
+  "fill2": {
+   "h1": "An author’s draft, written by hand. Which root means to write, in its other spelling?",
+   "why": "script means to write: manu (hand) + script = written by hand."
+  },
+  "fill3": {
+   "h1": "To refuse something is to throw it back. Which root means to throw?",
+   "why": "ject means to throw: re + ject = to throw back."
+  },
+  "fill4": {
+   "h1": "A big task you throw yourself forward into. Which root means to throw?",
+   "why": "ject means to throw: pro + ject = to throw forward."
+  }
+ },
+ "miss": {
+  "match": {
+   "ambition": "Ambition is a wanting, not a feeling. Look for the meaning about a strong desire to achieve something.",
+   "consolation": "Consolation is what helps when you’re sad. Look for the meaning about comfort given to someone.",
+   "sanctifying": "Sanctifying is about something being set apart and deeply changed, not about refusing. Look for the meaning with holy in it.",
+   "obstinate": "Obstinate is how a person acts when they won’t budge. Look for the meaning about being stubborn."
+  },
+  "sort": {
+   "had won": "Count the words in front of won. Just one is helping.",
+   "had been waiting": "Count the words in front of waiting. Two of them are helping.",
+   "won": "Just one word, doing the whole job alone. Which group has no helper?",
+   "will go": "Will helps go. How many helpers is that?",
+   "will have finished": "Will and have both stand in front of finished. That’s two helpers.",
+   "went": "Went needs no help at all. Which group is that?",
+   "run + ing": "Run is one syllable, with one vowel and one consonant at the end. Which rule makes that last letter double?",
+   "hope + ing": "Hope ends in a silent e, and the suffix starts with a vowel. Which rule takes care of the e?",
+   "happy + er": "There’s a consonant just before the y. Which rule changes the y?",
+   "stop + ed": "Stop is one syllable, with one vowel and one consonant at the end. Which rule doubles the p?",
+   "write + ing": "Write ends in a silent e. Which rule is about the e?",
+   "carry + ed": "A consonant comes before the y, and the suffix isn’t -ing. Which rule changes the y?"
+  }
+ },
+ "copia": {
+  "seed": "Anne <b data-verb>spent</b> many of her spare hours at Beechwood.",
+  "eg": [
+   "After the Christmas holidays, Anne spent many of her spare hours at Beechwood.",
+   "Anne <i>passed</i> many of her spare hours at Beechwood.",
+   "Anne spent many of her spare hours at Beechwood, where old Miss Barry’s black eyes missed nothing at all."
+  ]
+ },
+ "notes": {
+  "wgrd": "A character changes a little at a time, so compare far apart: the start of the book and now. Say it like this: she used to ___, and now she ___.",
+  "vocab": [
+   [
+    "ambition",
+    "A strong desire to achieve something important."
+   ],
+   [
+    "consolation",
+    "Comfort given to someone who is sad or disappointed."
+   ],
+   [
+    "sanctifying",
+    "Making something feel holy or set apart; deeply changing."
+   ],
+   [
+    "obstinate",
+    "Stubborn; refusing to give in."
+   ]
+  ],
+  "wordParts": "script and scribe mean “to write” (describe, manuscript). ject means “to throw” (reject, project).",
+  "grammar": "A helping verb comes before the main verb and sets the time: had won, will go. The main verb carries the meaning. Helpers can stack: had been waiting. Some verbs need no helper: went.",
+  "spelling": "Three suffix rules. Doubling: one syllable, one vowel, one consonant, so double it (stop, stopped). Drop the e when the suffix starts with a vowel (write, writing). Change y to i after a consonant, unless the suffix is -ing."
+ }
+}

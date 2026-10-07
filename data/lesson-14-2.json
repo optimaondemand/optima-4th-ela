@@ -1,0 +1,152 @@
+{
+ "connector": "Well now, it’s Matthew. Anne’s been at Queen’s all winter, and the results go up on the board today. I’m not much for crowds, but Marilla and I are going in for the commencement. I’ve had my good coat brushed. I reckon I’d go even if I had to sit next to a whole row of strangers. That’s just how it is.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-welcome",
+   "label": "Matthew’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-wgrd",
+   "label": "Matthew · about today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-dol",
+   "label": "Matthew · about today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-guide1",
+   "label": "Matthew · before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-morphology",
+   "label": "Matthew · about the word parts"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-vocabulary",
+   "label": "Matthew · about today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-grammar",
+   "label": "Matthew · about today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-spelling",
+   "label": "Matthew · about today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-guide2",
+   "label": "Matthew · before you open the book"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-read",
+   "label": "Matthew · before you read"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-guide3",
+   "label": "Matthew · before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-chapter",
+   "label": "Matthew · about the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/matthew/g4ela-14-2-workshop",
+   "label": "Matthew · about today’s writing"
+  },
+  "rwm": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Well now, it’s Matthew. Today’s question is about two feelings sitting side by side, glad and worried, in the very same day. I dunno much about books, but I know that feeling. First there’s word work, roots and helping words. Then you read about the day the results came out, and Anne coming home. Watch for the happy parts. And notice where folks are fretting, too.",
+  "wgrd": "The box says you can tell how a person’s grown by what they wish for. When Anne first came, she wished she could stay. That was about all she wanted. I remember it pretty well, being the one driving the buggy. Today, listen for what she wishes for next. Then set the two wishes side by side. That’s quite a road to come down, I reckon.",
+  "dol": "The top sentence is Anne’s, in all the fuss. She wanted to write home right away, and I’m mighty glad she did. Find the little helper word and the word it helps. The bottom one runs two sentences together, the way folks talk when they’re in a hurry. Split it, and give the names their capitals. Anne always did care about a name being done right.",
+  "guide1": "Four bits of word work. One is matching, one is remembering, and two ask you to tap. Tapping is easy to do too fast. I’ve found most things go better slow. Plowing, for one. Read every word before you tap it, and ask yourself if you’re sure. If you’re not, leave it be a minute and come back. No harm in that.",
+  "morphology": "Two old roots again, the writing one and the throwing one, and two little pieces that go on the front. Match each piece to what it means. If you get stuck, think of a word you know and say it slow. I’m no scholar. But Anne says the old roots are like seeds. You plant one, and a whole row of words comes up.",
+  "vocabulary": "Same four words as yesterday, and now you match them up without the sentences to lean on. That’s how you find out what stuck. If one won’t come, try to remember the sentence it lived in. Anne says words have a home sentence. I wouldn’t know about that. I just know one of these words sounds an awful lot like her, once she’s set her mind.",
+  "grammar": "One long sentence, and you’re to tap every helper in it. There’s more than one, and some stand right next to each other. Don’t tap the words doing the real work, just the ones helping. It’s a bit like a barn raising. Lots of folks hold the beam, but only one swings the hammer. You want the folks holding the beam.",
+  "spelling": "Here’s a little paragraph somebody wrote too fast, and three words in it got their endings put on wrong. Tap only those. The rest are fine, and tapping a fine one won’t help you any. Say each word slow in your head, and look at the spot where the ending joins on. That’s where the trouble usually hides. Same as with fences.",
+  "guide2": "There’s a box here about knowing a good evening while you’re still in it. Anne’s better at that than I am. She notices the sky and the mint and the frogs down in the marsh, and she says so out loud. I just walk along beside her. Read slow today, the way she would. Take your time over the happy parts. They’re worth it.",
+  "read": "There’s one stop, near the end, when Anne and I are bringing the cows in. She says something about the boy we sent for, and I say something back. You’ll get to it. Before then, there’s the morning the news comes out, and the commencement. I was there for that. I didn’t say a word till she’d finished reading her essay.",
+  "guide3": "Now the writing part. I’m not much of a talker, so here’s the short of it. Read each question till you know what it wants. Answer it plain, and show where in the book you found it. You don’t need fancy words. Anne’s got enough of those for the both of us. Just true ones.",
+  "chapter": "The first question is about how Anne heard her news. The second is about something I said to her, coming back from the pasture. I meant every word of it. The third question is about a line the writer put in, not anybody in the story. I’ll leave that one to you and the book. Read it slow.",
+  "workshop": "Today you score your own story, row by row, then fix just one thing. Just one. I like that. When a fence needs mending, you don’t tear the whole fence down. You find the one rail that’s loose, and you put it right. Be honest with your scores. Nobody’s going to think less of you for a two."
+ },
+ "writingFocus": "Publish",
+ "dol": {
+  "a": {
+   "raw": "matthew has worked his whole life he must rest now",
+   "fixed": "<strong>Matthew</strong> has worked his whole <strong>life.</strong> <strong>He</strong> must rest <strong>now.</strong>",
+   "why": "A capital on Matthew, a period after life, a capital H to start the second sentence, and a period at the end. Has worked and must rest are helping verb + main verb."
+  },
+  "b": {
+   "raw": "anne has won the avery she will go to redmond in september",
+   "fixed": "<strong>Anne</strong> has won the <strong>Avery.</strong> <strong>She</strong> will go to <strong>Redmond</strong> in <strong>September.</strong>",
+   "why": "Capitals on Anne, Avery, Redmond and September, a period after Avery, a capital S to start the second sentence, and a period at the end. Has won and will go are helping verb + main verb."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and describe how her feelings change in that one moment, from defeat to joy.",
+  "journal-q2": "… and explain why Matthew says it twice.",
+  "journal-q3": "… and say how knowing this changes the way you read the evening before it."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "miss": {
+  "match": {
+   "ambition": "Ambition is a wanting, not a feeling. Look for the meaning about a strong desire to achieve something.",
+   "consolation": "Consolation is what helps when you’re sad. Look for the meaning about comfort given to someone.",
+   "sanctifying": "Sanctifying is about something being set apart and deeply changed, not about refusing. Look for the meaning with holy in it.",
+   "obstinate": "Obstinate is how a person acts when they won’t budge. Look for the meaning about being stubborn."
+  }
+ },
+ "notes": {
+  "wgrd": "Watch what a character wants. Set her old wish beside her new one; the difference between them shows how she has grown.",
+  "vocab": [
+   [
+    "ambition",
+    "A strong desire to achieve something important."
+   ],
+   [
+    "consolation",
+    "Comfort given to someone who is sad or disappointed."
+   ],
+   [
+    "sanctifying",
+    "Making something feel holy or set apart; deeply changing."
+   ],
+   [
+    "obstinate",
+    "Stubborn; refusing to give in."
+   ]
+  ],
+  "wordParts": "script and scribe mean “to write” (describe, manuscript). ject means “to throw” (reject, project).",
+  "grammar": "A helping verb comes before the main verb and sets the time: had won, will go. The main verb carries the meaning. Helpers can stack: had been waiting. Some verbs need no helper: went.",
+  "spelling": "Three suffix rules. Doubling: one syllable, one vowel, one consonant, so double it (stop, stopped). Drop the e when the suffix starts with a vowel (write, writing). Change y to i after a consonant, unless the suffix is -ing."
+ }
+}
