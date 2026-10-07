@@ -49,8 +49,9 @@ details.week>summary .cnt{font-weight:700;font-size:12px;color:var(--muted)}
 
 /* main */
 main{overflow:auto;padding:18px 22px 120px;min-width:0}
-.clip-head{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:12px}
-.clip-head h2{margin:0;font-size:22px;color:var(--navy)}
+.clip-head{display:block}
+.clip-head .chip{word-break:break-all;max-width:100%}
+.clip-head h2{margin:2px 0 4px;font-size:19px;line-height:1.25;color:var(--navy)}
 .clip-head .lt{color:var(--muted);font-size:14px;font-weight:700}
 .fname{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:6px}
 .chip{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
@@ -172,19 +173,6 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
   </aside>
 
   <main>
-    <div class="clip-head">
-      <div>
-        <div class="lt" id="selLesson">Pick a video from the list</div>
-        <h2 id="selLabel">—</h2>
-        <div class="fname">
-          <span class="chip mono" id="selFile">—</span>
-          <button class="btn sm" id="copyFile" title="Copy file name">Copy name</button>
-          <span class="chip mono" id="selFolder" title="Where it goes in optima-4th-ela">—</span>
-          <button class="btn sm" id="copyFolder">Copy folder</button>
-        </div>
-      </div>
-    </div>
-
     <div class="stage">
       <div>
         <div class="prompter">
@@ -241,6 +229,18 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
       </div>
 
       <div>
+        <div class="panel clip-head">
+      <div>
+        <div class="lt" id="selLesson">Pick a video from the list</div>
+        <h2 id="selLabel">—</h2>
+        <div class="fname">
+          <span class="chip mono" id="selFile">—</span>
+          <button class="btn sm" id="copyFile" title="Copy file name">Copy name</button>
+          <span class="chip mono" id="selFolder" title="Where it goes in optima-4th-ela">—</span>
+          <button class="btn sm" id="copyFolder">Copy folder</button>
+        </div>
+      </div>
+    </div>
         <div class="panel">
           <h4>Background</h4>
           <div class="seg" id="bgMode">
@@ -851,7 +851,6 @@ function startRec(){
   if (!sel){ toast('Pick a video from the list first'); return; }
   if (!camStream || !MIME){ return; }
   closeReview();
-  $('ptext').scrollTop=0;
   countdown(3,function(){
     var vs=out.captureStream(30);
     var tracks=vs.getVideoTracks().concat(micStream?micStream.getAudioTracks():[]);
