@@ -34,7 +34,7 @@ A bridge that grows one plank at a time is a lovely picture, and I can't wait to
 
 ## Vocabulary · g4ela-15-1-vocabulary
 
-Guessing first really does make a word yours. It's like finding the trail instead of being handed a map. One of today's words has a second meaning you might already know. Occupation can mean a person's job. If a form asks for your parent's occupation, it wants to know their work, like nurse or teacher. That isn't the meaning in the sentence on your card, so let the sentence about Denmark steer you. Notice that Resistance in the example sentence has a capital R. That's because it's the name of a real group of people, the same way the Allies is a name. You'll hear more about that group this week. When you flip each card, check whether your guess was close, even if your wording was different.
+Guessing first really does make a word yours. It's like finding the trail instead of being handed a map. One of today's words has a second meaning you might already know. Occupation can mean a person's job, like nurse or teacher. That isn't the meaning on your card, so let the sentence about Denmark steer you. Notice that Resistance in the example sentence has a capital R. That's because it's the name of a real group of people, the same way the Allies is a name. You'll hear more about that group this week, and someone in the novel belongs to it. When you flip each card, a close guess in your own words counts.
 
 
 ## Grammar · g4ela-15-1-grammar

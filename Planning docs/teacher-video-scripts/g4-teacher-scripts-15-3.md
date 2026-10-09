@@ -9,7 +9,7 @@ Hi, friends. This is the third lesson of our bridge week. You've learned how the
 
 ## Welcome · g4ela-15-3-welcome
 
-Grete calls it hard and important, and both of those can be true at once. The six-pointed star in today's reading is called the Star of David. It's a symbol of the Jewish people and their faith, and families had carried it with pride for a very long time. The Nazis took a symbol people loved and turned it into a way to single them out. If that feels unfair and upsetting, your feelings are right on track.
+Grete calls it hard and important, and both are true. The six-pointed star in today's reading is called the Star of David. It's a symbol of the Jewish people and their faith, carried with pride for a very long time. The Nazis took a symbol people loved and turned it into a way to single them out. If that feels unfair and upsetting, your feelings are right on track. A necklace with this star turns up early in the novel, so remember what it means.
 
 
 ## What Good Readers Do · g4ela-15-3-wgrd
@@ -49,17 +49,17 @@ Stretching out the middle of a word is a good trick. I always picture pulling ta
 
 ## Before you open the book · g4ela-15-3-guide2
 
-Grete's list of ordinary people makes me think of my own neighbors, the ones who'd notice if something was wrong. In the last lesson, you watched one person, the king, show courage just by riding out among his people. Today the box widens to teachers, fishermen, and schoolchildren. None of them had a crown. When the box asks about your own small brave choice, pick one you could really do, like speaking up when a classmate is left out.
+Grete's list of ordinary people makes me think of my own neighbors, the ones who'd notice something wrong. In the last lesson, one person, the king, showed courage just by riding out. Today the box widens to teachers, fishermen, and schoolchildren. None of them had a crown, and the novel is told through a schoolgirl's eyes for exactly that reason. When the box asks for your own small brave choice, pick one you could really do, like speaking up when a classmate is left out.
 
 
 ## Before you read · g4ela-15-3-read
 
-A story that isn't quite true is a great thing to wonder about. I'm curious what you'll decide. Before you start, look over both Pause and Think questions, just like the page says. One sentence tells what happened to Jewish families in other countries. It's short and serious, and it's okay to slow down there. The passage names four countries before it turns to Denmark. Keep them in mind, because that comparison is the heart of this reading.
+A story that isn't quite true. I'm curious what you'll decide about that one. Before you start, look over both Pause and Think questions, just like the page says. One sentence tells what happened to Jewish families in other countries. It's short and serious, and it's okay to slow down there. The passage names four countries before it turns to Denmark. Keep them in mind, because that comparison is the heart of this reading.
 
 
 ## Read Like a Writer · g4ela-15-3-rwm
 
-Making the end land with weight is the perfect way to put it. You can hear that pause when you read the sentence aloud. Don't mix up the dash with a hyphen, the short mark inside a word like well-known. A dash is longer, and it sits between words to make you wait. For your Mimic, pick a real object or rule you know well, like a fence, a lock, or a uniform. Then save the dash for the part that's harder to say.
+When Grete says the end lands with weight, read the sentence aloud and you'll hear exactly where. Don't mix up the dash with a hyphen, the short mark inside a word like well-known. A dash is longer, and it sits between words to make you wait. For your Mimic, pick a real object or rule you know well, like a fence, a lock, or a uniform. Then save the dash for the part that's harder to say.
 
 
 ## Before you write · g4ela-15-3-guide3

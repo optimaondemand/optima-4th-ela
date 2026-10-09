@@ -9,7 +9,7 @@ Hi, friends. Our bridge is almost finished. Three lessons of history are behind 
 
 ## Welcome · g4ela-15-4-welcome
 
-Fear and courage in the same story. Grete's right, and they usually do show up together. Think about how long the Danes had been waiting by then. The German army arrived in April 1940, and this rescue came in October 1943. That's more than three years of living under someone else's rules. A lot can change in three years. Keep that long wait in mind as you read.
+Fear and courage in the same story. Grete's right, and they usually do show up together. Think about how long the Danes had been waiting by then. The German army arrived in April 1940, and this rescue came in October 1943. That's more than three years of living under someone else's rules. Annemarie, the girl in the novel, is ten when it opens, so the soldiers arrived when she was about six. Keep that long wait in mind as you read.
 
 
 ## What Good Readers Do · g4ela-15-4-wgrd
@@ -54,7 +54,7 @@ Choosing not to forget is a quiet kind of courage, and I think it's one of the m
 
 ## Before you read · g4ela-15-4-read
 
-Not one hero, but many. That's what makes this story so special to me. Look at the photo on this tab. It shows the water between Denmark and Sweden. At its narrowest, the Swedish coast is less than three miles away, though many boats had to cross much wider stretches. Picture doing that in a small fishing boat in the cold of October. One sentence names where the Nazis planned to send people. It's okay if that feels heavy. Read it gently.
+Not one hero, but many. That's what makes this story so special to me. The photo on this tab shows the water between Denmark and Sweden. At its narrowest, the Swedish coast is less than three miles away, though many boats had to cross much wider stretches. Picture doing that in a small fishing boat in the cold of October. Annemarie's uncle is a fisherman, so this water matters in the novel. One sentence names where the Nazis planned to send people. Read it gently.
 
 
 ## Before you write · g4ela-15-4-guide3
