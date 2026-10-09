@@ -1834,6 +1834,329 @@ window.dropSortChip = function (colDrop, colName) {
 };
 
 /* ══════════════════════════════════════════════════════════════
+   §2.8b  WORD GAMES — one word-study strand gets a themed game.
+   Modeled on the G4 social studies vocabulary games: the theme
+   acts out the word part's meaning, a "why" card explains the
+   theme first, every success moves and makes a quiet sound, a
+   wrong try bounces back with a hint, and finishing looks finished.
+
+   DATA.wordgame = { type:'bridge', strand:'Morphology', kicker, h,
+     voice, why:{icon,q,t}, win, winDay, spans,
+     meanings:{ trans:'across', pro:'forward' }, miss:{ fill1:'…' } }
+
+   The WORDS come from the strand's own fill-in game on the page
+   (data-answer = the word part; item text = stem — meaning), so
+   DATA carries only the theme and the page stays the one source of
+   truth. The fill-in stays underneath: finishing the game fills it
+   and runs its own check, so progress, gathered work and the
+   layer-off page all behave exactly as before.
+   Word clips (narrator): assets/audio/guide/narrator/
+     g4ela-<w>-<d>-word-<n>.mp3 — requested only on a tap, silent
+   when the file is not there yet.
+   ══════════════════════════════════════════════════════════════ */
+var WORDGAME = {};
+function wgActivity(strand) {
+  var want = String(strand || 'Morphology').toLowerCase();
+  var acts = document.querySelectorAll('#tab-words .activity');
+  for (var i = 0; i < acts.length; i++) {
+    var t = acts[i].querySelector('.activity-title');
+    if (t && t.textContent.toLowerCase().indexOf(want) >= 0) return acts[i];
+  }
+  return null;
+}
+function wgWords(game) {
+  return [].slice.call(game.querySelectorAll('.fillin-item')).map(function (item) {
+    var inp = item.querySelector('.fillin-input');
+    var txt = item.textContent.replace(/\s+/g, ' ').trim();
+    var parts = txt.split(/\s+[—–-]\s+/);
+    return { id: inp ? inp.id : '', a: inp ? (inp.getAttribute('data-answer') || '').toLowerCase() : '',
+             stem: (parts[0] || '').trim(), m: parts.slice(1).join(' — ').trim(), inp: inp };
+  }).filter(function (w) { return w.inp && w.a && w.stem; });
+}
+var _wgAC = null;
+function wgSfx(kind) {
+  try {
+    _wgAC = _wgAC || new (window.AudioContext || window.webkitAudioContext)();
+    if (_wgAC.state === 'suspended') _wgAC.resume();
+    var t = _wgAC.currentTime;
+    var tone = function (f, f2, dur, vol, type, at) {
+      var o = _wgAC.createOscillator(), g = _wgAC.createGain(); at = t + (at || 0);
+      o.type = type || 'sine'; o.frequency.setValueAtTime(f, at);
+      if (f2) o.frequency.exponentialRampToValueAtTime(f2, at + dur);
+      g.gain.setValueAtTime(0.0001, at); g.gain.exponentialRampToValueAtTime(vol, at + 0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001, at + dur);
+      o.connect(g); g.connect(_wgAC.destination); o.start(at); o.stop(at + dur + 0.05);
+    };
+    if (kind === 'thud') {                     /* a plank landing on the beams */
+      tone(140, 70, 0.22, 0.18, 'sine');
+      var len = Math.floor(_wgAC.sampleRate * 0.08), buf = _wgAC.createBuffer(1, len, _wgAC.sampleRate), d = buf.getChannelData(0);
+      for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3);
+      var n = _wgAC.createBufferSource(), lp = _wgAC.createBiquadFilter(), ng = _wgAC.createGain();
+      lp.type = 'lowpass'; lp.frequency.value = 900; ng.gain.value = 0.12;
+      n.buffer = buf; n.connect(lp); lp.connect(ng); ng.connect(_wgAC.destination); n.start(t);
+    } else if (kind === 'bonk') {              /* a gentle no */
+      tone(220, 180, 0.16, 0.06, 'triangle');
+    } else if (kind === 'win') {               /* across */
+      [523, 659, 784].forEach(function (f, k) { tone(f, 0, 0.9, 0.08, 'sine', k * 0.16); });
+    }
+  } catch (e) {}
+}
+var _wgClip = null;
+function wgClip(n) {
+  try {
+    if (_wgClip) _wgClip.pause();
+    var a = new Audio(MEDIA.audioBase + 'guide/narrator/g4ela-' + LESSON.week + '-' + dayNum(LESSON.day) + '-word-' + n + '.mp3');
+    _wgClip = a; if (typeof audioStopAll === 'function') audioStopAll(a);
+    var p = a.play(); if (p && p.catch) p.catch(function () {});
+  } catch (e) {}
+}
+function wgWhy(why) {
+  if (!why || !why.t) return '';
+  return '<div class="spk-wg-why"><span class="i">' + (why.icon || '💡') + '</span><div><b>' + esc(why.q || '') + '</b>' +
+         '<p>' + why.t + '</p></div></div>';
+}
+
+/* ── Build the bridge: each right word part lays a plank and the deck
+   reaches forward across the water (trans- = across, pro- = forward).
+   One bridge for the whole week: day d opens with the spans from days
+   1…d-1 already built, a lamp lights at the end of each finished span,
+   and day 4 reaches the far bank under the star. Built from the day
+   number, so nothing has to be remembered between lessons. ── */
+WORDGAME.bridge = function (cfg, act, game, W) {
+  var day = dayNum(LESSON.day), SP = Math.max(day, cfg.spans || 4), per = W.length;
+  var P = SP * per, X0 = 104, X1 = 536, PW = (X1 - X0) / P, DY = 106, PH = 10;
+  var before = (day - 1) * per;
+  var KEY = 'oao.g4ela.wg.' + LID;
+  var placed = (Sparkle.get(KEY, []) || []).filter(function (i) { return i >= 0 && i < W.length; });
+  var stones = []; W.forEach(function (w) { if (stones.indexOf(w.a) < 0) stones.push(w.a); });
+  stones.sort();
+  var M = cfg.meanings || {};
+
+  /* hide the plain game and its "type the missing…" line; both stay in the page */
+  game.classList.add('spk-hide');
+  var lead = game.previousElementSibling;
+  if (lead && lead.classList.contains('callout')) lead.classList.add('spk-hide');
+
+  var f = function (n) { return n.toFixed(1); };
+  var deck = '', slots = '', piers = '', lamps = '';
+  for (var k = 0; k < P; k++) {
+    var x = X0 + k * PW;
+    slots += '<rect class="slot" data-k="' + k + '" x="' + f(x + 1) + '" y="' + DY + '" width="' + f(PW - 2) + '" height="' + PH + '" rx="1.5"/>';
+    deck += '<g class="pk" data-k="' + k + '">' +
+      '<rect class="beam" x="' + f(x) + '" y="' + (DY + PH) + '" width="' + f(PW + 0.4) + '" height="4"/>' +
+      '<rect class="board" x="' + f(x + 0.6) + '" y="' + DY + '" width="' + f(PW - 1.2) + '" height="' + PH + '" rx="1.2"/>' +
+      '<path class="grain" d="M' + f(x + 3) + ' ' + (DY + 3.5) + ' h' + f(PW * 0.55) + ' M' + f(x + PW * 0.35) + ' ' + (DY + 7) + ' h' + f(PW * 0.5) + '"/>' +
+      '<rect class="post" x="' + f(x - 0.8) + '" y="' + (DY - 13) + '" width="2.4" height="13"/>' +
+      '<path class="rail" d="M' + f(x) + ' ' + (DY - 11) + ' L' + f(x + PW) + ' ' + (DY - 11) + '"/>' +
+      '<ellipse class="ripple" cx="' + f(x + PW / 2) + '" cy="150" rx="' + f(PW * 0.6) + '" ry="2.4"/>' +
+    '</g>';
+  }
+  for (var s = 1; s < SP; s++) {
+    var px = X0 + s * per * PW;
+    piers += '<g class="pier"><rect class="refl" x="' + f(px - 7) + '" y="150" width="14" height="70"/>' +
+      '<rect class="stone" x="' + f(px - 6) + '" y="' + (DY + PH + 4) + '" width="12" height="' + (220 - DY - PH - 4) + '"/>' +
+      '<rect class="cap" x="' + f(px - 8) + '" y="' + (DY + PH + 3) + '" width="16" height="4" rx="1"/></g>';
+  }
+  for (s = 0; s <= SP; s++) {
+    var lx = X0 + s * per * PW;
+    lamps += '<g class="lamp" data-s="' + s + '"><rect class="lpost" x="' + f(lx - 1.4) + '" y="' + (DY - 26) + '" width="2.8" height="26"/>' +
+      '<circle class="glow" cx="' + f(lx) + '" cy="' + (DY - 29) + '" r="13"/>' +
+      '<rect class="lbox" x="' + f(lx - 3.2) + '" y="' + (DY - 33) + '" width="6.4" height="7" rx="1.2"/></g>';
+  }
+  var waves = function (y, cls) {
+    var d = 'M-40 ' + y; for (var i = 0; i < 18; i++) d += ' q20 -4 40 0'; return '<path class="wv ' + cls + '" d="' + d + '"/>';
+  };
+  var svg =
+    '<svg class="spk-br-svg" viewBox="0 0 640 220" role="img" aria-label="A wooden bridge being built across the water, plank by plank, toward the far shore">' +
+    '<defs>' +
+      '<linearGradient id="spkBrSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6E6CC"/><stop offset=".55" stop-color="#E4EDF0"/><stop offset="1" stop-color="#CFE2EA"/></linearGradient>' +
+      '<linearGradient id="spkBrSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB2C9"/><stop offset="1" stop-color="#2E6A86"/></linearGradient>' +
+      '<linearGradient id="spkBrNear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8DB476"/><stop offset=".25" stop-color="#6E9A5C"/><stop offset="1" stop-color="#4F7A47"/></linearGradient>' +
+      '<linearGradient id="spkBrFar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9BB08A"/><stop offset=".25" stop-color="#7E9670"/><stop offset="1" stop-color="#5D7556"/></linearGradient>' +
+      '<linearGradient id="spkBrWood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C08A52"/><stop offset="1" stop-color="#8E5F33"/></linearGradient>' +
+      '<radialGradient id="spkBrGlow"><stop offset="0" stop-color="#FFE7A3" stop-opacity=".95"/><stop offset="1" stop-color="#FFE7A3" stop-opacity="0"/></radialGradient>' +
+    '</defs>' +
+    '<rect x="0" y="0" width="640" height="220" fill="url(#spkBrSky)"/>' +
+    '<g class="cloud c1"><ellipse cx="170" cy="38" rx="34" ry="8"/><ellipse cx="190" cy="32" rx="20" ry="8"/></g>' +
+    '<g class="cloud c2"><ellipse cx="420" cy="26" rx="28" ry="6"/><ellipse cx="436" cy="21" rx="16" ry="6"/></g>' +
+    '<path class="hills" d="M0 124 C60 104 110 114 170 110 C240 104 290 118 360 112 C430 106 480 100 540 110 C590 116 620 108 640 112 L640 130 L0 130 Z"/>' +
+    '<rect x="0" y="120" width="640" height="100" fill="url(#spkBrSea)"/>' +
+    waves(140, 'w1') + waves(165, 'w2') + waves(192, 'w3') +
+    piers +
+    /* the near shore: a white house with green gables, a tree in blossom */
+    '<path d="M0 112 L' + (X0 + 6) + ' 112 Q' + (X0 + 13) + ' 120 ' + (X0 + 22) + ' 220 L0 220 Z" fill="url(#spkBrNear)"/>' +
+    '<path class="shore" d="M0 112 L' + (X0 + 6) + ' 112"/>' +
+    '<g class="tree" transform="translate(86 76)"><rect x="-1.6" y="14" width="3.2" height="22" fill="#6B4A2B"/>' +
+      '<circle cx="0" cy="8" r="12" fill="#F7E6EC"/><circle cx="-9" cy="14" r="8" fill="#F2D6E0"/><circle cx="9" cy="13" r="8" fill="#FBEFF3"/></g>' +
+    '<g class="house" transform="translate(14 74)">' +
+      '<rect x="0" y="16" width="52" height="22" fill="#FFFDF4" stroke="#CFC4AC" stroke-width=".8"/>' +
+      '<path d="M-3 17 L12 3 L27 17 Z M25 17 L40 3 L55 17 Z" fill="#3E7A4E"/><rect x="-3" y="15" width="58" height="3" fill="#2F6440"/>' +
+      '<rect x="36" y="-2" width="5" height="10" fill="#9A5B45"/>' +
+      '<rect x="7" y="22" width="7" height="7" fill="#7FA3BC"/><rect x="38" y="22" width="7" height="7" fill="#7FA3BC"/><rect x="22" y="25" width="8" height="13" fill="#3E7A4E"/></g>' +
+    /* the far shore: Danish houses with red tile roofs, under the star */
+    '<path d="M640 112 L' + (X1 - 6) + ' 112 Q' + (X1 - 13) + ' 120 ' + (X1 - 22) + ' 220 L640 220 Z" fill="url(#spkBrFar)"/>' +
+    '<path class="shore" d="M640 112 L' + (X1 - 6) + ' 112"/>' +
+    '<g class="dk" transform="translate(556 80)">' +
+      '<rect x="0" y="12" width="26" height="22" fill="#F3E3C3"/><path d="M-2 13 L13 0 L28 13 Z" fill="#B5523B"/>' +
+      '<rect x="28" y="8" width="24" height="26" fill="#E9D3A8"/><path d="M26 9 L40 -4 L54 9 Z" fill="#9E4433"/>' +
+      '<rect x="56" y="14" width="22" height="20" fill="#F3E3C3"/><path d="M54 15 L67 4 L80 15 Z" fill="#B5523B"/>' +
+      '<rect x="6" y="18" width="5" height="6" fill="#7FA3BC"/><rect x="16" y="18" width="5" height="6" fill="#7FA3BC"/>' +
+      '<rect x="36" y="14" width="5" height="6" fill="#7FA3BC"/><rect x="44" y="24" width="5" height="10" fill="#6B4A2B"/><rect x="62" y="20" width="5" height="6" fill="#7FA3BC"/></g>' +
+    '<g class="star" transform="translate(596 40)"><circle class="halo" r="16"/>' +
+      '<path d="M0 -12 L3.5 -3.8 L12 -3.8 L5.2 1.6 L7.6 10.4 L0 5.4 L-7.6 10.4 L-5.2 1.6 L-12 -3.8 L-3.5 -3.8 Z"/></g>' +
+    '<g class="slots">' + slots + '</g>' +
+    '<g class="deck">' + deck + '</g>' +
+    lamps +
+    '<g class="tag" transform="translate(42 140)"><rect x="-26" y="-9" width="52" height="16" rx="3"/><text y="3">Anne</text></g>' +
+    '<g class="tag" transform="translate(586 140)"><rect x="-50" y="-9" width="100" height="16" rx="3"/><text y="3">Number the Stars</text></g>' +
+    '</svg>';
+
+  var box = document.createElement('div');
+  box.className = 'spk-wg spk-bridge';
+  box.innerHTML =
+    '<div class="spk-wg-head"><span class="spk-wg-kicker">' + esc(cfg.kicker || 'Build the Bridge') + '</span>' +
+      '<span class="spk-wg-h">' + esc(cfg.h || 'Lay the planks across') + '</span></div>' +
+    wgWhy(cfg.why) +
+    (cfg.voice ? '<p class="spk-wg-voice">' + esc(cfg.voice) + '</p>' : '') +
+    '<div class="spk-br-scene">' + svg + '</div>' +
+    '<p class="spk-wg-ct" aria-live="polite"></p>' +
+    '<div class="spk-br-stones" role="group" aria-label="Word parts">' +
+      stones.map(function (a) {
+        return '<button type="button" class="spk-br-stone" data-a="' + esc(a) + '"><b>' + esc(a) + '-</b>' +
+               (M[a] ? '<small>' + esc(M[a]) + '</small>' : '') + '</button>';
+      }).join('') + '</div>' +
+    '<div class="spk-br-pile">' +
+      W.map(function (w, i) {
+        return '<button type="button" class="spk-br-card" data-i="' + i + '">' +
+               '<span class="w"><span class="blank">?</span><b>' + esc(w.stem) + '</b></span>' +
+               '<small>' + esc(w.m) + '</small><span class="spk-wg-miss"></span></button>';
+      }).join('') + '</div>' +
+    '<div class="spk-wg-win" hidden></div>';
+  game.parentNode.insertBefore(box, game);
+
+  var selStone = null, selCard = null;
+  function paint(fresh) {
+    var L = before + placed.length;
+    box.querySelectorAll('.pk').forEach(function (g) {
+      var k = +g.getAttribute('data-k');
+      g.classList.toggle('laid', k < L);
+      g.classList.toggle('old', k < before);
+      if (fresh && k === L - 1 && !REDUCED) { g.classList.remove('drop'); void g.getBoundingClientRect(); g.classList.add('drop'); }
+    });
+    box.querySelectorAll('.slot').forEach(function (r) {
+      var k = +r.getAttribute('data-k'); r.classList.toggle('open', k >= L && k < before + per);
+    });
+    box.querySelectorAll('.lamp').forEach(function (g) {
+      var s = +g.getAttribute('data-s');
+      g.classList.toggle('up', s * per <= L);
+      g.classList.toggle('lit', s === 0 || s * per <= L);
+    });
+  }
+  function count() {
+    var n = placed.length;
+    box.querySelector('.spk-wg-ct').innerHTML = n < W.length
+      ? '<b>' + n + ' of ' + W.length + '</b> planks laid today' + (day > 1 ? ' · span ' + day + ' of ' + SP : '') + '.' : '';
+  }
+  function setCard(i) {
+    var w = W[i], card = box.querySelector('.spk-br-card[data-i="' + i + '"]');
+    card.classList.add('placed'); card.disabled = true;
+    card.querySelector('.blank').textContent = w.a;
+    card.querySelector('.spk-wg-miss').innerHTML = '';
+  }
+  function finish(quiet) {
+    W.forEach(function (w) { w.inp.value = w.a; });
+    var btn = game.querySelector('.fillin-check-btn');
+    try { if (quiet) _origCheckFillIn(btn); else window.checkFillIn(btn); } catch (e) {}
+    var last = day >= SP, win = box.querySelector('.spk-wg-win');
+    win.hidden = false;
+    win.innerHTML = last
+      ? (cfg.win || 'The bridge reaches the other side.')
+      : (cfg.winDay || ('Span ' + day + ' of ' + SP + ' is built, and its lamp is lit. The next lesson’s words build the next span.'));
+    box.classList.add('done'); if (last) box.classList.add('across');
+    if (!quiet) setTimeout(function () { wgSfx('win'); }, 350);
+  }
+  function miss(i, a) {
+    var w = W[i], card = box.querySelector('.spk-br-card[data-i="' + i + '"]');
+    var line = (cfg.miss || {})[w.id] ||
+      ('Not quite. <b>' + esc(a) + '-</b> means ' + esc(M[a] || '…') + '. Read the meaning again: <i>' + esc(w.m) + '</i>.');
+    card.querySelector('.spk-wg-miss').innerHTML = line;
+    card.classList.remove('nope'); void card.offsetWidth; card.classList.add('nope');
+    wgSfx('bonk');
+  }
+  function tryPlace(i, a) {
+    if (placed.indexOf(i) >= 0) return;
+    if (W[i].a === a) {
+      placed.push(i); Sparkle.set(KEY, placed);
+      setCard(i); paint(true); wgSfx('thud'); wgClip(i + 1); count();
+      if (placed.length === W.length) finish(false);
+    } else miss(i, a);
+    clearSel();
+  }
+  function clearSel() {
+    selStone = selCard = null;
+    box.querySelectorAll('.sel').forEach(function (e) { e.classList.remove('sel'); });
+  }
+
+  /* tap a part then a word, or a word then a part */
+  box.querySelectorAll('.spk-br-stone').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b._dragged) { b._dragged = false; return; }
+      var a = b.getAttribute('data-a');
+      if (selCard !== null) { tryPlace(selCard, a); return; }
+      var on = selStone !== a; clearSel(); if (on) { selStone = a; b.classList.add('sel'); }
+    });
+  });
+  box.querySelectorAll('.spk-br-card').forEach(function (c) {
+    c.addEventListener('click', function () {
+      var i = +c.getAttribute('data-i');
+      if (selStone) { tryPlace(i, selStone); return; }
+      var on = selCard !== i; clearSel(); if (on) { selCard = i; c.classList.add('sel'); }
+    });
+  });
+
+  /* …or drag a part onto a word */
+  box.querySelectorAll('.spk-br-stone').forEach(function (b) {
+    b.addEventListener('pointerdown', function (e) {
+      if (e.button) return;
+      var a = b.getAttribute('data-a'), sx = e.clientX, sy = e.clientY, ghost = null;
+      function move(ev) {
+        if (!ghost && Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 8) return;
+        if (!ghost) { ghost = b.cloneNode(true); ghost.className = 'spk-br-stone spk-br-ghost'; document.body.appendChild(ghost); }
+        ghost.style.left = ev.clientX + 'px'; ghost.style.top = ev.clientY + 'px';
+        box.querySelectorAll('.spk-br-card.over').forEach(function (c) { c.classList.remove('over'); });
+        var t = document.elementFromPoint(ev.clientX, ev.clientY), c = t && t.closest && t.closest('.spk-br-card');
+        if (c && !c.disabled) c.classList.add('over');
+        ev.preventDefault();
+      }
+      function up(ev) {
+        document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', up);
+        if (!ghost) return;
+        ghost.remove(); b._dragged = true; setTimeout(function () { b._dragged = false; }, 50);
+        box.querySelectorAll('.spk-br-card.over').forEach(function (c) { c.classList.remove('over'); });
+        var t = document.elementFromPoint(ev.clientX, ev.clientY), c = t && t.closest && t.closest('.spk-br-card');
+        if (c && !c.disabled) tryPlace(+c.getAttribute('data-i'), a);
+      }
+      document.addEventListener('pointermove', move, { passive: false });
+      document.addEventListener('pointerup', up);
+    });
+  });
+
+  /* where the student left off */
+  placed.forEach(setCard);
+  paint(false); count();
+  if (placed.length === W.length) finish(true);
+};
+
+function buildWordGame() {
+  var cfg = DATA.wordgame;
+  if (!cfg || !WORDGAME[cfg.type]) return;              /* no themed game for this lesson */
+  var act = wgActivity(cfg.strand); if (!act) return;
+  var game = act.querySelector('.fillin-game'); if (!game) return;
+  var W = wgWords(game); if (W.length < 2) return;
+  WORDGAME[cfg.type](cfg, act, game, W);
+}
+
+/* ══════════════════════════════════════════════════════════════
    §2.8  COPIA
    ══════════════════════════════════════════════════════════════ */
 function buildCopia() {
@@ -2862,6 +3185,7 @@ function boot() {
     ['tiers',       buildTiers],
     ['coaches',     buildCoaches],
     ['copia',       buildCopia],
+    ['wordgame',    buildWordGame],
     ['watch',       liftWatchBlock],
     ['media',       buildMedia],
     ['publish',     buildPublish],
