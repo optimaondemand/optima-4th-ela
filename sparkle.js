@@ -163,6 +163,10 @@ var ART = {
    render, and it appears the moment the file lands — no rebuild. */
 function plateSrc() {
   if (ART.plate && ART.plate.src) return artURL(ART.plate.src);   /* override */
+  /* a lesson with no chapter numbers (the bridge week) names its own
+     picture in DATA.plate = { src, alt, credit } — a historical photo
+     rather than a painted plate, so it carries its own credit line */
+  if (DATA.plate && DATA.plate.src) return artURL(DATA.plate.src);
   var nums = String(LESSON.chapters || '').match(/\d+/g);
   if (!nums || !nums.length || !LESSON.book) return '';
   return artURL('plates/' + LESSON.book + '-ch' + nums.join('-') + '.png');
@@ -1065,9 +1069,18 @@ function buildPlate() {
     var plate = document.createElement('figure');
     plate.className = 'spk-plate';
     var img = document.createElement('img');
-    img.src = src; img.alt = 'Chapter illustration'; img.loading = 'lazy';
+    var dp = (DATA.plate && DATA.plate.src) ? DATA.plate : null;
+    img.src = src; img.alt = (dp && dp.alt) || 'Chapter illustration'; img.loading = 'lazy';
     img.onerror = function () { plate.remove(); };
     plate.appendChild(img);
+    if (dp) {
+      plate.classList.add('spk-plate-photo');
+      if (dp.credit) {
+        var cap = document.createElement('figcaption');
+        cap.className = 'spk-plate-credit'; cap.textContent = dp.credit;
+        plate.appendChild(cap);
+      }
+    }
     quote.parentNode.insertBefore(plate, quote.nextSibling);
   }
 

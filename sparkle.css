@@ -616,6 +616,9 @@
   font-family:'Lora',Georgia,serif; font-style:italic; font-size:16px;
   color:#93815E; letter-spacing:.01em; max-width:520px; line-height:1.5;
 }
+.spk-plate-photo img{ mix-blend-mode:normal; max-width:520px; padding:8px; background:#FFFDF7;
+  border:1px solid #E3D3A9; box-shadow:0 2px 0 rgba(199,146,44,.12), 0 10px 22px -14px rgba(14,28,66,.45); filter:sepia(.12); }
+.spk-plate-credit{ margin:10px auto 0; max-width:520px; font:600 12px/1.45 'Nunito',sans-serif; color:#93815E; }
 /* the same picture on the left page of the open book */
 .open-book-left{position:relative;overflow:hidden;}
 .spk-book-plate{
