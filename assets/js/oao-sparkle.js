@@ -101,11 +101,32 @@
       title: 'There Will Come Soft Rains',
       author: 'Sara Teasdale',
       note: 'Flame and Shadow, 1920 — public domain',
+      /* Bethany, 9 Oct 2026: students read the WHOLE poem for its
+         context, but memorize couplets 3 and 4. `full` is the whole
+         poem (null = stanza break); `lines` is what the ladder fades.
+         Checked line by line against Project Gutenberg #591.        */
+      subtitle: '(War Time)',
+      unit: 'all four lines',
+      span: 'four lines',
       lines: [
-        ['There will come soft rains and the smell of the ground,', 0],
-        ['And swallows circling with their shimmering sound;', 0],
-        ['And frogs in the pools singing at night,', 0],
-        ['And wild plum-trees in tremulous white;', 0]
+        ['Robins will wear their feathery fire', 0],
+        ['Whistling their whims on a low fence-wire;', 0],
+        ['And not one will know of the war, not one', 0],
+        ['Will care at last when it is done.', 0]
+      ],
+      full: [
+        'There will come soft rains and the smell of the ground,',
+        'And swallows circling with their shimmering sound;', null,
+        'And frogs in the pools singing at night,',
+        'And wild plum-trees in tremulous white;', null,
+        'Robins will wear their feathery fire',
+        'Whistling their whims on a low fence-wire;', null,
+        'And not one will know of the war, not one',
+        'Will care at last when it is done.', null,
+        'Not one would mind, neither bird nor tree',
+        'If mankind perished utterly;', null,
+        'And Spring herself, when she woke at dawn,',
+        'Would scarcely know that we were gone.'
       ]
     },
     ft: {
@@ -194,6 +215,18 @@
     return Math.max(1, Math.min(8, 1 + Math.floor(slot * 8 / slots)));
   }
 
+  /* Which poetry day of the ladder this is: 0 = the first one. */
+  function ladderSlot(arc, L) {
+    var weeks = [];
+    COURSE.forEach(function (c) {
+      if ((LADDER_OF[c.id] || c.id) !== arc) return;
+      for (var w = c.weeks[0]; w <= c.weeks[1]; w++) weeks.push(w);
+    });
+    weeks.sort(function (a, b) { return a - b; });
+    var i = weeks.indexOf(L && L.week);
+    return i < 0 ? -1 : i * 2 + ((L.day | 0) > 2 ? 1 : 0);
+  }
+
   /* ── §4  the ladder ─────────────────────────────────────────────── */
   function memState() {
     return Sparkle.get('oao.g4ela.memory', {});
@@ -221,8 +254,8 @@
     return hide;
   }
 
-  function rungBlurb(r) {
-    if (r === 1) return 'the whole stanza — read it aloud twice';
+  function rungBlurb(r, poem) {
+    if (r === 1) return ((poem && poem.unit) || 'the whole stanza') + ' — read it aloud twice';
     if (r === 8) return 'nothing on the page — say it cold';
     if (r === 7) return 'first word of each line only';
     return 'a little less to lean on';
@@ -239,6 +272,17 @@
     + '.oao-bh-title{font-family:"Nunito",sans-serif;font-size:17px;font-weight:800;color:#0E1C42;}'
     + '.oao-bh-sub{font-size:13px;color:#7A88A8;font-style:italic;}'
     + '.oao-bh-body{padding:18px 20px;}'
+    + '.oao-bh-full{margin:12px 0 4px;border:1px solid #EBDDBB;border-radius:10px;background:#FFFDF7;}'
+    + '.oao-bh-full summary{cursor:pointer;padding:9px 14px;font-family:"Nunito",sans-serif;font-size:14px;font-weight:800;color:#8A6416;}'
+    + '.oao-bh-full[open] summary{border-bottom:1px solid #F1E6CC;}'
+    + '.oao-bh-full-t{padding:12px 16px 0;font-family:"Lora",Georgia,serif;font-size:18px;font-weight:700;color:#0E1C42;}'
+    + '.oao-bh-full-t span{font-weight:400;font-style:italic;font-size:15px;color:#7A88A8;}'
+    + '.oao-bh-full-t small{display:block;font-family:"Nunito",sans-serif;font-size:12px;font-weight:700;color:#7A88A8;margin-top:2px;}'
+    + '.oao-bh-full-p{padding:8px 16px 4px;font-family:"Lora",Georgia,serif;font-size:17px;line-height:1.75;color:#3A4A6B;}'
+    + '.oao-bh-full-p .gap{height:10px;}'
+    + '.oao-bh-full-p .mem{color:#0E1C42;background:linear-gradient(transparent 55%,rgba(233,196,106,.45) 55%);display:inline;}'
+    + '.oao-bh-full-p .mem::after{content:"";display:block;}'
+    + '.oao-bh-full-n{margin:4px 16px 12px;font-size:13px;color:#93815E;font-style:italic;}'
     + '.oao-bh-rung{font-family:"Nunito",sans-serif;font-size:11px;font-weight:800;'
     +   'letter-spacing:.08em;text-transform:uppercase;color:#7A88A8;}'
     + '.oao-bh-rung i{text-transform:none;font-family:"Lora",Georgia,serif;font-style:italic;'
@@ -362,9 +406,9 @@
       .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   }
 
-  function poemAudioURL(title) {
+  function poemAudioURL(title, which) {
     if (!AUDIO_BASE || !title) return '';
-    return AUDIO_BASE + 'poem/' + slug(title) + '.mp3';
+    return AUDIO_BASE + 'poem/' + slug(title) + (which ? '-' + which : '') + '.mp3';
   }
 
   /* One clip plays at a time, and starting one silences the page's
@@ -451,9 +495,11 @@
      poem film arrived that way; see claude/g4-audio-spec.md §9.     */
   var VIDEO_BASE = window.OAO_VIDEO_BASE || 'assets/video/';
 
-  function poemVideoURL(title) {
+  /* `which` = 'full' asks for the whole-poem reading:
+       assets/video/poem/<slug>-full.mp4 (and audio/poem/<slug>-full.mp3) */
+  function poemVideoURL(title, which) {
     if (!VIDEO_BASE || !title) return '';
-    return VIDEO_BASE + 'poem/' + slug(title) + '.mp4';
+    return VIDEO_BASE + 'poem/' + slug(title) + (which ? '-' + which : '') + '.mp4';
   }
   function posterURL(src) {
     return src ? src.replace(/\.mp4(\?|$)/i, '.jpg$1') : '';
@@ -520,14 +566,14 @@
   /* Put a recording in place: the film if there is one, the voice clip
      if there is not, nothing at all if there is neither. The film is
      tried first so the control never appears twice or flickers. */
-  function placeMedia(title, watchLabel, hearLabel, how) {
+  function placeMedia(title, watchLabel, hearLabel, how, which) {
     var audioFallback = function () {
       /* a voice clip is heard, not watched — the label has to follow
          whichever one the student actually got */
-      var a = audioControl(poemAudioURL(title), hearLabel);
+      var a = audioControl(poemAudioURL(title, which), hearLabel);
       if (a) { a.classList.add('spk-audio-inline'); how(a); }
     };
-    var vid = videoControl(poemVideoURL(title), watchLabel, audioFallback);
+    var vid = videoControl(poemVideoURL(title, which), watchLabel, audioFallback);
     if (vid) how(vid);
   }
 
@@ -636,11 +682,16 @@
     card.innerHTML =
       '<div class="oao-bh-head"><div class="oao-bh-num">♪</div><div>' +
         '<div class="oao-bh-title">By Heart · “' + esc(poem.title) + '”</div>' +
-        '<div class="oao-bh-sub">' + esc(poem.author) + ' · one stanza, held all the way through this book</div>' +
+        '<div class="oao-bh-sub">' + esc(poem.author) + ' · ' + esc(poem.span || 'one stanza') + ', held all the way through this book</div>' +
       '</div></div>' +
       '<div class="oao-bh-body">' +
         '<div class="oao-bh-rung" data-role="rung"></div>' +
         '<div class="oao-bh-poem" data-role="poem"></div>' +
+        (poem.full ? '<details class="oao-bh-full" data-role="full"><summary>Read the whole poem</summary>' +
+          '<div class="oao-bh-full-t">“' + esc(poem.title) + '”' + (poem.subtitle ? ' <span>' + esc(poem.subtitle) + '</span>' : '') +
+          '<small>' + esc(poem.author) + '</small></div>' +
+          '<div class="oao-bh-full-p"></div>' +
+          '<p class="oao-bh-full-n">The lines in gold are the ones you are learning by heart.</p></details>' : '') +
         '<div class="oao-bh-row">' +
           '<button type="button" class="oao-bh-btn" data-role="said">I said it aloud</button>' +
           '<button type="button" class="oao-bh-mini" data-role="more">Show a little more</button>' +
@@ -662,15 +713,32 @@
         }).join(' ') + '</div>';
       });
       poemHost.innerHTML = s;
-      rungHost.innerHTML = 'Rung ' + r + ' of 8<i>' + rungBlurb(r) + '</i>';
+      rungHost.innerHTML = 'Rung ' + r + ' of 8<i>' + rungBlurb(r, poem) + '</i>';
     }
     paint(rung);
+
+    /* The whole poem, on every poetry day, with the memorized lines in gold. */
+    var fullHost = card.querySelector('.oao-bh-full-p');
+    if (fullHost && poem.full) {
+      var mem = poem.lines.map(function (l) { return l[0]; });
+      fullHost.innerHTML = poem.full.map(function (ln) {
+        if (ln === null) return '<div class="gap"></div>';
+        return '<div' + (mem.indexOf(ln) >= 0 ? ' class="mem"' : '') + '>' + esc(ln) + '</div>';
+      }).join('');
+    }
 
     /* The model reading, directly under the stanza and above the
        button that says they have recited it — the demo's placement.
        Film first; the voice clip only if there is no film. */
-    placeMedia(poem.title, 'Watch the poem read aloud', 'Hear the poem read aloud',
-      function (el) { poemHost.parentNode.insertBefore(el, poemHost.nextSibling); });
+    /* A poem with a `full` text plays the whole-poem reading on the
+       ladder's FIRST poetry day, and the short reading (just the lines
+       being learned) on every day after. */
+    var firstDay = !!poem.full && ladderSlot(arc, L) === 0;
+    placeMedia(poem.title,
+      firstDay ? 'Watch the whole poem read aloud' : 'Watch the poem read aloud',
+      firstDay ? 'Hear the whole poem read aloud' : 'Hear the poem read aloud',
+      function (el) { poemHost.parentNode.insertBefore(el, poemHost.nextSibling); },
+      firstDay ? 'full' : '');
 
     card.querySelector('[data-role="more"]').onclick = function () {
       if (rung <= 1) return;
