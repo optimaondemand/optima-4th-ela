@@ -20,6 +20,20 @@
   --field:#10141d; --sel:#22304f; --card2:#2d3650; --blue:#5b8def;
 }
 :root[data-theme="dark"] .bgs label.add{border-color:#3a4258}
+.dim-veil{position:fixed;inset:0;background:#000;z-index:50;opacity:0;pointer-events:none;transition:opacity .4s}
+/* Dim while recording: everything goes black except a soft gray script, a dim preview and the Stop button.
+   Only the on-screen preview is dimmed; the recording itself is untouched. */
+body.dimrec .dim-veil{opacity:1}
+body.dimrec .prompter,body.dimrec .screen,body.dimrec .controls{position:relative;z-index:51}
+body.dimrec .prompter{background:#000;box-shadow:none}
+body.dimrec .prompter .ptools{visibility:hidden}
+body.dimrec .ptext{color:#6b7385}
+body.dimrec .ptext .ph{color:#6e5a2c}
+body.dimrec .screen canvas{filter:brightness(.3)}
+body.dimrec .overlay.big{color:#6b7385;text-shadow:none}
+body.dimrec .recbadge{background:#5a2020;color:#b9a0a0}
+body.dimrec .controls .hint{visibility:hidden}
+body.dimrec #recBtn{color:#8a93a6}
 .theme-btn{margin-left:10px;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:8px;padding:6px 12px;font-weight:800;cursor:pointer;font:inherit;font-size:13px}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%}
@@ -300,6 +314,7 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
           <div class="field">Microphone<select id="micSel"></select></div>
           <label class="check"><input type="checkbox" id="mirror" checked> Mirror my preview (the video is saved unmirrored)</label>
           <label class="check"><input type="checkbox" id="poster" checked> Also save the thumbnail (.jpg)</label>
+          <label class="check"><input type="checkbox" id="dimRec" checked> Dim the screen while recording (less glare on glasses)</label>
           <div class="note" id="fmtNote"></div>
         </div>
       </div>
@@ -320,6 +335,7 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
   <div class="takes" id="takes"></div>
 </div>
 <div class="toast" id="toast"></div>
+<div class="dim-veil" aria-hidden="true"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <filter id="vsLight" color-interpolation-filters="sRGB">
     <feComponentTransfer>
@@ -862,6 +878,8 @@ out.classList.toggle('mirror',$('mirror').checked);
 $('mirror').onchange=function(){ out.classList.toggle('mirror',this.checked); store.set('mirror',this.checked); };
 $('poster').checked=store.get('poster',true);
 $('poster').onchange=function(){ store.set('poster',this.checked); };
+$('dimRec').checked=store.get('dimrec',true);
+$('dimRec').onchange=function(){ store.set('dimrec',this.checked); };
 
 /* ---------- backgrounds ---------- */
 var bgs = store.get('bgs',[]), bgSel = store.get('bgsel',0);
@@ -964,7 +982,8 @@ var recorder=null, chunks=[], recording=false, counting=false, recStart=0, timer
 function setRecUI(on){
   recording=on; $('recbadge').classList.toggle('on',on);
   $('recBtn').textContent = on ? '■ Stop' : '● Record';
-  $('recBtn').style.background = on ? 'var(--navy)' : '';
+  $('recBtn').style.background = on ? '#2a3144' : '';
+  if (!on) document.body.classList.remove('dimrec');
 }
 function countdown(n,done){
   counting=true; var el=$('count');
@@ -977,6 +996,7 @@ function startRec(){
   if (!sel){ toast('Pick a video from the list first'); return; }
   if (!camStream || !MIME){ return; }
   closeReview();
+  if ($('dimRec').checked) document.body.classList.add('dimrec');
   countdown(3,function(){
     var vs=out.captureStream(30);
     var tracks=vs.getVideoTracks().concat(micStream?micStream.getAudioTracks():[]);
