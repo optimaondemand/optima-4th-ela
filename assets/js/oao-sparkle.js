@@ -306,6 +306,25 @@
     + '.oao-bh-pick button:hover{border-color:#C7922C;}'
     + '.oao-bh-pick button.on{background:#FFF3DC;border-color:#C7922C;}'
     + '@media (prefers-reduced-motion: reduce){.oao-bh-poem w{transition:none;}}'
+    /* first poetry day of a poem with a `full` text: "Meet the poem" */
+    + '.oao-bh-intro{font-size:17px;color:#3A4A6B;line-height:1.75;margin:0 0 12px;}'
+    + '.oao-bh-whole{font-family:"Lora",Georgia,serif;font-size:19px;line-height:1.85;color:#3A4A6B;'
+    +   'background:#FFFDF7;border:1px solid #EBD9AF;border-radius:10px;padding:18px 24px;margin:6px 0 10px;}'
+    + '.oao-bh-whole .gap{height:12px;}'
+    + '.oao-bh-whole .mem{color:#0E1C42;font-weight:600;background:linear-gradient(transparent 55%,rgba(233,196,106,.5) 55%);display:inline;}'
+    + '.oao-bh-whole .mem::after{content:"";display:block;}'
+    + '.oao-bh-whole .tag{display:inline-block;font-family:"Nunito",sans-serif;font-size:11px;font-weight:800;'
+    +   'letter-spacing:.06em;text-transform:uppercase;color:#8A6416;background:#FFF3DC;border:1px solid #EBD9AF;'
+    +   'border-radius:999px;padding:1px 10px;margin:2px 0 4px;}'
+    + '.oao-bh-whole-t{font-weight:700;color:#0E1C42;font-size:20px;margin-bottom:2px;}'
+    + '.oao-bh-whole-t span{font-weight:400;font-style:italic;font-size:15px;color:#7A88A8;}'
+    + '.oao-bh-whole-t small{display:block;font-family:"Nunito",sans-serif;font-size:12px;font-weight:700;color:#7A88A8;margin:2px 0 10px;}'
+    + '.oao-bh-how{margin:16px 0 4px;border-top:1px dashed #EBD9AF;padding-top:14px;}'
+    + '.oao-bh-how h4{margin:0 0 8px;font-family:"Nunito",sans-serif;font-size:14px;font-weight:800;color:#8A6416;letter-spacing:.03em;}'
+    + '.oao-bh-how ol{margin:0;padding-left:22px;font-size:16px;color:#3A4A6B;line-height:1.7;}'
+    + '.oao-bh-how li{margin-bottom:6px;}'
+    + '.oao-bh-how li b{color:#0E1C42;}'
+    + '.oao-bh-think{margin:12px 0 4px;background:#F4F7FC;border-radius:10px;padding:12px 16px;font-size:16px;color:#3A4A6B;line-height:1.7;}'
     /* ── recorded voice ── lifted verbatim from the sparkle demo, so a
        By Heart clip looks and behaves exactly like the poem control on
        lesson 7.1. Class names kept as .spk-audio* for the same reason:
@@ -662,9 +681,72 @@
     body.appendChild(box);
   }
 
+  /* ── 6a′  first poetry day of a poem with a `full` text ──────────
+     Bethany, 9 Oct 2026: the first day only MEETS the poem. The whole
+     poem shows, the lines to be learned are highlighted and named, a
+     short "how to read a poem" routine sits under it, and the whole-
+     poem reading plays. No rung, no fading: the ladder starts on the
+     next poetry day.                                                 */
+  function buildIntro(card, arc, L) {
+    var poem = POEMS[arc];
+    var m0 = memState();
+    if (!m0[arc]) { m0[arc] = { rung: 1, advancedOn: null }; Sparkle.set('oao.g4ela.memory', m0); }
+    var mem = poem.lines.map(function (l) { return l[0]; });
+    var tagged = false;
+    var whole = poem.full.map(function (ln) {
+      if (ln === null) return '<div class="gap"></div>';
+      if (mem.indexOf(ln) >= 0) {
+        var t = tagged ? '' : '<div><span class="tag">★ Your lines to learn by heart</span></div>';
+        tagged = true;
+        return t + '<div class="mem">' + esc(ln) + '</div>';
+      }
+      return '<div>' + esc(ln) + '</div>';
+    }).join('');
+
+    card.innerHTML =
+      '<div class="oao-bh-head"><div class="oao-bh-num">♪</div><div>' +
+        '<div class="oao-bh-title">By Heart · Meet the Poem</div>' +
+        '<div class="oao-bh-sub">“' + esc(poem.title) + '” · ' + esc(poem.author) + ' · the poem that travels with this book</div>' +
+      '</div></div>' +
+      '<div class="oao-bh-body">' +
+        '<p class="oao-bh-intro">Every book this year comes with a poem. This is the one for <i>Number the Stars</i>. ' +
+          'Sara Teasdale wrote it near the end of the First World War. Today you just meet it: ' +
+          'listen to it, read the whole thing, and think about what it says. ' +
+          'The <b>' + esc(poem.span || 'highlighted lines') + ' in gold</b> are the ones you will learn by heart, ' +
+          'a little at a time, over the coming weeks.</p>' +
+        '<div class="oao-bh-whole" data-role="poem">' +
+          '<div class="oao-bh-whole-t">“' + esc(poem.title) + '”' + (poem.subtitle ? ' <span>' + esc(poem.subtitle) + '</span>' : '') +
+          '<small>' + esc(poem.author) + '</small></div>' + whole +
+        '</div>' +
+        '<div class="oao-bh-how"><h4>How to read a poem</h4><ol>' +
+          '<li><b>Listen first.</b> Hear the whole poem read aloud before you read it yourself.</li>' +
+          '<li><b>Read it aloud, slowly.</b> Pause at the commas and periods, not at the end of every line. If a line has no punctuation, keep going into the next one.</li>' +
+          '<li><b>Stop at each gap.</b> Each pair of lines is one picture. Close your eyes and see it before you move on.</li>' +
+          '<li><b>Find the turn.</b> Somewhere in the middle, the poem changes direction. Find the line where it happens, and ask yourself why the poet turned there.</li>' +
+          '<li><b>Read it one more time.</b> A poem gives you more on the second and third reading than on the first.</li>' +
+        '</ol></div>' +
+        '<div class="oao-bh-think">🧠 <b>Think about it:</b> the poem is called “' + esc(poem.title) + ',” and it was written during a war. ' +
+          'Why do you think a poet would fill a war poem with rain, birds, frogs and trees?</div>' +
+        '<div class="oao-bh-row" style="margin-top:12px;">' +
+          '<button type="button" class="oao-bh-btn" data-role="said">I read it aloud</button>' +
+          '<span class="oao-bh-note" data-role="note"></span>' +
+        '</div>' +
+      '</div>';
+
+    var poemHost = card.querySelector('[data-role="poem"]');
+    placeMedia(poem.title, 'Watch the whole poem read aloud', 'Hear the whole poem read aloud',
+      function (el) { poemHost.parentNode.insertBefore(el, poemHost); }, 'full');
+
+    card.querySelector('[data-role="said"]').onclick = function () {
+      card.querySelector('[data-role="note"]').textContent =
+        'Good. Next poetry day, you start learning the lines in gold.';
+    };
+  }
+
   /* ── 6a  the eight-rung ladder ──────────────────────────────────── */
   function buildLadder(card, arc, L) {
     var poem = POEMS[arc];
+    if (poem.full && ladderSlot(arc, L) === 0) return buildIntro(card, arc, L);
     /* The lesson sets the rung; "I said it aloud" lets a student fade
        one more on this page (once a day). Saved per lesson, so going
        back to an earlier week shows that week's rung, not a later one. */

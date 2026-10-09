@@ -36,7 +36,16 @@ for k,v in man.items():
     lessons.append(L)
 lessons.sort(key=lambda L:(L['w'],99 if L['d']=='fluency' else int(L['d'])))
 poems=[('Hope Is the Thing with Feathers','hope-is-the-thing-with-feathers','Mrs. Frisby'),('Who Has Seen the Wind?','who-has-seen-the-wind','Anne of Green Gables'),('There Will Come Soft Rains','there-will-come-soft-rains','Number the Stars'),('Sympathy','sympathy','Freedom Train'),('The Forest Remembers','forest-remembers','Prince Caspian')]
-extra={'poems':[{'id':'poem','label':f'{t} ({b})','path':'poem/'+s,'done':exists('poem/'+s),'script':''} for t,s,b in poems],
+def poemScript(slug):
+    f=os.path.join(R,'Planning docs','teacher-video-scripts',f'g4-teacher-scripts-poem-{slug}.md')
+    if not os.path.exists(f): return ''
+    t=open(f,encoding='utf-8').read()
+    m=re.search(r'^## [^\n]*\n(.*)',t,re.S|re.M)
+    return (m.group(1) if m else t).strip()
+# a poem with a whole-poem film for its first poetry day (Number the Stars)
+fullpoems=[('There Will Come Soft Rains','there-will-come-soft-rains','Number the Stars')]
+extra={'poems':[{'id':'poem','label':f'{t} ({b})','path':'poem/'+s,'done':exists('poem/'+s),'script':''} for t,s,b in poems]+
+ [{'id':'poem-full','label':f'{t}: whole poem, first poetry day ({b})','path':'poem/'+s+'-full','done':exists('poem/'+s+'-full'),'script':poemScript(s)} for t,s,b in fullpoems],
  'teacher':[{'id':'scrapbook','label':'Anne Character Growth Scrapbook — teacher video','path':'teacher/g4ela-anne-scrapbook','done':exists('teacher/g4ela-anne-scrapbook'),'script':''}]}
 teacher={}
 for f in sorted(glob.glob(os.path.join(R,'Planning docs','teacher-video-scripts','g4-teacher-scripts-*.md'))):
