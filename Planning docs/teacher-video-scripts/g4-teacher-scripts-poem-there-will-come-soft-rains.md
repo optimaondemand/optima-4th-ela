@@ -10,7 +10,7 @@ Today we're not memorizing anything. Today we just meet the poem. So before I re
 
 First, I listen to the whole thing before I worry about any one word. Second, I read it out loud, slowly, and I pause at the commas and periods, not at the end of every line. If a line doesn't have any punctuation at the end, I keep right on going into the next line. Third, I notice the gaps. This poem comes in pairs of lines, and each pair paints one picture. When I reach a gap, I stop and let myself see that picture. And fourth, I watch for the turn, the place where a poem changes direction.
 
-Okay. Listen to the whole poem, and try to see each picture.
+Now listen to the whole poem, and try to see each picture.
 
 There will come soft rains and the smell of the ground,
 And swallows circling with their shimmering sound;
@@ -36,4 +36,4 @@ Now look at the lines in gold on your page, the ones about the robins and the wa
 
 A few words to know before you go. Tremulous means trembling, like blossoms shaking in the breeze. Feathery fire is the robin's bright red-orange chest. And whims are little sudden ideas, so the robins are whistling whatever comes into their heads.
 
-Now it's your turn. Read the whole poem out loud once or twice, pausing at the punctuation, and think about the question under the poem. Why would a poet fill a war poem with rain, birds, and trees?
+Now it's your turn. Read the whole poem out loud once or twice, pausing at the punctuation, and think about the question under the poem. Why would a poet fill a war poem with rain, birds, frogs, and trees?

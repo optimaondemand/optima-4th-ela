@@ -29,12 +29,12 @@ Your ear catching what your eye misses is so true. I catch my own typos that way
 
 ## Morphology · g4ela-15-3-morphology
 
-Two lamps already glowing! I love that the bridge keeps a light on behind us. The part meaning across shows up in words you might not expect. When you translate, you carry words across from one language into another. A propeller pushes a boat forward through the water. Today you type the part yourself, so spell it carefully. Remember that pro and pre look alike but point in different directions.
+Two lamps glowing behind us is a lovely sight, like the bridge keeping a light on for the way back. The part meaning across shows up in words you might not expect. When you translate, you carry words across from one language into another. A propeller pushes a boat forward through the water. Today you type the part yourself, so spell it carefully. Remember that pro and pre look alike but point in different directions.
 
 
 ## Vocabulary · g4ela-15-3-vocabulary
 
-Hard words for a hard subject is exactly right, and I'm glad Grete didn't pretend otherwise. This page walks through require one step at a time, so use those same three steps on every card. Watch one word that can trick you. Refuse, said with the push on the first part, is a different word that means trash. Same letters, new meaning. Let the sentence above the card tell you which one you're reading.
+Hard words for a hard subject. I'm glad Grete didn't pretend otherwise. This page walks through require one step at a time, so use those same three steps on every card. Watch one word that can trick you. Refuse, said with the push on the first part, is a different word that means trash. Same letters, new meaning. Let the sentence above the card tell you which one you're reading.
 
 
 ## Grammar · g4ela-15-3-grammar
@@ -69,9 +69,9 @@ Grete's right to slow you down on that last question. It's the one where your ow
 
 ## Chapter Thinking · g4ela-15-3-chapter
 
-I love Grete's idea that an untrue story can still hold something true. Think about family stories, like Grandpa catching a fish as big as a canoe. Maybe it wasn't that big, but the story shows how proud everyone was of him. For the first two questions, the hints send you to a paragraph, so use the passage's words, not a guess. For the last one, explain your idea, then point to a line that backs it up.
+Grete's idea that an untrue story can still hold something true is one I think about a lot. Think about family stories, like Grandpa catching a fish as big as a canoe. Maybe it wasn't that big, but the story shows how proud everyone was of him. For the first two questions, the hints send you to a paragraph, so use the passage's words, not a guess. For the last one, explain your idea, then point to a line that backs it up.
 
 
 ## Writer's Workshop · g4ela-15-3-workshop
 
-A smart, fair person is a great judge to picture. I imagine a friend who'd politely disagree with me about pineapple on pizza. One mix-up to watch for. Adding I think doesn't turn a fact into a claim. I think the sun is hot still has no one on the other side. Change what the sentence says, not just how it starts. And when you write what someone might say back, give them a real reason, not just no, it isn't.
+A smart, fair person is a great judge to picture. I imagine a friend who'd politely disagree with me about pineapple on pizza. One trap, though. Adding I think doesn't turn a fact into a claim. I think the sun is hot still has no one on the other side. Change what the sentence says, not just how it starts. And when you write what someone might say back, give them a real reason, not just no, it isn't.

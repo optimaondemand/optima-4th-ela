@@ -4,7 +4,7 @@ Bridge to Number the Stars, Day 4 · The October 1943 rescue. Guide this lesson:
 
 ## Lesson video · g4ela-15-4
 
-Hi, friends. This is the last lesson of our bridge week. You've learned how the war began, how Germany took over Denmark, and how the Danes and their king answered the star law. Today you'll read about October 1943, when ordinary Danish people helped thousands of Jewish families escape across the sea. Your word work is review, so trust what you practiced. In Writer's Workshop, you'll choose your strongest claim. Next week, the story finally begins.
+Hi, friends. Our bridge is almost finished. Three lessons of history are behind you, and today's reading is the one all of them were leading to. You'll read about October 1943, when ordinary Danish people helped thousands of Jewish families escape across the sea. Your word work is review, so trust what you practiced. In Writer's Workshop, you'll choose your strongest claim. Next week, the story finally begins.
 
 
 ## Welcome · g4ela-15-4-welcome
@@ -19,12 +19,12 @@ Four passages, each explaining a little of the next. I like picturing them as fo
 
 ## Daily Oral Language · g4ela-15-4-dol
 
-Fishermen and the sea is a fitting model for today. I can almost smell the salt water. A word made from a country's name keeps its capital, even when it describes something else. Think of French toast, Italian food, or an American flag. All three come from place names, so they stand tall. Earlier this week you capitalized countries and a king's title. This is the same idea, just one step further.
+Fishermen and the sea is a fitting model for today. I can almost smell the salt water. A word made from a country's name keeps its capital, even when it describes something else. Think of a Danish pastry, Swedish meatballs, or a German shepherd. All three come from country names, so they stand tall. Earlier this week you capitalized countries and a king's title. This is the same idea, just one step further.
 
 
 ## Before the word work · g4ela-15-4-guide1
 
-Careful readers check before they change. I might put that on a sign in my classroom. In the last lesson, you hunted for words that broke a pattern. Today the hunt is for mistakes, and some items are already right. Try reading each activity all the way through once without tapping anything. Then go back for a second pass. Mistakes are much easier to spot when you aren't rushing to find them.
+Careful readers check before they change. I might put that on a sign in my classroom. Earlier this week, you hunted for words that broke a pattern. Today the hunt is for mistakes, and some items are already right. Try reading each activity all the way through once without tapping anything. Then go back for a second pass. Mistakes are much easier to spot when you aren't rushing to find them.
 
 
 ## Morphology · g4ela-15-4-morphology
@@ -44,7 +44,7 @@ Reading out loud really does help. My ear catches mistakes my eyes skip right ov
 
 ## Spelling · g4ela-15-4-spelling
 
-Soft and quiet vowels in the middle of a word are sneaky. Grete's right to warn us. In the last lesson you practiced a spelling voice, saying a word slowly and a little silly so you could hear every letter. Use it again here, then trust your eyes. When you find a word you think is wrong, picture it written on a sign. Does it look the way you've seen it before? If you aren't sure, leave it alone.
+Soft and quiet vowels in the middle of a word are sneaky, and Grete's warning is a good one. Earlier this week you practiced a spelling voice, saying a word slowly and a little silly so you could hear every letter. Use it again here, then trust your eyes. When you find a word you think is wrong, picture it written on a sign. Does it look the way you've seen it before? If you aren't sure, leave it alone.
 
 
 ## Before you open the book · g4ela-15-4-guide2
@@ -54,7 +54,7 @@ Choosing not to forget is a quiet kind of courage, and I think it's one of the m
 
 ## Before you read · g4ela-15-4-read
 
-Not one hero, but many. That's what makes this story so special to me. Look at the photo on this tab. It shows the water between Denmark and Sweden, and the Swedish coast is less than three miles away. That sounds close, but picture crossing it in a small fishing boat in the cold of October. One sentence names where the Nazis planned to send people. It's okay if that feels heavy. Read it gently.
+Not one hero, but many. That's what makes this story so special to me. Look at the photo on this tab. It shows the water between Denmark and Sweden. At its narrowest, the Swedish coast is less than three miles away, though many boats had to cross much wider stretches. Picture doing that in a small fishing boat in the cold of October. One sentence names where the Nazis planned to send people. It's okay if that feels heavy. Read it gently.
 
 
 ## Before you write · g4ela-15-4-guide3
@@ -69,4 +69,4 @@ A comparison is only as strong as its facts. I'm going to remember that one. Com
 
 ## Writer's Workshop · g4ela-15-4-workshop
 
-Having the most to say beats feeling the most strongly. That's a wise tip from Grete. Try counting your reasons on your fingers. Then check that each finger is really a new reason. Recess is fun, and recess is exciting, is one reason said twice. Recess helps us focus afterward is a new one. Pick topics from your own life, like bedtimes, chores, or the best board game. You'll find more reasons when you know a topic well.
+Having the most to say beats feeling the most strongly. Wise tip from Grete. Count your reasons on your fingers, and check that each finger is really a new reason. A later bedtime is fun, and a later bedtime is nice, is one reason said twice. A later bedtime gives me time to finish my chapter is a new one. Pick topics from your own life, like chores, screen time, or the best board game. You'll find more reasons when you know a topic well.
