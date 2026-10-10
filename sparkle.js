@@ -2528,7 +2528,39 @@ function videoControl(label, src) {
   /* No caption: the films are of the teacher, not the character the
      slot label names, and the label repeats the audio button above. */
   fig.appendChild(v);
+  addCaptions(v, src);
   return fig;
+}
+
+/* Closed captions. A film with a .vtt of the same name beside it
+   (g4ela-15-2-read.mp4 + g4ela-15-2-read.vtt, as the Video Studio saves
+   them) gets them as a track. The player then shows its CC button.
+   Captions start OFF; a student turns them on with CC. A film with no
+   .vtt is left exactly as it was: the file is checked first, so no CC
+   button appears for nothing. */
+function addCaptions(v, src) {
+  if (!v || v.getAttribute('data-spk-cc')) return;
+  v.setAttribute('data-spk-cc', '1');
+  if (!src) {
+    var s0 = v.querySelector('source');
+    src = v.currentSrc || v.getAttribute('src') || (s0 && s0.getAttribute('src')) || '';
+  }
+  var vtt = String(src).replace(/\.(mp4|webm)(\?.*)?$/i, '.vtt');
+  if (!vtt || vtt === src || !window.fetch || v.querySelector('track')) return;
+  fetch(vtt, { method: 'HEAD', cache: 'no-cache' }).then(function (r) {
+    if (!r.ok) return;
+    var t = document.createElement('track');
+    t.kind = 'captions';
+    t.srclang = 'en';
+    t.label = 'English';
+    t.src = vtt;                 /* no `default`: off until CC is pressed */
+    v.appendChild(t);
+    if (t.track) t.track.mode = 'disabled';
+  }).catch(function () {});
+}
+function captionAllFilms() {
+  var vs = document.querySelectorAll('video');
+  for (var i = 0; i < vs.length; i++) addCaptions(vs[i]);
 }
 
 /* A YouTube embed.
@@ -3245,6 +3277,7 @@ function boot() {
     ['wordgame',    buildWordGame],
     ['watch',       liftWatchBlock],
     ['media',       buildMedia],
+    ['captions',    captionAllFilms],
     ['bridgekit',   buildBridgeKit],
     ['publish',     buildPublish],
     ['journal',     buildJournal],
