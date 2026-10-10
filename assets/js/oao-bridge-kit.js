@@ -93,6 +93,7 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
   + '.rad-text{font-size:16px;line-height:1.6;color:#3A4A6B;min-height:4.8em;margin:4px 0 8px;}'
   + '.rad-text.static{color:#93815E;font-style:italic;}'
   + '.rad-chips{display:flex;gap:6px;flex-wrap:wrap;}'
+  + '.rad-off{margin-top:10px;display:inline-flex;align-items:center;gap:6px;font-family:"Nunito",sans-serif;font-size:13px;font-weight:800;color:#fff;background:#0E1C42;border:0;border-radius:999px;padding:6px 14px;cursor:pointer;}.rad-off[disabled]{background:#C9CFDD;cursor:default;}'
   /* morse */
   + '.mo-body{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;align-items:center;}'
   + '@media (max-width:560px){.mo-body{grid-template-columns:1fr;justify-items:center;}}'
@@ -357,7 +358,8 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
       '<input class="rad-slider" type="range" min="0" max="100" value="1" aria-label="Tuning dial">' +
       '<div class="rad-knobs"><button type="button" class="rad-knob" aria-label="Tune left"></button><button type="button" class="rad-knob" aria-label="Tune right"></button></div></div>' +
       '<div class="rad-right"><div class="rad-st">Static…</div><p class="rad-text static">Turn the dial until the static clears.</p>' +
-      '<div class="rad-chips" role="group" aria-label="Stations"></div></div></div>';
+      '<div class="rad-chips" role="group" aria-label="Stations"></div>' +
+      '<button type="button" class="rad-off" disabled aria-label="Turn the radio off">⏻ Turn off</button></div></div>';
     var slider = b.querySelector('.rad-slider'), needle = b.querySelector('.rad-needle'), stl = b.querySelector('.rad-st'), txt = b.querySelector('.rad-text'), radio = b.querySelector('.rad');
     var cur = null, noise = null, voice = new Audio(), vplay = null;
     function noiseOn(level) {
@@ -386,6 +388,7 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
       list.forEach(function (s) { var dd = Math.abs(s.pos - v); if (dd < dist) { dist = dd; best = s; } });
       if (!user) return;
       hush(stop);
+      if (offBtn) offBtn.disabled = false;
       if (best && dist <= 3) {
         radio.classList.add('rad-on');
         noiseOn(dist <= 1 ? 0 : .02);
@@ -409,10 +412,21 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
     var knobs = b.querySelectorAll('.rad-knob');
     knobs[0].onclick = function () { slider.value = Math.max(0, +slider.value - 4); tune(+slider.value, true); };
     knobs[1].onclick = function () { slider.value = Math.min(100, +slider.value + 4); tune(+slider.value, true); };
+    var offBtn = b.querySelector('.rad-off');
+    function powerOff() {
+      stop(); cur = null;
+      stl.textContent = 'Radio off'; txt.textContent = 'Turn the dial or pick a station to listen again.'; txt.classList.add('static');
+      offBtn.disabled = true;
+    }
+    offBtn.onclick = powerOff;
+    slider.addEventListener('input', function () { offBtn.disabled = false; });
+    /* leaving the tab or the page switches it off too */
+    document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('.tab-btn') && !offBtn.disabled) powerOff(); });
+    document.addEventListener('visibilitychange', function () { if (document.hidden && !offBtn.disabled) powerOff(); });
     var chips = b.querySelector('.rad-chips');
     STATIONS.filter(function (s) { return s.day <= day; }).forEach(function (s) {
       var c = document.createElement('button'); c.type = 'button'; c.className = 'bk-chip'; c.textContent = s.label.charAt(0) + s.label.slice(1).toLowerCase().replace('københavn', 'København') + (s.day === day ? ' · today' : '');
-      c.onclick = function () { slider.value = s.pos; tune(s.pos, true); };
+      c.onclick = function () { slider.value = s.pos; offBtn.disabled = false; tune(s.pos, true); };
       chips.appendChild(c);
     });
     tune(1, false);
