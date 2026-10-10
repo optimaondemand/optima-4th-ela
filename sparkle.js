@@ -588,7 +588,7 @@ function showProfileCard(isEdit) {
       '<span>' + ((PLUMAGE[k] && PLUMAGE[k].label) || k) + '</span></button>';
   }).join('');
   card.innerHTML =
-    '<h3>' + (isEdit ? 'Fix your name' : 'Before we begin: what should Anne call you?') + '</h3>' +
+    '<h3>' + (isEdit ? 'Fix your name' : 'Before we begin: what should ' + (LESSON.book === 'anne' ? 'Anne' : 'we') + ' call you?') + '</h3>' +
     '<p class="spk-sub">Just your first name. It stays on this computer — nobody else sees it.</p>' +
     '<div class="spk-name-row">' +
       '<input class="spk-name-input" id="spkNameInput" maxlength="24" autocomplete="off" placeholder="Your name" />' +
