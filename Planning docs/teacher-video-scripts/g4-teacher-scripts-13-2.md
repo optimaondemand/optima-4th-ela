@@ -56,7 +56,13 @@ Miss Stacy and I would get along, because I do plenty of crossing out myself. Ta
 
 ## Chapter Thinking · g4ela-13-2-chapter
 
-Out of breath is the right way to deliver news that big, I think. Question one has two parts, and most people stop after the first. Finding where Anne's name appears is the easy part. The harder part is what it means, so think about everything that has happened between Anne and Gilbert since that first day of school. In question two, look at the word "nobler." It's a comparing word, just like in today's spelling. Nobler than what? The author is putting two of Anne's reasons side by side, so your answer should name the one being compared. For question three, choose one word from what Matthew says and explain what it shows about how he sees her.
+Out of breath is the right way to deliver news that big, I think. Question one has two parts, and most people stop after the first. Finding where Anne's name appears is the easy part. The harder part is what it means, so think about everything that has happened between Anne and Gilbert since that first day of school. In question two, look at the word "nobler." It's a comparing word, just like in today's spelling. Nobler than what? The author is putting two of Anne's reasons side by side, so your answer should name the one being compared. For question three, here are Matthew's words.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Matthew tells Anne: "I knew you could beat them all easy."
+
+Choose one word from what he says and explain what it shows about how he sees her.
 
 ## Writer's Workshop · g4ela-13-2-workshop
 

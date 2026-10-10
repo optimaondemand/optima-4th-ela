@@ -44,7 +44,13 @@ Matthew thinks he only walks along beside her, but that quiet company matters to
 
 ## Before you read · g4ela-14-2-read
 
-I love picturing Matthew sitting perfectly still through that whole essay. That's how a quiet person shows he's proud. A few words in this chapter might be new. A commencement is a graduation ceremony, the day students finish at a school and celebrate together. At Queen's, some students read essays aloud in front of everyone. You'll also see the results posted on a board. Back then there were no phones or emails, so students crowded around a list on the wall to find out how they did. When you reach the Pause and Think stop, read Matthew's words a second time, slowly. There's nothing to write there, so give yourself time to just think about what he means.
+I love picturing Matthew sitting perfectly still through that whole essay. That's how a quiet person shows he's proud. A few words in this chapter might be new. A commencement is a graduation ceremony, the day students finish at a school and celebrate together. At Queen's, some students read essays aloud in front of everyone. You'll also see the results posted on a board. Back then there were no phones or emails, so students crowded around a list on the wall to find out how they did. When you reach the Pause and Think stop, you'll find Matthew's words.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here's what he says to Anne: "My girl — my girl that I'm proud of."
+
+Read them a second time in your book, slowly. There's nothing to write there, so give yourself time to just think about what he means.
 
 ## Before you write · g4ela-14-2-guide3
 

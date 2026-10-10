@@ -54,7 +54,13 @@ Showing up again and again. Grete said it in five words, and that is most of wha
 
 ## Before you read · g4ela-15-2-read
 
-Grete's idea of a surface and an underneath is a good way into this passage. Picture a pond that looks still on top while the ducks paddle hard underneath. That is Copenhagen in the novel, where German soldiers stand on the street corners while ordinary life goes on around them. One word first. When the passage says the king stayed on his throne, it means he was still the king. The chair stands for the whole job. The passage comes from the United States Holocaust Memorial Museum in Washington, D.C., which teaches this history carefully. Be gentle with yourself as you read. One sentence is about people being arrested just for speaking up, and it's fine to feel uneasy about that. Notice the feeling, and keep reading.
+Grete's idea of a surface and an underneath is a good way into this passage. Picture a pond that looks still on top while the ducks paddle hard underneath. That is Copenhagen in the novel, where German soldiers stand on the street corners while ordinary life goes on around them. One word first. Here's the line.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+The passage says: "The Danish king, Christian X, stayed on his throne."
+
+That means he was still the king. The chair stands for the whole job. The passage comes from the United States Holocaust Memorial Museum in Washington, D.C., which teaches this history carefully. Be gentle with yourself as you read. One sentence is about people being arrested just for speaking up, and it's fine to feel uneasy about that. Notice the feeling, and keep reading.
 
 
 ## Read Like a Writer · g4ela-15-2-rwm

@@ -40,7 +40,13 @@ Anne as the teacher checking everyone's work! Her students are going to know the
 
 ## Before you open the book · g4ela-14-4-guide2
 
-I like the way Anne talks about that turn. She couldn't stop it, but she decided what to do next, and that takes courage. At the start of the week, this box talked about bitterness and the grudge Anne held against Gilbert. Today's box brings him back one last time and mentions the Carrots day in Chapter 15. As you read, notice how far the two of them have come since then.
+I like the way Anne talks about that turn. She couldn't stop it, but she decided what to do next, and that takes courage.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Anne says it herself in today's box: "I don't know what lies around the bend, but I'm going to believe that the best does."
+
+At the start of the week, this box talked about bitterness and the grudge Anne held against Gilbert. Today's box brings him back one last time and mentions the Carrots day in Chapter 15. As you read, notice how far the two of them have come since then.
 
 ## Before you read · g4ela-14-4-read
 
@@ -52,7 +58,13 @@ Miss Stacy would be so pleased to hear Anne passing her advice along. Good teach
 
 ## Chapter Thinking · g4ela-14-4-chapter
 
-Matthew finding Anne on that pile of shingles feels like a long time ago now. Each question has a challenge that pushes further. For the first, the challenge asks why Anne says there's no sacrifice, so look for her own reason in what she tells Marilla. For the second, put the slate day in Chapter 15 beside the gate. For the third, your thinking from What Good Readers Do is already a strong start.
+Matthew finding Anne on that pile of shingles feels like a long time ago now. Each question has a challenge that pushes further. For the first, the challenge asks about four little words.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Anne tells Marilla: "There is no sacrifice."
+
+The challenge asks why she says that, so look for her own reason in what she tells Marilla. For the second, put the slate day in Chapter 15 beside the gate. For the third, your thinking from What Good Readers Do is already a strong start.
 
 ## Writer's Workshop · g4ela-14-4-workshop
 

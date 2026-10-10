@@ -44,7 +44,13 @@ Anne used to love a grand word, and I'll miss that a little. All week you've sor
 
 ## Before you open the book · g4ela-13-4-guide2
 
-Nobody hands you that answer all at once, and Anne figured that out bit by bit. Chapter 31 had a nature picture in its title, a brook widening into a river. Anne's line in the Growing-Up Watch box uses one too, a tree that's been pruned. Gardeners snip off branches on purpose so a tree grows stronger and keeps its shape. Keep that picture in mind while you read.
+Nobody hands you that answer all at once, and Anne figured that out bit by bit. Chapter 31 had a nature picture in its title, a brook widening into a river. Anne's line in the Growing-Up Watch box uses one too, a tree that's been pruned.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Anne says it herself: "I'm not a bit changed — not really. I'm only just pruned down and branched out."
+
+Gardeners snip off branches on purpose so a tree grows stronger and keeps its shape. Keep that picture in mind while you read.
 
 
 ## What Good Readers Do · g4ela-13-4-wgrd

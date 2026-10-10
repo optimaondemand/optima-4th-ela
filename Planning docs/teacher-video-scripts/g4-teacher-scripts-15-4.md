@@ -54,7 +54,13 @@ Choosing not to forget is a quiet kind of courage, and I think it's one of the m
 
 ## Before you read · g4ela-15-4-read
 
-Not one hero, but many. That's what makes this story so special to me. The photo on this tab shows the water between Denmark and Sweden. At its narrowest, the Swedish coast is less than three miles away, though many boats had to cross much wider stretches. Picture doing that in a small fishing boat in the cold of October. Annemarie's uncle is a fisherman, so this water matters in the novel. One sentence names where the Nazis planned to send people. Read it gently.
+Not one hero, but many. That's what makes this story so special to me. The photo on this tab shows the water between Denmark and Sweden. At its narrowest, the Swedish coast is less than three miles away, though many boats had to cross much wider stretches. Picture doing that in a small fishing boat in the cold of October.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+The passage says it simply: "Fishermen offered their boats."
+
+Annemarie's uncle is a fisherman, so this water matters in the novel. One sentence names where the Nazis planned to send people. Read it gently.
 
 
 ## Before you write · g4ela-15-4-guide3

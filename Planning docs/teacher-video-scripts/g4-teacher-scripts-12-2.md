@@ -40,7 +40,13 @@ I'm with Marilla on liking a rule you can count on, and this one is very steady.
 
 ## Before you open the book · g4ela-12-2-guide2
 
-Marilla really has been right there for every one of those scrapes, and I think she's earned the right to wonder. Notice that the quote in this box comes from Anne herself. In it, she does something most people find hard. She names exactly what each mistake taught her. It's easy to say "I'll never do that again." It's much harder to say what you learned. But naming a lesson and living by it aren't the same thing. The real test is what she does the next time. A lot of chapters in this book work this way, where one scrape leads to one lesson. Today you get two chapters, so you get two fresh chances to check whether she acts any differently.
+Marilla really has been right there for every one of those scrapes, and I think she's earned the right to wonder. Notice that the quote in this box comes from Anne herself.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here's how it ends, in Anne's own words: "Dyeing my hair cured me of vanity. … And today's mistake is going to cure me of being too romantic."
+
+In it, she does something most people find hard. She names exactly what each mistake taught her. It's easy to say "I'll never do that again." It's much harder to say what you learned. But naming a lesson and living by it aren't the same thing. The real test is what she does the next time. A lot of chapters in this book work this way, where one scrape leads to one lesson. Today you get two chapters, so you get two fresh chances to check whether she acts any differently.
 
 ## Before you read · g4ela-12-2-read
 

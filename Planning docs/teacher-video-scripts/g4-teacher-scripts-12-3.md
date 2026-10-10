@@ -36,7 +36,13 @@ I'm sure Miss Barry could spot a careless spelling from across the room. You alr
 
 ## Before you open the book · g4ela-12-3-guide2
 
-I love that Miss Barry owns up to changing her mind. That isn't easy for anyone. You've watched Anne catch herself all week. Back in the first lesson, she said something unkind about Josie Pye in the very breath she promised not to. Now read Anne's moment in the Growing-Up Watch box. She's glad Josie won a prize, and she sees that gladness as proof she's improving. Small changes like that still count.
+I love that Miss Barry owns up to changing her mind. That isn't easy for anyone. You've watched Anne catch herself all week. Back in the first lesson, she said something unkind about Josie Pye in the very breath she promised not to. Now read Anne's moment in the Growing-Up Watch box.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Anne says it herself: "I was real glad she did. And I was glad that I felt glad, for it shows I'm improving, don't you think, Marilla, when I can rejoice in Josie's success?"
+
+She's glad Josie won a prize, and she sees that gladness as proof she's improving. Small changes like that still count.
 
 ## What Good Readers Do · g4ela-12-3-wgrd
 

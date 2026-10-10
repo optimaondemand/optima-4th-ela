@@ -44,7 +44,13 @@ Giving a silent letter a job to do is such a nice way to think about it. Think b
 
 ## Before you open the book · g4ela-12-4-guide2
 
-Forgiving a mistake and never bringing it up again is one of the kindest things about Miss Stacy. Earlier this week we wondered whether Anne would act differently after a mistake. This box is where you start to find out. Read Anne's moment slowly, especially where she wishes she hadn't been so proud. Her anger at Gilbert goes all the way back to the slate she broke over his head in her first days at school.
+Forgiving a mistake and never bringing it up again is one of the kindest things about Miss Stacy. Earlier this week we wondered whether Anne would act differently after a mistake. This box is where you start to find out. Read Anne's moment slowly, especially where she wishes she hadn't been so proud.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Listen to how the book puts it. Anne hopes no one will ever "suspect how sorry she was and how much she wished she hadn't been so proud and horrid!"
+
+Her anger at Gilbert goes all the way back to the slate she broke over his head in her first days at school.
 
 
 ## What Good Readers Do · g4ela-12-4-wgrd

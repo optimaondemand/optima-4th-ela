@@ -54,7 +54,13 @@ Grete's list of ordinary people makes me think of my own neighbors, the ones who
 
 ## Before you read · g4ela-15-3-read
 
-A story that isn't quite true. I'm curious what you'll decide about that one. Before you start, look over both Pause and Think questions, just like the page says. One sentence tells what happened to Jewish families in other countries. It's short and serious, and it's okay to slow down there. The passage names four countries before it turns to Denmark. Keep them in mind, because that comparison is the heart of this reading.
+A story that isn't quite true. I'm curious what you'll decide about that one. Before you start, look over both Pause and Think questions, just like the page says. One sentence tells what happened to Jewish families in other countries. It's short and serious, and it's okay to slow down there. The passage names four countries before it turns to Denmark.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Then it says: "Denmark was different. The Danish government refused to require Jewish people to wear the star."
+
+Keep them in mind, because that comparison is the heart of this reading.
 
 
 ## Read Like a Writer · g4ela-15-3-rwm

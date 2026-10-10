@@ -48,7 +48,13 @@ Gilbert says he thinks she means it, and he sounds honest about that. On Day 2 y
 
 ## Read Like a Writer · g4ela-13-3-rwm
 
-Gilbert likes things in threes, and so do a lot of good speakers. You've seen this before. On Day 2, single quotation marks sat inside the regular ones, and they're back today around everything Anne says. Something new is the word Why at the start of her second sentence. She isn't asking anything. It's an old way of showing surprise, a bit like saying, Well, of course.
+Gilbert likes things in threes, and so do a lot of good speakers. You've seen this before. On Day 2, single quotation marks sat inside the regular ones, and they're back today around everything Anne says.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here's Anne's sentence: "'We are rich,' said Anne staunchly. 'Why, we have sixteen years to our credit, and we're happy as queens, and we've all got imaginations, more or less.'"
+
+Something new is the word Why at the start of her second sentence. She isn't asking anything. It's an old way of showing surprise, a bit like saying, Well, of course.
 
 ## Before you write · g4ela-13-3-guide3
 
