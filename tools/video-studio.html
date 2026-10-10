@@ -261,6 +261,35 @@ details.week>summary{position:relative;padding-left:24px}
 .flair button.on{background:var(--gold)}
 .flair kbd{font-size:10px;font-family:"JetBrains Mono",monospace;color:var(--muted);font-weight:700}
 body.dimrec .flair{position:relative;z-index:51;background:#000;border-color:#222;opacity:.55}
+/* ---- quotes + word cards ---- */
+.onscreen{margin-top:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 10px;display:grid;gap:7px}
+.osrow{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.oslbl{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);min-width:92px}
+.oslbl kbd{font-size:10px;font-family:"JetBrains Mono",monospace;font-weight:700;opacity:.8}
+.oschips{display:flex;gap:5px;flex-wrap:wrap;flex:1;min-width:0}
+.oschips .none{font-size:12.5px;color:var(--muted);font-style:italic}
+.oschip{border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:9px;padding:5px 10px;font-size:13px;font-weight:700;cursor:pointer;max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;position:relative}
+.oschip.q{font-family:Georgia,serif;font-weight:400;font-style:italic}
+.oschip.on{background:var(--gold);border-color:var(--gold);color:#0E1C42}
+.oschip .rm{margin-left:6px;opacity:.55;font-style:normal;font-family:Nunito,sans-serif}
+.oschip .rm:hover{opacity:1}
+.osform{display:grid;gap:6px;padding:4px 0 2px 98px}
+.osform textarea,.osform input{padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--field);color:var(--ink);font:inherit;font-size:14px}
+body.dimrec .onscreen{position:relative;z-index:51;background:#000;border-color:#222;opacity:.6}
+.ptext .qcue{display:flex;gap:10px;align-items:center;background:var(--gold);color:#0E1C42;border-radius:10px;padding:6px 10px;margin:0 0 10px;font-size:.6em;font-weight:800;cursor:pointer;white-space:normal}
+.ptext .qcue.on{background:#fff}
+body.dimrec .ptext .qcue{background:#3a2f12;color:#b39556}
+/* ---- plan: want / skip ---- */
+.clip .want{width:18px;height:18px;flex:none;accent-color:var(--green);cursor:pointer;margin:0}
+.clip .skipb{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:12px;font-weight:800;padding:2px 6px;border-radius:6px;visibility:hidden;flex:none}
+.clip:hover .skipb,.clip.sel .skipb{visibility:visible}
+.clip .skipb:hover{background:var(--soft);color:var(--ink)}
+.clip.skipped{opacity:.55}
+.pill.skip{border:1px dashed var(--line);color:var(--muted)}
+.lesson-h{cursor:pointer;user-select:none}
+.lesson-h .car{width:10px;color:var(--muted);font-size:11px;flex:none}
+.lesson-h .keepck{border:0;background:var(--soft);color:var(--navy);border-radius:7px;font-size:11px;font-weight:800;padding:3px 8px;cursor:pointer;white-space:nowrap}
+.lesson-h .keepck:hover{background:var(--sel)}
 /* ---- help ---- */
 dialog.help{max-width:640px;width:calc(100% - 32px);border:0;border-radius:14px;padding:0;background:var(--card);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.4)}
 dialog.help::backdrop{background:rgba(5,10,25,.6)}
@@ -279,7 +308,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
   <div class="modeseg" id="modeSeg" title="Shot list: G4 ELA videos, already named. Free record: any video, saved to Downloads.">
     <button data-mode="list" class="on">G4 shot list</button><button data-mode="free">Free record</button>
   </div>
-  <div class="stats"><span class="lstat"><b id="stTotal">0</b> slots</span><span class="lstat"><b id="stRepo">0</b> in repo</span><span><b id="stKept">0</b> recorded today</span><button class="theme-btn" id="helpBtn" title="How to use the studio">? How to</button><button class="theme-btn" id="themeBtn" title="Switch between dark and light">☀ Light</button></div>
+  <div class="stats"><span class="lstat"><b id="stTotal">0</b> planned</span><span class="lstat"><b id="stRepo">0</b> in repo</span><span><b id="stKept">0</b> recorded today</span><button class="theme-btn" id="helpBtn" title="How to use the studio">? How to</button><button class="theme-btn" id="themeBtn" title="Switch between dark and light">☀ Light</button></div>
 </header>
 
 <div class="app">
@@ -289,12 +318,12 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
       <button class="btn gold nextbtn" id="nextBtn" title="Shortcut: N">▶ Next video I still need</button>
       <input id="q" type="search" placeholder="Search: 14.1, welcome, grammar, Gilbert…">
       <div class="chips" id="filt" role="group" aria-label="Show">
-        <button data-v="need" class="on">Still needed</button><button data-v="kept">Recorded today</button><button data-v="repo">Done</button><button data-v="all">Everything</button>
+        <button data-v="need" class="on">Still needed</button><button data-v="kept">Recorded today</button><button data-v="repo">Done</button><button data-v="skip">Skipped</button><button data-v="all">Everything</button>
       </div>
       <div class="chips" id="kind" role="group" aria-label="Kind">
         <button data-v="all" class="on">All kinds</button><button data-v="section">Section films</button><button data-v="lesson">Lesson videos</button><button data-v="other">Poems + teacher</button>
       </div>
-      <div class="side-tip">↑ ↓ move through the list · N jumps to the next one you still need</div>
+      <div class="side-tip">☑ Tick the videos you want, then <b>Skip the unticked</b> on the lesson line. Click a lesson to fold it. ↑ ↓ move · N = next.</div>
     </div>
     <div class="list" id="list"></div>
     <div class="legend"><span><b class="pill need">Needed</b></span><span><b class="pill today">Today</b> recorded, not in repo yet</span><span><b class="pill repo">✓ Done</b> in the repo</span></div>
@@ -367,11 +396,30 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
           <button data-f="applause" title="Applause (2)">👏<kbd>2</kbd></button>
           <button data-f="stars" title="Star burst (3)">⭐<kbd>3</kbd></button>
           <button data-f="aha" title="Aha! light bulb (4)">💡<kbd>4</kbd></button>
-          <button data-f="word" title="Next word card (5)">📇<kbd>5</kbd></button>
-          <button data-f="quote" title="Quote frame on/off (6)">❝❞<kbd>6</kbd></button>
-          <button data-f="think" title="Think about it… (7)">💭<kbd>7</kbd></button>
-          <button data-f="read" title="Let’s read! (8)">📖<kbd>8</kbd></button>
           <label class="check" style="margin:0 0 0 6px;font-size:12.5px"><input type="checkbox" id="flairSnd"> Sound</label>
+        </div>
+        <div class="onscreen" id="onScreen">
+          <div class="osrow">
+            <span class="oslbl">❝ Quotes <kbd>6</kbd></span>
+            <div class="oschips" id="quoteChips"></div>
+            <button class="btn sm" id="quoteAddBtn">＋ Type a quote</button>
+          </div>
+          <div class="osform" id="quoteForm" hidden>
+            <textarea id="qText" rows="2" placeholder="The line from the book, exactly as you’ll read it"></textarea>
+            <input type="text" id="qBy" placeholder="Who or where it’s from (Anne of Green Gables, Ch. 34)">
+            <div><button class="btn sm gold" id="qSave">Add quote</button> <button class="btn sm" id="qCancel">Cancel</button></div>
+          </div>
+          <div class="osrow">
+            <span class="oslbl">📇 Words <kbd>5</kbd></span>
+            <div class="oschips" id="wordChips"></div>
+            <button class="btn sm" id="wordAddBtn">＋ Add a word</button>
+          </div>
+          <div class="osform" id="wordForm" hidden>
+            <input type="text" id="wWord" placeholder="Word">
+            <input type="text" id="wDef" placeholder="What it means">
+            <div><button class="btn sm gold" id="wSave">Add word</button> <button class="btn sm" id="wCancel">Cancel</button></div>
+          </div>
+          <div class="note" style="margin-top:2px">Click a quote or word to put it on the video. Click it again to take it off. It stays up until you do.</div>
         </div>
         <div class="privacy">🔒 <span>Everything stays on this computer. Nothing is uploaded unless you turn on live captions (see Sound).</span></div>
 
@@ -490,10 +538,6 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
             <div class="field">Name<input type="text" id="nameTxt" placeholder="Mrs. Birchum"></div>
             <div class="field">Second line<input type="text" id="nameSub" placeholder="4th Grade ELA · Optima Academy Online"></div>
           </div>
-          <div class="field" style="margin-top:8px">Word cards (one per line, “word – meaning”)
-            <textarea id="wordList" rows="3" style="padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--field);color:var(--ink);font:inherit;font-size:13px" placeholder="resistance – fighting back against a power&#10;ration – a set amount of food"></textarea>
-          </div>
-          <div class="note" style="margin-top:-4px">Press 📇 or 5 while recording to show the next card.</div>
           <button class="btn sm" id="titlePrev">▶ Preview on the video</button>
           <div class="note">During the title card, stay quiet and smile. Start talking when it fades.</div>
         </div>
@@ -540,7 +584,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
     </ol>
     <h3>2. Choose what you’re making</h3>
     <ul>
-      <li><b>G4 shot list</b>: pick a video on the left. It’s already named and knows where it goes.</li>
+      <li><b>G4 shot list</b>: pick a video on the left. It’s already named and knows where it goes. Tick the videos you want for a lesson, then press <b>Skip the unticked</b> so the rest stop showing up.</li>
       <li><b>Free record</b>: type a name for any video. It saves to your Downloads folder.</li>
       <li><b>Just me</b> or <b>Screen + me</b>: Screen + me shows a tab or window with you in a corner.</li>
     </ul>
@@ -549,6 +593,9 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
       <li>Press <b>● Record</b> or <kbd>Space</kbd>. A 3-second countdown runs first.</li>
       <li><kbd>P</kbd> pauses and resumes. It all stays one video.</li>
       <li><b>✏ Draw</b> (or <kbd>D</kbd>) lets you circle or underline things. Ink fades on its own unless you untick Fade.</li>
+      <li><b>Quotes</b>: when your script says <i>Quote on screen</i>, click the gold line in the script (or press <kbd>6</kbd>) and the quote appears on a band across the bottom of the video. Click again when you’ve read it. <b>＋ Type a quote</b> adds your own.</li>
+      <li><b>Words</b>: this lesson’s vocabulary words are under the video. Click one to show its card, click again to take it off. <kbd>5</kbd> steps through them.</li>
+      <li><b>Confetti</b> and the other flair: <kbd>1</kbd>–<kbd>4</kbd>.</li>
       <li>Press <b>■ Stop</b> or <kbd>Space</kbd> when you’re done.</li>
     </ul>
     <h3>4. Check it</h3>
@@ -598,7 +645,7 @@ DATA.lessons.forEach(function(L){
   var lt = L.title.replace(/^(Lesson \d+\.\w+|Week \d+ Fluency):\s*/,'');
   var name = L.d==='fluency' ? 'Week '+L.w+' Fluency' : 'Lesson '+L.w+'.'+L.d;
   L.clips.forEach(function(c){
-    CLIPS.push({path:c.path, label:c.label, script:c.script||'', notes:!!c.notes, done:!!c.done,
+    CLIPS.push({path:c.path, label:c.label, script:c.script||'', notes:!!c.notes, done:!!c.done, words:L.words||[],
       kind: c.id==='lesson'?'lesson':'section', week:L.w, group:'Week '+L.w, lesson:name+' · '+lt, lessonShort:name, id:c.id, lkey:L.w+'-'+L.d});
   });
 });
@@ -622,8 +669,24 @@ function chipVal(id){ var b=$(id).querySelector('button.on'); return b?b.dataset
     b.onclick=function(){ [].forEach.call($(id).children,function(x){ x.classList.toggle('on',x===b); }); store.set('chip-'+id,b.dataset.v); renderList(); };
   });
 });
+/* ---------- your plan: the videos you want, and the slots you skip ----------
+   Most lessons don't need a film in every slot. Tick the ones you want,
+   then "Skip the rest" for that lesson: skipped slots leave the list and
+   stop counting against you. Kept in this browser, and in
+   tools/video-plan.json when the repo is connected (so it travels with git). */
+var plan=store.get('plan',{});            // path -> 'want' | 'skip'
+function planOf(c){ return plan[c.path]||''; }
+var planTimer=0;
+function setPlan(path,v){
+  if (v) plan[path]=v; else delete plan[path];
+  store.set('plan',plan);
+  clearTimeout(planTimer); planTimer=setTimeout(savePlanToRepo,800);
+}
+function isDoneish(c){ return c.done || !!keptPaths[c.path]; }
 function matches(c, q, f, k){
-  var kept = !!keptPaths[c.path];
+  var kept = !!keptPaths[c.path], skip = planOf(c)==='skip';
+  if (f==='skip') { if (!skip) return false; }
+  else if (skip && f!=='all') return false;
   if (f==='need' && (c.done || kept)) return false;
   if (f==='repo' && !c.done) return false;
   if (f==='kept' && !kept) return false;
@@ -642,13 +705,18 @@ function niceLabel(c){
   t=t.replace(/^[^·]+·\s*/,'');
   return t.charAt(0).toUpperCase()+t.slice(1);
 }
-function statusOf(c){ return keptPaths[c.path] && !c.done ? 'today' : c.done ? 'repo' : 'need'; }
-var PILL={need:'Needed',today:'Today',repo:'✓ Done'};
+function statusOf(c){ return keptPaths[c.path] && !c.done ? 'today' : c.done ? 'repo' : planOf(c)==='skip' ? 'skip' : 'need'; }
+var PILL={need:'Needed',today:'Today',repo:'✓ Done',skip:'Skipped'};
+var lessonClosed=store.get('lclosed',{});
 var visibleOrder=[];
+function countFor(list){
+  var live=list.filter(function(c){ return planOf(c)!=='skip' || isDoneish(c); });
+  return {done:live.filter(isDoneish).length, total:live.length};
+}
 function renderList(){
   if (freeMode) return;
   var q = $('q').value.trim().toLowerCase(), f=chipVal('filt'), k=chipVal('kind');
-  var list = $('list'); list.innerHTML=''; visibleOrder=[];
+  var list = $('list'), keepScroll=list.scrollTop; list.innerHTML=''; visibleOrder=[];
   var groups = {}, order=[], all={};
   CLIPS.forEach(function(c){
     (all[c.group]=all[c.group]||[]).push(c);
@@ -657,50 +725,76 @@ function renderList(){
     groups[c.group].push(c);
   });
   if (!order.length){
-    list.innerHTML='<div class="note" style="padding:16px">'+(f==='need'&&!q?'🎉 Nothing left to record here. Pick “Everything” to see every video.':'Nothing matches. Try “Everything”.')+'</div>';
+    list.innerHTML='<div class="note" style="padding:16px">'+(f==='need'&&!q?'🎉 Nothing left to record. Pick “Everything” to see every slot.':f==='skip'?'No skipped slots.':'Nothing matches. Try “Everything”.')+'</div>';
   }
   order.forEach(function(g){
     var d = document.createElement('details'); d.className='week';
     d.open = q ? true : !!openWeeks[g] || (sel && byPath[sel] && byPath[sel].group===g);
     d.addEventListener('toggle',function(){ openWeeks[g]=d.open; store.set('open',openWeeks); });
     var s = document.createElement('summary'); s.className='wk-sum';
-    var tot=all[g].length, dn=all[g].filter(function(c){ return statusOf(c)!=='need'; }).length;
+    var wc=countFor(all[g]);
     s.innerHTML = '<span></span><span class="cnt"></span><span class="bar"><i></i></span>';
     s.children[0].textContent = g;
-    s.children[1].textContent = dn+' of '+tot+' done';
-    s.children[2].firstChild.style.width = (tot?Math.round(100*dn/tot):0)+'%';
+    s.children[1].textContent = wc.done+' of '+wc.total+' done';
+    s.children[2].firstChild.style.width = (wc.total?Math.round(100*wc.done/wc.total):0)+'%';
     d.appendChild(s);
-    var lastLesson = null;
-    groups[g].forEach(function(c){
-      if (c.lesson!==lastLesson){
-        var h=document.createElement('div'); h.className='lesson-h';
-        var lc=CLIPS.filter(function(x){ return x.lesson===c.lesson; }), ld=lc.filter(function(x){ return statusOf(x)!=='need'; }).length;
-        var who=lc.map(whoOf).filter(Boolean)[0]||'';
-        h.innerHTML='<span class="ln"></span><span class="lt2"></span><span class="who"></span>';
-        h.children[0].textContent=c.lessonShort; h.children[1].textContent=c.lesson.replace(/^[^·]+·\s*/,'');
-        h.children[2].textContent=(who?who+' · ':'')+ld+'/'+lc.length;
-        h.title=c.lesson;
-        d.appendChild(h); lastLesson=c.lesson;
+    var byLesson={}, lorder=[];
+    groups[g].forEach(function(c){ if(!byLesson[c.lesson]){ byLesson[c.lesson]=[]; lorder.push(c.lesson); } byLesson[c.lesson].push(c); });
+    lorder.forEach(function(ln){
+      var lc=CLIPS.filter(function(x){ return x.lesson===ln; }), first=byLesson[ln][0];
+      var closed=!q && !!lessonClosed[ln];
+      var cnt=countFor(lc), who=lc.map(whoOf).filter(Boolean)[0]||'';
+      var wanted=lc.filter(function(x){ return planOf(x)==='want'; }).length;
+      var undecided=lc.filter(function(x){ return !planOf(x) && !isDoneish(x); }).length;
+      var h=document.createElement('div'); h.className='lesson-h';
+      h.innerHTML='<span class="car"></span><span class="ln"></span><span class="lt2"></span><span class="who"></span>';
+      h.children[0].textContent=closed?'▸':'▾';
+      h.children[1].textContent=first.lessonShort; h.children[2].textContent=ln.replace(/^[^·]+·\s*/,'');
+      h.children[3].textContent=(who?who+' · ':'')+cnt.done+'/'+cnt.total;
+      h.title=(closed?'Show':'Hide')+' this lesson’s videos';
+      if (wanted && undecided && f!=='skip'){
+        var kb=document.createElement('button'); kb.className='keepck';
+        kb.textContent='Skip the '+undecided+' unticked'; kb.title='Keep only the ticked videos for this lesson. You can bring skipped ones back with the “Skipped” filter.';
+        kb.onclick=function(e){ e.stopPropagation(); lc.forEach(function(x){ if(!planOf(x) && !isDoneish(x)) setPlan(x.path,'skip'); }); renderList(); toast('Skipped '+undecided+' slot'+(undecided>1?'s':'')+' in '+first.lessonShort); };
+        h.appendChild(kb);
       }
-      var st=statusOf(c);
-      var r = document.createElement('div'); r.className='clip'+(sel===c.path?' sel':''); r.tabIndex=-1;
-      r.innerHTML='<span class="ic"></span><div class="body"><div class="t"></div><div class="f mono"></div></div><span class="pill"></span>';
-      r.querySelector('.ic').textContent = ICONS[c.id]||'🎥';
-      r.querySelector('.t').textContent = niceLabel(c);
-      r.querySelector('.f').textContent = fileOf(c);
-      r.title = c.label+'\n'+folderOf(c)+fileOf(c);
-      var p=r.querySelector('.pill'); p.className='pill '+st; p.textContent=PILL[st];
-      r.addEventListener('click',function(){ select(c.path); });
-      d.appendChild(r);
-      visibleOrder.push(c.path);
+      h.onclick=function(){ if (lessonClosed[ln]) delete lessonClosed[ln]; else lessonClosed[ln]=true; store.set('lclosed',lessonClosed); renderList(); };
+      d.appendChild(h);
+      if (closed) return;
+      byLesson[ln].forEach(function(c){
+        var st=statusOf(c), pl=planOf(c);
+        var r = document.createElement('div'); r.className='clip'+(sel===c.path?' sel':'')+(pl==='skip'&&!isDoneish(c)?' skipped':''); r.tabIndex=-1;
+        r.innerHTML='<input type="checkbox" class="want"><span class="ic"></span><div class="body"><div class="t"></div><div class="f mono"></div></div><span class="pill"></span><button class="skipb"></button>';
+        var ck=r.querySelector('.want');
+        ck.checked = pl==='want' || isDoneish(c); ck.disabled = isDoneish(c);
+        ck.title = isDoneish(c) ? 'Recorded' : 'Tick the videos you want for this lesson';
+        ck.onclick=function(e){ e.stopPropagation(); setPlan(c.path, ck.checked?'want':''); renderList(); };
+        r.querySelector('.ic').textContent = ICONS[c.id]||'🎥';
+        r.querySelector('.t').textContent = niceLabel(c);
+        r.querySelector('.f').textContent = fileOf(c);
+        r.title = c.label+'\n'+folderOf(c)+fileOf(c);
+        var p=r.querySelector('.pill'); p.className='pill '+st; p.textContent=PILL[st]; if (st==='skip') p.remove();
+        var sb=r.querySelector('.skipb');
+        if (isDoneish(c)) sb.remove();
+        else {
+          sb.textContent = pl==='skip' ? '↩ Bring back' : 'Skip';
+          sb.title = pl==='skip' ? 'Put this slot back on your list' : 'I won’t record this one. Hide it.';
+          sb.onclick=function(e){ e.stopPropagation(); setPlan(c.path, pl==='skip'?'':'skip'); renderList(); };
+        }
+        r.addEventListener('click',function(){ select(c.path); });
+        d.appendChild(r);
+        visibleOrder.push(c.path);
+      });
     });
     list.appendChild(d);
   });
-  var tot=CLIPS.length, rep=CLIPS.filter(function(c){return c.done;}).length;
+  list.scrollTop=keepScroll;
+  var tot=CLIPS.filter(function(c){ return planOf(c)!=='skip' || c.done; }).length, rep=CLIPS.filter(function(c){return c.done;}).length;
   $('stTotal').textContent=tot; $('stRepo').textContent=rep; $('stKept').textContent=takes.length;
 }
 $('q').addEventListener('input',renderList);
-function firstNeeded(){ var c=CLIPS.find(function(c){ return !c.done && !keptPaths[c.path]; }); return c?c.path:null; }
+function needs(c){ return !c.done && !keptPaths[c.path] && planOf(c)!=='skip'; }
+function firstNeeded(){ var c=CLIPS.find(function(c){ return needs(c) && planOf(c)==='want'; }) || CLIPS.find(needs); return c?c.path:null; }
 $('nextBtn').onclick=function(){ var n=nextNeeded()||firstNeeded(); if(n) select(n); else toast('Everything is recorded 🎉'); };
 document.addEventListener('keydown',function(e){
   var t=e.target.tagName; if (t==='INPUT'||t==='SELECT'||t==='TEXTAREA'||recording||counting||freeMode||e.ctrlKey||e.metaKey||e.altKey) return;
@@ -724,6 +818,7 @@ function select(path){
   $('copyFolder').hidden = !!c.free;
   showScript();
   closeReview();
+  if (typeof quote!=='undefined'){ quote.cur=null; word.cur=null; renderOnScreen(); }
   renderList();
   var el = document.querySelector('.clip.sel'); if (el) el.scrollIntoView({block:'nearest'});
 }
@@ -732,7 +827,8 @@ $('copyFile').onclick=function(){ if(sel) copy(fileOf(byPath[sel])); };
 $('copyFolder').onclick=function(){ if(sel) copy(folderOf(byPath[sel]).replace(/\//g,'\\')); };
 function nextNeeded(){
   var i = CLIPS.findIndex(function(c){return c.path===sel;});
-  for (var j=i+1;j<CLIPS.length;j++){ var c=CLIPS[j]; if(!c.done && !keptPaths[c.path]) return c.path; }
+  for (var j=i+1;j<CLIPS.length;j++){ if (needs(CLIPS[j]) && planOf(CLIPS[j])==='want') return CLIPS[j].path; }
+  for (j=i+1;j<CLIPS.length;j++){ if (needs(CLIPS[j])) return CLIPS[j].path; }
   return null;
 }
 
@@ -808,6 +904,7 @@ function headScore(h, c){
 function isHeading(line, lessonClips){
   var t=line.trim();
   if (/^#{1,6}\s+/.test(t)) return true;
+  if (/^\[/.test(t)) return false;            // [stage directions] like [QUOTE ON SCREEN …] are never headings
   if (!t || t.length>90 || /[.!?"”’)]$/.test(t.replace(/\*+$/,''))) return false;
   if (/^\*\*.+\*\*:?$/.test(t) || /:$/.test(t)) return true;
   if (t===t.toUpperCase() && /[A-Z]{3}/.test(t)) return true;
@@ -832,7 +929,13 @@ function renderLessonDoc(c, L){
   blocks.forEach(function(b,i){
     if (b.h) inside = (i===target);
     var d=document.createElement('div'); d.className=b.h?'ph':'pp'; d.textContent=b.t;
-    if (!b.h && /^\[?\s*QUOTE ON SCREEN/i.test(b.t)){ d.className='pp cue'; d.textContent='❝ ❞  Quote on screen: press 6, read the line, press 6 again'; }
+    if (!b.h && /^\[?\s*QUOTE ON SCREEN/i.test(b.t)){
+      var qt=quoteIn((blocks[i+1]||{}).t);
+      d.className='qcue'; d.dataset.q=qt;
+      d.innerHTML='<span>❝</span><span></span>';
+      d.lastChild.textContent = qt ? 'Quote on screen: click here or press 6 as you read the next line. Click or press 6 again after.' : 'Quote on screen';
+      if (qt) d.onclick=function(){ showQuote({t:qt,a:attribOf(c)}); };
+    }
     if (target>-1 && !inside) d.classList.add('dim');
     if (i===target){ d.classList.add('here'); targetEl=d; }
     pt.appendChild(d);
@@ -1351,8 +1454,6 @@ function bindTitles(){
     $(a[0]).value=T[a[2]]; $(a[0]).oninput=function(){ T[a[2]]=this.value; store.set(a[1],this.value); };
   });
   $('titlePrev').onclick=function(){ if (!T.titleOn && !T.nameOn){ toast('Tick Title card or Name banner first'); return; } previewAt=performance.now(); };
-  $('wordList').value=store.get('words','');
-  $('wordList').oninput=function(){ store.set('words',this.value); wordIdx=0; };
 }
 function autoTitle(){
   var c=sel&&byPath[sel]; if(!c) return ['',''];
@@ -1406,32 +1507,24 @@ function drawNameBanner(ctx,t){
 }
 
 /* flair */
-var fx=[], quote={on:false,k:0}, wordIdx=0, lastFx=0;
+var fx=[], quote={cur:null,show:null,k:0}, word={cur:null,show:null,k:0}, wordIdx=0;
 var CONF=['#E8A531','#0E1C42','#2f6fd6','#d64545','#2f9e6b','#ffffff','#f3cf86'];
 function R(a,b){ return a+Math.random()*(b-a); }
-function words(){ return ($('wordList').value||'').split('\n').map(function(l){ return l.trim(); }).filter(Boolean).map(function(l){ var m=l.split(/\s+[–—-]\s+|\s*:\s+/); return {w:m[0], d:m.slice(1).join(' – ')}; }); }
 function fire(type){
   var now=performance.now(), f={type:type,t0:now};
   if (type==='confetti'){ f.p=[]; for (var i=0;i<170;i++) f.p.push({x:R(0,W),y:R(-260,-10),vx:R(-70,70),vy:R(120,320),r:R(0,6),vr:R(-7,7),w:R(9,16),h:R(5,9),c:CONF[i%CONF.length],ph:R(0,6)}); f.life=4.2; }
   else if (type==='applause'){ f.p=[]; for (var j=0;j<16;j++) f.p.push({x:R(60,W-60),d:R(0,0.9),s:R(56,96),w:R(0,6),sp:R(220,330)}); f.life=3.2; }
   else if (type==='stars'){ f.p=[]; var cx=W*0.5, cy=H*0.42; for (var k=0;k<22;k++){ var an=R(0,Math.PI*2), sp=R(260,620); f.p.push({x:cx,y:cy,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp-140,r:R(0,6),vr:R(-5,5),s:R(16,32)}); } f.life=2.3; }
   else if (type==='aha'){ f.life=2.6; }
-  else if (type==='think'){ f.life=4.2; }
-  else if (type==='read'){ f.life=3.2; f.p=[]; for (var q=0;q<26;q++) f.p.push({ch:'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'[Math.floor(R(0,52))],x:R(-150,150),d:R(0.35,1.6),vx:R(-50,50),s:R(22,40)}); }
-  else if (type==='word'){
-    var ws=words(); if (!ws.length){ toast('Add word cards in the Titles panel first'); return; }
-    var w=ws[wordIdx%ws.length]; wordIdx++;
-    fx=fx.filter(function(o){ return o.type!=='word'; });
-    f.w=w.w; f.d=w.d; f.life=7;
-  }
-  else if (type==='quote'){ quote.on=!quote.on; markFlair(); flairSound('quote'); return; }
   fx.push(f); flairSound(type);
 }
-function markFlair(){ var b=document.querySelector('#flairBar [data-f="quote"]'); if (b) b.classList.toggle('on',quote.on); }
 var lastStep=0;
 function stepFx(now){
   var dt=lastStep?Math.min(0.05,(now-lastStep)/1000):0; lastStep=now;
-  quote.k += ((quote.on?1:0)-quote.k)*Math.min(1,dt*8);
+  quote.k += ((quote.cur?1:0)-quote.k)*Math.min(1,dt*7);
+  if (!quote.cur && quote.k<0.01) quote.show=null; else if (quote.cur) quote.show=quote.cur;
+  word.k += ((word.cur?1:0)-word.k)*Math.min(1,dt*7);
+  if (!word.cur && word.k<0.01) word.show=null; else if (word.cur) word.show=word.cur;
   fx=fx.filter(function(f){ return (now-f.t0)/1000 < f.life; });
   fx.forEach(function(f){
     if (f.type==='confetti') f.p.forEach(function(p){ p.vy+=260*dt; p.vx*=0.995; p.x+=p.vx*dt+Math.sin(now/300+p.ph)*0.8; p.y+=p.vy*dt; p.r+=p.vr*dt; });
@@ -1463,51 +1556,48 @@ function drawFx(ctx,f,now){
     ctx.beginPath(); ctx.arc(0,0,74,0,Math.PI*2); ctx.fillStyle='rgba(255,236,170,.35)'; ctx.fill();
     ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.font='110px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif'; ctx.fillText('💡',0,-6);
     ctx.font='800 50px Nunito, system-ui, sans-serif'; ctx.lineWidth=9; ctx.strokeStyle=NAVY; ctx.lineJoin='round'; ctx.strokeText('Aha!',0,118); ctx.fillStyle=GOLD; ctx.fillText('Aha!',0,118);
-  } else if (f.type==='think'){
-    var k=ease(t/0.4)*fade, bx=W*0.28, by=H*0.24;
-    ctx.globalAlpha=k; ctx.shadowColor='rgba(0,0,0,.3)'; ctx.shadowBlur=18; ctx.fillStyle='rgba(255,255,255,.96)';
-    [[0,0,92],[-95,18,62],[95,16,66],[-50,-46,58],[52,-44,60],[-120,-20,40],[128,-14,42]].forEach(function(c){ ctx.beginPath(); ctx.arc(bx+c[0],by+c[1],c[2]*(0.9+0.1*k),0,Math.PI*2); ctx.fill(); });
-    [[90,110,20],[125,150,13],[150,180,8]].forEach(function(c,i){ if (t>0.15*(i+1)){ ctx.beginPath(); ctx.arc(bx+c[0],by+c[1],c[2],0,Math.PI*2); ctx.fill(); } });
-    ctx.shadowColor='transparent'; ctx.fillStyle=NAVY; ctx.textAlign='center'; ctx.textBaseline='middle';
-    ctx.font='800 36px Nunito, system-ui, sans-serif'; ctx.fillText('Think about it',bx,by-6);
-    var dots=Math.floor(t*2.5)%4; for (var d=0;d<3;d++){ ctx.globalAlpha=k*(d<dots?1:0.25); ctx.beginPath(); ctx.arc(bx-24+d*24,by+36,7,0,Math.PI*2); ctx.fill(); }
-  } else if (f.type==='read'){
-    var open=ease(t/0.7), cx=W/2, cy=H-110;
-    ctx.globalAlpha=fade; ctx.shadowColor='rgba(0,0,0,.35)'; ctx.shadowBlur=16;
-    ctx.fillStyle='#7a2e2e'; rrect(ctx,cx-178*open-8,cy-8,356*open+16,126,10); ctx.fill();
-    ctx.shadowColor='transparent';
-    [-1,1].forEach(function(sd){ ctx.save(); ctx.translate(cx,cy); ctx.scale(sd*open,1); ctx.beginPath(); ctx.moveTo(0,0); ctx.quadraticCurveTo(80,-14,170,-4); ctx.lineTo(170,104); ctx.quadraticCurveTo(80,94,0,110); ctx.closePath(); ctx.fillStyle=CREAM; ctx.fill(); ctx.strokeStyle='#d9cfb4'; ctx.lineWidth=2; ctx.stroke();
-      ctx.strokeStyle='#d6dbe6'; for (var l=0;l<5;l++){ ctx.beginPath(); ctx.moveTo(22,18+l*18); ctx.lineTo(150,16+l*18); ctx.stroke(); } ctx.restore(); });
-    ctx.textAlign='center'; ctx.textBaseline='middle';
-    f.p.forEach(function(p){ var u=t-p.d; if (u<0) return; var a=Math.min(1,u*3)*(1-ease(u/1.6)); if (a<=0) return; ctx.globalAlpha=a*fade; ctx.fillStyle=NAVY; ctx.font='800 '+p.s+'px Georgia, serif'; ctx.fillText(p.ch,cx+p.x+p.vx*u,cy-10-u*170); });
-    ctx.globalAlpha=fade*ease((t-0.3)/0.4);
-    ctx.font='800 52px Nunito, system-ui, sans-serif'; ctx.lineWidth=10; ctx.lineJoin='round'; ctx.strokeStyle=NAVY; ctx.strokeText('Let’s read!',cx,cy-170); ctx.fillStyle='#fff'; ctx.fillText('Let’s read!',cx,cy-170);
-  } else if (f.type==='word'){
-    var inn=ease(t/0.5), out2=ease((t-(f.life-0.5))/0.5), cw=480;
-    ctx.font='600 24px Nunito, system-ui, sans-serif';
-    var dl=f.d?wrapLines(ctx,f.d,cw-48).slice(0,4):[], chh=f.d?118+dl.length*34+22:150;
-    var x2=W-cw-40+(1-inn+out2)*(cw+80), y2=H*0.46-chh/2;
-    ctx.translate(x2+cw/2,y2+chh/2); ctx.rotate(-0.025); ctx.translate(-cw/2,-chh/2);
-    ctx.shadowColor='rgba(0,0,0,.35)'; ctx.shadowBlur=20; ctx.shadowOffsetY=6;
-    ctx.fillStyle='#fffdf6'; ctx.fillRect(0,0,cw,chh); ctx.shadowColor='transparent';
-    ctx.strokeStyle='#e45b5b'; ctx.lineWidth=2.5; ctx.beginPath(); ctx.moveTo(0,96); ctx.lineTo(cw,96); ctx.stroke();
-    ctx.strokeStyle='#bcd3f0'; ctx.lineWidth=1.5; for (var ln=130;ln<chh-6;ln+=34){ ctx.beginPath(); ctx.moveTo(0,ln); ctx.lineTo(cw,ln); ctx.stroke(); }
-    ctx.textAlign='left'; ctx.textBaseline='alphabetic';
-    ctx.fillStyle='#b9822a'; ctx.font='800 14px Nunito, system-ui, sans-serif'; ctx.fillText('📇  WORD CARD',24,28);
-    ctx.fillStyle=NAVY; fitText(ctx,f.w,cw-48,50,'800'); ctx.fillText(f.w,24,80);
-    ctx.fillStyle='#2b3245'; ctx.font='600 24px Nunito, system-ui, sans-serif'; dl.forEach(function(l,i){ ctx.fillText(l,24,124+i*34); });
   }
   ctx.restore();
 }
+/* a word card: slides in on the right and stays until you take it off */
+function drawWordCard(ctx){
+  var w=word.show, k=ease(word.k); if (!w || k<0.01) return;
+  var cw=500;
+  ctx.save();
+  ctx.font='600 26px Nunito, system-ui, sans-serif';
+  var dl=w.d?wrapLines(ctx,w.d,cw-56).slice(0,4):[], chh=w.d?132+dl.length*36+24:150;
+  var x=W-cw-44+(1-k)*(cw+90), y=Math.max(40,H*0.42-chh/2);
+  ctx.globalAlpha=Math.min(1,k*1.3);
+  ctx.translate(x+cw/2,y+chh/2); ctx.rotate(-0.02*k); ctx.translate(-cw/2,-chh/2);
+  ctx.shadowColor='rgba(0,0,0,.38)'; ctx.shadowBlur=22; ctx.shadowOffsetY=7;
+  ctx.fillStyle='#fffdf6'; rrect(ctx,0,0,cw,chh,6); ctx.fill(); ctx.shadowColor='transparent';
+  ctx.strokeStyle='#e45b5b'; ctx.lineWidth=2.5; ctx.beginPath(); ctx.moveTo(0,104); ctx.lineTo(cw,104); ctx.stroke();
+  ctx.strokeStyle='#bcd3f0'; ctx.lineWidth=1.5; for (var ln=140;ln<chh-8;ln+=36){ ctx.beginPath(); ctx.moveTo(0,ln); ctx.lineTo(cw,ln); ctx.stroke(); }
+  ctx.textAlign='left'; ctx.textBaseline='alphabetic';
+  ctx.fillStyle='#b9822a'; ctx.font='800 15px Nunito, system-ui, sans-serif'; ctx.fillText('VOCABULARY',28,32);
+  var ex=0;
+  if (w.e){ ctx.font='44px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif'; ctx.fillText(w.e,26,86); ex=62; }
+  ctx.fillStyle=NAVY; fitText(ctx,w.w,cw-56-ex,52,'800'); ctx.fillText(w.w,28+ex,86);
+  ctx.fillStyle='#2b3245'; ctx.font='600 26px Nunito, system-ui, sans-serif'; dl.forEach(function(l,i){ ctx.fillText(l,28,132+i*36); });
+  ctx.restore();
+}
+/* a quote from the book, on a band across the bottom, while you read it */
 function drawQuote(ctx){
-  var k=ease(quote.k); if (k<0.01) return;
-  ctx.save(); ctx.globalAlpha=k;
-  ctx.strokeStyle=GOLD; ctx.lineWidth=6; ctx.strokeRect(22,22,W-44,H-44);
-  ctx.lineWidth=2; ctx.strokeRect(34,34,W-68,H-68);
-  ctx.font='700 230px Georgia, "Times New Roman", serif'; ctx.textBaseline='top';
-  ctx.shadowColor='rgba(0,0,0,.35)'; ctx.shadowBlur=12; ctx.fillStyle=GOLD;
-  ctx.textAlign='left'; ctx.fillText('“',48-(1-k)*40,8);
-  ctx.textAlign='right'; ctx.textBaseline='bottom'; ctx.fillText('”',W-48+(1-k)*40,H+150);
+  var qd=quote.show, k=ease(quote.k); if (!qd || k<0.01) return;
+  ctx.save();
+  var maxW=W-260, size=40, lines;
+  do { ctx.font='italic '+size+'px Georgia, "Times New Roman", serif'; lines=wrapLines(ctx,'“'+qd.t+'”',maxW); size-=2; } while (lines.length>4 && size>24);
+  size+=2;
+  var lh=size*1.32, bh=lines.length*lh+(qd.a?62:34)+30, x=40, y=H-bh-34+(1-k)*(bh+60);
+  ctx.globalAlpha=Math.min(1,k*1.3);
+  ctx.shadowColor='rgba(0,0,0,.4)'; ctx.shadowBlur=20;
+  rrect(ctx,x,y,W-80,bh,16); ctx.fillStyle='rgba(14,28,66,.93)'; ctx.fill();
+  ctx.shadowColor='transparent';
+  ctx.fillStyle=GOLD; rrect(ctx,x,y,10,bh,5); ctx.fill();
+  ctx.font='700 150px Georgia, serif'; ctx.textBaseline='top'; ctx.textAlign='left'; ctx.fillStyle='rgba(232,165,49,.9)'; ctx.fillText('“',x+34,y-14);
+  ctx.textBaseline='alphabetic'; ctx.fillStyle='#fff'; ctx.font='italic '+size+'px Georgia, "Times New Roman", serif';
+  lines.forEach(function(l,i){ ctx.fillText(l,x+140,y+30+size+i*lh); });
+  if (qd.a){ ctx.fillStyle='#f3cf86'; ctx.font='700 22px Nunito, system-ui, sans-serif'; ctx.fillText('— '+qd.a,x+140,y+bh-26); }
   ctx.restore();
 }
 /* ink */
@@ -1523,12 +1613,13 @@ function drawInk(ctx,now){
   });
 }
 function drawOverlays(ctx, now){
-  drawQuote(ctx);
   var t=clockT(now);
   if (t>=0){
     var nameStart = T.titleOn ? 3.4 : 0.6;
     if (T.nameOn) drawNameBanner(ctx, t-nameStart);
   }
+  drawWordCard(ctx);
+  drawQuote(ctx);
   fx.forEach(function(f){ drawFx(ctx,f,now); });
   drawInk(ctx,now);
   if (t>=0 && T.titleOn && t<3.3) drawTitleCard(ctx,t);
@@ -1546,8 +1637,10 @@ $('inkClear').onclick=function(){ strokes=[]; };
 $('flairSnd').checked=store.get('flairsnd',false); $('flairSnd').onchange=function(){ store.set('flairsnd',this.checked); };
 document.addEventListener('keydown',function(e){
   var tg=e.target.tagName; if (tg==='INPUT'||tg==='SELECT'||tg==='TEXTAREA'||e.ctrlKey||e.metaKey||e.altKey) return;
-  var map={'1':'confetti','2':'applause','3':'stars','4':'aha','5':'word','6':'quote','7':'think','8':'read'};
+  var map={'1':'confetti','2':'applause','3':'stars','4':'aha'};
   if (map[e.key]){ e.preventDefault(); fire(map[e.key]); }
+  else if (e.key==='5'){ e.preventDefault(); nextWord(); }
+  else if (e.key==='6'){ e.preventDefault(); nextQuote(); }
   else if (e.key==='d'||e.key==='D'){ setDraw(!drawMode); }
   else if (e.key==='p'||e.key==='P'){ if (recording){ e.preventDefault(); togglePause(); } }
   else if (e.key==='Escape' && drawMode){ strokes=[]; }
@@ -1564,9 +1657,6 @@ function flairSound(type){
   else if (type==='stars'){ [1047,1319,1568,2093,2637].forEach(function(f,k){ tone(f,t+k*0.06,0.6,'sine',0.13); }); }
   else if (type==='aha'){ tone(880,t,0.7,'sine',0.2); tone(1320,t+0.12,0.9,'sine',0.18); }
   else if (type==='word'){ noise(t,0.25,900,0.6,0.35); }
-  else if (type==='think'){ [0,0.35,0.7].forEach(function(d){ tone(660,t+d,0.18,'sine',0.12); }); }
-  else if (type==='read'){ noise(t,0.3,2400,0.5,0.4); tone(523,t+0.25,0.5,'triangle',0.1); tone(659,t+0.4,0.6,'triangle',0.1); }
-  else if (type==='quote'){ tone(1568,t,0.4,'sine',0.08); }
 }
 bindTitles();
 
@@ -1962,24 +2052,117 @@ function capResume(){ if ($('capLive').checked && SR){ srOn=true; srRun(); } }
 function capStop(){ srOn=false; try{ sr && sr.stop(); }catch(e){} }
 
 /* this clip's own part of the script, for timing captions */
+/* this clip's part of a lesson script doc, as paragraphs (null if the doc has no part for it) */
+function sectionOf(c, text){
+  var lessonClips=CLIPS.filter(function(x){ return x.lkey===c.lkey; });
+  var lines=String(text).replace(/\r/g,'').split('\n'), blocks=[], para=[];
+  var flush=function(){ if (para.length){ var t=stripMd(para.join('\n')); if(t) blocks.push({h:false,t:t}); para=[]; } };
+  lines.forEach(function(l){
+    if (/^\s*(---|\*\*\*)\s*$/.test(l)) { flush(); return; }
+    if (isHeading(l, lessonClips)){ flush(); blocks.push({h:true,t:stripMd(l).replace(/:$/,'')}); }
+    else if (!l.trim()) flush(); else para.push(l);
+  });
+  flush();
+  var target=-1, bestS=0;
+  blocks.forEach(function(b,i){ if(!b.h) return; var sc=headScore(b.t,c); if (sc>bestS){ bestS=sc; target=i; } });
+  if (target<0) return null;
+  var outp=[]; for (var i=target+1;i<blocks.length && !blocks[i].h;i++) outp.push(blocks[i].t);
+  return outp;
+}
 function clipScriptText(c){
   var L=lessonDocFor(c);
-  if (L){
-    var lessonClips=CLIPS.filter(function(x){ return x.lkey===c.lkey; });
-    var lines=L.text.replace(/\r/g,'').split('\n'), blocks=[], para=[];
-    var flush=function(){ if (para.length){ var t=stripMd(para.join('\n')); if(t) blocks.push({h:false,t:t}); para=[]; } };
-    lines.forEach(function(l){
-      if (/^\s*(---|\*\*\*)\s*$/.test(l)) { flush(); return; }
-      if (isHeading(l, lessonClips)){ flush(); blocks.push({h:true,t:stripMd(l).replace(/:$/,'')}); }
-      else if (!l.trim()) flush(); else para.push(l);
-    });
-    flush();
-    var target=-1, bestS=0;
-    blocks.forEach(function(b,i){ if(!b.h) return; var sc=headScore(b.t,c); if (sc>bestS){ bestS=sc; target=i; } });
-    if (target>-1){ var outp=[]; for (var i=target+1;i<blocks.length && !blocks[i].h;i++) outp.push(blocks[i].t); if (outp.length) return outp.join('\n'); }
-  }
+  if (L){ var p=sectionOf(c,L.text); if (p && p.length) return p.join('\n'); }
   return scriptFor(c)||'';
 }
+
+/* ---------- quotes and word cards for the selected video ---------- */
+var myQuotes=store.get('quotes',{}), myWords=store.get('cwords',{});
+function attribOf(c){
+  if (!c || c.free) return '';
+  if (/Bridge/.test(c.lesson)) return 'Adapted from the U.S. Holocaust Memorial Museum';
+  var m=/·\s*(.*?)\s*\((Ch\.[^)]*)\)/.exec(c.lesson);
+  return m ? m[1]+', '+m[2] : c.lesson.replace(/^[^·]+·\s*/,'');
+}
+function quoteIn(p){ var m=/["“]([\s\S]+)["”]/.exec(p||''); return m ? m[1].trim() : ''; }
+function cueQuotes(paras){
+  var out=[];
+  (paras||[]).forEach(function(p,i){ if (/QUOTE ON SCREEN/i.test(p)){ var q=quoteIn(paras[i+1]); if (q) out.push(q); } });
+  return out;
+}
+function quotesFor(c){
+  if (!c) return [];
+  var seen={}, out=[];
+  function add(t,a,mine,i){ var key=t.toLowerCase().replace(/\W+/g,''); if (seen[key]) return; seen[key]=1; out.push({t:t,a:a,mine:mine,i:i}); }
+  [c.lkey && lessonScripts[c.lkey] && lessonScripts[c.lkey].text, c.lkey && TEACHER[c.lkey]].forEach(function(txt){
+    if (txt) cueQuotes(sectionOf(c,txt)).forEach(function(q){ add(q,attribOf(c),false); });
+  });
+  var own=scriptFor(c); if (own) cueQuotes(own.split(/\n\s*\n/)).forEach(function(q){ add(q,attribOf(c),false); });
+  (myQuotes[c.path]||[]).forEach(function(q,i){ add(q.t,q.a,true,i); });
+  return out;
+}
+function wordKey(c){ return c ? (c.free ? 'free' : c.lkey||c.path) : ''; }
+function wordsFor(c){
+  if (!c) return [];
+  var out=(c.words||[]).map(function(w){ return {w:w.w,d:w.d,e:w.e}; });
+  (myWords[wordKey(c)]||[]).forEach(function(w,i){ out.push({w:w.w,d:w.d,e:'',mine:true,i:i}); });
+  return out;
+}
+function sameQ(a,b){ return a && b && a.t===b.t; }
+function showQuote(q){ quote.cur = q && !sameQ(quote.cur,q) ? {t:q.t,a:q.a} : null; renderOnScreen(); }
+function showWord(w){ word.cur = w && !(word.cur && word.cur.w===w.w) ? {w:w.w,d:w.d,e:w.e} : null; if (word.cur) flairSound('word'); renderOnScreen(); }
+function nextQuote(){
+  var qs=quotesFor(byPath[sel]);
+  if (quote.cur){ showQuote(null); return; }
+  if (!qs.length){ toast('No quote for this video. Use “Type a quote” to add one.'); return; }
+  showQuote(qs[0]);
+}
+function nextWord(){
+  var ws=wordsFor(byPath[sel]);
+  if (!ws.length){ toast('No words for this video. Use “Add a word”.'); return; }
+  var i = word.cur ? ws.findIndex(function(w){ return w.w===word.cur.w; }) : -1;
+  if (i>=ws.length-1 && word.cur){ showWord(null); return; }
+  word.cur=null; showWord(ws[i+1]);
+}
+function chip(text, cls, on, onClick, onRemove, title){
+  var b=document.createElement('button'); b.className='oschip '+cls+(on?' on':''); b.title=title||text;
+  b.textContent=text;
+  if (onRemove){ var x=document.createElement('span'); x.className='rm'; x.textContent='✕'; x.title='Remove'; x.onclick=function(e){ e.stopPropagation(); onRemove(); }; b.appendChild(x); }
+  b.onclick=onClick; return b;
+}
+function renderOnScreen(){
+  var c=byPath[sel], qb=$('quoteChips'), wb=$('wordChips');
+  qb.innerHTML=''; wb.innerHTML='';
+  var qs=quotesFor(c), ws=wordsFor(c);
+  if (!qs.length){ qb.innerHTML='<span class="none">None in this video’s script</span>'; }
+  qs.forEach(function(q){
+    var short=q.t.length>48 ? q.t.slice(0,46)+'…' : q.t;
+    qb.appendChild(chip('“'+short+'”','q',sameQ(quote.cur,q),function(){ showQuote(q); },
+      q.mine ? function(){ myQuotes[c.path].splice(q.i,1); store.set('quotes',myQuotes); if (sameQ(quote.cur,q)) quote.cur=null; renderOnScreen(); } : null,
+      q.t+(q.a?'\n— '+q.a:'')));
+  });
+  if (!ws.length){ wb.innerHTML='<span class="none">No vocabulary words for this lesson</span>'; }
+  ws.forEach(function(w){
+    wb.appendChild(chip((w.e?w.e+' ':'')+w.w,'w',!!(word.cur && word.cur.w===w.w),function(){ showWord(w); },
+      w.mine ? function(){ myWords[wordKey(c)].splice(w.i,1); store.set('cwords',myWords); if (word.cur && word.cur.w===w.w) word.cur=null; renderOnScreen(); } : null,
+      w.w+(w.d?' — '+w.d:'')));
+  });
+  [].forEach.call(document.querySelectorAll('#ptext .qcue'),function(el){ el.classList.toggle('on', !!quote.cur && quote.cur.t===el.dataset.q); });
+}
+$('quoteAddBtn').onclick=function(){ var f=$('quoteForm'); f.hidden=!f.hidden; if(!f.hidden){ $('qBy').value=attribOf(byPath[sel]); $('qText').focus(); } };
+$('qCancel').onclick=function(){ $('quoteForm').hidden=true; };
+$('qSave').onclick=function(){
+  var t=$('qText').value.trim().replace(/^["“]|["”]$/g,''); if (!t || !sel) return;
+  (myQuotes[sel]=myQuotes[sel]||[]).push({t:t,a:$('qBy').value.trim()}); store.set('quotes',myQuotes);
+  $('qText').value=''; $('quoteForm').hidden=true; renderOnScreen(); toast('Quote added to this video');
+};
+$('wordAddBtn').onclick=function(){ var f=$('wordForm'); f.hidden=!f.hidden; if(!f.hidden) $('wWord').focus(); };
+$('wCancel').onclick=function(){ $('wordForm').hidden=true; };
+$('wSave').onclick=function(){
+  var w=$('wWord').value.trim(), c=byPath[sel]; if (!w || !c) return;
+  var k=wordKey(c); (myWords[k]=myWords[k]||[]).push({w:w,d:$('wDef').value.trim()}); store.set('cwords',myWords);
+  $('wWord').value=''; $('wDef').value=''; $('wordForm').hidden=true; renderOnScreen(); toast('Word added');
+};
+$('wDef').addEventListener('keydown',function(e){ if (e.key==='Enter') $('wSave').click(); });
 function cleanScript(t){
   return cleanMd(t).replace(/\[[^\]]*\]/g,' ').replace(/^\s*\([^)]*\)\s*$/gm,' ')
     .replace(/^\s*(note|notes|b-roll|on screen|show)\s*:.*$/gim,' ').replace(/\s+/g,' ').trim();
@@ -2094,7 +2277,23 @@ function setRepo(h){
   $('saveAllBtn').hidden = !h;
   $('traySub').textContent = h ? 'Connected to '+h.name+'. Save all writes every kept take into its folder.' : 'Unzip into C:\\repos\\optima-4th-ela and every file lands in the right folder.';
   renderTray();
-  if (h) scanRepo();
+  if (h){ scanRepo(); loadPlanFromRepo(); }
+}
+function savePlanToRepo(){
+  if (!repo) return;
+  repo.queryPermission({mode:'readwrite'}).then(function(p){
+    if (p!=='granted') return;
+    return writeFile('tools/video-plan.json', new Blob([JSON.stringify(plan,null,1)],{type:'application/json'}));
+  }).catch(function(e){ console.warn('plan',e); });
+}
+function loadPlanFromRepo(){
+  repo.getDirectoryHandle('tools').then(function(d){ return d.getFileHandle('video-plan.json'); })
+    .then(function(fh){ return fh.getFile(); }).then(function(f){ return f.text(); })
+    .then(function(txt){
+      var fp=JSON.parse(txt), n=0;
+      Object.keys(fp).forEach(function(k){ if (!(k in plan)){ plan[k]=fp[k]; n++; } });
+      if (n){ store.set('plan',plan); renderList(); }
+    }).catch(function(){});
 }
 function scanRepo(){
   // mark what is already on disk, so "Still needed" is true to today

@@ -19,7 +19,11 @@ for f in glob.glob('lesson-*.html'):
         notes=html.unescape(re.sub(r'<[^>]+>','',n[1])).strip()
         notes=re.sub(r'^Teacher recording notes:\s*','',notes)
         notes=re.sub(r'\s+',' ',notes)
-    titles[key]={'title':t,'file':f,'notes':notes}
+    words=[]
+    for fm in re.finditer(r'class="flip-card-front">(.*?)class="fc-def">(.*?)</div>',src,re.S):
+        em=re.search(r'class="fc-emoji">(.*?)</div>',fm[1],re.S); wd=re.search(r'class="fc-word">(.*?)</div>',fm[1],re.S)
+        if wd: words.append({'w':html.unescape(re.sub(r'<[^>]+>','',wd[1])).strip(),'d':html.unescape(re.sub(r'<[^>]+>','',fm[2])).strip(),'e':html.unescape(em[1]).strip() if em else ''})
+    titles[key]={'title':t,'file':f,'notes':notes,'words':words}
 def exists(p): return os.path.exists('assets/video/'+p+'.mp4')
 lessons=[]
 for k,v in man.items():
@@ -35,6 +39,13 @@ for k,v in man.items():
             L['clips'].append({'id':sid,'label':s.get('label',sid),'path':s['path'],'done':exists(s['path']),'script':tr.get(sid,'')})
     lessons.append(L)
 lessons.sort(key=lambda L:(L['w'],99 if L['d']=='fluency' else int(L['d'])))
+# a week's vocabulary words (they're taught on day 1): every lesson in the week gets them, for the studio's word cards
+wk={}
+for k,v in titles.items():
+    for x in v.get('words',[]):
+        lst=wk.setdefault(k.split('-')[0],[])
+        if all(y['w'].lower()!=x['w'].lower() for y in lst): lst.append(x)
+for L in lessons: L['words']=titles.get(f"{L['w']}-{L['d']}",{}).get('words') or wk.get(str(L['w']),[])
 poems=[('Hope Is the Thing with Feathers','hope-is-the-thing-with-feathers','Mrs. Frisby'),('Who Has Seen the Wind?','who-has-seen-the-wind','Anne of Green Gables'),('There Will Come Soft Rains','there-will-come-soft-rains','Number the Stars'),('Sympathy','sympathy','Freedom Train'),('The Forest Remembers','forest-remembers','Prince Caspian')]
 def poemScript(slug):
     f=os.path.join(R,'Planning docs','teacher-video-scripts',f'g4-teacher-scripts-poem-{slug}.md')
