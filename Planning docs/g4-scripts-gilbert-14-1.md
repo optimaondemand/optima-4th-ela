@@ -1,0 +1,83 @@
+# Lesson 14.1 guide scripts: Gilbert Blythe
+
+**What this is:** lesson 14.1 (Ch. 35, *The Winter at Queen’s*), guided in character by Gilbert Blythe. All 14 clips on the page are his.
+
+- **Save every clip in:** `C:\repos\optima-4th-ela\assets\audio\guide\gilbert\`
+- **Optional video:** same name, `.mp4`, in `C:\repos\optima-4th-ela\assets\video\guide\gilbert\` (a `.jpg` of the same name is its thumbnail).
+- **Voice:** `xCyfAutjCrYQhbBDS4l8` (same Gilbert voice as 9.4 and 13.3), on **Eleven v4**, with one to two direction tags per clip. [Open the 14.1 canvas](https://elevenlabs.io/app/flows/S9Df0o0dzaP8WLXOfmky?mode=switchWorkspace&oobCode=d4c25f48d04a476baa1906bbc3fc03fe).
+- 14.1 has copia (day 1) and no RWM box.
+- **No wordconn clip** (the slot is off).
+- The scripts below are the plain words, exactly what the Read-along transcript shows. The tags live only on the canvas nodes.
+- The welcome clip plays only for a student who has a profile (made on day 1).
+- `guide2` sits over the Growing-Up Watch, so it carries that day’s Watch theme.
+
+## His voice
+
+Real lines from the book:
+
+- “Hurrah for Blythe, Medalist!” is what the boys shout about him in Ch. 36, and Ch. 35 calls him “a clever young fellow, with his own thoughts about things and a determination to get the best out of life and put the best into it.”
+- Ruby Gillis “didn’t understand half the things Gilbert Blythe said.” (Ch. 35)
+
+**How he sounds:** Easy, a little teasing, steadier than in 9.4. In Ch. 35 the book never shows his side, so he speaks only from what he could see: the medal race, walking Ruby to the train, Anne no longer looking away. He never claims to know what Anne thinks or wishes. That is Question 1.
+
+The opening paragraph under the greeting is also in this voice (text only, 64 words):
+
+> Gilbert Blythe here, at Queen’s. There are three of us in the running for the medal, and Anne Shirley is one of them, which surprises nobody who ever sat across the aisle from her in Avonlea school. On Fridays I walk Ruby Gillis to the train. Anne and I still don’t walk together. But something’s different this winter. See if you can spot it.
+
+## The clips, in page order
+
+### welcome · `g4ela-14-1-welcome.mp3` · 65 words
+
+Hi, it’s Gilbert. Today’s question is about winning, and how wanting to win can change. I know a bit about that. I’ve been racing Anne Shirley since our first term in Avonlea school. First, some word work: two old roots, and verbs that come in pieces. Then the chapter, our winter at Queen’s. Watch what Anne wants now. It isn’t what it used to be.
+
+### wgrd · `g4ela-14-1-wgrd.mp3` · 74 words
+
+The box asks you to hold two Annes side by side: the girl who came to Avonlea and the young lady at Queen’s. I can help with the first one. She once broke a slate over my head. This winter she still won’t say a word to me, and I don’t say one to her. That isn’t the whole change, and it isn’t mine to explain. Find it in what she says and does.
+
+### dol · `g4ela-14-1-dol.mp3` · 64 words
+
+The top sentence is three words long, and it’s Jane Andrews talking about exams. I’ll admit I felt the same way. Find the little helper word, and the word it’s helping. The bottom one is two sentences crammed together, the way people talk when they’re nervous. Pull them apart and give them their capitals. Getting the small things right is half of any exam.
+
+### guide1 · `g4ela-14-1-guide1.mp3` · 66 words
+
+Four pieces of word work, and two of them ask you to sort into three groups instead of two. Don’t rush the third group. That’s where the thinking is. At Queen’s, the professors don’t much care whether you guessed right. They want to know how you knew. So for every one you place, be ready to say why. It’s a good habit, and a hard one.
+
+### morphology · `g4ela-14-1-morphology.mp3` · 65 words
+
+Two old roots today. One means to write, and one means to throw. They don’t stand on their own; they hide inside longer words, and you have to dig them out. When a blank stumps you, ask what the word is doing. Is somebody putting words on paper, or sending something flying? That tells you which root belongs. It works on Latin, too, I’m finding.
+
+### vocabulary · `g4ela-14-1-vocabulary.mp3` · 64 words
+
+Four new words, and each one has its sentence from the book sitting right on top. Read that sentence first, then take the word apart, then check. One of these words fits a girl I know rather too well. I won’t say which, or she’d prove it on the spot. The matching game at the end is quick. Don’t let quick turn into careless.
+
+### grammar · `g4ela-14-1-grammar.mp3` · 63 words
+
+Some verbs come in pieces: a helper out front, and the word that carries the meaning at the end. Sometimes the helpers stack up two deep. Sometimes there’s no helper at all. For each one, ask which word is doing the real work and which ones are only standing beside it. Then count the ones standing beside it. That count is your group.
+
+### spelling · `g4ela-14-1-spelling.mp3` · 65 words
+
+These are mistakes from real drafts, and three different rules got broken. Before you sort, say each word with its ending, then picture how it should look on the page. All three rules wake up at the same moment: when an ending meets a base word. I lost a spelling match at Avonlea school on exactly that moment once. Anne didn’t let me forget it.
+
+### copia · `g4ela-14-1-copia.mp3` · 74 words
+
+Here’s a plain sentence about where Anne spent her spare hours this winter. Say it three ways: give it a new opener, swap the doing word, then add a where or a how. Anne used to crowd every fine big word she knew into a composition. Miss Stacy taught us both to say a thing plainly first. Try all three, then keep the one that tells the most. It usually has the best verb.
+
+### guide2 · `g4ela-14-1-guide2.mp3` · 71 words
+
+There’s a box here about a rivalry without bitterness. I can only tell you my half. For years Anne wouldn’t look at me, and this winter she still doesn’t. We haven’t said a word since the pond. But racing her feels different now, at least on my side. It feels like racing someone, not fighting them. Read, and see what she wants out of it now. I’d like to know myself.
+
+### read · `g4ela-14-1-read.mp3` · 65 words
+
+Two stops. The first comes when the girls are fretting about exams and Anne says something about trying and failing. Ask yourself whether she means it. The second stop comes at the very end, when she’s looking out a window. Watch what she’s dreaming about. I wasn’t there for either of those, so you’ll know more than I do. That doesn’t happen to me often.
+
+### guide3 · `g4ela-14-1-guide3.mp3` · 64 words
+
+Now you write. Here’s a trick from exam week. Read the question twice, and the second time look for the trap. Then find the line in the chapter before you write a word. If a question asks for a quote, copy the words exactly, commas and all. The professors notice, and so will your teacher. Anne thinks checking is cheating. It isn’t. It’s checking.
+
+### chapter · `g4ela-14-1-chapter.mp3` · 60 words
+
+The first question is about Ruby and me, and what Anne wishes she had instead. Don’t ask me; I didn’t know. The second wants you to set the slate day beside this winter, and to quote the book. The third is about her dreaming at the window. Use what the book says she sees, not what you guess she sees.
+
+### workshop · `g4ela-14-1-workshop.mp3` · 68 words
+
+Publishing starts with the ending. I like that. An ending is where a reader decides what the whole story meant. Your rough last scene has been waiting a long time. Today you replace it, using one move. Pick the move that fits your character, not the one that sounds fanciest. Then read your first line and your last line together. They should sound like they know each other.
