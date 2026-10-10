@@ -3167,6 +3167,50 @@ function sparkleJournal() {
   setTimeout(function () { try { win.focus(); win.print(); } catch (e) {} }, 400);
 }
 
+/* Bridge week (15.x): the four "immersive" cards from
+   assets/js/oao-bridge-kit.js. The kit decides which days each card
+   appears on (Secret Message + map every day, records day 2, radio
+   day 4); this only loads it and says where each card sits. */
+function buildBridgeKit() {
+  if (LESSON.book !== 'bridge' || typeof LESSON.day !== 'number') return;
+  var s = document.createElement('script');
+  s.src = artURL('js/oao-bridge-kit.js');
+  s.onload = function () {
+    var K = window.OAOBridgeKit; if (!K || !K.mount) return;
+    K.DATA = K.DATA || {};
+    K.DATA.radio = { 1: artURL('audio/radio/news-1.mp3'), 2: artURL('audio/radio/news-2.mp3'),
+                     3: artURL('audio/radio/news-3.mp3'), 4: artURL('audio/radio/news-4.mp3') };
+    var opt = { day: LESSON.day, base: ART.base };
+    function mount(kind, ref, before) {
+      if (!ref) return;
+      var host = document.createElement('div');
+      host.className = 'spk-bkit spk-bkit-' + kind;
+      ref.parentNode.insertBefore(host, before ? ref : ref.nextSibling);
+      if (K.mount(kind, host, opt) === false || !host.firstChild) host.parentNode.removeChild(host);
+    }
+    var warm = document.getElementById('tab-warmup');
+    var tabs = document.getElementById('tabBar');
+    var read = document.getElementById('tab-reading');
+    var asg = document.getElementById('tab-assignment');
+    /* Secret Message: right after the welcome video on the Warm-Up tab */
+    if (warm && warm.firstElementChild) mount('morse', warm.firstElementChild, false);
+    /* Records: top of the lesson, just above the tabs */
+    if (tabs) mount('records', tabs, true);
+    /* Map: on the Reading tab, just above the reading activity */
+    if (read) {
+      var acts = read.querySelectorAll('.activity'), target = null;
+      for (var i = 0; i < acts.length; i++) {
+        var t = acts[i].querySelector('.activity-title');
+        if (t && /Read/.test(t.textContent)) { target = acts[i]; break; }
+      }
+      if (target) mount('map', target, true);
+    }
+    /* Radio: top of the Assignment tab */
+    if (asg && asg.firstElementChild) mount('radio', asg.firstElementChild, true);
+  };
+  document.head.appendChild(s);
+}
+
 function boot() {
   /* Each step is isolated. Previously all eighteen sat inside one
      try/catch, so a lesson whose DATA was missing a key — no DOL pair,
@@ -3201,6 +3245,7 @@ function boot() {
     ['wordgame',    buildWordGame],
     ['watch',       liftWatchBlock],
     ['media',       buildMedia],
+    ['bridgekit',   buildBridgeKit],
     ['publish',     buildPublish],
     ['journal',     buildJournal],
     ['marginalia',  marginalia],
