@@ -75,25 +75,78 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
   + '.map-key i{width:14px;height:14px;border-radius:3px;flex:none;}'
   + '.map-boat{transition:transform 0s;}'
   /* radio */
-  + '.rad-body{display:grid;grid-template-columns:200px minmax(0,1fr);gap:18px;align-items:center;}'
-  + '@media (max-width:560px){.rad-body{grid-template-columns:1fr;justify-items:center;}}'
   + '.rad{width:200px;border-radius:22px 22px 10px 10px;background:linear-gradient(180deg,#8A5A2E,#5E3B1C);padding:12px;box-shadow:inset 0 2px 0 #B07A44,0 4px 10px rgba(14,28,66,.25);}'
-  + '.rad-grille{height:44px;border-radius:12px 12px 4px 4px;background:repeating-linear-gradient(90deg,#3B2412 0 3px,#C9A877 3px 6px);opacity:.9;}'
-  + '.rad-dial{position:relative;height:40px;margin-top:9px;border-radius:6px;background:linear-gradient(180deg,#FFF1C9,#F2D78E);box-shadow:inset 0 0 0 2px #7A5A2E;overflow:hidden;}'
-  + '.rad-on .rad-dial{box-shadow:inset 0 0 0 2px #7A5A2E,0 0 14px rgba(255,200,90,.65);}'
-  + '.rad-tick{position:absolute;top:6px;width:2px;height:10px;background:#7A5A2E;}'
-  + '.rad-mtick{height:6px;top:8px;background:#A07A45;}.rad-mtick b{font-size:10px !important;top:7px !important;color:#8A5A22 !important;}.rad-credit{display:block;margin-top:6px;font-family:"Nunito",sans-serif;font-style:normal;font-size:11px;font-weight:700;color:#8A7A5C;}'
-  + '.rad-tick b{position:absolute;top:12px;letter-spacing:.04em;font-size:9px;left:50%;transform:translateX(-50%);font-family:"Nunito",sans-serif;font-size:8px;font-weight:800;color:#5E3B1C;white-space:nowrap;}'
-  + '.rad-needle{position:absolute;top:2px;bottom:2px;width:2px;background:#B8322A;left:10%;transition:left .2s;}'
-  + '.rad-knobs{display:flex;justify-content:space-between;margin-top:8px;}'
-  + '.rad-knob{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F3E3B5,#B8935A 60%,#6E5228);border:0;cursor:pointer;}'
-  + '.rad-slider{width:100%;margin-top:8px;accent-color:#B8322A;}'
+  + '.rad-body{display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;align-items:center;}'
+  + '@media (max-width:560px){.rad-body{grid-template-columns:1fr;justify-items:center;}}'
+  + '.rad{width:220px;}'
+  + '.rad-cab{position:relative;padding:14px 14px 10px;border-radius:110px 110px 16px 16px;background:linear-gradient(90deg,rgba(0,0,0,.18),rgba(255,255,255,.06) 30%,rgba(0,0,0,.05) 60%,rgba(0,0,0,.22)),repeating-linear-gradient(100deg,#7A4A22 0 6px,#6A3D1A 6px 9px,#83522A 9px 15px);box-shadow:inset 0 0 0 3px #4A2A10,inset 0 0 0 6px #A06A35,0 8px 18px rgba(40,20,5,.35);}'
+  + '.rad-arch{border-radius:80px 80px 6px 6px;overflow:hidden;box-shadow:inset 0 0 0 3px #3E220C;background:#3E220C;}'
+  + '.rad-cloth{display:block;width:100%;height:auto;}'
+  + '.rad-glow{transition:fill .4s;}'
+  + '.rad-play .rad-glow{animation:radthrob .9s ease-in-out infinite alternate;}'
+  + '@keyframes radthrob{from{fill:rgba(255,190,90,.04);}to{fill:rgba(255,190,90,.22);}}'
+  + '.rad-face{position:relative;margin-top:8px;border-radius:10px;background:#2A170A;padding:4px 6px 0;box-shadow:inset 0 2px 6px rgba(0,0,0,.6);}'
+  + '.rad-dial{display:block;width:100%;height:auto;}'
+  + '.rd-glass{fill:#E9D3A0;transition:fill .4s,filter .4s;}'
+  + '.rad-power .rd-glass{fill:#FFE7A8;filter:drop-shadow(0 0 6px rgba(255,190,80,.8));}'
+  + '.rd-k{stroke:#7A5A2E;stroke-width:1;}'
+  + '.rd-kc{font:700 7px "Nunito",sans-serif;fill:#6E4E22;text-anchor:middle;}'
+  + '.rd-n{stroke:#3B2412;stroke-width:2.2;}.rd-nt{font:900 9px "Nunito",sans-serif;fill:#3B2412;text-anchor:middle;}'
+  + '.rd-m{stroke:#8A5A22;stroke-width:1.4;}.rd-mt{font:700 8px sans-serif;fill:#8A5A22;text-anchor:middle;}'
+  + '.rd-r{stroke:#B8322A;stroke-width:2;}.rd-rt{font:700 9px sans-serif;fill:#B8322A;text-anchor:middle;}'
+  + '.rad-needle{stroke:#B8322A;stroke-width:2.4;stroke-linecap:round;transition:transform .15s;}'
+  + '.rd-hub{fill:#3B2412;}'
+  + '.rad-slider{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;}'
+  + '.rad-slider:focus-visible{opacity:.25;}'
+  + '.rad-row{display:flex;align-items:center;justify-content:space-between;margin-top:9px;padding:0 4px;}'
+  + '.rad-knob{--r:0deg;width:38px;height:38px;border-radius:50%;border:0;cursor:pointer;padding:0;background:radial-gradient(circle at 35% 30%,#F6E7BE,#C9A15E 45%,#6E4A1E 80%);box-shadow:0 2px 3px rgba(0,0,0,.5),inset 0 -2px 3px rgba(0,0,0,.35);}'
+  + '.rad-knob i{display:block;width:4px;height:13px;margin:4px auto 0;border-radius:2px;background:#3B2412;transform-origin:50% 15px;transform:rotate(var(--r));}'
+  + '.rad-knob[data-k="1"] i{transform:rotate(-30deg);}'
+  + '.rad-knob:active{transform:scale(.95);}'
+  + '.rad-eye{--eye:70deg;width:30px;height:30px;border-radius:50%;background:#0C1A0E;box-shadow:inset 0 0 0 2px #1A1A1A,0 0 0 3px #A06A35;display:flex;align-items:center;justify-content:center;}'
+  + '.rad-eye i{width:22px;height:22px;border-radius:50%;background:conic-gradient(from calc(180deg - var(--eye)) ,#1C3B20 0 calc(var(--eye)*2),#5BEA74 0);opacity:.35;transition:opacity .4s;}'
+  + '.rad-power .rad-eye i{opacity:1;box-shadow:0 0 8px #5BEA74;}'
+  + '.rad-pilot{width:9px;height:9px;border-radius:50%;background:#5A3A1A;box-shadow:inset 0 1px 2px rgba(0,0,0,.6);}'
+  + '.rad-power .rad-pilot{background:#FFB54A;box-shadow:0 0 8px #FFB54A;}'
+  + '.rad-brand{text-align:center;margin-top:6px;font:900 9px "Nunito",sans-serif;letter-spacing:.3em;color:#E8C88A;opacity:.8;}'
   + '.rad-right{min-width:0;width:100%;}'
   + '.rad-st{font-family:"Nunito",sans-serif;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8B6914;}'
   + '.rad-text{font-size:16px;line-height:1.6;color:#3A4A6B;min-height:4.8em;margin:4px 0 8px;}'
   + '.rad-text.static{color:#93815E;font-style:italic;}'
+  + '.rad-credit{display:block;margin-top:6px;font-family:"Nunito",sans-serif;font-style:normal;font-size:11px;font-weight:700;color:#8A7A5C;}'
   + '.rad-chips{display:flex;gap:6px;flex-wrap:wrap;}'
+  + '.rad-chip-real{border-color:#E8B4AE !important;color:#9A2A22 !important;}'
   + '.rad-off{margin-top:10px;display:inline-flex;align-items:center;gap:6px;font-family:"Nunito",sans-serif;font-size:13px;font-weight:800;color:#fff;background:#0E1C42;border:0;border-radius:999px;padding:6px 14px;cursor:pointer;}.rad-off[disabled]{background:#C9CFDD;cursor:default;}'
+  /* telephone */
+  + '.ph-body{display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;align-items:center;}'
+  + '@media (max-width:560px){.ph-body{grid-template-columns:1fr;justify-items:center;}}'
+  + '.ph-set{position:relative;width:220px;padding-top:30px;}'
+  + '.ph-hand{position:absolute;top:0;left:0;width:220px;height:60px;border:0;background:none;padding:0;cursor:pointer;transition:transform .35s cubic-bezier(.3,1.4,.5,1);z-index:2;}'
+  + '.ph-hand svg{width:100%;height:100%;filter:drop-shadow(0 3px 2px rgba(0,0,0,.35));}'
+  + '.ph-lifted .ph-hand{transform:translate(22px,-24px) rotate(-14deg);}'
+  + '.ph-base{position:relative;margin:0 auto;width:196px;padding:30px 28px 16px;border-radius:70px 70px 20px 20px / 46px 46px 20px 20px;background:radial-gradient(ellipse at 40% 18%,#45444C,#18171B 62%,#0B0A0C);box-shadow:0 10px 16px rgba(0,0,0,.35),inset 0 2px 0 rgba(255,255,255,.1),inset 0 -6px 10px rgba(0,0,0,.5);}'
+  + '.ph-base::before,.ph-base::after{content:"";position:absolute;top:-10px;width:16px;height:22px;border-radius:8px 8px 3px 3px;background:linear-gradient(#3A3940,#141317);}'
+  + '.ph-base::before{left:34px;}.ph-base::after{right:34px;}'
+  + '.ph-set::after{content:"";display:block;margin:-4px auto 0;width:170px;height:10px;border-radius:50%;background:rgba(0,0,0,.18);filter:blur(3px);}'
+  + '.ph-dial{display:block;width:140px;height:140px;}'
+  + '.ph-plate{fill:#0E0D10;stroke:#5A5860;stroke-width:2;}'
+  + '.ph-card{fill:#F3EBD8;}'
+  + '.ph-ct{font:900 6.5px "Nunito",sans-serif;fill:#0E1C42;text-anchor:middle;letter-spacing:.08em;}.ph-ct2{font-size:5px;fill:#7A5A2E;}'
+  + '.ph-wheel{transform-origin:70px 70px;transform-box:view-box;}'
+  + '.ph-hole circle{fill:#F3EBD8;stroke:#0E0D10;stroke-width:2;cursor:pointer;transition:fill .15s;}'
+  + '.ph-hole text{font:900 10px "Nunito",sans-serif;fill:#0E1C42;text-anchor:middle;pointer-events:none;}'
+  + '.ph-hole:hover circle,.ph-hole:focus circle{fill:#FFE7A8;}'
+  + '.ph-hole:focus{outline:none;}'
+  + '.ph-stop{stroke:#C9C2B0;stroke-width:4;stroke-linecap:round;}'
+  + '.ph-st{font-family:"Nunito",sans-serif;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8B6914;}'
+  + '.ph-text{font-size:16px;line-height:1.6;color:#3A4A6B;margin:4px 0 10px;min-height:3.2em;}'
+  + '.ph-text.ph-say{font-style:italic;color:#0E1C42;}'
+  + '.ph-book{border:1px solid #EBD9AF;border-radius:10px;overflow:hidden;background:#FFFDF7;}'
+  + '.ph-book-h{padding:6px 12px;background:#FFF3DC;font:800 12px "Nunito",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#56627F;border-bottom:1px solid #EBD9AF;}'
+  + '.ph-entry{display:flex;justify-content:space-between;gap:10px;width:100%;padding:8px 12px;border:0;border-bottom:1px dashed #EBD9AF;background:none;cursor:pointer;font-family:"Lora",Georgia,serif;font-size:15px;color:#0E1C42;text-align:left;}'
+  + '.ph-entry:last-child{border-bottom:0;}.ph-entry:hover{background:#FFF3DC;}'
+  + '.ph-entry span{font-family:"Courier New",monospace;font-size:13px;color:#7A5A2E;white-space:nowrap;}'
+  + '.ph-hang{margin-top:10px;font-family:"Nunito",sans-serif;font-size:13px;font-weight:800;color:#fff;background:#B8322A;border:0;border-radius:999px;padding:6px 14px;cursor:pointer;}'
   /* morse */
   + '.mo-body{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;align-items:center;}'
   + '@media (max-width:560px){.mo-body{grid-template-columns:1fr;justify-items:center;}}'
@@ -324,14 +377,26 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
 
   /* ── 3. the radio ───────────────────────────────────────────── */
   var STATIONS = [
-    { day: 1, pos: 18, label: '1939', when: 'London · September 3, 1939',
+    { day: 1, pos: 18, label: '1939', when: 'News · London · September 3, 1939',
       text: 'This is London. Two days ago, the German army crossed into Poland. Today, Britain and France have declared war on Germany. Leaders warn that the fighting may last a long time. All across Europe, families are gathered by their radios, wondering what comes next.' },
-    { day: 2, pos: 40, label: '1940', when: 'Copenhagen · April 9, 1940',
+    { day: 2, pos: 40, label: '1940', when: 'News · Copenhagen · April 9, 1940',
       text: 'This is Copenhagen. Today, German soldiers crossed our border and sailed into our harbor. Within a few hours, the government agreed to stop fighting. King Christian asks every Dane to stay calm and orderly. For now, schools and shops will stay open.' },
-    { day: 3, pos: 62, label: '1942', when: 'A report from London · 1942',
+    { day: 3, pos: 62, label: '1942', when: 'News · A report from London · 1942',
       text: 'In many countries under Nazi rule, Jewish people are now forced to wear a yellow star. In Denmark, that law has not been made. Danish leaders say their Jewish neighbors are Danes, like everyone else.' },
-    { day: 4, pos: 84, label: '1943', when: 'Stockholm · October 1943',
+    { day: 4, pos: 84, label: '1943', when: 'News · Stockholm · October 1943',
       text: 'This is Stockholm. All this week, small boats have been arriving on our coast from Denmark, carrying Jewish families who escaped by night. Sweden has said it will take them in. Swedish families are bringing food, blankets and dry clothes to the harbors.' }
+  ];
+  /* real broadcasts, public domain, trimmed short */
+  var REAL = [
+    { pos: 12, file: 'real-chamberlain-1939', label: 'Chamberlain', when: '★ Real recording · September 3, 1939',
+      who: 'Neville Chamberlain, Prime Minister of Britain, on the BBC',
+      text: 'This is the real voice of Britain’s leader on the morning Britain went to war. Listen for the words “this country is at war with Germany.”' },
+    { pos: 34, file: 'real-churchill-1940', label: 'Churchill', when: '★ Real recording · May 19, 1940',
+      who: 'Winston Churchill, Prime Minister of Britain, on the BBC',
+      text: 'Winston Churchill had led Britain for only nine days when he gave his first radio speech as Prime Minister. In many countries the Nazis ruled, people listened to the BBC in secret to hear voices like this one.' },
+    { pos: 56, file: 'real-fdr-1941', label: 'Roosevelt', when: '★ Real recording · December 8, 1941',
+      who: 'Franklin D. Roosevelt, President of the United States',
+      text: 'The day after Japan attacked the American navy at Pearl Harbor, President Roosevelt spoke to Congress, and millions of families listened on the radio. Soon the United States joined the Allies.' }
   ];
   var MUSIC = [
     { pos: 7, file: 'music-tiger-rag', when: '♪ Tiger Rag · 1918', who: 'Original Dixieland Jass Band, 1918',
@@ -345,22 +410,63 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
   ];
   var VSTATION = { pos: 96, when: 'A secret signal',
     text: 'Three short beats and one long. In Morse code, that spells V, for Victory. From 1941, the BBC began its broadcasts to occupied Europe with this sound, and people listening in secret knew they were not alone.' };
+
+  /* the dial is a half-moon: station position 0..100 → angle −78°..78° */
+  function dialXY(pos, r) { var a = (-78 + pos * 1.56) * Math.PI / 180; return [100 + r * Math.sin(a), 96 - r * Math.cos(a)]; }
+
   function radioCard(host, opt) {
     var day = opt.day || 1;
-    var el = card('≋', 'The Wartime Radio', 'Turn the dial to hear the news and the music.', [
+    var el = card('≋', 'The Wartime Radio', 'Turn the dial to hear the news, real voices and music.', [
       'In the 1940s there was no TV or internet. Families sat around a radio like this one to hear the news. In countries the Nazis ruled, people sometimes listened in secret to news from London.',
-      'Turn the dial to find a station. The stations marked with a year read a short news report from one day of this week’s history. The reports are written for this lesson and read by our narrator, the way a 1940s newsreader might have sounded.',
-      'The stations marked ♪ play music people knew in 1939. Some songs were brand new back then, and some were already old favorites. These are real old recordings, free for anyone to use, from Wikimedia Commons.'
+      'Drag the glowing dial, or turn the knob. The stations marked with a year read a short news report from one day of this week’s history; they are written for this lesson and read by a newsreader voice.',
+      'The stations marked ★ are <b>real recordings</b> of real leaders, made in 1939, 1940 and 1941. The ♪ stations play real old songs people knew. All of them are free for anyone to use, from Wikimedia Commons.',
+      'When the station comes in clearly, the little green “magic eye” closes up. Real radios had one to help you tune.'
     ]);
     var b = el.querySelector('.bk-body');
-    var ticks = MUSIC.map(function (m) { return '<div class="rad-tick rad-mtick" style="left:' + m.pos + '%"><b>♪</b></div>'; }).join('') + STATIONS.map(function (s) { return '<div class="rad-tick" style="left:' + s.pos + '%"><b>' + (s.day <= day ? s.label : '') + '</b></div>'; }).join('');
-    b.innerHTML = '<div class="rad-body"><div class="rad"><div class="rad-grille"></div><div class="rad-dial">' + ticks + '<div class="rad-needle"></div></div>' +
-      '<input class="rad-slider" type="range" min="0" max="100" value="1" aria-label="Tuning dial">' +
-      '<div class="rad-knobs"><button type="button" class="rad-knob" aria-label="Tune left"></button><button type="button" class="rad-knob" aria-label="Tune right"></button></div></div>' +
-      '<div class="rad-right"><div class="rad-st">Static…</div><p class="rad-text static">Turn the dial until the static clears.</p>' +
-      '<div class="rad-chips" role="group" aria-label="Stations"></div>' +
-      '<button type="button" class="rad-off" disabled aria-label="Turn the radio off">⏻ Turn off</button></div></div>';
-    var slider = b.querySelector('.rad-slider'), needle = b.querySelector('.rad-needle'), stl = b.querySelector('.rad-st'), txt = b.querySelector('.rad-text'), radio = b.querySelector('.rad');
+    var marks = '';
+    function mark(pos, cls, label) {
+      var p1 = dialXY(pos, 70), p2 = dialXY(pos, 80), pl = dialXY(pos, 58);
+      marks += '<line class="' + cls + '" x1="' + p1[0].toFixed(1) + '" y1="' + p1[1].toFixed(1) + '" x2="' + p2[0].toFixed(1) + '" y2="' + p2[1].toFixed(1) + '"/>';
+      if (label) marks += '<text class="' + cls + 't" x="' + pl[0].toFixed(1) + '" y="' + (pl[1] + 3).toFixed(1) + '">' + label + '</text>';
+    }
+    MUSIC.forEach(function (m) { mark(m.pos, 'rd-m', '♪'); });
+    REAL.forEach(function (r) { mark(r.pos, 'rd-r', '★'); });
+    STATIONS.forEach(function (s) { mark(s.pos, 'rd-n', s.day <= day ? s.label.slice(2) : ''); });
+    for (var k = 0; k <= 100; k += 5) { var q1 = dialXY(k, 80), q2 = dialXY(k, k % 25 ? 84 : 88); marks += '<line class="rd-k" x1="' + q1[0].toFixed(1) + '" y1="' + q1[1].toFixed(1) + '" x2="' + q2[0].toFixed(1) + '" y2="' + q2[1].toFixed(1) + '"/>'; }
+    var kc = [55, 70, 90, 110, 130, 160], kcs = kc.map(function (n, i) { var p = dialXY(i * 20, 92); return '<text class="rd-kc" x="' + p[0].toFixed(1) + '" y="' + (p[1] + 2).toFixed(1) + '">' + n + '</text>'; }).join('');
+
+    b.innerHTML =
+      '<div class="rad-body"><div class="rad" aria-hidden="false">' +
+        '<div class="rad-cab">' +
+          '<div class="rad-arch"><svg viewBox="0 0 160 96" class="rad-cloth" aria-hidden="true">' +
+            '<defs><pattern id="rcl" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="#C9A877"/><path d="M0 0L4 4M4 0L0 4" stroke="#B08F5E" stroke-width=".6"/></pattern></defs>' +
+            '<path d="M8 96 V58 Q8 8 80 8 Q152 8 152 58 V96 Z" fill="url(#rcl)"/>' +
+            '<g class="rad-slats" fill="#5A3518"><path d="M40 96 V44 Q40 30 52 22 L56 22 Q46 32 46 46 V96Z"/><path d="M77 96 V18 L83 18 V96Z"/><path d="M120 96 V44 Q120 30 108 22 L104 22 Q114 32 114 46 V96Z"/>' +
+            '<path d="M14 96 V62 Q14 48 24 40 L27 42 Q20 50 20 62 V96Z"/><path d="M146 96 V62 Q146 48 136 40 L133 42 Q140 50 140 62 V96Z"/></g>' +
+            '<path class="rad-glow" d="M8 96 V58 Q8 8 80 8 Q152 8 152 58 V96 Z" fill="rgba(255,190,90,0)"/></svg></div>' +
+          '<div class="rad-face">' +
+            '<svg viewBox="0 0 200 104" class="rad-dial" aria-hidden="true">' +
+              '<path d="M8 100 A92 92 0 0 1 192 100 Z" class="rd-glass"/>' +
+              marks + kcs +
+              '<line class="rad-needle" x1="100" y1="96" x2="100" y2="22"/><circle cx="100" cy="96" r="5" class="rd-hub"/>' +
+            '</svg>' +
+            '<input class="rad-slider" type="range" min="0" max="100" step="0.5" value="1" aria-label="Tuning dial: drag to find a station">' +
+          '</div>' +
+          '<div class="rad-row">' +
+            '<button type="button" class="rad-knob" data-k="-1" aria-label="Tune left"><i></i></button>' +
+            '<div class="rad-eye" aria-hidden="true"><i></i></div>' +
+            '<span class="rad-pilot" aria-hidden="true"></span>' +
+            '<button type="button" class="rad-knob" data-k="1" aria-label="Tune right"><i></i></button>' +
+          '</div>' +
+          '<div class="rad-brand">OPTIMA · 1939</div>' +
+        '</div></div>' +
+      '<div class="rad-right"><div class="rad-st">Static…</div><p class="rad-text static">Drag the dial until the static clears.</p>' +
+        '<div class="rad-chips" role="group" aria-label="Stations"></div>' +
+        '<button type="button" class="rad-off" disabled aria-label="Turn the radio off">⏻ Turn off</button></div></div>';
+
+    var slider = b.querySelector('.rad-slider'), needle = b.querySelector('.rad-needle'), stl = b.querySelector('.rad-st'),
+        txt = b.querySelector('.rad-text'), radio = b.querySelector('.rad'), eye = b.querySelector('.rad-eye'),
+        knobs = b.querySelectorAll('.rad-knob'), offBtn = b.querySelector('.rad-off');
     var cur = null, noise = null, voice = new Audio(), vplay = null;
     function noiseOn(level) {
       var c = ac(); if (!c) return;
@@ -375,61 +481,194 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
       }
       noise.g.gain.setTargetAtTime(level, c.currentTime, .05);
     }
-    var stop = function () { if (noise && AC) noise.g.gain.setTargetAtTime(0, AC.currentTime, .05); voice.pause(); if (vplay) { vplay.stop = true; } radio.classList.remove('rad-on'); };
+    var stop = function () { if (noise && AC) noise.g.gain.setTargetAtTime(0, AC.currentTime, .05); voice.pause(); if (vplay) { vplay.stop = true; } radio.classList.remove('rad-on', 'rad-power', 'rad-play'); };
     stopAll.push(stop);
+    voice.addEventListener('playing', function () { radio.classList.add('rad-play'); });
+    voice.addEventListener('pause', function () { radio.classList.remove('rad-play'); });
+    voice.addEventListener('ended', function () { radio.classList.remove('rad-play'); });
     function vSignal() {
       var c = ac(); if (!c) return; var t = c.currentTime + .15, beats = [.18, .18, .18, .6];
       beats.forEach(function (d) { var o = c.createOscillator(), g = c.createGain(); o.type = 'sine'; o.frequency.value = 98; g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.35, t + .02); g.gain.setValueAtTime(.35, t + d - .04); g.gain.linearRampToValueAtTime(0, t + d); o.connect(g); g.connect(c.destination); o.start(t); o.stop(t + d + .05); t += d + .22; });
     }
+    function audioSrc(file, folder) { return (DATA.audio && DATA.audio[file]) || ((opt.base || 'assets/') + 'audio/' + folder + '/' + file + '.mp3'); }
+    function show(v) {
+      needle.setAttribute('transform', 'rotate(' + (-78 + v * 1.56).toFixed(1) + ' 100 96)');
+      knobs[0].style.setProperty('--r', (v * 3.6) + 'deg');
+    }
     function tune(v, user) {
-      needle.style.left = v + '%';
-      var list = STATIONS.filter(function (s) { return s.day <= day; }).concat(MUSIC, [VSTATION]);
+      show(v);
+      var list = STATIONS.filter(function (s) { return s.day <= day; }).concat(REAL, MUSIC, [VSTATION]);
       var best = null, dist = 99;
       list.forEach(function (s) { var dd = Math.abs(s.pos - v); if (dd < dist) { dist = dd; best = s; } });
+      eye.style.setProperty('--eye', Math.max(4, Math.min(70, dist * 9)) + 'deg');
       if (!user) return;
       hush(stop);
-      if (offBtn) offBtn.disabled = false;
-      if (best && dist <= 3) {
+      offBtn.disabled = false;
+      radio.classList.add('rad-power');
+      if (best && dist <= 2.5) {
         radio.classList.add('rad-on');
         noiseOn(dist <= 1 ? 0 : .02);
         if (cur !== best) {
           cur = best; stl.textContent = best.when; txt.textContent = best.text; txt.classList.remove('static');
-          if (best.who) { var cr = document.createElement('span'); cr.className = 'rad-credit'; cr.textContent = best.who + ' · public domain, via Wikimedia Commons'; txt.appendChild(cr); }
+          if (best.who) { var cr = document.createElement('span'); cr.className = 'rad-credit'; cr.textContent = best.who + (best.file ? ' · public domain, via Wikimedia Commons' : ''); txt.appendChild(cr); }
           voice.pause();
           if (best === VSTATION) vSignal();
-          else if (best.file) { voice.src = (DATA.audio && DATA.audio[best.file]) || ((opt.base || 'assets/') + 'audio/radio/' + best.file + '.mp3'); voice.volume = .8; var pm = voice.play(); if (pm && pm.catch) pm.catch(function () {}); }
+          else if (best.file) { voice.src = audioSrc(best.file, 'radio'); voice.volume = .85; var pm = voice.play(); if (pm && pm.catch) pm.catch(function () {}); }
           else if (DATA.radio && DATA.radio[best.day]) { voice.src = DATA.radio[best.day]; voice.volume = 1; var p = voice.play(); if (p && p.catch) p.catch(function () {}); }
         }
       } else {
         cur = null; radio.classList.remove('rad-on');
         noiseOn(.06 + Math.min(.06, dist / 200));
-        stl.textContent = 'Static…'; txt.textContent = 'Turn the dial until the static clears.'; txt.classList.add('static');
+        stl.textContent = 'Static…'; txt.textContent = 'Keep turning until the static clears.'; txt.classList.add('static');
         voice.pause();
       }
     }
-    slider.addEventListener('input', function () { tune(+slider.value, true); });
-    slider.addEventListener('change', function () { if (!cur && noise && AC) noise.g.gain.setTargetAtTime(0, AC.currentTime, .3); });
-    var knobs = b.querySelectorAll('.rad-knob');
-    knobs[0].onclick = function () { slider.value = Math.max(0, +slider.value - 4); tune(+slider.value, true); };
-    knobs[1].onclick = function () { slider.value = Math.min(100, +slider.value + 4); tune(+slider.value, true); };
-    var offBtn = b.querySelector('.rad-off');
     function powerOff() {
       stop(); cur = null;
-      stl.textContent = 'Radio off'; txt.textContent = 'Turn the dial or pick a station to listen again.'; txt.classList.add('static');
-      offBtn.disabled = true;
+      stl.textContent = 'Radio off'; txt.textContent = 'Drag the dial or pick a station to listen again.'; txt.classList.add('static');
+      offBtn.disabled = true; eye.style.setProperty('--eye', '70deg');
     }
+    slider.addEventListener('input', function () { tune(+slider.value, true); });
+    slider.addEventListener('change', function () { if (!cur && noise && AC) noise.g.gain.setTargetAtTime(0, AC.currentTime, .3); });
+    Array.prototype.forEach.call(knobs, function (kb) { kb.onclick = function () { slider.value = Math.max(0, Math.min(100, +slider.value + 4 * kb.getAttribute('data-k'))); tune(+slider.value, true); }; });
     offBtn.onclick = powerOff;
-    slider.addEventListener('input', function () { offBtn.disabled = false; });
-    /* leaving the tab or the page switches it off too */
     document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('.tab-btn') && !offBtn.disabled) powerOff(); });
     document.addEventListener('visibilitychange', function () { if (document.hidden && !offBtn.disabled) powerOff(); });
     var chips = b.querySelector('.rad-chips');
-    STATIONS.filter(function (s) { return s.day <= day; }).forEach(function (s) {
-      var c = document.createElement('button'); c.type = 'button'; c.className = 'bk-chip'; c.textContent = s.label.charAt(0) + s.label.slice(1).toLowerCase().replace('københavn', 'København') + (s.day === day ? ' · today' : '');
-      c.onclick = function () { slider.value = s.pos; offBtn.disabled = false; tune(s.pos, true); };
+    function chip(label, pos, cls) {
+      var c = document.createElement('button'); c.type = 'button'; c.className = 'bk-chip ' + (cls || ''); c.textContent = label;
+      c.onclick = function () { slider.value = pos; tune(pos, true); };
       chips.appendChild(c);
-    });
+    }
+    STATIONS.filter(function (s) { return s.day <= day; }).forEach(function (s) { chip(s.label + (s.day === day ? ' · today' : ''), s.pos); });
+    REAL.forEach(function (r) { chip('★ ' + r.label, r.pos, 'rad-chip-real'); });
     tune(1, false);
+    host.appendChild(el);
+  }
+
+  /* ── 5. the telephone ───────────────────────────────────────── */
+  /* A 1930s desk telephone. Lift the receiver, dial 0 for the
+     operator, then ask her to put you through to someone in the
+     phone book. Everyone on the line is a made-up person in a real
+     situation from occupied Copenhagen; the What-is-this says so. */
+  var PHONE = {
+    operator: { hello: 'Operator. Number, please?', connect: 'One moment, please. I’ll put you through.' },
+    book: [
+      { key: 'bakery', name: 'Holm’s Bakery', num: 'Østerbro 2214',
+        text: 'Good afternoon, Holm’s Bakery! Yes, we have rye bread today, but you’ll need your ration card. Real coffee? Oh, nobody has real coffee anymore. We all drink coffee made from roasted grain now. It isn’t the same, but we manage.' },
+      { key: 'neighbor', name: 'Mrs. Jensen, next door', num: 'Nørrebro 5730',
+        text: 'Hello? Oh, it’s you, dear. Don’t forget to pull your blackout curtains when it gets dark tonight. No light may show from any window, so planes can’t find the city at night. Someone walks the street to check.' },
+      { key: 'paper', name: 'The newspaper office', num: 'Central 1880',
+        text: 'Newsroom, good afternoon. The king and the yellow star? Ah, people ask us that all the time. It’s a famous story, but it isn’t exactly true. The star law was never made here in Denmark, so no Dane ever had to wear one.' }
+    ]
+  };
+  function phoneCard(host, opt) {
+    var el = card('☎', 'The Telephone', 'Lift the receiver and call someone in 1940s Copenhagen.', [
+      'In the 1940s, many homes in Copenhagen had a telephone like this: heavy, black, with a round dial on the front.',
+      'To dial, you put your finger in a hole, turned the dial around to the metal stop, and let go. It clicked back once for every number. Dialing 0 reached the <b>operator</b>, a real person at the telephone exchange who could connect your call for you.',
+      'The people you can call here are made up, but the things they tell you are real parts of life in Denmark during the war: ration cards, blackout curtains, and a famous story about the king.'
+    ]);
+    var b = el.querySelector('.bk-body');
+    var holes = '';
+    for (var n = 0; n < 10; n++) {
+      var digit = (n + 1) % 10, a = (-30 - n * 30) * Math.PI / 180, x = 70 + 46 * Math.cos(a), y = 70 + 46 * Math.sin(a);
+      holes += '<g class="ph-hole" data-d="' + digit + '"><circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="10.5"/>' +
+               '<text x="' + x.toFixed(1) + '" y="' + (y + 4).toFixed(1) + '">' + digit + '</text></g>';
+    }
+    b.innerHTML =
+      '<div class="ph-body">' +
+        '<div class="ph-set">' +
+          '<button type="button" class="ph-hand" aria-label="Lift the receiver"><svg viewBox="0 0 220 60"><path d="M18 40 Q10 18 34 14 L186 14 Q210 18 202 40 Q196 52 180 46 Q172 30 150 32 L70 32 Q48 30 40 46 Q24 52 18 40Z" fill="#17161A"/><path d="M40 20 L180 20" stroke="#3A3940" stroke-width="3" stroke-linecap="round"/></svg></button>' +
+          '<div class="ph-base"><svg viewBox="0 0 140 140" class="ph-dial" aria-hidden="true">' +
+            '<circle cx="70" cy="70" r="66" class="ph-plate"/><circle cx="70" cy="70" r="20" class="ph-card"/><text x="70" y="68" class="ph-ct">OPTIMA</text><text x="70" y="80" class="ph-ct ph-ct2">KØBENHAVN</text>' +
+            '<g class="ph-wheel">' + holes + '</g>' +
+            '<path d="M109.8 93 L126 102.5" class="ph-stop"/>' +
+          '</svg></div>' +
+        '</div>' +
+        '<div class="ph-right">' +
+          '<div class="ph-st">Step 1</div><p class="ph-text">Click the receiver to pick it up.</p>' +
+          '<div class="ph-book" hidden><div class="ph-book-h">Phone book</div></div>' +
+          '<button type="button" class="ph-hang" hidden>Hang up</button>' +
+        '</div>' +
+      '</div>';
+    var hand = b.querySelector('.ph-hand'), wheel = b.querySelector('.ph-wheel'), st = b.querySelector('.ph-st'),
+        txt = b.querySelector('.ph-text'), book = b.querySelector('.ph-book'), hang = b.querySelector('.ph-hang');
+    var state = 'idle', tone = null, timers = [], voice = new Audio();
+    function later(f, ms) { timers.push(setTimeout(f, ms)); }
+    function toneOn(freqs, gainV) {
+      var c = ac(); if (!c) return null;
+      var g = c.createGain(); g.gain.value = gainV || .05; g.connect(c.destination);
+      var os = freqs.map(function (f) { var o = c.createOscillator(); o.frequency.value = f; o.connect(g); o.start(); return o; });
+      return { stop: function () { try { g.gain.setTargetAtTime(0, c.currentTime, .02); os.forEach(function (o) { o.stop(c.currentTime + .1); }); } catch (e) {} } };
+    }
+    function clicks(nClicks) {
+      var c = ac(); if (!c) return; var t = c.currentTime + .05;
+      for (var i = 0; i < nClicks; i++) { var o = c.createOscillator(), g = c.createGain(); o.type = 'square'; o.frequency.value = 900; g.gain.setValueAtTime(.08, t); g.gain.exponentialRampToValueAtTime(.001, t + .03); o.connect(g); g.connect(c.destination); o.start(t); o.stop(t + .04); t += .1; }
+    }
+    function ring(times, done) {
+      var k = 0;
+      (function one() {
+        if (state === 'idle') return;
+        var r = toneOn([425], .05); later(function () { if (r) r.stop(); }, 1000);
+        if (++k < times) later(one, 2000); else later(done, 1400);
+      })();
+    }
+    function say(who, line, key, next) {
+      st.textContent = who; txt.textContent = '“' + line + '”'; txt.classList.add('ph-say');
+      var src = DATA.phone && DATA.phone[key];
+      if (src) { voice.src = src; voice.onended = function () { if (next) next(); }; var p = voice.play(); if (p && p.catch) p.catch(function () { if (next) later(next, 2500); }); }
+      else if (next) later(next, Math.min(9000, 1200 + line.length * 45));
+    }
+    function reset() {
+      timers.forEach(clearTimeout); timers = []; if (tone) { tone.stop(); tone = null; } voice.pause();
+      state = 'idle'; el.classList.remove('ph-lifted'); hand.setAttribute('aria-label', 'Lift the receiver');
+      st.textContent = 'Step 1'; txt.textContent = 'Click the receiver to pick it up.'; txt.classList.remove('ph-say');
+      book.hidden = true; hang.hidden = true;
+    }
+    stopAll.push(function () { if (state !== 'idle') reset(); });
+    hand.onclick = function () {
+      if (state !== 'idle') { reset(); return; }
+      hush(); ac(); state = 'tone'; el.classList.add('ph-lifted'); hand.setAttribute('aria-label', 'Hang up');
+      tone = toneOn([425], .04);
+      st.textContent = 'Step 2'; txt.textContent = 'Hear the dial tone? Now dial 0 for the operator: click the 0 hole.'; hang.hidden = false;
+    };
+    hang.onclick = reset;
+    Array.prototype.forEach.call(b.querySelectorAll('.ph-hole'), function (h) {
+      h.setAttribute('tabindex', '0'); h.setAttribute('role', 'button'); h.setAttribute('aria-label', 'Dial ' + h.getAttribute('data-d'));
+      function dial() {
+        if (state !== 'tone') { if (state === 'idle') { st.textContent = 'Step 1'; txt.textContent = 'Pick up the receiver first.'; } return; }
+        var d = +h.getAttribute('data-d'), n = d === 0 ? 10 : d, ang = 30 * n + 30;
+        wheel.style.transition = 'transform .5s ease-in'; wheel.style.transform = 'rotate(' + ang + 'deg)';
+        later(function () { wheel.style.transition = 'transform ' + (n * .1) + 's linear'; wheel.style.transform = 'rotate(0deg)'; clicks(n); }, 520);
+        if (tone) { tone.stop(); tone = null; }
+        if (d !== 0) { later(function () { st.textContent = 'Try again'; txt.textContent = 'That number doesn’t answer. To reach the operator, dial 0.'; tone = toneOn([425], .04); }, 600 + n * 100); return; }
+        state = 'operator';
+        later(function () {
+          ring(1, function () {
+            say('The operator', PHONE.operator.hello, 'operator-hello', function () {
+              if (state !== 'operator') return;
+              st.textContent = 'Step 3'; txt.classList.remove('ph-say');
+              txt.textContent = 'Who would you like to call? Pick someone from the phone book.';
+              book.hidden = false;
+            });
+          });
+        }, 600 + n * 100);
+      }
+      h.addEventListener('click', dial);
+      h.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dial(); } });
+    });
+    PHONE.book.forEach(function (p) {
+      var r = document.createElement('button'); r.type = 'button'; r.className = 'ph-entry';
+      r.innerHTML = '<b>' + esc(p.name) + '</b><span>' + esc(p.num) + '</span>';
+      r.onclick = function () {
+        if (state !== 'operator' && state !== 'done') return;
+        state = 'calling'; book.hidden = true;
+        say('The operator', PHONE.operator.connect, 'operator-connect', function () {
+          ring(2, function () { say(p.name, p.text, p.key, function () { if (state === 'calling') { state = 'done'; st.textContent = 'Call another?'; book.hidden = false; } }); });
+        });
+      };
+      book.appendChild(r);
+    });
     host.appendChild(el);
   }
 
@@ -493,14 +732,14 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
   }
 
   /* which bridge-week days each card appears on */
-  KIT.SCHEDULE = { morse: [1, 2, 3, 4], map: [1, 2, 3, 4], records: [2], radio: [4] };
+  KIT.SCHEDULE = { morse: [1, 2, 3, 4], map: [1, 2, 3, 4], records: [2], phone: [3], radio: [4] };
   KIT.mount = function (kind, host, opt) {
     opt = opt || {};
     var days = KIT.SCHEDULE[kind];
     if (days && !opt.force && days.indexOf(opt.day || 1) < 0) return false;
     injectCSS();
     try {
-      ({ records: records, map: mapCard, radio: radioCard, morse: morseCard })[kind](host, opt);
+      ({ records: records, map: mapCard, radio: radioCard, morse: morseCard, phone: phoneCard })[kind](host, opt);
     } catch (e) { if (window.console) console.warn('bridge kit', kind, e); }
   };
 })();

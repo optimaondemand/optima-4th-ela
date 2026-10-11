@@ -3201,8 +3201,8 @@ function sparkleJournal() {
 
 /* Bridge week (15.x): the four "immersive" cards from
    assets/js/oao-bridge-kit.js. The kit decides which days each card
-   appears on (Secret Message + map every day, records day 2, radio
-   day 4); this only loads it and says where each card sits. */
+   appears on (Secret Message + map every day, records day 2, phone
+   day 3, radio day 4); this only loads it and says where each card sits. */
 function buildBridgeKit() {
   if (LESSON.book !== 'bridge' || typeof LESSON.day !== 'number') return;
   var s = document.createElement('script');
@@ -3237,7 +3237,8 @@ function buildBridgeKit() {
       }
       if (target) mount('map', target, true);
     }
-    /* Radio: top of the Assignment tab */
+    /* Telephone (day 3) and radio (day 4): top of the Assignment tab */
+    if (asg && asg.firstElementChild) mount('phone', asg.firstElementChild, true);
     if (asg && asg.firstElementChild) mount('radio', asg.firstElementChild, true);
   };
   document.head.appendChild(s);
