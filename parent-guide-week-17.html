@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 17 Parent Guide · 4th Grade ELA · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+.b-rose{background:#FDEEEE;border-radius:12px;padding:14px 16px;} .b-rose .box-label{color:#A8434A;}
+
+.p-museum{background:var(--sky-bg);color:#1F6F8C;}
+.p-extra{background:var(--green-bg);color:#1F8452;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.extras .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.essay{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.essay span{font-size:15px;font-weight:800;border-radius:999px;padding:4px 12px;background:var(--paper);border:1px solid var(--line);color:var(--muted);}
+.essay span.now{background:var(--gold-bg);border-color:#F5E6C8;color:#9A6C14;}
+.essay span.done{background:var(--green-bg);border-color:#CDEFDB;color:#1F8452;}
+@media (max-width:720px){.extras{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 4th Grade ELA</div>
+      <h1>Week 17: Courage in Seconds</h1>
+      <div class="sub"><em>Number the Stars</em>, Chapters 5–8</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">Chapters 5–8</span>
+        <span class="chip">Check-In at week’s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('https://optimaondemand.github.io/optima-4th-ela/assets/covers/nts.jpg');background-position:center 35%;" role="img" aria-label="Cover of Number the Stars by Lois Lowry"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📋</span><strong>Everything is gathered at the end.</strong> The bottom of the Assignment tab collects every answer from the lesson in one place.</li>
+      <li><span>📄</span><strong>Download as PDF</strong> saves that work as a “My Work” journal page. Use it (or Copy) to <strong>submit in Canvas</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>🔊</span><strong>Listen</strong> at the top reads the page aloud, with a speed control. <strong>Check My Work</strong> and hint buttons give instant feedback.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the novel and a paper reading journal nearby too.</li>
+    </ul>
+  </section>
+
+
+
+  <!-- AT A GLANCE -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>In the middle of the night, Nazi officers pound on the Johansens’ door. Annemarie rips Ellen’s Star of David necklace off just before they see it, and Papa uses an old baby picture to explain Ellen’s dark hair. Then Mama takes the girls by train to Uncle Henrik’s house by the sea, where the grown-ups talk in code, and a casket appears for a great-aunt Annemarie has never heard of.</p>
+    
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>Explaining courage with evidence.</strong> Saying a character is brave isn’t enough. Your student points to what the character <em>did</em>, not just how they felt.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>Courage that has seconds, not minutes.</strong> Some bravery gets planned. Annemarie’s happens before she has time to think.</div>
+    </div>
+    <p class="quote">“She had imprinted the Star of David into her palm.”<small>Narrator, Chapter 5</small></p>
+  </section>
+
+  <!-- DAY BY DAY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">17.1<span>Day 1</span></td>
+          <td><span class="ch">Chapter 5 · Who Is the Dark-Haired One?</span><br>Soldiers search the apartment at night. Annemarie hides Ellen’s necklace in her fist, and Papa shows them a baby photo of Lise, who had dark hair.</td>
+          <td>What does courage look like when there’s no time to think?</td>
+        </tr>
+        <tr>
+          <td class="day-n">17.2<span>Day 2</span></td>
+          <td><span class="ch">Chapter 6 · Is the Weather Good for Fishing?</span><br>Papa talks to Uncle Henrik on the phone in a kind of code. Mama takes the girls north by train, with soldiers on board.<br><span class="pill p-poem">By Heart poem</span></td>
+          <td>Why does language become careful when danger is near?</td>
+        </tr>
+        <tr>
+          <td class="day-n">17.3<span>Day 3</span></td>
+          <td><span class="ch">Chapter 7 · The House by the Sea</span><br>At Uncle Henrik’s, the girls can see Sweden across the water. Annemarie hides Ellen’s necklace somewhere safe.</td>
+          <td>Why does a small object suddenly carry so much weight?</td>
+        </tr>
+        <tr>
+          <td class="day-n">17.4<span>Day 4</span></td>
+          <td><span class="ch">Chapter 8 · There Has Been a Death</span><br>Uncle Henrik says Great-aunt Birte has died. But Annemarie knows there is no Great-aunt Birte.<br><span class="pill p-poem">By Heart poem</span></td>
+          <td>What is really going on?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">From Chapter 5: after the soldiers leave, Annemarie opens her hand and sees the star pressed into her palm. It’s read slowly, with relief. Your student reads it three times, then <strong>records and submits in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point check on the week: grammar, word parts and vocabulary, spelling, reading, and one short writing response.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words"><div class="word"><b>intend</b><span>to plan to do something on purpose</span></div><div class="word"><b>credible</b><span>believable; easy to trust</span></div><div class="word"><b>discreet</b><span>careful not to draw attention</span></div><div class="word"><b>tense</b><span>tight with worry; nervous</span></div></div>
+    <div class="skills">
+      <div class="box b-sky"><div class="box-label">Word parts</div><strong>cred</strong> means “to believe.” <strong>tend</strong> means “to stretch or reach.”<span class="eg">credible · credit · intend · extend</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>Prefix and suffix review.</strong> Peel the parts off the front and back to find the base word underneath.<span class="eg">un·friend·ly · resist·ance · danger·ous</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>Pronoun-verb agreement.</strong> She, he, and it take a verb ending in -s. I, you, we, and they don’t.<span class="eg">She watches. They wait.</span></div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student’s Opinion Essay</h2><span class="tag">Writer’s Workshop</span></div>
+    <div class="essay"><span class="done">Wk 15 · Opinion basics</span><span class="done">Wk 16 · Claim + reasons</span><span class="now">Wk 17 · Evidence + drafting</span><span class="">Wk 18 · Elaborate</span><span class="">Wk 19 · Publish</span></div>
+    <p>This week the essay gets written. Your student learns the <strong>quote sandwich</strong> (a set-up sentence, a short quote from the book, then “so what?”), then writes an <strong>introduction</strong> with a hook and their claim, and <strong>two body paragraphs</strong>, each with a different reason and a different quote.</p><p class="small">An example writer named Sam shows each step first with his own essay about Annemarie.</p>
+  </section>
+
+  <!-- BY HEART -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>By Heart</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">Robins will wear their feathery fire<br>Whistling their whims on a low fence-wire;<br>And not one will know of the war, not one<br>Will care at last when it is done.<small>Sara Teasdale, “There Will Come Soft Rains” (1920), lines 5–8</small></div>
+      <div><p>The same four lines from Teasdale’s poem, with a few more words fading on Days 2 and 4.</p><p><strong>How to help:</strong> Say the first half of a line and let your student finish it.</p></div>
+    </div>
+  </section>
+
+  <!-- ASK AT HOME -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than “How was school?”</span></div>
+    <ol class="ask"><li><span class="q">What did Annemarie do when the soldiers came?</span><span class="listen">Listen for: she pulled off Ellen’s necklace and held it so tightly the star pressed into her hand.</span></li><li><span class="q">How did Papa convince the soldier that Ellen was his daughter?</span><span class="listen">Listen for: he showed baby pictures of Lise, who had dark hair as a baby.</span></li><li><span class="q">Why do the grown-ups talk in code?</span><span class="listen">Listen for: the phone or other people might be listening; even “the weather for fishing” can carry a hidden message.</span></li><li><span class="q">Can someone be scared and brave at the same time?</span><span class="listen">Listen for: any honest thinking. Courage is what you do while you’re scared.</span></li></ol>
+  </section>
+
+  <!-- TURN IN + TRY AT HOME -->
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check"><li><strong>Each lesson:</strong> 3 chapter questions plus word-study and writing responses, submitted in Canvas</li><li><strong>Essay draft:</strong> intro and two body paragraphs by Day 4</li><li><strong>Fluency:</strong> one audio recording</li><li><strong>Check-In:</strong> at the end of the week</li></ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> a short quote from the book, set up with the student’s own words and followed by what it shows.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check"><li><strong>Agreement by ear.</strong> “She and her sister was hiding” or “were hiding”? Say both out loud.</li><li><strong>Dinner-table quote sandwich.</strong> Quote something a family member said today, then say what it shows.</li><li><strong>Family code words.</strong> Make up a harmless code phrase, like Uncle Henrik’s fishing weather.</li></ul>
+    </section>
+  </div>
+
+  <!-- NEED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong><em>Number the Stars</em></strong> by Lois Lowry · <strong>Reading journal</strong> · <strong>Pencil</strong> · <strong>A device that records audio</strong> for the fluency reading</p>
+    <p class="small">Your student’s essay draft lives in a box on the lesson page, saved in that browser. If they switch computers, help them keep a copy in a document or on paper.</p>
+  </section>
+
+  <!-- NEXT WEEK -->
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 18</h2></div>
+    <p><strong><em>Number the Stars</em>, Chapters 9–12.</strong> Annemarie confronts Uncle Henrik about the lies, soldiers interrupt a nighttime gathering around the casket, and the Rosens slip away toward the sea. Grammar moves on to <strong>contractions</strong>.</p><p class="small" style="color:#DCE6F7;"><strong>Heads-up:</strong> Chapter 10 is one of the tensest scenes in the book, with soldiers confronting the family.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-nts-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole Number the Stars unit →</a><br><br>Optima Academy Online · 4th Grade ELA · Week 17 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+</body>
+</html>
