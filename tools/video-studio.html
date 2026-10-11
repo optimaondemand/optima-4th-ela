@@ -290,6 +290,16 @@ body.dimrec .ptext .qcue{background:#3a2f12;color:#b39556}
 .lesson-h .car{width:10px;color:var(--muted);font-size:11px;flex:none}
 .lesson-h .keepck{border:0;background:var(--soft);color:var(--navy);border-radius:7px;font-size:11px;font-weight:800;padding:3px 8px;cursor:pointer;white-space:nowrap}
 .lesson-h .keepck:hover{background:var(--sel)}
+/* ---- stop-and-answer questions ---- */
+.qcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 10px;margin-top:8px;display:grid;gap:6px}
+.qcard.now{border-color:var(--gold);box-shadow:0 0 0 2px rgba(232,165,49,.35)}
+.qtop{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.qtop select,.qcard input[type=text],.qcard textarea{padding:6px 8px;border:1px solid var(--line);border-radius:7px;background:var(--field);color:var(--ink);font:inherit;font-size:14px}
+.qcard textarea{min-height:44px;resize:vertical}
+.qch{display:grid;grid-template-columns:auto auto 1fr;gap:6px;align-items:center}
+.qch b{font-size:12px;color:var(--muted)}
+.qch input[type=radio]{accent-color:var(--green);width:16px;height:16px;margin:0}
+.qtop .grow{flex:1}
 /* ---- help ---- */
 dialog.help{max-width:640px;width:calc(100% - 32px);border:0;border-radius:14px;padding:0;background:var(--card);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.4)}
 dialog.help::backdrop{background:rgba(5,10,25,.6)}
@@ -423,7 +433,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
         <div class="review" id="review" hidden>
           <h3 id="revTitle">Your take</h3>
           <video id="revVideo" controls playsinline></video>
-          <div class="trim">
+          <div class="trim" id="trimBox">
             <div class="th2">✂ Trim <span class="lbl" id="trimLbl">Whole take</span>
               <button class="btn sm" id="trimIn" title="Cut everything before where the player is now">⇤ Start here</button>
               <button class="btn sm" id="trimOut" title="Cut everything after where the player is now">End here ⇥</button>
@@ -444,12 +454,25 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
             <div class="caplist" id="capList"></div>
             <div class="note">Captions save next to the video as a .vtt file. On the lesson page they start off; students turn them on with the CC button.</div>
           </div>
-          <div class="thumbs-h">Pick the thumbnail
+          <div class="caps qz" id="qzBox">
+            <div class="th2">❓ Stop and answer <span class="lbl" id="qzLbl">No questions yet</span>
+              <button class="btn sm gold" id="qzAdd" title="Add a question where the player is now">＋ Question here</button>
+            </div>
+            <div id="qzList"></div>
+            <label class="check" style="font-size:13px;margin-top:8px"><input type="checkbox" id="qzNoSkip" checked> Students can’t skip ahead past a question they haven’t answered</label>
+            <div class="note">Play to the moment you want, pause, then press ＋ Question here. On the lesson page the video stops there until the student answers. Answers go into their My Work.</div>
+          </div>
+          <div class="thumbs-h" id="thumbsHead">Pick the thumbnail
             <button class="btn sm" id="thumbNow" title="Pause the player on the frame you want, then press this">Use the frame in the player</button>
             <label class="btn sm">Upload an image<input type="file" id="thumbFile" accept="image/*" hidden></label>
           </div>
           <div class="thumbs" id="thumbs"></div>
-          <div class="row">
+          <div class="row" id="editRow" hidden>
+            <button class="btn green" id="editSave">💾 Save questions and captions</button>
+            <button class="btn" id="editClose">Close</button>
+            <span class="meta" id="editMeta"></span>
+          </div>
+          <div class="row" id="takeRow">
             <button class="btn green" id="keepNext">✓ Keep it, next video</button>
             <button class="btn primary" id="dlNow">⬇ Download now</button>
             <button class="btn" id="redo">↺ Record again</button>
@@ -469,6 +492,10 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
           <button class="btn sm" id="copyFile" title="Copy file name">Copy name</button>
           <span class="chip mono" id="selFolder" title="Where it goes in optima-4th-ela">—</span>
           <button class="btn sm" id="copyFolder">Copy folder</button>
+        </div>
+        <div class="fname" style="margin-top:10px">
+          <button class="btn sm gold" id="editExisting" hidden title="Add stop-and-answer questions or captions to this video without recording it again">❓ Add questions or captions to this video</button>
+          <label class="btn sm" id="editPick" title="Open a video file from your computer to add questions or captions">📂 Open a video file<input type="file" id="editFile" accept="video/mp4,video/webm" hidden></label>
         </div>
       </div>
     </div>
@@ -600,6 +627,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
       <li><b>Trim</b>: drag the handles to cut the start and end.</li>
       <li><b>Captions</b>: fix any wrong words. Click a time to jump there.</li>
       <li>Pick a thumbnail, then <b>Keep it</b> or <b>Download now</b>.</li>
+      <li><b>❓ Stop and answer</b>: play to a moment, pause, press <b>＋ Question here</b>. On the lesson page the video stops there until the student answers (multiple choice, a written answer, or just a pause to think). Already recorded a video? Pick it and press <b>❓ Add questions or captions to this video</b>.</li>
     </ul>
     <h3>Your privacy</h3>
     <p>Your video never leaves this computer. It stays in this tab until you download or save it. The background tool downloads a small model from Google the first time, but nothing is sent back. The one exception is <b>Make captions while I record</b>: Chrome sends your audio to Google to turn speech into words. Leave it off and use <b>Build from my script</b> instead.</p>
@@ -813,6 +841,7 @@ function select(path){
   $('selFile').textContent = fileOf(c);
   $('selFolder').textContent = c.free ? 'Downloads' : folderOf(c);
   $('copyFolder').hidden = !!c.free;
+  showEditBtn();
   showScript();
   closeReview();
   if (typeof quote!=='undefined'){ quote.cur=null; word.cur=null; renderOnScreen(); }
@@ -1821,7 +1850,7 @@ function finishRec(){
   var dur=stopDur||((performance.now()-recStart)/1000);
   var blob=new Blob(chunks,{type:MIME.split(';')[0]||'video/mp4'});
   if (!posterBlob){ out.toBlob(function(b){ posterBlob=b; if(review && !review.poster) review.poster=b; },'image/jpeg',0.86); }
-  review={path:current, blob:blob, poster:posterBlob, dur:dur, cues:capCues||[], vad:vad.slice(), trimA:0, trimB:dur};
+  review={path:current, blob:blob, poster:posterBlob, dur:dur, cues:capCues||[], vad:vad.slice(), trimA:0, trimB:dur, qs:[], noSkip:true};
   buildThumbs(frames.slice(), posterBlob);
   var c=byPath[current];
   $('revTitle').textContent='Your take: '+c.label;
@@ -1830,7 +1859,8 @@ function finishRec(){
   v.src=URL.createObjectURL(blob);
   $('revMeta').textContent=fmtT(dur)+' · '+(blob.size/1048576).toFixed(1)+' MB · '+fileOf(c);
   $('review').hidden=false;
-  trimUI(); renderCues(); refreshTrack();
+  setEditMode(false);
+  trimUI(); renderCues(); refreshTrack(); qzRender();
   $('review').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 var thumbURLs=[];
@@ -1872,7 +1902,8 @@ $('thumbFile').onchange=function(){
   }; i.src=URL.createObjectURL(f);
 };
 function closeReview(){
-  $('review').hidden=true; review=null; var v=$('revVideo'); v.pause();
+  $('review').hidden=true; review=null; var v=$('revVideo'); v.pause(); v.onloadedmetadata=null;
+  setEditMode(false); $('qzList').innerHTML='';
   [].slice.call(v.querySelectorAll('track')).forEach(function(t){ URL.revokeObjectURL(t.src); t.remove(); });
 }
 $('recBtn').onclick=function(){ if (counting) return; recording?stopRec():startRec(); };
@@ -1971,7 +2002,7 @@ function finalize(r){
   if (!need) return Promise.resolve(r);
   trimBusy++; busyNote(r);
   return renderTrim(r,function(p){ r.prog=p; busyNote(r); }).then(function(b){
-    r.blob=b; r.cues=shiftCues(r.cues||[],r.trimA,r.trimB); r.vad=null;
+    r.blob=b; r.cues=shiftCues(r.cues||[],r.trimA,r.trimB); r.qs=shiftQs(r.qs,r.trimA,r.trimB); r.vad=null;
     r.dur=r.trimB-r.trimA; r.trimA=0; r.trimB=r.dur; return r;
   }).catch(function(e){
     console.warn(e); toast('The trim didn’t work, so the whole take was kept'); r.trimA=0; r.trimB=r.dur; return r;
@@ -2206,6 +2237,163 @@ function refreshTrack(){
   tr.addEventListener('load',show); setTimeout(show,60);
 }
 
+/* ---------- stop-and-answer questions (Edpuzzle-style) ----------
+   Saved beside the film as <name>.questions.json. On the lesson page,
+   assets/js/oao-video-questions.js stops the film at each one. */
+var QTYPES={mc:'Multiple choice', write:'Write an answer', think:'Stop and think'};
+function qzRender(){
+  var box=$('qzList'); box.innerHTML='';
+  if (!review){ return; }
+  review.qs.sort(function(a,b){ return a.t-b.t; });
+  $('qzNoSkip').checked = review.noSkip!==false;
+  review.qs.forEach(function(q,i){
+    var d=document.createElement('div'); d.className='qcard';
+    var top=document.createElement('div'); top.className='qtop';
+    var tm=document.createElement('button'); tm.className='btn sm'; tm.textContent='⏱ '+fmtTs(q.t); tm.title='Play from a little before this question';
+    tm.onclick=function(){ var v=$('revVideo'); v.currentTime=Math.max(0,q.t-3); v.play(); };
+    var sel2=document.createElement('select');
+    Object.keys(QTYPES).forEach(function(k){ var o=document.createElement('option'); o.value=k; o.textContent=QTYPES[k]; if(k===q.type) o.selected=true; sel2.appendChild(o); });
+    sel2.onchange=function(){ q.type=this.value; qzRender(); };
+    var mv=document.createElement('button'); mv.className='btn sm'; mv.textContent='◷ Move here'; mv.title='Move this question to where the player is now';
+    mv.onclick=function(){ q.t=$('revVideo').currentTime||0; qzRender(); };
+    var x=document.createElement('button'); x.className='btn sm'; x.textContent='✕'; x.title='Remove this question';
+    x.onclick=function(){ if (q.q && !confirm('Remove this question?')) return; review.qs.splice(review.qs.indexOf(q),1); qzRender(); };
+    var num=document.createElement('b'); num.textContent='Q'+(i+1); num.style.color='var(--navy)';
+    var grow=document.createElement('span'); grow.className='grow';
+    [num,tm,sel2,grow,mv,x].forEach(function(e){ top.appendChild(e); });
+    d.appendChild(top);
+    var qt=document.createElement('textarea'); qt.placeholder= q.type==='think' ? 'What should they stop and think about?' : 'Your question'; qt.value=q.q||'';
+    qt.oninput=function(){ q.q=this.value; qzLabel(); };
+    d.appendChild(qt);
+    if (q.type==='mc'){
+      while (q.choices.length<4) q.choices.push('');
+      var grid=document.createElement('div'); grid.className='qch';
+      q.choices.slice(0,4).forEach(function(cv,k){
+        var r=document.createElement('input'); r.type='radio'; r.name='qzr'+i; r.checked=q.answer===k; r.title='This is the right answer';
+        r.onchange=function(){ q.answer=k; };
+        var L=document.createElement('b'); L.textContent='ABCD'[k];
+        var inp=document.createElement('input'); inp.type='text'; inp.value=cv; inp.placeholder= k<2 ? 'Choice '+'ABCD'[k] : 'Choice '+'ABCD'[k]+' (optional)';
+        inp.oninput=function(){ q.choices[k]=this.value; };
+        grid.appendChild(r); grid.appendChild(L); grid.appendChild(inp);
+      });
+      d.appendChild(grid);
+      var hint=document.createElement('div'); hint.className='note'; hint.style.margin='0'; hint.textContent='Pick the circle next to the right answer.';
+      d.appendChild(hint);
+      var why=document.createElement('input'); why.type='text'; why.placeholder='Why it’s right (shown after they answer, optional)'; why.value=q.why||'';
+      why.oninput=function(){ q.why=this.value; };
+      d.appendChild(why);
+    }
+    box.appendChild(d);
+  });
+  qzLabel();
+}
+function qzLabel(){
+  if (!review) return;
+  var n=review.qs.length;
+  $('qzLbl').textContent = n ? n+' question'+(n>1?'s':'')+' · the video stops at each one' : 'No questions yet';
+}
+$('qzAdd').onclick=function(){
+  if (!review) return;
+  var v=$('revVideo'); v.pause();
+  var t=v.currentTime||0;
+  review.qs.push({t:t,type:'mc',q:'',choices:['','','',''],answer:0,why:''});
+  qzRender();
+  var cards=$('qzList').querySelectorAll('.qcard');
+  for (var i=0;i<review.qs.length;i++) if (review.qs[i].t===t && cards[i]){ cards[i].scrollIntoView({block:'nearest'}); cards[i].querySelector('textarea').focus(); break; }
+};
+$('qzNoSkip').onchange=function(){ if (review) review.noSkip=this.checked; };
+function qzReady(q){ return q.q && q.q.trim(); }
+function hasQs(t){ return t.qs && t.qs.some(qzReady); }
+function qzJSON(t){
+  var out=[];
+  t.qs.filter(qzReady).sort(function(a,b){ return a.t-b.t; }).forEach(function(q){
+    var o={t:Math.round(q.t*10)/10, type:q.type, q:q.q.trim()};
+    if (q.type==='mc'){
+      var ch=[], ans=0;
+      q.choices.forEach(function(c,k){ if (String(c||'').trim()){ if (k===q.answer) ans=ch.length; ch.push(c.trim()); } });
+      if (ch.length<2) o.type='think';
+      else { o.choices=ch; o.answer=ans; if (q.why && q.why.trim()) o.why=q.why.trim(); }
+    }
+    out.push(o);
+  });
+  return JSON.stringify({v:1, noSkip:t.noSkip!==false, questions:out}, null, 1);
+}
+function qsBlob(t){ return new Blob([qzJSON(t)],{type:'application/json'}); }
+function shiftQs(qs,a,b){ return (qs||[]).filter(function(q){ return q.t>=a-0.05 && q.t<=b+0.05; }).map(function(q){ var c=JSON.parse(JSON.stringify(q)); c.t=Math.max(0,Math.min(b,q.t)-a); return c; }); }
+function qsFromJSON(d){
+  return ((d && d.questions)||[]).map(function(q){ var ch=(q.choices||[]).slice(0,4); return {t:+q.t||0,type:q.type||'think',q:q.q||'',choices:ch,answer:+q.answer||0,why:q.why||''}; });
+}
+function parseVtt(txt){
+  var cues=[], toS=function(s){ var p=s.trim().split(':').map(parseFloat); return p.length===3 ? p[0]*3600+p[1]*60+p[2] : p[0]*60+p[1]; };
+  String(txt||'').replace(/\r/g,'').split(/\n\n+/).forEach(function(b){
+    var m=/(\d[\d:.]*)\s*-->\s*(\d[\d:.]*)[^\n]*\n([\s\S]+)/.exec(b);
+    if (m) cues.push({s:toS(m[1]), e:toS(m[2]), t:m[3].replace(/\n/g,' ').trim()});
+  });
+  return cues;
+}
+
+/* ---------- add questions or captions to a video that's already made ---------- */
+function setEditMode(on){
+  ['trimBox','thumbsHead','thumbs','takeRow'].forEach(function(id){ $(id).hidden=on; });
+  $('editRow').hidden=!on;
+  $('revNote').hidden=on;
+}
+function openExisting(c, blob, cues, qdata, where){
+  closeReview(); if (recording) return;
+  var v=$('revVideo');
+  review={path:c.path, blob:blob, dur:0, cues:cues||[], vad:null, trimA:0, trimB:0, qs:qsFromJSON(qdata), noSkip:!qdata || qdata.noSkip!==false, existing:true};
+  setEditMode(true);
+  $('revTitle').textContent='Adding to: '+c.label;
+  $('editMeta').textContent=where;
+  if (v.src) URL.revokeObjectURL(v.src);
+  v.src=URL.createObjectURL(blob);
+  v.onloadedmetadata=function(){ if (!review) return; review.dur=isFinite(v.duration)?v.duration:0; review.trimB=review.dur; renderCues(); };
+  $('review').hidden=false;
+  renderCues(); refreshTrack(); qzRender();
+  $('review').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function repoFile(rel){
+  var parts=rel.split('/'), name=parts.pop();
+  return parts.reduce(function(pr,seg){ return pr.then(function(d){ return d.getDirectoryHandle(seg); }); }, Promise.resolve(repo))
+    .then(function(d){ return d.getFileHandle(name); }).then(function(fh){ return fh.getFile(); });
+}
+$('editExisting').onclick=function(){
+  var c=byPath[sel]; if (!c || !repo) return;
+  var rel=folderOf(c)+c.path.split('/').pop();
+  repoFile(rel+'.mp4').then(function(f){
+    return Promise.all([
+      repoFile(rel+'.vtt').then(function(x){ return x.text(); }).catch(function(){ return ''; }),
+      repoFile(rel+'.questions.json').then(function(x){ return x.text(); }).then(JSON.parse).catch(function(){ return null; })
+    ]).then(function(r){ openExisting(c, f, parseVtt(r[0]), r[1], 'Saves into '+folderOf(c).replace(/\//g,'\\')+' next to the video. The video itself isn’t changed.'); });
+  }).catch(function(e){ console.warn(e); toast('Couldn’t open that video from the repo'); });
+};
+$('editFile').onchange=function(){
+  var f=this.files[0]; this.value=''; var c=byPath[sel]; if (!f || !c) return;
+  openExisting(c, f, [], null, repo&&!c.free ? 'Saves into '+folderOf(c).replace(/\//g,'\\')+' as '+c.path.split('/').pop()+'.questions.json and .vtt' : 'Downloads '+c.path.split('/').pop()+'.questions.json and .vtt');
+};
+$('editClose').onclick=function(){ closeReview(); };
+$('editSave').onclick=function(){
+  if (!review) return;
+  var r=review, c=byPath[r.path], base=r.path.split('/').pop();
+  if (repo && !c.free){
+    var rel=folderOf(c)+base;
+    ensureWrite().then(function(ok){
+      if (!ok){ toast('Chrome didn’t allow saving to the folder'); return; }
+      return (hasQs(r) ? writeFile(rel+'.questions.json', qsBlob(r)) : removeFile(rel+'.questions.json'))
+        .then(function(){ return hasCues(r) ? writeFile(rel+'.vtt', vttBlob(r)) : removeFile(rel+'.vtt'); })
+        .then(function(){ toast('Saved'+(hasQs(r)?' '+r.qs.filter(qzReady).length+' question(s)':'')+(hasCues(r)?' and captions':'')+' next to '+base+'.mp4'); });
+    }).catch(function(e){ console.warn(e); toast('Could not save: '+(e.message||e)); });
+  } else {
+    if (hasQs(r)) save(qsBlob(r), base+'.questions.json');
+    if (hasCues(r)) setTimeout(function(){ save(vttBlob(r), base+'.vtt'); },400);
+    if (!hasQs(r) && !hasCues(r)) toast('Nothing to save yet');
+  }
+};
+function showEditBtn(){
+  var c=byPath[sel];
+  $('editExisting').hidden = !(c && c.done && repo && !c.free);
+}
+
 /* ---------- takes, downloads, zip ---------- */
 var takes=[]; // {path, blob, poster, dur, saved}
 window.VS_TAKES=function(){ return takes; };   // for the test page
@@ -2229,6 +2417,7 @@ function saveTake(t){
   save(t.blob, base+'.'+EXT);
   if ($('poster').checked && t.poster) setTimeout(function(){ save(t.poster, base+'.jpg'); },400);
   if (hasCues(t)) setTimeout(function(){ save(vttBlob(t), base+'.vtt'); },800);
+  if (hasQs(t)) setTimeout(function(){ save(qsBlob(t), base+'.questions.json'); },1200);
   t.saved=true; renderTray();
   return Promise.resolve(true);
 }
@@ -2250,6 +2439,7 @@ function setRepo(h){
   $('traySub').textContent = h ? 'Connected to '+h.name+'. Save all writes every kept take into its folder.' : 'Unzip into C:\\repos\\optima-4th-ela and every file lands in the right folder.';
   renderTray();
   if (h){ scanRepo(); loadPlanFromRepo(); }
+  showEditBtn();
 }
 function savePlanToRepo(){
   if (!repo) return;
@@ -2325,6 +2515,7 @@ function saveToRepo(t, quiet){
           // a new take with no captions: an old .vtt would no longer match, so it goes
           return removeFile(rel+'.vtt').then(function(gone){ if (gone) toast('Removed the old captions file, which didn’t match the new take'); });
         })
+        .then(function(){ return hasQs(t) ? writeFile(rel+'.questions.json', qsBlob(t)) : removeFile(rel+'.questions.json'); })
         .then(function(){ t.saved=true; c.done=true; renderTray(); renderList(); if(!quiet) toast('Saved to '+folderOf(c).replace(/\//g,'\\')); return true; });
     });
   }).catch(function(e){ console.warn(e); toast('Could not save: '+(e.message||e)); return false; });
@@ -2381,7 +2572,7 @@ function renderTray(){
     if (t.poster){ if(!t.thumbURL) t.thumbURL=URL.createObjectURL(t.poster); r.children[0].src=t.thumbURL; } else r.children[0].hidden=true;
     r.children[1].textContent=folderOf(c)+t.path.split('/').pop()+'.'+EXT;
     r.children[2].textContent=fmtT(t.dur);
-    r.children[3].textContent=(t.saved?'saved':'')+(hasCues(t)?' · CC':'');
+    r.children[3].textContent=(t.saved?'saved':'')+(hasCues(t)?' · CC':'')+(hasQs(t)?' · ❓'+t.qs.filter(qzReady).length:'');
     r.children[4].textContent=repo&&!c.free?'📁 Save':'⬇ Download';
     r.children[4].onclick=function(){ saveTake(t); };
     r.children[5].onclick=function(){ takes.splice(i,1); delete keptPaths[t.path]; store.set('kept',keptPaths); renderTray(); renderList(); };
@@ -2398,6 +2589,7 @@ $('zipBtn').onclick=function(){
     z.file(base+'.'+EXT, t.blob);
     if ($('poster').checked && t.poster) z.file(base+'.jpg', t.poster);
     if (hasCues(t)) z.file(base+'.vtt', vttOf(t.cues));
+    if (hasQs(t)) z.file(base+'.questions.json', qzJSON(t));
   });
   z.generateAsync({type:'blob',compression:'STORE'}).then(function(b){
     save(b,(freeMode?'videos-':'g4ela-videos-')+new Date().toISOString().slice(0,10)+'.zip');

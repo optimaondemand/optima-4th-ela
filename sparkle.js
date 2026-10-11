@@ -2529,6 +2529,7 @@ function videoControl(label, src) {
      slot label names, and the label repeats the audio button above. */
   fig.appendChild(v);
   addCaptions(v, src);
+  addQuestions(v, src, label);
   return fig;
 }
 
@@ -2560,7 +2561,35 @@ function addCaptions(v, src) {
 }
 function captionAllFilms() {
   var vs = document.querySelectorAll('video');
-  for (var i = 0; i < vs.length; i++) addCaptions(vs[i]);
+  for (var i = 0; i < vs.length; i++) { addCaptions(vs[i]); addQuestions(vs[i]); }
+}
+
+/* Stop-and-answer films. A film with a <name>.questions.json beside it
+   (made in the Video Studio) stops at each question until the student
+   answers; see assets/js/oao-video-questions.js, which is only loaded
+   when a page has such a film. */
+var _vqWaiting = null;
+function addQuestions(v, src, label) {
+  if (!v || v.getAttribute('data-spk-vq')) return;
+  v.setAttribute('data-spk-vq', '1');
+  if (!src) {
+    var s0 = v.querySelector('source');
+    src = v.getAttribute('src') || (s0 && s0.getAttribute('src')) || '';
+  }
+  var url = String(src).replace(/\.(mp4|webm)(\?.*)?$/i, '.questions.json');
+  if (!src || url === src || !window.fetch) return;
+  fetch(url, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    if (!d || !d.questions || !d.questions.length) return;
+    var go = function () { if (window.OAOVideoQ) window.OAOVideoQ.attach(v, d, src, label); };
+    if (window.OAOVideoQ) { go(); return; }
+    if (_vqWaiting) { _vqWaiting.push(go); return; }
+    _vqWaiting = [go];
+    var s = document.createElement('script');
+    s.src = artURL('js/oao-video-questions.js');
+    s.charset = 'utf-8';
+    s.onload = function () { var w = _vqWaiting; _vqWaiting = []; w.forEach(function (f) { f(); }); };
+    document.head.appendChild(s);
+  }).catch(function () {});
 }
 
 /* A YouTube embed.
