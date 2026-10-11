@@ -1350,3 +1350,41 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
   .spk-br-svg .wv, .spk-br-svg .cloud, .spk-br-svg .slot.open, .spk-br-svg .pk.drop *, .spk-bridge.across .spk-br-svg .star .halo,
   .spk-br-card.nope, .spk-wg-win { animation:none !important; }
 }
+
+/* ── Light the Stars (NTS week 16) ── */
+.spk-st-scene { border-radius:12px; overflow:hidden; border:1px solid #2A3A63; box-shadow:inset 0 0 0 3px #FFFDF6, 0 1px 0 #fff; background:#0B1430; }
+.spk-st-svg { display:block; width:100%; height:auto; }
+.spk-st-svg .field circle { fill:#DCE4F7; }
+.spk-st-svg .fs0 { opacity:.55; } .spk-st-svg .fs1 { opacity:.3; animation:spk-st-tw 4s ease-in-out infinite; } .spk-st-svg .fs2 { opacity:.18; animation:spk-st-tw 6s ease-in-out infinite reverse; }
+@keyframes spk-st-tw { 50% { opacity:.65; } }
+.spk-st-svg .st { opacity:.10; transition:opacity .6s; }
+.spk-st-svg .st .core { fill:#FFF6DA; } .spk-st-svg .st .spike { fill:#FFF1C4; opacity:.75; } .spk-st-svg .st .halo { fill:url(#spkStHalo); opacity:.55; }
+.spk-st-svg .st.on { opacity:1; }
+.spk-st-svg .st.old { opacity:.82; }
+.spk-st-svg .st.pop { animation:spk-st-pop .9s cubic-bezier(.3,1.4,.5,1); transform-box:fill-box; transform-origin:center; }
+@keyframes spk-st-pop { 0% { opacity:0; transform:scale(.2); } 60% { opacity:1; transform:scale(1.5); } 100% { transform:none; } }
+.spk-st-svg .ln { stroke:#E9C877; stroke-width:1.3; stroke-linecap:round; opacity:0; stroke-dasharray:200; stroke-dashoffset:200; transition:opacity .3s; }
+.spk-st-svg .ln.on { opacity:.75; stroke-dashoffset:0; transition:stroke-dashoffset 1.1s ease-out .15s, opacity .3s; }
+.spk-st-svg .ln.old { opacity:.5; }
+.spk-st-svg .ptr { stroke:#F3D88B; stroke-width:1.2; stroke-dasharray:3 5; opacity:0; transition:opacity 1.2s .3s; }
+.spk-st-svg .ptr.on { opacity:.9; }
+.spk-st-svg .nm { font:700 8.5px 'Nunito',sans-serif; fill:#BFCBEA; letter-spacing:.04em; opacity:0; transition:opacity .8s .4s; }
+.spk-st-svg .nm.on { opacity:.8; }
+.spk-st-svg .grp { font:italic 600 11px 'Lora',Georgia,serif; fill:#F3DFA6; text-anchor:middle; opacity:0; transition:opacity 1s .5s; }
+.spk-st-svg .grp.on { opacity:.95; }
+.spk-st-svg .cl ellipse { fill:#56658E; opacity:.85; }
+.spk-st-svg .cl { opacity:0; }
+.spk-st-svg .cl.next { opacity:1; animation:spk-st-drift 5s ease-in-out infinite alternate; }
+.spk-st-svg .cl.on { opacity:0; transition:opacity .9s .2s; }
+.spk-st-svg .cl.on .l { transform:translateX(-14px); transition:transform .9s ease-out; }
+.spk-st-svg .cl.on .r { transform:translateX(14px); transition:transform .9s ease-out; }
+@keyframes spk-st-drift { to { transform:translateX(3px); } }
+.spk-st-svg .roofs { fill:#0E1630; } .spk-st-svg .copper { fill:#4E8C7A; } .spk-st-svg .win rect { fill:#F2C766; opacity:.85; }
+.spk-st-svg .sea { fill:#16244A; } .spk-st-svg .refl path { stroke:#F2C766; stroke-width:1.2; opacity:.35; }
+.spk-stars.across .spk-st-svg .st[data-k="14"] .halo { animation:spk-st-north 2.6s ease-in-out infinite; }
+@keyframes spk-st-north { 50% { opacity:1; } }
+.spk-st-stones .spk-br-stone b { font-size:22px; }
+@media (prefers-reduced-motion: reduce) {
+  .spk-st-svg .fs1, .spk-st-svg .fs2, .spk-st-svg .st.pop, .spk-st-svg .cl.next, .spk-stars.across .spk-st-svg .st .halo { animation:none !important; }
+  .spk-st-svg .ln.on { transition:none; }
+}
