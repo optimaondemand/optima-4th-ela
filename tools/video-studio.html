@@ -393,9 +393,6 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
         <div class="flair" id="flairBar">
           <span class="flbl">Flair</span>
           <button data-f="confetti" title="Confetti (1)">🎉<kbd>1</kbd></button>
-          <button data-f="applause" title="Applause (2)">👏<kbd>2</kbd></button>
-          <button data-f="stars" title="Star burst (3)">⭐<kbd>3</kbd></button>
-          <button data-f="aha" title="Aha! light bulb (4)">💡<kbd>4</kbd></button>
           <label class="check" style="margin:0 0 0 6px;font-size:12.5px"><input type="checkbox" id="flairSnd"> Sound</label>
         </div>
         <div class="onscreen" id="onScreen">
@@ -595,7 +592,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
       <li><b>✏ Draw</b> (or <kbd>D</kbd>) lets you circle or underline things. Ink fades on its own unless you untick Fade.</li>
       <li><b>Quotes</b>: when your script says <i>Quote on screen</i>, click the gold line in the script (or press <kbd>6</kbd>) and the quote appears on a band across the bottom of the video. Click again when you’ve read it. <b>＋ Type a quote</b> adds your own.</li>
       <li><b>Words</b>: this lesson’s vocabulary words are under the video. Click one to show its card, click again to take it off. <kbd>5</kbd> steps through them.</li>
-      <li><b>Confetti</b> and the other flair: <kbd>1</kbd>–<kbd>4</kbd>.</li>
+      <li><b>Confetti</b>: <kbd>1</kbd>.</li>
       <li>Press <b>■ Stop</b> or <kbd>Space</kbd> when you’re done.</li>
     </ul>
     <h3>4. Check it</h3>
@@ -1513,9 +1510,6 @@ function R(a,b){ return a+Math.random()*(b-a); }
 function fire(type){
   var now=performance.now(), f={type:type,t0:now};
   if (type==='confetti'){ f.p=[]; for (var i=0;i<170;i++) f.p.push({x:R(0,W),y:R(-260,-10),vx:R(-70,70),vy:R(120,320),r:R(0,6),vr:R(-7,7),w:R(9,16),h:R(5,9),c:CONF[i%CONF.length],ph:R(0,6)}); f.life=4.2; }
-  else if (type==='applause'){ f.p=[]; for (var j=0;j<16;j++) f.p.push({x:R(60,W-60),d:R(0,0.9),s:R(56,96),w:R(0,6),sp:R(220,330)}); f.life=3.2; }
-  else if (type==='stars'){ f.p=[]; var cx=W*0.5, cy=H*0.42; for (var k=0;k<22;k++){ var an=R(0,Math.PI*2), sp=R(260,620); f.p.push({x:cx,y:cy,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp-140,r:R(0,6),vr:R(-5,5),s:R(16,32)}); } f.life=2.3; }
-  else if (type==='aha'){ f.life=2.6; }
   fx.push(f); flairSound(type);
 }
 var lastStep=0;
@@ -1528,34 +1522,15 @@ function stepFx(now){
   fx=fx.filter(function(f){ return (now-f.t0)/1000 < f.life; });
   fx.forEach(function(f){
     if (f.type==='confetti') f.p.forEach(function(p){ p.vy+=260*dt; p.vx*=0.995; p.x+=p.vx*dt+Math.sin(now/300+p.ph)*0.8; p.y+=p.vy*dt; p.r+=p.vr*dt; });
-    else if (f.type==='stars') f.p.forEach(function(p){ p.vy+=380*dt; p.vx*=0.975; p.x+=p.vx*dt; p.y+=p.vy*dt; p.r+=p.vr*dt; });
   });
   strokes=strokes.filter(function(s){ return !(inkFade && s.done && now-s.end>3400); });
 }
-function starPath(ctx,s){ ctx.beginPath(); for (var i=0;i<10;i++){ var r=i%2?s*0.45:s, a=-Math.PI/2+i*Math.PI/5; ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r); } ctx.closePath(); }
 function drawFx(ctx,f,now){
   var t=(now-f.t0)/1000, fade=1-ease((t-(f.life-0.6))/0.6);
   ctx.save();
   if (f.type==='confetti'){
     ctx.globalAlpha=fade;
     f.p.forEach(function(p){ if (p.y<-20||p.y>H+20) return; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.scale(1,Math.cos(now/170+p.ph)); ctx.fillStyle=p.c; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); });
-  } else if (f.type==='applause'){
-    ctx.textAlign='center'; ctx.textBaseline='middle';
-    f.p.forEach(function(p){ var u=t-p.d; if (u<0) return; var y=H+60-u*p.sp, a=Math.min(1,u*4)*(1-ease((u-1.6)/0.8));
-      if (a<=0) return; ctx.globalAlpha=a; ctx.font=p.s+'px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif';
-      ctx.save(); ctx.translate(p.x+Math.sin(u*6+p.w)*14,y); ctx.rotate(Math.sin(u*10+p.w)*0.18); ctx.scale(1+Math.max(0,Math.sin(u*14))*0.12,1+Math.max(0,Math.sin(u*14))*0.12); ctx.fillText('👏',0,0); ctx.restore(); });
-  } else if (f.type==='stars'){
-    ctx.globalAlpha=fade;
-    f.p.forEach(function(p){ var pop=Math.min(1,t*6); ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.scale(pop,pop); starPath(ctx,p.s); ctx.fillStyle=GOLD; ctx.fill(); ctx.lineWidth=3; ctx.strokeStyle='#fff'; ctx.stroke(); ctx.restore(); });
-  } else if (f.type==='aha'){
-    var x=W*0.76, y=H*0.3, pop = t<0.35 ? ease(t/0.35)*1.15 : 1+Math.sin(Math.min(1,(t-0.35)/0.3)*Math.PI)*0.06;
-    ctx.globalAlpha=fade; ctx.translate(x,y); ctx.scale(pop,pop);
-    ctx.save(); ctx.rotate(t*0.8); ctx.strokeStyle=GOLD; ctx.lineWidth=7; ctx.lineCap='round';
-    for (var i=0;i<12;i++){ var a=i*Math.PI/6, r1=88+Math.sin(t*8+i)*6; ctx.beginPath(); ctx.moveTo(Math.cos(a)*r1,Math.sin(a)*r1); ctx.lineTo(Math.cos(a)*(r1+28),Math.sin(a)*(r1+28)); ctx.stroke(); }
-    ctx.restore();
-    ctx.beginPath(); ctx.arc(0,0,74,0,Math.PI*2); ctx.fillStyle='rgba(255,236,170,.35)'; ctx.fill();
-    ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.font='110px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif'; ctx.fillText('💡',0,-6);
-    ctx.font='800 50px Nunito, system-ui, sans-serif'; ctx.lineWidth=9; ctx.strokeStyle=NAVY; ctx.lineJoin='round'; ctx.strokeText('Aha!',0,118); ctx.fillStyle=GOLD; ctx.fillText('Aha!',0,118);
   }
   ctx.restore();
 }
@@ -1637,7 +1612,7 @@ $('inkClear').onclick=function(){ strokes=[]; };
 $('flairSnd').checked=store.get('flairsnd',false); $('flairSnd').onchange=function(){ store.set('flairsnd',this.checked); };
 document.addEventListener('keydown',function(e){
   var tg=e.target.tagName; if (tg==='INPUT'||tg==='SELECT'||tg==='TEXTAREA'||e.ctrlKey||e.metaKey||e.altKey) return;
-  var map={'1':'confetti','2':'applause','3':'stars','4':'aha'};
+  var map={'1':'confetti'};
   if (map[e.key]){ e.preventDefault(); fire(map[e.key]); }
   else if (e.key==='5'){ e.preventDefault(); nextWord(); }
   else if (e.key==='6'){ e.preventDefault(); nextQuote(); }
@@ -1653,9 +1628,6 @@ function flairSound(type){
   if (!$('flairSnd').checked || !AC || !A.fx) return;
   var t=AC.currentTime+0.01, i;
   if (type==='confetti'){ noise(t,0.12,1800,0.8,0.7); [784,988,1175,1568].forEach(function(f,k){ tone(f,t+0.08+k*0.07,0.5,'triangle',0.12); }); }
-  else if (type==='applause'){ for (i=0;i<70;i++) noise(t+Math.random()*2.2*Math.pow(Math.random(),0.6),0.05,R(1200,2600),1.2,R(0.15,0.45)); }
-  else if (type==='stars'){ [1047,1319,1568,2093,2637].forEach(function(f,k){ tone(f,t+k*0.06,0.6,'sine',0.13); }); }
-  else if (type==='aha'){ tone(880,t,0.7,'sine',0.2); tone(1320,t+0.12,0.9,'sine',0.18); }
   else if (type==='word'){ noise(t,0.25,900,0.6,0.35); }
 }
 bindTitles();
