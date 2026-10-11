@@ -1909,6 +1909,8 @@ function wgSfx(kind) {
       n.buffer = buf; n.connect(lp); lp.connect(ng); ng.connect(_wgAC.destination); n.start(t);
     } else if (kind === 'bonk') {              /* a gentle no */
       tone(220, 180, 0.16, 0.06, 'triangle');
+    } else if (kind === 'chime') {             /* a star coming out */
+      [1568, 2093].forEach(function (f, k) { tone(f, 0, 0.7, 0.05, 'sine', k * 0.07); });
     } else if (kind === 'win') {               /* across */
       [523, 659, 784].forEach(function (f, k) { tone(f, 0, 0.9, 0.08, 'sine', k * 0.16); });
     }
@@ -2157,6 +2159,229 @@ WORDGAME.bridge = function (cfg, act, game, W) {
   /* where the student left off */
   placed.forEach(setCard);
   paint(false); count();
+  if (placed.length === W.length) finish(true);
+};
+
+/* ── Light the Stars (Number the Stars, week 16): the night sky over
+   Copenhagen. Each right word clears a patch of cloud and a star comes
+   out; the line is led on to it from the star before (rupt = break,
+   duct/duce = lead). One sky for the whole week: day 1 the bowl of
+   Karlsvognen (the Big Dipper), day 2 its handle, day 3 the bowl of
+   Lille Bjørn (the Little Dipper), day 4 its handle up to the North
+   Star, and the last word leads a guide line from the two pointer stars
+   to it. Day d opens with days 1…d-1 already shining, built from the
+   day number. ── */
+WORDGAME.stars = function (cfg, act, game, W) {
+  var day = dayNum(LESSON.day), per = W.length;
+  var KEY = 'oao.g4ela.wg.' + LID;
+  var placed = (Sparkle.get(KEY, []) || []).filter(function (i) { return i >= 0 && i < W.length; });
+  var M = cfg.meanings || {};
+  var stones = []; W.forEach(function (w) { if (stones.indexOf(w.a) < 0) stones.push(w.a); });
+  /* the order the page teaches them in, not alphabetical */
+  game.classList.add('spk-hide');
+  var lead = game.previousElementSibling;
+  if (lead && lead.classList.contains('callout')) lead.classList.add('spk-hide');
+
+  /* [x, y, size, name] — hand-placed so the two pointer stars really do
+     point at the North Star */
+  var S = {
+    dubhe:[268,142,3.4,'Dubhe'], merak:[220,172,3.0,'Merak'], phecda:[176,140,2.8,'Phecda'], megrez:[222,110,2.3,'Megrez'],
+    alioth:[176,84,3.2,'Alioth'], mizar:[128,74,3.1,'Mizar'], alcor:[134,62,1.5,'Alcor'], alkaid:[80,92,3.1,'Alkaid'],
+    kochab:[556,72,3.2,'Kochab'], pherkad:[584,92,2.6,'Pherkad'], eta:[548,116,1.9,''], zeta:[520,98,2.1,''],
+    eps:[500,70,2.0,''], yildun:[482,46,1.8,'Yildun'], polaris:[462,26,3.8,'']
+  };
+  /* each lesson's stars, and the line each new star is led from */
+  var DAYS = [
+    [['dubhe',null], ['merak','dubhe'], ['phecda','merak'], ['megrez','phecda','dubhe']],
+    [['alioth','megrez'], ['mizar','alioth'], ['alcor',null], ['alkaid','mizar']],
+    [['zeta',null], ['kochab','zeta'], ['pherkad','kochab'], ['eta','pherkad','zeta']],
+    [['eps','zeta'], ['yildun','eps'], ['polaris','yildun'], ['__pointer',null]]
+  ];
+  var LABEL = [[176, 34, 'Karlsvognen · the Big Dipper'], [0, 0, ''], [548, 150, 'Lille Bjørn · the Little Dipper'], [462, 12, 'Nordstjernen · the North Star']];
+  var f = function (n) { return (+n).toFixed(1); };
+
+  /* the field: faint background stars, fixed so every visit looks the same */
+  var field = '', seed = 7;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  for (var k = 0; k < 90; k++) {
+    var fx = rnd() * 640, fy = rnd() * 175, fr = rnd() * 0.9 + 0.3;
+    field += '<circle class="fs' + (k % 3) + '" cx="' + f(fx) + '" cy="' + f(fy) + '" r="' + f(fr) + '"/>';
+  }
+  function line(a, b, cls, key) {
+    var p = S[a], q = S[b];
+    return '<line class="' + cls + '" data-k="' + key + '" x1="' + p[0] + '" y1="' + p[1] + '" x2="' + q[0] + '" y2="' + q[1] + '"/>';
+  }
+  var lines = '', stars = '', clouds = '', names = '';
+  DAYS.forEach(function (list, d) {
+    list.forEach(function (it, j) {
+      var key = d * 4 + j, id = it[0];
+      if (id === '__pointer') {
+        lines += '<line class="ptr" data-k="' + key + '" x1="' + S.merak[0] + '" y1="' + S.merak[1] + '" x2="' + S.polaris[0] + '" y2="' + S.polaris[1] + '"/>';
+        return;
+      }
+      if (it[1]) lines += line(it[1], id, 'ln', key);
+      if (it[2]) lines += line(id, it[2], 'ln', key);
+      var s = S[id];
+      stars += '<g class="st" data-k="' + key + '" transform="translate(' + s[0] + ' ' + s[1] + ')">' +
+        '<circle class="halo" r="' + f(s[2] * 4.2) + '"/>' +
+        '<path class="spike" d="M0 -' + f(s[2] * 3) + ' L' + f(s[2] * .35) + ' 0 L0 ' + f(s[2] * 3) + ' L-' + f(s[2] * .35) + ' 0 Z M-' + f(s[2] * 3) + ' 0 L0 ' + f(s[2] * .35) + ' L' + f(s[2] * 3) + ' 0 L0 -' + f(s[2] * .35) + ' Z"/>' +
+        '<circle class="core" r="' + f(s[2]) + '"/></g>';
+      if (s[3]) names += '<text class="nm" data-k="' + key + '" x="' + f(s[0] + s[2] + 4) + '" y="' + f(s[1] + 3) + '">' + s[3] + '</text>';
+      clouds += '<g class="cl" data-k="' + key + '" transform="translate(' + s[0] + ' ' + s[1] + ')">' +
+        '<g class="l"><ellipse cx="-7" cy="1" rx="11" ry="6"/><ellipse cx="-2" cy="-4" rx="7" ry="5"/></g>' +
+        '<g class="r"><ellipse cx="7" cy="1" rx="11" ry="6"/><ellipse cx="3" cy="-3" rx="6" ry="5"/></g></g>';
+    });
+  });
+  var labels = LABEL.map(function (l, d) { return l[2] ? '<text class="grp" data-d="' + d + '" x="' + l[0] + '" y="' + l[1] + '">' + l[2] + '</text>' : ''; }).join('');
+  /* the city under the sky: rooftops, two green copper spires, the harbor */
+  var city =
+    '<path class="roofs" d="M0 214 L0 200 L18 200 L18 192 L30 184 L42 192 L42 198 L60 198 L60 188 L74 188 L74 196 L92 196 L100 186 L108 196 L126 196 L126 178 L132 178 L136 150 L140 178 L146 178 L146 194 L170 194 L170 186 L186 186 L186 196 L204 196 L212 188 L220 196 L248 196 L248 184 L262 176 L276 184 L276 196 L300 196 L300 190 L318 190 L318 198 L344 198 L352 190 L360 198 L380 198 L380 186 L388 186 L392 160 L396 186 L404 186 L404 196 L430 196 L430 188 L448 188 L448 198 L476 198 L484 190 L492 198 L516 198 L516 186 L532 186 L532 196 L556 196 L564 188 L572 196 L604 196 L604 190 L622 190 L622 198 L640 198 L640 214 Z"/>' +
+    '<path class="copper" d="M136 150 L132 178 L140 178 Z M392 160 L388 186 L396 186 Z"/>' +
+    '<g class="win">' + [24, 66, 112, 156, 194, 232, 288, 330, 368, 418, 460, 504, 546, 590, 628].map(function (x, i) {
+      return '<rect x="' + x + '" y="' + (203 - (i % 3) * 2) + '" width="3" height="4"/>'; }).join('') + '</g>' +
+    '<rect class="sea" x="0" y="214" width="640" height="46"/>' +
+    '<g class="refl">' + [40, 136, 230, 300, 392, 470, 560].map(function (x, i) {
+      return '<path d="M' + x + ' ' + (222 + (i % 3) * 8) + ' h' + (18 + (i % 2) * 14) + '"/>'; }).join('') + '</g>';
+
+  var svg =
+    '<svg class="spk-st-svg" viewBox="0 0 640 260" role="img" aria-label="A night sky over the rooftops of Copenhagen. Stars come out and are joined into the Big Dipper and the Little Dipper.">' +
+    '<defs>' +
+      '<linearGradient id="spkStSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1430"/><stop offset=".7" stop-color="#1B2B55"/><stop offset="1" stop-color="#34466F"/></linearGradient>' +
+      '<radialGradient id="spkStHalo"><stop offset="0" stop-color="#FFF4D2" stop-opacity=".9"/><stop offset="1" stop-color="#FFF4D2" stop-opacity="0"/></radialGradient>' +
+    '</defs>' +
+    '<rect width="640" height="260" fill="url(#spkStSky)"/>' +
+    '<g class="field">' + field + '</g>' +
+    '<g class="lines">' + lines + '</g>' + stars + names + clouds + labels + city +
+    '</svg>';
+
+  var box = document.createElement('div');
+  box.className = 'spk-wg spk-stars';
+  box.innerHTML =
+    '<div class="spk-wg-head"><span class="spk-wg-kicker">' + esc(cfg.kicker || 'Light the Stars') + '</span>' +
+      '<span class="spk-wg-h">' + esc(cfg.h || 'Clear the clouds, lead the lines') + '</span></div>' +
+    wgWhy(cfg.why) +
+    (cfg.voice ? '<p class="spk-wg-voice">' + esc(cfg.voice) + '</p>' : '') +
+    '<div class="spk-st-scene">' + svg + '</div>' +
+    '<p class="spk-wg-ct" aria-live="polite"></p>' +
+    '<div class="spk-br-stones spk-st-stones" role="group" aria-label="Word parts">' +
+      stones.map(function (a) {
+        return '<button type="button" class="spk-br-stone" data-a="' + esc(a) + '"><b>' + esc(a) + '</b>' +
+               (M[a] ? '<small>' + esc(M[a]) + '</small>' : '') + '</button>';
+      }).join('') + '</div>' +
+    '<div class="spk-br-pile">' +
+      W.map(function (w, i) {
+        var first = w.inp && w.inp.parentNode.firstChild === w.inp;
+        var stem = '<b>' + esc(w.stem) + '</b>', blank = '<span class="blank">?</span>';
+        return '<button type="button" class="spk-br-card spk-st-card" data-i="' + i + '">' +
+               '<span class="w">' + (first ? blank + stem : stem + blank) + '</span>' +
+               '<small>' + esc(w.m) + '</small><span class="spk-wg-miss"></span></button>';
+      }).join('') + '</div>' +
+    '<div class="spk-wg-win" hidden></div>';
+  game.parentNode.insertBefore(box, game);
+
+  var before = (day - 1) * 4;
+  function paint(fresh) {
+    var L = before + placed.length;
+    box.querySelectorAll('[data-k]').forEach(function (el) {
+      var k = +el.getAttribute('data-k');
+      var on = k < before || (k >= before && k < before + 4 && placed.indexOf(k - before) >= 0) ||
+               (k >= before && k < before + 4 && placed.length === per && k - before >= per);
+      /* a lesson with fewer than four words finishes its group anyway */
+      el.classList.toggle('on', on);
+      el.classList.toggle('old', k < before);
+      if (fresh === k && !REDUCED) { el.classList.remove('pop'); void el.getBoundingClientRect(); el.classList.add('pop'); }
+    });
+    box.querySelectorAll('.grp').forEach(function (g) {
+      var d = +g.getAttribute('data-d');
+      g.classList.toggle('on', d < day - 1 || (d === day - 1 && placed.length === per));
+    });
+    box.querySelectorAll('.cl').forEach(function (c) {
+      var k = +c.getAttribute('data-k');
+      c.classList.toggle('next', k >= before && k < before + 4 && !c.classList.contains('on'));
+    });
+  }
+  function count() {
+    var n = placed.length;
+    box.querySelector('.spk-wg-ct').innerHTML = n < W.length
+      ? '<b>' + n + ' of ' + W.length + '</b> stars shining' + (day > 1 ? ' · sky ' + day + ' of 4' : '') + '.' : '';
+  }
+  function setCard(i) {
+    var w = W[i], card = box.querySelector('.spk-br-card[data-i="' + i + '"]');
+    card.classList.add('placed'); card.disabled = true;
+    card.querySelector('.blank').textContent = w.a;
+    card.querySelector('.spk-wg-miss').innerHTML = '';
+  }
+  function finish(quiet) {
+    W.forEach(function (w) { w.inp.value = w.a; });
+    var btn = game.querySelector('.fillin-check-btn');
+    try { if (quiet) _origCheckFillIn(btn); else window.checkFillIn(btn); } catch (e) {}
+    var last = day >= 4, win = box.querySelector('.spk-wg-win');
+    win.hidden = false;
+    win.innerHTML = last ? (cfg.win || 'Every star is out, and the pointer stars lead you to the North Star.')
+                         : (cfg.winDay || 'These stars are out. The next lesson’s words light the next part of the sky.');
+    box.classList.add('done'); if (last) box.classList.add('across');
+    paint(null);
+    if (!quiet) setTimeout(function () { wgSfx('win'); }, 350);
+  }
+  function miss(i, a) {
+    var w = W[i], card = box.querySelector('.spk-br-card[data-i="' + i + '"]');
+    var line = (cfg.miss || {})[w.id] ||
+      ('Not quite. <b>' + esc(a) + '</b> means ' + esc(M[a] || '…') + '. Read the meaning again: <i>' + esc(w.m) + '</i>.');
+    card.querySelector('.spk-wg-miss').innerHTML = line;
+    card.classList.remove('nope'); void card.offsetWidth; card.classList.add('nope');
+    wgSfx('bonk');
+  }
+  var selStone = null, selCard = null;
+  function clearSel() { selStone = selCard = null; box.querySelectorAll('.sel').forEach(function (e) { e.classList.remove('sel'); }); }
+  function tryPlace(i, a) {
+    if (placed.indexOf(i) >= 0) return;
+    if (W[i].a === a) {
+      placed.push(i); Sparkle.set(KEY, placed);
+      setCard(i); paint(before + i); wgSfx('chime'); wgClip(i + 1); count();
+      if (placed.length === W.length) finish(false);
+    } else miss(i, a);
+    clearSel();
+  }
+  box.querySelectorAll('.spk-br-stone').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b._dragged) { b._dragged = false; return; }
+      var a = b.getAttribute('data-a');
+      if (selCard !== null) { tryPlace(selCard, a); return; }
+      var on = selStone !== a; clearSel(); if (on) { selStone = a; b.classList.add('sel'); }
+    });
+    b.addEventListener('pointerdown', function (e) {
+      if (e.button) return;
+      var a = b.getAttribute('data-a'), sx = e.clientX, sy = e.clientY, ghost = null;
+      function move(ev) {
+        if (!ghost && Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 8) return;
+        if (!ghost) { ghost = b.cloneNode(true); ghost.className = 'spk-br-stone spk-br-ghost'; document.body.appendChild(ghost); }
+        ghost.style.left = ev.clientX + 'px'; ghost.style.top = ev.clientY + 'px';
+        box.querySelectorAll('.spk-br-card.over').forEach(function (c) { c.classList.remove('over'); });
+        var t = document.elementFromPoint(ev.clientX, ev.clientY), c = t && t.closest && t.closest('.spk-br-card');
+        if (c && !c.disabled) c.classList.add('over');
+        ev.preventDefault();
+      }
+      function up(ev) {
+        document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', up);
+        if (!ghost) return;
+        ghost.remove(); b._dragged = true; setTimeout(function () { b._dragged = false; }, 50);
+        box.querySelectorAll('.spk-br-card.over').forEach(function (c) { c.classList.remove('over'); });
+        var t = document.elementFromPoint(ev.clientX, ev.clientY), c = t && t.closest && t.closest('.spk-br-card');
+        if (c && !c.disabled) tryPlace(+c.getAttribute('data-i'), a);
+      }
+      document.addEventListener('pointermove', move, { passive: false });
+      document.addEventListener('pointerup', up);
+    });
+  });
+  box.querySelectorAll('.spk-br-card').forEach(function (c) {
+    c.addEventListener('click', function () {
+      var i = +c.getAttribute('data-i');
+      if (selStone) { tryPlace(i, selStone); return; }
+      var on = selCard !== i; clearSel(); if (on) { selCard = i; c.classList.add('sel'); }
+    });
+  });
+  placed.forEach(setCard);
+  paint(null); count();
   if (placed.length === W.length) finish(true);
 };
 
@@ -3278,6 +3503,48 @@ function buildBridgeKit() {
   document.head.appendChild(s);
 }
 
+/* Number the Stars (16.x–19.x): the history cards from
+   assets/js/oao-nts-kit.js. Annemarie's Path above the reading every
+   day; the Museum Case and Then & Now after it when this lesson's
+   DATA.nts has them; Real Rescuers at the top of the Assignment tab
+   once the roster reaches this lesson; the Psalm card on 18.2. */
+function buildNtsKit() {
+  if (LESSON.book !== 'nts' || typeof LESSON.day !== 'number') return;
+  var s = document.createElement('script');
+  s.src = artURL('js/oao-nts-kit.js');
+  s.onload = function () {
+    var K = window.OAONtsKit; if (!K || !K.mount) return;
+    var opt = { week: LESSON.week, day: LESSON.day, base: ART.base, cfg: DATA.nts || {},
+                stopAll: function (a) { try { audioStopAll(a); } catch (e) {} } };
+    function mount(kind, ref, before) {
+      if (!ref) return;
+      var host = document.createElement('div');
+      host.className = 'spk-nkit spk-nkit-' + kind;
+      ref.parentNode.insertBefore(host, before ? ref : ref.nextSibling);
+      /* the case and the slider build after their images load, so an
+         empty host is normal for a moment; only a refusal removes it */
+      if (K.mount(kind, host, opt) === false) host.parentNode.removeChild(host);
+    }
+    var read = document.getElementById('tab-reading');
+    var asg = document.getElementById('tab-assignment');
+    if (read) {
+      var acts = read.querySelectorAll('.activity'), target = null;
+      for (var i = 0; i < acts.length; i++) {
+        var t = acts[i].querySelector('.activity-title');
+        if (t && /Read/.test(t.textContent)) { target = acts[i]; break; }
+      }
+      if (target) {
+        mount('path', target, true);
+        mount('psalm', target, false);
+        mount('thennow', target, false);
+        mount('case', target, false);
+      }
+    }
+    if (asg && asg.firstElementChild) mount('rescuers', asg.firstElementChild, true);
+  };
+  document.head.appendChild(s);
+}
+
 function boot() {
   /* Each step is isolated. Previously all eighteen sat inside one
      try/catch, so a lesson whose DATA was missing a key — no DOL pair,
@@ -3314,6 +3581,7 @@ function boot() {
     ['media',       buildMedia],
     ['captions',    captionAllFilms],
     ['bridgekit',   buildBridgeKit],
+    ['ntskit',      buildNtsKit],
     ['publish',     buildPublish],
     ['journal',     buildJournal],
     ['marginalia',  marginalia],
