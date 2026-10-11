@@ -2222,10 +2222,10 @@ WORDGAME.stars = function (cfg, act, game, W) {
       if (it[1]) lines += line(it[1], id, 'ln', key);
       if (it[2]) lines += line(id, it[2], 'ln', key);
       var s = S[id];
-      stars += '<g class="st" data-k="' + key + '" transform="translate(' + s[0] + ' ' + s[1] + ')">' +
+      stars += '<g class="st" data-k="' + key + '" transform="translate(' + s[0] + ' ' + s[1] + ')"><g class="in">' +
         '<circle class="halo" r="' + f(s[2] * 4.2) + '"/>' +
         '<path class="spike" d="M0 -' + f(s[2] * 3) + ' L' + f(s[2] * .35) + ' 0 L0 ' + f(s[2] * 3) + ' L-' + f(s[2] * .35) + ' 0 Z M-' + f(s[2] * 3) + ' 0 L0 ' + f(s[2] * .35) + ' L' + f(s[2] * 3) + ' 0 L0 -' + f(s[2] * .35) + ' Z"/>' +
-        '<circle class="core" r="' + f(s[2]) + '"/></g>';
+        '<circle class="core" r="' + f(s[2]) + '"/></g></g>';
       if (s[3]) names += '<text class="nm" data-k="' + key + '" x="' + f(s[0] + s[2] + 4) + '" y="' + f(s[1] + 3) + '">' + s[3] + '</text>';
       clouds += '<g class="cl" data-k="' + key + '" transform="translate(' + s[0] + ' ' + s[1] + ')">' +
         '<g class="l"><ellipse cx="-7" cy="1" rx="11" ry="6"/><ellipse cx="-2" cy="-4" rx="7" ry="5"/></g>' +
