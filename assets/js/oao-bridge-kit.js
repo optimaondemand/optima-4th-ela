@@ -147,6 +147,51 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
   + '.ph-entry:last-child{border-bottom:0;}.ph-entry:hover{background:#FFF3DC;}'
   + '.ph-entry span{font-family:"Courier New",monospace;font-size:13px;color:#7A5A2E;white-space:nowrap;}'
   + '.ph-hang{margin-top:10px;font-family:"Nunito",sans-serif;font-size:13px;font-weight:800;color:#fff;background:#B8322A;border:0;border-radius:999px;padding:6px 14px;cursor:pointer;}'
+  /* ration card */
+  + '.rc-body{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px;align-items:start;}'
+  + '@media (max-width:560px){.rc-body{grid-template-columns:1fr;}}'
+  + '.rc-card{background:#F7EED7;border:2px solid #B8322A;border-radius:6px;padding:10px;box-shadow:2px 3px 0 #E3D3AE;transform:rotate(-1.5deg);font-family:"Courier New",monospace;}'
+  + '.rc-h{font-weight:900;color:#B8322A;letter-spacing:.12em;text-align:center;border-bottom:2px solid #B8322A;padding-bottom:5px;}'
+  + '.rc-h small{display:block;font-size:10px;letter-spacing:.06em;color:#7A5A2E;}'
+  + '.rc-coupons{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0;}'
+  + '.rc-cp{position:relative;height:48px;border:1.5px dashed #B8322A;border-radius:3px;background:#FFF8E6;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#B8322A;transition:transform .35s,opacity .35s;}'
+  + '.rc-cp b{font-size:9px;letter-spacing:.06em;}.rc-cp i{font-style:normal;font-size:16px;font-weight:900;}'
+  + '.rc-cp.tearing{transform:translate(14px,-18px) rotate(18deg);opacity:0;}'
+  + '.rc-cp.torn{background:transparent;border-color:#D8C7A0;color:transparent;}'
+  + '.rc-foot{font-size:10px;color:#7A5A2E;text-align:center;}'
+  + '.rc-list{font-size:15px;line-height:1.5;color:#3A4A6B;background:#FFFDF7;border-left:3px solid #C7922C;padding:6px 10px;margin-bottom:10px;}'
+  + '.rc-shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:6px;}'
+  + '.rc-item{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 4px;border:1.5px solid #EBD9AF;border-radius:10px;background:#fff;cursor:pointer;font-family:"Nunito",sans-serif;}'
+  + '.rc-item:hover{background:#FFF8EA;border-color:#C7922C;}'
+  + '.rc-ic{font-size:24px;line-height:1;}.rc-nm{font-size:13px;font-weight:800;color:#0E1C42;text-align:center;}.rc-tag{font-size:11px;font-weight:700;color:#8A7A5C;}'
+  + '.rc-item.sold{opacity:.6;}.rc-item.sold .rc-tag{color:#B8322A;}'
+  + '.rc-msg{margin-top:10px;font-size:15px;line-height:1.5;color:#56627F;min-height:2.6em;}'
+  + '.rc-msg.ok{color:#2F7A4F;}.rc-msg.no{color:#B8322A;}.rc-msg.done{color:#0E1C42;font-weight:600;}'
+  + '.rc-basket{font-size:14px;color:#3A4A6B;}.rc-basket span{font-family:"Nunito",sans-serif;font-weight:800;color:#8B6914;}'
+  + '.rc-reset{margin-top:8px;font-family:"Nunito",sans-serif;font-size:12px;font-weight:800;color:#56627F;background:#fff;border:1.5px solid #E6EBF5;border-radius:999px;padding:4px 12px;cursor:pointer;}'
+  /* secret newspaper */
+  + '.np-st{font-family:"Nunito",sans-serif;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8B6914;}'
+  + '.np-p{font-size:15px;line-height:1.5;color:#3A4A6B;margin:4px 0 10px;}'
+  + '.np-two{margin-top:16px;padding-top:14px;border-top:1px dashed #EBD9AF;}'
+  + '.np-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;padding:8px 10px;border:1px solid #EEE6D2;border-radius:8px;margin-bottom:6px;background:#FFFDF7;}'
+  + '.np-h{font-family:"Times New Roman",Georgia,serif;font-size:16px;font-weight:700;color:#1A1A1A;}'
+  + '.np-btns{display:flex;gap:4px;}.np-btns button{font-family:"Nunito",sans-serif;font-size:12px;font-weight:800;border:1.5px solid #D9CFB8;background:#fff;color:#56627F;border-radius:999px;padding:4px 10px;cursor:pointer;}'
+  + '.np-btns button[data-s="1"]{border-color:#E8B4AE;color:#9A2A22;}'
+  + '.np-why{grid-column:1/-1;font-size:13px;color:#56627F;}'
+  + '.np-row.ok{border-color:#9ED3B2;background:#F2FBF5;}.np-row.ok .np-btns button:not(.on){opacity:.35;}.np-row.ok .np-why{color:#2F7A4F;}'
+  + '.np-row.no .np-why{color:#B8322A;}'
+  + '.np-score{font-family:"Nunito",sans-serif;font-size:13px;font-weight:800;color:#8B6914;}'
+  + '.np-type{display:flex;gap:6px;flex-wrap:wrap;}'
+  + '.np-in{flex:1;min-width:180px;font-family:"Courier New",monospace;font-size:16px;padding:8px 10px;border:2px solid #3A3940;border-radius:6px;background:#FFFDF7;}'
+  + '.np-print,.np-pass{font-family:"Nunito",sans-serif;font-size:13px;font-weight:800;color:#fff;background:#0E1C42;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;}'
+  + '.np-pass{margin-top:10px;background:#8B6914;}'
+  + '.np-sheet{margin-top:12px;max-width:360px;padding:12px 14px;background:#F4EEDD;border:1px solid #D6CBAF;box-shadow:2px 3px 6px rgba(0,0,0,.12);font-family:"Times New Roman",Georgia,serif;color:#1A1A1A;transition:transform .6s,max-height .6s,opacity .6s;transform-origin:top left;}'
+  + '.np-mast{text-align:center;font-size:22px;font-weight:900;letter-spacing:.08em;border-bottom:3px double #1A1A1A;padding-bottom:4px;}'
+  + '.np-mast small{display:block;font-size:10px;font-weight:400;letter-spacing:.1em;font-style:italic;}'
+  + '.np-hl{font-size:20px;font-weight:700;line-height:1.25;margin:10px 0;min-height:1.3em;text-transform:uppercase;}'
+  + '.np-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}.np-cols i{height:42px;background:repeating-linear-gradient(#8C8574 0 2px,transparent 2px 7px);opacity:.5;}'
+  + '.np-sheet.folded{transform:scale(.35) rotate(-6deg);opacity:.75;}'
+  + '.np-note{margin-top:8px;font-size:15px;line-height:1.5;color:#2F7A4F;}'
   /* morse */
   + '.mo-body{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;align-items:center;}'
   + '@media (max-width:560px){.mo-body{grid-template-columns:1fr;justify-items:center;}}'
@@ -672,6 +717,145 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
     host.appendChild(el);
   }
 
+  /* ── 6. the ration card (day 2) ─────────────────────────────── */
+  var SHOP = [
+    { k: 'bread', name: 'Rye bread', icon: '🍞', need: 'bread' },
+    { k: 'flour', name: 'Flour', icon: '🌾', need: 'bread' },
+    { k: 'sugar', name: 'Sugar', icon: '🍬', need: 'sugar' },
+    { k: 'soap', name: 'Soap', icon: '🧼', need: 'soap' },
+    { k: 'coffee', name: 'Real coffee', icon: '☕', sold: true },
+    { k: 'grain', name: 'Grain “coffee”', icon: '🫘', need: null },
+    { k: 'potato', name: 'Potatoes', icon: '🥔', need: null },
+    { k: 'herring', name: 'Herring', icon: '🐟', need: null }
+  ];
+  var COUPONS = { bread: 3, sugar: 1, soap: 1 };
+  function rationCard(host, opt) {
+    var el = card('▦', 'The Ration Card', 'Copenhagen, 1941. Do the family shopping.', [
+      'During the war, many things were hard to get. To make sure everyone got a fair share, Denmark gave each family <b>ration cards</b> for things like bread, sugar and soap.',
+      'Each card had little <b>coupons</b>. To buy a rationed item, the shopkeeper tore off a coupon. When the coupons were gone, you waited for next month’s card, even if you had money.',
+      'Some things vanished almost completely. Real coffee was one of them, so Danes drank “coffee” made from roasted grain instead. This shop is simplified, but the idea is real.'
+    ]);
+    var b = el.querySelector('.bk-body');
+    var left = {}; for (var c in COUPONS) left[c] = COUPONS[c];
+    var basket = [];
+    function couponHTML() {
+      var h = '';
+      Object.keys(COUPONS).forEach(function (t) {
+        for (var i = 0; i < COUPONS[t]; i++) h += '<span class="rc-cp' + (i >= left[t] ? ' torn' : '') + '" data-t="' + t + '"><b>' + t.toUpperCase() + '</b><i>1</i></span>';
+      });
+      return h;
+    }
+    b.innerHTML =
+      '<div class="rc-body">' +
+        '<div class="rc-card"><div class="rc-h">RATION CARD<small>Copenhagen · 1941</small></div><div class="rc-coupons"></div><div class="rc-foot">Keep this card safe. No coupon, no sugar.</div></div>' +
+        '<div class="rc-right">' +
+          '<div class="rc-list"><b>Mother’s list:</b> bread for the week, sugar for Sunday’s cake, soap, and coffee for Father.</div>' +
+          '<div class="rc-shelf" role="group" aria-label="Shop shelf"></div>' +
+          '<div class="rc-msg" aria-live="polite">Click an item to buy it.</div>' +
+          '<div class="rc-basket"><span>Basket:</span> <em>empty</em></div>' +
+          '<button type="button" class="rc-reset">Start over</button>' +
+        '</div>' +
+      '</div>';
+    var cps = b.querySelector('.rc-coupons'), shelf = b.querySelector('.rc-shelf'), msg = b.querySelector('.rc-msg'), bk = b.querySelector('.rc-basket');
+    function paint() {
+      cps.innerHTML = couponHTML();
+      bk.innerHTML = '<span>Basket:</span> ' + (basket.length ? basket.map(function (x) { return x.icon + ' ' + esc(x.name); }).join(', ') : '<em>empty</em>');
+    }
+    SHOP.forEach(function (it) {
+      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'rc-item' + (it.sold ? ' sold' : '');
+      btn.innerHTML = '<span class="rc-ic" aria-hidden="true">' + it.icon + '</span><span class="rc-nm">' + esc(it.name) + '</span><span class="rc-tag">' + (it.sold ? 'Sold out' : it.need ? '1 ' + it.need + ' coupon' : 'No coupon') + '</span>';
+      btn.onclick = function () {
+        if (it.sold) { msg.textContent = 'Sorry, no real coffee. We haven’t had any for a long time. Try the grain “coffee” instead.'; msg.className = 'rc-msg no'; return; }
+        if (it.need) {
+          if (!left[it.need]) { msg.textContent = 'No ' + it.need + ' coupons left! You’ll have to wait for next month’s card.'; msg.className = 'rc-msg no'; return; }
+          left[it.need]--;
+          var torn = cps.querySelectorAll('.rc-cp[data-t="' + it.need + '"]:not(.torn)');
+          var last = torn[torn.length - 1]; if (last) last.classList.add('tearing');
+          msg.textContent = 'The shopkeeper tears off one ' + it.need + ' coupon.'; msg.className = 'rc-msg ok';
+        } else { msg.textContent = 'No coupon needed for ' + it.name.toLowerCase() + '.'; msg.className = 'rc-msg ok'; }
+        basket.push(it);
+        setTimeout(function () {
+          paint();
+          var used = (COUPONS.bread - left.bread) + (COUPONS.sugar - left.sugar) + (COUPONS.soap - left.soap);
+          if (used === 5) { msg.textContent = 'Every coupon is used up. Families had to plan each week carefully, and trade or share with neighbors when they ran short.'; msg.className = 'rc-msg done'; }
+        }, 380);
+      };
+      shelf.appendChild(btn);
+    });
+    b.querySelector('.rc-reset').onclick = function () { for (var t in COUPONS) left[t] = COUPONS[t]; basket = []; msg.textContent = 'Click an item to buy it.'; msg.className = 'rc-msg'; paint(); };
+    paint();
+    host.appendChild(el);
+  }
+
+  /* ── 7. the secret newspaper (day 3) ────────────────────────── */
+  var HEADLINES = [
+    { t: 'Tivoli Gardens open for summer concerts', secret: false, why: 'Everyday news like this was allowed.' },
+    { t: 'Britain fights on: the latest news from London radio', secret: true, why: 'News from the BBC was not allowed in papers the Germans controlled.' },
+    { t: 'New ration rules start on Monday', secret: false, why: 'Official notices like this were printed openly.' },
+    { t: 'German army losing battles far away in Russia', secret: true, why: 'The censors stopped war news that made Germany look weak.' },
+    { t: 'Sunny weekend ahead for Copenhagen', secret: false, why: 'The weather was safe to print.' },
+    { t: 'Stand together, Danes, and don’t believe everything you read', secret: true, why: 'Words that told Danes to resist could only go in a secret paper.' }
+  ];
+  function paperCard(host, opt) {
+    var el = card('✎', 'The Secret Newspaper', 'Sort the headlines, then print your own.', [
+      'After Germany took over Denmark, Danish newspapers could only print what German <b>censors</b> allowed. Bad news for Germany, or news from London, was cut out.',
+      'So some brave Danes made <b>secret newspapers</b>. They typed and printed them in hidden rooms and passed them from hand to hand, so people could read the true news. Before the war ended there were hundreds of them.',
+      'Making or even carrying one was dangerous. That is why they were folded small and passed on quietly.'
+    ]);
+    var b = el.querySelector('.bk-body');
+    b.innerHTML =
+      '<div class="np-step"><div class="np-st">Step 1 · Official or secret?</div>' +
+        '<p class="np-p">Would each headline be <b>allowed</b> in the official paper, or could it only go in a <b>secret</b> one?</p>' +
+        '<div class="np-heads"></div><div class="np-score" aria-live="polite"></div></div>' +
+      '<div class="np-step np-two" hidden><div class="np-st">Step 2 · Print your own secret paper</div>' +
+        '<p class="np-p">Type one true, hopeful headline for Danes to read. Keep it short.</p>' +
+        '<div class="np-type"><input class="np-in" maxlength="60" placeholder="Type your headline…" aria-label="Your headline"><button type="button" class="np-print">Print it</button></div>' +
+        '<div class="np-sheet" hidden><div class="np-mast">THE FREE DANE<small>Secret news · Read it, then pass it on</small></div><div class="np-hl"></div><div class="np-cols"><i></i><i></i><i></i></div></div>' +
+        '<button type="button" class="np-pass" hidden>Fold it and pass it on</button><div class="np-note" aria-live="polite"></div>' +
+      '</div>';
+    var heads = b.querySelector('.np-heads'), score = b.querySelector('.np-score'), two = b.querySelector('.np-two');
+    var done = 0;
+    HEADLINES.forEach(function (h) {
+      var row = document.createElement('div'); row.className = 'np-row';
+      row.innerHTML = '<div class="np-h">“' + esc(h.t) + '”</div><div class="np-btns"><button type="button" data-s="0">Allowed</button><button type="button" data-s="1">Secret</button></div><div class="np-why"></div>';
+      Array.prototype.forEach.call(row.querySelectorAll('button'), function (bt) {
+        bt.onclick = function () {
+          if (row.classList.contains('ok')) return;
+          var pick = bt.getAttribute('data-s') === '1';
+          if (pick === h.secret) {
+            row.classList.add('ok'); row.classList.remove('no'); bt.classList.add('on');
+            row.querySelector('.np-why').textContent = (h.secret ? 'Secret. ' : 'Allowed. ') + h.why;
+            done++;
+            score.textContent = done + ' of ' + HEADLINES.length + ' sorted';
+            if (done === HEADLINES.length) { score.textContent = 'All sorted! Now print your own secret paper.'; two.hidden = false; }
+          } else {
+            row.classList.add('no'); row.querySelector('.np-why').textContent = 'Think again: would the German censors let this be printed?';
+          }
+        };
+      });
+      heads.appendChild(row);
+    });
+    var inp = b.querySelector('.np-in'), sheet = b.querySelector('.np-sheet'), hl = b.querySelector('.np-hl'), pass = b.querySelector('.np-pass'), note = b.querySelector('.np-note');
+    function clack() {
+      var c = ac(); if (!c) return; var t = c.currentTime;
+      var len = c.sampleRate * .03, buf = c.createBuffer(1, len, c.sampleRate), d = buf.getChannelData(0);
+      for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3);
+      var s = c.createBufferSource(), g = c.createGain(); s.buffer = buf; g.gain.value = .5; s.connect(g); g.connect(c.destination); s.start(t);
+    }
+    inp.addEventListener('input', clack);
+    b.querySelector('.np-print').onclick = function () {
+      var v = inp.value.trim(); if (!v) { inp.focus(); return; }
+      sheet.hidden = false; sheet.classList.remove('folded'); hl.textContent = ''; pass.hidden = true; note.textContent = '';
+      var i = 0;
+      (function tick() { if (i < v.length) { hl.textContent += v.charAt(i++); clack(); setTimeout(tick, 55); } else { pass.hidden = false; } })();
+    };
+    pass.onclick = function () {
+      sheet.classList.add('folded'); pass.hidden = true;
+      note.textContent = 'Folded small, it slips into a pocket or under a loaf of bread. Your paper is on its way to the next reader.';
+    };
+    host.appendChild(el);
+  }
+
   /* ── 4. the morse key ───────────────────────────────────────── */
   var MORSE = { A: '.-', B: '-...', C: '-.-.', D: '-..', E: '.', F: '..-.', G: '--.', H: '....', I: '..', J: '.---', K: '-.-', L: '.-..', M: '--', N: '-.', O: '---', P: '.--.', Q: '--.-', R: '.-.', S: '...', T: '-', U: '..-', V: '...-', W: '.--', X: '-..-', Y: '-.--', Z: '--..' };
   var WORDS = { 1: 'ALLIES', 2: 'KING', 3: 'STAR', 4: 'SWEDEN' };
@@ -732,14 +916,14 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
   }
 
   /* which bridge-week days each card appears on */
-  KIT.SCHEDULE = { morse: [1, 2, 3, 4], map: [1, 2, 3, 4], records: [2], phone: [3], radio: [4] };
+  KIT.SCHEDULE = { morse: [1, 2, 3, 4], map: [1, 2, 3, 4], records: [2], ration: [2], phone: [3], paper: [3], radio: [4] };
   KIT.mount = function (kind, host, opt) {
     opt = opt || {};
     var days = KIT.SCHEDULE[kind];
     if (days && !opt.force && days.indexOf(opt.day || 1) < 0) return false;
     injectCSS();
     try {
-      ({ records: records, map: mapCard, radio: radioCard, morse: morseCard, phone: phoneCard })[kind](host, opt);
+      ({ records: records, map: mapCard, radio: radioCard, morse: morseCard, phone: phoneCard, ration: rationCard, paper: paperCard })[kind](host, opt);
     } catch (e) { if (window.console) console.warn('bridge kit', kind, e); }
   };
 })();

@@ -3201,8 +3201,8 @@ function sparkleJournal() {
 
 /* Bridge week (15.x): the four "immersive" cards from
    assets/js/oao-bridge-kit.js. The kit decides which days each card
-   appears on (Secret Message + map every day, records day 2, phone
-   day 3, radio day 4); this only loads it and says where each card sits. */
+   appears on (Secret Message + map every day; records + ration card
+   day 2; phone + secret newspaper day 3; radio day 4); this only loads it and says where each card sits. */
 function buildBridgeKit() {
   if (LESSON.book !== 'bridge' || typeof LESSON.day !== 'number') return;
   var s = document.createElement('script');
@@ -3212,6 +3212,8 @@ function buildBridgeKit() {
     K.DATA = K.DATA || {};
     K.DATA.radio = { 1: artURL('audio/radio/news-1.mp3'), 2: artURL('audio/radio/news-2.mp3'),
                      3: artURL('audio/radio/news-3.mp3'), 4: artURL('audio/radio/news-4.mp3') };
+    K.DATA.phone = {};
+    ['operator-hello', 'operator-connect', 'bakery', 'neighbor', 'paper'].forEach(function (k) { K.DATA.phone[k] = artURL('audio/phone/' + k + '.mp3'); });
     var opt = { day: LESSON.day, base: ART.base };
     function mount(kind, ref, before) {
       if (!ref) return;
@@ -3236,6 +3238,9 @@ function buildBridgeKit() {
         if (t && /Read/.test(t.textContent)) { target = acts[i]; break; }
       }
       if (target) mount('map', target, true);
+      /* Ration card (day 2) and secret newspaper (day 3): right after the reading */
+      if (target) mount('paper', target, false);
+      if (target) mount('ration', target, false);
     }
     /* Telephone (day 3) and radio (day 4): top of the Assignment tab */
     if (asg && asg.firstElementChild) mount('phone', asg.firstElementChild, true);
