@@ -1,8 +1,10 @@
 # Lesson 16.2 teacher video scripts
 
-Number the Stars, Day 2 · Ch. 2, Who Is the Man Who Rides Past? Guide this lesson: Grete, the narrator. Each script plays right after Grete's audio clip in the same spot, so it adds to what she says instead of repeating it. About 30 to 60 seconds each.
+Number the Stars, Day 2 · Ch. 2, Who Is the Man Who Rides Past? Guide this lesson: Grete, the narrator. Each script plays right after Grete's audio clip in the same spot, so it adds to what she says instead of repeating it. About 30 to 60 seconds each. A gold 🎬 On screen line is a suggestion for that moment: click a button in it and that card goes up on your video. It is never read aloud.
 
 ## Lesson video · g4ela-16-2
+
+[ON SCREEN: Chapter picture]
 
 Hi, friends. In the last lesson, three girls got stopped on their own street. Today's chapter slows down and goes home with Annemarie at bedtime. You met King Christian last week as history. Now you'll meet him again inside a story Annemarie tells. Take a look at the Then and Now slider on the Read tab. It shows a real Copenhagen street during the war and the same spot today. After you read, you'll study one short sentence the way a writer would. In Writer's Workshop, the moment you chose turns into a claim.
 
@@ -14,10 +16,14 @@ Kirsti wanting a fairy tale with a king in it is so relatable. I asked for the s
 
 ## What Good Readers Do · g4ela-16-2-wgrd
 
+[ON SCREEN: Reading move]
+
 The gap between then and now. I like that, because it turns a memory into a clue. Try it with something from your own life. Think of a place you used to go all the time, like a park or a store, that changed. When you notice the difference, you also start wondering why it changed. That's the move in this chapter. When Annemarie remembers something ordinary, don't just enjoy it. Ask what happened to make it feel so far away. Then write the change in one sentence.
 
 
 ## Daily Oral Language · g4ela-16-2-dol
+
+[ON SCREEN: Sentence B · Show the fix]
 
 That small mark Grete mentions is a comma, and here's how to check if you need one. Cover the word and with your finger. Now read each side by itself. If both sides could be their own sentence, with a who and an action, the comma goes before the and. Now compare that with the model. The king rode his horse and waved has only one who. Waved doesn't have its own person, so no comma there. It's the same and, but a different job.
 
@@ -29,10 +35,14 @@ Slow and careful wins. That might be the first time a game has told me not to hu
 
 ## Morphology · g4ela-16-2-morphology
 
+[ON SCREEN: Word parts]
+
 The handle of the Big Dipper, and maybe a sneaky little star hiding beside it. Keep your eyes open. Here's something to try today. Before you match a root, cover it and read only the rest of the word. Sometimes the leftover part gives you a clue on its own. Inter means between, so interrupt is breaking in between. Watch for another front part that changes the meaning. Then decide. Does this word break something, or lead something?
 
 
 ## Vocabulary · g4ela-16-2-vocabulary
+
+[ON SCREEN: conduct]
 
 Saying the word in a sentence about Annemarie is such a good test. If it fits her story, you've got it. Conduct is a sneaky one, because it has two meanings on the card. One is about how someone behaves, and one is about leading. Here's a fun thing. Say it out loud both ways. When it's a thing, like her conduct was calm, the push is at the front. When it's an action, like to conduct a band, the push moves to the end. Your voice can show which meaning you're using.
 
@@ -54,6 +64,8 @@ Refusing to forget. That gives me chills a little. Here's a real piece of histor
 
 ## Before you read · g4ela-16-2-read
 
+[ON SCREEN: Stop 2]
+
 A story inside a story. I love when authors do that. It's like opening a box and finding a smaller box. Here's a tip for finding where the stories switch. Watch the details. A made-up fairy tale sounds dreamy and far away. A real memory has specific details, like a place, a horse, or something someone said. When the details get real, Annemarie has stopped making things up. One more thing. Use the Then and Now slider at the top of the tab before you start. It'll help you picture the streets she's remembering.
 
 
@@ -70,14 +82,20 @@ Notice the comma. Everything before it is the action. Everything after it is the
 
 ## Before you write · g4ela-16-2-guide3
 
+[ON SCREEN: Q2]
+
 Grete's right that the question about Lise needs care. That's a gentle one. When a question is about sad feelings, it's okay to keep your answer simple and honest. You don't have to write a lot to show you understand. For the question about the king, use what happens in the chapter, not what you remember from last week's reading. And if you're stuck on the famous answer, read that part out loud. Hearing it often helps more than reading it silently.
 
 
 ## Chapter Thinking · g4ela-16-2-chapter
 
+[ON SCREEN: Q3]
+
 Explaining what it means, not just what it says. That's the difference between a good answer and a great one. Here's a way to do it. First, write what the words say, in your own words. Then add a sentence that starts with, This shows that. That second sentence is where your thinking lives. On the question about Lise, two feelings can be true at the same time. Think about how you can feel excited and nervous before a big game, both at once. Look for the detail that shows each feeling, one at a time.
 
 
 ## Writer's Workshop · g4ela-16-2-workshop
+
+[ON SCREEN: Today’s focus]
 
 Sam sharpening his claim reminds me of sharpening a pencil. A dull claim makes a fuzzy point. Here's one thing to watch for. A claim isn't a summary. Annemarie talks to a soldier is just something that happened. A claim takes a side about what it shows. Try reading yours to someone and ask if they could disagree. If no one could, it's a fact, not a claim yet. Add the part that says what you think it means.
