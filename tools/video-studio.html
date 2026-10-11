@@ -101,6 +101,17 @@ main{overflow:auto;padding:18px 22px 120px;min-width:0}
 .prow button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:6px;padding:5px 11px;cursor:pointer;font-weight:800}
 .prow button.on{background:var(--gold);color:#0E1C42}
 .ptext,#pEditBox{max-width:var(--pw,520px);margin:0 auto}
+.pwrap{display:flex;gap:14px;justify-content:center;align-items:flex-start}
+.pwrap .ptext{flex:0 1 var(--pw,520px);margin:0;min-width:0}
+.pside{flex:0 0 180px;max-height:150px;overflow:auto;display:flex;flex-direction:column;gap:5px;border-left:1px solid rgba(255,255,255,.14);padding-left:12px}
+.pside .pslbl{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#f3cf86;margin-top:2px}
+.pside>*{flex-shrink:0}
+.pside button{text-align:left;border:1px solid rgba(232,165,49,.55);background:transparent;color:#f3cf86;border-radius:8px;padding:4px 8px;font:inherit;font-size:12.5px;font-weight:800;cursor:pointer;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pside button:hover{background:rgba(232,165,49,.15)}
+.pside button.on{background:var(--gold);color:#0E1C42}
+.pside button.q{font-family:Georgia,serif;font-style:italic;font-weight:400}
+body.dimrec .pside{opacity:.55}
+@media (max-width:760px){.pwrap{flex-direction:column}.pside{flex:none;max-height:none;flex-direction:row;flex-wrap:wrap;border-left:0;padding-left:0}}
 .ptext{max-height:150px;overflow:auto;line-height:1.5;font-size:22px;scroll-behavior:auto;white-space:pre-wrap}
 .ptext{position:relative}
 .ptext.doc{white-space:normal}
@@ -374,7 +385,10 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
             <button id="pEdit" title="Type or paste a script for this video">Edit</button>
             <label class="up" title="Upload a lesson’s script doc (.txt, .md or Word). Every video in that lesson shows it, opened at its own part.">Upload scripts<input type="file" id="pFile" accept=".txt,.md,.markdown,.docx,text/plain,text/markdown" multiple hidden></label>
           </div>
-          <div class="ptext" id="ptext"></div>
+          <div class="pwrap">
+            <div class="ptext" id="ptext"></div>
+            <aside class="pside" id="pSide" hidden></aside>
+          </div>
           <div id="pEditBox" hidden>
             <textarea id="pArea" placeholder="Type or paste the script for this video…"></textarea>
             <div class="prow"><button id="pSave" class="on">Save script</button><button id="pCancel">Cancel</button><button id="pReset">Use original</button></div>
@@ -889,7 +903,7 @@ function applyW(){ document.querySelector('.prompter').style.setProperty('--pw',
 $('pNarrow').onclick=function(){ pWidth=Math.max(280,pWidth-60); store.set('pwidth',pWidth); applyW(); };
 $('pWide').onclick=function(){ pWidth=Math.min(1200,pWidth+60); store.set('pwidth',pWidth); applyW(); };
 applyW();
-$('pHide').onclick=function(){ var t=$('ptext'); t.hidden=!t.hidden; this.textContent=t.hidden?'Show':'Hide'; };
+$('pHide').onclick=function(){ var t=$('ptext'); t.hidden=!t.hidden; this.textContent=t.hidden?'Show':'Hide'; renderPromptSide(); };
 applyP();
 
 /* ---------- your own scripts ---------- */
@@ -984,15 +998,6 @@ function renderLessonDoc(c, L){
     else if (d.className==='pp') linkWords(d, c);
     if (i===target){ d.classList.add('here'); targetEl=d; }
     pt.appendChild(d);
-    if (i===target){
-      var ps=partsFor(c);
-      if (ps.length){
-        var row=document.createElement('div'); row.className='seccue';
-        row.innerHTML='<span>🎬 On screen for this part:</span>';
-        ps.forEach(function(p){ var b=document.createElement('button'); b.textContent=p.label; b.dataset.pid=p.id; b.title=p.tip||''; b.onclick=function(){ showPart(p); }; row.appendChild(b); });
-        pt.appendChild(row);
-      }
-    }
   });
   $('pLbl').textContent = (L.builtin?'Teacher script · ':'Lesson script · ')+(L.name||c.lessonShort)+(target<0?' · couldn’t find this video’s part, scroll to it':'');
   $('pReset').hidden = true;
@@ -1831,7 +1836,7 @@ function startRec(){
   countdown(3,function(){
     var vs=out.captureStream(30);
     var stream=new MediaStream(vs.getVideoTracks().concat(audioTrack()));
-    chunks=[]; posterBlob=null; frames=[]; vad=[]; vadOn=true; paused=false; pausedTotal=0;
+    chunks=[]; posterBlob=null; frames=[]; vad=[]; vadOn=true; paused=false; pausedTotal=0; pendingQs=[]; renderPromptSide();
     var opts={mimeType:MIME,videoBitsPerSecond:3000000,audioBitsPerSecond:128000,videoKeyFrameIntervalDuration:2000};
     try { recorder=new MediaRecorder(stream,opts); }
     catch(e){ try { recorder=new MediaRecorder(stream,{mimeType:MIME}); } catch(e2){ recorder=new MediaRecorder(stream); } }
@@ -1889,7 +1894,8 @@ function finishRec(){
   var dur=stopDur||((performance.now()-recStart)/1000);
   var blob=new Blob(chunks,{type:MIME.split(';')[0]||'video/mp4'});
   if (!posterBlob){ out.toBlob(function(b){ posterBlob=b; if(review && !review.poster) review.poster=b; },'image/jpeg',0.86); }
-  review={path:current, blob:blob, poster:posterBlob, dur:dur, cues:capCues||[], vad:vad.slice(), trimA:0, trimB:dur, qs:[], noSkip:true};
+  review={path:current, blob:blob, poster:posterBlob, dur:dur, cues:capCues||[], vad:vad.slice(), trimA:0, trimB:dur, qs:pendingQs.slice(), noSkip:true};
+  pendingQs=[];
   buildThumbs(frames.slice(), posterBlob);
   var c=byPath[current];
   $('revTitle').textContent='Your take: '+c.label;
@@ -2232,7 +2238,7 @@ function partsFor(c){
     var v=C[k]; if (!v) return;
     var st=CARD_STYLE[k];
     if (Array.isArray(v)){
-      v.forEach(function(t,i){ out.push({kind:'card', id:k+i, label:(k==='pauses'?'⏸ Stop ':'Q')+(i+1), tag:st.tag+(k==='chapterQs'?' · Q'+(i+1):''), title:st.title, body:t, col:st.col, tip:t}); });
+      v.forEach(function(t,i){ out.push({kind:'card', id:k+i, label:(k==='pauses'?'Show stop ':'Show Q')+(i+1), tag:st.tag+(k==='chapterQs'?' · Q'+(i+1):''), title:st.title, body:t, col:st.col, tip:t}); });
     } else {
       var lab={wgrd:'🧠 Reading move', wordParts:'🧩 Word parts', grammar:'🔧 Grammar rule', spelling:'🐝 Spelling rule', focus:'🖋 Today’s focus', nowTry:'📝 Now you try'}[k]||k;
       out.push({kind:'card', id:k, label:lab, tag:st.tag, title:st.title, body:v, col:st.col, tip:v, rows: k==='wordParts' ? partRows(v) : null});
@@ -2265,7 +2271,47 @@ function linkWords(el, c){
   }
   if (last<txt.length) el.appendChild(document.createTextNode(txt.slice(last)));
 }
+/* the on-screen buttons beside the script: always in reach, whatever you've scrolled to */
+function renderPromptSide(){
+  var box=$('pSide'), c=byPath[sel]; if (!box) return;
+  box.innerHTML='';
+  if (!c){ box.hidden=true; return; }
+  var ps=partsFor(c), qs=quotesFor(c), ws=wordsFor(c), n=0;
+  function head(t){ var h=document.createElement('div'); h.className='pslbl'; h.textContent=t; box.appendChild(h); }
+  function btn(label,cls,on,fn,tip){ var b=document.createElement('button'); b.textContent=label; if(cls) b.className=cls; if(on) b.classList.add('on'); b.title=tip||label; b.onclick=fn; box.appendChild(b); n++; }
+  if (ps.length){ head('🎬 On screen'); ps.forEach(function(p){
+    var on = p.kind==='plate' ? plate.on : samePart(part.cur,p)||samePart(strip.cur,p);
+    btn(p.label,'',on,function(){ showPart(p); },p.tip);
+    if (p.kind==='strip' && samePart(strip.cur,p)) btn(strip.fix?'↺ Unfixed':'✓ Show the fix','',strip.fix,function(){ strip.fix=!strip.fix; renderOnScreen(); },p.why);
+  }); }
+  if (qs.length){ head('❝ Quotes'); qs.forEach(function(q){ btn('“'+q.t+'”','q',sameQ(quote.cur,q),function(){ showQuote(q); },q.t); }); }
+  if (ws.length){ head('📇 Words'); ws.forEach(function(w){ btn((w.e?w.e+' ':'')+w.w,'',!!(word.cur && word.cur.w===w.w),function(){ showWord(w); },w.d); }); }
+  var sg=ideasFor(c);
+  if (sg.length){ head('❓ Question ideas'); sg.forEach(function(s){
+    var used=pendingQs.some(function(q){ return q.q===s.q.q; });
+    btn(s.label,'',used,function(){ markIdea(s); },s.q.q+'\n\nClick while recording, at the moment the video should stop and ask this. You can edit it after.');
+  }); }
+  box.hidden = !n || $('ptext').hidden;
+}
+/* question ideas for this video: section-matched first, else all of them */
+function ideasFor(c){
+  var all=suggestionsFor(c), here=all.filter(function(s){ return s.sec.indexOf(c.id)>-1; });
+  return (here.length?here:all).slice(0,10);
+}
+/* questions marked during a take, at the moment you click */
+var pendingQs=[];
+function ideaQ(s,t){ var q=JSON.parse(JSON.stringify(s.q)); q.t=t; q.choices=(q.choices||[]).slice(0,4); while(q.choices.length<4) q.choices.push(''); q.answer=q.answer||0; q.why=q.why||''; return q; }
+function markIdea(s){
+  if (recording){
+    var t=activeT(); pendingQs.push(ideaQ(s,t)); renderPromptSide();
+    toast('❓ Question marked at '+fmtT(t)+'. You can change it after you stop.');
+  } else if (review){
+    var v=$('revVideo'); v.pause(); review.qs.push(ideaQ(s,v.currentTime||0)); qzRender();
+    toast('Added at '+fmtTs(v.currentTime||0)+' in Stop and answer, below the video');
+  } else toast('Press Record, then click this at the moment the video should stop and ask it');
+}
 function syncPromptCue(){
+  renderPromptSide();
   [].forEach.call(document.querySelectorAll('#ptext .seccue button'),function(b){
     var id=b.dataset.pid;
     b.classList.toggle('on', id==='plate' ? plate.on : !!((part.cur && part.cur.id===id) || (strip.cur && strip.cur.id===id)));
@@ -2402,19 +2448,19 @@ function drawStrip(ctx){
 function suggestionsFor(c){
   if (!c || c.free) return [];
   var C=c.cards||{}, out=[], ws=(c.words||[]).filter(function(w){ return w.d; });
-  (C.chapterQs||[]).forEach(function(q,i){ out.push({sec:['chapter','guide3','read','lesson'], label:'Q'+(i+1)+' (write)', q:{type:'write', q:q}}); });
-  (C.pauses||[]).forEach(function(q,i){ out.push({sec:['read','guide2'], label:'Pause '+(i+1)+' (think)', q:{type:'think', q:q}}); });
+  (C.chapterQs||[]).forEach(function(q,i){ out.push({sec:['chapter','guide3','read','lesson'], label:'Ask Q'+(i+1)+' (they write)', q:{type:'write', q:q}}); });
+  (C.pauses||[]).forEach(function(q,i){ out.push({sec:['read','guide2'], label:'Ask stop '+(i+1)+' (they think)', q:{type:'think', q:q}}); });
   if (ws.length>=2) ws.forEach(function(w,i){
     var others=ws.filter(function(x){ return x!==w; }).slice(0,3), ch=others.map(function(x){ return x.w; }), at=i%(ch.length+1);
     ch.splice(at,0,w.w);
-    out.push({sec:['vocabulary','guide1'], label:'Which word means…? ('+w.w+')', q:{type:'mc', q:'Which word means “'+w.d.replace(/\.$/,'')+'”?', choices:ch, answer:at, why:w.w.charAt(0).toUpperCase()+w.w.slice(1)+': '+w.d}});
+    out.push({sec:['vocabulary','guide1'], label:'Ask: which word means…? ('+w.w+')', q:{type:'mc', q:'Which word means “'+w.d.replace(/\.$/,'')+'”?', choices:ch, answer:at, why:w.w.charAt(0).toUpperCase()+w.w.slice(1)+': '+w.d}});
   });
   var pr=partRows(C.wordParts||'').filter(function(r){ return r.part && /“([^”]+)”/.test(r.rest); });
   if (pr.length>=2) pr.forEach(function(r,i){
     var mean=function(x){ return /“([^”]+)”/.exec(x.rest)[1]; }, ch=pr.map(mean);
-    out.push({sec:['morphology','guide1','wordconn'], label:'What does '+r.part+' mean?', q:{type:'mc', q:'What does '+r.part+' mean?', choices:ch, answer:i, why:r.part+' means “'+mean(r)+'”.'}});
+    out.push({sec:['morphology','guide1','wordconn'], label:'Ask: what does '+r.part+' mean?', q:{type:'mc', q:'What does '+r.part+' mean?', choices:ch, answer:i, why:r.part+' means “'+mean(r)+'”.'}});
   });
-  if (C.wgrd) out.push({sec:['wgrd','read'], label:'Reading move (think)', q:{type:'think', q:C.wgrd}});
+  if (C.wgrd) out.push({sec:['wgrd','read'], label:'Ask: reading move (they think)', q:{type:'think', q:C.wgrd}});
   return out;
 }
 function renderSuggest(){
