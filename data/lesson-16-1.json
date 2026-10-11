@@ -1,0 +1,224 @@
+{
+ "connector": "Last week you learned the true history. Now the story begins, in a real place: a street in Copenhagen in September 1943, three years after German soldiers arrived. Three girls are racing home from school. Watch what happens when someone runs on a street where soldiers stand on the corners.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-welcome",
+   "label": "Grete’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-wgrd",
+   "label": "About today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-dol",
+   "label": "About today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-guide1",
+   "label": "Before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-morphology",
+   "label": "About the stars"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-vocabulary",
+   "label": "About today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-grammar",
+   "label": "About today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-spelling",
+   "label": "About today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-guide2",
+   "label": "Courage Watch"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-read",
+   "label": "Before you read"
+  },
+  "copia": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-copia",
+   "label": "About saying it three ways"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-guide3",
+   "label": "Before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-chapter",
+   "label": "About the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-1-workshop",
+   "label": "About today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello again. It’s Grete. Last week I told you the history. This week I’ll tell it the way a storyteller does. I’m made up, the same way Annemarie is made up. But the Copenhagen I’ll describe is real. Today, the book begins. Three girls race down a street, and two soldiers stop them. Today’s question: how does the author show that danger hides in ordinary things?",
+  "wgrd": "This week’s reading move is about small things. In this book, danger rarely shouts. It stands on a corner, or asks one quiet question. When a small detail feels odd, stop and finish this sentence in your head: people only act this way when… Today, listen closely to how Annemarie answers.",
+  "dol": "The model sentence is about two girls on a street. The sentence to fix has lost its capitals, and two thoughts are squeezed together with no stop between them. One name in it also needs a tiny mark to show that something belongs to someone. Use the model to help you.",
+  "guide1": "Today’s word work starts with noticing. In grammar and spelling, you’ll sort before anyone tells you the rule. That’s on purpose. Look hard, make your best guess, and then check. A rule you find yourself stays with you much longer than one you’re handed.",
+  "morphology": "This week we light a night sky, one star at a time. Two old roots do the work. One means to break. The other means to lead. Read each meaning, then choose the root that finishes the word. By the end of the week, the whole sky will be shining.",
+  "vocabulary": "These four words will follow you all week. Each one has a job in this story: stopping something, behaving a certain way, being moved, and the feeling that something is wrong. Read the sentence, take the word apart, and guess before you flip the card.",
+  "grammar": "Some words show who owns something without using any apostrophe at all. Others look almost the same but mean something different. Sort these into three groups, then name the groups yourself. The little apostrophe will turn out to be the biggest clue.",
+  "spelling": "Say each of these history words out loud, slowly. Somewhere in the middle, a vowel goes soft and quiet, and you can’t tell which letter is spelling it. Sort them by the letter that’s hiding there. Then try saying a related word, where that part gets loud again.",
+  "guide2": "Today’s Courage Watch is about a very small kind of brave. When I was a girl in Copenhagen, we learned not to stare at the soldiers, and not to give them a reason to notice us. Annemarie is ten, and she is frightened. But she answers carefully and stays calm. Sometimes courage is simply choosing your words when your heart is pounding.",
+  "read": "As you read, keep an eye on the corner of the street. Notice what the soldiers are wearing and carrying, and how each girl acts when they’re stopped. Little Kirsti doesn’t act the way the older girls do. Ask yourself why. Stop at each pause question before you go on.",
+  "copia": "Here is one plain sentence about the race in Chapter 1. Your job is to say it three new ways: a new beginning, a stronger verb, and a detail about where or how. Writers have practiced like this for hundreds of years. Each new version shows you something the first one couldn’t.",
+  "guide3": "Now you’ll write about what you read. Keep the chapter close, because each question points back to a detail in it. Then you’ll start the next part of your opinion writing. This time it’s about the book, and about a moment of courage you choose yourself.",
+  "chapter": "Two of today’s questions ask you to find something small: one detail that shows life isn’t normal, and the careful way Annemarie answers. The last question is about her mother’s worry. Think about why being noticed by a soldier could be so dangerous.",
+  "workshop": "Your writing this week is about the book. Today you only have to choose a moment from Chapter 1 where someone shows courage or loyalty. Be specific. Not just that she’s brave, but exactly what she does. A specific moment gives you something real to argue about tomorrow."
+ },
+ "writingFocus": "Claim + Reasons",
+ "dol": {
+  "a": {
+   "raw": "ellen and her family lived in copenhagen they were annemaries neighbors",
+   "fixed": "<strong>Ellen</strong> and her family lived in <strong>Copenhagen.</strong> <strong>They</strong> were <strong>Annemarie’s</strong> neighbors<strong>.</strong>",
+   "why": "Capitals on Ellen, Copenhagen and Annemarie, a period after Copenhagen, a capital T to start the second sentence, and an apostrophe-s on Annemarie’s to show belonging."
+  },
+  "b": {
+   "raw": "kirsti ran after annemarie and ellen she was annemaries little sister",
+   "fixed": "<strong>Kirsti</strong> ran after <strong>Annemarie</strong> and <strong>Ellen.</strong> <strong>She</strong> was <strong>Annemarie’s</strong> little sister<strong>.</strong>",
+   "why": "Capitals on Kirsti, Annemarie and Ellen, a period after Ellen, a capital S to start the second sentence, and an apostrophe-s on Annemarie’s to show belonging."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and explain what that detail tells you about how the people of Copenhagen feel.",
+  "journal-q2": "… and compare how Annemarie and Kirsti each act around the soldiers.",
+  "journal-q3": "… and explain why Mrs. Johansen wants the girls to be like everyone else in a crowd."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "miss": {
+  "match": {
+   "interrupt": "Interrupt has the root that means break. Look for the meaning about stopping something in the middle.",
+   "conduct": "Conduct has the root that means lead. Look for the meaning about how someone behaves, or leads.",
+   "relocate": "Relocate is about place: loc means place, re means again. Look for the meaning about moving somewhere new.",
+   "suspicion": "Suspicion is a feeling, not an action. Look for the meaning about sensing that something is wrong."
+  },
+  "sort": {
+   "her coat": "Her sits right before a noun here: her coat. Which group is for words that come before a noun?",
+   "the coat is hers": "Hers stands alone at the end. There is no noun after it.",
+   "it’s cold": "Read it as it is cold. Does anything own anything?",
+   "their house": "Their comes right before the noun house.",
+   "the house is theirs": "Theirs stands alone. No noun follows it.",
+   "they’re leaving": "Read it as they are leaving. Is anyone owning anything?",
+   "sep·a·rate": "Say sep-uh-rate. The quiet middle sound is spelled with which letter? Think of separation.",
+   "res·i·dent": "Say RES-uh-dent. The quiet sound in the middle is spelled with which letter? Think of reside.",
+   "sol·dier": "Say it slowly: SOLE-jer. The soft sound near the end sits in the ie. Which column is for an e?",
+   "of·fi·cer": "Say OFF-uh-ser. The quiet sound is spelled with which letter? Think of official.",
+   "gov·ern·ment": "Say GUV-urn-ment. The quiet sound in the middle is spelled with which letter? Think of govern.",
+   "At·lan·tic": "Say at-LAN-tic. The first sound is quick and soft. Which letter spells it?"
+  }
+ },
+ "copia": {
+  "seed": "Annemarie <b data-verb>ran</b> down the street toward the corner.",
+  "eg": [
+   "After school, Annemarie ran down the street toward the corner.",
+   "Annemarie <i>raced</i> down the street toward the corner.",
+   "Annemarie ran down the street toward the corner, her schoolbooks bouncing on her back."
+  ]
+ },
+ "wordgame": {
+  "type": "stars",
+  "strand": "Morphology",
+  "kicker": "Light the Stars",
+  "h": "The bowl of the Big Dipper",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. Each right word clears the clouds and a star comes out.",
+  "why": {
+   "icon": "✨",
+   "q": "Why stars?",
+   "t": "This book is called <i>Number the Stars</i>. In Denmark, the Big Dipper has its own name: <i>Karlsvognen</i>, Charles’s Wagon. <b>rupt</b> means <i>to break</i>, so each right word breaks a cloud apart and a star shines through. <b>duct</b> and <b>duce</b> mean <i>to lead</i>, so each new star leads the line on to the next. One part of the sky each lesson, until it is full."
+  },
+  "meanings": {
+   "rupt": "break",
+   "duct": "lead",
+   "duce": "lead"
+  },
+  "winDay": "Four stars make the bowl of Karlsvognen, the Big Dipper. The next lesson’s words light its handle.",
+  "win": "Every star is out. Follow the two stars at the front of Karlsvognen’s bowl: they lead your eye straight to the North Star, the star sailors have steered by for thousands of years. <b>rupt</b> = break, <b>duct</b> and <b>duce</b> = lead."
+ },
+ "notes": {
+  "wgrd": "Small details can carry danger. When something feels odd, finish the sentence “people only act this way when…” and notice how carefully a character answers.",
+  "vocab": [
+   [
+    "interrupt",
+    "To stop something while it is happening."
+   ],
+   [
+    "conduct",
+    "How someone behaves or acts, or to lead or guide."
+   ],
+   [
+    "relocate",
+    "To move someone or something to a new place, sometimes by force."
+   ],
+   [
+    "suspicion",
+    "A feeling that something is wrong, even if you don’t have proof."
+   ]
+  ],
+  "wordParts": "rupt means “to break” (interrupt, erupt). duct and duce mean “to lead” or “to bring” (conduct, introduce).",
+  "grammar": "Possessive pronouns show who owns something. Some sit before a noun (her coat, their house); some stand alone (the coat is hers). They never take an apostrophe: it’s means “it is” and they’re means “they are.”",
+  "spelling": "In a long word, a vowel you say quickly can fade into a soft /uh/ sound called a schwa, so you can’t hear which letter spells it. Find a related word where that part is loud: separate → separation, government → govern."
+ },
+ "plate": {
+  "src": "plates/nts-16-1.jpg",
+  "alt": "A German soldier with a rifle stands guard on a wide Copenhagen street while people wait behind a barrier.",
+  "credit": "German soldiers block Østerbrogade in Copenhagen, 9 April 1940, the day the occupation began. Photo: H. Lund Hansen, Nationalmuseet, CC BY-SA 2.0, via Wikimedia Commons."
+ },
+ "nts": {
+  "case": {
+   "src": "plates/nts-case-16-1.jpg",
+   "title": "A Book with a Secret",
+   "date": "Denmark · 1940s",
+   "alt": "An old book lying open in a museum case. The middle of its pages has been cut out to make a hidden hollow.",
+   "label": [
+    "From the outside, this looks like any old book on a shelf. Open it, and the middle of the pages has been cut away to make a hiding place.",
+    "During the occupation, Danes hid things the Germans had banned inside ordinary objects. This book hid tiny rolls of film with secret messages. In Chapter 1, Annemarie’s family gets a secret newspaper, <i>De Frie Danske</i>, folded small and tucked among ordinary books and papers."
+   ],
+   "look": [
+    {
+     "q": "Why would a book make a good hiding place?",
+     "a": "Nearly every home had books. A soldier searching a room would see a shelf of them and think nothing of it."
+    },
+    {
+     "q": "What would happen if a soldier opened it?",
+     "a": "The secret would be found, and the person who owned it could be arrested. Hiding something was always a risk."
+    }
+   ],
+   "credit": "A hollowed-out book used to smuggle microfilm. Frihedsmuseet (Museum of Danish Resistance), Copenhagen. Photo: Leif Jørgensen, CC BY-SA 4.0, via Wikimedia Commons."
+  }
+ }
+}

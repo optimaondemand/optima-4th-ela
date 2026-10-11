@@ -1,0 +1,211 @@
+{
+ "connector": "Ellen is staying the night. The girls play with paper dolls, and Kirsti complains about her ugly new shoes. It feels like an ordinary evening. Then, after Kirsti falls asleep, Mama and Papa tell Annemarie the truth. Today’s chapter is quiet, and it changes everything.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-welcome",
+   "label": "Grete’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-wgrd",
+   "label": "About today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-dol",
+   "label": "About today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-guide1",
+   "label": "Before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-morphology",
+   "label": "About the stars"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-vocabulary",
+   "label": "About today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-grammar",
+   "label": "About today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-spelling",
+   "label": "About today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-guide2",
+   "label": "Courage Watch"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-read",
+   "label": "Before you read"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-guide3",
+   "label": "Before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-chapter",
+   "label": "About the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-4-workshop",
+   "label": "About today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Grete. Today’s chapter starts with paper dolls and a little girl who hates her new shoes. It ends with a secret told after dark. You’ll warm up, work with words, read Chapter 4, and collect two new cards about real people. Today’s question: why was this the moment Annemarie’s parents had to tell her the truth?",
+  "wgrd": "All week you’ve been noticing small signs: soldiers on a corner, a king who rode alone, a lock on a shop door. Today, add up the clues. One small sign might be nothing. Four signs pointing the same way are a pattern. Ask what all of them, together, are telling you.",
+  "dol": "The sentence to fix is about real history, and it’s full of names that need capitals: the name of a group, the name of a people, and the name of a country. Look back at the model to see how a sentence begins and ends.",
+  "guide1": "Today is review, and some answers are already correct. In grammar and spelling, tap only the mistakes. If you tap one that is fine, it costs you. So read each one twice before you decide.",
+  "morphology": "This is the last night of stars. Four words climb the handle of the Little Dipper, and the last one leads you to the North Star. The two roots you know are here again, plus one new word about water. Read the meaning, find the root.",
+  "vocabulary": "Last match of the week. See if you can do it with no misses at all. Then try one more thing: say all four words in one sentence about Chapter 4. It’s harder than it sounds.",
+  "grammar": "This little draft about Chapter 4 has some apostrophes that don’t belong. Owner-words like hers, its and theirs never take one. But a name, like Lise’s or her sister’s, does. Tap only the sentences with a real problem.",
+  "spelling": "Some of these words are spelled correctly, and some have lost their hidden letter. For each one, say the related word, the one where the quiet part gets loud. If the letters don’t match what you hear, tap it.",
+  "guide2": "Today’s Courage Watch is about being trusted. Annemarie’s parents decide she is old enough to hear the truth, and that means she is old enough to be brave with it. When I was ten, my father told me something I had to keep to myself. I remember feeling frightened, and proud at the same time.",
+  "read": "The first part of this chapter is light, almost funny. Enjoy it, and ask yourself why the author put it here. Then notice the room getting quiet once Kirsti is asleep. Listen to how carefully the grown-ups choose their words, and notice what changes for Ellen tonight.",
+  "guide3": "Now you write. The questions ask what Annemarie learns tonight, what one careful word really means, and how her life is different by the end of the chapter. Then you’ll find proof in the book for each of the reasons you wrote yesterday.",
+  "chapter": "For the second question, look for the word the grown-ups use for what the Nazis plan to do. Then explain what Annemarie understands it really means. The difference between the polite word and the truth is the whole point.",
+  "workshop": "Your reasons say why you believe your claim. Today, you prove them. For each reason, find one moment in Chapters 1 to 4, and write where it happens. A strong piece of evidence is specific: something a character does or says that anyone could find in the book."
+ },
+ "writingFocus": "Claim + Reasons",
+ "dol": {
+  "a": {
+   "raw": "the nazis planned to relocate the jews of denmark that very night",
+   "fixed": "<strong>The</strong> <strong>Nazis</strong> planned to relocate the <strong>Jews</strong> of <strong>Denmark</strong> that very night<strong>.</strong>",
+   "why": "A capital T to start, capitals on Nazis, Jews and Denmark because they are names, and a period at the end."
+  },
+  "b": {
+   "raw": "the rosens went to the synagogue for the jewish new year",
+   "fixed": "<strong>The</strong> <strong>Rosens</strong> went to the synagogue for the <strong>Jewish</strong> <strong>New</strong> <strong>Year</strong><strong>.</strong>",
+   "why": "A capital T to start, capitals on Rosens, Jewish, New and Year because they are names, and a period at the end."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and explain why they wait until Kirsti is asleep.",
+  "journal-q2": "… and explain why grown-ups might choose a softer word for something terrible.",
+  "journal-q3": "… and say how Annemarie seems to feel about it."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "miss": {
+  "match": {
+   "interrupt": "Interrupt has the root that means break. Look for the meaning about stopping something in the middle.",
+   "conduct": "Conduct has the root that means lead. Look for the meaning about how someone behaves, or leads.",
+   "relocate": "Relocate is about place: loc means place, re means again. Look for the meaning about moving somewhere new.",
+   "suspicion": "Suspicion is a feeling, not an action. Look for the meaning about sensing that something is wrong."
+  }
+ },
+ "wordgame": {
+  "type": "stars",
+  "strand": "Morphology",
+  "kicker": "Light the Stars",
+  "h": "Up the handle to the North Star",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. Each right word clears the clouds and a star comes out.",
+  "why": {
+   "icon": "✨",
+   "q": "Why stars?",
+   "t": "This book is called <i>Number the Stars</i>. In Denmark, the Big Dipper has its own name: <i>Karlsvognen</i>, Charles’s Wagon. <b>rupt</b> means <i>to break</i>, so each right word breaks a cloud apart and a star shines through. <b>duct</b> and <b>duce</b> mean <i>to lead</i>, so each new star leads the line on to the next. One part of the sky each lesson, until it is full."
+  },
+  "meanings": {
+   "rupt": "break",
+   "duct": "lead",
+   "duce": "lead"
+  },
+  "win": "Every star is out. Follow the two stars at the front of Karlsvognen’s bowl: they lead your eye straight to the North Star, the star sailors have steered by for thousands of years. <b>rupt</b> = break, <b>duct</b> and <b>duce</b> = lead."
+ },
+ "notes": {
+  "wgrd": "Keep a running list of small signs. One sign might be nothing; several pointing the same way are a conclusion. Finish the sentence “all of these details together tell me that…”",
+  "vocab": [
+   [
+    "interrupt",
+    "To stop something while it is happening."
+   ],
+   [
+    "conduct",
+    "How someone behaves or acts, or to lead or guide."
+   ],
+   [
+    "relocate",
+    "To move someone or something to a new place, sometimes by force."
+   ],
+   [
+    "suspicion",
+    "A feeling that something is wrong, even if you don’t have proof."
+   ]
+  ],
+  "wordParts": "rupt means “to break” (interrupt, erupt). duct and duce mean “to lead” or “to bring” (conduct, introduce).",
+  "grammar": "Possessive pronouns show who owns something. Some sit before a noun (her coat, their house); some stand alone (the coat is hers). They never take an apostrophe: it’s means “it is” and they’re means “they are.”",
+  "spelling": "In a long word, a vowel you say quickly can fade into a soft /uh/ sound called a schwa, so you can’t hear which letter spells it. Find a related word where that part is loud: separate → separation, government → govern."
+ },
+ "plate": {
+  "src": "plates/nts-16-4.jpg",
+  "alt": "A small wooden box full of paper ration stamps on a table beside a teacup.",
+  "credit": "Danish ration stamps from 1944. Butter, coffee, sugar and many everyday things could only be bought with stamps like these. Besættelsesmuseet, Aarhus. Photo: Leif Jørgensen, CC BY-SA 4.0, via Wikimedia Commons."
+ },
+ "nts": {
+  "case": {
+   "src": "plates/nts-case-16-4.jpg",
+   "title": "In the Great Synagogue",
+   "date": "Krystalgade, Copenhagen",
+   "alt": "An older man with a beard, wearing a tall dark hat and robe, stands reading from a book in a synagogue, between two tall lamps.",
+   "label": [
+    "This is Max Friediger, the chief rabbi of Denmark, in the Great Synagogue on Krystalgade in Copenhagen. Danish Jews had prayed there since 1833.",
+    "In Chapter 4, the Rosens go to the synagogue for the Jewish New Year, and the rabbi gives the congregation a warning. That really happened in 1943. By then the Germans had already arrested Rabbi Friediger, so another rabbi, Marcus Melchior, gave the warning. You can meet him on today’s Real Rescuers card."
+   ],
+   "look": [
+    {
+     "q": "What is the rabbi doing?",
+     "a": "He is reading from a book at the front of the synagogue, the way a rabbi leads prayers during a service."
+    },
+    {
+     "q": "Why would a warning given here reach so many families?",
+     "a": "On a holiday the synagogue was full. Everyone who heard the warning could pass it on to family, friends and neighbors."
+    }
+   ],
+   "credit": "Chief Rabbi Max Friediger in the Great Synagogue, Krystalgade, Copenhagen. Frihedsmuseet / National Museum of Denmark, CC BY-SA 2.0, via Wikimedia Commons."
+  },
+  "thennow": {
+   "then": {
+    "src": "plates/nts-then-16-4.jpg",
+    "label": "June 1944",
+    "alt": "Tivoli’s old concert hall, with towers and domes, and smoke rising behind it after the fire.",
+    "credit": "June 1944: Tivoli’s concert hall on the day it was set on fire. Photo: Oluf Wissing, CC BY-SA 4.0, via Wikimedia Commons."
+   },
+   "now": {
+    "src": "plates/nts-now-16-4.jpg",
+    "label": "Today",
+    "alt": "Tivoli Concert Hall today, a long modern building behind a fountain and flower beds.",
+    "credit": "Today: Tivoli Concert Hall, Copenhagen. Photo: Dennis G. Jarvis, 2009, CC BY-SA 2.0, via Wikimedia Commons."
+   },
+   "sub": "Tivoli’s concert hall, then and now.",
+   "caption": "Annemarie remembers Tivoli’s music, lights and fireworks. In June 1944, Danish Nazi helpers set fire to part of the park to punish the Danes, and the concert hall burned. A new hall opened on the same spot in 1956. Drag the line to see both."
+  }
+ }
+}

@@ -1,0 +1,218 @@
+{
+ "connector": "Annemarie tries to tell her little sister a fairy tale about a king and queen. But Denmark has a real king, and Annemarie remembers him. Today’s chapter is a memory inside a story. As you read, ask why one old memory matters so much to Annemarie now.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-welcome",
+   "label": "Grete’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-wgrd",
+   "label": "About today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-dol",
+   "label": "About today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-guide1",
+   "label": "Before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-morphology",
+   "label": "About the stars"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-vocabulary",
+   "label": "About today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-grammar",
+   "label": "About today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-spelling",
+   "label": "About today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-guide2",
+   "label": "Courage Watch"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-read",
+   "label": "Before you read"
+  },
+  "rwm": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-rwm",
+   "label": "About the writer’s sentence"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-guide3",
+   "label": "Before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-chapter",
+   "label": "About the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-16-2-workshop",
+   "label": "About today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Grete. Today Kirsti wants a fairy tale with a king in it. But Denmark had a real king, and I remember him well. You’ll warm up, work with some words, read Chapter 2, then study one short sentence the way a writer would. Today’s question: what does King Christian the Tenth mean to the Danes?",
+  "wgrd": "Today’s reading move is about the gap between then and now. When a character remembers something ordinary from before the war, ask: could that still happen today, on these streets? The space between the memory and the present is where you’ll find the danger.",
+  "dol": "The model is a short sentence about a king and his horse. The sentence to fix is longer. It joins two complete thoughts with the word and, and it needs a small mark before that word. It also needs a capital on the name for the people of Denmark.",
+  "guide1": "Today’s word work asks you to hunt. In grammar and spelling, more than one answer is hiding in each set, and some of the words that look right are not. Read every word before you tap. Slow and careful wins here.",
+  "morphology": "Last time you lit the bowl of the Big Dipper. Today, four new words light its handle. The roots haven’t changed: one means to break, and one means to lead. Watch the meanings closely. They’ll tell you which root belongs.",
+  "vocabulary": "Today you match this week’s four words to their meanings. Before you tap, try saying each word in a sentence about Annemarie. If you can use it, you know it. If you can’t yet, the match will help.",
+  "grammar": "Every sentence here has more than one owner-word hiding in it, and a couple of look-alikes with apostrophes. Tap only the words that show who owns something. If a word can be read as two words, like it is, leave it alone.",
+  "spelling": "Most of these words hide a soft, quiet vowel. Today you’re looking for the ones that don’t. Say each word out loud. If every part comes out clear and strong, that’s one to tap.",
+  "guide2": "Today’s Courage Watch is about remembering. King Christian rode his horse through Copenhagen almost every morning, often with no guards at all. My grandmother used to stand on the pavement just to see him pass. Watching him was a way of saying: we still remember who we are. Sometimes courage is simply refusing to forget.",
+  "read": "This chapter has a story inside a story. Watch for the moment Annemarie stops telling a made-up fairy tale and starts remembering something true. Notice a famous answer a boy once gave to a German soldier. And notice the sister Annemarie hardly ever talks about.",
+  "rwm": "Today’s sentence holds one moment open. A question has been asked, and instead of giving the answer, the writer shows a girl shaking her head, waiting. That little pause makes you need the next line. When you try it, freeze your character just before the answer arrives.",
+  "guide3": "Now you write. Two questions are about the king and the famous answer the boy gave. The third is about Lise, and that one needs care. Then you’ll turn yesterday’s moment into a claim: one strong sentence that takes a side.",
+  "chapter": "For the second question, the answer the boy gives is short, but it carries a lot. Explain what it means, not just what it says. For the third, two feelings sit side by side in Annemarie. Name both, and find the detail that shows each one.",
+  "workshop": "Yesterday you chose a moment. Today it becomes a claim. A strong claim has three parts: who, which virtue, and exactly how they show it. Look at how Sam sharpens his. Then build yours, one part at a time, and put it together into one clear sentence."
+ },
+ "writingFocus": "Claim + Reasons",
+ "dol": {
+  "a": {
+   "raw": "the king rode his horse and the danes waved to their king every morning",
+   "fixed": "<strong>The</strong> king rode his horse<strong>,</strong> and the <strong>Danes</strong> waved to their king every morning<strong>.</strong>",
+   "why": "A capital T to start, a capital D on Danes, a comma before and because it joins two complete thoughts, and a period at the end."
+  },
+  "b": {
+   "raw": "the king rode alone and the people of copenhagen watched him pass",
+   "fixed": "<strong>The</strong> king rode alone<strong>,</strong> and the people of <strong>Copenhagen</strong> watched him pass<strong>.</strong>",
+   "why": "A capital T to start, a capital C on Copenhagen, a comma before and because it joins two complete thoughts, and a period at the end."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and explain why a real king might matter more to Annemarie than a fairy-tale one.",
+  "journal-q2": "… and say what that answer shows about how ordinary Danes felt.",
+  "journal-q3": "… and explain why Annemarie’s parents never speak of Lise."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "miss": {
+  "match": {
+   "interrupt": "Interrupt has the root that means break. Look for the meaning about stopping something in the middle.",
+   "conduct": "Conduct has the root that means lead. Look for the meaning about how someone behaves, or leads.",
+   "relocate": "Relocate is about place: loc means place, re means again. Look for the meaning about moving somewhere new.",
+   "suspicion": "Suspicion is a feeling, not an action. Look for the meaning about sensing that something is wrong."
+  }
+ },
+ "wordgame": {
+  "type": "stars",
+  "strand": "Morphology",
+  "kicker": "Light the Stars",
+  "h": "The handle, and a star hiding beside it",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. Each right word clears the clouds and a star comes out.",
+  "why": {
+   "icon": "✨",
+   "q": "Why stars?",
+   "t": "This book is called <i>Number the Stars</i>. In Denmark, the Big Dipper has its own name: <i>Karlsvognen</i>, Charles’s Wagon. <b>rupt</b> means <i>to break</i>, so each right word breaks a cloud apart and a star shines through. <b>duct</b> and <b>duce</b> mean <i>to lead</i>, so each new star leads the line on to the next. One part of the sky each lesson, until it is full."
+  },
+  "meanings": {
+   "rupt": "break",
+   "duct": "lead",
+   "duce": "lead"
+  },
+  "winDay": "Karlsvognen is complete. Look closely at the middle of the handle: that tiny star beside it is Alcor. The next lesson moves across the sky.",
+  "win": "Every star is out. Follow the two stars at the front of Karlsvognen’s bowl: they lead your eye straight to the North Star, the star sailors have steered by for thousands of years. <b>rupt</b> = break, <b>duct</b> and <b>duce</b> = lead."
+ },
+ "notes": {
+  "wgrd": "Find the gap between then and now: notice a detail about life before the war, ask whether it could still happen, and say the change in one sentence.",
+  "vocab": [
+   [
+    "interrupt",
+    "To stop something while it is happening."
+   ],
+   [
+    "conduct",
+    "How someone behaves or acts, or to lead or guide."
+   ],
+   [
+    "relocate",
+    "To move someone or something to a new place, sometimes by force."
+   ],
+   [
+    "suspicion",
+    "A feeling that something is wrong, even if you don’t have proof."
+   ]
+  ],
+  "wordParts": "rupt means “to break” (interrupt, erupt). duct and duce mean “to lead” or “to bring” (conduct, introduce).",
+  "grammar": "Possessive pronouns show who owns something. Some sit before a noun (her coat, their house); some stand alone (the coat is hers). They never take an apostrophe: it’s means “it is” and they’re means “they are.”",
+  "spelling": "In a long word, a vowel you say quickly can fade into a soft /uh/ sound called a schwa, so you can’t hear which letter spells it. Find a related word where that part is loud: separate → separation, government → govern."
+ },
+ "plate": {
+  "src": "plates/nts-16-2.jpg",
+  "alt": "A Danish warship tilted and half sunk in the water of Copenhagen harbor.",
+  "credit": "The Danish coastal battleship Peder Skram, sunk by her own crew in Copenhagen harbor on 29 August 1943 so Germany could not use her. Photo: Herluf Jensen, CC BY-SA 2.0, via Wikimedia Commons."
+ },
+ "nts": {
+  "case": {
+   "src": "plates/nts-case-16-2.jpg",
+   "title": "The King Rides By",
+   "date": "Copenhagen · 1940",
+   "alt": "King Christian X rides a horse down a city street, raising his hand. Men on bicycles ride beside him and a crowd watches.",
+   "label": [
+    "This is a real photograph of King Christian X on his morning ride through Copenhagen in 1940, the year German soldiers arrived.",
+    "He rode almost every day, with no guards around him. People on bicycles rode alongside, and people on the pavement stopped to greet him. For Danes, seeing him ride by meant their country had not given up."
+   ],
+   "look": [
+    {
+     "q": "Find the king. How can you tell which one he is?",
+     "a": "He is the man on the horse, in uniform, raising his hand to greet people. Everyone else is on foot or on a bicycle."
+    },
+    {
+     "q": "Can you find a single guard?",
+     "a": "Look closely: the men beside him are ordinary riders on bicycles, not soldiers. That is the point of the story in Chapter 2."
+    }
+   ],
+   "credit": "King Christian X on his horse, Gyldenløvesgade, Copenhagen, 1940. Frihedsmuseet / National Museum of Denmark, no known copyright restrictions, via Wikimedia Commons."
+  },
+  "thennow": {
+   "then": {
+    "src": "plates/nts-case-16-2.jpg",
+    "label": "1940",
+    "alt": "King Christian X riding his horse down Gyldenløvesgade in 1940, with a crowd on bicycles.",
+    "credit": "1940: King Christian X on Gyldenløvesgade. Frihedsmuseet / National Museum of Denmark, no known copyright restrictions."
+   },
+   "now": {
+    "src": "plates/nts-now-16-2.jpg",
+    "label": "Today",
+    "alt": "The same wide street, Gyldenløvesgade, today, with cars, a bike lane and tall city buildings.",
+    "credit": "Today: Gyldenløvesgade in Copenhagen. Photo: Leif Jørgensen, 2009, CC BY-SA 3.0, via Wikimedia Commons."
+   },
+   "sub": "The street where the king rode, then and now.",
+   "caption": "Drag the line. On the left, the king rides down Gyldenløvesgade in 1940. On the right, the same street today. The two photos are not taken from exactly the same spot, but it is the same road, beside the lakes in the middle of Copenhagen."
+  }
+ }
+}
