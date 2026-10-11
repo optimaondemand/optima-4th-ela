@@ -1388,3 +1388,38 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
   .spk-st-svg .fs1, .spk-st-svg .fs2, .spk-st-svg .st.pop, .spk-st-svg .cl.next, .spk-stars.across .spk-st-svg .st .halo { animation:none !important; }
   .spk-st-svg .ln.on { transition:none; }
 }
+
+/* ── Across the Water (NTS week 17) ── */
+.spk-wa-scene { border-radius:12px; overflow:hidden; border:1px solid #2A3A63; box-shadow:inset 0 0 0 3px #FFFDF6, 0 1px 0 #fff; background:#1B2B55; }
+.spk-wa-svg { display:block; width:100%; height:auto; }
+.spk-wa-svg .s0 { stop-color:#3B4A7A; } .spk-wa-svg .s1 { stop-color:#C98E6A; } .spk-wa-svg .s2 { stop-color:#F0C38A; }
+.spk-wa-svg.d2 .s0 { stop-color:#2C3866; } .spk-wa-svg.d2 .s1 { stop-color:#8E6E78; } .spk-wa-svg.d2 .s2 { stop-color:#D9A27E; }
+.spk-wa-svg.d3 .s0 { stop-color:#1C2650; } .spk-wa-svg.d3 .s1 { stop-color:#4D4F75; } .spk-wa-svg.d3 .s2 { stop-color:#8E7484; }
+.spk-wa-svg.d4 .s0 { stop-color:#0B1430; } .spk-wa-svg.d4 .s1 { stop-color:#1B2B55; } .spk-wa-svg.d4 .s2 { stop-color:#34466F; }
+.spk-wa-svg .field circle { fill:#E6ECFA; opacity:0; }
+.spk-wa-svg.d2 .field circle { opacity:.15; } .spk-wa-svg.d3 .field circle { opacity:.35; } .spk-wa-svg.d4 .field circle { opacity:.6; }
+.spk-wa-svg .sea { fill:#22335E; } .spk-wa-svg.d1 .sea { fill:#3A4B78; } .spk-wa-svg.d2 .sea { fill:#2E3F6B; }
+.spk-wa-svg .waves path { fill:none; stroke:#8FA3CF; stroke-width:1; opacity:.35; stroke-linecap:round; }
+.spk-wa-svg .far { fill:#1A2242; } .spk-wa-svg.d1 .far { fill:#4A4F72; } .spk-wa-svg.d2 .far { fill:#373D62; }
+.spk-wa-svg .near { fill:#2B3A2E; } .spk-wa-svg .grass { fill:none; stroke:#5E7A4E; stroke-width:2; }
+.spk-wa-svg .house rect { fill:#E9DFC8; } .spk-wa-svg .house .roof { fill:#7A6440; } .spk-wa-svg .house .hw { fill:#F2C766; }
+.spk-wa-svg .tower path { fill:#F4F0E6; } .spk-wa-svg .tower .gal, .spk-wa-svg .tower .room { fill:#2E3550; }
+.spk-wa-svg .lamp { fill:#FFF3C8; }
+.spk-wa-svg .lbl { font:italic 600 10.5px 'Lora',Georgia,serif; fill:#F3DFA6; opacity:.85; }
+.spk-wa-svg .bm { fill:url(#spkWaBeam); opacity:0; transition:opacity .7s; }
+.spk-wa-svg .bm.on { opacity:.9; } .spk-wa-svg .bm.old { opacity:.75; }
+.spk-wa-svg .bm.pop { animation:spk-wa-reach .9s ease-out; }
+@keyframes spk-wa-reach { 0% { opacity:0; } 40% { opacity:1; } }
+.spk-wa-svg .lp { opacity:.0; transition:opacity .6s; }
+.spk-wa-svg .lp .win { fill:#FFE08A; } .spk-wa-svg .lp .halo { fill:url(#spkWaHalo); opacity:.7; }
+.spk-wa-svg .lp.on { opacity:1; } .spk-wa-svg .lp.old { opacity:.85; }
+.spk-wa-svg .lp .in.pop { animation:spk-wa-lamp .9s cubic-bezier(.3,1.4,.5,1); transform-box:fill-box; transform-origin:center; }
+@keyframes spk-wa-lamp { 0% { opacity:0; transform:scale(.2); } 60% { opacity:1; transform:scale(1.6); } 100% { transform:none; } }
+.spk-wa-svg .kullen .tw { fill:#C9CDD8; } .spk-wa-svg .kullen .kl { fill:#FFF3C8; opacity:.35; } .spk-wa-svg .kullen .kh { fill:url(#spkWaHalo); opacity:0; }
+.spk-water.across .spk-wa-svg .kullen .kl { opacity:1; }
+.spk-water.across .spk-wa-svg .kullen .kh { animation:spk-wa-answer 2.4s ease-in-out infinite; }
+@keyframes spk-wa-answer { 50% { opacity:1; } }
+@media (prefers-reduced-motion: reduce) {
+  .spk-wa-svg .bm.pop, .spk-wa-svg .lp .in.pop, .spk-water.across .spk-wa-svg .kullen .kh { animation:none !important; }
+  .spk-water.across .spk-wa-svg .kullen .kh { opacity:.8; }
+}

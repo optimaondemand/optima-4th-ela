@@ -219,10 +219,12 @@
       t: 'Denmark’s capital, and Annemarie’s home. In 1943 about 7,000 Jewish people lived in Denmark, most of them here.' },
     { id: 'swe', ch: 2, real: true, x: 540, y: 190, label: true, name: 'Sweden',
       t: 'Sweden stayed out of the war, so German soldiers did not rule there. Annemarie has seen it from Denmark’s coast, across a narrow strip of sea.' },
-    { id: 'gill', ch: 7, real: true, k: 'gilleleje', lx: -9, ly: -4, anchor: 'end', name: 'Gilleleje',
+    { id: 'klamp', ch: 6, real: true, x: 350, y: 240, lx: 9, ly: 4, name: 'Klampenborg and the Deer Park',
+      t: 'A real station on the coast line north of Copenhagen, beside a huge old park full of deer. The train passes it in Chapter 6, and Annemarie wishes they could stop.' },
+    { id: 'gill', ch: 6, real: true, k: 'gilleleje', lx: -9, ly: -4, anchor: 'end', name: 'Gilleleje',
       t: 'A fishing town on the north coast of Zealand. From the shore here you can see Sweden on a clear day.' }
   ];
-  var REGION_LINES = [ { ch: 7, from: 'copenhagen', to: 'gilleleje' } ];
+  var REGION_LINES = [ { ch: 6, from: 'copenhagen', to: 'gilleleje' } ];
 
   function cphSVG() {
     return '<svg viewBox="0 0 640 400" role="img" aria-label="An old-style map of Copenhagen with pins on places from the story">' +
@@ -329,7 +331,7 @@
         mapEl.querySelector('.pins').innerHTML = list.map(function (p) {
           if (p.label) return '<g class="pin" data-id="' + p.id + '" tabindex="0" role="button" aria-label="' + esc(p.name) + '"><rect class="hit" x="' + (p.x - 54) + '" y="' + (p.y - 22) + '" width="108" height="34"/>' +
             '<circle class="ring" cx="' + p.x + '" cy="' + (p.y - 5) + '" r="30"/><text x="' + p.x + '" y="' + p.y + '" text-anchor="middle" font-family="Lora,Georgia,serif" font-size="17" letter-spacing="3" fill="#5E7A4A">SWEDEN</text></g>';
-          var xy = P[p.k]; return pinG(p, xy[0], xy[1], p.ch === ch);
+          var xy = p.k ? P[p.k] : [p.x, p.y]; return pinG(p, xy[0], xy[1], p.ch === ch);
         }).join('');
       }
       list.forEach(function (p) { if (!newest || p.ch >= newest.ch) newest = p; });
@@ -395,7 +397,9 @@
     { lid: '16.4', id: 'melchior', name: 'Marcus Melchior', years: '1897–1969', role: 'Rabbi in Copenhagen', img: 'rescuers/melchior.jpg', pos: '50% 0%', initials: 'MM', credit: 'Photo about 1940, public domain, via Wikimedia Commons.',
       back: '<b>He warned everyone.</b> On 29 September 1943, at the morning service before the Jewish New Year, Rabbi Melchior told the people in the Great Synagogue that the Nazis were coming for them in two days. He told them not to stay home, and to pass the warning to every Jewish family they knew. His own family hid with a Danish pastor, then crossed to Sweden.' },
     { lid: '16.4', id: 'duckwitz', name: 'Georg Duckwitz', years: '1904–1973', role: 'A German who told the secret', img: 'rescuers/duckwitz.jpg', pos: '50% 0%', initials: 'GD', credit: 'Photo 1960 (cropped): Renate Patzek, Bundesarchiv B 145 Bild-F008672-0032, CC BY-SA 3.0 DE, via Wikimedia Commons.',
-      back: '<b>He worked for the other side, and he still warned them.</b> Georg Duckwitz worked for the German government in Copenhagen. When he learned the date of the raid, he secretly told Danish leaders, and they passed the warning on to the Jewish community. In 1971 Israel honored him as one of the Righteous Among the Nations.' }
+      back: '<b>He worked for the other side, and he still warned them.</b> Georg Duckwitz worked for the German government in Copenhagen. When he learned the date of the raid, he secretly told Danish leaders, and they passed the warning on to the Jewish community. In 1971 Israel honored him as one of the Righteous Among the Nations.' },
+    { lid: '17.4', id: 'koster', name: 'Karl Henry Køster', years: '1943', role: 'Surgeon at Bispebjerg Hospital', img: 'rescuers/koster.jpg', pos: '50% 30%', initials: 'KK', credit: 'No free photo of Dr. Køster exists. This plaque at Bispebjerg Hospital thanks its doctors and nurses. Photo: Karen Mardahl, CC BY-SA 2.0, via Wikimedia Commons.',
+      back: '<b>He turned a hospital into a hiding place.</b> In October 1943, Dr. Køster and the doctors and nurses of Bispebjerg Hospital in Copenhagen hid Jewish families among the patients and in the hospital chapel. One day a long funeral line of twenty to thirty taxis drove away from the chapel. The riders were not going to a funeral. They were Jewish families on their way to the boats.' }
   ];
   function rescuersCard(host, opt) {
     var here = lidNum(opt.week + '.' + opt.day);

@@ -2385,6 +2385,219 @@ WORDGAME.stars = function (cfg, act, game, W) {
   if (placed.length === W.length) finish(true);
 };
 
+/* ── Across the Water (Number the Stars, week 17): the shore at
+   Gilleleje at dusk, with Sweden a dark line on the far side of the
+   sound. tend = stretch, so each right tend word stretches the
+   lighthouse beam one reach farther across the water; cred = believe,
+   so each right cred word lights a window on the far shore, someone
+   over there who believes. One crossing for the whole week: day d
+   opens with days 1…d-1 already shining and the sky a little darker;
+   on day 4 the beam touches the far shore and Kullen's light answers.
+   Built from the day number. ── */
+WORDGAME.water = function (cfg, act, game, W) {
+  var day = dayNum(LESSON.day);
+  var KEY = 'oao.g4ela.wg.' + LID;
+  var placed = (Sparkle.get(KEY, []) || []).filter(function (i) { return i >= 0 && i < W.length; });
+  var M = cfg.meanings || {};
+  var BEAM = cfg.beam || 'tend';                       /* the root that stretches the beam */
+  var stones = []; W.forEach(function (w) { if (stones.indexOf(w.a) < 0) stones.push(w.a); });
+  game.classList.add('spk-hide');
+  var lead = game.previousElementSibling;
+  if (lead && lead.classList.contains('callout')) lead.classList.add('spk-hide');
+
+  /* each word's piece of the week: beam reach or far-shore window, numbered
+     in page order inside its kind, two of each a day */
+  var nb = 0, nl = 0, PER = 2;
+  var piece = W.map(function (w) {
+    return w.a === BEAM ? { kind: 'b', k: Math.min(PER - 1, nb++) + (day - 1) * PER }
+                        : { kind: 'l', k: Math.min(PER - 1, nl++) + (day - 1) * PER };
+  });
+  var N = 4 * PER, f = function (n) { return (+n).toFixed(1); };
+  var LX = 74, LY = 101, EX = 592, EY = 146;           /* lamp room → Kullen point */
+  var beams = '', lamps = '';
+  for (var k = 0; k < N; k++) {
+    var t0 = k / N, t1 = (k + 1) / N, half0 = 1.5 + t0 * 9, half1 = 1.5 + t1 * 9;
+    var x0 = LX + (EX - LX) * t0, y0 = LY + (EY - LY) * t0, x1 = LX + (EX - LX) * t1, y1 = LY + (EY - LY) * t1;
+    beams += '<path class="bm" data-b="' + k + '" d="M' + f(x0) + ' ' + f(y0 - half0) + ' L' + f(x1) + ' ' + f(y1 - half1) +
+             ' L' + f(x1) + ' ' + f(y1 + half1) + ' L' + f(x0) + ' ' + f(y0 + half0) + ' Z"/>';
+  }
+  var LAMPS = [[470, 151], [488, 149], [505, 146], [521, 141], [538, 137], [556, 135], [573, 139], [604, 145]];
+  LAMPS.forEach(function (p, k) {
+    lamps += '<g class="lp" data-l="' + k + '" transform="translate(' + p[0] + ' ' + p[1] + ')">' +
+             '<g class="in"><circle class="halo" r="7"/><rect class="win" x="-1.6" y="-1.6" width="3.2" height="3.2" rx=".6"/></g></g>';
+  });
+  var field = '', seed = 11;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  for (var s = 0; s < 60; s++) field += '<circle cx="' + f(rnd() * 640) + '" cy="' + f(rnd() * 110) + '" r="' + f(rnd() * 0.8 + 0.3) + '"/>';
+  var waves = [0, 1, 2, 3, 4, 5, 6].map(function (i) {
+    var y = 168 + i * 13, x = (i * 97) % 520 + 150;
+    return '<path d="M' + x + ' ' + y + ' q 10 -3 20 0 t 20 0"/>';
+  }).join('');
+
+  var svg =
+    '<svg class="spk-wa-svg d' + day + '" viewBox="0 0 640 260" role="img" aria-label="Dusk over the sea at Gilleleje. A lighthouse beam stretches across the water toward the coast of Sweden, where windows light up.">' +
+    '<defs>' +
+      '<linearGradient id="spkWaSky" x1="0" y1="0" x2="0" y2="1"><stop class="s0" offset="0"/><stop class="s1" offset=".62"/><stop class="s2" offset="1"/></linearGradient>' +
+      '<linearGradient id="spkWaBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFF3C8" stop-opacity=".95"/><stop offset="1" stop-color="#FFE7A0" stop-opacity=".45"/></linearGradient>' +
+      '<radialGradient id="spkWaHalo"><stop offset="0" stop-color="#FFE6A0" stop-opacity=".95"/><stop offset="1" stop-color="#FFE6A0" stop-opacity="0"/></radialGradient>' +
+    '</defs>' +
+    '<rect width="640" height="160" fill="url(#spkWaSky)"/>' +
+    '<g class="field">' + field + '</g>' +
+    '<rect class="sea" x="0" y="150" width="640" height="110"/>' +
+    '<g class="waves">' + waves + '</g>' +
+    /* Sweden: the long low coast and the ridge of Kullen */
+    '<path class="far" d="M430 156 C470 152 500 149 520 144 C540 136 556 132 572 134 C590 136 600 142 612 145 L640 147 L640 158 L430 158 Z"/>' +
+    '<g class="kullen" transform="translate(612 145)"><rect class="tw" x="-1.6" y="-9" width="3.2" height="9"/><circle class="kh" cy="-9" r="9"/><circle class="kl" cy="-9" r="1.8"/></g>' +
+    '<text class="lbl" x="528" y="124">Sverige · Sweden</text>' +
+    '<g class="beams">' + beams + '</g>' + lamps +
+    /* Denmark: the bluff, the lighthouse, a low farmhouse */
+    '<path class="near" d="M0 128 L40 122 C70 118 96 120 118 128 C140 136 168 150 196 166 C214 178 222 196 226 260 L0 260 Z"/>' +
+    '<path class="grass" d="M0 128 L40 122 C70 118 96 120 118 128 C140 136 168 150 196 166"/>' +
+    '<g class="house"><rect x="118" y="136" width="34" height="14"/><path class="roof" d="M114 137 L135 124 L156 137 Z"/><rect class="hw" x="124" y="141" width="4" height="4"/><rect class="hw" x="140" y="141" width="4" height="4"/></g>' +
+    '<g class="tower"><path d="M68 123 L70 104 L78 104 L80 123 Z"/><rect class="gal" x="66" y="102" width="16" height="2.4"/><rect class="room" x="70" y="96" width="8" height="6"/><path d="M69 96 L74 91 L79 96 Z"/></g>' +
+    '<circle class="lamp" cx="' + LX + '" cy="' + LY + '" r="2.6"/>' +
+    '<text class="lbl" x="18" y="146">Gilleleje</text>' +
+    '</svg>';
+
+  var box = document.createElement('div');
+  box.className = 'spk-wg spk-water';
+  box.innerHTML =
+    '<div class="spk-wg-head"><span class="spk-wg-kicker">' + esc(cfg.kicker || 'Across the Water') + '</span>' +
+      '<span class="spk-wg-h">' + esc(cfg.h || 'Stretch the light, light the far shore') + '</span></div>' +
+    wgWhy(cfg.why) +
+    (cfg.voice ? '<p class="spk-wg-voice">' + esc(cfg.voice) + '</p>' : '') +
+    '<div class="spk-wa-scene">' + svg + '</div>' +
+    '<p class="spk-wg-ct" aria-live="polite"></p>' +
+    '<div class="spk-br-stones spk-st-stones" role="group" aria-label="Word parts">' +
+      stones.map(function (a) {
+        return '<button type="button" class="spk-br-stone" data-a="' + esc(a) + '"><b>' + esc(a) + '</b>' +
+               (M[a] ? '<small>' + esc(M[a]) + '</small>' : '') + '</button>';
+      }).join('') + '</div>' +
+    '<div class="spk-br-pile">' +
+      W.map(function (w, i) {
+        /* the root can sit at the front, the end, or the middle (dis·cred·it) */
+        var pre = '', post = '', seen = false;
+        [].forEach.call(w.inp.parentNode.childNodes, function (n) {
+          if (n === w.inp) { seen = true; return; }
+          var t = n.textContent || ''; if (seen) post += t; else pre += t;
+        });
+        post = post.split(/\s+[—–-]\s+/)[0].trim(); pre = pre.trim();
+        var blank = '<span class="blank">?</span>';
+        return '<button type="button" class="spk-br-card spk-st-card" data-i="' + i + '">' +
+               '<span class="w">' + (pre ? '<b>' + esc(pre) + '</b>' : '') + blank + (post ? '<b>' + esc(post) + '</b>' : '') + '</span>' +
+               '<small>' + esc(w.m) + '</small><span class="spk-wg-miss"></span></button>';
+      }).join('') + '</div>' +
+    '<div class="spk-wg-win" hidden></div>';
+  game.parentNode.insertBefore(box, game);
+
+  var base = (day - 1) * PER;
+  function paint(fresh) {
+    var doneToday = placed.length === W.length;
+    var onB = {}, onL = {};
+    placed.forEach(function (i) { (piece[i].kind === 'b' ? onB : onL)[piece[i].k] = 1; });
+    box.querySelectorAll('.bm').forEach(function (el) {
+      var k = +el.getAttribute('data-b');
+      var on = k < base || onB[k] || (doneToday && k < base + PER);
+      el.classList.toggle('on', !!on); el.classList.toggle('old', k < base);
+    });
+    box.querySelectorAll('.lp').forEach(function (el) {
+      var k = +el.getAttribute('data-l');
+      var on = k < base || onL[k] || (doneToday && k < base + PER);
+      el.classList.toggle('on', !!on); el.classList.toggle('old', k < base);
+    });
+    if (fresh !== null && fresh !== undefined && !REDUCED) {
+      var p = piece[fresh], el = box.querySelector(p.kind === 'b' ? '.bm[data-b="' + p.k + '"]' : '.lp[data-l="' + p.k + '"]');
+      /* the window pops from its inner group: the outer one carries the
+         SVG translate, which a CSS transform would override mid-animation */
+      if (el && p.kind === 'l') el = el.querySelector('.in');
+      if (el) { el.classList.remove('pop'); void el.getBoundingClientRect(); el.classList.add('pop'); }
+    }
+  }
+  function count() {
+    var n = placed.length;
+    box.querySelector('.spk-wg-ct').innerHTML = n < W.length
+      ? '<b>' + n + ' of ' + W.length + '</b> lights burning' + (day > 1 ? ' · evening ' + day + ' of 4' : '') + '.' : '';
+  }
+  function setCard(i) {
+    var w = W[i], card = box.querySelector('.spk-br-card[data-i="' + i + '"]');
+    card.classList.add('placed'); card.disabled = true;
+    card.querySelector('.blank').textContent = w.a;
+    card.querySelector('.spk-wg-miss').innerHTML = '';
+  }
+  function finish(quiet) {
+    W.forEach(function (w) { w.inp.value = w.a; });
+    var btn = game.querySelector('.fillin-check-btn');
+    try { if (quiet) _origCheckFillIn(btn); else window.checkFillIn(btn); } catch (e) {}
+    var last = day >= 4, win = box.querySelector('.spk-wg-win');
+    win.hidden = false;
+    win.innerHTML = last ? (cfg.win || 'The light reaches all the way across, and on the far shore a light answers.')
+                         : (cfg.winDay || 'These lights are burning. The next lesson’s words carry the light farther.');
+    box.classList.add('done'); if (last) box.classList.add('across');
+    paint(null);
+    if (!quiet) setTimeout(function () { wgSfx('win'); }, 350);
+  }
+  function miss(i, a) {
+    var w = W[i], card = box.querySelector('.spk-br-card[data-i="' + i + '"]');
+    var line = (cfg.miss || {})[w.id] ||
+      ('Not quite. <b>' + esc(a) + '</b> means ' + esc(M[a] || '…') + '. Read the meaning again: <i>' + esc(w.m) + '</i>.');
+    card.querySelector('.spk-wg-miss').innerHTML = line;
+    card.classList.remove('nope'); void card.offsetWidth; card.classList.add('nope');
+    wgSfx('bonk');
+  }
+  var selStone = null, selCard = null;
+  function clearSel() { selStone = selCard = null; box.querySelectorAll('.sel').forEach(function (e) { e.classList.remove('sel'); }); }
+  function tryPlace(i, a) {
+    if (placed.indexOf(i) >= 0) return;
+    if (W[i].a === a) {
+      placed.push(i); Sparkle.set(KEY, placed);
+      setCard(i); paint(i); wgSfx('chime'); wgClip(i + 1); count();
+      if (placed.length === W.length) finish(false);
+    } else miss(i, a);
+    clearSel();
+  }
+  box.querySelectorAll('.spk-br-stone').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b._dragged) { b._dragged = false; return; }
+      var a = b.getAttribute('data-a');
+      if (selCard !== null) { tryPlace(selCard, a); return; }
+      var on = selStone !== a; clearSel(); if (on) { selStone = a; b.classList.add('sel'); }
+    });
+    b.addEventListener('pointerdown', function (e) {
+      if (e.button) return;
+      var a = b.getAttribute('data-a'), sx = e.clientX, sy = e.clientY, ghost = null;
+      function move(ev) {
+        if (!ghost && Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 8) return;
+        if (!ghost) { ghost = b.cloneNode(true); ghost.className = 'spk-br-stone spk-br-ghost'; document.body.appendChild(ghost); }
+        ghost.style.left = ev.clientX + 'px'; ghost.style.top = ev.clientY + 'px';
+        box.querySelectorAll('.spk-br-card.over').forEach(function (c) { c.classList.remove('over'); });
+        var t = document.elementFromPoint(ev.clientX, ev.clientY), c = t && t.closest && t.closest('.spk-br-card');
+        if (c && !c.disabled) c.classList.add('over');
+        ev.preventDefault();
+      }
+      function up(ev) {
+        document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', up);
+        if (!ghost) return;
+        ghost.remove(); b._dragged = true; setTimeout(function () { b._dragged = false; }, 50);
+        box.querySelectorAll('.spk-br-card.over').forEach(function (c) { c.classList.remove('over'); });
+        var t = document.elementFromPoint(ev.clientX, ev.clientY), c = t && t.closest && t.closest('.spk-br-card');
+        if (c && !c.disabled) tryPlace(+c.getAttribute('data-i'), a);
+      }
+      document.addEventListener('pointermove', move, { passive: false });
+      document.addEventListener('pointerup', up);
+    });
+  });
+  box.querySelectorAll('.spk-br-card').forEach(function (c) {
+    c.addEventListener('click', function () {
+      var i = +c.getAttribute('data-i');
+      if (selStone) { tryPlace(i, selStone); return; }
+      var on = selCard !== i; clearSel(); if (on) { selCard = i; c.classList.add('sel'); }
+    });
+  });
+  placed.forEach(setCard);
+  paint(null); count();
+  if (placed.length === W.length) finish(true);
+};
+
 function buildWordGame() {
   var cfg = DATA.wordgame;
   if (!cfg || !WORDGAME[cfg.type]) return;              /* no themed game for this lesson */
