@@ -20,7 +20,13 @@ That's honest of Marilla, admitting she didn't see it at first. The Growing-Up W
 
 ## Read Like a Writer · g4ela-14-3-rwm
 
-Marilla doesn't often talk about her soft side, so it's tender that she points to this sentence herself. Wept her heart out is an old way of saying someone cried as hard as she could. Look at wept and crept. Neither one ends in e-d, so this week's suffix rules don't fit them. Sleep and slept work the same way. Notice how short both sentences are, too. When something enormous happens, Montgomery doesn't pile up words.
+Marilla doesn't often talk about her soft side, so it's tender that she points to this sentence herself.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here are the sentences from Chapter 37: "Anne wept her heart out. Marilla heard her and crept in to comfort her."
+
+Wept her heart out is an old way of saying someone cried as hard as she could. Look at wept and crept. Neither one ends in e-d, so this week's suffix rules don't fit them. Sleep and slept work the same way. Notice how short both sentences are, too. When something enormous happens, Montgomery doesn't pile up words.
 
 ## Before you write · g4ela-14-3-guide3
 

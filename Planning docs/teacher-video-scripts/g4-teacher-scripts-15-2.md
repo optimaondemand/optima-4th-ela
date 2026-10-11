@@ -65,7 +65,13 @@ That means he was still the king. The chair stands for the whole job. The passag
 
 ## Read Like a Writer · g4ela-15-2-rwm
 
-Two small words turning a corner. Read the sentence aloud and you can feel it bend right there. Watch out for a close cousin, though. The word so by itself and the words so that do different jobs. In I was tired, so I went to bed, the word so tells you what happened next. In I went to bed early so that I would have energy for my game, so that tells you why someone did something on purpose. It points to a goal. The writer's sentence uses the goal kind. When you write your Mimic sentence, check that the second half explains why the group wanted something, not just what happened after. Your group could be a team, a class, a family, or a town.
+Two small words turning a corner.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here's the sentence from today's article, Denmark Under German Occupation: "The German leaders wanted to keep the Danes calm so that food and supplies would keep flowing to Germany."
+
+Read it aloud yourself and you can feel it bend right at so that. Watch out for a close cousin, though. The word so by itself and the words so that do different jobs. In I was tired, so I went to bed, the word so tells you what happened next. In I went to bed early so that I would have energy for my game, so that tells you why someone did something on purpose. It points to a goal. The writer's sentence uses the goal kind. When you write your Mimic sentence, check that the second half explains why the group wanted something, not just what happened after. Your group could be a team, a class, a family, or a town.
 
 
 ## Before you write · g4ela-15-2-guide3

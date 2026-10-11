@@ -48,7 +48,13 @@ Eleven times is a lot of rereading, but that's what good friends do with a lette
 
 ## Read Like a Writer · g4ela-13-2-rwm
 
-Diana's right to love that dash. Grown-up writers use it exactly this way, to stop and point. Did you notice the little marks around "pass high" in this sentence? Those are single quotation marks, tucked inside the regular ones. The author is showing us that "pass high" is Anne's own way of saying it. When you quote a sentence that already has a quote inside it, the inside one gets single marks. You'll see that again whenever you copy a line from the book for your answers. Now for your mimic sentence. Make sure the person you single out really is the most important one, and that your reader can tell why. For example: Leo practiced every night for the sake of his mom and his coach, especially his coach.
+Diana's right to love that dash. Grown-up writers use it exactly this way, to stop and point.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here's the sentence from Chapter 32: "She wanted to 'pass high' for the sake of Matthew and Marilla — especially Matthew."
+
+Did you notice the little marks around "pass high" in this sentence? Those are single quotation marks, tucked inside the regular ones. The author is showing us that "pass high" is Anne's own way of saying it. When you quote a sentence that already has a quote inside it, the inside one gets single marks. You'll see that again whenever you copy a line from the book for your answers. Now for your mimic sentence. Make sure the person you single out really is the most important one, and that your reader can tell why. For example: Leo practiced every night for the sake of his mom and his coach, especially his coach.
 
 ## Before you write · g4ela-13-2-guide3
 

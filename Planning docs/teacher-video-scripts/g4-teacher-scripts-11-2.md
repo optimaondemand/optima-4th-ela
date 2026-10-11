@@ -48,7 +48,13 @@ Diana can hardly keep a secret, can she? She nearly told you more than she meant
 
 ## Read Like a Writer · g4ela-11-2-rwm
 
-Diana knows exactly how Anne moves when she's happy. That's the kind of thing a best friend notices. Let's make sure every word in this sentence is working for you. A sprite is a small, quick fairy kind of creature, so being wind-blown makes Anne light and fluttery. Now look at "lazy shadows." Shadows can't really be lazy. The author gives them a feeling a person has, and that one word tells you a lot about the evening. Writers use that trick all the time, and it works because it's surprising. When you write your own sentence, pick a time of day you know well and give one thing in that place a feeling of its own.
+Diana knows exactly how Anne moves when she's happy. That's the kind of thing a best friend notices.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here's how Montgomery wrote it: "She had come dancing up the lane, like a wind-blown sprite, through the mellow sunshine and lazy shadows of the August evening."
+
+Let's make sure every word in this sentence is working for you. A sprite is a small, quick fairy kind of creature, so being wind-blown makes Anne light and fluttery. Now look at "lazy shadows." Shadows can't really be lazy. The author gives them a feeling a person has, and that one word tells you a lot about the evening. Writers use that trick all the time, and it works because it's surprising. When you write your own sentence, pick a time of day you know well and give one thing in that place a feeling of its own.
 
 ## Before you write · g4ela-11-2-guide3
 

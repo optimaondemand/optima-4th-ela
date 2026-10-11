@@ -54,7 +54,13 @@ I'd have laughed too, Miss Barry. Anne's opinions are always worth hearing. The 
 
 ## Read Like a Writer · g4ela-12-3-rwm
 
-Miss Barry not keeping cows made me smile. I can't picture her in a pasture at all. Last lesson, one verb showed you how fast Gilbert moved. Look for that same kind of word here. "Swung" shows how the cows move, and "placidly" means calmly. What makes the sentence fun is the gap between that calm lane and the poem racing through Anne's head. Try to build that same gap into your Mimic sentence.
+Miss Barry not keeping cows made me smile. I can't picture her in a pasture at all.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here's the sentence from Chapter 29: "The cows swung placidly down the lane, and Anne followed them dreamily, repeating aloud the battle canto from Marmion."
+
+Last lesson, one verb showed you how fast Gilbert moved. Look for that same kind of word here. "Swung" shows how the cows move, and "placidly" means calmly. What makes the sentence fun is the gap between that calm lane and the poem racing through Anne's head. Try to build that same gap into your Mimic sentence.
 
 ## Before you write · g4ela-12-3-guide3
 

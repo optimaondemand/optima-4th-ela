@@ -54,7 +54,13 @@ Marilla's opinion would be fun to hear, but she's right to let you make up your 
 
 ## Read Like a Writer · g4ela-12-2-rwm
 
-Marilla wasn't even there, and she still read that boy perfectly. That tells you how well this sentence works. Look closely at the verb. Gilbert doesn't step into the boat or get into it. He springs. That one word tells you how fast he moves and how he's feeling, without the author ever naming the feeling. Then notice "an angry color." Most writers would say "red cheeks," but Montgomery tells you what the color means. Those are two small word choices, and they do a lot of work. For your Mimic sentence, spend the most time on your verb. "Stomped" and "tiptoed" would give you two very different people. Watch for strong verbs like that all through today's chapters.
+Marilla wasn't even there, and she still read that boy perfectly. That tells you how well this sentence works.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here's how Montgomery wrote it: "Gilbert sprang into his skiff with an angry color in his cheeks."
+
+Look closely at the verb. Gilbert doesn't step into the boat or get into it. He springs. That one word tells you how fast he moves and how he's feeling, without the author ever naming the feeling. Then notice "an angry color." Most writers would say "red cheeks," but Montgomery tells you what the color means. Those are two small word choices, and they do a lot of work. For your Mimic sentence, spend the most time on your verb. "Stomped" and "tiptoed" would give you two very different people. Watch for strong verbs like that all through today's chapters.
 
 ## Before you write · g4ela-12-2-guide3
 

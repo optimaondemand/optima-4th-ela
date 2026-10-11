@@ -65,7 +65,13 @@ Keep them in mind, because that comparison is the heart of this reading.
 
 ## Read Like a Writer · g4ela-15-3-rwm
 
-When Grete says the end lands with weight, read the sentence aloud and you'll hear exactly where. Don't mix up the dash with a hyphen, the short mark inside a word like well-known. A dash is longer, and it sits between words to make you wait. For your Mimic, pick a real object or rule you know well, like a fence, a lock, or a uniform. Then save the dash for the part that's harder to say.
+When Grete says the end lands with weight, read the sentence aloud and you'll hear exactly where.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here's the sentence from today's article, The Star of David Law: "The Nazis used this badge to mark Jewish people as different — and as targets."
+
+Don't mix up the dash with a hyphen, the short mark inside a word like well-known. A dash is longer, and it sits between words to make you wait. For your Mimic, pick a real object or rule you know well, like a fence, a lock, or a uniform. Then save the dash for the part that's harder to say.
 
 
 ## Before you write · g4ela-15-3-guide3

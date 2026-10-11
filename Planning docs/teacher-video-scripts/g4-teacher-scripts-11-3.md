@@ -48,7 +48,13 @@ Miss Stacy promises not to listen, which is polite of her, though I suspect she'
 
 ## Read Like a Writer · g4ela-11-3-rwm
 
-Miss Stacy is a little embarrassed by this one, and I think that's sweet. Most of us blush when someone describes us. Earlier this week you saw how one word, like lazy in front of shadows, can carry a whole feeling. This sentence stacks describing words to introduce a person. For your Mimic, choose a real person, like a grandparent or a neighbor. A true detail beats a fancy one every time.
+Miss Stacy is a little embarrassed by this one, and I think that's sweet. Most of us blush when someone describes us.
+
+[QUOTE ON SCREEN: press 6, read the line, press 6 again]
+
+Here's the sentence from Chapter 24: "Miss Stacy was a bright, sympathetic young woman with the happy gift of winning and holding the affections of her pupils and bringing out the best that was in them mentally and morally."
+
+Earlier this week you saw how one word, like lazy in front of shadows, can carry a whole feeling. This sentence stacks describing words to introduce a person. For your Mimic, choose a real person, like a grandparent or a neighbor. A true detail beats a fancy one every time.
 
 ## Before you write · g4ela-11-3-guide3
 
