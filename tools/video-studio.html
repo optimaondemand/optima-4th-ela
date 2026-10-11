@@ -647,6 +647,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
       <li><b>Quotes</b>: when your script says <i>Quote on screen</i>, click the gold line in the script (or press <kbd>6</kbd>) and the quote appears on a band across the bottom of the video. Click again when you’ve read it. <b>＋ Type a quote</b> adds your own.</li>
       <li><b>Words</b>: this lesson’s vocabulary words are under the video. Click one to show its card, click again to take it off. <kbd>5</kbd> steps through them.</li>
       <li><b>This part</b> (<kbd>7</kbd>): what the section you’re filming can show, pulled from the lesson: the DOL sentence on a sentence strip (then <b>✓ Show the fix</b>), word parts, the grammar or spelling rule, the reading move, Pause &amp; Think stops, chapter questions, and the writing focus. Vocabulary words in your script are underlined; click one to show its card.</li>
+      <li><b>On-screen cues in a script</b>: a gold <i>🎬 On screen</i> row inside the script is a suggestion for that moment. Click a button in it (a DOL sentence, ✓ Show the fix, a rule, a chapter question, the chapter picture, a word card or confetti) and it goes up on the video, the same as the On screen buttons beside the script.</li>
       <li><b>Chapter picture</b> (<kbd>8</kbd>): the lesson’s painting slides in beside you as a small framed card.</li>
       <li><b>Confetti</b>: <kbd>1</kbd>.</li>
       <li>Press <b>■ Stop</b> or <kbd>Space</kbd> when you’re done.</li>
@@ -994,6 +995,7 @@ function renderLessonDoc(c, L){
       d.lastChild.textContent = qt ? 'Quote on screen: click here or press 6 as you read the next line. Click or press 6 again after.' : 'Quote on screen';
       if (qt) d.onclick=function(){ showQuote({t:qt,a:attribOf(c)}); };
     }
+    if (!b.h && /^\[\s*ON SCREEN\s*:/i.test(b.t)) d=cueLine(b.t, c, target<0 || inside);
     if (target>-1 && !inside) d.classList.add('dim');
     else if (d.className==='pp') linkWords(d, c);
     if (i===target){ d.classList.add('here'); targetEl=d; }
@@ -1002,6 +1004,32 @@ function renderLessonDoc(c, L){
   $('pLbl').textContent = (L.builtin?'Teacher script · ':'Lesson script · ')+(L.name||c.lessonShort)+(target<0?' · couldn’t find this video’s part, scroll to it':'');
   $('pReset').hidden = true;
   pt.scrollTop = targetEl ? Math.max(0,targetEl.offsetTop-4) : 0;
+}
+/* "[ON SCREEN: Sentence A · Show the fix · Word parts]" in a script: a row of buttons for
+   what to put on screen at that moment. Each name matches a button in the On screen panel
+   (Sentence A, Show the fix, Word parts, Grammar rule, Spelling rule, Reading move,
+   Chapter picture, Stop 1, Q1, Today’s focus, Now you try), a vocabulary word, or Confetti.
+   Only the part you're filming gets live buttons; the rest of the lesson shows them dimmed. */
+function cueNorm(t){ return String(t).toLowerCase().replace(/'/g,'’').replace(/^[^a-z0-9’]+/,'').replace(/^show\s+/,'').replace(/\s*\(?press\s+\d\)?\s*$/,'').replace(/\s+/g,' ').trim(); }
+function cueLine(text, c, live){
+  var d=document.createElement('div'); d.className='seccue';
+  var lab=document.createElement('span'); lab.textContent='🎬 On screen:'; d.appendChild(lab);
+  var body=text.replace(/^\[\s*ON SCREEN\s*:\s*/i,'').replace(/\]\s*$/,'');
+  var ps=live ? partsFor(c) : [], ws=live ? (c.words||[]) : [];
+  body.split(/\s*[·;]\s*/).forEach(function(tok){
+    if (!tok) return;
+    var n=cueNorm(tok), fn=null, pid='';
+    var p=ps.find(function(x){ return cueNorm(x.label)===n; });
+    if (p){ fn=function(){ showPart(p); syncPromptCue(); }; pid=p.id; }
+    else if (live && n==='the fix'){ fn=function(){ if(!strip.cur){ toast('Show a sentence first'); return; } strip.fix=!strip.fix; renderOnScreen(); syncPromptCue(); }; }
+    else if (live && n==='confetti'){ fn=function(){ fire('confetti'); }; }
+    else { var w=ws.find(function(x){ return x.w && x.w.toLowerCase()===n; }); if (w) fn=function(){ showWord(w); syncPromptCue(); }; }
+    var el=document.createElement(fn?'button':'span'); el.textContent=tok.trim();
+    if (fn){ el.onclick=fn; if (pid) el.dataset.pid=pid; el.title='Show it on screen'; }
+    else el.style.cssText='opacity:.75;padding:3px 4px';
+    d.appendChild(el);
+  });
+  return d;
 }
 $('pView').onclick=function(){ viewClip=!viewClip; showScript(); };
 $('pDropL').onclick=function(){
