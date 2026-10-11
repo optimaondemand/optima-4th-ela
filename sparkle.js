@@ -534,7 +534,7 @@ function greetingParts(p) {
   if (me && me.tabs && me.tabs.length > 1) return ['Picking up where you left off, ', '.'];
   if (LESSON.day === 1) return ['Welcome back, ', '. A new week \u2014 and a new chapter.'];
   var prev = LESSON.week + '.' + (LESSON.day - 1);
-  if (prog[prev] && prog[prev].done) return ['Welcome back, ', '. Yesterday you finished Lesson ' + prev + '.'];
+  if (prog[prev] && prog[prev].done) return ['Welcome back, ', '. Last time you finished Lesson ' + prev + '.'];
   return ['Welcome back, ', '.'];
 }
 
