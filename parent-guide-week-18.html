@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 18 Parent Guide · 4th Grade ELA · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+.b-rose{background:#FDEEEE;border-radius:12px;padding:14px 16px;} .b-rose .box-label{color:#A8434A;}
+
+.p-museum{background:var(--sky-bg);color:#1F6F8C;}
+.p-extra{background:var(--green-bg);color:#1F8452;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.extras .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.essay{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.essay span{font-size:15px;font-weight:800;border-radius:999px;padding:4px 12px;background:var(--paper);border:1px solid var(--line);color:var(--muted);}
+.essay span.now{background:var(--gold-bg);border-color:#F5E6C8;color:#9A6C14;}
+.essay span.done{background:var(--green-bg);border-color:#CDEFDB;color:#1F8452;}
+@media (max-width:720px){.extras{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 4th Grade ELA</div>
+      <h1>Week 18: The Long Night</h1>
+      <div class="sub"><em>Number the Stars</em>, Chapters 9–12</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">Chapters 9–12</span>
+        <span class="chip">Check-In at week’s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('https://optimaondemand.github.io/optima-4th-ela/assets/covers/nts.jpg');background-position:center 35%;" role="img" aria-label="Cover of Number the Stars by Lois Lowry"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📋</span><strong>Everything is gathered at the end.</strong> The bottom of the Assignment tab collects every answer from the lesson in one place.</li>
+      <li><span>📄</span><strong>Download as PDF</strong> saves that work as a “My Work” journal page. Use it (or Copy) to <strong>submit in Canvas</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>🔊</span><strong>Listen</strong> at the top reads the page aloud, with a speed control. <strong>Check My Work</strong> and hint buttons give instant feedback.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the novel and a paper reading journal nearby too.</li>
+    </ul>
+  </section>
+
+
+
+  <!-- AT A GLANCE -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>Annemarie figures out the grown-ups are lying and asks Uncle Henrik for the truth. He tells her, “It is much easier to be brave if you do not know everything.” That night, people gather around the casket, and Nazi soldiers arrive. Peter reads aloud a psalm about the God who numbers the stars. The casket turns out to hold warm clothes and blankets, and the Rosens slip away toward the boat. At dawn, Mama still hasn’t come home.</p>
+    <div class="box b-rose" style="margin-bottom:12px;"><div class="box-label">💛 A heads-up for families</div>In Chapter 10, soldiers burst into the gathering in the night and threaten the family. It’s one of the most frightening scenes in the book. The chapter also includes Psalm 147, read aloud by Peter, which gives the book its title.</div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>Noticing symbols and repeated ideas.</strong> The stars, Ellen’s necklace, the casket: objects that keep coming back often stand for something bigger.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>The cost of courage.</strong> Even when the brave thing works, people still pay for it: goodbyes, fear, and long hours of waiting.</div>
+    </div>
+    <p class="quote">“It is much easier to be brave if you do not know everything.”<small>Uncle Henrik, Chapter 9</small></p>
+  </section>
+
+  <!-- DAY BY DAY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">18.1<span>Day 1</span></td>
+          <td><span class="ch">Chapter 9 · Why Are You Lying?</span><br>Annemarie tells Uncle Henrik she knows he is lying. He explains why the grown-ups are keeping secrets.</td>
+          <td>Why might it be easier to be brave if you don’t know everything?</td>
+        </tr>
+        <tr>
+          <td class="day-n">18.2<span>Day 2</span></td>
+          <td><span class="ch">Chapter 10 · Let Us Open the Casket</span><br>Soldiers arrive at the gathering and want to open the casket. Mama says the great-aunt died of a disease that spreads. Peter reads Psalm 147.<br><span class="pill p-poem">By Heart poem</span></td>
+          <td>What do the stars stand for in this chapter?</td>
+        </tr>
+        <tr>
+          <td class="day-n">18.3<span>Day 3</span></td>
+          <td><span class="ch">Chapter 11 · Will We See You Again Soon, Peter?</span><br>The casket holds warm clothes and blankets, not a body. Peter gives Mr. Rosen an important packet for Uncle Henrik, and the Rosens leave with him for the boat.</td>
+          <td>What does it cost to do the brave thing, even when it works?</td>
+        </tr>
+        <tr>
+          <td class="day-n">18.4<span>Day 4</span></td>
+          <td><span class="ch">Chapter 12 · Where Was Mama?</span><br>Annemarie wakes before dawn. Mama should have been back hours ago.<br><span class="pill p-poem">By Heart poem</span></td>
+          <td>What does it feel like to wait, not knowing?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">From Chapter 9: Uncle Henrik explains what bravery takes. It’s read in a steady, kind voice. Your student reads it three times, then <strong>records and submits in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point check on the week: grammar, word parts and vocabulary, spelling, reading, and one short writing response.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words"><div class="word"><b>proceed</b><span>to move forward; to continue</span></div><div class="word"><b>concede</b><span>to give in; to admit defeat</span></div><div class="word"><b>access</b><span>a way to reach or enter something</span></div><div class="word"><b>symbol</b><span>an object or image that stands for an idea</span></div></div>
+    <div class="skills">
+      <div class="box b-sky"><div class="box-label">Word parts</div><strong>ceed</strong>, <strong>cede</strong>, and <strong>cess</strong> are three spellings of one root meaning “to go” or “to yield.”<span class="eg">proceed · concede · access · recess</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>Consonant + -le endings.</strong> These words split just before the consonant-le, which makes its own syllable.<span class="eg">can·dle · ta·ble · bun·dle · han·dle</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>Contractions.</strong> The apostrophe marks the missing letters. Watch for it’s (it is) vs. its (belonging to it).<span class="eg">they’re · can’t · it’s</span></div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student’s Opinion Essay</h2><span class="tag">Writer’s Workshop</span></div>
+    <div class="essay"><span class="done">Wk 15 · Opinion basics</span><span class="done">Wk 16 · Claim + reasons</span><span class="done">Wk 17 · Evidence + drafting</span><span class="now">Wk 18 · Elaborate</span><span class="">Wk 19 · Publish</span></div>
+    <p>This week your student makes the body paragraphs stronger. They stretch the “so what?” after each quote into two or three sentences, explain <strong>why</strong> the quote proves their reason, and end each paragraph by connecting back to their claim. By Day 4 they revise one paragraph into the version they’ll publish.</p>
+  </section>
+
+  <!-- BY HEART -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>By Heart</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">Robins will wear their feathery fire<br>Whistling their whims on a low fence-wire;<br>And not one will know of the war, not one<br>Will care at last when it is done.<small>Sara Teasdale, “There Will Come Soft Rains” (1920), lines 5–8</small></div>
+      <div><p>The four Teasdale lines keep fading on Days 2 and 4. By now your student may be able to say most of them from memory.</p><p><strong>How to help:</strong> Ask what Teasdale means by “not one will know of the war.” How does that fit this week’s chapters?</p></div>
+    </div>
+  </section>
+
+  <!-- ASK AT HOME -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than “How was school?”</span></div>
+    <ol class="ask"><li><span class="q">What did Uncle Henrik mean that it’s easier to be brave if you don’t know everything?</span><span class="listen">Listen for: if you don’t know the secret, you can’t give it away, so not knowing protects you.</span></li><li><span class="q">What was really in the casket?</span><span class="listen">Listen for: warm clothes and blankets for the people escaping by boat.</span></li><li><span class="q">Why do you think the book is called <em>Number the Stars</em>?</span><span class="listen">Listen for: the psalm says God numbers the stars, so each one counts; any thoughtful connection to Ellen’s star works too.</span></li><li><span class="q">Who was brave this week, and how do you know?</span><span class="listen">Listen for: an action from the book used as evidence.</span></li></ol>
+  </section>
+
+  <!-- TURN IN + TRY AT HOME -->
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check"><li><strong>Each lesson:</strong> 3 chapter questions plus word-study and writing responses, submitted in Canvas</li><li><strong>Essay draft:</strong> one fully revised body paragraph by Day 4</li><li><strong>Fluency:</strong> one audio recording</li><li><strong>Check-In:</strong> at the end of the week</li></ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> explanations that go past the quote and say <em>why</em> it proves the point.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check"><li><strong>It’s or its?</strong> Try “it is” in the sentence. If it fits, use the apostrophe.</li><li><strong>Find the Big Dipper</strong> on a clear night. In Denmark it’s called “Charles’s Wagon.”</li><li><strong>Symbols at home.</strong> Name an object in your house that stands for something bigger to your family.</li></ul>
+    </section>
+  </div>
+
+  <!-- NEED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong><em>Number the Stars</em></strong> by Lois Lowry · <strong>Reading journal</strong> · <strong>Pencil</strong> · <strong>A device that records audio</strong> for the fluency reading</p>
+    <p class="small">Keep the essay draft saved somewhere outside the browser too, especially before next week’s publishing.</p>
+  </section>
+
+  <!-- NEXT WEEK -->
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 19</h2></div>
+    <p><strong><em>Number the Stars</em>, Chapters 13–17 and the Afterword.</strong> Annemarie has to run alone through the dark woods with a basket that must reach the boat. Then Lois Lowry tells readers what really happened in 1943. Your student <strong>publishes their essay</strong>. Grammar moves on to <strong>homophones</strong>.</p><p class="small" style="color:#DCE6F7;"><strong>Heads-up:</strong> Chapter 17 reveals sad news about two characters. See next week’s guide.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-nts-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole Number the Stars unit →</a><br><br>Optima Academy Online · 4th Grade ELA · Week 18 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+</body>
+</html>
