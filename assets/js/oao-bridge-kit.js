@@ -170,6 +170,13 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
   + '.rc-basket{font-size:14px;color:#3A4A6B;}.rc-basket span{font-family:"Nunito",sans-serif;font-weight:800;color:#8B6914;}'
   + '.rc-reset{margin-top:8px;font-family:"Nunito",sans-serif;font-size:12px;font-weight:800;color:#56627F;background:#fff;border:1.5px solid #E6EBF5;border-radius:999px;padding:4px 12px;cursor:pointer;}'
   /* secret newspaper */
+  + '.np-real{display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;align-items:start;margin:0 0 16px;padding:10px;background:#FFFDF7;border:1px solid #EEE6D2;border-radius:10px;}'
+  + '@media (max-width:560px){.np-real{grid-template-columns:110px minmax(0,1fr);}}'
+  + '.np-real img{width:100%;height:auto;display:block;border:1px solid #D6CBAF;box-shadow:2px 3px 6px rgba(0,0,0,.18);transform:rotate(-1.5deg);background:#eee;}'
+  + '.np-real img{cursor:zoom-in;}.np-real.np-zoom{grid-template-columns:1fr;}.np-real.np-zoom img{max-width:460px;cursor:zoom-out;transform:none;}'
+  + '.np-real figcaption{font-size:14px;line-height:1.5;color:#3A4A6B;}'
+  + '.np-cred{display:block;margin-top:6px;font-family:"Nunito",sans-serif;font-size:11px;font-weight:700;color:#8A7A5C;}'
+  + '.np-what-img{display:block;width:100%;max-width:420px;height:auto;border-radius:6px;margin-top:4px;}'
   + '.np-st{font-family:"Nunito",sans-serif;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8B6914;}'
   + '.np-p{font-size:15px;line-height:1.5;color:#3A4A6B;margin:4px 0 10px;}'
   + '.np-two{margin-top:16px;padding-top:14px;border-top:1px dashed #EBD9AF;}'
@@ -797,13 +804,18 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
     { t: 'Stand together, Danes, and don’t believe everything you read', secret: true, why: 'Words that told Danes to resist could only go in a secret paper.' }
   ];
   function paperCard(host, opt) {
+    function imgSrc(f) { return (DATA.img && DATA.img[f]) || ((opt.base || 'assets/') + 'plates/' + f); }
     var el = card('✎', 'The Secret Newspaper', 'Sort the headlines, then print your own.', [
       'After Germany took over Denmark, Danish newspapers could only print what German <b>censors</b> allowed. Bad news for Germany, or news from London, was cut out.',
       'So some brave Danes made <b>secret newspapers</b>. They typed and printed them in hidden rooms and passed them from hand to hand, so people could read the true news. Before the war ended there were hundreds of them.',
-      'Making or even carrying one was dangerous. That is why they were folded small and passed on quietly.'
+      'Making or even carrying one was dangerous. That is why they were folded small and passed on quietly.',
+      '<img class="np-what-img" src="' + imgSrc('bridge-secret-printers-1945.jpg') + '" alt="Four men in a small room print copies of a secret newspaper on a hand-cranked machine, with stacks of paper on the table." loading="lazy"><span class="np-cred">Real secret printers at work in Horsens, Denmark, March 1945. Frihedsmuseet, National Museum of Denmark (FHM-160781), no known rights.</span>'
     ]);
     var b = el.querySelector('.bk-body');
     b.innerHTML =
+      '<figure class="np-real"><img src="' + imgSrc('bridge-secret-paper-1944.jpg') + '" alt="The front page of a real Danish secret newspaper from August 1944, with big headlines and a photo of King Christian X." loading="lazy">' +
+        '<figcaption><b>A real secret newspaper, August 1944.</b> The big headline says “Before the Hour of Reckoning.” Under it: the Germans are losing battles “on all fronts,” so the war may end soon. The photo is King Christian X. <i>(Click the page to see it bigger.)</i>' +
+        '<span class="np-cred">Frihedsmuseet, National Museum of Denmark (FHM-272350), no known rights.</span></figcaption></figure>' +
       '<div class="np-step"><div class="np-st">Step 1 · Official or secret?</div>' +
         '<p class="np-p">Would each headline be <b>allowed</b> in the official paper, or could it only go in a <b>secret</b> one?</p>' +
         '<div class="np-heads"></div><div class="np-score" aria-live="polite"></div></div>' +
@@ -813,6 +825,10 @@ window.OAOBridgeKit.DATA.oresund = {"denmark":"M357,265L370,298L370,300L362,309L
         '<div class="np-sheet" hidden><div class="np-mast">THE FREE DANE<small>Secret news · Read it, then pass it on</small></div><div class="np-hl"></div><div class="np-cols"><i></i><i></i><i></i></div></div>' +
         '<button type="button" class="np-pass" hidden>Fold it and pass it on</button><div class="np-note" aria-live="polite"></div>' +
       '</div>';
+    var fig = b.querySelector('.np-real'), fimg = fig.querySelector('img');
+    fimg.setAttribute('tabindex', '0'); fimg.setAttribute('role', 'button'); fimg.title = 'Click to see it bigger';
+    function zoom() { fig.classList.toggle('np-zoom'); }
+    fimg.onclick = zoom; fimg.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); zoom(); } };
     var heads = b.querySelector('.np-heads'), score = b.querySelector('.np-score'), two = b.querySelector('.np-two');
     var done = 0;
     HEADLINES.forEach(function (h) {
