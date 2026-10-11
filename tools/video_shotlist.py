@@ -5,6 +5,48 @@ R=os.path.expanduser('~/mnt/optima-4th-ela')
 os.chdir(R)
 man=json.load(open('video-manifest.json'))
 titles={}
+# On-screen cards for the Video Studio: what each section of the lesson shows,
+# so a film can put it on screen (DOL sentences, word parts, the grammar and
+# spelling rule, the reading move, Pause & Think stops, chapter questions,
+# the writing focus, and the chapter's picture).
+def _t(h): return html.unescape(re.sub(r'\s+',' ',re.sub(r'<[^>]+>',' ',h))).strip()
+PLATES=set(os.listdir('assets/plates')) if os.path.isdir('assets/plates') else set()
+def plateFor(f,src,title):
+    m=re.match(r'lesson-(\d+)-(\d+)-([a-z]+)',f)
+    if not m: return ''
+    book=m[3]
+    ch=re.search(r'\(Ch\.\s*([\d\s&,-]+)\)',title)
+    if ch:
+        nums=re.findall(r'\d+',ch[1]); n=book+'-ch'+'-'.join(nums)+'.png'
+        if n in PLATES: return 'plates/'+n
+    for ext in ('jpg','png'):
+        n=f'{book}-{m[1]}-{m[2]}.{ext}'
+        if n in PLATES: return 'plates/'+n
+    return ''
+def cardsFor(f,src,key):
+    C={}
+    m=re.match(r'lesson-(\d+)-(\d+)',f)
+    if m and os.path.exists(f'data/lesson-{m[1]}-{m[2]}.json'):
+        D=json.load(open(f'data/lesson-{m[1]}-{m[2]}.json',encoding='utf-8'))
+        n=D.get('notes',{})
+        for k in ('wgrd','wordParts','grammar','spelling'):
+            if n.get(k): C[k]=n[k]
+        dol=D.get('dol') or {}
+        C['dol']=[{'raw':v.get('raw',''),'fixed':v.get('fixed',''),'why':v.get('why','')} for k,v in sorted(dol.items()) if isinstance(v,dict) and v.get('raw')]
+    C['pauses']=[_t(x) for x in re.findall(r'class="socratic-q">(.*?)</p>',src,re.S)]
+    C['chapterQs']=[_t(x) for x in re.findall(r'<div class="q-text"><span class="q-num">\d+</span>(.*?)</div>',src,re.S)]
+    fm=re.search(r'Today(?:’|&rsquo;|\')s focus:\s*(?:</[^>]+>)?(.*?)</div>',src,re.S)
+    if fm: C['focus']=_t(fm[1])
+    nm=re.search(r'<!-- NOW YOU TRY -->(.*?)<!--',src,re.S)
+    if nm:
+        nt=re.sub(r'^.*?Now you try\.?\s*','',_t(nm[1]))
+        nt=re.sub(r'\s*Write below\.?\s*$','',nt)
+        nt=re.sub(r'^Use what Sam showed you\.\s*Borrow a sentence frame if you want\.\s*','',nt)
+        if nt: C['nowTry']=nt[:400]
+    rs=re.search(r'class="rwm-sentence">(.*?)</div>',src,re.S)
+    if rs: C['rwm']=_t(rs[1])
+    tt=re.search(r'<title>([^<]*)',src); C['plate']=plateFor(f,src,html.unescape(tt[1]) if tt else '')
+    return {k:v for k,v in C.items() if v}
 for f in glob.glob('lesson-*.html'):
     m=re.match(r'lesson-(\d+)-(\d+|fluency)',f)
     if not m: continue
@@ -23,7 +65,7 @@ for f in glob.glob('lesson-*.html'):
     for fm in re.finditer(r'class="flip-card-front">(.*?)class="fc-def">(.*?)</div>',src,re.S):
         em=re.search(r'class="fc-emoji">(.*?)</div>',fm[1],re.S); wd=re.search(r'class="fc-word">(.*?)</div>',fm[1],re.S)
         if wd: words.append({'w':html.unescape(re.sub(r'<[^>]+>','',wd[1])).strip(),'d':html.unescape(re.sub(r'<[^>]+>','',fm[2])).strip(),'e':html.unescape(em[1]).strip() if em else ''})
-    titles[key]={'title':t,'file':f,'notes':notes,'words':words}
+    titles[key]={'title':t,'file':f,'notes':notes,'words':words,'cards':cardsFor(f,src,key)}
 def exists(p): return os.path.exists('assets/video/'+p+'.mp4')
 lessons=[]
 for k,v in man.items():
@@ -45,6 +87,7 @@ for k,v in titles.items():
     for x in v.get('words',[]):
         lst=wk.setdefault(k.split('-')[0],[])
         if all(y['w'].lower()!=x['w'].lower() for y in lst): lst.append(x)
+for L in lessons: L['cards']=titles.get(f"{L['w']}-{L['d']}",{}).get('cards',{})
 for L in lessons: L['words']=titles.get(f"{L['w']}-{L['d']}",{}).get('words') or wk.get(str(L['w']),[])
 poems=[('Hope Is the Thing with Feathers','hope-is-the-thing-with-feathers','Mrs. Frisby'),('Who Has Seen the Wind?','who-has-seen-the-wind','Anne of Green Gables'),('There Will Come Soft Rains','there-will-come-soft-rains','Number the Stars'),('Sympathy','sympathy','Freedom Train'),('The Forest Remembers','forest-remembers','Prince Caspian')]
 def poemScript(slug):

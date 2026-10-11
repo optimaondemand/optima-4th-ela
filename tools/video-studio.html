@@ -270,6 +270,7 @@ body.dimrec .flair{position:relative;z-index:51;background:#000;border-color:#22
 .oschips .none{font-size:12.5px;color:var(--muted);font-style:italic}
 .oschip{border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:9px;padding:5px 10px;font-size:13px;font-weight:700;cursor:pointer;max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;position:relative}
 .oschip.q{font-family:Georgia,serif;font-weight:400;font-style:italic}
+.oschip.p{font-weight:800}
 .oschip.on{background:var(--gold);border-color:var(--gold);color:#0E1C42}
 .oschip .rm{margin-left:6px;opacity:.55;font-style:normal;font-family:Nunito,sans-serif}
 .oschip .rm:hover{opacity:1}
@@ -278,6 +279,12 @@ body.dimrec .flair{position:relative;z-index:51;background:#000;border-color:#22
 body.dimrec .onscreen{position:relative;z-index:51;background:#000;border-color:#222;opacity:.6}
 .ptext .qcue{display:flex;gap:10px;align-items:center;background:var(--gold);color:#0E1C42;border-radius:10px;padding:6px 10px;margin:0 0 10px;font-size:.6em;font-weight:800;cursor:pointer;white-space:normal}
 .ptext .qcue.on{background:#fff}
+.ptext .seccue{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:-4px 0 12px;font-size:.55em;font-weight:800;color:var(--gold)}
+.ptext .seccue button{border:1px solid rgba(232,165,49,.6);background:transparent;color:#f3cf86;border-radius:8px;padding:3px 9px;font:inherit;cursor:pointer}
+.ptext .seccue button.on{background:var(--gold);color:#0E1C42}
+.ptext .vw{border-bottom:2px dotted var(--gold);cursor:pointer}
+.ptext .vw.on{background:rgba(232,165,49,.3);border-radius:4px}
+body.dimrec .ptext .seccue{opacity:.5}
 body.dimrec .ptext .qcue{background:#3a2f12;color:#b39556}
 /* ---- plan: want / skip ---- */
 .clip .want{width:18px;height:18px;flex:none;accent-color:var(--green);cursor:pointer;margin:0}
@@ -406,6 +413,10 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
           <label class="check" style="margin:0 0 0 6px;font-size:12.5px"><input type="checkbox" id="flairSnd"> Sound</label>
         </div>
         <div class="onscreen" id="onScreen">
+          <div class="osrow" id="partRow">
+            <span class="oslbl">🎬 This part <kbd>7</kbd></span>
+            <div class="oschips" id="partChips"></div>
+          </div>
           <div class="osrow">
             <span class="oslbl">❝ Quotes <kbd>6</kbd></span>
             <div class="oschips" id="quoteChips"></div>
@@ -426,7 +437,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
             <input type="text" id="wDef" placeholder="What it means">
             <div><button class="btn sm gold" id="wSave">Add word</button> <button class="btn sm" id="wCancel">Cancel</button></div>
           </div>
-          <div class="note" style="margin-top:2px">Click a quote or word to put it on the video. Click it again to take it off. It stays up until you do.</div>
+          <div class="note" style="margin-top:2px">Click anything here to put it on the video. Click it again to take it off. It stays up until you do. <kbd>8</kbd> = chapter picture.</div>
         </div>
         <div class="privacy">🔒 <span>Everything stays on this computer. Nothing is uploaded unless you turn on live captions (see Sound).</span></div>
 
@@ -458,6 +469,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
             <div class="th2">❓ Stop and answer <span class="lbl" id="qzLbl">No questions yet</span>
               <button class="btn sm gold" id="qzAdd" title="Add a question where the player is now">＋ Question here</button>
             </div>
+            <div class="osrow" id="qzSuggest" style="margin-top:8px" hidden></div>
             <div id="qzList"></div>
             <label class="check" style="font-size:13px;margin-top:8px"><input type="checkbox" id="qzNoSkip" checked> Students can’t skip ahead past a question they haven’t answered</label>
             <div class="note">Play to the moment you want, pause, then press ＋ Question here. On the lesson page the video stops there until the student answers. Answers go into their My Work.</div>
@@ -619,6 +631,8 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
       <li><b>✏ Draw</b> (or <kbd>D</kbd>) lets you circle or underline things. Ink fades on its own unless you untick Fade.</li>
       <li><b>Quotes</b>: when your script says <i>Quote on screen</i>, click the gold line in the script (or press <kbd>6</kbd>) and the quote appears on a band across the bottom of the video. Click again when you’ve read it. <b>＋ Type a quote</b> adds your own.</li>
       <li><b>Words</b>: this lesson’s vocabulary words are under the video. Click one to show its card, click again to take it off. <kbd>5</kbd> steps through them.</li>
+      <li><b>This part</b> (<kbd>7</kbd>): what the section you’re filming can show, pulled from the lesson: the DOL sentence on a sentence strip (then <b>✓ Show the fix</b>), word parts, the grammar or spelling rule, the reading move, Pause &amp; Think stops, chapter questions, and the writing focus. Vocabulary words in your script are underlined; click one to show its card.</li>
+      <li><b>Chapter picture</b> (<kbd>8</kbd>): the lesson’s painting fills the screen and drifts slowly closer, with you in the corner.</li>
       <li><b>Confetti</b>: <kbd>1</kbd>.</li>
       <li>Press <b>■ Stop</b> or <kbd>Space</kbd> when you’re done.</li>
     </ul>
@@ -627,7 +641,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
       <li><b>Trim</b>: drag the handles to cut the start and end.</li>
       <li><b>Captions</b>: fix any wrong words. Click a time to jump there.</li>
       <li>Pick a thumbnail, then <b>Keep it</b> or <b>Download now</b>.</li>
-      <li><b>❓ Stop and answer</b>: play to a moment, pause, press <b>＋ Question here</b>. On the lesson page the video stops there until the student answers (multiple choice, a written answer, or just a pause to think). Already recorded a video? Pick it and press <b>❓ Add questions or captions to this video</b>.</li>
+      <li><b>❓ Stop and answer</b>: play to a moment, pause, press <b>＋ Question here</b>. On the lesson page the video stops there until the student answers (multiple choice, a written answer, or just a pause to think). The 💡 Ideas row suggests ready-made questions from the lesson: its chapter questions, Pause &amp; Think stops, “which word means…” for the vocabulary, and word-part meanings. Already recorded a video? Pick it and press <b>❓ Add questions or captions to this video</b>.</li>
     </ul>
     <h3>Your privacy</h3>
     <p>Your video never leaves this computer. It stays in this tab until you download or save it. The background tool downloads a small model from Google the first time, but nothing is sent back. The one exception is <b>Make captions while I record</b>: Chrome sends your audio to Google to turn speech into words. Leave it off and use <b>Build from my script</b> instead.</p>
@@ -670,7 +684,7 @@ DATA.lessons.forEach(function(L){
   var lt = L.title.replace(/^(Lesson \d+\.\w+|Week \d+ Fluency):\s*/,'');
   var name = L.d==='fluency' ? 'Week '+L.w+' Fluency' : 'Lesson '+L.w+'.'+L.d;
   L.clips.forEach(function(c){
-    CLIPS.push({path:c.path, label:c.label, script:c.script||'', notes:!!c.notes, done:!!c.done, words:L.words||[],
+    CLIPS.push({path:c.path, label:c.label, script:c.script||'', notes:!!c.notes, done:!!c.done, words:L.words||[], cards:L.cards||{},
       kind: c.id==='lesson'?'lesson':'section', week:L.w, group:'Week '+L.w, lesson:name+' · '+lt, lessonShort:name, id:c.id, lkey:L.w+'-'+L.d});
   });
 });
@@ -844,7 +858,7 @@ function select(path){
   showEditBtn();
   showScript();
   closeReview();
-  if (typeof quote!=='undefined'){ quote.cur=null; word.cur=null; renderOnScreen(); }
+  if (typeof quote!=='undefined'){ quote.cur=null; word.cur=null; part.cur=null; strip.cur=null; plate.on=false; renderOnScreen(); }
   renderList();
   var el = document.querySelector('.clip.sel'); if (el) el.scrollIntoView({block:'nearest'});
 }
@@ -963,8 +977,18 @@ function renderLessonDoc(c, L){
       if (qt) d.onclick=function(){ showQuote({t:qt,a:attribOf(c)}); };
     }
     if (target>-1 && !inside) d.classList.add('dim');
+    else if (d.className==='pp') linkWords(d, c);
     if (i===target){ d.classList.add('here'); targetEl=d; }
     pt.appendChild(d);
+    if (i===target){
+      var ps=partsFor(c);
+      if (ps.length){
+        var row=document.createElement('div'); row.className='seccue';
+        row.innerHTML='<span>🎬 On screen for this part:</span>';
+        ps.forEach(function(p){ var b=document.createElement('button'); b.textContent=p.label; b.dataset.pid=p.id; b.title=p.tip||''; b.onclick=function(){ showPart(p); }; row.appendChild(b); });
+        pt.appendChild(row);
+      }
+    }
   });
   $('pLbl').textContent = (L.builtin?'Teacher script · ':'Lesson script · ')+(L.name||c.lessonShort)+(target<0?' · couldn’t find this video’s part, scroll to it':'');
   $('pReset').hidden = true;
@@ -1253,7 +1277,8 @@ function containDraw(ctx, src, sw, sh){
 var bub={shape:store.get('bubshape','circle'), size:store.get('bubsize','m'), pos:store.get('bubpos','br')};
 function composeScreen(ctx, camOK, segOK){
   ctx.fillStyle='#0E1C42'; ctx.fillRect(0,0,W,H);
-  if (scrStream && scr.readyState>=2 && scr.videoWidth) containDraw(ctx,scr,scr.videoWidth,scr.videoHeight);
+  if (plate.on && drawPlate(ctx,performance.now())) {}
+  else if (scrStream && scr.readyState>=2 && scr.videoWidth) containDraw(ctx,scr,scr.videoWidth,scr.videoHeight);
   if (!camOK || bub.shape==='off') return;
   var d={s:190,m:250,l:330}[bub.size]||250, m=26;
   var left=bub.pos.indexOf('l')>-1, top=bub.pos.indexOf('t')>-1;
@@ -1296,11 +1321,12 @@ function perfCheck(dt){
 function frame(){
   requestAnimationFrame(frame);
   var camOK = camStream && cam.readyState>=2 && cam.videoWidth;
-  var scrOK = srcMode==='screen' && scrStream;
+  var scrOK = (srcMode==='screen' && scrStream) || (plate.on && plate.img);
+  var bubbled = srcMode==='screen' || plate.on;
   if (!camOK && !scrOK) return;
   var t0=performance.now();
-  var wantSeg = srcMode==='screen' ? (bub.shape==='cutout' || (bub.shape==='circle' && bgMode!=='none')) : bgMode!=='none';
-  var useSeg = camOK && segmenter && wantSeg && !(srcMode==='screen' && bub.shape==='off');
+  var wantSeg = bubbled ? (bub.shape==='cutout' || (bub.shape==='circle' && bgMode!=='none')) : bgMode!=='none';
+  var useSeg = camOK && segmenter && wantSeg && !(bubbled && bub.shape==='off');
   frameN++;
   if (camOK && (useSeg || (lightOn && frameN%6===0))){
     segCtx.drawImage(cam,0,0,segW,segH);
@@ -1311,11 +1337,11 @@ function frame(){
     try { segmenter.segmentForVideo(segCanvas, ts, onMask); } catch(e){ console.warn(e); }
   }
   if (camOK && lightOn && frameN%6===0) measureLight();
-  if (srcMode==='screen') composeScreen(octx, camOK, useSeg);
+  if (bubbled) composeScreen(octx, camOK, useSeg);
   else composeCam(octx, useSeg && haveMask);
   // what you see: mirrored only when it's just you
   vctx.save();
-  if (mirrorOn && srcMode!=='screen'){ vctx.translate(W,0); vctx.scale(-1,1); }
+  if (mirrorOn && !bubbled){ vctx.translate(W,0); vctx.scale(-1,1); }
   vctx.drawImage(out,0,0);
   vctx.restore();
   // titles, flair and ink go on both, the right way round
@@ -1547,6 +1573,10 @@ function stepFx(now){
   quote.k += ((quote.cur?1:0)-quote.k)*Math.min(1,dt*7);
   if (!quote.cur && quote.k<0.01) quote.show=null; else if (quote.cur) quote.show=quote.cur;
   word.k += ((word.cur?1:0)-word.k)*Math.min(1,dt*7);
+  part.k += ((part.cur?1:0)-part.k)*Math.min(1,dt*7);
+  if (!part.cur && part.k<0.01) part.show=null; else if (part.cur) part.show=part.cur;
+  strip.k += ((strip.cur?1:0)-strip.k)*Math.min(1,dt*7);
+  if (!strip.cur && strip.k<0.01) strip.show=null; else if (strip.cur) strip.show=strip.cur;
   if (!word.cur && word.k<0.01) word.show=null; else if (word.cur) word.show=word.cur;
   fx=fx.filter(function(f){ return (now-f.t0)/1000 < f.life; });
   fx.forEach(function(f){
@@ -1622,6 +1652,8 @@ function drawOverlays(ctx, now){
     var nameStart = T.titleOn ? 3.4 : 0.6;
     if (T.nameOn) drawNameBanner(ctx, t-nameStart);
   }
+  drawPartCard(ctx);
+  drawStrip(ctx);
   drawWordCard(ctx);
   drawQuote(ctx);
   fx.forEach(function(f){ drawFx(ctx,f,now); });
@@ -1645,6 +1677,8 @@ document.addEventListener('keydown',function(e){
   if (map[e.key]){ e.preventDefault(); fire(map[e.key]); }
   else if (e.key==='5'){ e.preventDefault(); nextWord(); }
   else if (e.key==='6'){ e.preventDefault(); nextQuote(); }
+  else if (e.key==='7'){ e.preventDefault(); nextPart(); }
+  else if (e.key==='8'){ e.preventDefault(); setPlate(!plate.on); }
   else if (e.key==='d'||e.key==='D'){ setDraw(!drawMode); }
   else if (e.key==='p'||e.key==='P'){ if (recording){ e.preventDefault(); togglePause(); } }
   else if (e.key==='Escape' && drawMode){ strokes=[]; }
@@ -2100,6 +2134,7 @@ function quotesFor(c){
     if (txt) cueQuotes(sectionOf(c,txt)).forEach(function(q){ add(q,attribOf(c),false); });
   });
   var own=scriptFor(c); if (own) cueQuotes(own.split(/\n\s*\n/)).forEach(function(q){ add(q,attribOf(c),false); });
+  if (c.id==='rwm' && c.cards && c.cards.rwm) add(c.cards.rwm.replace(/^[“"]|[”"]$/g,''),attribOf(c),false);
   (myQuotes[c.path]||[]).forEach(function(q,i){ add(q.t,q.a,true,i); });
   return out;
 }
@@ -2133,8 +2168,18 @@ function chip(text, cls, on, onClick, onRemove, title){
   b.onclick=onClick; return b;
 }
 function renderOnScreen(){
-  var c=byPath[sel], qb=$('quoteChips'), wb=$('wordChips');
-  qb.innerHTML=''; wb.innerHTML='';
+  var c=byPath[sel], qb=$('quoteChips'), wb=$('wordChips'), pb=$('partChips');
+  qb.innerHTML=''; wb.innerHTML=''; pb.innerHTML='';
+  var ps=partsFor(c);
+  $('partRow').hidden=!ps.length;
+  ps.forEach(function(p){
+    var on = p.kind==='plate' ? plate.on : samePart(part.cur,p)||samePart(strip.cur,p);
+    pb.appendChild(chip(p.label,'p',on,function(){ showPart(p); },null,p.tip));
+    if (p.kind==='strip' && samePart(strip.cur,p)){
+      pb.appendChild(chip(strip.fix?'↺ Show it unfixed':'✓ Show the fix','p',strip.fix,function(){ strip.fix=!strip.fix; renderOnScreen(); },null,p.why||''));
+    }
+  });
+  syncPromptCue();
   var qs=quotesFor(c), ws=wordsFor(c);
   if (!qs.length){ qb.innerHTML='<span class="none">None in this video’s script</span>'; }
   qs.forEach(function(q){
@@ -2151,6 +2196,230 @@ function renderOnScreen(){
   });
   [].forEach.call(document.querySelectorAll('#ptext .qcue'),function(el){ el.classList.toggle('on', !!quote.cur && quote.cur.t===el.dataset.q); });
 }
+/* ---------- "for this part": what each section of the lesson can show ----------
+   Built from the lesson itself (tools/video_shotlist.py): the DOL sentences,
+   word parts, the grammar and spelling rule, the reading move, Pause & Think
+   stops, chapter questions, the writing focus, and the chapter's picture. */
+var SECTION_CARDS={
+  welcome:['plate','wgrd'], lesson:['plate','wgrd','focus'], wgrd:['wgrd','plate'], dol:['dol'],
+  guide1:['wordParts','grammar','spelling'], morphology:['wordParts'], grammar:['grammar'], spelling:['spelling'],
+  vocabulary:['plate'], wordconn:['wordParts','grammar'], copia:['plate'], copywork:['plate'],
+  guide2:['plate','pauses'], read:['pauses','plate'], rwm:['plate'],
+  guide3:['chapterQs'], chapter:['chapterQs'], workshop:['focus','nowTry']
+};
+var CARD_STYLE={
+  wgrd:{tag:'WHAT GOOD READERS DO', title:'Today’s reading move', col:'#2f6fd6'},
+  wordParts:{tag:'WORD PARTS', title:'', col:'#2f9e6b'},
+  grammar:{tag:'GRAMMAR', title:'', col:'#8a4fd6'},
+  spelling:{tag:'SPELLING', title:'', col:'#d6762f'},
+  pauses:{tag:'⏸ PAUSE AND THINK', title:'', col:'#d64545'},
+  chapterQs:{tag:'CHAPTER THINKING', title:'', col:'#0E9AB8'},
+  focus:{tag:'WRITER’S WORKSHOP', title:'Today’s focus', col:'#b9822a'},
+  nowTry:{tag:'NOW YOU TRY', title:'', col:'#b9822a'}
+};
+var part={cur:null,show:null,k:0}, strip={cur:null,show:null,k:0,fix:false}, plate={on:false,img:null,path:'',t0:0,k:0};
+function partsFor(c){
+  if (!c || c.free) return [];
+  var C=c.cards||{}, keys=SECTION_CARDS[c.id] || ['plate'], out=[];
+  keys.forEach(function(k){
+    if (k==='plate'){ if (C.plate) out.push({kind:'plate', id:'plate', label:'🖼 Chapter picture', tip:'Fill the screen with this chapter’s picture, with you in the corner'}); return; }
+    if (k==='dol'){ (C.dol||[]).forEach(function(d,i){ out.push({kind:'strip', id:'dol'+i, label:'✏ Sentence '+'AB'[i], raw:d.raw, fixed:d.fixed, why:d.why, tip:d.raw}); }); return; }
+    var v=C[k]; if (!v) return;
+    var st=CARD_STYLE[k];
+    if (Array.isArray(v)){
+      v.forEach(function(t,i){ out.push({kind:'card', id:k+i, label:(k==='pauses'?'⏸ Stop ':'Q')+(i+1), tag:st.tag+(k==='chapterQs'?' · Q'+(i+1):''), title:st.title, body:t, col:st.col, tip:t}); });
+    } else {
+      var lab={wgrd:'🧠 Reading move', wordParts:'🧩 Word parts', grammar:'🔧 Grammar rule', spelling:'🐝 Spelling rule', focus:'🖋 Today’s focus', nowTry:'📝 Now you try'}[k]||k;
+      out.push({kind:'card', id:k, label:lab, tag:st.tag, title:st.title, body:v, col:st.col, tip:v, rows: k==='wordParts' ? partRows(v) : null});
+    }
+  });
+  return out;
+}
+/* "script and scribe mean “to write” (describe, manuscript). ject means …" → rows */
+function partRows(t){
+  return String(t).split(/(?<=[.)])\s+(?=[a-z])/).map(function(s){
+    var m=/^(.*?)\s+(?:all\s+)?means?\s+(.*)$/i.exec(s.trim());
+    return m ? {part:m[1].replace(/\s+and\s+/g,' / ').replace(/,\s*/g,' / '), rest:m[2]} : {part:'', rest:s.trim()};
+  });
+}
+/* vocabulary words in the script become buttons: click one to show its card */
+function linkWords(el, c){
+  var ws=(c.words||[]).filter(function(w){ return w.w; });
+  if (!ws.length) return;
+  var esc=function(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); };
+  var re=new RegExp('\\b('+ws.map(function(w){ return esc(w.w); }).join('|')+')\\b','gi');
+  var txt=el.textContent; if (!re.test(txt)) return;
+  re.lastIndex=0; el.textContent='';
+  var last=0, m;
+  while ((m=re.exec(txt))){
+    if (m.index>last) el.appendChild(document.createTextNode(txt.slice(last,m.index)));
+    var w=ws.find(function(x){ return x.w.toLowerCase()===m[0].toLowerCase(); });
+    var s=document.createElement('span'); s.className='vw'; s.textContent=m[0]; s.dataset.w=w.w; s.title='Show the word card for “'+w.w+'”';
+    s.onclick=(function(w){ return function(){ showWord(w); }; })(w);
+    el.appendChild(s); last=m.index+m[0].length;
+  }
+  if (last<txt.length) el.appendChild(document.createTextNode(txt.slice(last)));
+}
+function syncPromptCue(){
+  [].forEach.call(document.querySelectorAll('#ptext .seccue button'),function(b){
+    var id=b.dataset.pid;
+    b.classList.toggle('on', id==='plate' ? plate.on : !!((part.cur && part.cur.id===id) || (strip.cur && strip.cur.id===id)));
+  });
+  [].forEach.call(document.querySelectorAll('#ptext .vw'),function(s){ s.classList.toggle('on', !!(word.cur && word.cur.w===s.dataset.w)); });
+}
+function samePart(a,b){ return a && b && a.id===b.id; }
+function showPart(p){
+  if (!p) { part.cur=null; strip.cur=null; renderOnScreen(); return; }
+  if (p.kind==='plate'){ setPlate(!plate.on); return; }
+  if (p.kind==='strip'){ if (samePart(strip.cur,p)) strip.cur=null; else { strip.cur=p; strip.fix=false; } }
+  else part.cur = samePart(part.cur,p) ? null : p;
+  renderOnScreen();
+}
+function nextPart(){
+  var ps=partsFor(byPath[sel]).filter(function(p){ return p.kind!=='plate'; });
+  if (!ps.length){ toast('Nothing to show for this part'); return; }
+  var cur=part.cur||strip.cur, i=cur ? ps.findIndex(function(p){ return p.id===cur.id; }) : -1;
+  part.cur=null; strip.cur=null;
+  if (i<ps.length-1) showPart(ps[i+1]); else renderOnScreen();
+}
+var plateCache={};
+function setPlate(on){
+  var c=byPath[sel], path=c && c.cards && c.cards.plate;
+  if (on && !path){ toast('No chapter picture for this lesson'); return; }
+  if (!on){ plate.on=false; renderOnScreen(); return; }
+  var go=function(img){ plate.img=img; plate.path=path; plate.on=true; plate.t0=performance.now(); renderOnScreen(); };
+  if (plateCache[path]){ go(plateCache[path]); return; }
+  fetch('../assets/'+path).then(function(r){ if(!r.ok) throw new Error(r.status); return r.blob(); }).then(function(b){
+    var img=new Image(); img.onload=function(){ plateCache[path]=img; go(img); }; img.src=URL.createObjectURL(b);
+  }).catch(function(){ toast('The chapter picture couldn’t load here. It works on the live studio page.'); });
+}
+/* the chapter picture fills the frame, drifting slowly closer, with you in the corner */
+function drawPlate(ctx,now){
+  var img=plate.img; if (!img) return false;
+  var t=(now-plate.t0)/1000, z=1.02+Math.min(0.10,t*0.004);
+  var s=Math.max(W/img.naturalWidth,H/img.naturalHeight)*z, dw=img.naturalWidth*s, dh=img.naturalHeight*s;
+  ctx.fillStyle='#0E1C42'; ctx.fillRect(0,0,W,H);
+  ctx.drawImage(img,(W-dw)/2,(H-dh)/2-(t*0.6%1)*0,dw,dh);
+  ctx.strokeStyle='rgba(232,165,49,.9)'; ctx.lineWidth=6; ctx.strokeRect(18,18,W-36,H-36);
+  return true;
+}
+/* a lesson card (rule, reading move, question …) on the right, on notebook paper */
+function drawPartCard(ctx){
+  var p=part.show, k=ease(part.k); if (!p || k<0.01) return;
+  ctx.save();
+  var cw=560, pad=28, bodySize=26, lines=[], rows=null;
+  ctx.font='600 '+bodySize+'px Nunito, system-ui, sans-serif';
+  if (p.rows && p.rows.some(function(r){ return r.part; })){
+    rows=p.rows.map(function(r){ ctx.font='600 22px Nunito, system-ui, sans-serif'; return {part:r.part, lines:wrapLines(ctx,r.rest,cw-pad*2)}; });
+  } else {
+    do { ctx.font='600 '+bodySize+'px Nunito, system-ui, sans-serif'; lines=wrapLines(ctx,p.body,cw-pad*2); bodySize-=2; } while (lines.length>8 && bodySize>18);
+    bodySize+=2;
+  }
+  var lh=bodySize*1.36, headH=p.title?96:62, bodyH;
+  if (rows) bodyH=rows.reduce(function(n,r){ return n+46+r.lines.length*30+10; },0);
+  else bodyH=lines.length*lh;
+  var ch=headH+bodyH+28, x=W-cw-40+(1-k)*(cw+90), y=Math.max(30,Math.min(H-ch-30,H*0.45-ch/2));
+  ctx.globalAlpha=Math.min(1,k*1.3);
+  ctx.shadowColor='rgba(0,0,0,.38)'; ctx.shadowBlur=22; ctx.shadowOffsetY=7;
+  ctx.fillStyle='#fffdf6'; rrect(ctx,x,y,cw,ch,10); ctx.fill(); ctx.shadowColor='transparent';
+  ctx.fillStyle=p.col; rrect(ctx,x,y,cw,10,5); ctx.fill(); ctx.fillRect(x,y+5,cw,5);
+  ctx.textAlign='left'; ctx.textBaseline='alphabetic';
+  ctx.fillStyle=p.col; ctx.font='800 15px Nunito, system-ui, sans-serif'; ctx.fillText(p.tag,x+pad,y+40);
+  if (p.title){ ctx.fillStyle=NAVY; ctx.font='800 34px Nunito, system-ui, sans-serif'; ctx.fillText(p.title,x+pad,y+82); }
+  var yy=y+headH+bodySize;
+  if (rows){
+    yy=y+headH+8;
+    rows.forEach(function(r){
+      if (r.part){ ctx.font='800 30px Georgia, serif'; var pw=ctx.measureText(r.part).width+24; ctx.fillStyle='rgba(47,158,107,.14)'; rrect(ctx,x+pad,yy,pw,40,8); ctx.fill(); ctx.fillStyle='#1d6b48'; ctx.fillText(r.part,x+pad+12,yy+30); yy+=50; }
+      ctx.fillStyle='#2b3245'; ctx.font='600 22px Nunito, system-ui, sans-serif';
+      r.lines.forEach(function(l){ ctx.fillText(l,x+pad,yy+20); yy+=30; }); yy+=10;
+    });
+  } else {
+    ctx.fillStyle='#2b3245'; ctx.font='600 '+bodySize+'px Nunito, system-ui, sans-serif';
+    lines.forEach(function(l,i){ ctx.fillText(l,x+pad,yy+i*lh); });
+  }
+  ctx.restore();
+}
+/* the DOL sentence on a classroom sentence strip; "Show the fix" marks the corrections */
+function fixSegs(html){
+  var segs=[], re=/<strong>([\s\S]*?)<\/strong>|([^<]+)/g, m;
+  while ((m=re.exec(html))) segs.push(m[1]!=null ? {t:m[1].replace(/<[^>]+>/g,''),b:true} : {t:m[2],b:false});
+  return segs.map(function(s){ var d=document.createElement('div'); d.innerHTML=s.t; s.t=d.textContent; return s; });
+}
+function drawStrip(ctx){
+  var s=strip.show, k=ease(strip.k); if (!s || k<0.01) return;
+  ctx.save();
+  var segs = strip.fix ? fixSegs(s.fixed) : [{t:s.raw,b:false}];
+  var size=46, maxW=W-200, words=[];
+  segs.forEach(function(g){ g.t.split(/(\s+)/).forEach(function(w){ if (w) words.push({t:w,b:g.b}); }); });
+  var lines;
+  do {
+    ctx.font='700 '+size+'px Nunito, system-ui, sans-serif';
+    lines=[[]]; var lw=0;
+    words.forEach(function(w){ var ww=ctx.measureText(w.t).width; if (lw+ww>maxW && lines[lines.length-1].length && !/^\s+$/.test(w.t)){ lines.push([]); lw=0; } if (!(lw===0 && /^\s+$/.test(w.t))){ lines[lines.length-1].push(w); lw+=ww; } });
+    size-=2;
+  } while (lines.length>2 && size>28);
+  size+=2;
+  var sh=lines.length*size*1.45+56, sy=H-sh-34+(1-k)*(sh+60), sx=60, sw=W-120;
+  ctx.globalAlpha=Math.min(1,k*1.3);
+  ctx.shadowColor='rgba(0,0,0,.35)'; ctx.shadowBlur=18; ctx.shadowOffsetY=5;
+  ctx.fillStyle='#fff6d6'; ctx.fillRect(sx,sy,sw,sh); ctx.shadowColor='transparent';
+  ctx.strokeStyle='#d64545'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(sx,sy+16); ctx.lineTo(sx+sw,sy+16); ctx.stroke();
+  ctx.fillStyle='#b9822a'; ctx.font='800 13px Nunito, system-ui, sans-serif'; ctx.fillText(strip.fix?'FIXED ✓':'FIX THE SENTENCE',sx+18,sy+36);
+  ctx.textBaseline='alphabetic';
+  lines.forEach(function(line,li){
+    var y=sy+52+size*0.95+li*size*1.45; ctx.setLineDash([8,8]); ctx.strokeStyle='rgba(47,111,214,.35)'; ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(sx+20,y-size*0.36); ctx.lineTo(sx+sw-20,y-size*0.36); ctx.stroke(); ctx.setLineDash([]);
+    ctx.font='700 '+size+'px Nunito, system-ui, sans-serif';
+    var tw=line.reduce(function(n,w){ return n+ctx.measureText(w.t).width; },0), xx=sx+(sw-tw)/2;
+    line.forEach(function(w){
+      var ww=ctx.measureText(w.t).width;
+      if (w.b && !/^\s+$/.test(w.t)){ ctx.fillStyle='rgba(47,158,107,.22)'; rrect(ctx,xx-4,y-size*0.85,ww+8,size*1.05,6); ctx.fill(); ctx.fillStyle='#1d6b48'; }
+      else ctx.fillStyle='#1d2433';
+      ctx.fillText(w.t,xx,y); xx+=ww;
+    });
+  });
+  ctx.restore();
+}
+
+/* ---------- suggested questions for Stop and answer ---------- */
+function suggestionsFor(c){
+  if (!c || c.free) return [];
+  var C=c.cards||{}, out=[], ws=(c.words||[]).filter(function(w){ return w.d; });
+  (C.chapterQs||[]).forEach(function(q,i){ out.push({sec:['chapter','guide3','read','lesson'], label:'Q'+(i+1)+' (write)', q:{type:'write', q:q}}); });
+  (C.pauses||[]).forEach(function(q,i){ out.push({sec:['read','guide2'], label:'Pause '+(i+1)+' (think)', q:{type:'think', q:q}}); });
+  if (ws.length>=2) ws.forEach(function(w,i){
+    var others=ws.filter(function(x){ return x!==w; }).slice(0,3), ch=others.map(function(x){ return x.w; }), at=i%(ch.length+1);
+    ch.splice(at,0,w.w);
+    out.push({sec:['vocabulary','guide1'], label:'Which word means…? ('+w.w+')', q:{type:'mc', q:'Which word means “'+w.d.replace(/\.$/,'')+'”?', choices:ch, answer:at, why:w.w.charAt(0).toUpperCase()+w.w.slice(1)+': '+w.d}});
+  });
+  var pr=partRows(C.wordParts||'').filter(function(r){ return r.part && /“([^”]+)”/.test(r.rest); });
+  if (pr.length>=2) pr.forEach(function(r,i){
+    var mean=function(x){ return /“([^”]+)”/.exec(x.rest)[1]; }, ch=pr.map(mean);
+    out.push({sec:['morphology','guide1','wordconn'], label:'What does '+r.part+' mean?', q:{type:'mc', q:'What does '+r.part+' mean?', choices:ch, answer:i, why:r.part+' means “'+mean(r)+'”.'}});
+  });
+  if (C.wgrd) out.push({sec:['wgrd','read'], label:'Reading move (think)', q:{type:'think', q:C.wgrd}});
+  return out;
+}
+function renderSuggest(){
+  var box=$('qzSuggest'); if (!box) return; box.innerHTML='';
+  if (!review){ return; }
+  var c=byPath[review.path], all=suggestionsFor(c);
+  var here=all.filter(function(s){ return s.sec.indexOf(c.id)>-1; }), list=here.length?here:all;
+  if (!list.length){ box.hidden=true; return; }
+  box.hidden=false;
+  var lbl=document.createElement('span'); lbl.className='oslbl'; lbl.textContent='💡 Ideas'; box.appendChild(lbl);
+  list.slice(0,10).forEach(function(s){
+    var b=document.createElement('button'); b.className='oschip'; b.textContent=s.label; b.title=s.q.q+' (adds it where the player is now)';
+    b.onclick=function(){
+      var v=$('revVideo'); v.pause();
+      var q=JSON.parse(JSON.stringify(s.q)); q.t=v.currentTime||0; q.choices=(q.choices||[]).slice(0,4); while(q.choices.length<4) q.choices.push(''); q.answer=q.answer||0; q.why=q.why||'';
+      review.qs.push(q); qzRender(); toast('Added at '+fmtTs(q.t)+'. Move it with ◷ if you want it somewhere else.');
+    };
+    box.appendChild(b);
+  });
+}
+
 $('quoteAddBtn').onclick=function(){ var f=$('quoteForm'); f.hidden=!f.hidden; if(!f.hidden){ $('qBy').value=attribOf(byPath[sel]); $('qText').focus(); } };
 $('qCancel').onclick=function(){ $('quoteForm').hidden=true; };
 $('qSave').onclick=function(){
@@ -2245,6 +2514,7 @@ function qzRender(){
   var box=$('qzList'); box.innerHTML='';
   if (!review){ return; }
   review.qs.sort(function(a,b){ return a.t-b.t; });
+  renderSuggest();
   $('qzNoSkip').checked = review.noSkip!==false;
   review.qs.forEach(function(q,i){
     var d=document.createElement('div'); d.className='qcard';
