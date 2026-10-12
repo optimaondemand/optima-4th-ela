@@ -1,0 +1,217 @@
+{
+ "connector": "Chapter 8 ended with a name nobody had ever heard: Great-aunt Birte. Annemarie knows there is no such person. Now she goes to find Uncle Henrik in the barn, and she asks him straight out. Watch how he answers her. He tells her the truth about the lie, but not the whole truth, and he has a reason.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-welcome",
+   "label": "Grete’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-wgrd",
+   "label": "About today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-dol",
+   "label": "About today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-guide1",
+   "label": "Before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-morphology",
+   "label": "About the path"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-vocabulary",
+   "label": "About today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-grammar",
+   "label": "About today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-spelling",
+   "label": "About today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-guide2",
+   "label": "Courage Watch"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-read",
+   "label": "Before you read"
+  },
+  "copia": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-copia",
+   "label": "About saying it three ways"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-guide3",
+   "label": "Before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-chapter",
+   "label": "About the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-1-workshop",
+   "label": "About today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, this is Grete. Annemarie has worked something out: the grown-ups are not telling her the truth. In this chapter she goes looking for Uncle Henrik and asks him straight out. You’ll warm up, work with words, read Chapter 9, and try saying one sentence three ways. Today’s question: what does Uncle Henrik tell her about courage, and why does it matter?",
+  "wgrd": "This week’s reading move is about noticing what keeps coming back. When a book says something twice, or three times, it wants you to stop and look. Keep a short list as you read. If Uncle Henrik returns to the same idea more than once, put a tally beside it.",
+  "dol": "The model is short and plain, a sentence about Uncle Henrik. The sentence to fix has two whole thoughts joined by a small linking word, so it needs a mark that gives the reader a breath. Look for two words squeezed into one, too, and two names standing too small.",
+  "guide1": "This week’s word work is about pieces that go missing. In grammar, you’ll find words that have been squeezed together, with a little mark where letters used to be. In spelling, you’ll listen to the very last beat of longer words. Nobody gives you the rule first. Find the pattern yourself.",
+  "morphology": "On this night, there are no lights at Uncle Henrik’s farm. Not one. So the path to the sea has to be found in the dark. This week’s three roots all mean to go, and each right word shows you the next stretch of path. The hard part is the spelling. Listen carefully to each ending.",
+  "vocabulary": "Four words follow you through Chapters 9 to 12. Two of them are about going and giving way, one is about getting in, and one is about a thing that stands for something bigger. Read each sentence, take the word apart if you can, and make a guess before you flip the card.",
+  "grammar": "Read these sentences slowly and find every word that has been pressed together. Each one hides a missing letter or two. Ask yourself where the little mark sits, and why it sits there and nowhere else. That’s the rule you’re here to find.",
+  "spelling": "Say each long word out loud and clap it. Listen to the last clap. Some words end with a consonant and then a soft L sound, and that ending never comes apart. Tap every word that ends that way, then work out where each word splits.",
+  "guide2": "Today’s Courage Watch is about asking the hard question. When I was a girl, I knew my father was hiding something in our cellar. It took me three days to ask him. My voice shook. But asking felt braver than pretending I hadn’t noticed. Watch Annemarie in the barn. She asks, and she doesn’t look away.",
+  "read": "This chapter starts quietly, in a barn at sunset, with a cow being milked. Don’t let the quiet fool you. Listen to how Annemarie speaks to her uncle, and to the question he asks her back. Then notice what arrives at the farm after dark, and who comes to sit beside it.",
+  "copia": "Here is one plain sentence about Uncle Henrik in the barn. Say it three new ways: a new beginning, a stronger action word, and a detail about where or how. The bones of the sentence stay the same. But each version puts the reader in a slightly different spot in that barn.",
+  "guide3": "Now you write. The questions ask how you can tell Annemarie is sure, what Uncle Henrik means about being brave, and why he decides to tell her only part of the truth. Then, in your essay, you’ll stretch one short explanation into two or three sentences.",
+  "chapter": "Uncle Henrik’s idea about bravery is one of the biggest in the whole book. You don’t have to agree with him. But before you decide, think back to the day the soldier stopped Annemarie on the street. Did knowing less help her then? That moment can be your proof.",
+  "workshop": "One sentence of explanation is often not enough. Today you stretch it. First, say what most people would do. Then show what the character did instead. Then end with a picture the reader will remember. Three small moves, and your reason suddenly sounds true."
+ },
+ "writingFocus": "Elaborate + Explain",
+ "dol": {
+  "a": {
+   "raw": "annemarie didnt understand the lie but she trusted henrik anyway",
+   "fixed": "<strong>Annemarie</strong> didn<strong>’</strong>t understand the lie<strong>,</strong> but she trusted <strong>Henrik</strong> anyway<strong>.</strong>",
+   "why": "A capital A on Annemarie, an apostrophe in didn’t (did + not), a comma before but because it joins two complete thoughts, a capital H on Henrik, and a period at the end."
+  },
+  "b": {
+   "raw": "uncle henrik didnt answer at first but he finally told the truth",
+   "fixed": "<strong>Uncle Henrik</strong> didn<strong>’</strong>t answer at first<strong>,</strong> but he finally told the truth<strong>.</strong>",
+   "why": "Capitals on Uncle and Henrik, an apostrophe in didn’t (did + not), a comma before but because it joins two complete thoughts, and a period at the end."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and explain why she says it to Uncle Henrik instead of keeping it to herself.",
+  "journal-q2": "… and connect it to a moment earlier in the book when Annemarie was brave without knowing everything.",
+  "journal-q3": "… and explain whether you think Uncle Henrik made the right choice."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "miss": {
+  "match": {
+   "proceed": "Proceed has a go-root inside it. Look for the meaning about moving forward.",
+   "concede": "Concede is about giving way. Look for the meaning about giving in.",
+   "access": "Access is about getting in. Look for the meaning about a way to reach or enter.",
+   "symbol": "A symbol is a real thing that stands for something bigger. Look for the meaning about standing for an idea."
+  }
+ },
+ "copia": {
+  "seed": "Uncle Henrik <b data-verb>knelt</b> in front of Annemarie.",
+  "eg": [
+   "In the dusty barn, Uncle Henrik knelt in front of Annemarie.",
+   "Uncle Henrik <i>crouched</i> in front of Annemarie.",
+   "Uncle Henrik knelt in front of Annemarie, so that his face was level with hers."
+  ]
+ },
+ "wordgame": {
+  "type": "path",
+  "strand": "Morphology",
+  "kicker": "The Way to the Boat",
+  "h": "From the farmhouse door",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. All three roots mean go, so let the spelling decide: listen to how each word ends.",
+  "why": {
+   "icon": "🌲",
+   "q": "Why the path?",
+   "t": "On the night of Chapters 9 to 12, no lights are allowed at Uncle Henrik’s farm. The way to the harbor, past the apple tree, through the woods and across the meadow, has to be found in the dark. <b>ceed</b>, <b>cede</b> and <b>cess</b> are three spellings of one old root that means <i>to go</i>, so each right word shows you the next stretch of the path. One stretch each lesson, until it reaches the boat."
+  },
+  "meanings": {
+   "ceed": "go",
+   "cede": "go · yield",
+   "cess": "go"
+  },
+  "miss": {
+   "fill1": "Not quite. Only three words in English end in <b>ceed</b>: proceed, exceed and succeed. Is this one of them?",
+   "fill2": "Not quite. Only three words in English end in <b>ceed</b>: proceed, exceed and succeed. Is this one of them?",
+   "fill3": "Not quite. Most words that end with a ‘seed’ sound spell it <b>cede</b>. Only three use ceed. Try again.",
+   "fill4": "Not quite. Say the word out loud. Does it end with a ‘seed’ sound, or a ‘sess’ sound?"
+  },
+  "winDay": "The first stretch of path is clear, from the farmhouse door out past the old apple tree. The next lesson’s words take it into the woods.",
+  "win": "The path comes out of the woods, crosses the meadow and reaches the harbor, where Uncle Henrik’s boat is waiting in the dark. <b>ceed</b>, <b>cede</b> and <b>cess</b> = go."
+ },
+ "notes": {
+  "wgrd": "When something keeps coming back in a book (an object, a name, an idea), the author wants you to notice. Jot it down, and add a tally each time it returns.",
+  "vocab": [
+   [
+    "proceed",
+    "To move forward; to continue."
+   ],
+   [
+    "concede",
+    "To give in; to admit defeat or yield."
+   ],
+   [
+    "access",
+    "A way to reach or enter something."
+   ],
+   [
+    "symbol",
+    "An object or image that stands for an idea."
+   ]
+  ],
+  "wordParts": "ceed, cede and cess are three spellings of one root that means “to go” or “to yield”: proceed, concede, access, process.",
+  "grammar": "A contraction squeezes two words into one. The apostrophe sits exactly where letters were left out: do not → don’t, I am → I’m.",
+  "spelling": "A consonant plus le at the end of a word is its own last beat, and the word splits just before that consonant: lit·tle, sim·ple. The endings -tion and -ture stay together the same way: ac·tion, pic·ture."
+ },
+ "plate": {
+  "src": "plates/nts-18-1.jpg",
+  "alt": "A green cliff path above a long beach, with the sea stretching to a faint coastline on the horizon.",
+  "credit": "The coast at Gilleleje. The faint land on the horizon is Sweden, across the Kattegat. Photo: Niels Elgaard Larsen, 2009, CC BY-SA 3.0, via Wikimedia Commons."
+ },
+ "nts": {
+  "case": {
+   "src": "plates/nts-case-18-1.jpg",
+   "title": "An Armband From the Resistance",
+   "date": "Sweden · 1944–1945",
+   "alt": "A band of blue cloth with a red and white stripe across the middle and a round metal badge sewn on it.",
+   "label": [
+    "This armband belonged to Israel Donde, a Jewish Dane. In October 1943 his family escaped across the water to Sweden. There he joined the Danish Brigade, Danes who trained in Sweden to come home and help free their country. They wore armbands like this one.",
+    "During the occupation, the Danish resistance worked in secret, in small groups. Each person knew only what they needed to know, so that if one was caught, the others stayed safe. It is the same rule Uncle Henrik explains to Annemarie in Chapter 9."
+   ],
+   "look": [
+    {
+     "q": "Why would a resistance group want each person to know only a little?",
+     "a": "If someone was caught and questioned, they could not give away what they did not know."
+    },
+    {
+     "q": "Why might Israel Donde have wanted to go back to Denmark after he escaped?",
+     "a": "It was his home. He wanted to help free it, so that other families would not have to run."
+    }
+   ],
+   "credit": "A Danish resistance armband worn by Israel Donde, Sweden, 1944–1945. Photo: Oleg Yunakov, CC BY-SA 4.0, via Wikimedia Commons.",
+   "sub": "A real object from the war years."
+  }
+ }
+}

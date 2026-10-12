@@ -1,0 +1,202 @@
+{
+ "connector": "The Rosens are gone into the dark with Mama, and Annemarie is alone in the old rocking chair. She has worked out how long the walk to the boat should take. Watch the clock with her. Watch the light at the window. This chapter is very quiet, right up until the very last page.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-welcome",
+   "label": "Grete’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-wgrd",
+   "label": "About today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-dol",
+   "label": "About today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-guide1",
+   "label": "Before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-morphology",
+   "label": "About the path"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-vocabulary",
+   "label": "About today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-grammar",
+   "label": "About today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-spelling",
+   "label": "About today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-guide2",
+   "label": "Courage Watch"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-read",
+   "label": "Before you read"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-guide3",
+   "label": "Before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-chapter",
+   "label": "About the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-4-workshop",
+   "label": "About today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, this is Grete. The Rosens have gone into the dark with Mama, and Annemarie is alone in the rocking chair, waiting. This chapter is short and very quiet. You’ll warm up, work with words, read Chapter 12, and finish one full paragraph of your essay. Today’s question: what does it feel like to wait, not knowing?",
+  "wgrd": "Today’s reading move is about saying maybe. When you think something is a symbol, point to the exact words first. Then say what it might stand for, and why. A careful reader doesn’t say, this means. A careful reader says, this might mean, because. And then tries a second idea.",
+  "dol": "The model is a short sentence about not knowing where someone is. The sentence to fix is two sentences pushed together. Give the first one an ending, and the second one a capital to start. And look for one pair of words pressed into one, still waiting for its little mark.",
+  "guide1": "This is review, so some of what you see is already right. In grammar and spelling, only tap what needs an editor. Read each line twice before you decide. Some of the hardest mistakes are the ones that look almost right.",
+  "morphology": "Out of the woods now, and across the meadow. This is the last stretch of path. Four more go-words, and one of them describes a long line of people walking slowly together. When the last word is in place, look down at the harbor. Someone is waiting there.",
+  "vocabulary": "Last match of the week. Try it with no misses at all. Then try something harder: use symbol and one other word together in a sentence about something in Chapters 9 to 12 that stands for more than itself.",
+  "grammar": "This is a full editing pass. Some of these sentences are fine. Some have a little raised mark where it doesn’t belong, or no mark where one should be. Read each sentence slowly, the long way and the short way, and trust your ear.",
+  "spelling": "Six words split into beats, and only some are split correctly. Clap each one out loud. If a split gives you a beat you didn’t clap, it needs fixing. Tap only those. Then fix one, and explain what went wrong.",
+  "guide2": "Today’s Courage Watch is about waiting. During the war, my mother once sat up all night, waiting for my father to come home from a meeting he wouldn’t tell us about. She mended the same sock over and over. Waiting is a kind of courage nobody sees. Watch Annemarie alone in the rocking chair, and notice how she tries to stay calm.",
+  "read": "This chapter is short, so read it slowly. Notice the clock in the hall, and the times Annemarie keeps track of. Notice the light outside the window. Then read the last page twice. After all that waiting, it moves very fast.",
+  "guide3": "Now you write. The questions ask what wakes Annemarie, why Mama’s absence frightens her, and how her feelings about not knowing have changed since Chapter 9. Then you’ll build one full body paragraph, using every move from this week.",
+  "chapter": "The third question asks you to look back across the whole week. In Chapter 9, Uncle Henrik said not knowing can help you be brave. Now Annemarie doesn’t know where her mother is. Does not knowing still feel like a help? Your answer can change. That’s exactly the point.",
+  "workshop": "Today all the moves come together: a reason, a quote, a zoom on one word, a stretched so-what, and a knot back to your claim. Don’t try to make it perfect. Make it complete. This is the paragraph you’ll polish and publish next."
+ },
+ "writingFocus": "Elaborate + Explain",
+ "dol": {
+  "a": {
+   "raw": "annemarie watched the path mama hadnt come back yet",
+   "fixed": "<strong>Annemarie</strong> watched the path<strong>.</strong> <strong>Mama</strong> hadn<strong>’</strong>t come back yet<strong>.</strong>",
+   "why": "A capital A on Annemarie, a period after the first sentence, a capital M on Mama, an apostrophe in hadn’t (had + not), and a period at the end."
+  },
+  "b": {
+   "raw": "it was past four oclock mama wasnt home",
+   "fixed": "<strong>It</strong> was past four o<strong>’</strong>clock<strong>.</strong> <strong>Mama</strong> wasn<strong>’</strong>t home<strong>.</strong>",
+   "why": "A capital I to start, an apostrophe in o’clock (short for “of the clock”), a period after the first sentence, a capital M on Mama, and an apostrophe in wasn’t (was + not)."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and explain why the author starts the chapter with that light.",
+  "journal-q2": "… and use the times in the chapter to show how late Mama is.",
+  "journal-q3": "… and say whether you think Uncle Henrik’s idea still holds."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "miss": {
+  "match": {
+   "proceed": "Proceed has a go-root inside it. Look for the meaning about moving forward.",
+   "concede": "Concede is about giving way. Look for the meaning about giving in.",
+   "access": "Access is about getting in. Look for the meaning about a way to reach or enter.",
+   "symbol": "A symbol is a real thing that stands for something bigger. Look for the meaning about standing for an idea."
+  }
+ },
+ "wordgame": {
+  "type": "path",
+  "strand": "Morphology",
+  "kicker": "The Way to the Boat",
+  "h": "Across the meadow to the sea",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. All three roots mean go, so let the spelling decide: listen to how each word ends.",
+  "why": {
+   "icon": "🌲",
+   "q": "Why the path?",
+   "t": "On the night of Chapters 9 to 12, no lights are allowed at Uncle Henrik’s farm. The way to the harbor, past the apple tree, through the woods and across the meadow, has to be found in the dark. <b>ceed</b>, <b>cede</b> and <b>cess</b> are three spellings of one old root that means <i>to go</i>, so each right word shows you the next stretch of the path. One stretch each lesson, until it reaches the boat."
+  },
+  "meanings": {
+   "ceed": "go",
+   "cede": "go · yield",
+   "cess": "go"
+  },
+  "miss": {
+   "fill1": "Not quite. Say the word out loud. Does it end with a ‘seed’ sound, or a ‘sess’ sound?",
+   "fill2": "Not quite. Most words that end with a ‘seed’ sound spell it <b>cede</b>. Only three use ceed. Try again.",
+   "fill3": "Not quite. Say the word out loud. Does it end with a ‘seed’ sound, or a ‘sess’ sound?",
+   "fill4": "Not quite. Only three words in English end in <b>ceed</b>: proceed, exceed and succeed. Is this one of them?"
+  },
+  "win": "The path comes out of the woods, crosses the meadow and reaches the harbor, where Uncle Henrik’s boat is waiting in the dark. <b>ceed</b>, <b>cede</b> and <b>cess</b> = go."
+ },
+ "notes": {
+  "wgrd": "Point to the words first. Then say what a symbol might stand for, and why: “This might stand for … because …” Strong symbols can hold more than one idea.",
+  "vocab": [
+   [
+    "proceed",
+    "To move forward; to continue."
+   ],
+   [
+    "concede",
+    "To give in; to admit defeat or yield."
+   ],
+   [
+    "access",
+    "A way to reach or enter something."
+   ],
+   [
+    "symbol",
+    "An object or image that stands for an idea."
+   ]
+  ],
+  "wordParts": "ceed, cede and cess are three spellings of one root that means “to go” or “to yield”: proceed, concede, access, process.",
+  "grammar": "Edit apostrophes carefully. It’s always means it is; its means belonging to it. You’re means you are; your means belonging to you.",
+  "spelling": "A consonant plus le at the end of a word is its own last beat, and the word splits just before that consonant: lit·tle, sim·ple. The endings -tion and -ture stay together the same way: ac·tion, pic·ture."
+ },
+ "plate": {
+  "src": "plates/nts-18-4.jpg",
+  "alt": "Windswept pine trees and tall grass on a quiet stretch of coast, with the sea beyond.",
+  "credit": "Pine trees near Gilleleje, looking out across the Kattegat toward Sweden. Photo: TEkman73, 2023, CC BY-SA 4.0, via Wikimedia Commons."
+ },
+ "nts": {
+  "case": {
+   "src": "plates/nts-case-18-4.jpg",
+   "title": "A Clock in the Hall",
+   "date": "Bornholm, Denmark · late 1700s",
+   "alt": "A tall, narrow white clock with gold trim and a round clock face near the top.",
+   "label": [
+    "This tall clock was made on Bornholm, a Danish island in the Baltic Sea, in the late 1700s. Clocks like it, called Bornholm clocks, stood in the halls of Danish homes for generations, and many families still have one.",
+    "In Chapter 12, the clock in the hall at Uncle Henrik’s house strikes once, at half past two. Later, Annemarie goes to look at it again. Each time, Mama should already be home."
+   ],
+   "look": [
+    {
+     "q": "Why does a ticking, striking clock make waiting feel even longer?",
+     "a": "You hear every minute go by, and each strike reminds you how long it has been."
+    },
+    {
+     "q": "Why do you think Annemarie works out exactly when Mama should be home?",
+     "a": "Counting the time gives her something to do, and a way to know when to start worrying."
+    }
+   ],
+   "credit": "A Bornholm clock made by Edvart Sonne in Rønne, Bornholm, in the late 1700s (repainted about 1990). Photo: Mogens Engelund, CC BY-SA 3.0, via Wikimedia Commons.",
+   "sub": "A real object from a Danish home."
+  }
+ }
+}
