@@ -606,6 +606,8 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
           <label class="check"><input type="checkbox" id="poster" checked> Also save the thumbnail (.jpg)</label>
           <label class="check"><input type="checkbox" id="dimRec" checked> Dim the screen while recording (less glare on glasses)</label>
           <div class="note" id="fmtNote"></div>
+          <div class="note" id="camRes"></div>
+          <div class="note" id="fpsNote"></div>
         </div>
       </div>
     </div>
@@ -1268,39 +1270,54 @@ function measureLight(){
 function camFilter(extra){
   var f='';
   if (lightOn){
-    if (Math.abs(gammaNow-gammaSet)>0.004){ gammaSet=gammaNow; for (var i=0;i<funcs.length;i++) funcs[i].setAttribute('exponent',gammaSet.toFixed(3)); }
-    f+='url(#vsLight) contrast(1.06) saturate(1.08) ';
+    /* brightness/contrast run on the graphics card; the old SVG gamma filter ran on the
+       processor and dragged the whole video down to ~12 frames a second */
+    var lift=1+(1-gammaNow)*0.85;
+    f+='brightness('+lift.toFixed(3)+') contrast(1.06) saturate(1.08) ';
   }
   if (warmOn) f+='sepia(0.12) saturate(1.06) ';
   if (extra) f+=extra;
   return f.trim()||'none';
 }
+/* blurs are done on a small copy and scaled up: the same look for a fraction of the work */
+var smallC=document.createElement('canvas'); smallC.width=320; smallC.height=180;
+var smallX=smallC.getContext('2d');
+function smallBlur(px){
+  smallX.filter=camFilter('blur('+px+'px)');
+  var s=Math.max(320/cam.videoWidth,180/cam.videoHeight), dw=cam.videoWidth*s, dh=cam.videoHeight*s;
+  smallX.drawImage(cam,(320-dw)/2,(180-dh)/2,dw,dh);
+  smallX.filter='none';
+  return smallC;
+}
 function drawCam(ctx,vw,vh){
   ctx.filter=camFilter(); coverDraw(ctx,cam,vw,vh);
+  ctx.filter='none';
   if (softOn){
+    var sc=smallBlur((0.5+0.8*softAmt).toFixed(2));
     ctx.save(); ctx.globalAlpha=0.22+0.38*softAmt; ctx.globalCompositeOperation='source-atop';
-    ctx.filter=camFilter('blur('+(2+3*softAmt).toFixed(1)+'px)'); coverDraw(ctx,cam,vw,vh);
+    ctx.drawImage(sc,0,0,W,H);
     ctx.restore();
   }
-  ctx.filter='none';
 }
+var maskSoft=document.createElement('canvas'); maskSoft.width=segW; maskSoft.height=segH; var maskSoftX=maskSoft.getContext('2d');
 /* you, cut out, into `person` */
 function cutOut(vw,vh){
   pctx.globalCompositeOperation='source-over';
   pctx.clearRect(0,0,W,H);
   drawCam(pctx,vw,vh);
   pctx.globalCompositeOperation='destination-in';
-  pctx.filter='blur(1.2px)';
+  /* soften the mask edge at the mask's own small size; scaling it up smooths it further.
+     (Blurring it at full size was the single most expensive step in the whole picture.) */
+  maskSoftX.clearRect(0,0,segW,segH); maskSoftX.filter='blur(0.6px)'; maskSoftX.drawImage(maskCanvas,0,0); maskSoftX.filter='none';
   var s=Math.max(W/vw,H/vh), dw=vw*s, dh=vh*s;
-  pctx.drawImage(maskCanvas,(W-dw)/2,(H-dh)/2,dw,dh);
-  pctx.filter='none';
+  pctx.drawImage(maskSoft,(W-dw)/2,(H-dh)/2,dw,dh);
   pctx.globalCompositeOperation='source-over';
 }
 /* the camera picture with its background, full frame, into ctx */
 function composeCam(ctx, withBg){
   var vw=cam.videoWidth, vh=cam.videoHeight;
   if (!withBg){ ctx.clearRect(0,0,W,H); drawCam(ctx,vw,vh); return; }
-  if (bgMode==='blur'){ ctx.filter=camFilter('blur(16px)'); coverDraw(ctx,cam,vw,vh); ctx.filter='none'; }
+  if (bgMode==='blur'){ ctx.drawImage(smallBlur(4),0,0,W,H); }
   else if (bgImg){ coverDraw(ctx,bgImg,bgImg.naturalWidth||bgImg.width,bgImg.naturalHeight||bgImg.height); }
   else { ctx.fillStyle='#0E1C42'; ctx.fillRect(0,0,W,H); }
   cutOut(vw,vh);
@@ -1354,6 +1371,7 @@ function perfCheck(dt){
     toast('Video may be choppy. Background “None” will help.');
   }
 }
+var fpsWin={n:0,t0:0}, recFrames=0;
 function frame(){
   requestAnimationFrame(frame);
   var camOK = camStream && cam.readyState>=2 && cam.videoWidth;
@@ -1385,6 +1403,19 @@ function frame(){
   stepFx(now);
   drawOverlays(octx, now); drawOverlays(vctx, now);
   if (useSeg) perfCheck(performance.now()-t0);
+  if (recording && !paused) recFrames++;
+  /* frames actually drawn each second: a slow computer shows up here even when
+     the work per frame looks small */
+  if (!fpsWin.t0) fpsWin.t0=now;
+  fpsWin.n++;
+  if (now-fpsWin.t0>=3000){
+    var fps=fpsWin.n*1000/(now-fpsWin.t0); fpsWin.n=0; fpsWin.t0=now; window.VS_FPS=fps;
+    var fn=$('fpsNote'); if (fn){ fn.textContent='Preview: '+Math.round(fps)+' frames a second'+(fps<22?' · slow. Turn off Soft focus, or set Background to Faster or None.':''); fn.className='note'+(fps<22?' repo-warn':''); }
+    if (fps<20 && useSeg && modelKind==='detail' && !userPickedModel && !recording){
+      modelKind='fast'; store.set('model','fast'); markModel(); loadSegmenter('fast');
+      toast('The video was only running at '+Math.round(fps)+' frames a second, so I switched to the Faster background');
+    }
+  }
 }
 requestAnimationFrame(frame);
 
@@ -1422,6 +1453,7 @@ function startCam(){
     camStream=new MediaStream(s.getVideoTracks()); micStream=new MediaStream(s.getAudioTracks());
     cam.srcObject=camStream; cam.play();
     $('camMsg').style.display='none'; $('recBtn').disabled=false;
+    try { var st=camStream.getVideoTracks()[0].getSettings(); $('camRes').textContent='Camera: '+st.width+'×'+st.height+(st.frameRate?' at '+Math.round(st.frameRate)+' fps':'')+(st.height<720?' · this camera is sending a small picture, so the video will look soft':''); $('camRes').className='note'+(st.height<720?' repo-warn':''); } catch(e){}
     setupAudio();
     listDevices();
   }).catch(function(e){
@@ -1823,7 +1855,8 @@ loadSegmenter(modelKind);
 
 /* ---------- recording ---------- */
 var MIME = (function(){
-  var c=['video/mp4;codecs="avc1.42E01F, mp4a.40.2"','video/mp4;codecs=avc1,mp4a','video/mp4','video/webm;codecs=vp9,opus','video/webm'];
+  /* High profile first: sharper at the same file size than Baseline */
+  var c=['video/mp4;codecs="avc1.640028, mp4a.40.2"','video/mp4;codecs="avc1.4D4028, mp4a.40.2"','video/mp4;codecs="avc1.42E01F, mp4a.40.2"','video/mp4;codecs=avc1,mp4a','video/mp4','video/webm;codecs=vp9,opus','video/webm'];
   if (!window.MediaRecorder) return '';
   for (var i=0;i<c.length;i++) if (MediaRecorder.isTypeSupported(c[i])) return c[i];
   return '';
@@ -1831,6 +1864,19 @@ var MIME = (function(){
 var EXT = /mp4/.test(MIME)?'mp4':'webm';
 $('fmtNote').textContent = !MIME ? 'This browser can’t record video. Use Chrome.' : /avc1/.test(MIME) ? 'Saving as MP4 (H.264) at 1280×720.' : EXT==='mp4' ? 'Saving as MP4, but this browser can’t do H.264, so some players may not open it. Chrome on your computer does.' : 'This browser can only make WebM files. Use Chrome for MP4.';
 
+/* Chrome's encoder undershoots a "variable" bitrate badly on a canvas (takes came out
+   near 0.65 Mbps and blocky). Ask for 6 Mbps, constant, and fall back step by step. */
+var VBPS=6000000;
+function makeRecorder(stream){
+  var tries=[
+    {mimeType:MIME,videoBitsPerSecond:VBPS,audioBitsPerSecond:128000,videoBitrateMode:'constant',videoKeyFrameIntervalDuration:2000},
+    {mimeType:MIME,videoBitsPerSecond:VBPS,audioBitsPerSecond:128000,videoKeyFrameIntervalDuration:2000},
+    {mimeType:MIME,videoBitsPerSecond:VBPS,audioBitsPerSecond:128000},
+    {mimeType:MIME}
+  ];
+  for (var i=0;i<tries.length;i++){ try { return new MediaRecorder(stream,tries[i]); } catch(e){} }
+  return new MediaRecorder(stream);
+}
 var recorder=null, chunks=[], recording=false, counting=false, recStart=0, timerId=0, scrollId=0, posterBlob=null, current=null;
 var paused=false, pauseAt=0, pausedTotal=0, stopDur=0, trimBusy=0;
 window.VS_EXT=EXT;
@@ -1865,14 +1911,12 @@ function startRec(){
     var vs=out.captureStream(30);
     var stream=new MediaStream(vs.getVideoTracks().concat(audioTrack()));
     chunks=[]; posterBlob=null; frames=[]; vad=[]; vadOn=true; paused=false; pausedTotal=0; pendingQs=[]; renderPromptSide();
-    var opts={mimeType:MIME,videoBitsPerSecond:3000000,audioBitsPerSecond:128000,videoKeyFrameIntervalDuration:2000};
-    try { recorder=new MediaRecorder(stream,opts); }
-    catch(e){ try { recorder=new MediaRecorder(stream,{mimeType:MIME}); } catch(e2){ recorder=new MediaRecorder(stream); } }
+    recorder=makeRecorder(stream);
     recorder.ondataavailable=function(e){ if(e.data && e.data.size) chunks.push(e.data); };
     recorder.onstop=finishRec;
     current = sel;
     recorder.start(1000);
-    recStart=performance.now(); setRecUI(true);
+    recStart=performance.now(); setRecUI(true); recFrames=0;
     capStart();
     timerId=setInterval(function(){ $('rectime').textContent=(paused?'Paused · ':'')+fmtT(activeT()); },250);
     setTimeout(grabPoster, T.titleOn ? 4200 : 1200);   // after the title card, so the thumbnail shows you
@@ -1930,7 +1974,10 @@ function finishRec(){
   var v=$('revVideo');
   if (v.src) URL.revokeObjectURL(v.src);
   v.src=URL.createObjectURL(blob);
-  $('revMeta').textContent=fmtT(dur)+' · '+(blob.size/1048576).toFixed(1)+' MB · '+fileOf(c);
+  var rfps=dur>1 ? Math.min(30,recFrames/dur) : 0, mbps=dur>1 ? blob.size*8/dur/1e6 : 0;
+  review.fps=rfps;
+  $('revMeta').textContent=fmtT(dur)+' · '+(blob.size/1048576).toFixed(1)+' MB · '+fileOf(c)+(rfps?' · '+Math.round(rfps)+' fps · '+mbps.toFixed(1)+' Mbps':'');
+  if (rfps && rfps<20) toast('This take only got '+Math.round(rfps)+' frames a second, so it may look choppy. Turn off Soft focus or set Background to Faster, then try again.');
   $('review').hidden=false;
   setEditMode(false);
   trimUI(); renderCues(); refreshTrack(); qzRender();
@@ -2034,8 +2081,7 @@ function renderTrim(r, onProg){
     try { srcN=ac.createMediaElementSource(v); srcN.connect(dst); } catch(e){ console.warn(e); }
     var tracks=c.captureStream(30).getVideoTracks().concat(dst.stream.getAudioTracks());
     var rec2;
-    try { rec2=new MediaRecorder(new MediaStream(tracks),{mimeType:MIME,videoBitsPerSecond:3000000,audioBitsPerSecond:128000}); }
-    catch(e){ rec2=new MediaRecorder(new MediaStream(tracks)); }
+    rec2=makeRecorder(new MediaStream(tracks));
     var parts=[], done=false, raf=0, iv=0;
     rec2.ondataavailable=function(e){ if(e.data && e.data.size) parts.push(e.data); };
     rec2.onstop=function(){ try{ srcN && srcN.disconnect(); }catch(e){} URL.revokeObjectURL(url); res(new Blob(parts,{type:MIME.split(';')[0]||'video/mp4'})); };
