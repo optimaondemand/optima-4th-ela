@@ -366,14 +366,16 @@
     { lid: '17.4', id: 'koster', name: 'Karl Henry Køster', years: '1943', role: 'Surgeon at Bispebjerg Hospital', img: 'rescuers/koster.jpg', pos: '50% 30%', initials: 'KK', credit: 'No free photo of Dr. Køster exists. This plaque at Bispebjerg Hospital thanks its doctors and nurses. Photo: Karen Mardahl, CC BY-SA 2.0, via Wikimedia Commons.',
       back: '<b>He turned a hospital into a hiding place.</b> In October 1943, Dr. Køster and the doctors and nurses of Bispebjerg Hospital in Copenhagen hid Jewish families among the patients and in the hospital chapel. One day a long funeral line of twenty to thirty taxis drove away from the chapel. The riders were not going to a funeral. They were Jewish families on their way to the boats.' },
     { lid: '18.4', id: 'marie', name: 'Børge Laursen & Jacob Andersen', years: '1943', role: 'Fishermen on the boat Marie', img: 'rescuers/marie.jpg', pos: '45% 50%', initials: 'BL', credit: 'The two fishermen aboard Marie. Nationalmuseet (National Museum of Denmark), CC BY-SA 2.0, via Wikimedia Commons.',
-      back: '<b>They made the trip again and again.</b> In October 1943, the fishermen Børge Laursen and Jacob Andersen carried Jewish refugees across the water to Sweden in their little boat, <i>Marie</i>. They made about ten trips. Each one meant a dark harbor, a hidden load of people, and German patrol boats somewhere out on the sea.' }
+      back: '<b>They made the trip again and again.</b> In October 1943, the fishermen Børge Laursen and Jacob Andersen carried Jewish refugees across the water to Sweden in their little boat, <i>Marie</i>. They made about ten trips. Each one meant a dark harbor, a hidden load of people, and German patrol boats somewhere out on the sea.' },
+    { lid: '19.4', id: 'kim', name: 'Kim Malthe-Bruun', years: '1923–1945', role: 'A young sailor in the Resistance', img: 'rescuers/malthe-bruun.jpg', pos: '50% 25%', initials: 'KM', credit: 'Studio portrait, about 1938. Public domain, via Wikimedia Commons.',
+      back: '<b>Lois Lowry ends her book with his words.</b> Kim was a young Danish sailor. From the fall of 1944 he made secret boat trips across the narrow sea to Sweden for the Resistance. The Germans caught him that December, and he did not live to see the war end. The night before he died, at twenty-one, he wrote to his mother about a world of human decency. Lowry closes <i>Number the Stars</i> with that letter.' }
   ];
   function rescuersCard(host, opt) {
     var here = lidNum(opt.week + '.' + opt.day);
     var open = ROSTER.filter(function (r) { return lidNum(r.lid) <= here; });
     if (!open.length) return false;
     var el = card('✦', 'Real Rescuers', 'Real people who helped. Tap a card to turn it over.', [
-      'The people in <i>Number the Stars</i> are made up. These people are not. Each card is someone who really helped Denmark’s Jewish families in 1943.',
+      'The people in <i>Number the Stars</i> are made up. These people are not. Each card is someone who really helped while Germany occupied Denmark.',
       'A new card appears on the lesson where the story reaches their part of the history. Your cards stay here for the rest of the book.'
     ]);
     var b = el.querySelector('.nk-body');
