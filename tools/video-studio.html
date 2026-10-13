@@ -3045,7 +3045,7 @@ function renderTray(){
     var r=document.createElement('div'); r.className='take';
     r.innerHTML='<span class="mono grow"></span><span class="ok"></span>';
     r.children[0].textContent='✨ '+jobLabel(j);
-    r.children[1].textContent = i===0 ? (recording?'waiting while you record':Math.round((j.prog||0)*100)+'%') : 'in line';
+    r.children[1].textContent = i===0 ? (recording?'waiting while you record':Math.round((j.prog||0)*100)+'%'+(j.phase?' · '+j.phase:'')) : 'in line';
     box.appendChild(r);
   });
   waiting.forEach(function(x){
@@ -3171,7 +3171,7 @@ function runQueue(){
   fqBusy=true;
   var j=fq[0];
   tPut(recOf(j.r,'finishing'));
-  finishTake(j.r,function(p){ j.prog=p; renderTray(); }).then(function(r2){
+  finishTake(j.r,function(p,ph){ j.prog=p; j.phase=ph||''; renderTray(); }).then(function(r2){
     fq.shift(); fqBusy=false;
     tPut(Object.assign(recOf(j.r,'done'),{finishedAt:Date.now()}));
     saveOriginal(j.r);
@@ -3186,7 +3186,7 @@ function runQueue(){
 function finishingNote(){
   if (!fq.length) return '';
   var j=fq[0], pct=Math.round((j.prog||0)*100);
-  return (recording ? '⏸ Waiting while you record · ' : '✨ Finishing ')+jobLabel(j)+(recording?'':' · '+pct+'%')+(fq.length>1?' · '+(fq.length-1)+' more in line':'');
+  return (recording ? '⏸ Waiting while you record · ' : '✨ Finishing ')+jobLabel(j)+(recording?'':' · '+pct+'%'+(j.phase?' · '+j.phase:''))+(fq.length>1?' · '+(fq.length-1)+' more in line':'');
 }
 
 /* ---- one take, frame by frame ---- */
@@ -3376,16 +3376,47 @@ function composeFinished(ctx, OW, OH, src, sw, sh, look, set, matte, segInst, ts
     ctx.save(); ctx.globalAlpha=0.18+0.3*set.soft; ctx.drawImage(sx2,0,0,OW,OH); ctx.restore();
   }
 }
+/* a yield that background tabs don't slow down (timers there are held to once a second or less) */
+function tick(){ return new Promise(function(r){ var c=new MessageChannel(); c.port1.onmessage=function(){ c.port1.close(); r(); }; c.port2.postMessage(0); }); }
+function within(p, ms, what){
+  return new Promise(function(res,rej){
+    var t=setTimeout(function(){ rej(new Error('it got stuck while '+what)); }, ms);
+    p.then(function(v){ clearTimeout(t); res(v); }, function(e){ clearTimeout(t); rej(e); });
+  });
+}
+/* the take's own sound, copied across untouched (no re-encode) when it's AAC or Opus */
+function audioPass(d){
+  if (!d.at || !d.as || !d.as.length) return null;
+  var c=String(d.at.codec||'');
+  var kind=/opus/i.test(c) ? 'opus' : /^mp4a/i.test(c) ? 'aac' : null;
+  if (!kind) return null;
+  var cfg={codec: kind==='opus' ? 'opus' : c, sampleRate:d.at.audio.sample_rate, numberOfChannels:d.at.audio.channel_count};
+  if (kind==='aac' && d.adesc) cfg.description=d.adesc;
+  return {mux:kind, cfg:cfg};
+}
 function finishTake(r, onProg){
   var look=r.look||{mode:'none'};
-  var d, audio, OW, OH, fps=30;
-  return demux(r.blob).then(function(dm){
+  var d, audio=null, pass=null, OW, OH, fps=30;
+  var phase='reading the take', lastMove=Date.now(), dog=null;
+  function prog(p, ph){ if (ph) phase=ph; lastMove=Date.now(); onProg(p, ph||''); }
+  /* if nothing moves for a long while, stop and say where, instead of sitting on a number forever */
+  var watchdog=new Promise(function(res,rej){
+    dog=setInterval(function(){
+      if (recording) { lastMove=Date.now(); return; }
+      if (Date.now()-lastMove > 90000) rej(new Error('it got stuck while '+phase));
+    }, 5000);
+  });
+  var work = demux(r.blob).then(function(dm){
     d=dm;
-    var vw=d.vt.video.width, vh=d.vt.video.height;
+    var vh=d.vt.video.height;
     OH = vh>=1000 ? 1080 : 720; OW = OH===1080 ? 1920 : 1280;
+    pass=audioPass(d);
+    if (pass) return null;
+    prog(0,'reading the sound');
     return decodeAudio(r,d);
   }).then(function(au){
     audio=au;
+    prog(0,'getting ready');
     var paths={}; ((r.log&&r.log.events)||[]).forEach(function(e){ if (e.pl) paths[e.pl]=1; });
     return Promise.all([
       look.mode!=='none' ? finishSegmenter().catch(function(){ toast('The background tool couldn’t load, so this take was finished without a background'); return null; }) : null,
@@ -3400,91 +3431,126 @@ function finishTake(r, onProg){
     var matte = segInst ? makeMatte(r.set.edge!=null?r.set.edge:0.3, r.set.refine!==false, !window.VS_SEGMENTER) : null;
     var drawOver = overlayPlayer(r, OW, OH, plates);
     var nch = audio && audio.ch.length ? audio.ch.length : 0;
-    return Promise.all([pickCodec(OW,OH,vbps), nch ? pickAudio(audio.sr,nch) : null]).then(function(cfgs){
+    return Promise.all([pickCodec(OW,OH,vbps), (!pass && nch) ? pickAudio(audio.sr,nch) : null]).then(function(cfgs){
       var vcfg=cfgs[0], acfg=cfgs[1];
       var target=new Mp4Muxer.ArrayBufferTarget();
       var vmux=vcfg._mux; delete vcfg._mux;
-      var muxOpts={target:target, video:{codec:vmux, width:OW, height:OH, frameRate:fps}, fastStart:'in-memory', firstTimestampBehavior:'offset'};
-      if (acfg) muxOpts.audio={codec:acfg.mux, numberOfChannels:nch, sampleRate:acfg.cfg.sampleRate};
+      var muxOpts={target:target, video:{codec:vmux, width:OW, height:OH, frameRate:fps}, fastStart:'in-memory', firstTimestampBehavior:'cross-track-offset'};
+      if (pass) muxOpts.audio={codec:pass.mux, numberOfChannels:pass.cfg.numberOfChannels, sampleRate:pass.cfg.sampleRate};
+      else if (acfg) muxOpts.audio={codec:acfg.mux, numberOfChannels:nch, sampleRate:acfg.cfg.sampleRate};
       var muxer=new Mp4Muxer.Muxer(muxOpts), encErr=null;
-      var enc=new VideoEncoder({output:function(ch,meta){ muxer.addVideoChunk(ch,meta); }, error:function(e){ encErr=e; }});
+      var encWake=null;
+      var enc=new VideoEncoder({output:function(ch,meta){ muxer.addVideoChunk(ch,meta); if (encWake){ var w=encWake; encWake=null; w(); } }, error:function(e){ encErr=e; }});
       enc.configure(vcfg);
       var samples=d.vs, t0=samples.length ? samples[0].cts/samples[0].timescale : 0;
-      var total=Math.max(1,Math.round(keepDur*fps)), made=0, posterDone=!!r.posterUp, poster=r.posterUp||null, lastTs=-1;
-      var pending=[], decErr=null;
-      var dec=new VideoDecoder({output:function(f){ pending.push(f); }, error:function(e){ decErr=e; }});
+      var made=0, posterDone=!!r.posterUp, poster=r.posterUp||null, lastTs=-1, lastP=-1;
+      /* the decoder hands frames over as they're ready; we wake on each one rather than polling */
+      var pending=[], decErr=null, decDone=false, wake=null;
+      function poke(){ if (wake){ var w=wake; wake=null; w(); } }
+      var dec=new VideoDecoder({output:function(f){ pending.push(f); poke(); }, error:function(e){ decErr=e; poke(); }});
       var vcodec=d.vt.codec;
       if (/^vp09\.\d\d\.00\./.test(vcodec)) vcodec=vcodec.replace(/^(vp09\.\d\d)\.00\./,'$1.40.');   /* some recorders write level 00, which decoders reject */
       var dcfg={codec:vcodec, codedWidth:d.vt.video.width, codedHeight:d.vt.video.height};
       if (d.desc && /^(avc|hvc|hev)/.test(vcodec)) dcfg.description=d.desc;
       dec.configure(dcfg);
-      var si=0;
+      var si=0, flushing=false;
       function feed(){
-        while (si<samples.length && dec.decodeQueueSize<8 && pending.length<6){
+        /* keep only a few frames in hand: the decoder can't make new ones while we hold too many */
+        while (si<samples.length && dec.decodeQueueSize<4 && pending.length<3){
           var s=samples[si++];
           dec.decode(new EncodedVideoChunk({type:s.is_sync?'key':'delta', timestamp:Math.round(1e6*(s.cts/s.timescale - t0)), duration:Math.round(1e6*s.duration/s.timescale), data:s.data}));
         }
-        if (si>=samples.length && !feed.flushed){ feed.flushed=true; return dec.flush().catch(function(){}); }
-        return Promise.resolve();
+        if (si>=samples.length && !flushing){
+          flushing=true;
+          dec.flush().then(function(){ decDone=true; poke(); }, function(e){ decDone=true; poke(); });   /* not waited on here, so frames keep flowing */
+        }
       }
+      function nextFrame(){
+        return new Promise(function(res){ wake=res; setTimeout(poke, 250); });
+      }
+      phase='making the video'; prog(0);
       function step(){
         if (encErr) return Promise.reject(encErr);
         if (decErr) return Promise.reject(decErr);
         if (recording) return sleep(400).then(step);            /* your live take comes first */
-        return feed().then(function(){
-          if (!pending.length){
-            if (feed.flushed && si>=samples.length && dec.decodeQueueSize===0) return 'done';
-            return sleep(5).then(step);
-          }
-          var f=pending.shift(), tv=f.timestamp/1e6;
-          if (tv < a0-0.001 || tv > a1+0.001){ f.close(); return step(); }
-          var ts=Math.round((tv-a0)*1e6);
-          if (ts<=lastTs){ f.close(); return step(); }
-          lastTs=ts;
-          composeFinished(cx, OW, OH, f, f.displayWidth, f.displayHeight, look, r.set, matte, segInst, (fSegTs=Math.max(fSegTs+1, performance.now())));
-          f.close();
-          drawOver(cx, tv);
-          var vf=new VideoFrame(cv,{timestamp:ts, duration:Math.round(1e6/fps)});
-          enc.encode(vf,{keyFrame: made%60===0}); vf.close();
-          made++;
-          if (!posterDone && r.posterT!=null && tv>=r.posterT){ posterDone=true; cv.toBlob(function(b){ if (b) poster=b; },'image/jpeg',0.88); }
-          if (made%5===0) onProg(Math.min(0.99,made/total));
-          var wait = enc.encodeQueueSize>6 ? sleep(15) : (made%3===0 ? sleep(0) : Promise.resolve());
-          return wait.then(step);
-        });
+        feed();
+        if (!pending.length){
+          if (decDone && si>=samples.length) return Promise.resolve('done');
+          return nextFrame().then(step);
+        }
+        var f=pending.shift(), tv=f.timestamp/1e6;
+        feed();
+        if (tv < a0-0.001 || tv > a1+0.001){ f.close(); return (made%20===0 ? tick() : Promise.resolve()).then(step); }
+        var ts=Math.round((tv-a0)*1e6);
+        if (ts<=lastTs){ f.close(); return step(); }
+        lastTs=ts;
+        composeFinished(cx, OW, OH, f, f.displayWidth, f.displayHeight, look, r.set, matte, segInst, (fSegTs=Math.max(fSegTs+1, performance.now())));
+        f.close();
+        feed();
+        drawOver(cx, tv);
+        var vf=new VideoFrame(cv,{timestamp:ts, duration:Math.round(1e6/fps)});
+        enc.encode(vf,{keyFrame: made%60===0}); vf.close();
+        made++;
+        if (!posterDone && r.posterT!=null && tv>=r.posterT){ posterDone=true; cv.toBlob(function(b){ if (b) poster=b; },'image/jpeg',0.88); }
+        /* progress by where we are in the take, not by counting frames (cameras often send fewer than 30 a second) */
+        var p=Math.max(0,Math.min(0.95,(tv-a0)/keepDur*0.95));
+        if (p-lastP>=0.005){ lastP=p; prog(p); } else lastMove=Date.now();
+        var wait = enc.encodeQueueSize>6 ? new Promise(function(res){ encWake=res; setTimeout(function(){ if (encWake===res){ encWake=null; res(); } }, 50); }) : (made%3===0 ? tick() : Promise.resolve());
+        return wait.then(step);
       }
       return step().then(function(){
-        return enc.flush();
+        prog(0.96,'finishing the picture');
+        return within(enc.flush(), 120000, 'finishing the picture');
       }).then(function(){
+        prog(0.97,'adding the sound');
+        if (pass){
+          /* copy the kept stretch of the original sound straight across */
+          var first=true, meta={decoderConfig:pass.cfg}, n=0;
+          d.as.forEach(function(s){
+            var at=s.cts/s.timescale - t0, dur=s.duration/s.timescale;
+            if (at+dur <= a0 || at >= a1) return;
+            var ts=Math.max(0, at-a0);
+            muxer.addAudioChunkRaw(s.data instanceof Uint8Array ? s.data : new Uint8Array(s.data), 'key', Math.round(ts*1e6), Math.round(dur*1e6), first ? meta : undefined);
+            first=false; n++;
+          });
+          return;
+        }
         if (!acfg || !nch) return;
-        return new Promise(function(res,rej){
+        return within(new Promise(function(res,rej){
           var aenc=new AudioEncoder({output:function(ch,meta){ muxer.addAudioChunk(ch,meta); }, error:rej});
           var sr=acfg.cfg.sampleRate, src=audio.ch, srcSr=audio.sr;
           if (srcSr!==sr){ /* opus wants 48k: simple resample */
             src=src.map(function(c){ var n=Math.floor(c.length*sr/srcSr), o=new Float32Array(n); for (var i=0;i<n;i++){ var x=i*srcSr/sr, i0=Math.floor(x), fr=x-i0; o[i]=(c[i0]||0)*(1-fr)+(c[i0+1]||0)*fr; } return o; });
           }
           aenc.configure(acfg.cfg);
-          var len=src[0].length, step=1024*4;
-          for (var o=0;o<len;o+=step){
-            var n=Math.min(step,len-o), buf=new Float32Array(n*nch);
+          var len=src[0].length, stepN=1024*4;
+          for (var o=0;o<len;o+=stepN){
+            var n=Math.min(stepN,len-o), buf=new Float32Array(n*nch);
             for (var c=0;c<nch;c++) buf.set(src[c].subarray(o,o+n), c*n);
             var ad=new AudioData({format:'f32-planar', sampleRate:sr, numberOfFrames:n, numberOfChannels:nch, timestamp:Math.round(o/sr*1e6), data:buf});
             aenc.encode(ad); ad.close();
           }
           aenc.flush().then(res,rej);
-        });
+        }), 120000, 'adding the sound');
       }).then(function(){
+        prog(0.99,'saving');
         muxer.finalize();
-        try { dec.close(); enc.close(); } catch(e){}
+        try { dec.close(); } catch(e){} try { enc.close(); } catch(e){}
+        pending.forEach(function(f){ try{ f.close(); }catch(e){} });
         var out=new Blob([target.buffer],{type:'video/mp4'});
-        onProg(1);
+        prog(1,'');
         var r2={path:r.path, blob:out, poster:poster||r.poster||null, dur:keepDur,
           cues:shiftCues(r.cues||[],a0,a1), qs:shiftQs(r.qs||[],a0,a1), noSkip:r.noSkip, finished:true, mbps:out.size*8/keepDur/1e6, size:OW+'×'+OH};
         if (!r2.poster) return new Promise(function(res){ cv.toBlob(function(b){ r2.poster=b; res(r2); },'image/jpeg',0.88); });
         return r2;
+      }).catch(function(e){
+        try { dec.close(); } catch(x){} try { enc.close(); } catch(x){}
+        pending.forEach(function(f){ try{ f.close(); }catch(x){} });
+        throw e;
       });
     });
   });
+  return Promise.race([work, watchdog]).then(function(v){ clearInterval(dog); return v; }, function(e){ clearInterval(dog); throw e; });
 }
 
 /* ---- the review: pick the finished look, and preview one frame of it ---- */
