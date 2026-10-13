@@ -419,6 +419,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
             <button class="btn sm" id="inkClear">Clear</button>
           </div>
           <span class="busy" id="busyNote"></span>
+          <span class="busy" id="finNote"></span>
           <span class="hint" id="recHint">Space starts and stops · P pauses · a 3-second countdown runs first.</span>
         </div>
         <div class="flair" id="flairBar">
@@ -469,6 +470,13 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
               <input type="range" id="trimB" min="0" max="1000" value="1000" aria-label="End">
             </div>
             <div class="note" style="margin-top:2px">Drag the two handles, or play to a spot and press Start here / End here. The saved video is cut to the gold part.</div>
+          </div>
+          <div class="caps" id="lookBox" hidden>
+            <div class="th2">🎨 Finished look <span class="lbl">Added when the take finishes. Change it any time before then.</span></div>
+            <div class="seg" id="lookSeg" style="margin-top:8px"><button data-m="none">Just me</button><button data-m="blur">Blur</button><button data-m="image">Image</button></div>
+            <div class="bgs" id="lookBgs" hidden></div>
+            <div class="row" style="margin-top:8px"><button class="btn sm" id="lookPrev">👁 Preview this frame</button><span class="note" style="margin:0">Pause the player where you want to check, then press it.</span></div>
+            <canvas id="lookCanvas" width="1280" height="720" hidden style="width:100%;border-radius:8px;margin-top:8px;background:#000"></canvas>
           </div>
           <div class="caps" id="capsBox">
             <div class="th2">CC Captions <span class="lbl" id="capLbl">None yet</span>
@@ -521,12 +529,16 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
           <button class="btn sm" id="copyFolder">Copy folder</button>
         </div>
         <div class="fname" style="margin-top:10px">
+          <button class="btn sm gold" id="refinish" hidden title="Open the clean original again: change the background, trim, cards or questions, and finish it again">🎞 Re-finish this video</button>
           <button class="btn sm gold" id="editExisting" hidden title="Add stop-and-answer questions or captions to this video without recording it again">❓ Add questions or captions to this video</button>
           <label class="btn sm" id="editPick" title="Open a video file from your computer to add questions or captions">📂 Open a video file<input type="file" id="editFile" accept="video/mp4,video/webm" hidden></label>
         </div>
       </div>
     </div>
         <div class="panel">
+          <h4>Recording</h4>
+          <div class="seg" id="cleanSeg"><button data-c="clean" class="on">✨ Best quality</button><button data-c="live">⚡ Live</button></div>
+          <div class="note" id="cleanNote" style="margin-bottom:12px"></div>
           <h4>What to record</h4>
           <div class="seg" id="srcSeg"><button data-s="cam" class="on">🙂 Just me</button><button data-s="screen">🖥 Screen + me</button></div>
           <div id="bubbleOpts" class="sub-opts" style="margin-left:0" hidden>
@@ -596,6 +608,9 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
           <h4>Save straight into the repo</h4>
           <div id="repoState" class="note" style="margin:0 0 8px">Not connected. Downloads go to your Downloads folder.</div>
           <button class="btn primary" id="repoBtn">📁 Connect optima-4th-ela</button>
+          <div class="note" id="origState" style="margin-top:10px">Clean originals are kept in this browser for 3 weeks.</div>
+          <button class="btn sm" id="origBtn">📁 Also keep them in a folder</button>
+          <div class="note">Pick a folder outside the repo, like <b>C:\video-originals</b>. Then you can re-finish a video even after the browser forgets it.</div>
           <div class="note">Pick <b>C:\repos\optima-4th-ela</b> once. After that, every save goes straight into the right <span class="mono">assets\video\…</span> folder with the right name. No Save As box.</div>
         </div>
         <div class="panel">
@@ -605,6 +620,8 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
           <label class="check"><input type="checkbox" id="mirror" checked> Mirror my preview (the video is saved unmirrored)</label>
           <label class="check"><input type="checkbox" id="poster" checked> Also save the thumbnail (.jpg)</label>
           <label class="check"><input type="checkbox" id="dimRec" checked> Dim the screen while recording (less glare on glasses)</label>
+          <button class="btn sm" id="lightCheck" style="margin-top:6px">💡 Check my light</button>
+          <div class="note" id="lightMsg"></div>
           <div class="note" id="fmtNote"></div>
           <div class="note" id="camRes"></div>
           <div class="note" id="fpsNote"></div>
@@ -640,6 +657,14 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
       <li><b>G4 shot list</b>: pick a video on the left. It’s already named and knows where it goes. Tick the videos you want for a lesson, then press <b>Skip the unticked</b> so the rest stop showing up.</li>
       <li><b>Free record</b>: type a name for any video. It saves to your Downloads folder.</li>
       <li><b>Just me</b> or <b>Screen + me</b>: Screen + me shows a tab or window with you in a corner.</li>
+    </ul>
+    <h3>Best quality or Live?</h3>
+    <ul>
+      <li><b>✨ Best quality</b> (the usual choice) records your camera as it is, sharp and smooth, at 1080p when your camera can. While you record, the studio notes what you put on screen and when. After you press <b>Keep it</b>, the take <b>finishes</b> in the background: the background you pick under <b>🎨 Finished look</b> goes in, every card comes back at its moment, and the trim is applied. You can record the next video while it finishes. Finishing pauses while you record.</li>
+      <li>Takes are saved in this browser the moment you stop, so closing the tab doesn’t lose them. They pick up again next time you open the studio.</li>
+      <li><b>🎞 Re-finish this video</b> opens the clean original again (kept for 3 weeks, or longer in a folder you pick) so you can change the background, trim or cards without recording again.</li>
+      <li><b>⚡ Live</b> records exactly what you see. Use it for Screen + me, or for a quick take.</li>
+      <li><b>💡 Check my light</b> (Camera and mic) tells you if you need more light. Good light makes the biggest difference to how sharp you look.</li>
     </ul>
     <h3>3. Record</h3>
     <ul>
@@ -685,6 +710,8 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
 
 <script src="video-shotlist.js"></script>
 <script src="vendor/jszip.min.js"></script>
+<script src="vendor/mp4box.all.min.js"></script>
+<script src="vendor/mp4-muxer.js"></script>
 <script>window.JSZip||document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"><\/script>')</script>
 <script>
 (function(){
@@ -1403,7 +1430,7 @@ function frame(){
   stepFx(now);
   drawOverlays(octx, now); drawOverlays(vctx, now);
   if (useSeg) perfCheck(performance.now()-t0);
-  if (recording && !paused) recFrames++;
+  if (recording && !paused){ recFrames++; logState(); }
   /* frames actually drawn each second: a slow computer shows up here even when
      the work per frame looks small */
   if (!fpsWin.t0) fpsWin.t0=now;
@@ -1445,7 +1472,8 @@ function listDevices(){
 function startCam(){
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){ showCamMsg('This browser can’t reach a camera here. Open the page in Chrome.'); return; }
   var cv=store.get('cam',''), mv=store.get('mic','');
-  var v={width:{ideal:1280},height:{ideal:720},frameRate:{ideal:30}}; if(cv) v.deviceId={ideal:cv};
+  var big = typeof cleanOn==='function' && cleanOn();
+  var v={width:{ideal:big?1920:1280},height:{ideal:big?1080:720},frameRate:{ideal:30}}; if(cv) v.deviceId={ideal:cv};
   var a={echoCancellation:true,noiseSuppression:true,autoGainControl:true}; if(mv) a.deviceId={ideal:mv};
   if (camStream) camStream.getTracks().forEach(function(t){t.stop();});
   if (micStream) micStream.getTracks().forEach(function(t){t.stop();});
@@ -1529,6 +1557,7 @@ $('studioOn').onchange=function(){ studioOn=this.checked; store.set('studio',stu
 function markSeg(id,val,attr){ [].forEach.call($(id).children,function(b){ b.classList.toggle('on',b.dataset[attr]===val); }); }
 function applySrc(m){
   srcMode=m; markSeg('srcSeg',m,'s');
+  if (typeof markClean==='function') markClean();
   $('bubbleOpts').hidden = m!=='screen';
   $('mirror').disabled = m==='screen';
   $('srcNote').textContent = m==='screen'
@@ -1582,6 +1611,7 @@ function autoTitle(){
 }
 /* seconds into the recording (paused time left out), or into a preview */
 function clockT(now){
+  if (clockOverride!=null) return clockOverride;
   if (recording) return activeT(now);
   if (previewAt){ var t=(now-previewAt)/1000; if (t>12){ previewAt=0; return -1; } return t; }
   return -1;
@@ -1631,6 +1661,7 @@ var fx=[], quote={cur:null,show:null,k:0}, word={cur:null,show:null,k:0}, wordId
 var CONF=['#E8A531','#0E1C42','#2f6fd6','#d64545','#2f9e6b','#ffffff','#f3cf86'];
 function R(a,b){ return a+Math.random()*(b-a); }
 function fire(type){
+  if (recording && recClean && recLog && !paused) recLog.fx.push({t:activeT(), type:type});
   var now=performance.now(), f={type:type,t0:now};
   if (type==='confetti'){ f.p=[]; for (var i=0;i<170;i++) f.p.push({x:R(0,W),y:R(-260,-10),vx:R(-70,70),vy:R(120,320),r:R(0,6),vr:R(-7,7),w:R(9,16),h:R(5,9),c:CONF[i%CONF.length],ph:R(0,6)}); f.life=4.2; }
   fx.push(f); flairSound(type);
@@ -1731,9 +1762,17 @@ function drawOverlays(ctx, now){
   if (t>=0 && T.titleOn && t<3.3) drawTitleCard(ctx,t);
 }
 function inkPt(e){ var r=view.getBoundingClientRect(); return [ (e.clientX-r.left)/r.width*W, (e.clientY-r.top)/r.height*H ]; }
-view.addEventListener('pointerdown',function(e){ if(!drawMode) return; e.preventDefault(); view.setPointerCapture(e.pointerId); strokes.push({c:inkColor,pts:[inkPt(e)],done:false,end:0}); });
-view.addEventListener('pointermove',function(e){ if(!drawMode) return; var s=strokes[strokes.length-1]; if (s && !s.done) s.pts.push(inkPt(e)); });
-['pointerup','pointercancel'].forEach(function(ev){ view.addEventListener(ev,function(){ var s=strokes[strokes.length-1]; if (s && !s.done){ s.done=true; s.end=performance.now(); } }); });
+function logInk(p, end){
+  if (!(recording && recClean && recLog) || paused) return;
+  var t=activeT();
+  if (p==='new'){ recStroke={c:inkColor, pts:[], end:null}; recLog.strokes.push(recStroke); return; }
+  if (!recStroke) return;
+  if (end){ recStroke.end=t; recStroke=null; return; }
+  recStroke.pts.push([+p[0].toFixed(1), +p[1].toFixed(1), +t.toFixed(3)]);
+}
+view.addEventListener('pointerdown',function(e){ if(!drawMode) return; e.preventDefault(); view.setPointerCapture(e.pointerId); var pt=inkPt(e); strokes.push({c:inkColor,pts:[pt],done:false,end:0}); logInk('new'); logInk(pt); });
+view.addEventListener('pointermove',function(e){ if(!drawMode) return; var s=strokes[strokes.length-1]; if (s && !s.done){ var pt=inkPt(e); s.pts.push(pt); logInk(pt); } });
+['pointerup','pointercancel'].forEach(function(ev){ view.addEventListener(ev,function(){ var s=strokes[strokes.length-1]; if (s && !s.done){ s.done=true; s.end=performance.now(); logInk(null,true); } }); });
 function setDraw(on){ drawMode=on; $('drawBtn').classList.toggle('on',on); $('inkBar').hidden=!on; $('screenBox').classList.toggle('drawing',on); }
 $('drawBtn').onclick=function(){ setDraw(!drawMode); };
 [].forEach.call($('inkBar').querySelectorAll('.sw'),function(b){ b.onclick=function(){ inkColor=b.dataset.c; [].forEach.call($('inkBar').querySelectorAll('.sw'),function(x){ x.classList.toggle('on',x===b); }); }; });
@@ -1867,11 +1906,12 @@ $('fmtNote').textContent = !MIME ? 'This browser can’t record video. Use Chrom
 /* Chrome's encoder undershoots a "variable" bitrate badly on a canvas (takes came out
    near 0.65 Mbps and blocky). Ask for 6 Mbps, constant, and fall back step by step. */
 var VBPS=6000000;
-function makeRecorder(stream){
+function makeRecorder(stream, bps){
+  bps=bps||VBPS;
   var tries=[
-    {mimeType:MIME,videoBitsPerSecond:VBPS,audioBitsPerSecond:128000,videoBitrateMode:'constant',videoKeyFrameIntervalDuration:2000},
-    {mimeType:MIME,videoBitsPerSecond:VBPS,audioBitsPerSecond:128000,videoKeyFrameIntervalDuration:2000},
-    {mimeType:MIME,videoBitsPerSecond:VBPS,audioBitsPerSecond:128000},
+    {mimeType:MIME,videoBitsPerSecond:bps,audioBitsPerSecond:160000,videoBitrateMode:'constant',videoKeyFrameIntervalDuration:2000},
+    {mimeType:MIME,videoBitsPerSecond:bps,audioBitsPerSecond:160000,videoKeyFrameIntervalDuration:2000},
+    {mimeType:MIME,videoBitsPerSecond:bps,audioBitsPerSecond:160000},
     {mimeType:MIME}
   ];
   for (var i=0;i<tries.length;i++){ try { return new MediaRecorder(stream,tries[i]); } catch(e){} }
@@ -1883,7 +1923,8 @@ window.VS_EXT=EXT;
 /* seconds recorded so far, with paused time left out */
 function activeT(now){ now=now||performance.now(); return Math.max(0,(now-recStart-pausedTotal-(paused?now-pauseAt:0))/1000); }
 function setRecUI(on){
-  recording=on; $('recbadge').classList.toggle('on',on);
+  recording=on;
+  if (typeof renderTray==='function' && typeof fq!=='undefined' && fq.length) setTimeout(renderTray,0); $('recbadge').classList.toggle('on',on);
   $('recBtn').textContent = on ? '■ Stop' : '● Record';
   $('recBtn').style.background = on ? '#2a3144' : '';
   $('pauseBtn').hidden = !on;
@@ -1905,13 +1946,22 @@ function startRec(){
   if (!sel){ toast('Pick a video from the list first'); return; }
   if (!camStream || !MIME){ return; }
   if (trimBusy){ toast('One moment, still trimming your last take'); return; }
+  if (review && review.clean && !review.kept) tDel(review.id);    /* recording again: that take isn't wanted */
   closeReview(); previewAt=0;
   if ($('dimRec').checked) document.body.classList.add('dimrec');
   countdown(3,function(){
-    var vs=out.captureStream(30);
-    var stream=new MediaStream(vs.getVideoTracks().concat(audioTrack()));
+    recClean=cleanOn();
+    var stream;
+    if (recClean){
+      /* best quality: the camera itself, full size, high bitrate; looks are added at Finish */
+      stream=new MediaStream(camStream.getVideoTracks().concat(audioTrack()));
+      recLog={events:[], fx:[], strokes:[]}; recSig=''; recSet=recSettings();
+    } else {
+      var vs=out.captureStream(30);
+      stream=new MediaStream(vs.getVideoTracks().concat(audioTrack()));
+    }
     chunks=[]; posterBlob=null; frames=[]; vad=[]; vadOn=true; paused=false; pausedTotal=0; pendingQs=[]; renderPromptSide();
-    recorder=makeRecorder(stream);
+    recorder=makeRecorder(stream, recClean ? 12000000 : VBPS);
     recorder.ondataavailable=function(e){ if(e.data && e.data.size) chunks.push(e.data); };
     recorder.onstop=finishRec;
     current = sel;
@@ -1968,6 +2018,13 @@ function finishRec(){
   if (!posterBlob){ out.toBlob(function(b){ posterBlob=b; if(review && !review.poster) review.poster=b; },'image/jpeg',0.86); }
   review={path:current, blob:blob, poster:posterBlob, dur:dur, cues:capCues||[], vad:vad.slice(), trimA:0, trimB:dur, qs:pendingQs.slice(), noSkip:true};
   pendingQs=[];
+  if (recClean){
+    var st={}; try { st=camStream.getVideoTracks()[0].getSettings(); } catch(e){}
+    review.clean=true; review.id='t'+Date.now(); review.log=recLog; review.set=recSet; review.vw=st.width; review.vh=st.height;
+    review.created=Date.now(); review.label=byPath[current] ? byPath[current].label : current;
+    lookOf(review);
+    tPut(recOf(review,'review'));        /* safe in the browser from this moment */
+  }
   buildThumbs(frames.slice(), posterBlob);
   var c=byPath[current];
   $('revTitle').textContent='Your take: '+c.label;
@@ -1976,11 +2033,13 @@ function finishRec(){
   v.src=URL.createObjectURL(blob);
   var rfps=dur>1 ? Math.min(30,recFrames/dur) : 0, mbps=dur>1 ? blob.size*8/dur/1e6 : 0;
   review.fps=rfps;
-  $('revMeta').textContent=fmtT(dur)+' · '+(blob.size/1048576).toFixed(1)+' MB · '+fileOf(c)+(rfps?' · '+Math.round(rfps)+' fps · '+mbps.toFixed(1)+' Mbps':'');
-  if (rfps && rfps<20) toast('This take only got '+Math.round(rfps)+' frames a second, so it may look choppy. Turn off Soft focus or set Background to Faster, then try again.');
+  $('revMeta').textContent = review.clean
+    ? fmtT(dur)+' · clean recording '+(review.vw||'?')+'×'+(review.vh||'?')+' · '+mbps.toFixed(1)+' Mbps · '+fileOf(c)
+    : fmtT(dur)+' · '+(blob.size/1048576).toFixed(1)+' MB · '+fileOf(c)+(rfps?' · '+Math.round(rfps)+' fps · '+mbps.toFixed(1)+' Mbps':'');
+  if (!review.clean && rfps && rfps<20) toast('This take only got '+Math.round(rfps)+' frames a second, so it may look choppy. Turn off Soft focus or set Background to Faster, then try again.');
   $('review').hidden=false;
   setEditMode(false);
-  trimUI(); renderCues(); refreshTrack(); qzRender();
+  trimUI(); renderCues(); refreshTrack(); qzRender(); renderLook(); $('lookCanvas').hidden=true;
   $('review').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 var thumbURLs=[];
@@ -1991,27 +2050,28 @@ function buildThumbs(fr, first){
   if (fr.length<=8) pick=fr;
   else for (var i=0;i<8;i++) pick.push(fr[Math.round(i*(fr.length-1)/7)]);
   if (!pick.length && first) pick=[{t:1.2,blob:first}];
-  pick.forEach(function(f,i){ addThumb(f.blob, fmtT(f.t), i===Math.min(T.titleOn?4:1,pick.length-1)); });
+  pick.forEach(function(f,i){ addThumb(f.blob, fmtT(f.t), i===Math.min(T.titleOn?4:1,pick.length-1), f.t); });
 }
-function addThumb(blob, label, on){
+function addThumb(blob, label, on, t){
   var box=$('thumbs'), u=URL.createObjectURL(blob); thumbURLs.push(u);
   var d=document.createElement('div'); d.className='th';
   d.innerHTML='<img alt=""><span></span>'; d.firstChild.src=u; d.lastChild.textContent=label;
-  d.onclick=function(){ chooseThumb(d,blob); };
+  d.onclick=function(){ chooseThumb(d,blob,t); };
   box.appendChild(d);
-  if (on) chooseThumb(d,blob);
+  if (on) chooseThumb(d,blob,t);
 }
-function chooseThumb(el,blob){
+function chooseThumb(el,blob,t){
   [].forEach.call($('thumbs').children,function(c){ c.classList.remove('on'); });
   el.classList.add('on');
-  if (review){ review.poster=blob; review.posterSet=true; }
+  if (review){ review.poster=blob; review.posterSet=true; review.posterT = t==null ? null : t; review.posterUp = t==null ? blob : null; }
 }
 $('thumbNow').onclick=function(){
   var v=$('revVideo'); if(!review || !v.videoWidth) return;
   v.pause();
   var c=document.createElement('canvas'); c.width=v.videoWidth; c.height=v.videoHeight;
   c.getContext('2d').drawImage(v,0,0);
-  c.toBlob(function(b){ if(b) addThumb(b, fmtT(v.currentTime||0), true); },'image/jpeg',0.88);
+  var tt=v.currentTime||0;
+  c.toBlob(function(b){ if(b) addThumb(b, fmtT(tt), true, tt); },'image/jpeg',0.88);
 };
 $('thumbFile').onchange=function(){
   var f=this.files[0]; this.value=''; if(!f||!review) return;
@@ -2023,7 +2083,7 @@ $('thumbFile').onchange=function(){
 };
 function closeReview(){
   $('review').hidden=true; review=null; var v=$('revVideo'); v.pause(); v.onloadedmetadata=null;
-  setEditMode(false); $('qzList').innerHTML='';
+  setEditMode(false); $('qzList').innerHTML=''; $('lookBox').hidden=true;
   [].slice.call(v.querySelectorAll('track')).forEach(function(t){ URL.revokeObjectURL(t.src); t.remove(); });
 }
 $('recBtn').onclick=function(){ if (counting) return; recording?stopRec():startRec(); };
@@ -2041,6 +2101,7 @@ $('redo').onclick=function(){ closeReview(); startRec(); };
    new file. It takes as long as the part you keep. */
 function trimUI(){
   if (!review) return;
+  var tn=$('trimBox').querySelector('.note'); if (tn) tn.textContent = review.clean ? 'Drag the two handles, or play to a spot and press Start here / End here. The trim is applied when the take finishes, so there’s no wait.' : 'Drag the two handles, or play to a spot and press Start here / End here. The saved video is cut to the gold part.';
   var d=review.dur||1, a=review.trimA, b=review.trimB;
   $('trimA').value=Math.round(a/d*1000); $('trimB').value=Math.round(b/d*1000);
   $('trimKeep').style.left=(a/d*100)+'%'; $('trimKeep').style.width=((b-a)/d*100)+'%';
@@ -2798,6 +2859,7 @@ $('editSave').onclick=function(){
 function showEditBtn(){
   var c=byPath[sel];
   $('editExisting').hidden = !(c && c.done && repo && !c.free);
+  if (typeof refreshRefinish==='function') refreshRefinish();
 }
 
 /* ---------- takes, downloads, zip ---------- */
@@ -2958,19 +3020,49 @@ else idbGet('repo').then(function(h){
 var connectNew=$('repoBtn').onclick;
 /* keep / save: the trim (if any) runs first, while you get the next video ready */
 function moveOn(){ var n=freeMode?null:nextNeeded(); closeReview(); if (freeMode) bumpFree(); else if (n) select(n); }
+function finalizeAny(r, after){
+  if (!r.clean) return finalize(r);
+  r.kept=true; lookOf(r);
+  toast('✨ Finishing '+fileOf(byPath[r.path]||{path:r.path})+' in the background. Keep going!');
+  return queueFinish(r, after);
+}
 $('keepNext').onclick=function(){
   if(!review) return; var r=review; moveOn();
-  finalize(r).then(function(r2){ keep(r2); toast('Kept: '+fileOf(byPath[r2.path])); });
+  finalizeAny(r,'keep').then(function(r2){ keep(r2); toast((r.clean?'✨ Finished: ':'Kept: ')+fileOf(byPath[r2.path])); }).catch(function(){});
 };
 $('dlNow').onclick=function(){
   if(!review) return; var r=review; moveOn();
-  finalize(r).then(function(r2){ keep(r2); saveTake(r2); });
+  finalizeAny(r,'save').then(function(r2){ keep(r2); saveTake(r2); }).catch(function(){});
 };
 function renderTray(){
   var n=takes.length, mb=takes.reduce(function(s,t){return s+t.blob.size;},0)/1048576;
   $('trayTitle').textContent = n ? n+' take'+(n>1?'s':'')+' kept · '+mb.toFixed(0)+' MB' : 'No takes kept yet';
   $('zipBtn').disabled=!n; $('saveAllBtn').disabled=!takes.some(function(t){return !t.saved;});
   var box=$('takes'); box.innerHTML='';
+  var fn=finishingNote(); $('finNote').textContent=fn;
+  if (fn) $('trayTitle').textContent=fn+(n?' · '+n+' kept':'');
+  fq.forEach(function(j,i){
+    var r=document.createElement('div'); r.className='take';
+    r.innerHTML='<span class="mono grow"></span><span class="ok"></span>';
+    r.children[0].textContent='✨ '+jobLabel(j);
+    r.children[1].textContent = i===0 ? (recording?'waiting while you record':Math.round((j.prog||0)*100)+'%') : 'in line';
+    box.appendChild(r);
+  });
+  waiting.forEach(function(x){
+    var r=document.createElement('div'); r.className='take';
+    r.innerHTML='<span class="mono grow"></span><span></span><button class="btn sm">Open</button><button class="btn sm gold">✨ Finish</button><button class="btn sm">Discard</button>';
+    r.children[0].textContent='⏳ '+(x.label||x.path)+(x.status==='failed'?' (didn’t finish)':' (not finished yet)');
+    r.children[1].textContent=fmtT(x.dur||0);
+    r.children[2].onclick=function(){ waiting=waiting.filter(function(w){ return w.id!==x.id; }); renderTray(); openRec(x,'Your take: '); };
+    r.children[3].onclick=function(){
+      waiting=waiting.filter(function(w){ return w.id!==x.id; });
+      var rr={id:x.id, clean:true, blob:x.blob}; RKEYS.forEach(function(k){ if (x[k]!==undefined) rr[k]=x[k]; }); if (x.posterUp) rr.posterUp=x.posterUp;
+      finalizeAny(rr,x.after||'keep').then(function(r2){ keep(r2); if (rr.after==='save') saveTake(r2); }).catch(function(){});
+    };
+    r.children[4].onclick=function(){ if (!confirm('Throw away this take? It can’t be brought back.')) return; tDel(x.id); waiting=waiting.filter(function(w){ return w.id!==x.id; }); renderTray(); };
+    box.appendChild(r);
+  });
+  if (!n && !fq.length && waiting.length) $('trayTitle').textContent=waiting.length+' take'+(waiting.length>1?'s':'')+' waiting from before';
   takes.forEach(function(t,i){
     var c=byPath[t.path];
     var r=document.createElement('div'); r.className='take';
@@ -3003,8 +3095,558 @@ $('zipBtn').onclick=function(){
   }).finally(function(){ btn.disabled=false; btn.textContent='⬇ Download all as zip'; });
 };
 window.addEventListener('beforeunload',function(e){
-  if (takes.some(function(t){return !t.saved;}) || recording){ e.preventDefault(); e.returnValue=''; }
+  if (takes.some(function(t){return !t.saved;}) || recording || fq.length){ e.preventDefault(); e.returnValue=''; }
 });
+
+/* ══════════════════════════════════════════════════════════════
+   BEST QUALITY: record clean, finish after
+   The camera is recorded as it is (no background, nothing drawn on
+   it) at full size and a high bitrate. While you record, the studio
+   writes down what you put on screen and when. "Finish" then goes
+   through the take one frame at a time, off the clock: cuts you out
+   with the detailed model, adds the background, puts every card back
+   at its moment, applies the trim, and encodes a high-quality MP4.
+   Takes wait in a line, are saved in the browser the moment you stop
+   (so a closed tab loses nothing), and pause while you're recording.
+   ══════════════════════════════════════════════════════════════ */
+var CLEAN_OK = !!(window.VideoEncoder && window.VideoDecoder && window.VideoFrame && window.MP4Box && window.Mp4Muxer && /mp4/.test(MIME));
+var cleanPref = store.get('clean', true);
+function cleanOn(){ return CLEAN_OK && cleanPref && srcMode!=='screen'; }
+var recClean=false, recLog=null, recSig='', recStroke=null, recSet=null;
+function snapState(){
+  return { q: quote.cur ? {t:quote.cur.t, a:quote.cur.a} : null,
+           w: word.cur ? {w:word.cur.w, d:word.cur.d, e:word.cur.e} : null,
+           p: part.cur ? JSON.parse(JSON.stringify(part.cur)) : null,
+           s: strip.cur ? JSON.parse(JSON.stringify(strip.cur)) : null,
+           fix: !!strip.fix, pl: plate.on ? plate.path : '' };
+}
+function logState(){
+  if (!recording || !recClean || !recLog) return;
+  var s=snapState(), sig=JSON.stringify(s);
+  if (sig===recSig) return;
+  recSig=sig; s.t=activeT(); recLog.events.push(s);
+}
+function recSettings(){
+  var at=autoTitle();
+  return {
+    T:{titleOn:T.titleOn, nameOn:T.nameOn, title:T.title||at[0], sub:T.sub||at[1], name:T.name, role:T.role},
+    inkFade:inkFade, light:lightOn ? +(1+(1-gammaNow)*0.85).toFixed(3) : 0, warm:warmOn, soft:softOn ? softAmt : 0,
+    bg:{mode:bgMode, img: bgMode==='image' && bgs[bgSel] ? bgSel : -1}, edge:edge, refine:refineOn
+  };
+}
+
+/* ---- takes saved in the browser (IndexedDB), so nothing is lost if the tab closes ---- */
+function tdb(){
+  return new Promise(function(res,rej){
+    var r=indexedDB.open('video-studio-takes',1);
+    r.onupgradeneeded=function(){ if (!r.result.objectStoreNames.contains('takes')) r.result.createObjectStore('takes',{keyPath:'id'}); };
+    r.onsuccess=function(){ res(r.result); }; r.onerror=function(){ rej(r.error); };
+  });
+}
+function tPut(rec){ return tdb().then(function(db){ return new Promise(function(res){ var tx=db.transaction('takes','readwrite'); tx.objectStore('takes').put(rec); tx.oncomplete=function(){ res(true); }; tx.onerror=function(){ res(false); }; }); }).catch(function(e){ console.warn('save take',e); return false; }); }
+function tAll(){ return tdb().then(function(db){ return new Promise(function(res){ var q=db.transaction('takes').objectStore('takes').getAll(); q.onsuccess=function(){ res(q.result||[]); }; q.onerror=function(){ res([]); }; }); }).catch(function(){ return []; }); }
+function tDel(id){ return tdb().then(function(db){ return new Promise(function(res){ var tx=db.transaction('takes','readwrite'); tx.objectStore('takes').delete(id); tx.oncomplete=function(){ res(true); }; tx.onerror=function(){ res(false); }; }); }).catch(function(){ return false; }); }
+var RKEYS=['path','dur','cues','qs','noSkip','trimA','trimB','log','set','posterT','look','vw','vh','after','label','created'];
+function recOf(r,status){ var o={id:r.id, status:status, blob:r.blob}; RKEYS.forEach(function(k){ if (r[k]!==undefined) o[k]=JSON.parse(JSON.stringify(r[k])); }); o.blob=r.blob; if (r.posterUp) o.posterUp=r.posterUp; return o; }
+
+/* ---- the finishing line ---- */
+var fq=[], fqBusy=false;
+/* a free-record take from before a reload: its clip has to exist again */
+function ensureClip(r){
+  if (!r || byPath[r.path]) return;
+  if (/^free\//.test(r.path)){ var nm=r.label||r.path.slice(5).replace(/-/g,' '); byPath[r.path]={path:r.path,label:nm,script:'',kind:'free',free:true,week:0,group:'Free',lesson:'Free record',lessonShort:'Free',id:'free'}; }
+}
+function jobLabel(j){ ensureClip(j.r); var c=byPath[j.r.path]; return c ? (c.free ? c.label : c.lessonShort+' · '+niceLabel(c)) : j.r.path; }
+function queueFinish(r, after){
+  ensureClip(r);
+  r.after=after||r.after||'keep';
+  return new Promise(function(res,rej){
+    var j={r:r, prog:0, res:res, rej:rej};
+    fq.push(j); tPut(recOf(r,'queued')); renderTray(); runQueue();
+  });
+}
+function sleep(ms){ return new Promise(function(r){ setTimeout(r,ms); }); }
+function runQueue(){
+  if (fqBusy || !fq.length) return;
+  fqBusy=true;
+  var j=fq[0];
+  tPut(recOf(j.r,'finishing'));
+  finishTake(j.r,function(p){ j.prog=p; renderTray(); }).then(function(r2){
+    fq.shift(); fqBusy=false;
+    tPut(Object.assign(recOf(j.r,'done'),{finishedAt:Date.now()}));
+    saveOriginal(j.r);
+    j.res(r2); renderTray(); runQueue();
+  }).catch(function(e){
+    console.warn('finish', e && (e.stack||e.message||e)); fq.shift(); fqBusy=false;
+    toast('Couldn’t finish '+jobLabel(j)+': '+(e && e.message || e)+'. It’s still saved; try Finish again from the tray.');
+    tPut(recOf(j.r,'failed'));
+    j.rej(e); renderTray(); loadWaiting(); runQueue();
+  });
+}
+function finishingNote(){
+  if (!fq.length) return '';
+  var j=fq[0], pct=Math.round((j.prog||0)*100);
+  return (recording ? '⏸ Waiting while you record · ' : '✨ Finishing ')+jobLabel(j)+(recording?'':' · '+pct+'%')+(fq.length>1?' · '+(fq.length-1)+' more in line':'');
+}
+
+/* ---- one take, frame by frame ---- */
+var fSeg=null, fSegLoading=null, fSegTs=0;
+function finishSegmenter(){
+  if (window.VS_SEGMENTER) return Promise.resolve(window.VS_SEGMENTER);
+  if (fSeg) return Promise.resolve(fSeg);
+  if (fSegLoading) return fSegLoading;
+  var lib = mpLib ? Promise.resolve() : import(MP+'/vision_bundle.mjs').then(function(m){ mpLib=m; return m.FilesetResolver.forVisionTasks(MP+'/wasm'); }).then(function(fs){ mpFiles=fs; });
+  fSegLoading = lib.then(function(){
+    var opts=function(dlg){ return {baseOptions:{modelAssetPath:MODELS.detail,delegate:dlg},runningMode:'VIDEO',outputCategoryMask:false,outputConfidenceMasks:true}; };
+    return mpLib.ImageSegmenter.createFromOptions(mpFiles,opts('GPU')).catch(function(){ return mpLib.ImageSegmenter.createFromOptions(mpFiles,opts('CPU')); });
+  }).then(function(s){ fSeg=s; return s; });
+  return fSegLoading;
+}
+function loadImg(src){ return new Promise(function(res){ if(!src){ res(null); return; } var i=new Image(); i.onload=function(){ res(i); }; i.onerror=function(){ res(null); }; i.src=src; }); }
+function loadPlate(path){
+  if (!path) return Promise.resolve(null);
+  if (plateCache[path]) return Promise.resolve(plateCache[path]);
+  return fetch('../assets/'+path).then(function(r){ if(!r.ok) throw 0; return r.blob(); }).then(function(b){ return loadImg(URL.createObjectURL(b)); })
+    .then(function(i){ if (i) plateCache[path]=i; return i; }).catch(function(){ return null; });
+}
+function demux(blob){
+  return blob.arrayBuffer().then(function(buf){
+    return new Promise(function(res,rej){
+      var f=MP4Box.createFile(), vs=[], as=[], info=null, vt=null, at=null;
+      f.onError=function(e){ rej(new Error('couldn’t read the take ('+e+')')); };
+      f.onReady=function(i){
+        info=i; vt=i.videoTracks[0]; at=i.audioTracks[0];
+        if (!vt){ rej(new Error('no video in the take')); return; }
+        f.setExtractionOptions(vt.id,'v',{nbSamples:1e9});
+        if (at) f.setExtractionOptions(at.id,'a',{nbSamples:1e9});
+        f.start();
+      };
+      f.onSamples=function(id,user,samples){ (user==='v'?vs:as).push.apply(user==='v'?vs:as,samples); };
+      buf.fileStart=0; f.appendBuffer(buf); f.flush();
+      setTimeout(function(){
+        if (!vt) return;
+        var trak=f.getTrackById(vt.id), entry=trak.mdia.minf.stbl.stsd.entries[0], box=entry.avcC||entry.hvcC||entry.vpcC||entry.av1C, desc=null;
+        if (box){ var ds=new DataStream(undefined,0,DataStream.BIG_ENDIAN); box.write(ds); desc=new Uint8Array(ds.buffer,8); }
+        var adesc=null;
+        if (at){ try{ var ae=f.getTrackById(at.id).mdia.minf.stbl.stsd.entries[0]; var esd=ae.esds && ae.esds.esd; var dsi=esd && esd.descs && esd.descs[0] && esd.descs[0].descs && esd.descs[0].descs[0]; if (dsi && dsi.data) adesc=dsi.data; }catch(e){} }
+        res({info:info, vt:vt, at:at, vs:vs, as:as, desc:desc, adesc:adesc});
+      },0);
+    });
+  });
+}
+function decodeAudio(r, d){
+  /* PCM for the kept part, from the browser's own decoder; AudioDecoder if that fails */
+  var a0=r.trimA||0, a1=r.trimB||r.dur;
+  var viaCtx=r.blob.arrayBuffer().then(function(buf){
+    var ac=new (window.OfflineAudioContext||window.webkitOfflineAudioContext)(1,1,48000);
+    return ac.decodeAudioData(buf);
+  }).then(function(ab){
+    var sr=ab.sampleRate, s0=Math.floor(a0*sr), s1=Math.min(ab.length,Math.floor(a1*sr)), ch=[];
+    for (var c=0;c<Math.min(2,ab.numberOfChannels);c++) ch.push(ab.getChannelData(c).slice(s0,s1));
+    return {sr:sr, ch:ch};
+  });
+  return viaCtx.catch(function(e){
+    if (!d.at || !window.AudioDecoder) return null;
+    return new Promise(function(res){
+      var out=[], sr=d.at.audio.sample_rate, nch=d.at.audio.channel_count;
+      var dec=new AudioDecoder({output:function(ad){ var n=ad.numberOfFrames, t=ad.timestamp/1e6, buf=[]; for (var c=0;c<nch;c++){ var x=new Float32Array(n); ad.copyTo(x,{planeIndex:c,format:'f32-planar'}); buf.push(x); } out.push({t:t,buf:buf}); ad.close(); }, error:function(){ res(null); }});
+      var acodec=/opus/i.test(d.at.codec) ? 'opus' : 'mp4a.40.2';
+      dec.configure({codec:acodec, sampleRate:sr, numberOfChannels:nch, description:d.adesc||undefined});
+      d.as.forEach(function(s){ dec.decode(new EncodedAudioChunk({type:'key', timestamp:1e6*s.cts/s.timescale, data:s.data})); });
+      dec.flush().then(function(){
+        var t0=out.length?out[0].t:0, total=out.reduce(function(n,o){ return n+o.buf[0].length; },0), ch=[];
+        for (var c=0;c<nch;c++){ var all=new Float32Array(total), o=0; out.forEach(function(p){ all.set(p.buf[c],o); o+=p.buf[c].length; }); ch.push(all.slice(Math.floor((a0-t0)*sr), Math.floor((a1-t0)*sr))); }
+        res({sr:sr, ch:ch});
+      }).catch(function(){ res(null); });
+    });
+  });
+}
+function pickCodec(w,h,bps){
+  /* H.264 plays everywhere (Canvas, iPads, Chromebooks); VP9 only if H.264 isn't available */
+  var cands=[['avc1.640028','avc'],['avc1.4D4028','avc'],['avc1.42E028','avc'],['avc1.640020','avc'],['avc1.42E01F','avc'],['vp09.00.40.08','vp9']];
+  var i=0;
+  function next(){
+    if (i>=cands.length) return Promise.reject(new Error('this browser can’t make MP4 video here'));
+    var c=cands[i++], cfg={codec:c[0], width:w, height:h, bitrate:bps, framerate:30, latencyMode:'quality', bitrateMode:'variable'};
+    if (c[1]==='avc') cfg.avc={format:'avc'};
+    return VideoEncoder.isConfigSupported(cfg).then(function(s){ if (!s.supported) return next(); cfg._mux=c[1]; return cfg; }, next);
+  }
+  return next();
+}
+function pickAudio(sr,nch){
+  if (!window.AudioEncoder) return Promise.resolve(null);
+  var a={codec:'mp4a.40.2', sampleRate:sr, numberOfChannels:nch, bitrate:128000};
+  return AudioEncoder.isConfigSupported(a).then(function(s){
+    if (s.supported) return {cfg:a, mux:'aac'};
+    var o={codec:'opus', sampleRate:48000, numberOfChannels:nch, bitrate:128000};
+    return AudioEncoder.isConfigSupported(o).then(function(s2){ return s2.supported ? {cfg:o, mux:'opus'} : null; });
+  }).catch(function(){ return null; });
+}
+/* the matte, at the mask's own size, with its own memory (the live preview keeps its own) */
+function makeMatte(edgeV, refineV, invert){
+  var gI=new Float32Array(N), gP=new Float32Array(N), prev=null, q=new Float32Array(N);
+  var sc=document.createElement('canvas'); sc.width=segW; sc.height=segH; var sx=sc.getContext('2d',{willReadFrequently:true});
+  var mc=document.createElement('canvas'); mc.width=segW; mc.height=segH; var mx=mc.getContext('2d'); var mi=mx.createImageData(segW,segH);
+  var soft=document.createElement('canvas'); soft.width=segW; soft.height=segH; var sox=soft.getContext('2d');
+  return {
+    seg:sc, segX:sx,
+    run:function(seg, ts){
+      var px=sx.getImageData(0,0,segW,segH).data, i;
+      for (i=0;i<N;i++){ var j=i*4; gI[i]=(0.299*px[j]+0.587*px[j+1]+0.114*px[j+2])/255; }
+      var got=null;
+      seg.segmentForVideo(sc, ts, function(result){ var m=result && result.confidenceMasks && result.confidenceMasks[0]; if (m){ var f=m.getAsFloat32Array(); if (f.length===N) got=Float32Array.from(f); } });
+      if (!got) return null;
+      if (!prev){ prev=new Float32Array(N); for (i=0;i<N;i++) prev[i]=invert?1-got[i]:got[i]; }
+      for (i=0;i<N;i++){ var v=invert?1-got[i]:got[i]; v=prev[i]*0.3+v*0.7; prev[i]=v; gP[i]=v; }
+      var src=gP; if (refineV){ guided(gI,gP,4,0.003,q); src=q; }
+      var lo=0.42-0.22*edgeV, hi=lo+0.28, d=mi.data;
+      for (i=0;i<N;i++){ var t=(src[i]-lo)/(hi-lo); t=t<0?0:t>1?1:t; t=t*t*(3-2*t); d[i*4+3]=t*255; }
+      mx.putImageData(mi,0,0);
+      sox.clearRect(0,0,segW,segH); sox.filter='blur(0.6px)'; sox.drawImage(mc,0,0); sox.filter='none';
+      return soft;
+    }
+  };
+}
+/* overlays at a moment of the take: swap in the take's own state, draw, swap back */
+var clockOverride=null;
+function overlayPlayer(r, OW, OH, plates){
+  var S={quote:{cur:null,show:null,k:0}, word:{cur:null,show:null,k:0}, part:{cur:null,show:null,k:0}, strip:{cur:null,show:null,k:0,fix:false}, plate:{on:false,img:null,path:'',k:0}, fx:[], strokes:[], lastStep:0};
+  var ev=(r.log && r.log.events)||[], fxs=(r.log && r.log.fx)||[], sts=(r.log && r.log.strokes)||[], ei=0, fi=0;
+  return function(ctx, tv){
+    while (ei<ev.length && ev[ei].t<=tv){
+      var e=ev[ei++];
+      S.quote.cur=e.q; S.word.cur=e.w; S.part.cur=e.p; S.strip.cur=e.s; S.strip.fix=!!e.fix;
+      S.plate.on=!!e.pl; if (e.pl){ S.plate.path=e.pl; S.plate.img=plates[e.pl]||null; }
+    }
+    var nowMs=tv*1000;
+    while (fi<fxs.length && fxs[fi].t<=tv){
+      var fe=fxs[fi++], f={type:fe.type, t0:fe.t*1000};
+      if (fe.type==='confetti'){ f.p=[]; for (var k=0;k<170;k++) f.p.push({x:R(0,W),y:R(-260,-10),vx:R(-70,70),vy:R(120,320),r:R(0,6),vr:R(-7,7),w:R(9,16),h:R(5,9),c:CONF[k%CONF.length],ph:R(0,6)}); f.life=4.2; }
+      S.fx.push(f);
+    }
+    S.strokes=sts.filter(function(s){ return s.pts.length && s.pts[0][2]<=tv; }).map(function(s){
+      var pts=s.pts.filter(function(p){ return p[2]<=tv; }).map(function(p){ return [p[0],p[1]]; });
+      var done=s.end!=null && s.end<=tv;
+      return {c:s.c, pts:pts, done:done, end:done ? s.end*1000 : 0};
+    });
+    var keep={quote:quote, word:word, part:part, strip:strip, plate:plate, fx:fx, strokes:strokes, lastStep:lastStep, sel:sel, T:T, inkFade:inkFade};
+    quote=S.quote; word=S.word; part=S.part; strip=S.strip; plate=S.plate; fx=S.fx; strokes=S.strokes; lastStep=S.lastStep;
+    sel=r.path; T=r.set.T; inkFade=r.set.inkFade; clockOverride=tv;
+    try {
+      stepFx(nowMs);
+      S.lastStep=lastStep; S.fx=fx;
+      ctx.save(); ctx.scale(OW/W, OH/H); drawOverlays(ctx, nowMs); ctx.restore();
+    } finally {
+      quote=keep.quote; word=keep.word; part=keep.part; strip=keep.strip; plate=keep.plate; fx=keep.fx; strokes=keep.strokes; lastStep=keep.lastStep;
+      sel=keep.sel; T=keep.T; inkFade=keep.inkFade; clockOverride=null;
+    }
+  };
+}
+/* one frame of the finished look, into ctx (OW×OH): you, the background, the touch-ups */
+function composeFinished(ctx, OW, OH, src, sw, sh, look, set, matte, segInst, tsMs){
+  var s=Math.max(OW/sw,OH/sh), dw=sw*s, dh=sh*s, dx=(OW-dw)/2, dy=(OH-dh)/2;
+  var filt=''; if (set.light) filt+='brightness('+set.light+') contrast(1.06) saturate(1.08) '; if (set.warm) filt+='sepia(0.12) saturate(1.06) ';
+  filt=filt.trim()||'none';
+  var mode=look.mode;
+  var mask=null;
+  if (mode!=='none' && matte && segInst){
+    matte.segX.drawImage(src,0,0,segW,segH);
+    mask=matte.run(segInst, tsMs);
+  }
+  if (mode==='none' || !mask){
+    ctx.filter=filt; ctx.drawImage(src,dx,dy,dw,dh); ctx.filter='none';
+  } else {
+    if (mode==='blur'){
+      var bx=composeFinished._b||(composeFinished._b=document.createElement('canvas')); bx.width=320; bx.height=180; var bc=bx.getContext('2d');
+      bc.filter=(filt==='none'?'':filt+' ')+'blur(4px)'; var s2=Math.max(320/sw,180/sh); bc.drawImage(src,(320-sw*s2)/2,(180-sh*s2)/2,sw*s2,sh*s2); bc.filter='none';
+      ctx.drawImage(bx,0,0,OW,OH);
+    } else if (look.img){ var iw=look.img.naturalWidth||look.img.width, ih=look.img.naturalHeight||look.img.height, s3=Math.max(OW/iw,OH/ih); ctx.drawImage(look.img,(OW-iw*s3)/2,(OH-ih*s3)/2,iw*s3,ih*s3); }
+    else { ctx.fillStyle='#0E1C42'; ctx.fillRect(0,0,OW,OH); }
+    var pc=composeFinished._p||(composeFinished._p=document.createElement('canvas'));
+    if (pc.width!==OW||pc.height!==OH){ pc.width=OW; pc.height=OH; }
+    var px=pc.getContext('2d');
+    px.globalCompositeOperation='source-over'; px.clearRect(0,0,OW,OH);
+    px.filter=filt; px.drawImage(src,dx,dy,dw,dh); px.filter='none';
+    px.globalCompositeOperation='destination-in'; px.drawImage(mask,dx,dy,dw,dh); px.globalCompositeOperation='source-over';
+    ctx.drawImage(pc,0,0);
+  }
+  if (set.soft){
+    var sx2=composeFinished._s||(composeFinished._s=document.createElement('canvas')); sx2.width=480; sx2.height=270; var sc2=sx2.getContext('2d');
+    sc2.filter='blur('+(0.7+1.1*set.soft).toFixed(2)+'px)'; sc2.drawImage(ctx.canvas,0,0,480,270); sc2.filter='none';
+    ctx.save(); ctx.globalAlpha=0.18+0.3*set.soft; ctx.drawImage(sx2,0,0,OW,OH); ctx.restore();
+  }
+}
+function finishTake(r, onProg){
+  var look=r.look||{mode:'none'};
+  var d, audio, OW, OH, fps=30;
+  return demux(r.blob).then(function(dm){
+    d=dm;
+    var vw=d.vt.video.width, vh=d.vt.video.height;
+    OH = vh>=1000 ? 1080 : 720; OW = OH===1080 ? 1920 : 1280;
+    return decodeAudio(r,d);
+  }).then(function(au){
+    audio=au;
+    var paths={}; ((r.log&&r.log.events)||[]).forEach(function(e){ if (e.pl) paths[e.pl]=1; });
+    return Promise.all([
+      look.mode!=='none' ? finishSegmenter().catch(function(){ toast('The background tool couldn’t load, so this take was finished without a background'); return null; }) : null,
+      look.mode==='image' && look.src ? loadImg(look.src) : null,
+      Promise.all(Object.keys(paths).map(function(p){ return loadPlate(p).then(function(i){ return [p,i]; }); }))
+    ]);
+  }).then(function(got){
+    var segInst=got[0]; look.img=got[1]; var plates={}; got[2].forEach(function(x){ plates[x[0]]=x[1]; });
+    var a0=r.trimA||0, a1=r.trimB||r.dur, keepDur=Math.max(0.5,a1-a0);
+    var vbps=Math.round(Math.max(1500000, Math.min(OH===1080?6000000:4000000, 85e6*8/keepDur-160000)));
+    var cv=document.createElement('canvas'); cv.width=OW; cv.height=OH; var cx=cv.getContext('2d');
+    var matte = segInst ? makeMatte(r.set.edge!=null?r.set.edge:0.3, r.set.refine!==false, !window.VS_SEGMENTER) : null;
+    var drawOver = overlayPlayer(r, OW, OH, plates);
+    var nch = audio && audio.ch.length ? audio.ch.length : 0;
+    return Promise.all([pickCodec(OW,OH,vbps), nch ? pickAudio(audio.sr,nch) : null]).then(function(cfgs){
+      var vcfg=cfgs[0], acfg=cfgs[1];
+      var target=new Mp4Muxer.ArrayBufferTarget();
+      var vmux=vcfg._mux; delete vcfg._mux;
+      var muxOpts={target:target, video:{codec:vmux, width:OW, height:OH, frameRate:fps}, fastStart:'in-memory', firstTimestampBehavior:'offset'};
+      if (acfg) muxOpts.audio={codec:acfg.mux, numberOfChannels:nch, sampleRate:acfg.cfg.sampleRate};
+      var muxer=new Mp4Muxer.Muxer(muxOpts), encErr=null;
+      var enc=new VideoEncoder({output:function(ch,meta){ muxer.addVideoChunk(ch,meta); }, error:function(e){ encErr=e; }});
+      enc.configure(vcfg);
+      var samples=d.vs, t0=samples.length ? samples[0].cts/samples[0].timescale : 0;
+      var total=Math.max(1,Math.round(keepDur*fps)), made=0, posterDone=!!r.posterUp, poster=r.posterUp||null, lastTs=-1;
+      var pending=[], decErr=null;
+      var dec=new VideoDecoder({output:function(f){ pending.push(f); }, error:function(e){ decErr=e; }});
+      var vcodec=d.vt.codec;
+      if (/^vp09\.\d\d\.00\./.test(vcodec)) vcodec=vcodec.replace(/^(vp09\.\d\d)\.00\./,'$1.40.');   /* some recorders write level 00, which decoders reject */
+      var dcfg={codec:vcodec, codedWidth:d.vt.video.width, codedHeight:d.vt.video.height};
+      if (d.desc && /^(avc|hvc|hev)/.test(vcodec)) dcfg.description=d.desc;
+      dec.configure(dcfg);
+      var si=0;
+      function feed(){
+        while (si<samples.length && dec.decodeQueueSize<8 && pending.length<6){
+          var s=samples[si++];
+          dec.decode(new EncodedVideoChunk({type:s.is_sync?'key':'delta', timestamp:Math.round(1e6*(s.cts/s.timescale - t0)), duration:Math.round(1e6*s.duration/s.timescale), data:s.data}));
+        }
+        if (si>=samples.length && !feed.flushed){ feed.flushed=true; return dec.flush().catch(function(){}); }
+        return Promise.resolve();
+      }
+      function step(){
+        if (encErr) return Promise.reject(encErr);
+        if (decErr) return Promise.reject(decErr);
+        if (recording) return sleep(400).then(step);            /* your live take comes first */
+        return feed().then(function(){
+          if (!pending.length){
+            if (feed.flushed && si>=samples.length && dec.decodeQueueSize===0) return 'done';
+            return sleep(5).then(step);
+          }
+          var f=pending.shift(), tv=f.timestamp/1e6;
+          if (tv < a0-0.001 || tv > a1+0.001){ f.close(); return step(); }
+          var ts=Math.round((tv-a0)*1e6);
+          if (ts<=lastTs){ f.close(); return step(); }
+          lastTs=ts;
+          composeFinished(cx, OW, OH, f, f.displayWidth, f.displayHeight, look, r.set, matte, segInst, (fSegTs=Math.max(fSegTs+1, performance.now())));
+          f.close();
+          drawOver(cx, tv);
+          var vf=new VideoFrame(cv,{timestamp:ts, duration:Math.round(1e6/fps)});
+          enc.encode(vf,{keyFrame: made%60===0}); vf.close();
+          made++;
+          if (!posterDone && r.posterT!=null && tv>=r.posterT){ posterDone=true; cv.toBlob(function(b){ if (b) poster=b; },'image/jpeg',0.88); }
+          if (made%5===0) onProg(Math.min(0.99,made/total));
+          var wait = enc.encodeQueueSize>6 ? sleep(15) : (made%3===0 ? sleep(0) : Promise.resolve());
+          return wait.then(step);
+        });
+      }
+      return step().then(function(){
+        return enc.flush();
+      }).then(function(){
+        if (!acfg || !nch) return;
+        return new Promise(function(res,rej){
+          var aenc=new AudioEncoder({output:function(ch,meta){ muxer.addAudioChunk(ch,meta); }, error:rej});
+          var sr=acfg.cfg.sampleRate, src=audio.ch, srcSr=audio.sr;
+          if (srcSr!==sr){ /* opus wants 48k: simple resample */
+            src=src.map(function(c){ var n=Math.floor(c.length*sr/srcSr), o=new Float32Array(n); for (var i=0;i<n;i++){ var x=i*srcSr/sr, i0=Math.floor(x), fr=x-i0; o[i]=(c[i0]||0)*(1-fr)+(c[i0+1]||0)*fr; } return o; });
+          }
+          aenc.configure(acfg.cfg);
+          var len=src[0].length, step=1024*4;
+          for (var o=0;o<len;o+=step){
+            var n=Math.min(step,len-o), buf=new Float32Array(n*nch);
+            for (var c=0;c<nch;c++) buf.set(src[c].subarray(o,o+n), c*n);
+            var ad=new AudioData({format:'f32-planar', sampleRate:sr, numberOfFrames:n, numberOfChannels:nch, timestamp:Math.round(o/sr*1e6), data:buf});
+            aenc.encode(ad); ad.close();
+          }
+          aenc.flush().then(res,rej);
+        });
+      }).then(function(){
+        muxer.finalize();
+        try { dec.close(); enc.close(); } catch(e){}
+        var out=new Blob([target.buffer],{type:'video/mp4'});
+        onProg(1);
+        var r2={path:r.path, blob:out, poster:poster||r.poster||null, dur:keepDur,
+          cues:shiftCues(r.cues||[],a0,a1), qs:shiftQs(r.qs||[],a0,a1), noSkip:r.noSkip, finished:true, mbps:out.size*8/keepDur/1e6, size:OW+'×'+OH};
+        if (!r2.poster) return new Promise(function(res){ cv.toBlob(function(b){ r2.poster=b; res(r2); },'image/jpeg',0.88); });
+        return r2;
+      });
+    });
+  });
+}
+
+/* ---- the review: pick the finished look, and preview one frame of it ---- */
+var lookImgCache={};
+function lookOf(r){
+  if (!r.look){
+    var b=r.set && r.set.bg || {mode:'none'};
+    r.look={mode:b.mode, src: b.mode==='image' && bgs[b.img] ? bgs[b.img] : (b.mode==='image' && bgs[bgSel] ? bgs[bgSel] : '')};
+    if (r.look.mode==='image' && !r.look.src) r.look.mode='none';
+  }
+  return r.look;
+}
+function renderLook(){
+  var box=$('lookBox'); if (!box) return;
+  if (!review || !review.clean){ box.hidden=true; return; }
+  box.hidden=false;
+  var L=lookOf(review);
+  [].forEach.call($('lookSeg').children,function(b){ b.classList.toggle('on',b.dataset.m===L.mode); });
+  var g=$('lookBgs'); g.innerHTML='';
+  g.hidden = L.mode!=='image';
+  bgs.forEach(function(u){
+    var d=document.createElement('div'); d.className='bg'+(u===L.src?' on':''); d.style.backgroundImage='url('+u+')';
+    d.onclick=function(){ L.src=u; renderLook(); };
+    g.appendChild(d);
+  });
+  if (L.mode==='image' && !bgs.length) g.innerHTML='<div class="note">Add a background image in the Background panel first.</div>';
+}
+[].forEach.call(document.querySelectorAll('#lookSeg button'),function(b){ b.onclick=function(){ if (!review) return; var L=lookOf(review); L.mode=b.dataset.m; if (L.mode==='image' && !L.src && bgs.length) L.src=bgs[bgSel]||bgs[0]; renderLook(); }; });
+$('lookPrev').onclick=function(){
+  if (!review || !review.clean) return;
+  var v=$('revVideo'); v.pause();
+  var L=lookOf(review), btn=this; btn.disabled=true; btn.textContent='Making the preview…';
+  var tv=v.currentTime||0, OW=1280, OH=720;
+  Promise.all([L.mode!=='none' ? finishSegmenter() : null, L.mode==='image' ? loadImg(L.src) : null]).then(function(got){
+    L.img=got[1];
+    var cv=$('lookCanvas'); cv.width=OW; cv.height=OH; var cx=cv.getContext('2d');
+    var matte=got[0] ? makeMatte(review.set.edge!=null?review.set.edge:0.3, review.set.refine!==false, !window.VS_SEGMENTER) : null;
+    /* the model settles over a few frames; show it the same frame a few times */
+    for (var i=0;i<4;i++) composeFinished(cx,OW,OH,v,v.videoWidth,v.videoHeight,L,review.set,matte,got[0],(fSegTs=Math.max(fSegTs+1,performance.now())));
+    var paths={}; ((review.log&&review.log.events)||[]).forEach(function(e){ if (e.pl) paths[e.pl]=1; });
+    return Promise.all(Object.keys(paths).map(function(p){ return loadPlate(p).then(function(im){ return [p,im]; }); })).then(function(list){
+      var plates={}; list.forEach(function(x){ plates[x[0]]=x[1]; });
+      overlayPlayer(review,OW,OH,plates)(cx,tv);
+      cv.hidden=false;
+    });
+  }).catch(function(e){ console.warn(e); toast('The preview couldn’t be made: '+(e.message||e)); })
+    .finally(function(){ btn.disabled=false; btn.textContent='👁 Preview this frame'; });
+};
+
+/* ---- the clean original + its recipe, kept outside the repo for re-finishing ---- */
+var origDir=null;
+function saveOriginal(r){
+  if (!origDir) return;
+  var base=r.path.split('/').pop();
+  origDir.queryPermission({mode:'readwrite'}).then(function(p){
+    if (p!=='granted') return;
+    var recipe=recOf(r,'recipe'); delete recipe.blob; recipe.look=r.look?{mode:r.look.mode, src:r.look.src}:null;
+    return origDir.getFileHandle(base+'.original.mp4',{create:true}).then(function(fh){ return fh.createWritable(); }).then(function(w){ return w.write(r.blob).then(function(){ return w.close(); }); })
+      .then(function(){ return origDir.getFileHandle(base+'.recipe.json',{create:true}); }).then(function(fh){ return fh.createWritable(); })
+      .then(function(w){ return w.write(new Blob([JSON.stringify(recipe)],{type:'application/json'})).then(function(){ return w.close(); }); });
+  }).catch(function(e){ console.warn('original',e); });
+}
+$('origBtn').onclick=function(){
+  if (!window.showDirectoryPicker) return;
+  window.showDirectoryPicker({id:'video-originals',mode:'readwrite'}).then(function(h){
+    origDir=h; idbSet('origDir',h); markOrig(); toast('Originals will be kept in '+h.name);
+  }).catch(function(){});
+};
+if (!window.showDirectoryPicker) $('origBtn').hidden=true;
+function markOrig(){ $('origState').textContent = origDir ? '✓ Keeping clean originals in '+origDir.name : 'Clean originals are kept in this browser for 3 weeks.'; $('origBtn').textContent = origDir ? 'Change folder' : '📁 Also keep them in a folder'; }
+idbGet('origDir').then(function(h){ if (h){ origDir=h; markOrig(); } });
+
+/* ---- re-finish a video you finished before ---- */
+var lastRecs={};
+function refreshRefinish(){
+  tAll().then(function(all){
+    lastRecs={};
+    all.forEach(function(x){ if (x.status==='done' && x.blob && (!lastRecs[x.path] || x.created>lastRecs[x.path].created)) lastRecs[x.path]=x; });
+    var c=byPath[sel]; $('refinish').hidden = !(c && lastRecs[c.path]);
+  });
+}
+function openRec(x, title){
+  closeReview(); if (recording) return;
+  var r={id:x.id, clean:true, blob:x.blob, poster:null};
+  RKEYS.forEach(function(k){ if (x[k]!==undefined) r[k]=JSON.parse(JSON.stringify(x[k])); });
+  r.cues=r.cues||[]; r.qs=r.qs||[]; r.trimA=r.trimA||0; r.trimB=r.trimB||r.dur; r.vad=null;
+  review=r;
+  var c=byPath[r.path]; if (c && sel!==r.path) select(r.path), review=r;
+  $('revTitle').textContent=title+(c?c.label:r.path);
+  var v=$('revVideo'); if (v.src) URL.revokeObjectURL(v.src); v.src=URL.createObjectURL(r.blob);
+  $('revMeta').textContent=fmtT(r.dur)+' · clean original · '+(r.vw||'?')+'×'+(r.vh||'?');
+  $('thumbs').innerHTML='';
+  $('review').hidden=false; setEditMode(false);
+  trimUI(); renderCues(); refreshTrack(); qzRender(); renderLook(); $('lookCanvas').hidden=true;
+  $('review').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+$('refinish').onclick=function(){
+  var c=byPath[sel], x=c && lastRecs[c.path]; if (!x) return;
+  var nx=Object.assign({},x,{id:'t'+Date.now()});
+  openRec(nx,'Re-finishing: ');
+};
+
+/* ---- takes still waiting from last time (tab closed, computer restarted) ---- */
+var waiting=[];
+function loadWaiting(){
+  return tAll().then(function(all){
+    var now=Date.now();
+    /* tidy: finished originals older than 3 weeks go (the newest per video stays a week longer) */
+    all.forEach(function(x){ if (x.status==='done' && x.finishedAt && now-x.finishedAt>21*864e5) tDel(x.id); });
+    var inLine=fq.map(function(j){ return j.r.id; });
+    waiting=all.filter(function(x){ return x.status!=='done' && inLine.indexOf(x.id)<0; }).sort(function(a,b){ return a.created-b.created; });
+    renderTray();
+    return waiting;
+  });
+}
+function resumeWaiting(){
+  loadWaiting().then(function(ws){
+    var auto=ws.filter(function(x){ return x.status==='queued' || x.status==='finishing'; });
+    auto.forEach(function(x){
+      var r={id:x.id, clean:true, blob:x.blob}; RKEYS.forEach(function(k){ if (x[k]!==undefined) r[k]=x[k]; }); if (x.posterUp) r.posterUp=x.posterUp;
+      waiting=waiting.filter(function(w){ return w.id!==x.id; });
+      queueFinish(r, x.after).then(function(r2){ keep(r2); if (x.after==='save') saveTake(r2); toast('Finished: '+fileOf(byPath[r2.path]||{path:r2.path})); }).catch(function(){});
+    });
+    if (auto.length) toast(auto.length+' take'+(auto.length>1?'s':'')+' from last time '+(auto.length>1?'are':'is')+' finishing now');
+  });
+}
+
+/* ---- light check: is there enough light for a clean recording? ---- */
+$('lightCheck').onclick=function(){
+  if (!camStream || cam.readyState<2){ toast('Start your camera first'); return; }
+  var c=document.createElement('canvas'); c.width=160; c.height=90; var x=c.getContext('2d',{willReadFrequently:true});
+  function grab(){ x.drawImage(cam,0,0,160,90); return x.getImageData(0,0,160,90).data; }
+  var a=grab();
+  setTimeout(function(){
+    var b=grab(), n=160*90, sum=0, cen=0, cn=0, edgeL=0, en=0, noise=0;
+    for (var i=0;i<n;i++){
+      var j=i*4, l=(0.299*a[j]+0.587*a[j+1]+0.114*a[j+2])/255, l2=(0.299*b[j]+0.587*b[j+1]+0.114*b[j+2])/255;
+      sum+=l; noise+=Math.abs(l-l2);
+      var px=i%160, py=(i/160)|0;
+      if (px>50 && px<110 && py>15 && py<75){ cen+=l; cn++; } else if (px<25 || px>135){ edgeL+=l; en++; }
+    }
+    var mean=sum/n, face=cen/cn, side=edgeL/en, nz=noise/n, msg, ok=false;
+    if (face<0.30) msg='💡 Too dark on you. Add a lamp in front of you, or face a window. Dark video turns grainy and blocky.';
+    else if (side-face>0.18) msg='💡 The light is behind you, so you’re in shadow. Turn so the window or lamp is in front of you.';
+    else if (face>0.82) msg='💡 Very bright on you. Move the lamp back a little so your face doesn’t wash out.';
+    else if (nz>0.035) msg='💡 The picture is grainy. More light in front of you will make it much sharper.';
+    else { msg='✓ Looks good. Your light is even and bright enough.'; ok=true; }
+    $('lightMsg').textContent=msg+' (brightness '+Math.round(face*100)+'%)';
+    $('lightMsg').className='note'+(ok?' repo-ok':' repo-warn');
+  },160);
+};
+
+/* ---- the recording-mode switch ---- */
+function markClean(){
+  [].forEach.call($('cleanSeg').children,function(b){ b.classList.toggle('on',(b.dataset.c==='clean')===cleanPref); b.disabled = b.dataset.c==='clean' && !CLEAN_OK; });
+  $('cleanNote').textContent = !CLEAN_OK ? 'Best quality needs Chrome on a computer. This browser records the live way.'
+    : srcMode==='screen' ? 'Screen + me records the live way, so the screen and you are in one picture.'
+    : cleanPref ? 'Records your camera as it is, sharp and smooth. The background and anything you show on screen are added when you finish the take. You can keep recording while takes finish.'
+    : 'Records exactly what you see, background and all. Quicker, but softer and choppier on a slow computer.';
+}
+[].forEach.call($('cleanSeg').children,function(b){ b.onclick=function(){ if (recording || b.disabled) return; cleanPref = b.dataset.c==='clean'; store.set('clean',cleanPref); markClean(); if (camStream) startCam(); }; });
+markClean();
 
 /* ---------- dark / light ---------- */
 function applyTheme(t){ document.documentElement.setAttribute('data-theme',t); $('themeBtn').textContent = t==='dark' ? '☀ Light' : '☾ Dark'; try{ localStorage.setItem('vs-theme',t); }catch(e){} }
@@ -3067,6 +3709,7 @@ if (!store.get('seenhelp',false)){ store.set('seenhelp',true); setTimeout(functi
 renderTray();
 var bootMode = /[?&]free\b/.test(location.search) ? 'free' : store.get('mode', CLIPS.length?'list':'free');
 setAppMode(bootMode);
+resumeWaiting();
 })();
 </script>
 </body>
