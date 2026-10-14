@@ -328,6 +328,8 @@ dialog.help h3{font-size:15px;margin:16px 0 4px;color:var(--navy)}
 dialog.help ol,dialog.help ul{margin:4px 0;padding-left:22px}
 dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:0 5px;font-family:"JetBrains Mono",monospace;font-size:12px}
 .tray .btn.help-btn{display:none}
+.subjswitch{font:800 13px Nunito,system-ui,sans-serif;color:#f3cf86;text-decoration:none;border:1px solid rgba(232,165,49,.55);border-radius:999px;padding:4px 12px;margin-left:10px;white-space:nowrap}
+.subjswitch:hover{background:rgba(232,165,49,.15)}
 </style>
 </head>
 <body>
@@ -708,7 +710,9 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
   </filter>
 </svg>
 
-<script src="video-shotlist.js"></script>
+<script>/* ?subject=science opens the G4 Science shot list (tools/video-shotlist-science.js) */
+window.VS_SUBJ=/[?&]subject=science\b/i.test(location.search)?"science":"ela";
+document.write('<script src="video-shotlist'+(window.VS_SUBJ==="science"?"-science":"")+'.js"><\/script>');</script>
 <script src="vendor/jszip.min.js"></script>
 <script src="vendor/mp4box.all.min.js"></script>
 <script src="vendor/mp4-muxer.js"></script>
@@ -718,6 +722,25 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
 'use strict';
 var $ = function(id){ return document.getElementById(id); };
 var DATA = window.SHOTLIST || {lessons:[],poems:[],teacher:[]};
+var SCI = window.VS_SUBJ==='science';
+var REPO_NAME = SCI ? 'optima-4th-science' : 'optima-4th-ela';
+var PICS = DATA.pics || {}, PICCAP = DATA.picCaps || {};   /* science photos travel inside the shot list */
+if (SCI){
+  document.title='G4 Science Video Studio';
+  (function(){
+    var t=function(id,fn){ var e=document.getElementById(id); if (e) fn(e); };
+    t('repoBtn',function(e){ e.textContent='📁 Connect optima-4th-science'; });
+    t('selFolder',function(e){ e.title='Where it goes in optima-4th-science'; });
+    t('traySub',function(e){ e.textContent='Unzip into C:\\repos\\optima-4th-science and every file lands in the right folder.'; });
+    t('modeSeg',function(e){ e.title='Shot list: G4 Science videos, already named. Free record: any video, saved to Downloads.'; });
+    var rp=document.getElementById('repoPanel'); if (rp) [].forEach.call(rp.querySelectorAll('.note b'),function(b){ if (/optima-4th-ela/.test(b.textContent)) b.textContent='C:\\repos\\optima-4th-science'; });
+  })();
+  (function(){ var h=document.getElementById('appTitle'); if (h) h.textContent='🔬 G4 Science Video Studio'; })();
+}
+(function(){ var h=document.getElementById('appTitle'); if (!h) return;
+  var a=document.createElement('a'); a.className='subjswitch'; a.href=SCI ? location.pathname : location.pathname+'?subject=science';
+  a.textContent=SCI ? '↔ ELA videos' : '↔ Science videos'; a.title=SCI ? 'Switch to the G4 ELA shot list' : 'Switch to the G4 Science shot list';
+  h.insertAdjacentElement('afterend',a); })();
 var store = {
   get:function(k,d){ try{ var v=localStorage.getItem('vs-'+k); return v==null?d:JSON.parse(v);}catch(e){return d;} },
   set:function(k,v){ try{ localStorage.setItem('vs-'+k, JSON.stringify(v)); return true;}catch(e){return false;} }
@@ -729,7 +752,7 @@ DATA.lessons.forEach(function(L){
   var lt = L.title.replace(/^(Lesson \d+\.\w+|Week \d+ Fluency):\s*/,'');
   var name = L.d==='fluency' ? 'Week '+L.w+' Fluency' : 'Lesson '+L.w+'.'+L.d;
   L.clips.forEach(function(c){
-    CLIPS.push({path:c.path, label:c.label, script:c.script||'', notes:!!c.notes, done:!!c.done, words:L.words||[], cards:L.cards||{}, file:L.file||'',
+    CLIPS.push({want:!!c.want, path:c.path, label:c.label, script:c.script||'', notes:!!c.notes, done:!!c.done, words:L.words||[], cards:L.cards||{}, file:L.file||'', fileUrl:L.fileUrl||'',
       kind: c.id==='lesson'?'lesson':'section', week:L.w, group:'Week '+L.w, lesson:name+' · '+lt, lessonShort:name, id:c.id, lkey:L.w+'-'+L.d});
   });
 });
@@ -759,6 +782,8 @@ function chipVal(id){ var b=$(id).querySelector('button.on'); return b?b.dataset
    stop counting against you. Kept in this browser, and in
    tools/video-plan.json when the repo is connected (so it travels with git). */
 var plan=store.get('plan',{});            // path -> 'want' | 'skip'
+/* G4 Science: the slots the lesson plan recommends start ticked (only until you decide otherwise) */
+if (SCI){ DATA.lessons.forEach(function(L){ L.clips.forEach(function(c){ if (c.want && !(c.path in plan)) plan[c.path]='want'; }); }); }
 function planOf(c){ return plan[c.path]||''; }
 var planTimer=0;
 function setPlan(path,v){
@@ -782,6 +807,7 @@ function matches(c, q, f, k){
 /* friendlier names in the list: an icon for the kind of section, the label
    without the character's name (it's on the lesson line), and a plain status */
 var ICONS={welcome:'👋',lesson:'🎬',wgrd:'🧠',dol:'📝',guide1:'🔤',guide2:'📖',guide3:'✏️',morphology:'🧩',vocabulary:'💬',grammar:'🔧',spelling:'🐝',copia:'🔁',read:'📚',chapter:'❓',workshop:'🖋️',rwm:'🔍',wordconn:'🔗',poetry:'🎵',poem:'🎵',copywork:'✒️',shelf:'📚',scrapbook:'📒'};
+if (SCI) Object.assign(ICONS,{warmup:'⏱',vocab:'🔭',part1:'1️⃣',part2:'👂',figure:'🐊',part3:'📹',explore:'🪶',quiz:'✅',assignment:'🔎',parta:'🅰️',partb:'🅱️',partc:'🎨',evidence:'⚖️',closing:'🎉'});
 function whoOf(c){ var m=/^guide\/([a-z-]+)\//.exec(c.path); return m ? m[1].replace(/-/g,' ').replace(/\b\w/g,function(x){return x.toUpperCase();}) : ''; }
 function niceLabel(c){
   var t=c.label;
@@ -902,7 +928,7 @@ function select(path){
   $('copyFolder').hidden = !!c.free;
   var lf = c.file || (c.id==='scrapbook' ? 'lesson-14-scrapbook.html' : '');
   $('openLesson').hidden = !lf;
-  if (lf){ $('openLesson').href='../'+lf; $('openLesson').textContent='↗ Open '+(c.id==='scrapbook'?'the scrapbook page':(c.lessonShort||'the lesson'))+' in a new tab'; $('openLesson').title='See what students see in this lesson'; }
+  if (lf){ $('openLesson').href=c.fileUrl||('../'+lf); $('openLesson').textContent='↗ Open '+(c.id==='scrapbook'?'the scrapbook page':(c.lessonShort||'the lesson'))+' in a new tab'; $('openLesson').title='See what students see in this lesson'; }
   showEditBtn();
   showScript();
   closeReview();
@@ -1083,7 +1109,7 @@ $('pReset').onclick=function(){ delete myScripts[sel]; saveScripts(); showScript
    whole lesson at once. A file with no such headings goes to the clip its
    file name or text names, or else to the video that is selected now. */
 var BASES = {}; CLIPS.forEach(function(c){ BASES[c.path.split('/').pop().toLowerCase()] = c.path; });
-var BASE_RE = /g4ela-[a-z0-9-]+/gi;
+var BASE_RE = /g4(?:ela|sci)-[a-z0-9-]+/gi;
 function findBase(s){
   var m=(s||'').match(BASE_RE)||[], hits=[];
   m.forEach(function(x){
@@ -2319,7 +2345,7 @@ function renderOnScreen(){
   var ps=partsFor(c);
   $('partRow').hidden=!ps.length;
   ps.forEach(function(p){
-    var on = p.kind==='plate' ? plate.on : samePart(part.cur,p)||samePart(strip.cur,p);
+    var on = p.kind==='plate' ? (plate.on && (!p.path || plate.path===p.path)) : samePart(part.cur,p)||samePart(strip.cur,p);
     pb.appendChild(chip(p.label,'p',on,function(){ showPart(p); },null,p.tip));
     if (p.kind==='strip' && samePart(strip.cur,p)){
       pb.appendChild(chip(strip.fix?'↺ Show it unfixed':'✓ Show the fix','p',strip.fix,function(){ strip.fix=!strip.fix; renderOnScreen(); },null,p.why||''));
@@ -2366,7 +2392,16 @@ var CARD_STYLE={
 var part={cur:null,show:null,k:0}, strip={cur:null,show:null,k:0,fix:false}, plate={on:false,img:null,path:'',t0:0,k:0};
 function partsFor(c){
   if (!c || c.free) return [];
-  var C=c.cards||{}, keys=SECTION_CARDS[c.id] || ['plate'], out=[];
+  var C=c.cards||{};
+  if (C.sci){
+    /* G4 Science: each slot lists its own cards and photos (tools/video_shotlist_science.py) */
+    return (C.sci[c.id]||[]).map(function(p,i){
+      if (p.kind==='photo') return {kind:'plate', id:'pic-'+p.pic, label:p.label||'🖼 Photo', path:'sci:'+p.pic, tip:PICCAP[p.pic]||p.label};
+      return {kind:'card', id:c.id+'-'+i, label:p.label, tag:p.tag||'', title:p.title||'', body:p.body||'', col:p.col||'#2F7A55', tip:p.body||p.title||p.label,
+        rows:p.rows ? p.rows.map(function(r){ return {part:r[0], rest:r[1]}; }) : null};
+    });
+  }
+  var keys=SECTION_CARDS[c.id] || ['plate'], out=[];
   keys.forEach(function(k){
     if (k==='plate'){ if (C.plate) out.push({kind:'plate', id:'plate', label:'🖼 Chapter picture', tip:'Show this chapter’s picture as a small framed card beside you'}); return; }
     if (k==='dol'){ (C.dol||[]).forEach(function(d,i){ out.push({kind:'strip', id:'dol'+i, label:'✏ Sentence '+'AB'[i], raw:d.raw, fixed:d.fixed, why:d.why, tip:d.raw}); }); return; }
@@ -2415,7 +2450,7 @@ function renderPromptSide(){
   function head(t){ var h=document.createElement('div'); h.className='pslbl'; h.textContent=t; box.appendChild(h); }
   function btn(label,cls,on,fn,tip){ var b=document.createElement('button'); b.textContent=label; if(cls) b.className=cls; if(on) b.classList.add('on'); b.title=tip||label; b.onclick=fn; box.appendChild(b); n++; }
   if (ps.length){ head('🎬 On screen'); ps.forEach(function(p){
-    var on = p.kind==='plate' ? plate.on : samePart(part.cur,p)||samePart(strip.cur,p);
+    var on = p.kind==='plate' ? (plate.on && (!p.path || plate.path===p.path)) : samePart(part.cur,p)||samePart(strip.cur,p);
     btn(p.label,'',on,function(){ showPart(p); },p.tip);
     if (p.kind==='strip' && samePart(strip.cur,p)) btn(strip.fix?'↺ Unfixed':'✓ Show the fix','',strip.fix,function(){ strip.fix=!strip.fix; renderOnScreen(); },p.why);
   }); }
@@ -2449,14 +2484,14 @@ function syncPromptCue(){
   renderPromptSide();
   [].forEach.call(document.querySelectorAll('#ptext .seccue button'),function(b){
     var id=b.dataset.pid;
-    b.classList.toggle('on', id==='plate' ? plate.on : !!((part.cur && part.cur.id===id) || (strip.cur && strip.cur.id===id)));
+    b.classList.toggle('on', id==='plate' ? plate.on : /^pic-/.test(id||'') ? (plate.on && plate.path==='sci:'+id.slice(4)) : !!((part.cur && part.cur.id===id) || (strip.cur && strip.cur.id===id)));
   });
   [].forEach.call(document.querySelectorAll('#ptext .vw'),function(s){ s.classList.toggle('on', !!(word.cur && word.cur.w===s.dataset.w)); });
 }
 function samePart(a,b){ return a && b && a.id===b.id; }
 function showPart(p){
   if (!p) { part.cur=null; strip.cur=null; renderOnScreen(); return; }
-  if (p.kind==='plate'){ setPlate(!plate.on); return; }
+  if (p.kind==='plate'){ var pp=p.path||null; setPlate(!(plate.on && (!pp || plate.path===pp)), pp); return; }
   if (p.kind==='strip'){ if (samePart(strip.cur,p)) strip.cur=null; else { strip.cur=p; strip.fix=false; } }
   else part.cur = samePart(part.cur,p) ? null : p;
   renderOnScreen();
@@ -2469,12 +2504,13 @@ function nextPart(){
   if (i<ps.length-1) showPart(ps[i+1]); else renderOnScreen();
 }
 var plateCache={};
-function setPlate(on){
-  var c=byPath[sel], path=c && c.cards && c.cards.plate;
+function setPlate(on, pathIn){
+  var c=byPath[sel], path=pathIn || (c && c.cards && c.cards.plate);
   if (on && !path){ toast('No chapter picture for this lesson'); return; }
   if (!on){ plate.on=false; renderOnScreen(); return; }
   var go=function(img){ plate.img=img; plate.path=path; plate.on=true; renderOnScreen(); };
   if (plateCache[path]){ go(plateCache[path]); return; }
+  if (/^sci:/.test(path)){ loadPlate(path).then(function(img){ if (img) go(img); else toast('That picture couldn’t load'); }); return; }
   fetch('../assets/'+path).then(function(r){ if(!r.ok) throw new Error(r.status); return r.blob(); }).then(function(b){
     var img=new Image(); img.onload=function(){ plateCache[path]=img; go(img); }; img.src=URL.createObjectURL(b);
   }).catch(function(){ toast('The chapter picture couldn’t load here. It works on the live studio page.'); });
@@ -2484,6 +2520,7 @@ function drawPlateCard(ctx){
   var img=plate.img, k=ease(plate.k); if (!img || k<0.01) return;
   var iw=img.naturalWidth, ih=img.naturalHeight, maxW=430, maxH=300, s=Math.min(maxW/iw,maxH/ih), w=iw*s, h=ih*s;
   var mat=12, c=byPath[sel], bm=c && /Bridge \((.*)\)/.exec(c.lesson), cap=c ? (bm ? bm[1] : attribOf(c)) : '';
+  if (/^sci:/.test(plate.path||'')) cap=PICCAP[plate.path.slice(4)]||'';
   var cw=Math.max(w+mat*2,300);
   ctx.font='italic 700 18px Nunito, system-ui, sans-serif';
   var capL=cap ? wrapLines(ctx,cap,cw-28).slice(0,2) : [], capH=capL.length ? capL.length*22+16 : 0;
@@ -2899,12 +2936,12 @@ function looksLikeRepo(h){ return h.getFileHandle('video-manifest.json').then(fu
 function setRepo(h){
   repo=h;
   $('repoState').innerHTML = h ? '<span class="repo-ok">✓ Connected to '+h.name.replace(/</g,'&lt;')+'</span>. Saves go straight into assets\\video\\…' : 'Not connected. Downloads go to your Downloads folder.';
-  $('repoBtn').textContent = h ? 'Change folder' : '📁 Connect optima-4th-ela';
+  $('repoBtn').textContent = h ? 'Change folder' : '📁 Connect '+REPO_NAME;
   $('repoBtn').className = h ? 'btn sm' : 'btn primary';
   $('dlNow').textContent = h ? '📁 Save to repo' : '⬇ Download now';
   $('revNote').textContent = h ? 'Save to repo puts the video and its thumbnail in the right folder. Or keep it now and save everything from the tray later.' : 'Kept takes wait in the tray at the bottom. Download them one at a time or all together as a zip.';
   $('saveAllBtn').hidden = !h;
-  $('traySub').textContent = h ? 'Connected to '+h.name+'. Save all writes every kept take into its folder.' : 'Unzip into C:\\repos\\optima-4th-ela and every file lands in the right folder.';
+  $('traySub').textContent = h ? 'Connected to '+h.name+'. Save all writes every kept take into its folder.' : 'Unzip into C:\\repos\\'+REPO_NAME+' and every file lands in the right folder.';
   renderTray();
   if (h){ scanRepo(); loadPlanFromRepo(); }
   showEditBtn();
@@ -2990,10 +3027,10 @@ function saveToRepo(t, quiet){
 }
 $('repoBtn').onclick=function(){
   if (!FSA) return;
-  window.showDirectoryPicker({id:'optima-4th-ela',mode:'readwrite'}).then(function(h){
+  window.showDirectoryPicker({id:REPO_NAME,mode:'readwrite'}).then(function(h){
     return looksLikeRepo(h).then(function(ok){
-      if (!ok && !confirm('“'+h.name+'” has no video-manifest.json, so it doesn’t look like optima-4th-ela. Use it anyway?')) return;
-      idbSet('repo',h); setRepo(h); toast('Connected to '+h.name);
+      if (!ok && !confirm('“'+h.name+'” has no video-manifest.json, so it doesn’t look like '+REPO_NAME+'. Use it anyway?')) return;
+      idbSet(SCI?'repo-science':'repo',h); setRepo(h); toast('Connected to '+h.name);
     });
   }).catch(function(e){ if (e && e.name!=='AbortError') toast('Could not open that folder'); });
 };
@@ -3005,7 +3042,7 @@ $('saveAllBtn').onclick=function(){
     .then(function(n){ toast(n+' saved into the repo'); }).finally(function(){ btn.disabled=false; renderTray(); });
 };
 if (!FSA){ $('repoPanel').querySelector('.note:last-child').textContent='Open this page in Chrome on your computer to save straight into the repo. Here, files go to Downloads.'; $('repoBtn').hidden=true; }
-else idbGet('repo').then(function(h){
+else idbGet(SCI?'repo-science':'repo').then(function(h){
   if (!h) return;
   h.queryPermission({mode:'readwrite'}).then(function(p){
     if (p==='granted') setRepo(h);
@@ -3090,7 +3127,7 @@ $('zipBtn').onclick=function(){
     if (hasQs(t)) z.file(base+'.questions.json', qzJSON(t));
   });
   z.generateAsync({type:'blob',compression:'STORE'}).then(function(b){
-    save(b,(freeMode?'videos-':'g4ela-videos-')+new Date().toISOString().slice(0,10)+'.zip');
+    save(b,(freeMode?'videos-':(SCI?'g4sci-videos-':'g4ela-videos-'))+new Date().toISOString().slice(0,10)+'.zip');
     takes.forEach(function(t){ t.saved=true; }); renderTray();
   }).finally(function(){ btn.disabled=false; btn.textContent='⬇ Download all as zip'; });
 };
@@ -3206,6 +3243,7 @@ function loadImg(src){ return new Promise(function(res){ if(!src){ res(null); re
 function loadPlate(path){
   if (!path) return Promise.resolve(null);
   if (plateCache[path]) return Promise.resolve(plateCache[path]);
+  if (/^sci:/.test(path)){ var du=PICS[path.slice(4)]; return du ? loadImg(du).then(function(i){ if (i) plateCache[path]=i; return i; }) : Promise.resolve(null); }
   return fetch('../assets/'+path).then(function(r){ if(!r.ok) throw 0; return r.blob(); }).then(function(b){ return loadImg(URL.createObjectURL(b)); })
     .then(function(i){ if (i) plateCache[path]=i; return i; }).catch(function(){ return null; });
 }
@@ -3756,10 +3794,10 @@ function setAppMode(m){
   $('shotWrap').style.display = freeMode ? 'none' : 'flex';
   $('freeWrap').hidden = !freeMode;
   $('repoPanel').hidden = freeMode;
-  $('appTitle').textContent = freeMode ? '🎬 Video Studio' : '🎬 G4 ELA Video Studio';
-  document.title = freeMode ? 'Video Studio' : 'G4 ELA Video Studio';
+  $('appTitle').textContent = freeMode ? '🎬 Video Studio' : (SCI ? '🔬 G4 Science Video Studio' : '🎬 G4 ELA Video Studio');
+  document.title = freeMode ? 'Video Studio' : (SCI ? 'G4 Science Video Studio' : 'G4 ELA Video Studio');
   [].forEach.call(document.querySelectorAll('.lstat'),function(e){ e.hidden=freeMode; });
-  $('traySub').textContent = freeMode ? 'Each video downloads with its thumbnail and captions file.' : (repo ? 'Connected to '+repo.name+'. Save all writes every kept take into its folder.' : 'Unzip into C:\\repos\\optima-4th-ela and every file lands in the right folder.');
+  $('traySub').textContent = freeMode ? 'Each video downloads with its thumbnail and captions file.' : (repo ? 'Connected to '+repo.name+'. Save all writes every kept take into its folder.' : 'Unzip into C:\\repos\\'+REPO_NAME+' and every file lands in the right folder.');
   $('saveAllBtn').hidden = freeMode || !repo;
   if (freeMode) select(freeClip().path);
   else { renderList(); var s0=lastListSel||store.get('sel',null); select(s0 && byPath[s0] && !byPath[s0].free ? s0 : (firstNeeded()||(CLIPS[0]||{}).path)); }
