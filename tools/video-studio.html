@@ -304,6 +304,7 @@ body.dimrec .ptext .qcue{background:#3a2f12;color:#b39556}
 .clip .skipb:hover{background:var(--soft);color:var(--ink)}
 .clip.skipped{opacity:.55}
 .pill.skip{border:1px dashed var(--line);color:var(--muted)}
+.pill.redo{background:#E8636B;color:#fff}
 .lesson-h{cursor:pointer;user-select:none}
 .lesson-h .car{width:10px;color:var(--muted);font-size:11px;flex:none}
 .lesson-h .keepck{border:0;background:var(--soft);color:var(--navy);border-radius:7px;font-size:11px;font-weight:800;padding:3px 8px;cursor:pointer;white-space:nowrap}
@@ -752,7 +753,7 @@ DATA.lessons.forEach(function(L){
   var lt = L.title.replace(/^(Lesson \d+\.\w+|Week \d+ Fluency):\s*/,'');
   var name = L.d==='fluency' ? 'Week '+L.w+' Fluency' : 'Lesson '+L.w+'.'+L.d;
   L.clips.forEach(function(c){
-    CLIPS.push({want:!!c.want, path:c.path, label:c.label, script:c.script||'', notes:!!c.notes, done:!!c.done, words:L.words||[], cards:L.cards||{}, file:L.file||'', fileUrl:L.fileUrl||'',
+    CLIPS.push({want:!!c.want, redo:!!c.redo, path:c.path, label:c.label, script:c.script||'', notes:!!c.notes, done:!!c.done, words:L.words||[], cards:L.cards||{}, file:L.file||'', fileUrl:L.fileUrl||'',
       kind: c.id==='lesson'?'lesson':'section', week:L.w, group:'Week '+L.w, lesson:name+' · '+lt, lessonShort:name, id:c.id, lkey:L.w+'-'+L.d});
   });
 });
@@ -783,7 +784,7 @@ function chipVal(id){ var b=$(id).querySelector('button.on'); return b?b.dataset
    tools/video-plan.json when the repo is connected (so it travels with git). */
 var plan=store.get('plan',{});            // path -> 'want' | 'skip'
 /* G4 Science: the slots the lesson plan recommends start ticked (only until you decide otherwise) */
-if (SCI){ DATA.lessons.forEach(function(L){ L.clips.forEach(function(c){ if (c.want && !(c.path in plan)) plan[c.path]='want'; }); }); }
+if (SCI){ DATA.lessons.forEach(function(L){ L.clips.forEach(function(c){ if ((c.want && !(c.path in plan)) || c.redo) plan[c.path]='want'; }); }); }
 function planOf(c){ return plan[c.path]||''; }
 var planTimer=0;
 function setPlan(path,v){
@@ -791,9 +792,10 @@ function setPlan(path,v){
   store.set('plan',plan);
   clearTimeout(planTimer); planTimer=setTimeout(savePlanToRepo,800);
 }
-function isDoneish(c){ return c.done || !!keptPaths[c.path]; }
+function keptOf(c){ return !c.redo && !!keptPaths[c.path]; }  /* a Re-record clip ignores old takes kept in this browser */
+function isDoneish(c){ return c.done || keptOf(c); }
 function matches(c, q, f, k){
-  var kept = !!keptPaths[c.path], skip = planOf(c)==='skip';
+  var kept = keptOf(c), skip = planOf(c)==='skip';
   if (f==='skip') { if (!skip) return false; }
   else if (skip && f!=='all') return false;
   if (f==='need' && (c.done || kept)) return false;
@@ -815,8 +817,8 @@ function niceLabel(c){
   t=t.replace(/^[^·]+·\s*/,'');
   return t.charAt(0).toUpperCase()+t.slice(1);
 }
-function statusOf(c){ return keptPaths[c.path] && !c.done ? 'today' : c.done ? 'repo' : planOf(c)==='skip' ? 'skip' : 'need'; }
-var PILL={need:'Needed',today:'Today',repo:'✓ Done',skip:'Skipped'};
+function statusOf(c){ return c.redo && !c.done ? 'redo' : keptOf(c) && !c.done ? 'today' : c.done ? 'repo' : planOf(c)==='skip' ? 'skip' : 'need'; }
+var PILL={need:'Needed',today:'Today',repo:'✓ Done',skip:'Skipped',redo:'🔁 Re-record'};
 var lessonClosed=store.get('lclosed',{});
 var visibleOrder=[];
 function countFor(list){
@@ -903,7 +905,7 @@ function renderList(){
   $('stTotal').textContent=tot; $('stRepo').textContent=rep; $('stKept').textContent=takes.length;
 }
 $('q').addEventListener('input',renderList);
-function needs(c){ return !c.done && !keptPaths[c.path] && planOf(c)!=='skip'; }
+function needs(c){ return !c.done && !keptOf(c) && planOf(c)!=='skip'; }
 function firstNeeded(){ var c=CLIPS.find(function(c){ return needs(c) && planOf(c)==='want'; }) || CLIPS.find(needs); return c?c.path:null; }
 $('nextBtn').onclick=function(){ var n=nextNeeded()||firstNeeded(); if(n) select(n); else toast('Everything is recorded 🎉'); };
 document.addEventListener('keydown',function(e){

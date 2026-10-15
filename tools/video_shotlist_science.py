@@ -43,8 +43,9 @@ for vf in sorted(glob.glob(os.path.join(SCI, 'data', 'videos', 'lesson-*.json'))
         return os.path.exists(p) or e.get('status') == 'ready'
     clips, parts, doc = [], {}, ['# Lesson %s teacher videos' % V['lesson'], '']
     for slot, S in V['slots'].items():
-        clips.append({'id': slot, 'label': 'Teacher · ' + S['label'] + ' (' + S.get('length', '') + ')', 'path': 'teacher/%s-%s' % (pre, slot),
-                      'done': done(slot), 'script': tidy(S.get('script', '')), 'want': bool(S.get('want'))})
+        redo = slot in (V.get('redo') or [])  # an old take that no longer matches the lesson: record it again
+        clips.append({'id': slot, 'label': ('🔁 Re-record · ' if redo else '') + 'Teacher · ' + S['label'] + ' (' + S.get('length', '') + ')', 'path': 'teacher/%s-%s' % (pre, slot),
+                      'done': False if redo else done(slot), 'redo': redo, 'script': tidy(S.get('script', '')), 'want': bool(S.get('want')) or redo})
         parts[slot] = S.get('parts', [])
         doc += ['## %s · %s-%s' % (S['label'], pre, slot), '', tidy(S.get('script', '')), '']
     for o in V.get('other', []):
