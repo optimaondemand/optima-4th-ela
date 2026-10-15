@@ -2982,7 +2982,7 @@ function scanRepo(){
   }
   repo.getDirectoryHandle('assets').then(function(a){ return a.getDirectoryHandle('video'); })
     .then(function(v){ return walk(v,''); })
-    .then(function(){ var n=0; CLIPS.forEach(function(c){ var was=c.done; c.done=!!found[c.path] || (c.kind==='lesson' && c.done); if(c.done&&!was) n++; }); renderList(); if(n) toast(n+' more found in the repo'); })
+    .then(function(){ var n=0; CLIPS.forEach(function(c){ var was=c.done; c.done=!c.redo && (!!found[c.path] || (c.kind==='lesson' && c.done)); /* an old file doesn't count for a Re-record clip */ if(c.done&&!was) n++; }); renderList(); if(n) toast(n+' more found in the repo'); })
     .catch(function(e){ console.warn('scan',e); });
 }
 function ensureWrite(){
@@ -3025,7 +3025,7 @@ function saveToRepo(t, quiet){
           return removeFile(rel+'.vtt').then(function(gone){ if (gone) toast('Removed the old captions file, which didn’t match the new take'); });
         })
         .then(function(){ return hasQs(t) ? writeFile(rel+'.questions.json', qsBlob(t)) : removeFile(rel+'.questions.json'); })
-        .then(function(){ t.saved=true; c.done=true; renderTray(); renderList(); if(!quiet) toast('Saved to '+folderOf(c).replace(/\//g,'\\')); return true; });
+        .then(function(){ t.saved=true; c.done=true; c.redo=false; renderTray(); renderList(); if(!quiet) toast('Saved to '+folderOf(c).replace(/\//g,'\\')); return true; });
     });
   }).catch(function(e){ console.warn(e); toast('Could not save: '+(e.message||e)); return false; });
 }
