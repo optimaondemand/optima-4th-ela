@@ -2318,8 +2318,10 @@ function wordsFor(c){
   return out;
 }
 function sameQ(a,b){ return a && b && a.t===b.t; }
-function showQuote(q){ quote.cur = q && !sameQ(quote.cur,q) ? {t:q.t,a:q.a} : null; renderOnScreen(); }
-function showWord(w){ word.cur = w && !(word.cur && word.cur.w===w.w) ? {w:w.w,d:w.d,e:w.e} : null; if (word.cur) flairSound('word'); renderOnScreen(); }
+/* one on-screen item at a time: turning one on takes the others away */
+function clearFlair(keep){ if (keep!=='quote') quote.cur=null; if (keep!=='word') word.cur=null; if (keep!=='part'){ part.cur=null; strip.cur=null; } if (keep!=='plate') plate.on=false; }
+function showQuote(q){ var on = q && !sameQ(quote.cur,q); if (on) clearFlair('quote'); quote.cur = on ? {t:q.t,a:q.a} : null; renderOnScreen(); }
+function showWord(w){ var on = w && !(word.cur && word.cur.w===w.w); if (on) clearFlair('word'); word.cur = on ? {w:w.w,d:w.d,e:w.e} : null; if (word.cur) flairSound('word'); renderOnScreen(); }
 function nextQuote(){
   var qs=quotesFor(byPath[sel]);
   if (quote.cur){ showQuote(null); return; }
@@ -2492,8 +2494,8 @@ function samePart(a,b){ return a && b && a.id===b.id; }
 function showPart(p){
   if (!p) { part.cur=null; strip.cur=null; renderOnScreen(); return; }
   if (p.kind==='plate'){ var pp=p.path||null; setPlate(!(plate.on && (!pp || plate.path===pp)), pp); return; }
-  if (p.kind==='strip'){ if (samePart(strip.cur,p)) strip.cur=null; else { strip.cur=p; strip.fix=false; } }
-  else part.cur = samePart(part.cur,p) ? null : p;
+  if (p.kind==='strip'){ if (samePart(strip.cur,p)) strip.cur=null; else { clearFlair('part'); part.cur=null; strip.cur=p; strip.fix=false; } }
+  else if (samePart(part.cur,p)) part.cur=null; else { clearFlair('part'); strip.cur=null; part.cur=p; }
   renderOnScreen();
 }
 function nextPart(){
@@ -2508,7 +2510,7 @@ function setPlate(on, pathIn){
   var c=byPath[sel], path=pathIn || (c && c.cards && c.cards.plate);
   if (on && !path){ toast('No chapter picture for this lesson'); return; }
   if (!on){ plate.on=false; renderOnScreen(); return; }
-  var go=function(img){ plate.img=img; plate.path=path; plate.on=true; renderOnScreen(); };
+  var go=function(img){ clearFlair('plate'); plate.img=img; plate.path=path; plate.on=true; renderOnScreen(); };
   if (plateCache[path]){ go(plateCache[path]); return; }
   if (/^sci:/.test(path)){ loadPlate(path).then(function(img){ if (img) go(img); else toast('That picture couldn’t load'); }); return; }
   fetch('../assets/'+path).then(function(r){ if(!r.ok) throw new Error(r.status); return r.blob(); }).then(function(b){
