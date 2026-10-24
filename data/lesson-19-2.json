@@ -1,0 +1,208 @@
+{
+ "connector": "Annemarie is on the path with the basket, and the woods are almost behind her. Then she hears a growl. In this chapter she has only her voice, her face and her mother’s advice. Watch how she answers the soldiers, what she lets them see, and what she keeps from them.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-welcome",
+   "label": "Grete’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-wgrd",
+   "label": "About today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-dol",
+   "label": "About today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-guide1",
+   "label": "Before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-morphology",
+   "label": "About the candles"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-vocabulary",
+   "label": "About today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-grammar",
+   "label": "About today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-spelling",
+   "label": "About today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-guide2",
+   "label": "Courage Watch"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-read",
+   "label": "Before you read"
+  },
+  "rwm": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-rwm",
+   "label": "About the writer’s sentence"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-guide3",
+   "label": "Before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-chapter",
+   "label": "About the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-19-2-workshop",
+   "label": "About today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, this is Grete. Annemarie is alone on the path with the basket, and she hears something ahead of her. This is the chapter the whole book has been building toward. You’ll warm up, work with words, read Chapter 15, and study one sentence the way a writer does. Today’s question: when the soldiers stop her, what does she do?",
+  "wgrd": "Today’s reading move: hold one detail up to a fact. Pick one thing from this chapter, like the dogs, or soldiers stopping a child, and turn it into a question a history book could answer. Write the question down. You’re not trying to catch Lowry out. You’re finding where the history ends and the storytelling begins.",
+  "dol": "The model is a plain sentence about a soldier’s question. The sentence to fix has three sound-alike words, and every one of them is the wrong twin. One should be a number, one should show belonging, and one should mean very. Then find where the first thought ends, and give the sentence a stop.",
+  "guide1": "Last time you found sound-alike words. This time, some of them are wrong. In grammar and spelling, you’re hunting for the twin that slipped into the wrong sentence. Read slowly. A wrong twin sounds perfect when you say it, and that is exactly why it’s so easy to miss.",
+  "morphology": "More windows are waiting on the street. Today’s words all take one of the three roots again. One of them is a word for something your body does before you can even think about it. Ask what each word is about, a shape or bending, and then light the window.",
+  "vocabulary": "Quick match today. You met these four words in the last lesson, so try to match them without looking back. Then see if you can find a moment in Chapter 15 where Annemarie has to conform, to fit the shape of what the soldiers expect to see.",
+  "grammar": "Every sound-alike word in this paragraph might be right, or it might be the wrong twin. Tap only the wrong ones. Read each one and ask what it has to mean in that spot. A place? Belonging? A number, or very? The meaning decides, not the sound.",
+  "spelling": "This is the same kind of hunt. Some of these words are the wrong twin, and your ear will tell you everything is fine. Don’t trust it. Look at each word. Then pick one you tapped, spell it the right way, and say what the wrong word really means.",
+  "guide2": "Today’s Courage Watch is about courage that looks silly. Once, when soldiers stopped my father’s cart, my mother chattered about the weather and laughed too loudly. I was embarrassed. Later I understood: she was keeping their eyes on her, not on the sacks behind us. Watch Annemarie. Sometimes the bravest thing is to seem like nothing at all.",
+  "read": "Read this chapter slowly. It’s short, and almost all of it happens in one place, on the path, with the soldiers in front of her. Notice what Annemarie says, and what she lets them see. Notice the dogs, too: where they look, and what they want. And at the very end, watch which way the soldiers go.",
+  "rwm": "This sentence sends the soldiers away, back down the path toward where Annemarie came from. It adds nothing new, and that’s the point. It closes the scene by circling back to where it began. When you write your own, end a moment by pointing it home, back toward the start.",
+  "guide3": "Now you write. The questions ask what Annemarie does when the dogs sniff the basket, what the chapter keeps secret about the handkerchief, and how this scene compares with the real rescue. Then you revise your essay by reading it out loud and fixing whatever makes your tongue trip.",
+  "chapter": "The second question is about a mystery Lowry chooses not to explain yet. Don’t guess too hard at the answer. Think instead about why an author would hold something back. What does not knowing do to you as a reader, right here, on this page?",
+  "workshop": "Revision is for the ear. Read your whole essay out loud, slowly, the way you’d read it to someone else. If your tongue trips, the sentence is too long. If you hear one word three times, swap one out. If a sentence sounds flat, find a stronger verb. Spelling can wait for the next lesson."
+ },
+ "writingFocus": "Publish",
+ "dol": {
+  "a": {
+   "raw": "to soldiers held the dogs on the path their gloves were two thick",
+   "fixed": "<strong>Two</strong> soldiers held the dogs on the path<strong>.</strong> <strong>Their</strong> gloves were <strong>too</strong> thick<strong>.</strong>",
+   "why": "Two (the number, not to); a period ends the first thought; Their (belonging, not there or they’re) starts the second with a capital; too (meaning very, not to or two)."
+  },
+  "b": {
+   "raw": "to dogs pulled at there leashes the soldiers were two busy watching the basket",
+   "fixed": "<strong>Two</strong> dogs pulled at <strong>their</strong> leashes<strong>.</strong> <strong>The</strong> soldiers were <strong>too</strong> busy watching the basket<strong>.</strong>",
+   "why": "Two (the number); their (belonging: the leashes belong to the dogs); a period ends the first thought and a capital starts the next; too (meaning very)."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and explain how her mother’s advice helps her.",
+  "journal-q2": "… and explain what the mystery makes you feel as a reader.",
+  "journal-q3": "… and say what historical fiction can do that a history book can’t."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "miss": {
+  "match": {
+   "conform": "Conform has the shape root inside it. Look for the meaning about matching or fitting in.",
+   "reflect": "Reflect has a bending root inside it. Look for the meaning about bending back, or thinking back.",
+   "compare": "Compare is about putting two things side by side. Look for the meaning about what is the same and what is different.",
+   "conclude": "Conclude is about the end. Look for the meaning about finishing, or coming to a final idea."
+  }
+ },
+ "wordgame": {
+  "type": "candles",
+  "strand": "Morphology",
+  "kicker": "Candles in the Windows",
+  "h": "The street wakes up",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. Ask what each word is about: a shape, or bending?",
+  "why": {
+   "icon": "🕯️",
+   "q": "Why candles?",
+   "t": "On the evening of May 4, 1945, Danish radio from London told Denmark that the German soldiers there were giving up. For five years, every window had been covered at night so that no light could show. That evening, people tore down the dark curtains, and light shone from the windows again. A few years later, Danes began putting candles in their windows every May 4 to remember, and many still do. <b>form</b> means <i>shape</i>, and <b>flect</b> and <b>flex</b> both mean <i>bend</i>. Each right word lights one window. Four each lesson, until the whole street glows."
+  },
+  "meanings": {
+   "form": "shape",
+   "flect": "bend",
+   "flex": "bend"
+  },
+  "miss": {
+   "fill1": "Not quite. Read the meaning again. Is this word about a <b>shape</b>, or about bending?",
+   "fill2": "Not quite. Read the meaning again. Is this word about a <b>shape</b>, or about bending?",
+   "fill3": "Not quite. This word is about bending, not a shape. <b>flect</b> and <b>flex</b> both mean bend, so say the word out loud and listen to its ending.",
+   "fill4": "Not quite. Read the meaning again. Is this word about a <b>shape</b>, or about bending?"
+  },
+  "winDay": "Eight windows are glowing now. The next lesson’s words light more."
+ },
+ "notes": {
+  "wgrd": "Hold one detail up to a fact: turn something from the story into a question a history book could answer, then see whether it fits what you know.",
+  "vocab": [
+   [
+    "conform",
+    "To match a shape or rule; to fit in with something."
+   ],
+   [
+    "reflect",
+    "To think back; or, to bounce light or an image."
+   ],
+   [
+    "compare",
+    "To look at two things and notice what is the same and what is different."
+   ],
+   [
+    "conclude",
+    "To finish; to come to a final idea."
+   ]
+  ],
+  "wordParts": "form means “shape,” and flect and flex both mean “to bend”: conform, reform, reflect, flexible.",
+  "grammar": "Homophones are words that sound the same but have different meanings and spellings: their (belonging), there (a place), they’re (they are); to (toward), too (very or also), two (the number).",
+  "spelling": "Your ear can’t tell homophones apart, so look at each one and ask what it means in that spot. The meaning decides the spelling: to the water, too dangerous, two soldiers."
+ },
+ "plate": {
+  "src": "plates/nts-19-2.jpg",
+  "alt": "Small fishing boats tied up close together in a harbor on still water.",
+  "credit": "Fishing boats in Gilleleje harbor today. Photo: Ampo2020, 2015, CC BY-SA 4.0, via Wikimedia Commons."
+ },
+ "nts": {
+  "case": {
+   "src": "plates/nts-case-19-2.jpg",
+   "title": "A Soldier and His Dog",
+   "date": "1943",
+   "alt": "A soldier in a cap walks down a country road with a German shepherd dog on a leash.",
+   "label": [
+    "During the war, German soldiers used trained dogs to guard, to track and to search. This photo was taken in 1943, the same year as the escape in Number the Stars, in another country the Germans had taken over.",
+    "In the fall of 1943, soldiers in Denmark began bringing dogs to the harbors and onto the fishing boats, to sniff out people hidden below the deck. In Chapter 15, Annemarie meets soldiers whose dogs strain toward her basket."
+   ],
+   "look": [
+    {
+     "q": "Why would a dog find someone that a soldier’s eyes could not?",
+     "a": "A dog’s nose can smell a person hidden under boards or behind fish, even when no one can see them."
+    },
+    {
+     "q": "Annemarie can’t fight the soldiers or outrun the dogs. What does she use instead?",
+     "a": "Her acting. She plays a silly little girl taking lunch to her uncle, so the soldiers think the basket doesn’t matter."
+    }
+   ],
+   "credit": "A German soldier with a dog, 1943. Bundesarchiv, Bild 101I-005-0018-10, CC BY-SA 3.0 DE, via Wikimedia Commons.",
+   "sub": "A real photograph from the war years."
+  }
+ }
+}

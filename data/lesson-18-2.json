@@ -1,0 +1,185 @@
+{
+ "connector": "The night of mourning has begun. Candles are lit, the casket sits in the living room, and strangers sit quietly around it. Then headlights sweep across the curtains. Watch who stays calm when the officer starts asking questions, and listen for the words someone reads aloud near the end. They give this book its name.",
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-welcome",
+   "label": "Grete’s welcome"
+  },
+  "wgrd": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-wgrd",
+   "label": "About today’s reading move"
+  },
+  "dol": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-dol",
+   "label": "About today’s sentence"
+  },
+  "guide1": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-guide1",
+   "label": "Before the word work"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-morphology",
+   "label": "About the path"
+  },
+  "vocabulary": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-vocabulary",
+   "label": "About today’s words"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-grammar",
+   "label": "About today’s grammar"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-spelling",
+   "label": "About today’s spelling"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-guide2",
+   "label": "Courage Watch"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-read",
+   "label": "Before you read"
+  },
+  "rwm": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-rwm",
+   "label": "About the writer’s sentence"
+  },
+  "guide3": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-guide3",
+   "label": "Before you write"
+  },
+  "chapter": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-chapter",
+   "label": "About the questions"
+  },
+  "workshop": {
+   "kind": "audio",
+   "path": "guide/narrator/g4ela-18-2-workshop",
+   "label": "About today’s writing"
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, this is Grete. Night has come at Uncle Henrik’s house, and the living room is full of quiet mourners and candlelight. Then a car pulls up outside. You’ll warm up, work with words, read Chapter 10, and study one sentence the way a writer does. Today’s question: what do the stars in this chapter stand for?",
+  "wgrd": "Some things in a book show up once. Others keep coming back. As you read, keep a little tally for anything you see more than once: an object, a word, a light. The longest tally usually points to the biggest idea. And each time it comes back, ask whether it means something new.",
+  "dol": "The model is about someone reading aloud. The sentence to fix is long, and a lot is squeezed into it: two pairs of words pressed into one, and one name that owns something. Find each spot where letters are missing, and the spot where something belongs to someone.",
+  "guide1": "Today you hunt for two things at once. In grammar, a little raised mark can mean letters are missing, or it can mean something belongs to someone. They look the same and do different jobs. In spelling, you’ll catch more than one kind of ending that always stays together.",
+  "morphology": "The path goes on, a little farther from the farmhouse. Same three roots, all meaning to go, but four new words. One is a short break from your work. One is about getting the result you hoped for. Watch the spelling closely: two of these roots sound almost alike.",
+  "vocabulary": "Here’s the match. Try it without the cards first. If a word gives you trouble, take it apart: does it have one of this week’s go-roots inside it? And for symbol, think of a real thing in this chapter that might stand for something larger than itself.",
+  "grammar": "Read the whole paragraph before you tap anything. Every little raised mark is doing a job, but not every one is doing the same job. Some stand in for missing letters, and some don’t. Slow down at each one, and ask what it’s doing there.",
+  "spelling": "Some endings are so tightly glued that they always travel together: the soft L ending, and the endings that sound like shun and cher. Clap each long word, listen for the last beat, and tap every word that ends with one of those glued pieces.",
+  "guide2": "Today’s Courage Watch is about a calm voice in a dangerous room. Once, a policeman stopped my mother on a bridge and asked where she was going. She smiled and talked about the price of fish. My knees were shaking. Hers weren’t. Watch Mama when the officer stands beside the casket. Listen to how she speaks.",
+  "read": "Read this chapter slowly. It happens in one room, by candlelight. Notice who speaks and who stays silent, and how each person sits when the boots come in. Then, near the end, someone opens an old book and reads aloud. Listen to those words. Some of them are the title of this book.",
+  "rwm": "Read this sentence aloud, slowly, and notice where your voice pauses. A writer can slip a few words into the middle of a sentence and change where we stand: outside with the sky, or inside someone’s head. Read it once with those words and once without. Feel the difference.",
+  "guide3": "Now you write. The questions ask what Mama does when the soldiers come, what the stars might stand for, and what the casket might really be hiding. Then you’ll zoom in on one single word from a quote, and explain why that word, and no other, is the right one.",
+  "chapter": "The stars come back in this chapter, and they carry a lot. Annemarie thinks about how many there are, and how big the sky is. Ask yourself what else is too many to count, or too big to hold. A symbol can hold more than one idea, so don’t stop at your first one.",
+  "workshop": "A quote can’t argue for you. You have to do it. Today, pick one single word from your quote and hold it up to the light. Why that word and not another? Say what it isn’t, then say what it is. That’s how a small word starts to carry a big reason."
+ },
+ "writingFocus": "Elaborate + Explain",
+ "dol": {
+  "a": {
+   "raw": "the casket couldnt be opened because mamas plan wouldnt work if the soldiers saw",
+   "fixed": "<strong>The</strong> casket couldn<strong>’</strong>t be opened<strong>,</strong> because <strong>Mama’s</strong> plan wouldn<strong>’</strong>t work if the soldiers saw<strong>.</strong>",
+   "why": "A capital T to start, apostrophes in couldn’t (could + not) and wouldn’t (would + not), an apostrophe and s on Mama’s to show the plan belongs to her, a comma before because, and a period at the end."
+  },
+  "b": {
+   "raw": "peters voice didnt shake and the mourners couldnt stop listening",
+   "fixed": "<strong>Peter’s</strong> voice didn<strong>’</strong>t shake<strong>,</strong> and the mourners couldn<strong>’</strong>t stop listening<strong>.</strong>",
+   "why": "A capital P and an apostrophe and s on Peter’s to show the voice is his, apostrophes in didn’t (did + not) and couldn’t (could + not), a comma before and because it joins two complete thoughts, and a period at the end."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and explain what might have happened if her voice had shaken.",
+  "journal-q2": "… and give a second idea the stars could stand for.",
+  "journal-q3": "… and explain why a casket made such a clever hiding place."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "miss": {
+  "match": {
+   "proceed": "Proceed has a go-root inside it. Look for the meaning about moving forward.",
+   "concede": "Concede is about giving way. Look for the meaning about giving in.",
+   "access": "Access is about getting in. Look for the meaning about a way to reach or enter.",
+   "symbol": "A symbol is a real thing that stands for something bigger. Look for the meaning about standing for an idea."
+  }
+ },
+ "wordgame": {
+  "type": "path",
+  "strand": "Morphology",
+  "kicker": "The Way to the Boat",
+  "h": "Into the woods",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. All three roots mean go, so let the spelling decide: listen to how each word ends.",
+  "why": {
+   "icon": "🌲",
+   "q": "Why the path?",
+   "t": "On the night of Chapters 9 to 12, no lights are allowed at Uncle Henrik’s farm. The way to the harbor, past the apple tree, through the woods and across the meadow, has to be found in the dark. <b>ceed</b>, <b>cede</b> and <b>cess</b> are three spellings of one old root that means <i>to go</i>, so each right word shows you the next stretch of the path. One stretch each lesson, until it reaches the boat."
+  },
+  "meanings": {
+   "ceed": "go",
+   "cede": "go · yield",
+   "cess": "go"
+  },
+  "miss": {
+   "fill1": "Not quite. Say the word out loud. Does it end with a ‘seed’ sound, or a ‘sess’ sound?",
+   "fill2": "Not quite. Say the word out loud. Does it end with a ‘seed’ sound, or a ‘sess’ sound?",
+   "fill3": "Not quite. Most words that end with a ‘seed’ sound spell it <b>cede</b>. Only three use ceed. Try again.",
+   "fill4": "Not quite. Say the word out loud. Does it end with a ‘seed’ sound, or a ‘sess’ sound?"
+  },
+  "winDay": "The path has reached the edge of the woods. The next lesson’s words carry it in under the dark trees.",
+  "win": "The path comes out of the woods, crosses the meadow and reaches the harbor, where Uncle Henrik’s boat is waiting in the dark. <b>ceed</b>, <b>cede</b> and <b>cess</b> = go."
+ },
+ "notes": {
+  "wgrd": "Keep a repeat list as you read. The thing with the longest tally usually points to the biggest idea, and it may mean something a little different each time it comes back.",
+  "vocab": [
+   [
+    "proceed",
+    "To move forward; to continue."
+   ],
+   [
+    "concede",
+    "To give in; to admit defeat or yield."
+   ],
+   [
+    "access",
+    "A way to reach or enter something."
+   ],
+   [
+    "symbol",
+    "An object or image that stands for an idea."
+   ]
+  ],
+  "wordParts": "ceed, cede and cess are three spellings of one root that means “to go” or “to yield”: proceed, concede, access, process.",
+  "grammar": "An apostrophe can do two jobs. In a contraction it stands for missing letters (I’m = I am). In a possessive it shows belonging (Peter’s Bible).",
+  "spelling": "A consonant plus le at the end of a word is its own last beat, and the word splits just before that consonant: lit·tle, sim·ple. The endings -tion and -ture stay together the same way: ac·tion, pic·ture."
+ },
+ "plate": {
+  "src": "plates/nts-18-2.jpg",
+  "alt": "An old, worn psalm book standing open in a museum case.",
+  "credit": "A Danish psalm book printed in Copenhagen in 1806, used for church and home prayers. Public domain photo, via Wikimedia Commons."
+ }
+}

@@ -1770,6 +1770,15 @@ window.checkFillIn = function (btn) {
   var inputs = [].slice.call(scope.querySelectorAll('.fillin-input'));
   var anyWrong = false, stuck = false;
 
+  /* an answer with a curly apostrophe (isn’t) can never be typed on a
+     plain keyboard, which gives a straight one (isn't). Match the
+     student's apostrophes to the answer's before anything compares. */
+  inputs.forEach(function (inp) {
+    if (inp.disabled) return;
+    var ans = inp.getAttribute('data-answer') || '';
+    if (ans.indexOf('\u2019') >= 0) inp.value = inp.value.replace(/['\u2018`\u00B4]/g, '\u2019');
+    else if (ans.indexOf("'") >= 0) inp.value = inp.value.replace(/[\u2018\u2019`\u00B4]/g, "'");
+  });
   inputs.forEach(function (inp) {
     if (inp.disabled) return;
     var answer = (inp.getAttribute('data-answer') || '').toLowerCase();
@@ -2595,6 +2604,384 @@ WORDGAME.water = function (cfg, act, game, W) {
   });
   placed.forEach(setCard);
   paint(null); count();
+  if (placed.length === W.length) finish(true);
+};
+
+/* ── The Way to the Boat (NTS week 18): ceed, cede and cess all mean
+   "to go". The night of Chapters 9–12 at Uncle Henrik's farm: no lights
+   allowed, only starlight. Each right word reveals the next stretch of
+   the path from the farmhouse, past the apple tree, through the woods
+   and across the meadow. Four stretches a lesson; day 4 reaches the
+   harbor, where Henrik's boat is waiting. Nobody walks it: the path
+   itself is what moves. ── */
+WORDGAME.path = function (cfg, act, game, W) {
+  var day = dayNum(LESSON.day);
+  var KEY = 'oao.g4ela.wg.' + LID;
+  var placed = (Sparkle.get(KEY, []) || []).filter(function (i) { return i >= 0 && i < W.length; });
+  var M = cfg.meanings || {};
+  var stones = []; W.forEach(function (w) { if (stones.indexOf(w.a) < 0) stones.push(w.a); });
+  game.classList.add('spk-hide');
+  var lead = game.previousElementSibling;
+  if (lead && lead.classList.contains('callout')) lead.classList.add('spk-hide');
+
+  var PER = 4, base = (day - 1) * PER, f = function (n) { return (+n).toFixed(1); };
+  var P = [[80,158],[100,166],[124,170],[148,168],[172,176],[196,186],[222,192],[250,190],[278,184],
+           [306,188],[334,198],[362,204],[392,200],[424,192],[458,196],[494,206],[528,214]];
+  var segs = '', under = '';
+  for (var k = 0; k < P.length - 1; k++) {
+    var a = P[k], b = P[k + 1], mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2 + (k % 2 ? 2 : -2);
+    var d = 'M' + a[0] + ' ' + a[1] + ' Q' + f(mx) + ' ' + f(my) + ' ' + b[0] + ' ' + b[1];
+    under += '<path class="dim" d="' + d + '"/>';
+    segs += '<g class="sg" data-s="' + k + '"><path class="gl" d="' + d + '"/><path class="ln" pathLength="1" d="' + d + '"/></g>';
+  }
+  var field = '', seed = 7;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  for (var s = 0; s < 90; s++) field += '<circle class="fs' + (s % 3) + '" cx="' + f(rnd() * 640) + '" cy="' + f(rnd() * 132) + '" r="' + f(rnd() * 0.9 + 0.35) + '"/>';
+  var trees = '';
+  for (var t = 0; t < 26; t++) {
+    var tx = 170 + t * 9.6 + (t % 3) * 2, ty = 150 + (t % 4) * 3, th = 24 + (t * 7) % 16;
+    trees += '<path d="M' + f(tx) + ' ' + f(ty - th) + ' L' + f(tx - 7) + ' ' + f(ty) + ' L' + f(tx + 7) + ' ' + f(ty) + ' Z"/>';
+  }
+  var front = '';
+  [[214, 206], [268, 202], [318, 212], [376, 214]].forEach(function (p) {
+    front += '<path d="M' + p[0] + ' ' + (p[1] - 30) + ' L' + (p[0] - 9) + ' ' + p[1] + ' L' + (p[0] + 9) + ' ' + p[1] + ' Z"/>';
+  });
+  var waves = [0, 1, 2, 3, 4].map(function (i) {
+    var y = 196 + i * 13, x = 548 + (i * 37) % 70;
+    return '<path d="M' + x + ' ' + y + ' q 8 -3 16 0 t 16 0"/>';
+  }).join('');
+
+  var svg =
+    '<svg class="spk-pa-svg" viewBox="0 0 640 260" role="img" aria-label="Night at Uncle Henrik’s farm. A path runs from the farmhouse past an apple tree, through dark woods and across a meadow to a small harbor where a fishing boat waits.">' +
+    '<defs><linearGradient id="spkPaSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070D24"/><stop offset=".75" stop-color="#16244A"/><stop offset="1" stop-color="#26365E"/></linearGradient><radialGradient id="spkPaHalo"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".9"/><stop offset="1" stop-color="#FFE9A8" stop-opacity="0"/></radialGradient></defs>' +
+    '<rect width="640" height="170" fill="url(#spkPaSky)"/>' +
+    '<g class="field">' + field + '</g>' +
+    '<g class="clouds"><ellipse cx="190" cy="40" rx="70" ry="5"/><ellipse cx="430" cy="62" rx="90" ry="6"/><ellipse cx="560" cy="30" rx="50" ry="4"/></g>' +
+    '<rect class="sea" x="440" y="146" width="200" height="114"/>' +
+    '<path class="far" d="M470 147 C520 143 560 142 600 144 L640 145 L640 149 L470 149 Z"/>' +
+    '<text class="lbl" x="560" y="138">Sverige</text>' +
+    '<g class="waves">' + waves + '</g>' +
+    '<path class="land" d="M0 146 C120 140 300 142 470 146 C500 160 528 190 548 260 L0 260 Z"/>' +
+    '<path class="meadow" d="M400 196 C440 186 480 190 520 206"/>' +
+    '<g class="woods">' + trees + '</g>' +
+    '<g class="house"><rect x="34" y="134" width="50" height="22"/><path class="roof" d="M28 136 L59 116 L90 136 Z"/>' +
+      '<rect class="hw" x="42" y="141" width="6" height="6"/><rect class="hw" x="70" y="141" width="6" height="6"/><rect class="door" x="56" y="144" width="7" height="12"/></g>' +
+    '<g class="tree"><path d="M136 168 C137 158 134 152 138 146 M138 150 C132 146 128 140 124 138 M138 148 C144 142 150 141 154 136"/><ellipse cx="139" cy="136" rx="18" ry="11"/></g>' +
+    '<g class="trail">' + under + segs + '</g>' +
+    '<g class="woods front">' + front + '</g>' +
+    '<g class="pier"><rect x="526" y="214" width="40" height="3"/><rect x="532" y="217" width="2" height="9"/><rect x="556" y="217" width="2" height="9"/></g>' +
+    '<g class="boat"><path class="hull" d="M566 222 L612 222 L604 233 L574 233 Z"/><rect class="mast" x="588" y="190" width="1.6" height="32"/><path class="sail" d="M590 194 L606 216 L590 216 Z"/><circle class="halo" cx="590" cy="222" r="26"/></g>' +
+    '</svg>';
+
+  var box = document.createElement('div');
+  box.className = 'spk-wg spk-path';
+  box.innerHTML =
+    '<div class="spk-wg-head"><span class="spk-wg-kicker">' + esc(cfg.kicker || 'The Way to the Boat') + '</span>' +
+      '<span class="spk-wg-h">' + esc(cfg.h || 'Find the path in the dark') + '</span></div>' +
+    wgWhy(cfg.why) +
+    (cfg.voice ? '<p class="spk-wg-voice">' + esc(cfg.voice) + '</p>' : '') +
+    '<div class="spk-pa-scene">' + svg + '</div>' +
+    '<p class="spk-wg-ct" aria-live="polite"></p>' +
+    '<div class="spk-br-stones spk-pa-stones" role="group" aria-label="Word parts">' +
+      stones.map(function (a) {
+        return '<button type="button" class="spk-br-stone" data-a="' + esc(a) + '"><b>' + esc(a) + '</b>' +
+               (M[a] ? '<small>' + esc(M[a]) + '</small>' : '') + '</button>';
+      }).join('') + '</div>' +
+    '<div class="spk-br-pile">' +
+      W.map(function (w, i) {
+        var pre = '', post = '', seen = false;
+        [].forEach.call(w.inp.parentNode.childNodes, function (n) {
+          if (n === w.inp) { seen = true; return; }
+          var t = n.textContent || ''; if (seen) post += t; else pre += t;
+        });
+        post = post.split(/\s+[—–-]\s+/)[0].trim(); pre = pre.trim();
+        return '<button type="button" class="spk-br-card spk-pa-card" data-i="' + i + '">' +
+               '<span class="w">' + (pre ? '<b>' + esc(pre) + '</b>' : '') + '<span class="blank">?</span>' + (post ? '<b>' + esc(post) + '</b>' : '') + '</span>' +
+               '<small>' + esc(w.m) + '</small><span class="spk-wg-miss"></span></button>';
+      }).join('') + '</div>' +
+    '<div class="spk-wg-win" hidden></div>';
+  game.parentNode.insertBefore(box, game);
+
+  function paint(fresh) {
+    var lit = base + (placed.length === W.length ? PER : Math.min(PER, placed.length));
+    box.querySelectorAll('.sg').forEach(function (el) {
+      var k = +el.getAttribute('data-s');
+      el.classList.toggle('on', k < lit); el.classList.toggle('old', k < base);
+      if (fresh && k === lit - 1 && !REDUCED) { el.classList.remove('pop'); void el.getBoundingClientRect(); el.classList.add('pop'); }
+    });
+  }
+  function count() {
+    var n = placed.length;
+    box.querySelector('.spk-wg-ct').innerHTML = n < W.length
+      ? '<b>' + n + ' of ' + W.length + '</b> stretches of path found' + (day > 1 ? ' · night ' + day + ' of 4' : '') + '.' : '';
+  }
+  function setCard(i) {
+    var w = W[i], card = box.querySelector('.spk-br-card[data-i="' + i + '"]');
+    card.classList.add('placed'); card.disabled = true;
+    card.querySelector('.blank').textContent = w.a;
+    card.querySelector('.spk-wg-miss').innerHTML = '';
+  }
+  function finish(quiet) {
+    W.forEach(function (w) { w.inp.value = w.a; });
+    var btn = game.querySelector('.fillin-check-btn');
+    try { if (quiet) _origCheckFillIn(btn); else window.checkFillIn(btn); } catch (e) {}
+    var last = day >= 4, win = box.querySelector('.spk-wg-win');
+    win.hidden = false;
+    win.innerHTML = last ? (cfg.win || 'The path reaches the harbor, where the boat is waiting.')
+                         : (cfg.winDay || 'This stretch of the path is clear. The next lesson’s words carry it farther.');
+    box.classList.add('done'); if (last) box.classList.add('across');
+    paint(false);
+    if (!quiet) setTimeout(function () { wgSfx('win'); }, 350);
+  }
+  function miss(i, a) {
+    var w = W[i], card = box.querySelector('.spk-br-card[data-i="' + i + '"]');
+    var line = (cfg.miss || {})[w.id] ||
+      ('Not quite. Try <b>' + esc(a) + '</b> in the blank and read the word out loud. Does it look like a word you know? Read the meaning again: <i>' + esc(w.m) + '</i>.');
+    card.querySelector('.spk-wg-miss').innerHTML = line;
+    card.classList.remove('nope'); void card.offsetWidth; card.classList.add('nope');
+    wgSfx('bonk');
+  }
+  var selStone = null, selCard = null;
+  function clearSel() { selStone = selCard = null; box.querySelectorAll('.sel').forEach(function (e) { e.classList.remove('sel'); }); }
+  function tryPlace(i, a) {
+    if (placed.indexOf(i) >= 0) return;
+    if (W[i].a === a) {
+      placed.push(i); Sparkle.set(KEY, placed);
+      setCard(i); paint(true); wgSfx('chime'); wgClip(i + 1); count();
+      if (placed.length === W.length) finish(false);
+    } else miss(i, a);
+    clearSel();
+  }
+  box.querySelectorAll('.spk-br-stone').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b._dragged) { b._dragged = false; return; }
+      var a = b.getAttribute('data-a');
+      if (selCard !== null) { tryPlace(selCard, a); return; }
+      var on = selStone !== a; clearSel(); if (on) { selStone = a; b.classList.add('sel'); }
+    });
+    b.addEventListener('pointerdown', function (e) {
+      if (e.button) return;
+      var a = b.getAttribute('data-a'), sx = e.clientX, sy = e.clientY, ghost = null;
+      function move(ev) {
+        if (!ghost && Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 8) return;
+        if (!ghost) { ghost = b.cloneNode(true); ghost.className = 'spk-br-stone spk-br-ghost'; document.body.appendChild(ghost); }
+        ghost.style.left = ev.clientX + 'px'; ghost.style.top = ev.clientY + 'px';
+        box.querySelectorAll('.spk-br-card.over').forEach(function (c) { c.classList.remove('over'); });
+        var t = document.elementFromPoint(ev.clientX, ev.clientY), c = t && t.closest && t.closest('.spk-br-card');
+        if (c && !c.disabled) c.classList.add('over');
+        ev.preventDefault();
+      }
+      function up(ev) {
+        document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', up);
+        if (!ghost) return;
+        ghost.remove(); b._dragged = true; setTimeout(function () { b._dragged = false; }, 50);
+        box.querySelectorAll('.spk-br-card.over').forEach(function (c) { c.classList.remove('over'); });
+        var t = document.elementFromPoint(ev.clientX, ev.clientY), c = t && t.closest && t.closest('.spk-br-card');
+        if (c && !c.disabled) tryPlace(+c.getAttribute('data-i'), a);
+      }
+      document.addEventListener('pointermove', move, { passive: false });
+      document.addEventListener('pointerup', up);
+    });
+  });
+  box.querySelectorAll('.spk-br-card').forEach(function (c) {
+    c.addEventListener('click', function () {
+      var i = +c.getAttribute('data-i');
+      if (selStone) { tryPlace(i, selStone); return; }
+      var on = selCard !== i; clearSel(); if (on) { selCard = i; c.classList.add('sel'); }
+    });
+  });
+  placed.forEach(setCard);
+  paint(false); count();
+  if (placed.length === W.length) finish(true);
+};
+
+WORDGAME.candles = function (cfg, act, game, W) {
+  var day = dayNum(LESSON.day);
+  var KEY = 'oao.g4ela.wg.' + LID;
+  var placed = (Sparkle.get(KEY, []) || []).filter(function (i) { return i >= 0 && i < W.length; });
+  var M = cfg.meanings || {};
+  var stones = []; W.forEach(function (w) { if (stones.indexOf(w.a) < 0) stones.push(w.a); });
+  game.classList.add('spk-hide');
+  var lead = game.previousElementSibling;
+  if (lead && lead.classList.contains('callout')) lead.classList.add('spk-hide');
+
+  var PER = 4, base = (day - 1) * PER, f = function (n) { return (+n).toFixed(1); };
+  /* four tall Copenhagen town houses; each has a 2 x 2 grid of candle windows */
+  var B = [{ x: 40, w: 120, top: 70, c: 'h0', g: 'step' }, { x: 170, w: 130, top: 56, c: 'h1', g: 'curve' },
+           { x: 310, w: 118, top: 74, c: 'h2', g: 'step' }, { x: 438, w: 134, top: 60, c: 'h3', g: 'curve' }];
+  var houses = '', wins = '', slots = [];
+  B.forEach(function (b, bi) {
+    var r = b.x + b.w, mid = b.x + b.w / 2, t = b.top;
+    var gable = b.g === 'step'
+      ? 'M' + b.x + ' ' + (t + 30) + ' L' + (b.x + 14) + ' ' + (t + 30) + ' L' + (b.x + 14) + ' ' + (t + 18) + ' L' + (b.x + 30) + ' ' + (t + 18) + ' L' + (b.x + 30) + ' ' + (t + 6) + ' L' + (mid - 12) + ' ' + (t + 6) + ' L' + (mid - 12) + ' ' + (t - 6) + ' L' + (mid + 12) + ' ' + (t - 6) + ' L' + (mid + 12) + ' ' + (t + 6) + ' L' + (r - 30) + ' ' + (t + 6) + ' L' + (r - 30) + ' ' + (t + 18) + ' L' + (r - 14) + ' ' + (t + 18) + ' L' + (r - 14) + ' ' + (t + 30) + ' L' + r + ' ' + (t + 30) + ' L' + r + ' 230 L' + b.x + ' 230 Z'
+      : 'M' + b.x + ' ' + (t + 34) + ' C' + (b.x + 10) + ' ' + (t + 30) + ' ' + (b.x + 22) + ' ' + (t + 22) + ' ' + (mid - 16) + ' ' + (t + 6) + ' C' + (mid - 10) + ' ' + (t - 8) + ' ' + (mid + 10) + ' ' + (t - 8) + ' ' + (mid + 16) + ' ' + (t + 6) + ' C' + (r - 22) + ' ' + (t + 22) + ' ' + (r - 10) + ' ' + (t + 30) + ' ' + r + ' ' + (t + 34) + ' L' + r + ' 230 L' + b.x + ' 230 Z';
+    houses += '<g class="hs ' + b.c + '"><path d="' + gable + '"/>' +
+              '<rect class="dr" x="' + f(mid - 9) + '" y="204" width="18" height="26" rx="8"/>' +
+              '<rect class="cn" x="' + b.x + '" y="' + (t + 40) + '" width="' + b.w + '" height="3"/></g>';
+    /* an attic window that never lights, for depth */
+    wins += '<rect class="dk" x="' + f(mid - 6) + '" y="' + (t + 14) + '" width="12" height="14" rx="5"/>';
+    [0, 1].forEach(function (row) {
+      [0, 1].forEach(function (col) {
+        var wx = b.x + 22 + col * (b.w - 64), wy = t + 56 + row * 52;
+        slots.push({ bi: bi, x: wx, y: wy });
+      });
+    });
+  });
+  /* the order the windows light: spread across the street, never two in one house in a row */
+  var ORDER = [0, 6, 9, 15, 3, 5, 10, 12, 1, 7, 8, 14, 2, 4, 11, 13];
+  ORDER.forEach(function (si, k) {
+    var s = slots[si], cx = s.x + 10;
+    wins += '<g class="wn" data-k="' + k + '">' +
+      '<rect class="pane" x="' + s.x + '" y="' + s.y + '" width="20" height="28" rx="2"/>' +
+      '<rect class="glow" x="' + (s.x - 6) + '" y="' + (s.y - 6) + '" width="32" height="40" rx="9"/>' +
+      '<g class="cd"><rect class="wax" x="' + f(cx - 1.6) + '" y="' + (s.y + 15) + '" width="3.2" height="11" rx=".8"/>' +
+      '<path class="fl" d="M' + cx + ' ' + (s.y + 7) + ' C' + f(cx + 2.6) + ' ' + (s.y + 10) + ' ' + f(cx + 2) + ' ' + (s.y + 14) + ' ' + cx + ' ' + (s.y + 15) + ' C' + f(cx - 2) + ' ' + (s.y + 14) + ' ' + f(cx - 2.6) + ' ' + (s.y + 10) + ' ' + cx + ' ' + (s.y + 7) + ' Z"/></g>' +
+      '<path class="mul" d="M' + cx + ' ' + s.y + ' V' + (s.y + 28) + ' M' + s.x + ' ' + (s.y + 12) + ' H' + (s.x + 20) + '"/>' +
+      '</g>';
+  });
+  var field = '', seed = 11;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  for (var s2 = 0; s2 < 70; s2++) field += '<circle class="fs' + (s2 % 3) + '" cx="' + f(rnd() * 640) + '" cy="' + f(rnd() * 70) + '" r="' + f(rnd() * 0.9 + 0.35) + '"/>';
+  var flags = B.map(function (b) {
+    var px = b.x + b.w - 18, py = b.top + 44;
+    return '<g class="fg"><rect class="pole" x="' + px + '" y="' + (py - 26) + '" width="1.4" height="28"/>' +
+           '<g class="cloth"><rect x="' + (px + 1.4) + '" y="' + (py - 26) + '" width="18" height="12" fill="#C8102E"/>' +
+           '<rect x="' + (px + 6.4) + '" y="' + (py - 26) + '" width="2.4" height="12" fill="#fff"/><rect x="' + (px + 1.4) + '" y="' + (py - 21.2) + '" width="18" height="2.4" fill="#fff"/></g></g>';
+  }).join('');
+
+  var svg =
+    '<svg class="spk-cw-svg" viewBox="0 0 640 260" role="img" aria-label="A street of tall old Copenhagen houses at night. Their windows are dark, waiting for candles.">' +
+    '<defs><linearGradient id="spkCwSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A1230"/><stop offset=".7" stop-color="#1D2B57"/><stop offset="1" stop-color="#3A3F66"/></linearGradient>' +
+    '<radialGradient id="spkCwGlow"><stop offset="0" stop-color="#FFD98A" stop-opacity=".85"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></radialGradient></defs>' +
+    '<rect width="640" height="260" fill="url(#spkCwSky)"/>' +
+    '<g class="field">' + field + '</g>' +
+    '<g class="spire"><path d="M600 160 L604 96 L608 160 Z"/><rect x="594" y="160" width="20" height="70"/></g>' +
+    '<g class="houses">' + houses + '</g>' +
+    '<g class="flags">' + flags + '</g>' +
+    '<g class="wins">' + wins + '</g>' +
+    '<rect class="street" x="0" y="230" width="640" height="30"/>' +
+    '<path class="cobble" d="M0 240 H640 M0 250 H640"/>' +
+    '</svg>';
+
+  var box = document.createElement('div');
+  box.className = 'spk-wg spk-candles';
+  box.innerHTML =
+    '<div class="spk-wg-head"><span class="spk-wg-kicker">' + esc(cfg.kicker || 'Candles in the Windows') + '</span>' +
+      '<span class="spk-wg-h">' + esc(cfg.h || 'Light the street') + '</span></div>' +
+    wgWhy(cfg.why) +
+    (cfg.voice ? '<p class="spk-wg-voice">' + esc(cfg.voice) + '</p>' : '') +
+    '<div class="spk-cw-scene">' + svg + '</div>' +
+    '<p class="spk-wg-ct" aria-live="polite"></p>' +
+    '<div class="spk-br-stones spk-cw-stones" role="group" aria-label="Word parts">' +
+      stones.map(function (a) {
+        return '<button type="button" class="spk-br-stone" data-a="' + esc(a) + '"><b>' + esc(a) + '</b>' +
+               (M[a] ? '<small>' + esc(M[a]) + '</small>' : '') + '</button>';
+      }).join('') + '</div>' +
+    '<div class="spk-br-pile">' +
+      W.map(function (w, i) {
+        var pre = '', post = '', seen = false;
+        [].forEach.call(w.inp.parentNode.childNodes, function (n) {
+          if (n === w.inp) { seen = true; return; }
+          var t = n.textContent || ''; if (seen) post += t; else pre += t;
+        });
+        post = post.split(/\s+[—–-]\s+/)[0].trim(); pre = pre.trim();
+        return '<button type="button" class="spk-br-card spk-cw-card" data-i="' + i + '">' +
+               '<span class="w">' + (pre ? '<b>' + esc(pre) + '</b>' : '') + '<span class="blank">?</span>' + (post ? '<b>' + esc(post) + '</b>' : '') + '</span>' +
+               '<small>' + esc(w.m) + '</small><span class="spk-wg-miss"></span></button>';
+      }).join('') + '</div>' +
+    '<div class="spk-wg-win" hidden></div>';
+  game.parentNode.insertBefore(box, game);
+
+  function paint(fresh) {
+    var lit = base + (placed.length === W.length ? PER : Math.min(PER, placed.length));
+    box.querySelectorAll('.wn').forEach(function (el) {
+      var k = +el.getAttribute('data-k');
+      el.classList.toggle('on', k < lit); el.classList.toggle('old', k < base);
+      if (fresh && k === lit - 1 && !REDUCED) { el.classList.remove('pop'); void el.getBoundingClientRect(); el.classList.add('pop'); }
+    });
+  }
+  function count() {
+    var n = placed.length;
+    box.querySelector('.spk-wg-ct').innerHTML = n < W.length
+      ? '<b>' + n + ' of ' + W.length + '</b> candles lit' + (day > 1 ? ' · lesson ' + day + ' of 4' : '') + '.' : '';
+  }
+  function setCard(i) {
+    var w = W[i], card = box.querySelector('.spk-br-card[data-i="' + i + '"]');
+    card.classList.add('placed'); card.disabled = true;
+    card.querySelector('.blank').textContent = w.a;
+    card.querySelector('.spk-wg-miss').innerHTML = '';
+  }
+  function finish(quiet) {
+    W.forEach(function (w) { w.inp.value = w.a; });
+    var btn = game.querySelector('.fillin-check-btn');
+    try { if (quiet) _origCheckFillIn(btn); else window.checkFillIn(btn); } catch (e) {}
+    var last = day >= 4, win = box.querySelector('.spk-wg-win');
+    win.hidden = false;
+    win.innerHTML = last ? (cfg.win || 'Every window on the street is lit.')
+                         : (cfg.winDay || 'Four more candles are burning. The next lesson’s words light more.');
+    box.classList.add('done'); if (last) box.classList.add('free');
+    paint(false);
+    if (!quiet) setTimeout(function () { wgSfx('win'); }, 350);
+  }
+  function miss(i, a) {
+    var w = W[i], card = box.querySelector('.spk-br-card[data-i="' + i + '"]');
+    var line = (cfg.miss || {})[w.id] ||
+      ('Not quite. Try <b>' + esc(a) + '</b> in the blank and read the word out loud. Does it look like a word you know? Read the meaning again: <i>' + esc(w.m) + '</i>.');
+    card.querySelector('.spk-wg-miss').innerHTML = line;
+    card.classList.remove('nope'); void card.offsetWidth; card.classList.add('nope');
+    wgSfx('bonk');
+  }
+  var selStone = null, selCard = null;
+  function clearSel() { selStone = selCard = null; box.querySelectorAll('.sel').forEach(function (e) { e.classList.remove('sel'); }); }
+  function tryPlace(i, a) {
+    if (placed.indexOf(i) >= 0) return;
+    if (W[i].a === a) {
+      placed.push(i); Sparkle.set(KEY, placed);
+      setCard(i); paint(true); wgSfx('chime'); wgClip(i + 1); count();
+      if (placed.length === W.length) finish(false);
+    } else miss(i, a);
+    clearSel();
+  }
+  box.querySelectorAll('.spk-br-stone').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b._dragged) { b._dragged = false; return; }
+      var a = b.getAttribute('data-a');
+      if (selCard !== null) { tryPlace(selCard, a); return; }
+      var on = selStone !== a; clearSel(); if (on) { selStone = a; b.classList.add('sel'); }
+    });
+    b.addEventListener('pointerdown', function (e) {
+      if (e.button) return;
+      var a = b.getAttribute('data-a'), sx = e.clientX, sy = e.clientY, ghost = null;
+      function move(ev) {
+        if (!ghost && Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 8) return;
+        if (!ghost) { ghost = b.cloneNode(true); ghost.className = 'spk-br-stone spk-br-ghost'; document.body.appendChild(ghost); }
+        ghost.style.left = ev.clientX + 'px'; ghost.style.top = ev.clientY + 'px';
+        box.querySelectorAll('.spk-br-card.over').forEach(function (c) { c.classList.remove('over'); });
+        var t = document.elementFromPoint(ev.clientX, ev.clientY), c = t && t.closest && t.closest('.spk-br-card');
+        if (c && !c.disabled) c.classList.add('over');
+        ev.preventDefault();
+      }
+      function up(ev) {
+        document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', up);
+        if (!ghost) return;
+        ghost.remove(); b._dragged = true; setTimeout(function () { b._dragged = false; }, 50);
+        box.querySelectorAll('.spk-br-card.over').forEach(function (c) { c.classList.remove('over'); });
+        var t = document.elementFromPoint(ev.clientX, ev.clientY), c = t && t.closest && t.closest('.spk-br-card');
+        if (c && !c.disabled) tryPlace(+c.getAttribute('data-i'), a);
+      }
+      document.addEventListener('pointermove', move, { passive: false });
+      document.addEventListener('pointerup', up);
+    });
+  });
+  box.querySelectorAll('.spk-br-card').forEach(function (c) {
+    c.addEventListener('click', function () {
+      var i = +c.getAttribute('data-i');
+      if (selStone) { tryPlace(i, selStone); return; }
+      var on = selCard !== i; clearSel(); if (on) { selCard = i; c.classList.add('sel'); }
+    });
+  });
+  placed.forEach(setCard);
+  paint(false); count();
   if (placed.length === W.length) finish(true);
 };
 
