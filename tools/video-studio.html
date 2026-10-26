@@ -712,8 +712,8 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
 </svg>
 
 <script>/* ?subject=science opens the G4 Science shot list (tools/video-shotlist-science.js) */
-window.VS_SUBJ=/[?&]subject=science\b/i.test(location.search)?"science":"ela";
-document.write('<script src="video-shotlist'+(window.VS_SUBJ==="science"?"-science":"")+'.js"><\/script>');</script>
+window.VS_SUBJ=/[?&]subject=science\b/i.test(location.search)?"science":/[?&]subject=math\b/i.test(location.search)?"math":"ela";
+document.write('<script src="video-shotlist'+(window.VS_SUBJ==="science"?"-science":window.VS_SUBJ==="math"?"-math":"")+'.js"><\/script>');</script>
 <script src="vendor/jszip.min.js"></script>
 <script src="vendor/mp4box.all.min.js"></script>
 <script src="vendor/mp4-muxer.js"></script>
@@ -723,25 +723,27 @@ document.write('<script src="video-shotlist'+(window.VS_SUBJ==="science"?"-scien
 'use strict';
 var $ = function(id){ return document.getElementById(id); };
 var DATA = window.SHOTLIST || {lessons:[],poems:[],teacher:[]};
-var SCI = window.VS_SUBJ==='science';
-var REPO_NAME = SCI ? 'optima-4th-science' : 'optima-4th-ela';
+var MATH = window.VS_SUBJ==='math';
+var SCI = window.VS_SUBJ==='science' || MATH; /* math uses the science flow: lesson plans, cards, teacher/ folder */
+var REPO_NAME = MATH ? 'optima-4th-math' : SCI ? 'optima-4th-science' : 'optima-4th-ela';
 var PICS = DATA.pics || {}, PICCAP = DATA.picCaps || {};   /* science photos travel inside the shot list */
 if (SCI){
-  document.title='G4 Science Video Studio';
+  document.title=MATH?'G4 Math Video Studio':'G4 Science Video Studio';
   (function(){
     var t=function(id,fn){ var e=document.getElementById(id); if (e) fn(e); };
-    t('repoBtn',function(e){ e.textContent='📁 Connect optima-4th-science'; });
+    t('repoBtn',function(e){ e.textContent='📁 Connect '+REPO_NAME; });
     t('selFolder',function(e){ e.title='Where it goes in optima-4th-science'; });
-    t('traySub',function(e){ e.textContent='Unzip into C:\\repos\\optima-4th-science and every file lands in the right folder.'; });
+    t('traySub',function(e){ e.textContent='Unzip into C:\\repos\\'+REPO_NAME+' and every file lands in the right folder.'; });
     t('modeSeg',function(e){ e.title='Shot list: G4 Science videos, already named. Free record: any video, saved to Downloads.'; });
-    var rp=document.getElementById('repoPanel'); if (rp) [].forEach.call(rp.querySelectorAll('.note b'),function(b){ if (/optima-4th-ela/.test(b.textContent)) b.textContent='C:\\repos\\optima-4th-science'; });
+    var rp=document.getElementById('repoPanel'); if (rp) [].forEach.call(rp.querySelectorAll('.note b'),function(b){ if (/optima-4th-ela/.test(b.textContent)) b.textContent='C:\\repos\\'+REPO_NAME; });
   })();
-  (function(){ var h=document.getElementById('appTitle'); if (h) h.textContent='🔬 G4 Science Video Studio'; })();
+  (function(){ var h=document.getElementById('appTitle'); if (h) h.textContent=MATH?'🧮 G4 Math Video Studio':'🔬 G4 Science Video Studio'; })();
 }
 (function(){ var h=document.getElementById('appTitle'); if (!h) return;
   var a=document.createElement('a'); a.className='subjswitch'; a.href=SCI ? location.pathname : location.pathname+'?subject=science';
   a.textContent=SCI ? '↔ ELA videos' : '↔ Science videos'; a.title=SCI ? 'Switch to the G4 ELA shot list' : 'Switch to the G4 Science shot list';
-  h.insertAdjacentElement('afterend',a); })();
+  h.insertAdjacentElement('afterend',a);
+  if(!MATH){var m=document.createElement('a');m.className='subjswitch';m.href=location.pathname+'?subject=math';m.textContent='↔ Math videos';a.insertAdjacentElement('afterend',m);} })();
 var store = {
   get:function(k,d){ try{ var v=localStorage.getItem('vs-'+k); return v==null?d:JSON.parse(v);}catch(e){return d;} },
   set:function(k,v){ try{ localStorage.setItem('vs-'+k, JSON.stringify(v)); return true;}catch(e){return false;} }
@@ -3798,8 +3800,8 @@ function setAppMode(m){
   $('shotWrap').style.display = freeMode ? 'none' : 'flex';
   $('freeWrap').hidden = !freeMode;
   $('repoPanel').hidden = freeMode;
-  $('appTitle').textContent = freeMode ? '🎬 Video Studio' : (SCI ? '🔬 G4 Science Video Studio' : '🎬 G4 ELA Video Studio');
-  document.title = freeMode ? 'Video Studio' : (SCI ? 'G4 Science Video Studio' : 'G4 ELA Video Studio');
+  $('appTitle').textContent = freeMode ? '🎬 Video Studio' : (MATH ? '🧮 G4 Math Video Studio' : SCI ? '🔬 G4 Science Video Studio' : '🎬 G4 ELA Video Studio');
+  document.title = freeMode ? 'Video Studio' : (MATH ? 'G4 Math Video Studio' : SCI ? 'G4 Science Video Studio' : 'G4 ELA Video Studio');
   [].forEach.call(document.querySelectorAll('.lstat'),function(e){ e.hidden=freeMode; });
   $('traySub').textContent = freeMode ? 'Each video downloads with its thumbnail and captions file.' : (repo ? 'Connected to '+repo.name+'. Save all writes every kept take into its folder.' : 'Unzip into C:\\repos\\'+REPO_NAME+' and every file lands in the right folder.');
   $('saveAllBtn').hidden = freeMode || !repo;
