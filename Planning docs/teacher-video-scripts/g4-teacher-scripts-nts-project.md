@@ -8,9 +8,9 @@ Hi, friends. You finished Number the Stars. That's a whole book about a girl who
 
 You'll pick one of three ways. You can fill a keepsake box for Ellen, light three windows on the night the war ends, or reveal the secrets hidden inside ordinary things. All three are graded the same way, so pick the one you can picture best.
 
-Whichever way you choose, you need four things. First, three objects from the book: one from the beginning, one from the middle and one from the end. Second, a short note for each object, three or four sentences. Tell where it shows up, give a quote or an exact detail from your book, and tell why it matters. Third, one piece of real history from a history card, tied to one of your objects. And last, a closing paragraph about what this whole book says about courage.
+Whichever way you choose, the steps walk you through four things, one screen at a time. First, three objects from the book: one from the beginning, one from the middle and one from the end. Second, a short note for each object, three or four sentences. Tell where it shows up, give a quote or an exact detail from your book, and tell why it matters. Third, one piece of real history from a history card, tied to one of your objects. And last, a closing paragraph about what this whole book says about courage.
 
-Your project builds on the side of the page as you work, and your work saves as you go. When you're done, Step 6 turns it into a PDF. Put your name at the top first, then upload the PDF in Canvas. Take your time with the notes. That's where your thinking shows.
+Your project builds on the side of the page as you work, and your work saves as you go. When you're done, Step 7 turns it into a PDF. Put your name at the top first, then upload the PDF in Canvas. Take your time with the notes. That's where your thinking shows.
 
 
 ## Grete's welcome · g4ela-nts-project-welcome
@@ -25,7 +25,7 @@ A spare key in a sewing box. That's such a small way to say, we're waiting for y
 
 ## Liberation Night · g4ela-nts-project-liberation
 
-Light coming back on, one window at a time. I love picturing that street. In this way, each window has its own speaker, so each note should sound like that person. Kirsti won't sound like Uncle Henrik. Choose whose window it is in Step 2, and if that person didn't live to see the end of the war, let someone who loved them do the talking.
+Light coming back on, one window at a time. I love picturing that street. In this way, each window has its own speaker, so each note should sound like that person. Kirsti won't sound like Uncle Henrik. Each time you pick an object, choose whose window it is, and if that person didn't live to see the end of the war, let someone who loved them do the talking.
 
 
 ## Peter's Hidden Messages · g4ela-nts-project-hidden
