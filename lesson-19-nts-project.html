@@ -78,8 +78,8 @@ button, input, textarea, select { font: inherit; }
 .teacher-video { margin: 0 0 14px; }
 .teacher-video video { display: block; width: 100%; max-width: 860px; border-radius: 12px; background: #000; }
 
-.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 8px; }
-@media (max-width: 900px) { .steps { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: 8px; }
+@media (max-width: 900px) { .steps { grid-template-columns: repeat(4, minmax(0,1fr)); } }
 @media (max-width: 520px) { .steps { grid-template-columns: repeat(2, minmax(0,1fr)); } }
 .step button { width: 100%; height: 100%; text-align: left; display: grid; gap: 2px; align-content: start; border: 2px solid transparent; border-radius: 10px; padding: 8px 10px 10px; cursor: pointer; background: var(--paper-2); color: var(--navy); }
 .step button:hover { background: #F6EBD3; }
@@ -286,6 +286,42 @@ textarea.write:focus { border-color: var(--cyan); outline: none; }
   body.saving .sheet:last-child { break-after: auto; page-break-after: auto; }
 }
 
+/* step flow: locked steps, sticky nav bar, sub-steps */
+.step.locked button { opacity: .5; cursor: not-allowed; }
+.step.locked button:hover { background: var(--paper-2); }
+.navbar { position: sticky; bottom: 0; z-index: 6; margin: 18px -20px -18px; padding: 10px 20px; background: rgba(255,253,247,.97); border-top: 1px solid var(--line); border-radius: 0 0 14px 14px; display: flex; align-items: center; gap: 10px; justify-content: space-between; box-shadow: 0 -8px 16px rgba(90,64,28,.08); }
+.navmid { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; text-align: center; }
+.dots { display: inline-flex; gap: 7px; }
+.dots span { width: 11px; height: 11px; border-radius: 50%; background: #E0CCA2; }
+.dots span.ok { background: var(--green); }
+.dots span.cur { background: var(--navy); box-shadow: 0 0 0 3px rgba(14,28,66,.18); }
+.navmsg { color: #A3361F; font-weight: 800; font-size: 16px; line-height: 1.3; }
+.navmsg.pulse { animation: navpulse .6s ease; }
+@keyframes navpulse { 0% { transform: scale(1); } 40% { transform: scale(1.06); } 100% { transform: scale(1); } }
+.navspace { width: 90px; }
+.btn.notyet { opacity: .6; }
+.btn.notyet:hover { opacity: .8; }
+@media (max-width: 560px) { .navbar { flex-wrap: wrap; } .navmid { order: -1; flex-basis: 100%; } .navbar .btn { flex: 1; } .navspace { display: none; } }
+.chs { font-family: var(--f-body); font-size: 17px; font-weight: 700; color: var(--muted); }
+.substep { display: flex; align-items: center; gap: 10px; margin: 18px 0 8px; font-size: 19px; }
+.substep .sn { width: 28px; height: 28px; border-radius: 50%; background: var(--gold); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 16px; flex: none; }
+.substep .hint { font-size: 16px; }
+.waiting { margin: 10px 0 0; padding: 14px 16px; border: 2px dashed var(--line); border-radius: 12px; color: var(--muted); }
+.findit { display: block; margin-top: 4px; font-size: 16px; color: var(--muted); font-style: italic; }
+.need { margin: 0 0 8px; padding-left: 22px; display: grid; gap: 2px; font-size: 17px; }
+.whobox .hint { font-size: 16px; }
+.slot { width: 100%; text-align: left; cursor: pointer; font: inherit; font-size: 16px; color: var(--navy); }
+.slot:hover { border-color: var(--gold); }
+.slot.here { border-color: var(--navy); box-shadow: 0 0 0 2px rgba(14,28,66,.12); }
+.slot[aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
+@media (max-width: 640px) {
+  .hcard { flex-direction: row; align-items: stretch; }
+  .hcard img { width: 96px; min-width: 96px; aspect-ratio: auto; height: auto; object-fit: cover; }
+  .hcard .hb { padding: 8px 10px; }
+  .hcard h4 { font-size: 17px; }
+  .hcard p { font-size: 15px; }
+}
+
 </style>
 </head>
 <body>
@@ -318,7 +354,7 @@ textarea.write:focus { border-color: var(--cyan); outline: none; }
       <div class="vp-label">Watch this first</div>
       <div class="vp-title">Number the Stars: Final Project</div>
       <div class="vp-slot">g4ela-nts-project</div>
-      <div class="vp-notes"><strong>Teacher recording notes:</strong> About 3 minutes. The three ways (a box for Ellen, a lit window, a secret revealed) and that all three are graded the same. One object from the beginning, middle and end. What a strong note has: where, an exact detail, and why it matters. Saving the PDF in Step 6 and uploading it in Canvas.</div>
+      <div class="vp-notes"><strong>Teacher recording notes:</strong> About 3 minutes. The three ways (a box for Ellen, a lit window, a secret revealed) and that all three are graded the same. One object from the beginning, middle and end. What a strong note has: where, an exact detail, and why it matters. Saving the PDF in Step 7 and uploading it in Canvas.</div>
     </div>
     </div>
     <div class="teacher-video" id="teacherVideo" hidden>
@@ -475,10 +511,11 @@ var GUIDE_LABELS = {
 
 var STEPS = [
   { id: "way", title: "Choose your way" },
-  { id: "objects", title: "Pick 3 objects" },
-  { id: "notes", title: "Write your notes" },
-  { id: "history", title: "Add true history" },
-  { id: "closing", title: "Closing piece" },
+  { id: "b", title: "Beginning object" },
+  { id: "m", title: "Middle object" },
+  { id: "e", title: "End object" },
+  { id: "history", title: "True history" },
+  { id: "closing", title: "Closing" },
   { id: "save", title: "Save your PDF" }
 ];
 
@@ -662,14 +699,36 @@ function save() { clearTimeout(saveT); saveT = setTimeout(function () { try { lo
 
 /* ── what counts as done ── */
 var noteOK = function (p) { return sentences(S.note[p]) >= 3 && words(S.note[p]) >= 25; };
+var PART_AT = { 1: "b", 2: "m", 3: "e" };
+function partDone(p) { return !!(S.pick[p] && (S.way !== 2 || S.who[p]) && noteOK(p)); }
 function stepDone(i) {
   if (i === 0) return !!S.way;
-  if (i === 1) return !!S.way && PARTS.every(function (p) { return S.pick[p.id] && (S.way !== 2 || S.who[p.id]); });
-  if (i === 2) return stepDone(1) && PARTS.every(function (p) { return noteOK(p.id); });
-  if (i === 3) return !!(S.hcard && S.hpart && S.pick[S.hpart] && words(S.htext) >= 12);
-  if (i === 4) return sentences(S.closing) >= 3 && words(S.closing) >= 40;
-  return [0, 1, 2, 3, 4].every(stepDone);
+  if (PART_AT[i]) return !!S.way && partDone(PART_AT[i]);
+  if (i === 4) return !!(S.hcard && S.hpart && S.pick[S.hpart] && words(S.htext) >= 12);
+  if (i === 5) return sentences(S.closing) >= 3 && words(S.closing) >= 40;
+  return [0, 1, 2, 3, 4, 5].every(stepDone);
 }
+/* what still stands between this step and the next one, in kid words */
+function missingFor(i) {
+  if (i === 0) return S.way ? "" : "Choose one of the three ways first.";
+  if (PART_AT[i]) {
+    var p = PART_AT[i], n = sentences(S.note[p]);
+    if (!S.pick[p]) return "Pick an object first.";
+    if (S.way === 2 && !S.who[p]) return "Choose whose window it is.";
+    if (!noteOK(p)) return "Write at least 3 sentences in your note (" + n + " so far).";
+    return "";
+  }
+  if (i === 4) {
+    if (!S.hcard) return "Pick a history card.";
+    if (!S.hpart || !S.pick[S.hpart]) return "Choose which object it connects to.";
+    if (words(S.htext) < 12) return "Write your history sentences (at least 12 words).";
+    return "";
+  }
+  if (i === 5) return stepDone(5) ? "" : "Write at least 3 sentences in your closing.";
+  return "";
+}
+/* the first step that isn't finished yet: steps after it stay locked */
+function firstOpen() { for (var i = 0; i < 6; i++) if (!stepDone(i)) return i; return 6; }
 
 /* ── guide clips: the lessons' gold pill, hidden until the file loads ── */
 var nowPlaying = null;
@@ -721,107 +780,106 @@ function wireBed() {
 
 /* ── step tiles ── */
 function drawSteps() {
+  var open = firstOpen();
   $("#steps").innerHTML = STEPS.map(function (s, i) {
-    var cls = "step" + (stepDone(i) && i < 5 ? " done" : "") + (S.step === i ? " now" : "") + (i === 5 ? " save" : "");
-    return '<li class="' + cls + '"><button type="button" data-i="' + i + '"' + (S.step === i ? ' aria-current="step"' : "") + '><span class="n"><span class="dot">' + (stepDone(i) && i < 5 ? "&#10003;" : i + 1) + "</span>Step " + (i + 1) + '</span><span class="t">' + esc(s.title) + "</span></button></li>";
+    var done = i < 6 && stepDone(i), locked = i > open && i < 6;
+    var cls = "step" + (done ? " done" : "") + (S.step === i ? " now" : "") + (i === 6 ? " save" : "") + (locked ? " locked" : "");
+    return '<li class="' + cls + '"><button type="button" data-i="' + i + '"' + (S.step === i ? ' aria-current="step"' : "") + (locked ? ' aria-disabled="true"' : "") + '><span class="n"><span class="dot">' + (done ? "&#10003;" : i + 1) + "</span>Step " + (i + 1) + '</span><span class="t">' + esc(s.title) + "</span></button></li>";
   }).join("");
 }
-$("#steps").addEventListener("click", function (e) { var b = e.target.closest("button[data-i]"); if (b) go(+b.dataset.i); });
+$("#steps").addEventListener("click", function (e) {
+  var b = e.target.closest("button[data-i]"); if (!b) return;
+  var i = +b.dataset.i, open = firstOpen();
+  if (i > open && i < 6) { go(open); flash("Finish Step " + (open + 1) + " first: " + missingFor(open)); return; }
+  go(i);
+});
 function go(i) {
   if (i > 0 && !S.way) i = 0;
-  if (i === 5) { openSave(); return; }
+  if (i === 6) { openSave(); return; }
   S.step = i; save(); render();
-  var p = $("#panel"); if (p && p.getBoundingClientRect().top < 0) p.scrollIntoView({ behavior: "smooth", block: "start" });
+  var p = $("#panel"); if (!p) return;
+  var top = p.getBoundingClientRect().top;
+  if (top < 0 || top > window.innerHeight * 0.45) p.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+function flash(msg) { var m = $("#navMsg"); if (!m) return; m.textContent = msg; m.classList.remove("pulse"); void m.offsetWidth; m.classList.add("pulse"); }
 
-/* ── the panels ── */
+/* ── the sticky bar at the bottom of every step: back, progress, next ── */
 function navHTML(i) {
-  var back = i > 0 ? '<button type="button" class="btn ghost" data-go="' + (i - 1) + '">&larr; Back</button>' : "<span></span>";
-  var next = i < 4 ? '<button type="button" class="btn" data-go="' + (i + 1) + '">Next: ' + esc(STEPS[i + 1].title) + " &rarr;</button>" : '<button type="button" class="btn gold" data-go="5">Step 6: Save your PDF &rarr;</button>';
-  return '<div class="navrow">' + back + next + "</div>";
+  var back = i > 0 ? '<button type="button" class="btn ghost" data-go="' + (i - 1) + '">&larr; Back</button>' : '<span class="navspace"></span>';
+  var dots = '<span class="dots" aria-label="Step ' + (i + 1) + ' of 7">' + STEPS.map(function (s, k) { return '<span class="' + (k === i ? "cur" : k < 6 && stepDone(k) ? "ok" : "") + '"></span>'; }).join("") + "</span>";
+  var nextLabel = i < 5 ? "Next: " + esc(STEPS[i + 1].title) + " &rarr;" : "Save your PDF &rarr;";
+  var next = '<button type="button" class="btn' + (i === 5 ? " gold" : "") + (stepDone(i) ? "" : " notyet") + '" data-next="' + i + '">' + nextLabel + "</button>";
+  return '<div class="navbar">' + back + '<div class="navmid">' + dots + '<span class="navmsg" id="navMsg" aria-live="polite"></span></div>' + next + "</div>";
 }
 function panelWay() {
-  var h = '<div class="kicker">Step 1 of 6</div><h2>Choose your way</h2><p class="hint" style="margin:0 0 12px;">All three are graded the same way. Pick the one you want to make.</p><div class="ways">';
+  var h = '<div class="kicker">Step 1 of 7</div><h2>Choose your way</h2><p class="hint" style="margin:0 0 12px;">All three are graded the same way. Read them, open a model note, then pick the one you can picture best.</p><div class="ways">';
   [1, 2, 3].forEach(function (n) {
     var w = WAYS[n], on = S.way === n;
     h += '<div class="way' + (on ? " on" : "") + '"><div class="thumb">' + thumbFor(n) + "</div><div>" +
       "<h3>" + esc(w.title) + '</h3><div class="you">' + esc(w.you) + "</div><p>" + esc(w.pitch) + "</p>" + guideHTML(w.key) +
       '<details class="model"><summary>See a model note: ' + esc(w.model.obj) + '</summary><p class="hint" style="margin:6px 0 0;">This object is the model, so you can&rsquo;t pick it.</p>' + guideHTML(w.model.file) + '<p class="mtext">' + esc(w.model.text) + "</p></details>" +
-      '<div class="pick"><button type="button" class="btn' + (on ? " gold" : "") + '" data-way="' + n + '">' + (on ? "&#10003; My way" : "Choose this way") + "</button></div></div></div>";
+      '<div class="pick"><button type="button" class="btn' + (on ? " gold" : "") + '" data-way="' + n + '">' + (on ? "&#10003; My way &middot; keep going &rarr;" : "Choose this way") + "</button></div></div></div>";
   });
   return h + "</div>" + navHTML(0);
 }
-function panelObjects() {
-  var w = WAYS[S.way];
-  var h = '<div class="kicker">Step 2 of 6 · ' + esc(w.title) + '</div><h2>Pick three objects</h2>' +
-    '<div class="todo"><div class="todo-h">What to do</div><ol><li>Pick <b>one object from each part</b> of the book.</li>' +
-    (S.way === 2 ? "<li>Choose <b>whose window</b> it is: the person who owned it, carried it or cared about it.</li>" : "") +
-    (S.way === 1 ? "<li>Ellen&rsquo;s necklace is already in the box. It doesn&rsquo;t count as one of your three.</li>" : "") +
-    "<li>Read the <b>In the book</b> line, then find that part in your own book.</li></ol></div>";
-  PARTS.forEach(function (p) {
-    var list = OBJECTS.filter(function (o) { return o.part === p.id && o.ways.indexOf(S.way) > -1; });
-    h += '<div class="shelf"><div class="shelf-h"><b>' + p.name + "</b><span>" + p.ch + '</span></div><div class="chips">' +
-      list.map(function (o) { return '<button type="button" class="ochip" data-part="' + p.id + '" data-obj="' + o.id + '" aria-pressed="' + (S.pick[p.id] === o.id) + '"><span class="ic">' + iconSVG(o.id) + "</span>" + esc(o.name) + "</button>"; }).join("") + "</div>";
-    var cur = byId(S.pick[p.id]);
-    if (cur) {
-      h += '<div class="inbook"><span class="ch">In the book · ' + esc(cur.ch) + ":</span> " + esc(cur.book) + "</div>";
-      if (S.way === 2) {
-        h += '<div class="whobox"><label for="who-' + p.id + '"><b>Whose window?</b></label><select id="who-' + p.id + '" data-who="' + p.id + '"><option value="">Choose a person</option>' +
-          PEOPLE.map(function (n) { return "<option" + (S.who[p.id] === n ? " selected" : "") + ">" + esc(n) + "</option>"; }).join("") + "</select>" +
-          (LOST[S.who[p.id]] ? '<span class="lost">' + esc(LOST[S.who[p.id]]) + " Write as someone who loved them.</span>" : "") + "</div>";
-      }
-    }
-    h += "</div>";
-  });
-  return h + '<div class="remember"><b>Remember:</b> ' + esc(w.remember) + "</div>" + navHTML(1);
-}
-function panelNotes() {
-  var w = WAYS[S.way];
-  var h = '<div class="kicker">Step 3 of 6 · ' + esc(w.title) + "</div><h2>Write a " + esc(w.noteName) + " for each object</h2>" +
-    '<div class="todo"><div class="todo-h">Every note, 3–4 sentences</div><ul><li>Say <b>where</b> it shows up in the book.</li><li>Use a <b>short quote</b> or an <b>exact detail</b> from your book.</li><li>Explain <b>why it matters</b>: what it shows about a character, or about courage or friendship.</li><li>Write ' + esc(w.voice) + ".</li></ul></div>";
-  if (!stepDone(1)) h += '<p class="remember">Pick all three objects in Step 2 first.</p>';
-  PARTS.forEach(function (p) {
-    var o = byId(S.pick[p.id]); if (!o) return;
-    var ok = noteOK(p.id), n = sentences(S.note[p.id]), wc = words(S.note[p.id]);
-    var who = S.way === 2 && S.who[p.id] ? " · " + S.who[p.id] + "’s window" : "";
-    h += '<div class="note' + (ok ? " done" : "") + '" data-part="' + p.id + '"><div class="note-h"><div class="ic">' + (S.pic[p.id] ? '<img src="' + S.pic[p.id] + '" alt="">' : iconSVG(o.id)) + "</div><div><h3>" + esc(o.name) + '</h3><div class="sub">' + p.name + " · " + esc(o.ch) + esc(who) + "</div></div></div>" +
-      '<div class="inbook"><span class="ch">In the book:</span> ' + esc(o.book) + "</div>" +
-      '<p class="frame">Try: ' + w.frame + "</p>" +
-      '<textarea class="write" data-note="' + p.id + '" aria-label="' + esc(w.noteName + " for " + o.name) + '" placeholder="Write your ' + esc(w.noteName) + ' here...">' + esc(S.note[p.id]) + "</textarea>" +
-      '<div class="meter" data-meter="' + p.id + '">' + meterHTML(n, wc, ok) + "</div>" +
-      '<ul class="checks">' + [["where", "Where it is in the book"], ["detail", "A quote or exact detail"], ["why", "Why it matters"], ["voice", "The right voice"]].map(function (c) {
-        return '<li><label><input type="checkbox" data-chk="' + p.id + '" value="' + c[0] + '"' + (S.chk[p.id][c[0]] ? " checked" : "") + ">" + c[1] + "</label></li>"; }).join("") + "</ul>" +
-      '<div class="picrow"><span>Picture (optional): a drawing, a photo of a real object, or a picture you made in ENGAGE.</span><label class="btn ghost" style="cursor:pointer;">Add a picture<input type="file" accept="image/*" data-pic="' + p.id + '" hidden></label>' + (S.pic[p.id] ? '<button type="button" class="btn ghost" data-unpic="' + p.id + '">Remove picture</button>' : "") + "</div></div>";
-  });
-  return h + navHTML(2);
+/* Steps 2–4: one part of the book per screen. Pick the object, read where it is, write its note. */
+function panelPart(i) {
+  var pid = PART_AT[i], part = PARTS.filter(function (p) { return p.id === pid; })[0], w = WAYS[S.way];
+  var list = OBJECTS.filter(function (o) { return o.part === pid && o.ways.indexOf(S.way) > -1; });
+  var o = byId(S.pick[pid]);
+  var h = '<div class="kicker">Step ' + (i + 1) + " of 7 · " + esc(w.title) + "</div><h2>" + part.name + ' of the book <span class="chs">' + part.ch + "</span></h2>";
+  if (pid === "b" && S.way === 1) h += '<p class="hint" style="margin:2px 0 0;">Ellen&rsquo;s necklace is already in the box. It doesn&rsquo;t count as one of your three.</p>';
+  h += '<div class="substep"><span class="sn">1</span><b>Pick one object</b></div><div class="chips">' +
+    list.map(function (x) { return '<button type="button" class="ochip" data-part="' + pid + '" data-obj="' + x.id + '" aria-pressed="' + (S.pick[pid] === x.id) + '"><span class="ic">' + iconSVG(x.id) + "</span>" + esc(x.name) + "</button>"; }).join("") + "</div>";
+  if (!o) return h + '<p class="waiting">Pick one, and its <b>In the book</b> line and your note box will appear here.</p>' + navHTML(i);
+  h += '<div class="inbook"><span class="ch">In the book · ' + esc(o.ch) + ":</span> " + esc(o.book) + ' <span class="findit">Find this part in your own book.</span></div>';
+  var step = 2;
+  if (S.way === 2) {
+    h += '<div class="substep"><span class="sn">' + (step++) + '</span><b>Whose window is it?</b></div><div class="whobox"><select id="who-' + pid + '" data-who="' + pid + '" aria-label="Whose window is it?"><option value="">Choose a person</option>' +
+      PEOPLE.map(function (n) { return "<option" + (S.who[pid] === n ? " selected" : "") + ">" + esc(n) + "</option>"; }).join("") + "</select>" +
+      '<span class="hint">The person who owned it, carried it or cared about it.</span>' +
+      (LOST[S.who[pid]] ? '<span class="lost">' + esc(LOST[S.who[pid]]) + " Write as someone who loved them.</span>" : "") + "</div>";
+  }
+  var ok = noteOK(pid), n = sentences(S.note[pid]), wc = words(S.note[pid]);
+  h += '<div class="substep"><span class="sn">' + step + "</span><b>Write your " + esc(w.noteName) + "</b> <span class=\"hint\">3–4 sentences</span></div>" +
+    '<div class="note' + (ok ? " done" : "") + '" data-part="' + pid + '">' +
+    '<ul class="need"><li>Say <b>where</b> it is in the book.</li><li>Use a <b>short quote</b> or an <b>exact detail</b>.</li><li>Tell <b>why it matters</b>.</li><li>Write ' + esc(w.voice) + ".</li></ul>" +
+    '<p class="frame">Try: ' + w.frame + "</p>" +
+    '<textarea class="write" data-note="' + pid + '" aria-label="' + esc(w.noteName + " for " + o.name) + '" placeholder="Write your ' + esc(w.noteName) + ' here...">' + esc(S.note[pid]) + "</textarea>" +
+    '<div class="meter" data-meter="' + pid + '">' + meterHTML(n, wc, ok) + "</div>" +
+    '<div class="picrow"><span>Picture (optional): a drawing, a photo of a real object, or a picture you made in ENGAGE.</span><label class="btn ghost" style="cursor:pointer;">' + (S.pic[pid] ? "Change picture" : "Add a picture") + '<input type="file" accept="image/*" data-pic="' + pid + '" hidden></label>' + (S.pic[pid] ? '<button type="button" class="btn ghost" data-unpic="' + pid + '">Remove picture</button>' : "") + "</div></div>" +
+    '<div class="remember"><b>Remember:</b> ' + esc(w.remember) + "</div>";
+  return h + navHTML(i);
 }
 function meterHTML(n, wc, ok) { return '<span class="' + (n >= 3 ? "ok" : "") + '">' + n + " sentence" + (n === 1 ? "" : "s") + " (aim for 3–4)</span><span>" + wc + " words</span>" + (ok ? '<span class="ok">&#10003; Note finished</span>' : ""); }
 function panelHistory() {
   var w = WAYS[S.way];
-  var h = '<div class="kicker">Step 4 of 6 · ' + esc(w.title) + "</div><h2>Add one piece of true history</h2>" +
-    '<div class="todo"><div class="todo-h">What to do</div><ol><li>Pick <b>one history card</b>. Each one is something real you learned in this unit.</li><li>Choose <b>which object</b> it connects to.</li><li>' + esc(w.histAsk) + " Say it in your own words, and say how it connects.</li></ol></div>" +
+  var h = '<div class="kicker">Step 5 of 7 · ' + esc(w.title) + "</div><h2>Add one piece of true history</h2>" +
+    '<p class="hint" style="margin:0 0 4px;">' + esc(w.histAsk) + "</p>" +
+    '<div class="substep"><span class="sn">1</span><b>Pick one history card</b></div>' +
     '<div class="hcards">' + HISTORY.map(function (c) {
       return '<button type="button" class="hcard" data-h="' + c.id + '" aria-pressed="' + (S.hcard === c.id) + '"><img src="' + c.img + '" alt="' + esc(c.alt) + '" loading="lazy"><div class="hb"><h4><span class="tick">&#10003; </span>' + esc(c.title) + "</h4><p>" + esc(c.text) + '</p><div class="src">' + esc(c.src) + "</div></div></button>";
     }).join("") + "</div>";
-  if (S.hcard) {
-    h += '<div class="tieto"><b>Which object does it connect to?</b><div class="chips">' + PARTS.filter(function (p) { return S.pick[p.id]; }).map(function (p) {
+  h += '<div class="tieto" id="tieTo"><div class="substep"><span class="sn">2</span><b>Which of your objects does it connect to?</b></div>';
+  if (!S.hcard) h += '<p class="waiting">Pick a card first.</p>';
+  else h += '<div class="chips">' + PARTS.filter(function (p) { return S.pick[p.id]; }).map(function (p) {
       var o = byId(S.pick[p.id]);
-      return '<button type="button" class="ochip" data-hpart="' + p.id + '" aria-pressed="' + (S.hpart === p.id) + '"><span class="ic">' + iconSVG(o.id) + "</span>" + esc(o.name) + "</button>"; }).join("") + "</div></div>";
-  }
-  if (S.hcard && S.hpart) {
+      return '<button type="button" class="ochip" data-hpart="' + p.id + '" aria-pressed="' + (S.hpart === p.id) + '"><span class="ic">' + iconSVG(o.id) + "</span>" + esc(o.name) + "</button>"; }).join("") + "</div>";
+  h += '</div><div id="histWrite"><div class="substep"><span class="sn">3</span><b>Write 1–2 sentences</b> <span class="hint">They go at the end of that note.</span></div>';
+  if (S.hcard && S.hpart && S.pick[S.hpart]) {
     var o = byId(S.pick[S.hpart]), wc = words(S.htext);
-    h += '<div class="note" style="margin-top:14px;"><div class="note-h"><div class="ic">' + iconSVG(o.id) + "</div><div><h3>History in your note about " + esc(o.name) + '</h3><div class="sub">' + esc(hist(S.hcard).title) + '</div></div></div><p class="frame">This goes at the end of that note. 1–2 sentences.</p>' +
+    h += '<div class="note"><div class="note-h"><div class="ic">' + iconSVG(o.id) + "</div><div><h3>" + esc(o.name) + '</h3><div class="sub">True history: ' + esc(hist(S.hcard).title) + "</div></div></div>" +
       '<textarea class="write" data-hist="1" style="min-height:100px;" aria-label="Your history sentences" placeholder="' + (S.way === 3 ? "This secret was real. " : S.way === 1 ? "Ellen, something real happened too. " : "") + '...">' + esc(S.htext) + "</textarea>" +
       '<div class="meter" data-hmeter="1">' + (wc >= 12 ? '<span class="ok">&#10003; ' + wc + " words</span>" : "<span>" + wc + " words (at least 12)</span>") + "</div></div>";
-  }
-  return h + navHTML(3);
+  } else h += '<p class="waiting">' + (S.hcard ? "Choose the object it connects to." : "Pick a card and an object first.") + "</p>";
+  return h + "</div>" + navHTML(4);
 }
 function panelClosing() {
-  var w = WAYS[S.way], n = sentences(S.closing), wc = words(S.closing), ok = stepDone(4);
-  return '<div class="kicker">Step 5 of 6 · ' + esc(w.title) + "</div><h2>" + esc(w.closeTitle) + "</h2>" +
+  var w = WAYS[S.way], n = sentences(S.closing), wc = words(S.closing), ok = stepDone(5);
+  return '<div class="kicker">Step 6 of 7 · ' + esc(w.title) + "</div><h2>" + esc(w.closeTitle) + "</h2>" +
     '<div class="todo"><div class="todo-h">One short paragraph</div><ul><li>' + esc(w.closeAsk) + "</li><li>Think about the <b>whole book</b>, not just one object.</li><li>You may build on the claim from your essay.</li></ul></div>" +
     '<textarea class="write" data-closing="1" style="min-height:180px;" aria-label="' + esc(w.closeTitle) + '" placeholder="' + (S.way === 1 ? "Dear Ellen, ..." : "...") + '">' + esc(S.closing) + "</textarea>" +
-    '<div class="meter" data-cmeter="1">' + '<span class="' + (n >= 3 ? "ok" : "") + '">' + n + " sentences (at least 3)</span><span>" + wc + " words</span>" + (ok ? '<span class="ok">&#10003; Closing finished</span>' : "") + "</div>" + navHTML(4);
+    '<div class="meter" data-cmeter="1">' + '<span class="' + (n >= 3 ? "ok" : "") + '">' + n + " sentences (at least 3)</span><span>" + wc + " words</span>" + (ok ? '<span class="ok">&#10003; Closing finished</span>' : "") + "</div>" + navHTML(5);
 }
 
 /* ── the live display ── */
@@ -835,7 +893,7 @@ function itemsFor() {
 function sceneSVG() {
   var it = itemsFor();
   if (S.way === 1) return sceneBox(it);
-  if (S.way === 2) return sceneStreet(it, stepDone(2) && stepDone(4));
+  if (S.way === 2) return sceneStreet(it, [1, 2, 3].every(stepDone) && stepDone(5));
   if (S.way === 3) return sceneSecrets(it);
   return "";
 }
@@ -846,46 +904,74 @@ function drawDisplay() {
   $("#stage").innerHTML = sceneSVG() + '<div class="stage-cap"><b>' + esc(w.title) + "</b><span>" + hint + "</span>" + bedHTML() + "</div>";
   wireBed();
   $$(".revcard", $("#stage")).forEach(function (g) { g.addEventListener("click", function () { if (itemsFor()[+g.dataset.i].lit) g.classList.toggle("open"); }); });
-  $("#slots").innerHTML = PARTS.map(function (p) {
-    var o = byId(S.pick[p.id]), ok = noteOK(p.id);
-    return '<div class="slot"><span class="p">' + p.name + "</span><span>" + (o ? esc(o.name) : '<span class="hint">not picked yet</span>') + '</span><span class="s ' + (ok ? "ok" : "no") + '">' + (ok ? "&#10003; note" : o ? "note to write" : "") + "</span></div>";
+  /* the slots double as shortcuts: tap one to go to that step */
+  var open = firstOpen();
+  var slot = function (i, label, what, state, stateCls) {
+    var locked = i > open;
+    return '<button type="button" class="slot' + (S.step === i ? " here" : "") + '" data-slot="' + i + '"' + (locked ? ' aria-disabled="true"' : "") + '><span class="p">' + label + "</span><span>" + what + '</span><span class="s ' + stateCls + '">' + state + "</span></button>";
+  };
+  $("#slots").innerHTML = PARTS.map(function (p, k) {
+    var o = byId(S.pick[p.id]), ok = partDone(p.id);
+    return slot(k + 1, p.name, o ? esc(o.name) : '<span class="hint">not picked yet</span>', ok ? "&#10003; note" : o ? "note to write" : "", ok ? "ok" : "no");
   }).join("") +
-  '<div class="slot"><span class="p">History</span><span>' + (S.hcard ? esc(hist(S.hcard).title) : '<span class="hint">not chosen yet</span>') + '</span><span class="s ' + (stepDone(3) ? "ok" : "no") + '">' + (stepDone(3) ? "&#10003;" : "") + "</span></div>" +
-  '<div class="slot"><span class="p">Closing</span><span>' + esc(WAYS[S.way].closeTitle) + '</span><span class="s ' + (stepDone(4) ? "ok" : "no") + '">' + (stepDone(4) ? "&#10003;" : "") + "</span></div>";
+  slot(4, "History", S.hcard ? esc(hist(S.hcard).title) : '<span class="hint">not chosen yet</span>', stepDone(4) ? "&#10003;" : "", stepDone(4) ? "ok" : "no") +
+  slot(5, "Closing", esc(WAYS[S.way].closeTitle), stepDone(5) ? "&#10003;" : "", stepDone(5) ? "ok" : "no");
 }
+$("#slots").addEventListener("click", function (e) {
+  var b = e.target.closest("[data-slot]"); if (!b) return;
+  var i = +b.dataset.slot, open = firstOpen();
+  if (i > open) { go(open); flash("Finish Step " + (open + 1) + " first: " + missingFor(open)); return; }
+  go(i);
+});
 
 /* ── render + events ── */
 function render() {
   drawSteps();
   var p = $("#panel");
-  p.innerHTML = [panelWay, panelObjects, panelNotes, panelHistory, panelClosing][S.step]();
+  p.innerHTML = S.step === 0 ? panelWay() : PART_AT[S.step] ? panelPart(S.step) : S.step === 4 ? panelHistory() : panelClosing();
   wireGuides(p);
   drawDisplay();
 }
+/* after typing, only the bits that change are redrawn, so the box keeps its focus */
 var redrawT = null;
-function softRefresh() { clearTimeout(redrawT); redrawT = setTimeout(function () { drawSteps(); drawDisplay(); }, 200); }
+function softRefresh() {
+  clearTimeout(redrawT);
+  redrawT = setTimeout(function () {
+    drawSteps(); drawDisplay();
+    var nb = $('[data-next="' + S.step + '"]'); if (nb) nb.classList.toggle("notyet", !stepDone(S.step));
+    var dots = $$(".dots span"); dots.forEach(function (d, k) { if (k !== S.step) d.className = k < 6 && stepDone(k) ? "ok" : ""; });
+    if (stepDone(S.step)) { var m = $("#navMsg"); if (m) m.textContent = ""; }
+  }, 200);
+}
+function soon(sel) { setTimeout(function () { var el = $(sel); if (el) el.scrollIntoView({ behavior: "smooth", block: "center" }); }, 60); }
 
 $("#panel").addEventListener("click", function (e) {
   var t;
+  if ((t = e.target.closest("[data-next]"))) {
+    var i = +t.dataset.next, miss = missingFor(i);
+    if (miss) { flash(miss); return; }
+    go(i + 1); return;
+  }
   if ((t = e.target.closest("[data-go]"))) { go(+t.dataset.go); return; }
   if ((t = e.target.closest("[data-way]"))) {
-    var n = +t.dataset.way;
-    if (S.way !== n) { S.way = n; PARTS.forEach(function (p) { var o = byId(S.pick[p.id]); if (o && o.ways.indexOf(n) < 0) { S.pick[p.id] = ""; S.note[p.id] = S.note[p.id]; } }); if (S.hpart && !S.pick[S.hpart]) S.hpart = ""; }
-    save(); render(); return;
+    var n = +t.dataset.way, same = S.way === n;
+    if (!same) { S.way = n; PARTS.forEach(function (p) { var o = byId(S.pick[p.id]); if (o && o.ways.indexOf(n) < 0) S.pick[p.id] = ""; }); if (S.hpart && !S.pick[S.hpart]) S.hpart = ""; }
+    save(); render();
+    setTimeout(function () { go(firstOpen() > 0 ? Math.min(firstOpen(), 5) : 1); }, same ? 0 : 450);
+    return;
   }
   if ((t = e.target.closest("[data-obj]"))) {
     var part = t.dataset.part, id = t.dataset.obj;
-    if (S.pick[part] !== id) { S.pick[part] = id; if (S.way === 2) { var o = byId(id); S.who[part] = S.who[part] || ""; } }
-    save(); render(); return;
+    if (S.pick[part] !== id) S.pick[part] = id;
+    save(); render(); soon(S.way === 2 && !S.who[part] ? ".whobox" : ".inbook"); return;
   }
-  if ((t = e.target.closest("[data-h]"))) { S.hcard = t.dataset.h; save(); render(); return; }
-  if ((t = e.target.closest("[data-hpart]"))) { S.hpart = t.dataset.hpart; save(); render(); return; }
+  if ((t = e.target.closest("[data-h]"))) { S.hcard = t.dataset.h; save(); render(); soon("#tieTo"); return; }
+  if ((t = e.target.closest("[data-hpart]"))) { S.hpart = t.dataset.hpart; save(); render(); soon("#histWrite"); setTimeout(function () { var ta = $('[data-hist="1"]'); if (ta) ta.focus({ preventScroll: true }); }, 400); return; }
   if ((t = e.target.closest("[data-unpic]"))) { S.pic[t.dataset.unpic] = ""; save(); render(); return; }
 });
 $("#panel").addEventListener("change", function (e) {
   var t = e.target;
-  if (t.dataset.who) { S.who[t.dataset.who] = t.value; save(); render(); return; }
-  if (t.dataset.chk) { S.chk[t.dataset.chk][t.value] = t.checked; save(); return; }
+  if (t.dataset.who) { S.who[t.dataset.who] = t.value; save(); render(); if (t.value) soon(".note"); return; }
   if (t.dataset.pic && t.files && t.files[0]) { shrink(t.files[0], function (url) { if (url) { S.pic[t.dataset.pic] = url; save(); render(); } }); }
 });
 $("#panel").addEventListener("input", function (e) {
@@ -899,7 +985,7 @@ $("#panel").addEventListener("input", function (e) {
     $('[data-hmeter="1"]').innerHTML = wc >= 12 ? '<span class="ok">&#10003; ' + wc + " words</span>" : "<span>" + wc + " words (at least 12)</span>"; softRefresh();
   } else if (t.dataset.closing) {
     S.closing = t.value; save(); var n = sentences(t.value), wc2 = words(t.value);
-    $('[data-cmeter="1"]').innerHTML = '<span class="' + (n >= 3 ? "ok" : "") + '">' + n + " sentences (at least 3)</span><span>" + wc2 + " words</span>" + (stepDone(4) ? '<span class="ok">&#10003; Closing finished</span>' : ""); softRefresh();
+    $('[data-cmeter="1"]').innerHTML = '<span class="' + (n >= 3 ? "ok" : "") + '">' + n + " sentences (at least 3)</span><span>" + wc2 + " words</span>" + (stepDone(5) ? '<span class="ok">&#10003; Closing finished</span>' : ""); softRefresh();
   }
 });
 /* pictures are shrunk so they fit in saved work */
@@ -926,7 +1012,7 @@ nameIn.addEventListener("input", function () { S.name = nameIn.value; save(); })
 function openSave() {
   if (!S.way) { go(0); return; }
   var w = WAYS[S.way];
-  var missing = [0, 1, 2, 3, 4].filter(function (i) { return !stepDone(i); }).map(function (i) { return STEPS[i].title; });
+  var missing = [0, 1, 2, 3, 4, 5].filter(function (i) { return !stepDone(i); }).map(function (i) { return STEPS[i].title; });
   var nm = (S.name || "").trim();
   var fname = "NTS Final Project – " + (nm || "your name");
   var notes = PARTS.map(function (p) {
@@ -956,14 +1042,15 @@ function openSave() {
   $("#printBtn").addEventListener("click", function () { try { window.print(); } catch (e) {} });
   v.addEventListener("keydown", function (e) { if (e.key === "Escape") closeSave(); });
   $("#printBtn").focus();
-  drawSteps(); $$("#steps .step").forEach(function (li, i) { li.classList.toggle("now", i === 5); });
+  drawSteps(); $$("#steps .step").forEach(function (li, i) { li.classList.toggle("now", i === 6); });
 }
 function closeSave() { var v = $("#saveview"); if (v) v.remove(); document.body.classList.remove("saving"); document.title = "Number the Stars: Final Project"; drawSteps(); }
 
 /* welcome clip in the assignment card */
 $("#welcomeGuide").innerHTML = guideHTML("welcome");
 wireGuides($("#welcomeGuide"));
-if (S.step > 4) S.step = 4;
+if (!(S.step >= 0 && S.step <= 5)) S.step = 0;
+if (S.step > firstOpen()) S.step = firstOpen() > 5 ? 5 : firstOpen();
 render();
 })();
 
