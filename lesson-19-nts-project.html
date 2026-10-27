@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Number the Stars: Final Project</title>
+<!-- G4 ELA · Number the Stars end-of-novel project (one day, after 19.4, before Week 20).
+     "Courage and Historical Context Exhibit" from the G4 major assessments guide, as three options:
+     Until Ellen Comes Home · Liberation Night · Peter's Hidden Messages. One shared rubric.
+     Plan: claude.ai doc "Number the Stars Final Project: Three Ways to Show It" (Oct 13 2026).
+     Media (each stays hidden until its file exists):
+       Grete clips  assets/audio/guide/narrator/g4ela-nts-project-<welcome|ellen|liberation|hidden|model-ellen|model-liberation|model-hidden>.mp3
+       sound beds   assets/audio/project/g4ela-nts-project-bed-<ellen|liberation|hidden>.mp3
+       teacher film assets/video/teacher/g4ela-nts-project.mp4 (+ manifest slot g4ela-nts-project)
+     Images are the unit's own plates (assets/plates, assets/rescuers). Turn-in: one PDF. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --navy: #0E1C42; --navy-2: #16295c; --night: #101a35; --night-2: #1b2a52;
+  --cyan: #55C8E8; --gold: #C7922C; --gold-hi: #F3DC9A; --gold-deep: #9E721A;
+  --cream: #FFF3DC; --paper: #FFFDF7; --paper-2: #FBF5E8; --line: #E7D9BC;
+  --muted: #56627F; --brown: #6E5C3A; --green: #2E9E62; --red: #C8102E;
+  --lamp: #FFD27A; --lamp-2: #FFB547;
+  --f-display: "Lora", Georgia, serif;
+  --f-body: "Nunito", "Century Gothic", "Arial Rounded MT Bold", Verdana, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; overflow-x: hidden; }
+[hidden] { display: none !important; }
+img { max-width: 100%; display: block; }
+body {
+  background: #E3D5BC;
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(255,255,255,.55) 0 38%, transparent 39%),
+    radial-gradient(circle at 82% 78%, rgba(160,130,90,.10) 0 42%, transparent 43%);
+  background-attachment: fixed;
+  color: var(--navy); font-family: var(--f-body); font-size: 18px; line-height: 1.5;
+}
+button, input, textarea, select { font: inherit; }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 16px 48px; }
+
+/* ── header + info strip: same as the lessons ── */
+.oao-header { background: var(--navy); border-bottom: 6px solid var(--cyan); padding: 20px 28px 18px; position: relative; box-shadow: 0 0 40px rgba(14,28,66,.15); }
+.oao-header::after { content: ""; position: absolute; left: 0; right: 0; bottom: -12px; height: 6px; background: var(--gold); }
+.oao-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.oao-logo { width: 52px; height: 52px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.oao-logo img { width: 48px; height: 38px; }
+.oao-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.oao-sub { font-size: 15px; color: var(--cyan); letter-spacing: .5px; }
+.oao-title { font-family: var(--f-display); font-size: clamp(26px, 3vw, 32px); color: #fff; font-weight: 700; line-height: 1.2; margin: 0 0 12px; text-wrap: balance; }
+.oao-title em { color: #FFE9B8; font-style: italic; }
+.oao-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(85,200,232,.15); border: 1.5px solid rgba(85,200,232,.35); border-radius: 28px; padding: 6px 16px; color: #fff; font-weight: 800; font-size: 18px; }
+.oao-info { display: flex; flex-wrap: wrap; background: var(--paper); border-bottom: 2px solid var(--line); margin: 6px 0 18px; border-radius: 0 0 12px 12px; box-shadow: 0 8px 24px rgba(90,64,28,.12); }
+.oao-cell { flex: 1; min-width: 180px; padding: 12px 16px; border-right: 1px solid var(--line); display: flex; align-items: center; gap: 10px; }
+.oao-cell:last-child { border-right: none; }
+.oao-ico { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.oao-lab { font-size: 13px; color: #7A88A8; text-transform: uppercase; letter-spacing: .5px; font-weight: 800; }
+.oao-val { font-size: 17px; color: var(--navy); font-weight: 800; line-height: 1.2; }
+.oao-det { font-size: 15px; color: #3A4A6B; line-height: 1.3; }
+@media (max-width: 560px) { .oao-header { padding: 16px; } .oao-cell { min-width: 140px; } }
+
+/* ── assignment card ── */
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 6px 18px rgba(90,64,28,.12); padding: 18px 20px; margin-bottom: 18px; }
+.assign { border-left: 6px solid var(--gold); }
+.assign h2 { font-family: var(--f-display); font-size: 26px; margin: 0 0 6px; }
+.assign p.lead { margin: 0 0 12px; color: var(--muted); max-width: 72ch; }
+.assign p.lead b { color: var(--navy); }
+.namebar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 4px 0 14px; }
+.namebar label { font-weight: 800; }
+.namebar input { font-size: 18px; padding: 8px 12px; border: 2px solid var(--line); border-radius: 10px; min-width: 240px; background: #fff; color: var(--navy); }
+.watch-first { font-family: var(--f-display); font-weight: 700; font-size: 20px; margin: 0 0 6px; }
+.video-placeholder-wrap { display: none; border-radius: 12px; overflow: hidden; margin: 0 0 14px; border: 2px dashed rgba(199,146,44,.5); background: linear-gradient(135deg, #0E1C42, #1A2D5A); }
+.video-placeholder-inner { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 18px; color: #fff; }
+.teacher-video { margin: 0 0 14px; }
+.teacher-video video { display: block; width: 100%; max-width: 860px; border-radius: 12px; background: #000; }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 8px; }
+@media (max-width: 900px) { .steps { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (max-width: 520px) { .steps { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+.step button { width: 100%; height: 100%; text-align: left; display: grid; gap: 2px; align-content: start; border: 2px solid transparent; border-radius: 10px; padding: 8px 10px 10px; cursor: pointer; background: var(--paper-2); color: var(--navy); }
+.step button:hover { background: #F6EBD3; }
+.step .n { display: flex; align-items: center; gap: 8px; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 800; }
+.step .dot { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 15px; font-weight: 800; letter-spacing: 0; background: var(--navy); color: #fff; flex: none; }
+.step .t { font-family: var(--f-display); font-weight: 600; font-size: 18px; line-height: 1.15; }
+.step.done .dot { background: var(--green); }
+.step.now button { border-color: var(--gold); background: var(--cream); }
+.step.save .dot { background: var(--gold); }
+
+/* ── desk: work panel + live display ── */
+.desk { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 1000px) { .desk { grid-template-columns: minmax(0,1fr); } }
+.work { min-width: 0; }
+.panel h2 { font-family: var(--f-display); font-size: 28px; line-height: 1.15; margin: 0 0 4px; }
+.kicker { font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 800; }
+.todo { margin: 10px 0 14px; padding: 12px 16px; background: var(--cream); border: 1px solid #EBD9AF; border-left: 5px solid var(--gold); border-radius: 8px; }
+.todo-h { font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #9A6C14; font-weight: 800; margin-bottom: 4px; }
+.todo ol, .todo ul { margin: 0; padding-left: 24px; display: grid; gap: 3px; }
+.todo li::marker { font-weight: 800; color: var(--navy); }
+.remember { margin: 12px 0 0; padding: 10px 14px; background: #F3FBFE; border-left: 4px solid var(--cyan); border-radius: 0 8px 8px 0; }
+.navrow { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; margin-top: 16px; }
+.btn { border: 0; border-radius: 10px; padding: 11px 20px; font-weight: 800; font-size: 18px; cursor: pointer; background: var(--navy); color: #fff; }
+.btn:hover { background: var(--navy-2); }
+.btn.gold { background: var(--gold); }
+.btn.gold:hover { background: #B07F1E; }
+.btn.ghost { background: transparent; color: var(--navy); border: 2px solid var(--line); }
+.btn.ghost:hover { background: var(--paper-2); }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+.hint { font-size: 16px; color: var(--muted); }
+
+/* Step 1: three ways */
+.ways { display: grid; gap: 14px; }
+.way { border: 2px solid var(--line); border-radius: 14px; background: #fff; padding: 14px; display: grid; grid-template-columns: 132px minmax(0,1fr); gap: 14px; align-items: start; }
+.way.on { border-color: var(--gold); background: var(--cream); box-shadow: 0 0 0 3px rgba(199,146,44,.18); }
+.way .thumb { width: 132px; aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: var(--night); }
+.way .thumb svg { width: 100%; height: 100%; display: block; }
+.way h3 { font-family: var(--f-display); font-size: 22px; margin: 0; line-height: 1.2; }
+.way .you { font-weight: 800; color: #9A6C14; font-size: 16px; margin: 2px 0 6px; }
+.way p { margin: 0 0 8px; }
+.way .pick { margin-top: 4px; }
+.model { margin-top: 10px; border: 1px dashed #D9C08E; border-radius: 10px; background: var(--paper); padding: 10px 14px; }
+.model summary { cursor: pointer; font-weight: 800; color: #1F6FA8; }
+.model .mtext { font-family: var(--f-display); font-style: italic; margin: 8px 0 0; line-height: 1.6; }
+@media (max-width: 560px) { .way { grid-template-columns: minmax(0,1fr); } .way .thumb { width: 110px; } }
+
+/* Step 2: shelves of objects */
+.shelf { margin: 0 0 14px; }
+.shelf-h { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+.shelf-h b { font-family: var(--f-display); font-size: 20px; }
+.shelf-h span { color: var(--muted); font-size: 16px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ochip { display: inline-flex; align-items: center; gap: 8px; border: 2px solid var(--line); background: #fff; color: var(--navy); border-radius: 999px; padding: 5px 14px 5px 6px; cursor: pointer; font-weight: 700; font-size: 17px; }
+.ochip .ic { width: 34px; height: 34px; border-radius: 50%; background: var(--paper-2); display: grid; place-items: center; flex: none; }
+.ochip .ic svg { width: 28px; height: 28px; }
+.ochip:hover { border-color: var(--gold); }
+.ochip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+.ochip[aria-pressed="true"] .ic { background: #fff; }
+.inbook { margin-top: 8px; padding: 10px 14px; background: var(--paper-2); border-radius: 10px; border-left: 4px solid var(--gold); }
+.inbook .ch { font-weight: 800; color: #9A6C14; }
+.whobox { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.whobox select { font-size: 17px; padding: 6px 10px; border-radius: 8px; border: 2px solid var(--line); background: #fff; color: var(--navy); }
+.lost { color: #8A2B2B; font-size: 16px; }
+
+/* Step 3: note cards */
+.note { border: 2px solid var(--line); border-radius: 14px; background: #fff; padding: 14px; margin-bottom: 14px; }
+.note.done { border-color: #9AD3B3; }
+.note-h { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
+.note-h .ic { width: 52px; height: 52px; flex: none; border-radius: 12px; background: var(--paper-2); display: grid; place-items: center; overflow: hidden; }
+.note-h .ic svg { width: 44px; height: 44px; }
+.note-h .ic img { width: 100%; height: 100%; object-fit: cover; }
+.note-h h3 { margin: 0; font-family: var(--f-display); font-size: 21px; line-height: 1.2; }
+.note-h .sub { font-size: 15px; color: var(--muted); }
+.frame { font-size: 16px; color: var(--muted); margin: 6px 0; }
+.frame b { color: var(--navy); }
+textarea.write { width: 100%; min-height: 140px; border: 2px solid var(--line); border-radius: 10px; padding: 10px 12px; font-family: var(--f-display); font-size: 19px; line-height: 1.55; color: var(--navy); background: var(--paper); resize: vertical; }
+textarea.write:focus { border-color: var(--cyan); outline: none; }
+.meter { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 6px; font-size: 16px; color: var(--muted); }
+.meter .ok { color: var(--green); font-weight: 800; }
+.checks { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 6px 0 0; padding: 0; list-style: none; font-size: 16px; }
+.checks label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+.checks input { width: 20px; height: 20px; accent-color: var(--green); }
+.picrow { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: 10px; font-size: 16px; }
+.picrow .btn { font-size: 16px; padding: 7px 14px; }
+
+/* Step 4: history cards */
+.hcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.hcard { border: 2px solid var(--line); border-radius: 12px; background: #fff; overflow: hidden; cursor: pointer; text-align: left; padding: 0; color: var(--navy); display: flex; flex-direction: column; }
+.hcard:hover { border-color: var(--gold); }
+.hcard[aria-pressed="true"] { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(14,28,66,.18); }
+.hcard img { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: var(--paper-2); }
+.hcard .hb { padding: 10px 12px 12px; }
+.hcard h4 { margin: 0 0 4px; font-family: var(--f-display); font-size: 19px; line-height: 1.2; }
+.hcard p { margin: 0; font-size: 16px; line-height: 1.45; }
+.hcard .src { margin-top: 6px; font-size: 14px; color: var(--muted); font-weight: 700; }
+.hcard[aria-pressed="true"] .tick { display: inline; }
+.tick { display: none; color: var(--green); font-weight: 900; }
+.tieto { margin-top: 14px; }
+.tieto .chips { margin-top: 6px; }
+
+/* ── the display (right column) ── */
+.display { position: sticky; top: 12px; }
+.stage { border-radius: 16px; overflow: hidden; background: var(--night); box-shadow: 0 12px 30px rgba(14,28,66,.3); position: relative; }
+.stage svg.scene { display: block; width: 100%; height: auto; }
+.stage-cap { background: var(--navy); color: #fff; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; justify-content: space-between; }
+.stage-cap b { font-family: var(--f-display); font-size: 20px; color: var(--gold-hi); }
+.stage-cap span { font-size: 15px; color: #c9d6ee; }
+.stage-empty { padding: 40px 24px; text-align: center; color: #c9d6ee; font-family: var(--f-display); font-size: 20px; }
+.bedctl { margin-top: 10px; }
+.slots { display: grid; gap: 8px; margin-top: 12px; }
+.slot { display: flex; gap: 10px; align-items: center; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; font-size: 16px; }
+.slot .p { font-weight: 800; color: #9A6C14; min-width: 86px; }
+.slot .s { margin-left: auto; font-weight: 800; }
+.slot .s.ok { color: var(--green); }
+.slot .s.no { color: var(--muted); font-weight: 600; }
+
+/* scene animation */
+.lit-glow { transition: opacity .9s ease; }
+.curtain { transition: transform .9s ease, opacity .9s ease; transform-box: fill-box; transform-origin: top center; }
+.window.on .curtain { transform: scaleY(.04); opacity: 0; }
+.window .glow { opacity: 0; transition: opacity 1s ease .2s; }
+.window.on .glow { opacity: 1; }
+.window .obj { opacity: 0; transition: opacity .8s ease .5s; }
+.window.on .obj { opacity: 1; }
+.flag { opacity: 0; transition: opacity .8s ease; }
+.street.free .flag { opacity: 1; }
+.flagwave { transform-box: fill-box; transform-origin: left center; animation: wave 2.6s ease-in-out infinite; }
+@keyframes wave { 0%,100% { transform: skewY(0deg); } 50% { transform: skewY(-4deg); } }
+.star { animation: twinkle 3s ease-in-out infinite; }
+@keyframes twinkle { 0%,100% { opacity: .9; } 50% { opacity: .35; } }
+.revcard { cursor: pointer; }
+.revcard .back { opacity: 0; transition: opacity .6s ease; }
+.revcard.open .back { opacity: 1; }
+.revcard .front { transition: opacity .6s ease; }
+.revcard.open .front { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .flagwave, .star { animation: none; } .curtain, .glow, .obj, .flag, .back, .front { transition: none !important; } }
+
+/* rubric */
+.rubric summary { cursor: pointer; font-family: var(--f-display); font-size: 21px; font-weight: 700; }
+.rtable { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 16px; }
+.rtable th, .rtable td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: top; text-align: left; }
+.rtable th { background: var(--navy); color: #fff; }
+.rtable td:first-child { font-weight: 800; background: var(--paper-2); }
+.rwrap { overflow-x: auto; }
+
+/* guide audio: copied from sparkle.css so the page matches the lessons */
+:root { --spk-gold: #C7922C; }
+.guide.spk-guide-wrap { margin: 0 0 12px; max-width: 560px; display: block; }
+.spk-audio{display:flex;align-items:center;gap:11px;margin:10px 0 2px;max-width:460px;}
+.spk-audio[hidden]{display:none;}
+.spk-audio-btn{display:inline-flex;align-items:center;gap:9px;flex:none;background:#FFFDF7;border:1.5px solid #E0CCA2;border-radius:999px;padding:7px 16px 7px 11px;cursor:pointer;font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;color:#6E5A34;transition:border-color .18s,background .18s,transform .18s;}
+.spk-audio-btn:focus-visible{outline:2px solid var(--spk-gold);outline-offset:2px;}
+.spk-audio-ico{width:19px;height:19px;flex:none;border-radius:50%;background:var(--spk-gold);position:relative;}
+.spk-audio-ico::before{content:'';position:absolute;left:7px;top:5px;border-left:7px solid #FFF8E9;border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;}
+.spk-audio.playing .spk-audio-ico::before{left:6px;top:5.5px;border:none;width:3px;height:8px;background:#FFF8E9;box-shadow:4px 0 0 #FFF8E9;}
+.spk-audio-bar{flex:1 1 auto;height:4px;border-radius:2px;background:#EADCBE;overflow:hidden;}
+.spk-audio-bar i{display:block;height:100%;width:0;background:var(--spk-gold);transition:width .2s linear;}
+.spk-audio-time{flex:none;font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;color:#6E5C3A;min-width:30px;text-align:right;}
+.spk-guide{margin:4px 0 8px;max-width:520px;gap:14px;}
+.spk-guide .spk-audio-btn{background:linear-gradient(180deg,#D8A63C,var(--spk-gold));border:1.5px solid #B07F1E;color:#FFFDF4;font-size:17px;font-weight:800;letter-spacing:.01em;padding:11px 24px 11px 15px;gap:11px;box-shadow:0 3px 0 #9E721A, 0 6px 14px rgba(120,86,20,.28);}
+.spk-guide .spk-audio-btn:hover{background:linear-gradient(180deg,#E3B44C,#CE9A2F);border-color:#9E721A;transform:translateY(-2px);}
+.spk-guide .spk-audio-ico{width:24px;height:24px;background:#FFF8E9;}
+.spk-guide .spk-audio-ico::before{left:9px;top:6.5px;border-left-color:var(--spk-gold);border-left-width:9px;border-top-width:5.5px;border-bottom-width:5.5px;}
+.spk-guide.playing .spk-audio-ico::before{left:8px;top:7px;width:3.5px;height:10px;background:#B07F1E;box-shadow:5px 0 0 #B07F1E;}
+.spk-guide .spk-audio-bar{height:5px;background:#E6D3AC;}
+.spk-note{max-width:560px;font-family:'Lora',Georgia,serif;font-size:16px;color:#5A4A2C;}
+.spk-note summary{cursor:pointer;font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;color:#6E5C3A;padding:2px 0;}
+.spk-note-body{background:#FFFCF4;border:1px solid #EADCBE;border-left:3px solid var(--spk-gold);border-radius:8px;padding:12px 16px;margin-top:6px;line-height:1.6;}
+.spk-media{margin:4px 0 10px;}
+.spk-media video{display:block;max-width:100%;border-radius:10px;background:#0E1C42;}
+.bed { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid #3B4D7A; background: rgba(255,255,255,.06); color: #dce6f7; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 15px; cursor: pointer; }
+.bed[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #fff; }
+
+/* ── save view (Step 6) + PDF sheets ── */
+.saveview { position: fixed; inset: 0; z-index: 50; overflow: auto; background: rgba(14,28,66,.92); padding: 20px 16px 60px; }
+.save-bar { max-width: 900px; margin: 0 auto 18px; background: var(--paper); border-radius: 14px; padding: 16px 20px; color: var(--navy); }
+.save-bar h2 { font-family: var(--f-display); margin: 0 0 6px; }
+.save-bar ol { margin: 6px 0 10px; padding-left: 24px; }
+.save-bar .warn { background: #FDECEC; border-left: 4px solid #C0392B; padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 6px 0 10px; }
+.save-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.sheets { max-width: 900px; margin: 0 auto; display: grid; gap: 18px; }
+.sheet { background: #FFFDF7; color: var(--navy); border-radius: 6px; padding: 34px 40px; box-shadow: 0 12px 28px rgba(0,0,0,.45); }
+.sheet h3 { font-family: var(--f-display); font-size: 26px; margin: 0 0 4px; }
+.sheet .k { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 800; }
+.sheet .scene-wrap { border-radius: 10px; overflow: hidden; background: var(--night); margin: 12px 0; }
+.sheet .scene-wrap svg { width: 100%; height: auto; display: block; }
+.sheet .pn { display: grid; grid-template-columns: 120px minmax(0,1fr); gap: 14px; align-items: start; padding: 12px 0; border-top: 1px solid var(--line); break-inside: avoid; }
+.sheet .pn .ic { width: 120px; height: 120px; border-radius: 10px; background: var(--paper-2); display: grid; place-items: center; overflow: hidden; }
+.sheet .pn .ic svg { width: 92px; height: 92px; }
+.sheet .pn .ic img { width: 100%; height: 100%; object-fit: cover; }
+.sheet .pn h4 { margin: 0; font-family: var(--f-display); font-size: 20px; }
+.sheet .pn .meta { font-size: 14px; color: var(--muted); font-weight: 700; }
+.sheet .pn .txt { font-family: var(--f-display); font-size: 17px; line-height: 1.6; white-space: pre-wrap; margin-top: 4px; }
+.sheet .pn .hist { margin-top: 8px; padding: 8px 12px; background: #F3FBFE; border-left: 3px solid var(--cyan); border-radius: 0 8px 8px 0; font-family: var(--f-display); font-size: 16px; white-space: pre-wrap; }
+.sheet .closing { font-family: var(--f-display); font-size: 18px; line-height: 1.65; white-space: pre-wrap; border-top: 1px solid var(--line); padding-top: 12px; }
+.sheet .missing { color: #A33; font-style: italic; }
+@media print {
+  @page { size: letter portrait; margin: 0.45in; }
+  body.saving > .wrap, body.saving .save-bar { display: none !important; }
+  body.saving { background: #fff !important; }
+  body.saving .saveview { position: static; overflow: visible; background: none; padding: 0; }
+  body.saving .sheets { max-width: none; display: block; }
+  body.saving .sheet { box-shadow: none; border-radius: 0; padding: 0; break-after: page; page-break-after: always; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body.saving .sheet:last-child { break-after: auto; page-break-after: auto; }
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <!-- Same header as the G4 ELA lessons -->
+  <header class="oao-header">
+    <div class="oao-brand">
+      <div class="oao-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy"></div>
+      <div><div class="oao-org">Optima Academy Online</div><div class="oao-sub">An Education Experience Company</div></div>
+    </div>
+    <h1 class="oao-title"><em>Number the Stars</em> &mdash; Final Project</h1>
+    <div class="oao-badge"><span aria-hidden="true">&#x2B50;</span><span>Unit Project</span></div>
+  </header>
+  <div class="oao-info">
+    <div class="oao-cell"><div class="oao-ico" style="background:#E3F8ED;">&#x1F4DA;</div><div><div class="oao-lab">Unit</div><div class="oao-val">Unit 3</div><div class="oao-det">Number the Stars</div></div></div>
+    <div class="oao-cell"><div class="oao-ico" style="background:#EAF8FD;">&#x1F4C5;</div><div><div class="oao-lab">When</div><div class="oao-val">After Lesson 19.4</div><div class="oao-det">One day</div></div></div>
+    <div class="oao-cell"><div class="oao-ico" style="background:#FFF3DC;">&#x1F4D6;</div><div><div class="oao-lab">Reading</div><div class="oao-val">Ch. 1&ndash;17</div><div class="oao-det">and the Afterword</div></div></div>
+    <div class="oao-cell"><div class="oao-ico" style="background:#F0E8FF;">&#x1F4C4;</div><div><div class="oao-lab">Turn in</div><div class="oao-val">One PDF</div><div class="oao-det">in Canvas</div></div></div>
+  </div>
+
+  <section class="card assign" aria-labelledby="assignH">
+    <h2 id="assignH">Three ways to show it</h2>
+    <p class="lead">You finished <i>Number the Stars</i>. Now pick <b>one of three ways</b> to show what it means. Every way asks for the same thing: <b>three objects from the book</b>, a <b>note</b> about each one, <b>one piece of real history</b>, and a <b>closing paragraph</b> about courage. Your work saves as you go.</p>
+    <div id="welcomeGuide"></div>
+
+    <!-- ═══ INTRODUCTION VIDEO ═══ -->
+    <div class="video-placeholder-wrap">
+    <!-- slot: g4ela-nts-project -->
+    <div class="video-placeholder-inner">
+      <div class="vp-label">Watch this first</div>
+      <div class="vp-title">Number the Stars: Final Project</div>
+      <div class="vp-slot">g4ela-nts-project</div>
+      <div class="vp-notes"><strong>Teacher recording notes:</strong> About 3 minutes. The three ways (a box for Ellen, a lit window, a secret revealed) and that all three are graded the same. One object from the beginning, middle and end. What a strong note has: where, an exact detail, and why it matters. Saving the PDF in Step 6 and uploading it in Canvas.</div>
+    </div>
+    </div>
+    <div class="teacher-video" id="teacherVideo" hidden>
+      <p class="watch-first">Watch this first</p>
+      <video controls preload="metadata" playsinline poster="assets/video/teacher/g4ela-nts-project.jpg" aria-label="Watch this first: the Number the Stars final project">
+        <source src="assets/video/teacher/g4ela-nts-project.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="namebar">
+      <label for="stuName">Your name</label>
+      <input id="stuName" type="text" autocomplete="name" placeholder="First and last name">
+    </div>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
+  <div class="desk">
+    <section class="work card panel" id="panel" aria-live="polite"></section>
+    <aside class="display" aria-label="Your project so far">
+      <div class="stage" id="stage"></div>
+      <div class="slots" id="slots"></div>
+    </aside>
+  </div>
+
+  <section class="card">
+    <details class="rubric">
+      <summary>How your project is graded</summary>
+      <p class="hint" style="margin:8px 0 0;">One rubric for all three ways, out of 20 points. &ldquo;Voice&rdquo; is checked against the way you picked.</p>
+      <div class="rwrap">
+      <table class="rtable">
+        <thead><tr><th>What</th><th>4 &ndash; Exceeds</th><th>3 &ndash; Meets</th><th>2 &ndash; Approaching</th><th>1 &ndash; Beginning</th></tr></thead>
+        <tbody>
+          <tr><td>Evidence</td><td>3 accurate objects, one from each part of the book; every note has a well-chosen quote or exact detail</td><td>3 accurate objects, one from each part; each note has a quote or detail</td><td>Only 2 objects, or one part of the book missing; some details vague</td><td>1 object, or details are wrong</td></tr>
+          <tr><td>Thinking</td><td>Every note explains why the object matters and connects it to courage or friendship</td><td>Each note explains why the object matters</td><td>Notes mostly retell what the object is</td><td>Notes only name the object</td></tr>
+          <tr><td>History</td><td>True history from the unit, clearly tied to one object and explained</td><td>True history, tied to one object</td><td>History is there but loosely tied, or partly wrong</td><td>No history, or it is wrong</td></tr>
+          <tr><td>Voice</td><td>The voice stays true to your way the whole time; the closing pulls the whole book together</td><td>The voice fits your way; the closing says what the book shows about courage</td><td>The voice slips in places; the closing is thin</td><td>The voice is missing; no closing</td></tr>
+          <tr><td>Conventions</td><td>Few or no mistakes with sound-alike words, contractions, subject&ndash;verb agreement and capitals</td><td>Some mistakes that don&rsquo;t get in the way</td><td>Mistakes that sometimes get in the way</td><td>Mistakes make it hard to follow</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </details>
+  </section>
+</div>
+
+<script>
+/* ═══ DATA ═══════════════════════════════════════════════════════════
+   Every object and chapter below was checked against the novel (OCR of the
+   FlipBuilder PDF in ELA OAO, Oct 27 2026). "In the book" lines are summaries,
+   never quotes: students quote from their own copy. */
+var PARTS = [
+  { id: "b", name: "Beginning", ch: "Chapters 1–5" },
+  { id: "m", name: "Middle", ch: "Chapters 6–12" },
+  { id: "e", name: "End", ch: "Chapters 13–17" }
+];
+
+var PEOPLE = ["Annemarie", "Ellen", "Kirsti", "Mama", "Papa", "Uncle Henrik", "Peter", "Lise", "Mrs. Rosen", "Mr. Rosen"];
+/* people who do not live to see liberation night (Ch. 2 and Ch. 17) */
+var LOST = { "Peter": "Peter did not live to see this night (Ch. 17).", "Lise": "Lise died before the story begins (Ch. 2, Ch. 17)." };
+
+var OBJECTS = [
+  { id: "trunk", part: "b", name: "Lise’s blue trunk", ch: "Ch. 2", ways: [1, 2], who: "Lise",
+    book: "In the corner of Annemarie’s room, a blue carved trunk holds Lise’s wedding dress and the things she saved for her marriage. Lise died two weeks before her wedding." },
+  { id: "shoes", part: "b", name: "Kirsti’s fish-skin shoes", ch: "Ch. 4", ways: [1, 2], who: "Kirsti",
+    book: "There is no leather in the war, so Mama finds Kirsti shoes made of fish skin. Kirsti hates the green color, and Ellen offers to have her father color them black." },
+  { id: "photos", part: "b", name: "The baby pictures", ch: "Ch. 5", ways: [1, 2, 3], who: "Papa",
+    book: "When the soldiers say Ellen can’t be Papa’s daughter, Papa tears baby pictures out of the family album. The baby named Lise has dark hair, and the officer leaves." },
+  { id: "name", part: "b", name: "Ellen’s new name", ch: "Ch. 5", ways: [3], who: "Ellen",
+    book: "The night the soldiers come, Ellen has to become Lise Johansen, Annemarie’s older sister." },
+  { id: "phone", part: "m", name: "The phone call", ch: "Ch. 6", ways: [3], who: "Papa",
+    book: "Papa asks Uncle Henrik if the weather is good for fishing, and says Mama will bring him a carton of cigarettes. Annemarie knows that isn’t true. Papa is speaking in code." },
+  { id: "boat", part: "m", name: "Uncle Henrik’s boat", ch: "Ch. 7, 16", ways: [2, 3], who: "Uncle Henrik",
+    book: "Uncle Henrik’s fishing boat is the Ingeborg, named for Mama. In Ch. 16 he tells Annemarie the boats have carefully hidden places below the deck." },
+  { id: "casket", part: "m", name: "Great-aunt Birte’s casket", ch: "Ch. 8–11", ways: [1, 2, 3], who: "Uncle Henrik",
+    book: "The family holds a wake for Great-aunt Birte, but there is no Great-aunt Birte. Inside the casket are blankets and warm clothes for the people escaping." },
+  { id: "psalm", part: "m", name: "The psalm Peter reads", ch: "Ch. 10", ways: [1, 2], who: "Peter",
+    book: "After the soldiers leave the wake, Peter reads a psalm about God, who numbers the stars. Annemarie wonders how anyone could count them all." },
+  { id: "sweater", part: "m", name: "Kirsti’s red sweater", ch: "Ch. 11", ways: [1, 2], who: "Kirsti",
+    book: "There is nothing warm for the baby who is escaping, so Mama gives away Kirsti’s thick red sweater with the heart buttons." },
+  { id: "basket", part: "e", name: "The lunch basket", ch: "Ch. 13–15", ways: [1, 2, 3], who: "Annemarie",
+    book: "Annemarie runs to the boat with a basket of bread, cheese and an apple. The packet for Uncle Henrik is hidden underneath. Soldiers and their dogs stop her on the path." },
+  { id: "hanky", part: "e", name: "The handkerchief", ch: "Ch. 15–16", ways: [1, 2, 3], who: "Uncle Henrik",
+    book: "The soldiers find only a handkerchief in the packet. In Ch. 16 Uncle Henrik explains it kept the dogs from smelling the people hidden on his boat." },
+  { id: "pail", part: "e", name: "The milk pail", ch: "Ch. 16", ways: [1, 2], who: "Uncle Henrik",
+    book: "While he milks Blossom, Uncle Henrik tells Annemarie she was brave. He says being brave means not thinking about the dangers, just what you must do." },
+  { id: "candles", part: "e", name: "The Rosens’ candlesticks", ch: "Ch. 11, 17", ways: [1, 2], who: "Mrs. Rosen",
+    book: "Mrs. Rosen lit the Sabbath candles at home, and the Rosens had to leave their candlesticks behind. In Ch. 17, Mama has kept them polished while the Rosens are away." }
+];
+
+/* real-history cards: only what the unit already taught (Week 15–19 lessons, the Afterword) */
+var HISTORY = [
+  { id: "king", img: "assets/plates/nts-case-16-2.jpg", alt: "King Christian X rides a horse down a city street while people on bicycles ride beside him.",
+    title: "The king rode alone", text: "King Christian X rode his horse through Copenhagen almost every morning with no guards. Lowry says Papa’s story about the king really was written down.", src: "Afterword · Lesson 16.2" },
+  { id: "navy", img: "assets/plates/nts-16-2.jpg", alt: "A Danish warship tilted and half sunk in Copenhagen harbor.",
+    title: "The navy sank itself", text: "In August 1943, Danes sank their own navy in Copenhagen harbor so Germany could not take the ships.", src: "Afterword · Ch. 4" },
+  { id: "warning", img: "assets/rescuers/duckwitz.jpg", alt: "A portrait of Georg Duckwitz, a German official.",
+    title: "A warning got out", text: "A German official, G. F. Duckwitz, told the Danish government about the plan to arrest the Jews. The warning reached the rabbi, and the families fled.", src: "Afterword · Lesson 16.4" },
+  { id: "sweden", img: "assets/plates/nts-19-4.jpg", alt: "A small wooden boat crosses rough water with people sitting low inside it.",
+    title: "Nearly 7,000 crossed the sea", text: "In the weeks after the Jewish New Year in 1943, nearly seven thousand Jewish people were carried across the sea to Sweden.", src: "Afterword" },
+  { id: "hanky", img: "assets/plates/nts-case-19-2.jpg", alt: "A soldier walks down a country road with a German shepherd dog on a leash.",
+    title: "The handkerchief was real", text: "Swedish scientists made a powder that drew the dogs in, then took away their sense of smell for a while. Almost every boat captain carried a handkerchief with it.", src: "Afterword · Lesson 19.2" },
+  { id: "kim", img: "assets/rescuers/malthe-bruun.jpg", alt: "A portrait of Kim Malthe-Bruun, a young man with light, windblown hair.",
+    title: "Kim Malthe-Bruun’s letter", text: "Kim was a young Resistance fighter who did not live to see the war end. Lowry ends the book with his letter to his mother about a world of human decency.", src: "Afterword · Lesson 19.4" },
+  { id: "free", img: "assets/plates/nts-19-3.jpg", alt: "Two men raise a huge Danish flag in a city square.",
+    title: "Denmark was free", text: "In May 1945 the war ended in Denmark. People tore down their blackout curtains, church bells rang, and flags flew from the windows.", src: "Lesson 19.3 · Ch. 17" }
+];
+
+var WAYS = {
+  1: { key: "ellen", title: "Until Ellen Comes Home", short: "A keepsake box for Ellen",
+    you: "You are Annemarie.",
+    pitch: "At the end of the book, Annemarie keeps Ellen’s Star of David necklace and plans to wear it until Ellen comes home. What else might she save for her friend? Fill a keepsake box, so that when Ellen comes back she will know what happened while she was gone.",
+    remember: "Annemarie can only tell Ellen things Annemarie saw or was told. She was not on the boat.",
+    noteName: "note to Ellen", voice: "as Annemarie, writing to Ellen",
+    frame: "<b>Dear Ellen,</b> this is ___. It was in Chapter ___, when ___. I saved it because ___.",
+    histAsk: "In your note, tell Ellen something real that the Danish people did. Use a history card.",
+    closeTitle: "Your last note", closeAsk: "Write one more note to Ellen. Tell her what you learned about being brave.",
+    model: { obj: "Ellen’s necklace", file: "model-ellen", text: "Dear Ellen, this is your necklace, the one with the Star of David. The night the soldiers came, I pulled it from your neck and held it so tightly that the star pressed its shape into my hand. I kept it hidden so they would believe you were my sister. I am keeping it safe until you come home." },
+    bed: "Quiet room" },
+  2: { key: "liberation", title: "Liberation Night", short: "Three lit windows on a Copenhagen street",
+    you: "You are the people of one street.",
+    pitch: "When the war ended in Denmark in May 1945, people tore down the dark blackout curtains they had hung for five years, and light shone out of the windows again. You are lighting three windows on a street in Copenhagen. In each window stands one object from the story and the person it belonged to.",
+    remember: "Some people in the story did not live to see this night. For them, write the note as someone who loved them, remembering.",
+    noteName: "window note", voice: "in that person’s voice, the night the war ends",
+    frame: "<b>I am ___.</b> The war is over tonight. This ___ was mine. In Chapter ___, ___. To me it meant ___.",
+    histAsk: "In one window note, connect the object to something real the Danish people did. Use a history card.",
+    closeTitle: "Light the last window", closeAsk: "Write one paragraph as the whole street: what does this book say about being brave?",
+    model: { obj: "Peter’s seashell", file: "model-liberation", text: "The war is over, and the streets are full of flags. I am holding the seashell Peter brought me on one of his visits. Peter worked for the Resistance, and he did not live to see this day. I keep his shell in my window so I remember how brave he was." },
+    bed: "Street on liberation night" },
+  3: { key: "hidden", title: "Peter’s Hidden Messages", short: "Secrets revealed",
+    you: "You are the one who reveals the secrets.",
+    pitch: "In Number the Stars, ordinary things carry secrets. A box, a basket or a phone call can mean something the soldiers never guess. For each object, show what it looked like on the outside and what it was really doing.",
+    remember: "Reveal only what the book shows. Some secrets are explained late in the story, so check the chapter before you write.",
+    noteName: "reveal note", voice: "in two parts: “On the outside…” and “Really…”",
+    frame: "<b>On the outside,</b> ___. <b>Really,</b> ___. In Chapter ___, ___. The secret had to stay hidden because ___.",
+    histAsk: "In one reveal note, show that the secret was real. Use a history card.",
+    closeTitle: "Your closing message", closeAsk: "Put all three secrets together. What do they say about the people who kept them, and about being brave?",
+    model: { obj: "Peter’s secret newspaper", file: "model-hidden", text: "On the outside, it was only a few thin pages, folded small. Really, it was De Frie Danske, The Free Danes, a secret newspaper the Germans had banned. It told Danes the news the soldiers wanted hidden. In Chapter 1, Annemarie’s family has a copy, and if a soldier had found it, someone could have been arrested." },
+    bed: "Secret room" }
+};
+
+/* Grete's clips (scripts approved in the plan doc; the words double as Read along) */
+var GUIDES = {
+  "welcome": "Hello, this is Grete. The book is finished, and now it’s your turn to keep something. When the war ended, everyone I knew held on to a few things they could never throw away. You’ll choose one of three ways to show what this story means: a box for Ellen, a lit window, or a secret revealed. Each way asks for the same careful thinking.",
+  "ellen": "When a friend has to go away, you keep their things ready. My mother kept a neighbor family’s spare key in her sewing box until they came home. Annemarie is keeping Ellen’s necklace. In this choice, you are Annemarie, filling a box for her friend. Remember, she can only tell Ellen what she saw or was told. She wasn’t on the boat.",
+  "liberation": "I remember the night the war ended. People tore down the dark curtains they had hung for years, and light shone out of the windows, one after another, all along the street. In this choice, you light three windows. Each one holds an object and the person who cared about it. Some people in the story didn’t live to see that night. For them, write as someone who remembers.",
+  "hidden": "In the war, the safest secret was one that looked dull. A box, a basket, a few ordinary words on the telephone. In this choice, you’re the one who lifts the lid. For each object, tell what it seemed to be, and then what it really was. Be careful. Lowry keeps some secrets until late in the book, so reveal only what the pages show.",
+  "model-ellen": "Here’s a model note. The necklace is taken, so choose your own three. Dear Ellen, this is your necklace, the one with the Star of David. The night the soldiers came, I pulled it from your neck and held it so tightly that the star pressed its shape into my hand. I kept it hidden so they would believe you were my sister. I am keeping it safe until you come home.",
+  "model-liberation": "Here’s a model note, in Annemarie’s voice. The seashell is taken, so choose your own three. The war is over, and the streets are full of flags. I am holding the seashell Peter brought me on one of his visits. Peter worked for the Resistance, and he did not live to see this day. I keep his shell in my window so I remember how brave he was.",
+  "model-hidden": "Here’s a model note. The newspaper is taken, so choose your own three. On the outside, it was only a few thin pages, folded small. Really, it was De Frie Danske, The Free Danes, a secret newspaper the Germans had banned. It told Danes the news the soldiers wanted hidden. In Chapter 1, Annemarie’s family has a copy, and if a soldier had found it, someone could have been arrested."
+};
+var GUIDE_LABELS = {
+  "welcome": "Grete’s welcome", "ellen": "Grete · Until Ellen Comes Home", "liberation": "Grete · Liberation Night", "hidden": "Grete · Peter’s Hidden Messages",
+  "model-ellen": "Grete reads the model note", "model-liberation": "Grete reads the model note", "model-hidden": "Grete reads the model note"
+};
+
+var STEPS = [
+  { id: "way", title: "Choose your way" },
+  { id: "objects", title: "Pick 3 objects" },
+  { id: "notes", title: "Write your notes" },
+  { id: "history", title: "Add true history" },
+  { id: "closing", title: "Closing piece" },
+  { id: "save", title: "Save your PDF" }
+];
+
+/* ═══ ART: object icons (100×100) and the three scenes (600×400) ═══ */
+var ICON = {
+  trunk: '<path d="M14 46 Q50 22 86 46 V80 H14Z" fill="#3E6FA8"/><path d="M14 46 Q50 22 86 46" fill="none" stroke="#24466F" stroke-width="3"/><rect x="14" y="46" width="72" height="34" fill="#4A7FBC" stroke="#24466F" stroke-width="3"/><rect x="45" y="52" width="10" height="12" rx="2" fill="#E3B44C" stroke="#9E721A" stroke-width="2"/><g fill="#F3DC9A"><circle cx="26" cy="64" r="4"/><circle cx="74" cy="64" r="4"/><circle cx="33" cy="72" r="2.5"/><circle cx="67" cy="72" r="2.5"/></g><path d="M14 80 H86" stroke="#24466F" stroke-width="3"/>',
+  shoes: '<path d="M12 70 Q12 52 26 50 Q34 50 38 58 L52 62 Q58 64 58 72 V76 H12Z" fill="#4E8B5A" stroke="#2F5A38" stroke-width="2.5"/><path d="M44 78 Q44 60 58 58 Q66 58 70 66 L84 70 Q90 72 90 80 V84 H44Z" fill="#2B2B33" stroke="#111" stroke-width="2.5"/><g fill="none" stroke="#7FB58A" stroke-width="1.6" opacity=".9"><path d="M18 64 q4 -4 8 0 q4 -4 8 0"/><path d="M20 70 q4 -4 8 0 q4 -4 8 0"/></g><path d="M50 70 q6 -3 12 0" stroke="#666" stroke-width="1.6" fill="none"/>',
+  photos: '<rect x="20" y="14" width="56" height="70" rx="3" fill="#F6EEDC" stroke="#B8A57E" stroke-width="2.5" transform="rotate(-6 48 49)"/><rect x="26" y="20" width="44" height="46" fill="#C9BBA0" transform="rotate(-6 48 49)"/><g transform="rotate(-6 48 49)"><circle cx="48" cy="40" r="10" fill="#E9D3B8"/><path d="M37 37 q3 -12 11 -12 q9 0 12 12 q-4 -6 -11 -6 q-8 0 -12 6Z" fill="#3A2A20"/><path d="M34 66 q14 -18 28 0Z" fill="#FFF8EE"/></g><path d="M62 18 l6 10 l-5 8 l7 9 l-6 9 l7 10 l-5 9 l6 10" fill="none" stroke="#8A6A44" stroke-width="2" stroke-dasharray="3 2"/>',
+  name: '<rect x="12" y="30" width="76" height="44" rx="8" fill="#FFFDF7" stroke="#C7922C" stroke-width="3"/><rect x="12" y="30" width="76" height="14" rx="6" fill="#C7922C"/><text x="50" y="41" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" font-weight="800" fill="#fff">MY NAME IS</text><text x="50" y="65" text-anchor="middle" font-family="Lora,Georgia,serif" font-size="19" font-style="italic" fill="#0E1C42">Lise</text>',
+  phone: '<path d="M18 74 Q18 54 34 50 H66 Q82 54 82 74 Z" fill="#222" stroke="#000" stroke-width="2"/><circle cx="50" cy="66" r="11" fill="#3A3A3A" stroke="#555" stroke-width="2"/><g fill="#999"><circle cx="50" cy="58" r="1.8"/><circle cx="56" cy="61" r="1.8"/><circle cx="58" cy="67" r="1.8"/><circle cx="44" cy="61" r="1.8"/><circle cx="42" cy="67" r="1.8"/><circle cx="55" cy="72" r="1.8"/></g><path d="M16 42 Q16 30 26 32 L30 40 Q50 34 70 40 L74 32 Q84 30 84 42 Q84 48 76 48 H24 Q16 48 16 42Z" fill="#111"/>',
+  boat: '<path d="M10 66 H90 L80 82 H22Z" fill="#8A4B2E" stroke="#5B2E18" stroke-width="2.5"/><path d="M10 66 H90" stroke="#E9D8B4" stroke-width="3"/><path d="M48 66 V16" stroke="#5B2E18" stroke-width="3"/><path d="M50 18 L76 58 H50Z" fill="#B5692F"/><path d="M46 22 L26 56 H46Z" fill="#C98A4A"/><path d="M4 86 q8 -5 16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#55C8E8" stroke-width="3"/>',
+  casket: '<path d="M30 12 L70 12 L80 34 L68 90 H32 L20 34Z" fill="#7A4A2A" stroke="#4A2A16" stroke-width="3"/><path d="M34 18 L66 18 L74 34 L64 84 H36 L26 34Z" fill="#94603A"/><rect x="40" y="38" width="20" height="13" rx="2" fill="#E3B44C" stroke="#9E721A" stroke-width="1.5"/><path d="M28 64 H72" stroke="#5E3A20" stroke-width="2"/>',
+  psalm: '<path d="M50 30 Q32 22 12 26 V82 Q32 78 50 86 Q68 78 88 82 V26 Q68 22 50 30Z" fill="#FFFDF4" stroke="#8A6A44" stroke-width="2.5"/><path d="M50 30 V86" stroke="#8A6A44" stroke-width="2"/><g fill="#C7922C"><path d="M30 44 l2 5 5 .5 -4 3 1.5 5 -4.5 -3 -4.5 3 1.5 -5 -4 -3 5 -.5Z"/><path d="M70 40 l1.5 3.5 3.8 .4 -2.9 2.4 1 3.7 -3.4 -2 -3.4 2 1 -3.7 -2.9 -2.4 3.8 -.4Z"/><circle cx="62" cy="60" r="1.6"/><circle cx="76" cy="58" r="1.6"/><circle cx="24" cy="62" r="1.6"/><circle cx="38" cy="66" r="1.6"/></g>',
+  sweater: '<path d="M36 16 Q50 26 64 16 L84 26 L94 52 L80 58 L74 44 V88 H26 V44 L20 58 L6 52 L16 26Z" fill="#C8302F" stroke="#8E1E1E" stroke-width="2.5"/><path d="M36 16 Q50 26 64 16" fill="none" stroke="#8E1E1E" stroke-width="3"/><path d="M50 24 V88" stroke="#8E1E1E" stroke-width="2"/><g fill="#FFE3E3"><path d="M55 36 q0 -4 4 -4 q4 0 4 4 q0 4 -8 9 q-8 -5 -8 -9 q0 -4 4 -4 q4 0 4 4Z" transform="translate(-6 0) scale(.8) translate(10 6)"/><path d="M55 36 q0 -4 4 -4 q4 0 4 4 q0 4 -8 9 q-8 -5 -8 -9 q0 -4 4 -4 q4 0 4 4Z" transform="translate(-6 18) scale(.8) translate(10 6)"/><path d="M55 36 q0 -4 4 -4 q4 0 4 4 q0 4 -8 9 q-8 -5 -8 -9 q0 -4 4 -4 q4 0 4 4Z" transform="translate(-6 36) scale(.8) translate(10 6)"/></g>',
+  basket: '<path d="M22 48 Q50 6 78 48" fill="none" stroke="#9A6C2A" stroke-width="5"/><ellipse cx="38" cy="46" rx="16" ry="9" fill="#C98A4A"/><circle cx="62" cy="44" r="8" fill="#C8302F"/><path d="M62 36 q2 -4 5 -4" stroke="#4E8B5A" stroke-width="2.5" fill="none"/><path d="M14 48 H86 L78 84 H22Z" fill="#D7A85C" stroke="#9A6C2A" stroke-width="2.5"/><g stroke="#9A6C2A" stroke-width="1.6"><path d="M18 58 H82 M20 68 H80 M22 78 H78"/><path d="M30 48 L32 84 M42 48 L43 84 M54 48 L54 84 M66 48 L65 84"/></g><path d="M14 48 L30 56 L46 48 L62 56 L78 48 L86 52" fill="#F4F0E6" stroke="#C9C1AE" stroke-width="1.5"/>',
+  hanky: '<path d="M16 36 L58 20 L86 50 L44 68Z" fill="#FFFFFF" stroke="#BDB6A6" stroke-width="2.5"/><path d="M22 37 L57 24 L80 49 L45 63Z" fill="none" stroke="#D9D2C2" stroke-width="1.5" stroke-dasharray="3 2"/><path d="M30 60 L60 50 L66 78 L36 88Z" fill="#E8DCC0" stroke="#A8936A" stroke-width="2.5"/><path d="M30 60 L48 72 L60 50" fill="none" stroke="#A8936A" stroke-width="2"/>',
+  pail: '<path d="M26 34 Q50 4 74 34" fill="none" stroke="#7A8592" stroke-width="3.5"/><path d="M22 34 H78 L72 88 H28Z" fill="#B9C3CC" stroke="#6E7A86" stroke-width="2.5"/><ellipse cx="50" cy="34" rx="28" ry="6" fill="#FFFDF4" stroke="#6E7A86" stroke-width="2.5"/><path d="M25 52 H75 M27 70 H73" stroke="#8E99A4" stroke-width="2"/>',
+  candles: '<g fill="#C9D0D8" stroke="#7E8894" stroke-width="2"><path d="M22 88 Q22 80 34 78 Q46 80 46 88Z"/><path d="M31 78 V44 H37 V78Z"/><ellipse cx="34" cy="44" rx="8" ry="3"/><path d="M54 88 Q54 80 66 78 Q78 80 78 88Z"/><path d="M63 78 V44 H69 V78Z"/><ellipse cx="66" cy="44" rx="8" ry="3"/></g><rect x="31" y="24" width="6" height="19" fill="#FFF8E6" stroke="#D9C9A4"/><rect x="63" y="24" width="6" height="19" fill="#FFF8E6" stroke="#D9C9A4"/><path d="M34 10 Q39 18 34 23 Q29 18 34 10Z" fill="#FFB547"/><path d="M66 10 Q71 18 66 23 Q61 18 66 10Z" fill="#FFB547"/>',
+  necklace: '<path d="M18 14 Q50 70 82 14" fill="none" stroke="#D8A63C" stroke-width="2.5" stroke-dasharray="1.5 2.5" stroke-linecap="round"/><g transform="translate(50 62)" fill="none" stroke="#D8A63C" stroke-width="4" stroke-linejoin="round"><path d="M0 -18 L15.6 9 H-15.6Z"/><path d="M0 18 L15.6 -9 H-15.6Z"/></g>'
+};
+function iconSVG(id, cls) { return '<svg viewBox="0 0 100 100" class="' + (cls || "") + '" aria-hidden="true">' + (ICON[id] || "") + "</svg>"; }
+
+/* stars for every night scene */
+function starsSVG(n, w, h, seed) {
+  var s = seed || 7, out = "";
+  function r() { s = (s * 9301 + 49297) % 233280; return s / 233280; }
+  for (var i = 0; i < n; i++) {
+    var x = (r() * w).toFixed(1), y = (r() * h).toFixed(1), rr = (0.6 + r() * 1.4).toFixed(2);
+    out += '<circle class="star" cx="' + x + '" cy="' + y + '" r="' + rr + '" fill="#FFF7DF" style="animation-delay:' + (r() * 3).toFixed(2) + 's"/>';
+  }
+  return out;
+}
+function danishFlag(x, y, w) {
+  var h = w * 0.75;
+  return '<g class="flagwave"><rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="#C8102E"/>' +
+    '<rect x="' + (x + w * 0.32) + '" y="' + y + '" width="' + (w * 0.11) + '" height="' + h + '" fill="#fff"/>' +
+    '<rect x="' + x + '" y="' + (y + h * 0.43) + '" width="' + w + '" height="' + (h * 0.14) + '" fill="#fff"/></g>';
+}
+function objIn(id, x, y, size, pic) {
+  if (pic) return '<image href="' + pic + '" x="' + x + '" y="' + y + '" width="' + size + '" height="' + size + '" preserveAspectRatio="xMidYMid slice" clip-path="inset(0 round 8px)"/>';
+  return '<svg x="' + x + '" y="' + y + '" width="' + size + '" height="' + size + '" viewBox="0 0 100 100">' + (ICON[id] || "") + "</svg>";
+}
+function tag(x, y, text, w) {
+  w = w || 150;
+  return '<g><rect x="' + (x - w / 2) + '" y="' + y + '" width="' + w + '" height="26" rx="5" fill="#FFF8E6" stroke="#C7922C" stroke-width="1.5"/>' +
+    '<text x="' + x + '" y="' + (y + 18) + '" text-anchor="middle" font-family="Nunito,sans-serif" font-size="14" font-weight="800" fill="#0E1C42">' + escX(text) + "</text></g>";
+}
+function escX(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+function shorten(s, n) { s = String(s || ""); return s.length > n ? s.slice(0, n - 1) + "…" : s; }
+
+/* Way 1 · the keepsake box: necklace first, then the three objects */
+function sceneBox(items) {
+  var o = '<svg class="scene" viewBox="0 0 600 400" role="img" aria-label="A wooden keepsake box for Ellen">' +
+    '<defs><linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9C6A42"/><stop offset="1" stop-color="#6B4428"/></linearGradient>' +
+    '<radialGradient id="lampglow" cx=".85" cy=".1" r=".9"><stop offset="0" stop-color="#FFD27A" stop-opacity=".45"/><stop offset="1" stop-color="#FFD27A" stop-opacity="0"/></radialGradient></defs>' +
+    '<rect width="600" height="400" fill="#2A2238"/><rect width="600" height="400" fill="url(#lampglow)"/>' +
+    /* window with stars */
+    '<rect x="34" y="22" width="150" height="110" rx="4" fill="#0F1A38" stroke="#5A4A3A" stroke-width="6"/>' + '<g clip-path="inset(0)">' + '<svg x="37" y="25" width="144" height="104" viewBox="0 0 144 104">' + starsSVG(26, 144, 104, 3) + "</svg></g>" +
+    '<path d="M109 22 V132 M34 77 H184" stroke="#5A4A3A" stroke-width="5"/>' +
+    /* table */
+    '<rect x="0" y="340" width="600" height="60" fill="#4A3423"/><rect x="0" y="340" width="600" height="8" fill="#5E4330"/>' +
+    /* lid, open */
+    '<path d="M120 128 L480 128 L496 44 L136 44Z" fill="#7E5434" stroke="#4A2E1A" stroke-width="3"/><path d="M146 56 H488" stroke="#C7922C" stroke-width="2" opacity=".6"/>' +
+    '<text x="312" y="100" text-anchor="middle" font-family="Lora,Georgia,serif" font-style="italic" font-size="22" fill="#F3DC9A">Until Ellen comes home</text>' +
+    /* box body */
+    '<path d="M100 128 H500 L516 366 H84Z" fill="url(#wood)" stroke="#4A2E1A" stroke-width="3"/>' +
+    '<path d="M110 136 H490 L502 352 H98Z" fill="#E8D9B8" stroke="#4A2E1A" stroke-width="2"/>' +
+    '<path d="M300 136 V352 M104 244 H496" stroke="#B49A6C" stroke-width="4"/>';
+  /* compartments: necklace top-left, then b, m, e */
+  var cells = [[204, 182], [398, 182], [204, 290], [398, 290]];
+  var all = [{ id: "necklace", label: "Ellen’s necklace", fixed: true }].concat(items);
+  all.forEach(function (it, i) {
+    var c = cells[i], x = c[0], y = c[1];
+    if (it && it.id) {
+      o += objIn(it.id, x - 32, y - 44, 64, it.pic);
+      o += tag(x, y + 24, shorten(it.label, 26), 180);
+    } else {
+      o += '<text x="' + x + '" y="' + (y + 2) + '" text-anchor="middle" font-family="Nunito,sans-serif" font-size="15" font-weight="700" fill="#9A8460">' + escX(it && it.empty) + "</text>";
+    }
+  });
+  o += '<rect x="289" y="356" width="22" height="16" rx="3" fill="#E3B44C" stroke="#9E721A" stroke-width="2"/></svg>';
+  return o;
+}
+
+/* Way 2 · Liberation Night: three tall Copenhagen houses */
+function sceneStreet(items, free) {
+  var houses = [
+    { x: 30, w: 170, top: 92, col: "#C66B3D", roof: "#7A3B22" },
+    { x: 215, w: 170, top: 62, col: "#D9B25A", roof: "#8A6A2A" },
+    { x: 400, w: 170, top: 100, col: "#6F8F7A", roof: "#3E5A47" }
+  ];
+  var o = '<svg class="scene" viewBox="0 0 600 400" role="img" aria-label="Three houses on a Copenhagen street at night"><g class="street' + (free ? " free" : "") + '">' +
+    '<defs><radialGradient id="lamp" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#FFE7A8"/><stop offset=".6" stop-color="#FFC25C"/><stop offset="1" stop-color="#E08A2A"/></radialGradient>' +
+    '<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1430"/><stop offset="1" stop-color="#22305E"/></linearGradient></defs>' +
+    '<rect width="600" height="400" fill="url(#sky)"/>' + starsSVG(60, 600, 120, 11) +
+    '<rect x="0" y="352" width="600" height="48" fill="#3A3F4F"/><g fill="#4A5062">' + [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(function (i) { return '<rect x="' + (i * 52 + 4) + '" y="364" width="44" height="10" rx="2"/>'; }).join("") + "</g>";
+  houses.forEach(function (h, i) {
+    var it = items[i] || {}, on = !!it.lit;
+    var cx = h.x + h.w / 2;
+    o += '<path d="M' + h.x + " " + (h.top + 40) + " L" + cx + " " + h.top + " L" + (h.x + h.w) + " " + (h.top + 40) + ' V352 H' + h.x + 'Z" fill="' + h.col + '" stroke="#1A1A22" stroke-width="2"/>' +
+      '<path d="M' + (h.x - 6) + " " + (h.top + 42) + " L" + cx + " " + (h.top - 4) + " L" + (h.x + h.w + 6) + " " + (h.top + 42) + '" fill="none" stroke="' + h.roof + '" stroke-width="10" stroke-linejoin="round"/>';
+    /* small dark windows */
+    [[h.x + 22, 300], [h.x + h.w - 50, 300]].forEach(function (p) { o += '<rect x="' + p[0] + '" y="' + p[1] + '" width="28" height="36" fill="' + (free ? "#F5B94F" : "#1C2238") + '" stroke="#1A1A22" stroke-width="2" class="lit-glow"/>'; });
+    /* the big window */
+    var wx = cx - 52, wy = h.top + 70, ww = 104, wh = 130;
+    o += '<g class="window' + (on ? " on" : "") + '">' +
+      '<rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '" fill="#141A30" stroke="#1A1A22" stroke-width="3"/>' +
+      '<rect class="glow" x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '" fill="url(#lamp)"/>' +
+      '<path d="M' + cx + " " + wy + " V" + (wy + wh) + " M" + wx + " " + (wy + wh / 2) + " H" + (wx + ww) + '" stroke="#3A2A1A" stroke-width="4" opacity=".55"/>' +
+      '<g class="obj">' + (it.id ? '<rect x="' + (cx - 40) + '" y="' + (wy + 24) + '" width="80" height="80" rx="12" fill="#FFF3D6" opacity=".55"/>' + objIn(it.id, cx - 36, wy + 26, 72, it.pic) : "") + "</g>" +
+      '<g class="curtain"><rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '" fill="#0A0D18"/>' +
+      '<path d="M' + (wx + 26) + " " + wy + " V" + (wy + wh) + " M" + (wx + 52) + " " + wy + " V" + (wy + wh) + " M" + (wx + 78) + " " + wy + " V" + (wy + wh) + '" stroke="#1B2135" stroke-width="3"/></g>' +
+
+      '<rect x="' + (wx - 6) + '" y="' + (wy + wh) + '" width="' + (ww + 12) + '" height="8" fill="#E9D8B4"/>' +
+      "</g>";
+    if (it.who) o += tag(cx, wy + wh + 14, it.who, 140);
+    o += '<g class="flag"><path d="M' + cx + " " + (h.top - 4) + " V" + (h.top - 44) + '" stroke="#ddd" stroke-width="2.5"/>' + danishFlag(cx + 1, h.top - 44, 32) + "</g>";
+  });
+  /* bunting across the street, only when free */
+  o += '<g class="flag"><path d="M0 40 Q150 70 300 40 T600 40" fill="none" stroke="#ddd" stroke-width="1.5"/>' +
+    [40, 100, 160, 220, 280, 340, 400, 460, 520, 580].map(function (x, i) { var y = 40 + 20 * Math.sin((x / 600) * Math.PI * 2 + Math.PI) * 0.8 + 6; return '<path d="M' + (x - 9) + " " + (y - 4) + " L" + (x + 9) + " " + (y - 4) + " L" + x + " " + (y + 14) + 'Z" fill="' + (i % 2 ? "#fff" : "#C8102E") + '"/>'; }).join("") + "</g>";
+  o += "</g></svg>";
+  return o;
+}
+
+/* Way 3 · hidden messages: three cards, "On the outside" turns to "Really" */
+function sceneSecrets(items) {
+  var o = '<svg class="scene" viewBox="0 0 600 400" role="img" aria-label="Three secret cards on a desk">' +
+    '<defs><radialGradient id="desk" cx=".5" cy=".3" r=".8"><stop offset="0" stop-color="#4A3A2A"/><stop offset="1" stop-color="#1E1712"/></radialGradient></defs>' +
+    '<rect width="600" height="400" fill="url(#desk)"/>' +
+    '<ellipse cx="300" cy="40" rx="240" ry="70" fill="#FFD27A" opacity=".10"/>';
+  [100, 300, 500].forEach(function (cx, i) {
+    var it = items[i] || {}, open = !!it.lit;
+    var x = cx - 82, y = 70;
+    o += '<g class="revcard' + (open ? " open" : "") + '" data-i="' + i + '">' +
+      '<rect x="' + (x + 4) + '" y="' + (y + 6) + '" width="164" height="250" rx="10" fill="#000" opacity=".35"/>' +
+      '<g class="front"><rect x="' + x + '" y="' + y + '" width="164" height="250" rx="10" fill="#EFE3C8" stroke="#A8936A" stroke-width="2"/>' +
+      '<text x="' + cx + '" y="' + (y + 30) + '" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="800" letter-spacing="1.5" fill="#6E5C3A">ON THE OUTSIDE</text>' +
+      (it.id ? objIn(it.id, cx - 46, y + 52, 92, it.pic) : '<text x="' + cx + '" y="' + (y + 130) + '" text-anchor="middle" font-family="Nunito,sans-serif" font-size="15" font-weight="700" fill="#9A8460">' + escX(it.empty || "") + "</text>") +
+      '<circle cx="' + cx + '" cy="' + (y + 212) + '" r="16" fill="#9E2A2A"/><circle cx="' + cx + '" cy="' + (y + 212) + '" r="10" fill="none" stroke="#C85050" stroke-width="2"/></g>' +
+      '<g class="back"><rect x="' + x + '" y="' + y + '" width="164" height="250" rx="10" fill="#0E1C42" stroke="#C7922C" stroke-width="3"/>' +
+      '<text x="' + cx + '" y="' + (y + 30) + '" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="800" letter-spacing="1.5" fill="#F3DC9A">REALLY…</text>' +
+      '<circle cx="' + cx + '" cy="' + (y + 98) + '" r="54" fill="#FFD27A" opacity=".18"/>' + (it.id ? objIn(it.id, cx - 40, y + 58, 80, it.pic) : "") +
+      '<text x="' + cx + '" y="' + (y + 196) + '" text-anchor="middle" font-family="Lora,Georgia,serif" font-style="italic" font-size="15" fill="#FFF8E6">' + escX(shorten(it.label || "", 20)) + "</text>" +
+      '<text x="' + cx + '" y="' + (y + 222) + '" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" font-weight="700" fill="#9FB4DA">secret revealed</text></g>' +
+      "</g>";
+    if (it.label) o += tag(cx, y + 262, shorten(it.label, 20), 160);
+  });
+  o += "</svg>";
+  return o;
+}
+
+/* small thumbnails for the Step 1 cards */
+function thumbFor(way) {
+  if (way === 1) return '<svg viewBox="0 0 132 132"><rect width="132" height="132" fill="#2A2238"/><path d="M24 62 H108 L112 104 H20Z" fill="#7E5434" stroke="#4A2E1A" stroke-width="2"/><path d="M28 62 L104 62 L110 30 L34 30Z" fill="#9C6A42" stroke="#4A2E1A" stroke-width="2"/><path d="M30 66 H102 L104 98 H28Z" fill="#E8D9B8"/><svg x="40" y="62" width="48" height="40" viewBox="0 0 100 100">' + ICON.necklace + "</svg></svg>";
+  if (way === 2) return '<svg viewBox="0 0 132 132"><rect width="132" height="132" fill="#13204A"/>' + starsSVG(14, 132, 40, 5) + '<path d="M26 56 L66 26 L106 56 V132 H26Z" fill="#D9B25A" stroke="#1A1A22" stroke-width="2"/><rect x="46" y="64" width="40" height="50" fill="#FFC25C" stroke="#1A1A22" stroke-width="2"/><path d="M66 64 V114 M46 89 H86" stroke="#3A2A1A" stroke-width="2.5"/>' + danishFlag(98, 34, 24) + "</svg>";
+  return '<svg viewBox="0 0 132 132"><rect width="132" height="132" fill="#2A1F17"/><rect x="22" y="24" width="60" height="88" rx="6" fill="#EFE3C8" stroke="#A8936A" stroke-width="2" transform="rotate(-8 52 68)"/><rect x="52" y="22" width="60" height="88" rx="6" fill="#0E1C42" stroke="#C7922C" stroke-width="2.5" transform="rotate(7 82 66)"/><circle cx="80" cy="64" r="16" fill="#FFD27A" opacity=".3"/><text x="82" y="70" text-anchor="middle" font-family="Lora,serif" font-size="22" fill="#F3DC9A" transform="rotate(7 82 66)">?</text></svg>';
+}
+
+/* ═══ APP ════════════════════════════════════════════════════════════ */
+(function () {
+var AUDIO_BASE = "assets/audio/guide/narrator/g4ela-nts-project-";
+var VIDEO_BASE = "assets/video/guide/narrator/g4ela-nts-project-";
+var BED_BASE = "assets/audio/project/g4ela-nts-project-bed-";
+var KEY = "oao.g4.nts.project.v1";
+
+var $ = function (s, el) { return (el || document).querySelector(s); };
+var $$ = function (s, el) { return Array.prototype.slice.call((el || document).querySelectorAll(s)); };
+var esc = escX;
+var words = function (s) { return ((s || "").trim().match(/\S+/g) || []).length; };
+var sentences = function (s) { return ((s || "").trim().match(/[^.!?]+[.!?]+["”’)]*(\s|$)/g) || []).length; };
+var byId = function (id) { for (var i = 0; i < OBJECTS.length; i++) if (OBJECTS[i].id === id) return OBJECTS[i]; return null; };
+var hist = function (id) { for (var i = 0; i < HISTORY.length; i++) if (HISTORY[i].id === id) return HISTORY[i]; return null; };
+
+/* ── state ── */
+function fresh() { return { name: "", way: 0, step: 0, pick: { b: "", m: "", e: "" }, who: { b: "", m: "", e: "" }, note: { b: "", m: "", e: "" }, chk: { b: {}, m: {}, e: {} }, pic: { b: "", m: "", e: "" }, hcard: "", hpart: "", htext: "", closing: "" }; }
+var S = fresh();
+try { var raw = localStorage.getItem(KEY); if (raw) { var o = JSON.parse(raw); for (var k in o) if (o.hasOwnProperty(k)) S[k] = o[k]; } } catch (e) {}
+var saveT = null;
+function save() { clearTimeout(saveT); saveT = setTimeout(function () { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { try { var lite = JSON.parse(JSON.stringify(S)); lite.pic = { b: "", m: "", e: "" }; localStorage.setItem(KEY, JSON.stringify(lite)); } catch (e2) {} } }, 250); }
+
+/* ── what counts as done ── */
+var noteOK = function (p) { return sentences(S.note[p]) >= 3 && words(S.note[p]) >= 25; };
+function stepDone(i) {
+  if (i === 0) return !!S.way;
+  if (i === 1) return !!S.way && PARTS.every(function (p) { return S.pick[p.id] && (S.way !== 2 || S.who[p.id]); });
+  if (i === 2) return stepDone(1) && PARTS.every(function (p) { return noteOK(p.id); });
+  if (i === 3) return !!(S.hcard && S.hpart && S.pick[S.hpart] && words(S.htext) >= 12);
+  if (i === 4) return sentences(S.closing) >= 3 && words(S.closing) >= 40;
+  return [0, 1, 2, 3, 4].every(stepDone);
+}
+
+/* ── guide clips: the lessons' gold pill, hidden until the file loads ── */
+var nowPlaying = null;
+function stopAudio() { if (nowPlaying) { try { nowPlaying.pause(); } catch (e) {} nowPlaying = null; } }
+function mmss(t) { if (!isFinite(t)) return ""; var m = Math.floor(t / 60), s = Math.floor(t % 60); return m + ":" + (s < 10 ? "0" : "") + s; }
+function guideHTML(id) { return '<div class="guide spk-guide-wrap" hidden data-file="' + id + '"><details class="spk-note"><summary>Read along</summary><div class="spk-note-body">' + esc(GUIDES[id]) + "</div></details></div>"; }
+function wireGuides(root) {
+  $$(".guide[data-file]", root).forEach(function (box) {
+    if (box.dataset.wired) return; box.dataset.wired = "1";
+    var file = box.dataset.file, label = GUIDE_LABELS[file] || "Grete";
+    var ctl = document.createElement("div"); ctl.className = "spk-audio spk-guide"; ctl.hidden = true;
+    ctl.innerHTML = '<button type="button" class="spk-audio-btn" aria-pressed="false"><span class="spk-audio-ico" aria-hidden="true"></span><span class="spk-audio-label"></span></button><span class="spk-audio-bar"><i></i></span><span class="spk-audio-time"></span>';
+    var btn = $(".spk-audio-btn", ctl), fill = $(".spk-audio-bar i", ctl), time = $(".spk-audio-time", ctl);
+    $(".spk-audio-label", ctl).textContent = label; btn.setAttribute("aria-label", label);
+    var a = new Audio(); a.preload = "metadata";
+    a.addEventListener("loadedmetadata", function () { ctl.hidden = false; box.hidden = false; time.textContent = mmss(a.duration); });
+    a.addEventListener("error", function () { ctl.remove(); });
+    a.addEventListener("timeupdate", function () { if (a.duration) fill.style.width = (a.currentTime / a.duration * 100) + "%"; });
+    a.addEventListener("ended", function () { ctl.classList.remove("playing"); btn.setAttribute("aria-pressed", "false"); fill.style.width = "0%"; nowPlaying = null; });
+    a.addEventListener("pause", function () { ctl.classList.remove("playing"); btn.setAttribute("aria-pressed", "false"); });
+    a.addEventListener("play", function () { ctl.classList.add("playing"); btn.setAttribute("aria-pressed", "true"); });
+    btn.addEventListener("click", function () { if (a.paused) { stopAudio(); nowPlaying = a; a.play().catch(function () {}); } else a.pause(); });
+    a.src = AUDIO_BASE + file + ".mp3";
+    var fig = document.createElement("figure"); fig.className = "spk-media"; fig.hidden = true;
+    var vd = document.createElement("video"); vd.controls = true; vd.preload = "metadata"; vd.playsInline = true; vd.setAttribute("playsinline", ""); vd.setAttribute("aria-label", label);
+    vd.poster = VIDEO_BASE + file + ".jpg";
+    vd.addEventListener("loadedmetadata", function () { if (vd.videoWidth) { fig.hidden = false; box.hidden = false; } });
+    vd.addEventListener("error", function () { fig.remove(); });
+    vd.addEventListener("play", stopAudio);
+    vd.src = VIDEO_BASE + file + ".mp4";
+    fig.appendChild(vd);
+    box.insertBefore(fig, box.firstChild);
+    box.insertBefore(ctl, $(".spk-note", box));
+  });
+}
+
+/* ── sound bed for the chosen way (hidden until its file exists) ── */
+var bed = null, bedKey = "";
+function bedHTML() { return S.way ? '<button type="button" class="bed" id="bedBtn" aria-pressed="false" hidden>&#x1F50A; ' + esc(WAYS[S.way].bed) + "</button>" : ""; }
+function wireBed() {
+  var b = $("#bedBtn"); if (!b) return;
+  var k = WAYS[S.way].key;
+  if (bedKey !== k) { if (bed) { bed.pause(); } bed = new Audio(); bed.loop = true; bed.volume = 0.35; bed.preload = "metadata"; bed.src = BED_BASE + k + ".mp3"; bedKey = k; }
+  var show = function () { b.hidden = false; };
+  if (bed.readyState >= 1) show(); else bed.addEventListener("loadedmetadata", show, { once: true });
+  b.setAttribute("aria-pressed", bed.paused ? "false" : "true");
+  b.addEventListener("click", function () { if (bed.paused) { bed.play().catch(function () {}); b.setAttribute("aria-pressed", "true"); } else { bed.pause(); b.setAttribute("aria-pressed", "false"); } });
+}
+
+/* ── step tiles ── */
+function drawSteps() {
+  $("#steps").innerHTML = STEPS.map(function (s, i) {
+    var cls = "step" + (stepDone(i) && i < 5 ? " done" : "") + (S.step === i ? " now" : "") + (i === 5 ? " save" : "");
+    return '<li class="' + cls + '"><button type="button" data-i="' + i + '"' + (S.step === i ? ' aria-current="step"' : "") + '><span class="n"><span class="dot">' + (stepDone(i) && i < 5 ? "&#10003;" : i + 1) + "</span>Step " + (i + 1) + '</span><span class="t">' + esc(s.title) + "</span></button></li>";
+  }).join("");
+}
+$("#steps").addEventListener("click", function (e) { var b = e.target.closest("button[data-i]"); if (b) go(+b.dataset.i); });
+function go(i) {
+  if (i > 0 && !S.way) i = 0;
+  if (i === 5) { openSave(); return; }
+  S.step = i; save(); render();
+  var p = $("#panel"); if (p && p.getBoundingClientRect().top < 0) p.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+/* ── the panels ── */
+function navHTML(i) {
+  var back = i > 0 ? '<button type="button" class="btn ghost" data-go="' + (i - 1) + '">&larr; Back</button>' : "<span></span>";
+  var next = i < 4 ? '<button type="button" class="btn" data-go="' + (i + 1) + '">Next: ' + esc(STEPS[i + 1].title) + " &rarr;</button>" : '<button type="button" class="btn gold" data-go="5">Step 6: Save your PDF &rarr;</button>';
+  return '<div class="navrow">' + back + next + "</div>";
+}
+function panelWay() {
+  var h = '<div class="kicker">Step 1 of 6</div><h2>Choose your way</h2><p class="hint" style="margin:0 0 12px;">All three are graded the same way. Pick the one you want to make.</p><div class="ways">';
+  [1, 2, 3].forEach(function (n) {
+    var w = WAYS[n], on = S.way === n;
+    h += '<div class="way' + (on ? " on" : "") + '"><div class="thumb">' + thumbFor(n) + "</div><div>" +
+      "<h3>" + esc(w.title) + '</h3><div class="you">' + esc(w.you) + "</div><p>" + esc(w.pitch) + "</p>" + guideHTML(w.key) +
+      '<details class="model"><summary>See a model note: ' + esc(w.model.obj) + '</summary><p class="hint" style="margin:6px 0 0;">This object is the model, so you can&rsquo;t pick it.</p>' + guideHTML(w.model.file) + '<p class="mtext">' + esc(w.model.text) + "</p></details>" +
+      '<div class="pick"><button type="button" class="btn' + (on ? " gold" : "") + '" data-way="' + n + '">' + (on ? "&#10003; My way" : "Choose this way") + "</button></div></div></div>";
+  });
+  return h + "</div>" + navHTML(0);
+}
+function panelObjects() {
+  var w = WAYS[S.way];
+  var h = '<div class="kicker">Step 2 of 6 · ' + esc(w.title) + '</div><h2>Pick three objects</h2>' +
+    '<div class="todo"><div class="todo-h">What to do</div><ol><li>Pick <b>one object from each part</b> of the book.</li>' +
+    (S.way === 2 ? "<li>Choose <b>whose window</b> it is: the person who owned it, carried it or cared about it.</li>" : "") +
+    (S.way === 1 ? "<li>Ellen&rsquo;s necklace is already in the box. It doesn&rsquo;t count as one of your three.</li>" : "") +
+    "<li>Read the <b>In the book</b> line, then find that part in your own book.</li></ol></div>";
+  PARTS.forEach(function (p) {
+    var list = OBJECTS.filter(function (o) { return o.part === p.id && o.ways.indexOf(S.way) > -1; });
+    h += '<div class="shelf"><div class="shelf-h"><b>' + p.name + "</b><span>" + p.ch + '</span></div><div class="chips">' +
+      list.map(function (o) { return '<button type="button" class="ochip" data-part="' + p.id + '" data-obj="' + o.id + '" aria-pressed="' + (S.pick[p.id] === o.id) + '"><span class="ic">' + iconSVG(o.id) + "</span>" + esc(o.name) + "</button>"; }).join("") + "</div>";
+    var cur = byId(S.pick[p.id]);
+    if (cur) {
+      h += '<div class="inbook"><span class="ch">In the book · ' + esc(cur.ch) + ":</span> " + esc(cur.book) + "</div>";
+      if (S.way === 2) {
+        h += '<div class="whobox"><label for="who-' + p.id + '"><b>Whose window?</b></label><select id="who-' + p.id + '" data-who="' + p.id + '"><option value="">Choose a person</option>' +
+          PEOPLE.map(function (n) { return "<option" + (S.who[p.id] === n ? " selected" : "") + ">" + esc(n) + "</option>"; }).join("") + "</select>" +
+          (LOST[S.who[p.id]] ? '<span class="lost">' + esc(LOST[S.who[p.id]]) + " Write as someone who loved them.</span>" : "") + "</div>";
+      }
+    }
+    h += "</div>";
+  });
+  return h + '<div class="remember"><b>Remember:</b> ' + esc(w.remember) + "</div>" + navHTML(1);
+}
+function panelNotes() {
+  var w = WAYS[S.way];
+  var h = '<div class="kicker">Step 3 of 6 · ' + esc(w.title) + "</div><h2>Write a " + esc(w.noteName) + " for each object</h2>" +
+    '<div class="todo"><div class="todo-h">Every note, 3–4 sentences</div><ul><li>Say <b>where</b> it shows up in the book.</li><li>Use a <b>short quote</b> or an <b>exact detail</b> from your book.</li><li>Explain <b>why it matters</b>: what it shows about a character, or about courage or friendship.</li><li>Write ' + esc(w.voice) + ".</li></ul></div>";
+  if (!stepDone(1)) h += '<p class="remember">Pick all three objects in Step 2 first.</p>';
+  PARTS.forEach(function (p) {
+    var o = byId(S.pick[p.id]); if (!o) return;
+    var ok = noteOK(p.id), n = sentences(S.note[p.id]), wc = words(S.note[p.id]);
+    var who = S.way === 2 && S.who[p.id] ? " · " + S.who[p.id] + "’s window" : "";
+    h += '<div class="note' + (ok ? " done" : "") + '" data-part="' + p.id + '"><div class="note-h"><div class="ic">' + (S.pic[p.id] ? '<img src="' + S.pic[p.id] + '" alt="">' : iconSVG(o.id)) + "</div><div><h3>" + esc(o.name) + '</h3><div class="sub">' + p.name + " · " + esc(o.ch) + esc(who) + "</div></div></div>" +
+      '<div class="inbook"><span class="ch">In the book:</span> ' + esc(o.book) + "</div>" +
+      '<p class="frame">Try: ' + w.frame + "</p>" +
+      '<textarea class="write" data-note="' + p.id + '" aria-label="' + esc(w.noteName + " for " + o.name) + '" placeholder="Write your ' + esc(w.noteName) + ' here...">' + esc(S.note[p.id]) + "</textarea>" +
+      '<div class="meter" data-meter="' + p.id + '">' + meterHTML(n, wc, ok) + "</div>" +
+      '<ul class="checks">' + [["where", "Where it is in the book"], ["detail", "A quote or exact detail"], ["why", "Why it matters"], ["voice", "The right voice"]].map(function (c) {
+        return '<li><label><input type="checkbox" data-chk="' + p.id + '" value="' + c[0] + '"' + (S.chk[p.id][c[0]] ? " checked" : "") + ">" + c[1] + "</label></li>"; }).join("") + "</ul>" +
+      '<div class="picrow"><span>Picture (optional): a drawing, a photo of a real object, or a picture you made in ENGAGE.</span><label class="btn ghost" style="cursor:pointer;">Add a picture<input type="file" accept="image/*" data-pic="' + p.id + '" hidden></label>' + (S.pic[p.id] ? '<button type="button" class="btn ghost" data-unpic="' + p.id + '">Remove picture</button>' : "") + "</div></div>";
+  });
+  return h + navHTML(2);
+}
+function meterHTML(n, wc, ok) { return '<span class="' + (n >= 3 ? "ok" : "") + '">' + n + " sentence" + (n === 1 ? "" : "s") + " (aim for 3–4)</span><span>" + wc + " words</span>" + (ok ? '<span class="ok">&#10003; Note finished</span>' : ""); }
+function panelHistory() {
+  var w = WAYS[S.way];
+  var h = '<div class="kicker">Step 4 of 6 · ' + esc(w.title) + "</div><h2>Add one piece of true history</h2>" +
+    '<div class="todo"><div class="todo-h">What to do</div><ol><li>Pick <b>one history card</b>. Each one is something real you learned in this unit.</li><li>Choose <b>which object</b> it connects to.</li><li>' + esc(w.histAsk) + " Say it in your own words, and say how it connects.</li></ol></div>" +
+    '<div class="hcards">' + HISTORY.map(function (c) {
+      return '<button type="button" class="hcard" data-h="' + c.id + '" aria-pressed="' + (S.hcard === c.id) + '"><img src="' + c.img + '" alt="' + esc(c.alt) + '" loading="lazy"><div class="hb"><h4><span class="tick">&#10003; </span>' + esc(c.title) + "</h4><p>" + esc(c.text) + '</p><div class="src">' + esc(c.src) + "</div></div></button>";
+    }).join("") + "</div>";
+  if (S.hcard) {
+    h += '<div class="tieto"><b>Which object does it connect to?</b><div class="chips">' + PARTS.filter(function (p) { return S.pick[p.id]; }).map(function (p) {
+      var o = byId(S.pick[p.id]);
+      return '<button type="button" class="ochip" data-hpart="' + p.id + '" aria-pressed="' + (S.hpart === p.id) + '"><span class="ic">' + iconSVG(o.id) + "</span>" + esc(o.name) + "</button>"; }).join("") + "</div></div>";
+  }
+  if (S.hcard && S.hpart) {
+    var o = byId(S.pick[S.hpart]), wc = words(S.htext);
+    h += '<div class="note" style="margin-top:14px;"><div class="note-h"><div class="ic">' + iconSVG(o.id) + "</div><div><h3>History in your note about " + esc(o.name) + '</h3><div class="sub">' + esc(hist(S.hcard).title) + '</div></div></div><p class="frame">This goes at the end of that note. 1–2 sentences.</p>' +
+      '<textarea class="write" data-hist="1" style="min-height:100px;" aria-label="Your history sentences" placeholder="' + (S.way === 3 ? "This secret was real. " : S.way === 1 ? "Ellen, something real happened too. " : "") + '...">' + esc(S.htext) + "</textarea>" +
+      '<div class="meter" data-hmeter="1">' + (wc >= 12 ? '<span class="ok">&#10003; ' + wc + " words</span>" : "<span>" + wc + " words (at least 12)</span>") + "</div></div>";
+  }
+  return h + navHTML(3);
+}
+function panelClosing() {
+  var w = WAYS[S.way], n = sentences(S.closing), wc = words(S.closing), ok = stepDone(4);
+  return '<div class="kicker">Step 5 of 6 · ' + esc(w.title) + "</div><h2>" + esc(w.closeTitle) + "</h2>" +
+    '<div class="todo"><div class="todo-h">One short paragraph</div><ul><li>' + esc(w.closeAsk) + "</li><li>Think about the <b>whole book</b>, not just one object.</li><li>You may build on the claim from your essay.</li></ul></div>" +
+    '<textarea class="write" data-closing="1" style="min-height:180px;" aria-label="' + esc(w.closeTitle) + '" placeholder="' + (S.way === 1 ? "Dear Ellen, ..." : "...") + '">' + esc(S.closing) + "</textarea>" +
+    '<div class="meter" data-cmeter="1">' + '<span class="' + (n >= 3 ? "ok" : "") + '">' + n + " sentences (at least 3)</span><span>" + wc + " words</span>" + (ok ? '<span class="ok">&#10003; Closing finished</span>' : "") + "</div>" + navHTML(4);
+}
+
+/* ── the live display ── */
+function itemsFor() {
+  return PARTS.map(function (p) {
+    var o = byId(S.pick[p.id]);
+    if (!o) return { empty: p.name + ": not picked yet" };
+    return { id: o.id, label: o.name, pic: S.pic[p.id], who: S.who[p.id], lit: noteOK(p.id) };
+  });
+}
+function sceneSVG() {
+  var it = itemsFor();
+  if (S.way === 1) return sceneBox(it);
+  if (S.way === 2) return sceneStreet(it, stepDone(2) && stepDone(4));
+  if (S.way === 3) return sceneSecrets(it);
+  return "";
+}
+function drawDisplay() {
+  if (!S.way) { $("#stage").innerHTML = '<div class="stage-empty">Choose a way in Step 1, and your project will appear here.</div>'; $("#slots").innerHTML = ""; return; }
+  var w = WAYS[S.way];
+  var hint = S.way === 2 ? "Each window lights when its note is finished. Flags come out when the whole street is lit." : S.way === 3 ? "Each card turns over when its note is finished. Tap a finished card to flip it." : "Each object goes in the box when you pick it.";
+  $("#stage").innerHTML = sceneSVG() + '<div class="stage-cap"><b>' + esc(w.title) + "</b><span>" + hint + "</span>" + bedHTML() + "</div>";
+  wireBed();
+  $$(".revcard", $("#stage")).forEach(function (g) { g.addEventListener("click", function () { if (itemsFor()[+g.dataset.i].lit) g.classList.toggle("open"); }); });
+  $("#slots").innerHTML = PARTS.map(function (p) {
+    var o = byId(S.pick[p.id]), ok = noteOK(p.id);
+    return '<div class="slot"><span class="p">' + p.name + "</span><span>" + (o ? esc(o.name) : '<span class="hint">not picked yet</span>') + '</span><span class="s ' + (ok ? "ok" : "no") + '">' + (ok ? "&#10003; note" : o ? "note to write" : "") + "</span></div>";
+  }).join("") +
+  '<div class="slot"><span class="p">History</span><span>' + (S.hcard ? esc(hist(S.hcard).title) : '<span class="hint">not chosen yet</span>') + '</span><span class="s ' + (stepDone(3) ? "ok" : "no") + '">' + (stepDone(3) ? "&#10003;" : "") + "</span></div>" +
+  '<div class="slot"><span class="p">Closing</span><span>' + esc(WAYS[S.way].closeTitle) + '</span><span class="s ' + (stepDone(4) ? "ok" : "no") + '">' + (stepDone(4) ? "&#10003;" : "") + "</span></div>";
+}
+
+/* ── render + events ── */
+function render() {
+  drawSteps();
+  var p = $("#panel");
+  p.innerHTML = [panelWay, panelObjects, panelNotes, panelHistory, panelClosing][S.step]();
+  wireGuides(p);
+  drawDisplay();
+}
+var redrawT = null;
+function softRefresh() { clearTimeout(redrawT); redrawT = setTimeout(function () { drawSteps(); drawDisplay(); }, 200); }
+
+$("#panel").addEventListener("click", function (e) {
+  var t;
+  if ((t = e.target.closest("[data-go]"))) { go(+t.dataset.go); return; }
+  if ((t = e.target.closest("[data-way]"))) {
+    var n = +t.dataset.way;
+    if (S.way !== n) { S.way = n; PARTS.forEach(function (p) { var o = byId(S.pick[p.id]); if (o && o.ways.indexOf(n) < 0) { S.pick[p.id] = ""; S.note[p.id] = S.note[p.id]; } }); if (S.hpart && !S.pick[S.hpart]) S.hpart = ""; }
+    save(); render(); return;
+  }
+  if ((t = e.target.closest("[data-obj]"))) {
+    var part = t.dataset.part, id = t.dataset.obj;
+    if (S.pick[part] !== id) { S.pick[part] = id; if (S.way === 2) { var o = byId(id); S.who[part] = S.who[part] || ""; } }
+    save(); render(); return;
+  }
+  if ((t = e.target.closest("[data-h]"))) { S.hcard = t.dataset.h; save(); render(); return; }
+  if ((t = e.target.closest("[data-hpart]"))) { S.hpart = t.dataset.hpart; save(); render(); return; }
+  if ((t = e.target.closest("[data-unpic]"))) { S.pic[t.dataset.unpic] = ""; save(); render(); return; }
+});
+$("#panel").addEventListener("change", function (e) {
+  var t = e.target;
+  if (t.dataset.who) { S.who[t.dataset.who] = t.value; save(); render(); return; }
+  if (t.dataset.chk) { S.chk[t.dataset.chk][t.value] = t.checked; save(); return; }
+  if (t.dataset.pic && t.files && t.files[0]) { shrink(t.files[0], function (url) { if (url) { S.pic[t.dataset.pic] = url; save(); render(); } }); }
+});
+$("#panel").addEventListener("input", function (e) {
+  var t = e.target;
+  if (t.dataset.note) {
+    var p = t.dataset.note; S.note[p] = t.value; save();
+    var ok = noteOK(p); $('[data-meter="' + p + '"]').innerHTML = meterHTML(sentences(t.value), words(t.value), ok);
+    t.closest(".note").classList.toggle("done", ok); softRefresh();
+  } else if (t.dataset.hist) {
+    S.htext = t.value; save(); var wc = words(t.value);
+    $('[data-hmeter="1"]').innerHTML = wc >= 12 ? '<span class="ok">&#10003; ' + wc + " words</span>" : "<span>" + wc + " words (at least 12)</span>"; softRefresh();
+  } else if (t.dataset.closing) {
+    S.closing = t.value; save(); var n = sentences(t.value), wc2 = words(t.value);
+    $('[data-cmeter="1"]').innerHTML = '<span class="' + (n >= 3 ? "ok" : "") + '">' + n + " sentences (at least 3)</span><span>" + wc2 + " words</span>" + (stepDone(4) ? '<span class="ok">&#10003; Closing finished</span>' : ""); softRefresh();
+  }
+});
+/* pictures are shrunk so they fit in saved work */
+function shrink(file, done) {
+  var rd = new FileReader();
+  rd.onload = function () {
+    var img = new Image();
+    img.onload = function () {
+      var m = 640, sc = Math.min(1, m / Math.max(img.width, img.height));
+      var c = document.createElement("canvas"); c.width = Math.round(img.width * sc); c.height = Math.round(img.height * sc);
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+      try { done(c.toDataURL("image/jpeg", 0.78)); } catch (e) { done(""); }
+    };
+    img.onerror = function () { done(""); };
+    img.src = rd.result;
+  };
+  rd.readAsDataURL(file);
+}
+
+var nameIn = $("#stuName"); nameIn.value = S.name || "";
+nameIn.addEventListener("input", function () { S.name = nameIn.value; save(); });
+
+/* ── Step 6: save as PDF ── */
+function openSave() {
+  if (!S.way) { go(0); return; }
+  var w = WAYS[S.way];
+  var missing = [0, 1, 2, 3, 4].filter(function (i) { return !stepDone(i); }).map(function (i) { return STEPS[i].title; });
+  var nm = (S.name || "").trim();
+  var fname = "NTS Final Project – " + (nm || "your name");
+  var notes = PARTS.map(function (p) {
+    var o = byId(S.pick[p.id]); if (!o) return '<div class="pn"><div class="ic"></div><div><h4>' + p.name + '</h4><div class="missing">No object picked.</div></div></div>';
+    var hc = S.hpart === p.id && S.hcard ? '<div class="hist"><b>True history · ' + esc(hist(S.hcard).title) + ":</b> " + esc(S.htext) + "</div>" : "";
+    return '<div class="pn"><div class="ic">' + (S.pic[p.id] ? '<img src="' + S.pic[p.id] + '" alt="">' : iconSVG(o.id)) + "</div><div><h4>" + esc(o.name) + '</h4><div class="meta">' + p.name + " · " + esc(o.ch) + (S.way === 2 && S.who[p.id] ? " · " + esc(S.who[p.id]) + "’s window" : "") + "</div>" +
+      (S.note[p.id].trim() ? '<div class="txt">' + esc(S.note[p.id].trim()) + "</div>" : '<div class="missing">Note not written yet.</div>') + hc + "</div></div>";
+  }).join("");
+  var v = document.createElement("div"); v.className = "saveview"; v.id = "saveview"; v.setAttribute("role", "dialog"); v.setAttribute("aria-label", "Save your project as a PDF");
+  v.innerHTML = '<div class="save-bar"><h2>Step 6 · Save your PDF</h2>' +
+    (missing.length ? '<div class="warn">Not finished yet: <b>' + missing.map(esc).join(", ") + "</b>. You can still save, but finish these first for full credit.</div>" : "") +
+    (nm ? "" : '<div class="warn">Type your name at the top of the page so your teacher knows whose project this is.</div>') +
+    "<b>How to turn it in</b><ol><li>Look over your pages below. Fix anything before you save.</li><li>Press <b>Save as PDF</b>. A print window opens.</li><li>Next to <b>Destination</b>, choose <b>Save as PDF</b>, then press <b>Save</b>.</li><li>Name the file <b>" + esc(fname) + "</b>.</li><li>Upload the PDF to the <b>Number the Stars Final Project</b> assignment in Canvas.</li></ol>" +
+    '<div class="save-actions"><button type="button" class="btn gold" id="printBtn">Save as PDF</button><button type="button" class="btn ghost" id="closeSave">Back to my project</button></div></div>' +
+    '<div class="sheets">' +
+      '<section class="sheet"><div class="k">Number the Stars · Final Project</div><h3>' + esc(w.title) + "</h3><div>" + esc(nm || "Name: ________________") + '</div><div class="scene-wrap">' + sceneSVG().replace(/id="(\w+)"/g, 'id="$1-pdf"').replace(/url\(#(\w+)\)/g, "url(#$1-pdf)") + "</div>" +
+        '<p style="margin:0;font-size:15px;color:#56627F;">' + esc(w.short) + ". Objects from the beginning, middle and end of the book, with a " + esc(w.noteName) + " for each.</p></section>" +
+      '<section class="sheet"><div class="k">My ' + esc(w.noteName) + "s</div><h3>Three objects</h3>" + notes + "</section>" +
+      '<section class="sheet"><div class="k">' + esc(w.closeTitle) + "</div><h3>What this book says about courage</h3>" +
+        (S.closing.trim() ? '<div class="closing">' + esc(S.closing.trim()) + "</div>" : '<div class="missing">Closing not written yet.</div>') + "</section>" +
+    "</div>";
+  // the street on the save sheet is always shown lit as far as the work goes
+  document.body.appendChild(v); document.body.classList.add("saving");
+  try { document.title = fname; } catch (e) {}
+  $$(".revcard", v).forEach(function (g, i) { if (itemsFor()[i].lit) g.classList.add("open"); });
+  $("#closeSave").addEventListener("click", closeSave);
+  $("#printBtn").addEventListener("click", function () { try { window.print(); } catch (e) {} });
+  v.addEventListener("keydown", function (e) { if (e.key === "Escape") closeSave(); });
+  $("#printBtn").focus();
+  drawSteps(); $$("#steps .step").forEach(function (li, i) { li.classList.toggle("now", i === 5); });
+}
+function closeSave() { var v = $("#saveview"); if (v) v.remove(); document.body.classList.remove("saving"); document.title = "Number the Stars: Final Project"; drawSteps(); }
+
+/* welcome clip in the assignment card */
+$("#welcomeGuide").innerHTML = guideHTML("welcome");
+wireGuides($("#welcomeGuide"));
+if (S.step > 4) S.step = 4;
+render();
+})();
+
+/* teacher video from the repo: shown only once the file is confirmed playable */
+(function () {
+  var box = document.getElementById("teacherVideo"), v = box && box.querySelector("video");
+  if (!v) return;
+  var show = function () { if (!v.videoWidth || !box.hidden) return; box.hidden = false; document.querySelectorAll(".video-placeholder-wrap").forEach(function (w) { w.style.display = "none"; }); };
+  if (v.readyState >= 1) show(); else v.addEventListener("loadedmetadata", show);
+})();
+
+/* Video Manifest Loader (same as every G4 ELA lesson) */
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("https://raw.githubusercontent.com/bbirchum1/optima-4th-ela/main/video-manifest.json?v=" + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var manifest = data.videos || data;
+      document.querySelectorAll(".video-placeholder-wrap").forEach(function (wrap) {
+        var m = wrap.innerHTML.match(/<!--\s*slot:\s*([\w-]+)\s*-->/);
+        if (!m) return;
+        var entry = manifest[m[1]];
+        if (!entry || entry.status !== "ready" || !entry.embed) return;
+        var tv = document.getElementById("teacherVideo"); if (tv && !tv.hidden) return;
+        var temp = document.createElement("div"); temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector("iframe"); if (!iframe) return;
+        iframe.removeAttribute("width"); iframe.removeAttribute("height");
+        iframe.style.cssText = "display:block;width:100%;aspect-ratio:16/9;border:none;";
+        wrap.innerHTML = ""; wrap.style.cssText = "display:block;border:none;background:#000;border-radius:12px;overflow:hidden;margin:0 0 14px;";
+        var label = document.createElement("p"); label.className = "watch-first"; label.textContent = "Watch this first";
+        wrap.parentNode.insertBefore(label, wrap); wrap.appendChild(iframe);
+      });
+    })
+    .catch(function (err) { console.warn("Video manifest load failed:", err); });
+});
+
+</script>
+</body>
+</html>
