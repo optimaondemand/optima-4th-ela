@@ -197,5 +197,36 @@
   "wordParts": "il-, ir-, im-, and in- all mean “not”: il- before l (illegal), ir- before r (irregular), im- before b, m, or p (impossible), in- before other letters (incorrect).",
   "grammar": "Present-tense verbs must agree with their subject: I, you, we, they walk; he, she, it walks. Use is or are + -ing for something happening right now (she is walking).",
   "spelling": "c and g are usually soft (/s/ and /j/) before e, i, or y (cellar, gentle, energy) and hard before a, o, or u (cordial, golden). A few words break the rule (get, girl)."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Two sides of the tea party",
+   "intro": "Ch. 16 looks different depending on who tells it.",
+   "fields": [
+    {
+     "label": "Anne’s side",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "The grown-ups’ side",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "The gap: what one of them did not know",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }

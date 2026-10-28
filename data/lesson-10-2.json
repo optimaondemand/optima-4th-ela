@@ -157,5 +157,36 @@
   "wordParts": "il-, ir-, im-, and in- all mean “not”: il- before l (illegal), ir- before r (irregular), im- before b, m, or p (impossible), in- before other letters (incorrect).",
   "grammar": "Present-tense verbs must agree with their subject: I, you, we, they walk; he, she, it walks. Use is or are + -ing for something happening right now (she is walking).",
   "spelling": "c and g are usually soft (/s/ and /j/) before e, i, or y (cellar, gentle, energy) and hard before a, o, or u (cordial, golden). A few words break the rule (get, girl)."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Same room, two scenes",
+   "intro": "In Ch. 17 and 18, everyone looks at the same sick child.",
+   "fields": [
+    {
+     "label": "Anne sees…",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "Diana and Young Mary Joe see…",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "Why the gap: what Anne has lived through",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 24
  }
 }

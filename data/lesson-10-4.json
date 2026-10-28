@@ -143,5 +143,35 @@
   "wordParts": "il-, ir-, im-, and in- all mean “not”: il- before l (illegal), ir- before r (irregular), im- before b, m, or p (impossible), in- before other letters (incorrect).",
   "grammar": "Present-tense verbs must agree with their subject: I, you, we, they walk; he, she, it walks. Use is or are + -ing for something happening right now (she is walking).",
   "spelling": "c and g are usually soft (/s/ and /j/) before e, i, or y (cellar, gentle, energy) and hard before a, o, or u (cordial, golden). A few words break the rule (get, girl)."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Whose side is the story on?",
+   "intro": "Ch. 20 stays close to Anne. Try the other side too.",
+   "fields": [
+    {
+     "label": "The Haunted Wood from inside Anne’s fear",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "The same moment from Marilla’s side",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "Which one is fairer to Anne, and why?",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 24,
+  "journal-q3": 24
  }
 }
