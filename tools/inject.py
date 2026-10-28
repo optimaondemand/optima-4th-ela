@@ -53,6 +53,7 @@ MARK_OPEN  = "<!-- ═════════ OAO SPARKLE LAYER (additive) ═�
 MARK_CLOSE = "<!-- ═════════ END OAO SPARKLE ═════════ -->"
 DECL_ID    = "oao-lesson"
 DATA_ID    = "oao-data"
+FT_PRE     = '<!-- Freedom Train opening: keep the lesson covered until the opening is on screen (oao-ft-kit.js lifts it; 5 s failsafe) -->\n<style id="ftk-pre-css">html.ftk-pre,html.ftk-pre body{background:#2A1D14!important}html.ftk-pre body>*:not(.ftk-intro){visibility:hidden!important}</style>\n<script>(function(){try{var d=document.documentElement,q=location.search;if(/[?&]nointro\\b/.test(q)||navigator.webdriver)return;if(!/[?&]intro\\b/.test(q)){if(window.matchMedia&&matchMedia(\'(prefers-reduced-motion: reduce)\').matches)return;if(sessionStorage.getItem(\'oao.ft.intro:\'+location.pathname)===\'1\')return;}d.classList.add(\'ftk-pre\');setTimeout(function(){d.classList.remove(\'ftk-pre\');},5000);}catch(e){}})();</script>\n'
 BOOKS      = ("frisby", "writing", "anne", "bridge", "nts", "ft", "pc", "synth")
 
 
@@ -131,6 +132,12 @@ def main():
                   '<script type="application/json" id="%s">\n%s\n</script>\n</head>'
                   % (DECL_ID, json.dumps(decl, ensure_ascii=False),
                      DATA_ID, json.dumps(data, ensure_ascii=False, indent=1)))
+    if a.book == "ft":
+        # Freedom Train: the opening must be the first thing on screen,
+        # so a tiny cover in <head> hides the lesson until the opening is
+        # up (assets/js/oao-ft-kit.js lifts it; 5 s failsafe). Bethany,
+        # 28 Oct 2026: "not the lesson page flashing and then the thing".
+        decl_block = FT_PRE + decl_block
     lines = html.split("\n")
     lines[one(lines, "</head>", "</head>")] = decl_block
     html = "\n".join(lines)

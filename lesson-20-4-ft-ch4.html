@@ -2130,6 +2130,9 @@ body {
   .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
 }
 </style>
+<!-- Freedom Train opening: keep the lesson covered until the opening is on screen (oao-ft-kit.js lifts it; 5 s failsafe) -->
+<style id="ftk-pre-css">html.ftk-pre,html.ftk-pre body{background:#2A1D14!important}html.ftk-pre body>*:not(.ftk-intro){visibility:hidden!important}</style>
+<script>(function(){try{var d=document.documentElement,q=location.search;if(/[?&]nointro\b/.test(q)||navigator.webdriver)return;if(!/[?&]intro\b/.test(q)){if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(sessionStorage.getItem('oao.ft.intro:'+location.pathname)==='1')return;}d.classList.add('ftk-pre');setTimeout(function(){d.classList.remove('ftk-pre');},5000);}catch(e){}})();</script>
 <script type="application/json" id="oao-lesson">
 {"grade": 4, "subject": "ela", "book": "ft", "week": 20, "day": 4, "bookTitle": "Freedom Train", "chapters": "Ch. 4"}
 </script>

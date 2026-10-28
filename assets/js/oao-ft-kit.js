@@ -233,6 +233,7 @@
       '<p class="sr">A patchwork quilt fills the screen. The view sinks into one dark square, which becomes a night sky. The Big Dipper comes out, its two pointer stars lead to the North Star, and a trail of small lights runs north from the trees toward it.</p>' +
       '<button type="button" class="ftk-skip">' + (still ? 'Start the lesson ▸' : 'Skip ▸▸') + '</button>';
     document.body.appendChild(c); document.body.classList.add('ftk-on');
+    lift();
     var cv = c.querySelector('canvas'), W = z.vw, H = z.vh;
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); cv.style.width = W + 'px'; cv.style.height = H + 'px';
     var x = cv.getContext('2d'); x.scale(dpr, dpr);
@@ -269,12 +270,15 @@
     b.onclick = function (e) { e.stopPropagation(); play(reduced()); };
     hdr.appendChild(b);
   }
+  /* the cover the lesson's <head> put up (html.ftk-pre) comes down the
+     moment the opening is on screen, or straight away if it won't play */
+  function lift() { document.documentElement.classList.remove('ftk-pre'); }
   KIT.intro = function (o) {
     opts = o || {}; css(); replayButton();
     var bot = !!navigator.webdriver;
-    if (q('nointro')) return;
+    if (q('nointro')) { lift(); return; }
     if (q('intro')) { play(reduced()); return; }
-    if (bot || seen() || reduced()) return;
+    if (bot || seen() || reduced()) { lift(); return; }
     play(false);
   };
   KIT._scene = scene;                                   /* for tests: draw one frame at time t */
