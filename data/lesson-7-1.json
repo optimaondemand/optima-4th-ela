@@ -205,5 +205,36 @@
     "wordParts": "con- and com- mean “with” or “together”: connect, combine, company, conversation.",
     "grammar": "Most nouns add -s to make more than one. Irregular plurals don’t follow that rule, so you have to know them: child → children, woman → women, foot → feet.",
     "spelling": "Most words just add -s. Words ending in s, x, ch, sh or z add -es (box → boxes). A consonant + y changes y to i and adds -es (story → stories), but a vowel + y keeps the y (day → days)."
+  },
+  "wgrd": {
+    "catcher": {
+      "title": "Whose view is it?",
+      "intro": "As you read, put each judgment about someone in the right column. A few words is plenty.",
+      "layout": "row",
+      "fields": [
+        {
+          "label": "Mrs. Rachel thinks…",
+          "hint": "Matthew must be going for a doctor…",
+          "rows": 3
+        },
+        {
+          "label": "The narrator tells us straight…",
+          "hint": "Matthew was wearing his best suit…",
+          "rows": 3
+        }
+      ],
+      "end": {
+        "label": "One thing the narrator lets you see about Mrs. Rachel that she would never say about herself",
+        "hint": "She…"
+      }
+    },
+    "useAt": [
+      "journal-q2"
+    ]
+  },
+  "counters": {
+    "journal-q1": 16,
+    "journal-q2": 24,
+    "journal-q3": 16
   }
 }

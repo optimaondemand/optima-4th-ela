@@ -143,5 +143,40 @@
     "wordParts": "con- and com- mean “with” or “together”: connect, combine, company, conversation.",
     "grammar": "Most nouns add -s to make more than one. Irregular plurals don’t follow that rule, so you have to know them: child → children, woman → women, foot → feet.",
     "spelling": "Most words just add -s. Words ending in s, x, ch, sh or z add -es (box → boxes). A consonant + y changes y to i and adds -es (story → stories), but a vowel + y keeps the y (day → days)."
+  },
+  "wgrd": {
+    "catcher": {
+      "title": "Move the chair",
+      "intro": "Pick one moment from Ch. 5 and imagine someone else telling it.",
+      "fields": [
+        {
+          "label": "The moment I picked",
+          "hint": "Anne tells Marilla about…",
+          "rows": 2
+        },
+        {
+          "label": "Who tells it now",
+          "hint": "Marilla / Matthew / Mrs. Thomas…",
+          "rows": 1
+        },
+        {
+          "label": "What my new teller leaves out or makes bigger",
+          "hint": "",
+          "rows": 2
+        }
+      ],
+      "end": {
+        "label": "What this shows about the narrator we really have",
+        "hint": "Our narrator lets us…"
+      }
+    },
+    "useAt": [
+      "journal-q2"
+    ]
+  },
+  "counters": {
+    "journal-q1": 10,
+    "journal-q2": 16,
+    "journal-q3": 16
   }
 }
