@@ -97,9 +97,9 @@
  "writingFocus": "Rising Action",
  "dol": {
   "a": {
-   "raw": "marilla flavored the cake with vanilla anne added the liniment by mistake",
-   "fixed": "<strong>Marilla</strong> flavored the cake with <strong>vanilla.</strong> <strong>Anne</strong> added the liniment by <strong>mistake.</strong>",
-   "why": "Capital letters on the names Marilla and Anne, a period to close the first sentence, a capital A to start the next one, and a period at the end."
+   "raw": "marilla kept her vanilla on the pantry shelf she used it in her best cakes",
+   "fixed": "<strong>Marilla</strong> kept her vanilla on the pantry <strong>shelf.</strong> <strong>She</strong> used it in her best <strong>cakes.</strong>",
+   "why": "A capital letter on the name Marilla, a period to close the first sentence, a capital S to start the next one, and a period at the end."
   },
   "b": {
    "raw": "the minister came to tea marilla set out her yellow plum preserves",
