@@ -157,5 +157,37 @@
   "wordParts": "anti- means “against” or “opposite to” (antifreeze, antibody, antiseptic). de- means “away from” or “down” (depart, descend, decrease).",
   "grammar": "Past tense tells what already happened: baked, arrived. Many past verbs end in -ed, but some don’t. Future tense tells what hasn’t happened yet: will + the plain verb, as in will bake.",
   "spelling": "Change y to i before a suffix when a consonant comes before the y (happy → happier, story → stories). Keep the y when a vowel comes before it (play → played) and always before -ing (carry → carrying)."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "What does this place allow?",
+   "intro": "Ch. 22 and 23 happen in very different places.",
+   "fields": [
+    {
+     "label": "The place",
+     "hint": "the manse…",
+     "rows": 3
+    },
+    {
+     "label": "What it allows",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "What it makes almost impossible",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row"
+  },
+  "useAt": [
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 24,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }
