@@ -108,60 +108,14 @@
  },
  "transcripts": {
   "welcome": "Welcome back. Harriet never goes to school. So how does she learn anything at all? That’s the question for Chapter 3, which Sterling calls School Days. Today you’ll warm up, practice adding describing words that do real work, read the chapter, and narrow your research to one question. Keep track of every teacher you meet.",
-  "wgrd": "A chapter title can be a clue. This one is called School Days, and there is no school in it. Hold the title in your head as you read, and make a tally mark every time Harriet learns something. Write down who taught her. When the chapter ends, the pattern in your tally is the central idea.",
-  "dol": "The model is short and plain, and every part of it is correct. The sentence to fix is long, with several describing words, and it names a special star. Is that just any star, or does it have its own name? Names get capitals. Then check how the sentence begins.",
-  "guide1": "Today the word work moves from noticing to doing. You’ll add describing words to sentences, and you’ll find out that not every describing word is worth adding. Some do real work. Some only decorate. A good writer can tell the difference, and by the end of today, you’ll be able to tell too.",
-  "morphology": "Four words, four missing fronts. Two of these words are about pushing or stretching outward. Two are about something that comes after. Read each meaning slowly, then choose. When you’re done, try one in a sentence of your own. Can you use one to say something about Harriet?",
-  "vocabulary": "You know these four words by now. Today, try something harder. Think of your own sentence for each one, about this chapter, before you look at the card. If you can use a word, you own it. If you can only recognize it, it’s still borrowed.",
-  "grammar": "Look at the before and the after. The first sentence is fine, but you can’t see much. The second one adds two describing words, and suddenly you know the season and the danger. That’s today’s test. Every word you add has to tell the reader something they didn’t already know.",
-  "spelling": "Today you split the names yourself. The trick is to stop treating a name as something special. Find the vowels. Split between the consonants. Read each chunk out loud. A long state name is only three or four ordinary chunks standing side by side.",
   "guide2": "Today’s Freedom Watch is about learning what you’re not supposed to know. In Harriet’s world, the law kept enslaved people from learning to read. But learning found other ways in: through stories, through songs, through news whispered from cabin to cabin. Watch how much Harriet learns without a single book.",
-  "read": "There’s no schoolhouse in Chapter 3, but there are teachers everywhere. Notice the old man who can read, and what he reads aloud. Notice the songs, and what they might really mean. And notice the walks in the woods near the end. What is Harriet learning there that no book could teach her?",
-  "rwm": "Six words, and a whole working day fits inside them. Notice that the saying never names a time. It measures the day with a pair of opposites instead. Ask what the people who made up this saying were telling each other, and what it tells you.",
-  "guide3": "Now you write. The questions ask what Harriet learns by working beside the grown-ups, how the older people teach about freedom with no school at all, and what the chapter is mostly about. Your tally marks will help. Then you’ll choose one research question that’s just the right size.",
-  "chapter": "The last question asks for the central idea, and the chapter’s title is a clue. Look at your tally. Who taught Harriet, and what did each one teach? Now ask what kind of school Sterling is really describing. Answer in one clear sentence, then add the facts that prove it.",
-  "workshop": "A research question can be too big, too small, or just right. Too big, and you’d need a whole library. Too small, and one sentence answers it. Today, choose one question from your list and test it. If it doesn’t fit, stretch it or squeeze it until it does."
+  "read": "There’s no schoolhouse in Chapter 3, but there are teachers everywhere. Notice the old man who can read, and what he reads aloud. Notice the songs, and what they might really mean. And notice the walks in the woods near the end. What is Harriet learning there that no book could teach her?"
  },
  "media": {
   "welcome": {
    "kind": "audio",
    "path": "guide/ft-narrator/g4ela-20-3-welcome",
    "label": "Today’s welcome"
-  },
-  "wgrd": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-wgrd",
-   "label": "About today’s reading move"
-  },
-  "dol": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-dol",
-   "label": "About today’s sentence"
-  },
-  "guide1": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-guide1",
-   "label": "Before the word work"
-  },
-  "morphology": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-morphology",
-   "label": "About the word parts"
-  },
-  "vocabulary": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-vocabulary",
-   "label": "About today’s words"
-  },
-  "grammar": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-grammar",
-   "label": "About today’s grammar"
-  },
-  "spelling": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-spelling",
-   "label": "About today’s spelling"
   },
   "guide2": {
    "kind": "audio",
@@ -173,25 +127,17 @@
    "path": "guide/ft-narrator/g4ela-20-3-read",
    "label": "Before you read"
   },
-  "rwm": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-rwm",
-   "label": "About the sentence"
+  "guide1": {
+   "kind": ""
   },
   "guide3": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-guide3",
-   "label": "Before you write"
+   "kind": ""
   },
-  "chapter": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-chapter",
-   "label": "About the questions"
+  "rwm": {
+   "kind": ""
   },
-  "workshop": {
-   "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-workshop",
-   "label": "About today’s writing"
+  "copia": {
+   "kind": ""
   }
  },
  "wordgame": {
