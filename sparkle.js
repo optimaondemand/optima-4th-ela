@@ -852,7 +852,7 @@ var LANDMARK = {
    only lights up what the painting already shows. The coordinates
    were measured off the file (connected-component centroids), not
    eyeballed, so a repaint means re-measuring, not nudging.
-   Forty spaces, thirty-two weeks: a week claims its space by
+   Thirty-six spaces, thirty-two weeks: a week claims its space by
    proportion, which keeps Start at week 1 and Finish at week 32
    without leaving gaps in the middle.                            */
 var BOARD_W = 1448, BOARD_H = 1086, BOARD_R = 23;
@@ -897,10 +897,9 @@ var BOARD_SPACES = [
   [1270,647,'#4A6E8F'],
   [1153,652,'#4A6E8F'],
   [1040,651,'#4A6E8F'],
-  [923,661,'#C0623F',1],   /* 18–21: painted lavender on the artwork, but they open */
-  [807,662,'#C0623F',1],   /* Freedom Train's middle sweep, so the board repaints   */
-  [692,660,'#C0623F',1],   /* them salmon (the 4th field)                          */
-  [572,656,'#C0623F',1],
+  /* the four spaces that ran past Prince Caspian's picture were painted
+     out of the artwork and replaced by an arrow: the road from Number
+     the Stars goes straight on to Freedom Train's salmon spaces */
   [463,645,'#C0623F'],
   [356,619,'#C0623F'],
   [254,596,'#C0623F'],
@@ -924,25 +923,25 @@ var BOARD_SPACES = [
 var BOARD_N = BOARD_SPACES.length;
 /* ── where the owl stands ───────────────────────────────────────
    One step per LESSON DAY, not per week: 32 weeks x 4 lessons = 128
-   days across 40 painted spaces, so the owl moves roughly one space
+   days across 36 painted spaces, so the owl moves roughly one space
    every three lessons and the board lasts the whole year.
 
    The spaces are not divided evenly, because the artist placed the
    six vignettes for composition rather than in curriculum order. Each
    book is anchored to the stretch of path that actually runs past its
    own picture, so a student reading Anne stands under the green
-   gables for all eight of those weeks. Freedom Train gets the long
-   middle sweep and the left-hand loop, which suits a book about a
-   journey; Prince Caspian gets the four spaces beneath its own tree.
+   gables for all eight of those weeks. Freedom Train gets the
+   left-hand loop, which suits a book about a journey (the road
+   arrows straight past Prince Caspian's tree to get there); Prince Caspian gets the four spaces beneath its own tree.
    Change the artwork and these anchors have to be re-measured with
    it — they describe the painting, not the curriculum. */
 var BOARD_LEGS = [
   { id:'frisby', weeks:[1,  6], spaces:[ 1,  4] },   /* Frisby + the wk-6 workshop */
   { id:'anne',   weeks:[7, 14], spaces:[ 5,  9] },
   { id:'nts',    weeks:[15,19], spaces:[10, 17] },   /* incl. the wk-15 bridge */
-  { id:'ft',     weeks:[20,25], spaces:[18, 31] },
-  { id:'pc',     weeks:[26,30], spaces:[32, 35] },
-  { id:'synth',  weeks:[31,32], spaces:[36, 40] }
+  { id:'ft',     weeks:[20,25], spaces:[18, 27] },
+  { id:'pc',     weeks:[26,30], spaces:[28, 31] },
+  { id:'synth',  weeks:[31,32], spaces:[32, 36] }
 ];
 function legOfWeek(w) {
   for (var i = 0; i < BOARD_LEGS.length; i++) {
@@ -953,7 +952,7 @@ function legOfWeek(w) {
 /* the fluency page is not a numbered lesson day; it sits with day 4 */
 function dayNum(d) { var n = parseInt(d, 10); return (n >= 1 && n <= 4) ? n : 4; }
 
-/* lesson (week, day) -> space 1..40 */
+/* lesson (week, day) -> space 1..36 */
 function spaceOfLesson(w, d) {
   var leg = legOfWeek(w);
   var days = (leg.weeks[1] - leg.weeks[0] + 1) * 4;
@@ -1196,14 +1195,6 @@ function drawBoardMap(svg) {
          '<use href="#spkBoardImg" filter="url(#spkUnread)"/>' +
          '<rect x="' + v.x + '" y="' + v.y + '" width="' + v.w + '" height="' + v.h +
          '" fill="#FBF3DF" opacity=".40"/></g>';
-  });
-
-  /* spaces the artist painted in another book's colour are repainted to
-     match the book that owns them (BOARD_SPACES 4th field) */
-  BOARD_SPACES.forEach(function (sp) {
-    if (!sp[3]) return;
-    s += '<circle cx="' + sp[0] + '" cy="' + sp[1] + '" r="' + (BOARD_R + 1) + '" fill="#F5B292" ' +
-         'stroke="#7A5A3E" stroke-width="2.2"/>';
   });
 
   /* the student's name, hand-written into the open field the artist
