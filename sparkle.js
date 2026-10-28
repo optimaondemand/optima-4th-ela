@@ -897,10 +897,10 @@ var BOARD_SPACES = [
   [1270,647,'#4A6E8F'],
   [1153,652,'#4A6E8F'],
   [1040,651,'#4A6E8F'],
-  [923,661,'#7A5C86'],
-  [807,662,'#7A5C86'],
-  [692,660,'#7A5C86'],
-  [572,656,'#7A5C86'],
+  [923,661,'#C0623F',1],   /* 18–21: painted lavender on the artwork, but they open */
+  [807,662,'#C0623F',1],   /* Freedom Train's middle sweep, so the board repaints   */
+  [692,660,'#C0623F',1],   /* them salmon (the 4th field)                          */
+  [572,656,'#C0623F',1],
   [463,645,'#C0623F'],
   [356,619,'#C0623F'],
   [254,596,'#C0623F'],
@@ -1196,6 +1196,14 @@ function drawBoardMap(svg) {
          '<use href="#spkBoardImg" filter="url(#spkUnread)"/>' +
          '<rect x="' + v.x + '" y="' + v.y + '" width="' + v.w + '" height="' + v.h +
          '" fill="#FBF3DF" opacity=".40"/></g>';
+  });
+
+  /* spaces the artist painted in another book's colour are repainted to
+     match the book that owns them (BOARD_SPACES 4th field) */
+  BOARD_SPACES.forEach(function (sp) {
+    if (!sp[3]) return;
+    s += '<circle cx="' + sp[0] + '" cy="' + sp[1] + '" r="' + (BOARD_R + 1) + '" fill="#F5B292" ' +
+         'stroke="#7A5A3E" stroke-width="2.2"/>';
   });
 
   /* the student's name, hand-written into the open field the artist
