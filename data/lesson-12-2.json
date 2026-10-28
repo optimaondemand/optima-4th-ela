@@ -96,9 +96,9 @@
    "why": "A capital on Anne, a period where the first thought ends, a capital S to start the second sentence, and a period at the end. Sank and wept are both irregular past-tense verbs."
   },
   "b": {
-   "raw": "marilla cut the green hair off it was the only cure",
-   "fixed": "<strong>Marilla</strong> cut the green hair <strong>off.</strong> <strong>It</strong> was the only <strong>cure.</strong>",
-   "why": "The same pattern: a capital on Marilla, a period after off, a capital I to start the next sentence, and a period at the end. Cut is irregular too: its past looks just like the present."
+   "raw": "the peddler sold anne the dye he said it would turn her hair black",
+   "fixed": "<strong>The</strong> peddler sold <strong>Anne</strong> the <strong>dye.</strong> <strong>He</strong> said it would turn her hair <strong>black.</strong>",
+   "why": "The same pattern: a capital on The to start, a capital on Anne, a period after dye, a capital H to start the next sentence, and a period at the end. Sold and said are irregular too: the past of sell and say."
   }
  },
  "scholar": {

@@ -91,9 +91,9 @@
  "writingFocus": "Revise",
  "dol": {
   "a": {
-   "raw": "anne saw the prima donna sing she felt enraptured by the music",
-   "fixed": "<strong>Anne</strong> saw the prima donna <strong>sing.</strong> <strong>She</strong> felt enraptured by the <strong>music.</strong>",
-   "why": "A capital on Anne, a period after sing to close the first thought, a capital S to start the next sentence, and a period at the end. Saw is the past of see; felt is the past of feel."
+   "raw": "anne went to the concert she heard a famous singer",
+   "fixed": "<strong>Anne</strong> went to the <strong>concert.</strong> <strong>She</strong> heard a famous <strong>singer.</strong>",
+   "why": "A capital on Anne, a period after concert to close the first thought, a capital S to start the next sentence, and a period at the end. Went is the past of go; heard is the past of hear."
   },
   "b": {
    "raw": "miss barry took the girls to a restaurant they ate ice cream at eleven o’clock",
