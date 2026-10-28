@@ -214,5 +214,36 @@
    "sub": "The street where the king rode, then and now.",
    "caption": "Drag the line. On the left, the king rides down Gyldenløvesgade in 1940. On the right, the same street today. The two photos are not taken from exactly the same spot, but it is the same road, beside the lakes in the middle of Copenhagen."
   }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Then and now",
+   "intro": "Annemarie remembers how things used to be.",
+   "fields": [
+    {
+     "label": "Then",
+     "hint": "The king rode alone…",
+     "rows": 3
+    },
+    {
+     "label": "Now",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "The gap, in one sentence: that is the danger",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }

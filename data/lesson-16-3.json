@@ -232,5 +232,37 @@
    ],
    "credit": "A reconstructed wartime kitchen at Frihedsmuseet (Museum of Danish Resistance), Copenhagen. Photo: Leif Jørgensen, CC BY-SA 4.0, via Wikimedia Commons."
   }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Read it like a warning",
+   "intro": "Look at what changed at the button shop.",
+   "fields": [
+    {
+     "label": "The object",
+     "hint": "a padlock…",
+     "rows": 3
+    },
+    {
+     "label": "Who did it",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "Who it lands on",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row"
+  },
+  "useAt": [
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }
