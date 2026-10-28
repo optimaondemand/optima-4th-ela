@@ -75,25 +75,25 @@
   "spelling": "To split a long name, find the vowels, split between the consonants, and read each chunk. Names follow the same rules as any other word: Bal·ti·more."
  },
  "transcripts": {
-  "welcome": "Welcome back. Harriet is fifteen now, and very strong. In Chapter 4 she meets someone who has already run away, and she starts hearing about trains, the real kind and another kind. Today you’ll warm up, review the week’s words, read Chapter 4, and plan where you’ll look for research answers. Today’s question: what does a train mean to Harriet?",
-  "guide2": "Today’s Freedom Watch is about hearing. Before anyone can go somewhere new, they have to hear that it’s there. Listen for the stories Harriet hears in this chapter, and who tells them. Notice what happens inside her when she hears them, even though she doesn’t say a word.",
-  "read": "In Chapter 4, Harriet meets Jim, who has already tried to run away twice. Listen to his stories about the steam train, and about another railroad with very unusual conductors. Watch for the song the workers sing in the barn. The chapter ends suddenly, with a hard choice. Watch what Harriet decides."
+  "welcome": "Hey, it’s Marcus. Harriet is fifteen now, and stronger than most of the grown men she works beside. In Chapter 4 she meets someone who has already run away twice, and she starts hearing about trains, the real kind and another kind. Today’s question: what does a train mean to Harriet? Here’s a hint: it isn’t only about riding.",
+  "guide2": "Freedom Watch: hearing the whistle. Before anyone can go somewhere new, they have to hear that it’s there. Listen for the stories Harriet hears in this chapter, and who tells them. Notice what happens inside her while she listens, even though she doesn’t say a word. Then think about a story you once heard that changed what you thought was possible.",
+  "read": "In Chapter 4, Harriet meets Jim, who has already tried to run away twice. Listen to his stories about the steam train, and about another railroad with very unusual conductors. Watch for the song the workers sing in the barn. The chapter ends suddenly, with a hard choice and a frightening moment. Take a breath there, and watch what Harriet decides."
  },
  "media": {
   "welcome": {
    "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-4-welcome",
-   "label": "Today’s welcome"
+   "path": "guide/marcus/g4ela-20-4-welcome",
+   "label": "Marcus’s welcome"
   },
   "guide2": {
    "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-4-guide2",
-   "label": "Freedom Watch"
+   "path": "guide/marcus/g4ela-20-4-guide2",
+   "label": "Marcus · Freedom Watch"
   },
   "read": {
    "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-4-read",
-   "label": "Before you read"
+   "path": "guide/marcus/g4ela-20-4-read",
+   "label": "Marcus · before you read"
   },
   "guide1": {
    "kind": ""

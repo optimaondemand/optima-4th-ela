@@ -75,25 +75,25 @@
   "spelling": "To split a long name, find the vowels, split between the consonants, and read each chunk. Names follow the same rules as any other word: Bal·ti·more."
  },
  "transcripts": {
-  "welcome": "Welcome back. At the end of Chapter 1, Harriet was in a peck of trouble, and Chapter 2 is named for it. Today you’ll warm up, work with words, read Chapter 2, and study one sentence the way a writer does. Today’s question: what kind of trouble is Harriet in, and what does it tell us about her?",
-  "guide2": "Today’s Freedom Watch is about small rebellions. Harriet can’t escape, and she can’t fight back. But there’s one thing she won’t do, no matter who asks her. Watch for it. Then ask yourself whether saying no quietly is still a kind of freedom, and what it costs her.",
-  "read": "Chapter 2 begins in the dark cabin where Harriet’s family lives. Pay attention to the cabin itself: the fireplace, the beds, and one thing her mother made by hand. Then listen to what her mother and her father each say about smiling. They don’t agree. Watch where Harriet stands."
+  "welcome": "Hey, it’s Marcus. Chapter 1 ended with Harriet in a peck of trouble, and Chapter 2 is named for it. When I started my research, I thought her story would begin with an escape. It doesn’t. It begins with a girl who won’t give in, even in small ways. Today’s question: what kind of trouble is Harriet in, and what does it tell us about her?",
+  "guide2": "Today’s Freedom Watch is about small rebellions. Harriet can’t escape, and she can’t fight back. But there’s one thing she will not do, no matter who asks her, not even her own mother. Watch for it. This chapter has a hard part in it, so take it slowly. Then ask yourself: is saying no quietly still a kind of freedom? And what does it cost her?",
+  "read": "Chapter 2 starts in the cabin where Harriet’s family lives. Pay attention to the cabin itself: the fireplace, the beds, and one thing her mother made by hand. Then listen to what her mother and her father each say about smiling. They don’t agree. Watch where Harriet stands. That handmade thing shows up in your word game, too."
  },
  "media": {
   "welcome": {
    "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-2-welcome",
-   "label": "Today’s welcome"
+   "path": "guide/marcus/g4ela-20-2-welcome",
+   "label": "Marcus’s welcome"
   },
   "guide2": {
    "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-2-guide2",
-   "label": "Freedom Watch"
+   "path": "guide/marcus/g4ela-20-2-guide2",
+   "label": "Marcus · Freedom Watch"
   },
   "read": {
    "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-2-read",
-   "label": "Before you read"
+   "path": "guide/marcus/g4ela-20-2-read",
+   "label": "Marcus · before you read"
   },
   "guide1": {
    "kind": ""

@@ -107,25 +107,25 @@
   "spelling": "To split a long name, find the vowels, split between the consonants, and read each chunk. Names follow the same rules as any other word: Bal·ti·more."
  },
  "transcripts": {
-  "welcome": "Welcome back. Harriet never goes to school. So how does she learn anything at all? That’s the question for Chapter 3, which Sterling calls School Days. Today you’ll warm up, practice adding describing words that do real work, read the chapter, and narrow your research to one question. Keep track of every teacher you meet.",
-  "guide2": "Today’s Freedom Watch is about learning what you’re not supposed to know. In Harriet’s world, the law kept enslaved people from learning to read. But learning found other ways in: through stories, through songs, through news whispered from cabin to cabin. Watch how much Harriet learns without a single book.",
-  "read": "There’s no schoolhouse in Chapter 3, but there are teachers everywhere. Notice the old man who can read, and what he reads aloud. Notice the songs, and what they might really mean. And notice the walks in the woods near the end. What is Harriet learning there that no book could teach her?"
+  "welcome": "Hey, it’s Marcus. Harriet never went to school, not for a single day. So how did she learn so much? That’s what Chapter 3 is about. Sterling calls it School Days, and I think she means it with a little bit of a smile. Keep a tally of every teacher Harriet has. Today’s question: what does school mean for an enslaved child in Maryland?",
+  "guide2": "Freedom Watch: learning what you’re not supposed to know. In Harriet’s time, the law tried to keep enslaved people from learning to read. But learning found other ways in: stories, songs, and news passed from cabin to cabin. On my tours, people were always surprised how fast news traveled without a single phone. Watch how much Harriet learns without a book.",
+  "read": "There’s no schoolhouse in Chapter 3, but there are teachers everywhere. Notice the old man who can read, and what he reads aloud. Notice the songs, and what they might really mean. Then notice the walks in the woods near the end. I’ve walked woods like those. What is Harriet learning there that no book could teach her?"
  },
  "media": {
   "welcome": {
    "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-welcome",
-   "label": "Today’s welcome"
+   "path": "guide/marcus/g4ela-20-3-welcome",
+   "label": "Marcus’s welcome"
   },
   "guide2": {
    "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-guide2",
-   "label": "Freedom Watch"
+   "path": "guide/marcus/g4ela-20-3-guide2",
+   "label": "Marcus · Freedom Watch"
   },
   "read": {
    "kind": "audio",
-   "path": "guide/ft-narrator/g4ela-20-3-read",
-   "label": "Before you read"
+   "path": "guide/marcus/g4ela-20-3-read",
+   "label": "Marcus · before you read"
   },
   "guide1": {
    "kind": ""
