@@ -4658,9 +4658,13 @@ function buildCatcher() {
   document.body.appendChild(drawer);
   var fab = document.createElement('button');
   fab.type = 'button'; fab.className = 'spk-notes-fab'; fab.textContent = '📝 My reading notes';
+  /* on days 3 and 4 What Good Readers Do already sits on the Reading tab, so
+     the notes are right there and the floating button would only repeat them */
+  var homePanel = card.closest('.tab-panel');
+  if (homePanel && homePanel.id === 'tab-reading') fab.classList.add('hide');
   document.body.appendChild(fab);
   function open() { drawer.querySelector('.spk-notes-in').appendChild(card); drawer.classList.add('open'); fab.classList.add('hide'); var f = card.querySelector('textarea'); if (f) try { f.focus({ preventScroll: true }); } catch (e) {} }
-  function close() { home.insertBefore(card, homeNext && homeNext.parentNode === home ? homeNext : null); drawer.classList.remove('open'); fab.classList.remove('hide'); }
+  function close() { home.insertBefore(card, homeNext && homeNext.parentNode === home ? homeNext : null); drawer.classList.remove('open'); if (!(homePanel && homePanel.id === 'tab-reading')) fab.classList.remove('hide'); }
   fab.addEventListener('click', open);
   drawer.querySelector('.spk-notes-x').addEventListener('click', close);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
