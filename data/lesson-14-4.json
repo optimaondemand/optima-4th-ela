@@ -137,5 +137,36 @@
   "wordParts": "script and scribe mean “to write” (describe, manuscript). ject means “to throw” (reject, project).",
   "grammar": "A helping verb comes before the main verb and sets the time: had won, will go. The main verb carries the meaning. Helpers can stack: had been waiting. Some verbs need no helper: went.",
   "spelling": "Three suffix rules. Doubling: one syllable, one vowel, one consonant, so double it (stop, stopped). Drop the e when the suffix starts with a vowel (write, writing). Change y to i after a consonant, unless the suffix is -ing."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "The whole road",
+   "intro": "Ch. 38 is the last chapter. Name both what changed and what stayed.",
+   "fields": [
+    {
+     "label": "What stayed the same",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "What changed",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "Two moments that prove it: one early, one late",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 24
  }
 }
