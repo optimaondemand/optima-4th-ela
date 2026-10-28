@@ -102,8 +102,8 @@
    "why": "Capital letters on the names Anne and Diana, a period to close the first thought, a capital S to start the next sentence, and a period at the end."
   },
   "b": {
-   "raw": "diana knocked at the front door anne opened it in her second best",
-   "fixed": "<strong>Diana</strong> knocked at the front <strong>door.</strong> <strong>Anne</strong> opened it in her second <strong>best.</strong>",
+   "raw": "diana knocked at the front door anne opened it in her second-best dress",
+   "fixed": "<strong>Diana</strong> knocked at the front <strong>door.</strong> <strong>Anne</strong> opened it in her second-best <strong>dress.</strong>",
    "why": "The same pattern: capitals on the names Diana and Anne, a period where the first thought ends, a capital A to start the next sentence, and a period at the end."
   }
  },
