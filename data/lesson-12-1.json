@@ -193,5 +193,30 @@
   "wordParts": "port means “to carry” (transport, portable, export). tract means “to pull” or “to draw” (attract, distract, extract).",
   "grammar": "Irregular past-tense verbs don’t just add -ed. Some change a vowel (sing → sang), some turn into a new word (go → went), and some don’t change at all (put → put).",
   "spelling": "After ce or ge, keep the silent e when the suffix starts with a or o, so the c or g stays soft (courageous, manageable). Drop it when the suffix starts with e or i (noticing, changing)."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Three, not thirty",
+   "intro": "As you read Ch. 26, keep only the events that changed something.",
+   "fields": [
+    {
+     "label": "The three events that mattered most",
+     "hint": "1. … 2. … 3. …",
+     "rows": 3
+    }
+   ],
+   "end": {
+    "label": "Ch. 26 in two or three sentences",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }
