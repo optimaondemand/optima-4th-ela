@@ -582,7 +582,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
               <div class="seg" id="bubShape"><button data-v="circle" class="on">Circle</button><button data-v="cutout" title="Uses the background tool to cut you out">Cut-out</button><button data-v="off">Hide me</button></div>
             </div>
             <div class="field">Size
-              <div class="seg" id="bubSize"><button data-v="s">S</button><button data-v="m" class="on">M</button><button data-v="l">L</button></div>
+              <div class="seg" id="bubSize"><button data-v="xs" title="A small circle in the corner">XS</button><button data-v="s">S</button><button data-v="m" class="on">M</button><button data-v="l">L</button></div>
             </div>
             <div class="field">Corner
               <div class="seg" id="bubPos"><button data-v="tl">↖</button><button data-v="tr">↗</button><button data-v="bl">↙</button><button data-v="br" class="on">↘</button></div>
@@ -1419,7 +1419,9 @@ function containDraw(ctx, src, sw, sh){
   ctx.drawImage(src,(W-dw)/2,(H-dh)/2,dw,dh);
 }
 /* Screen + me: the shared screen, with you in a corner */
-var bub={shape:store.get('bubshape','circle'), size:store.get('bubsize','m'), pos:store.get('bubpos','br')};
+/* math videos default to a small circle (Bethany, 28 Oct 2026) so the board stays clear; size is remembered per subject */
+var BUBKEY = MATH ? 'bubsize-math' : 'bubsize';
+var bub={shape:store.get('bubshape','circle'), size:store.get(BUBKEY, MATH?'xs':'m'), pos:store.get('bubpos','br')};
 function composeScreen(ctx, camOK, segOK){
   ctx.fillStyle='#0E1C42'; ctx.fillRect(0,0,W,H);
   if (live.on && live.vid.readyState>=2 && live.vid.videoWidth){ ctx.fillStyle='#FFFDF8'; ctx.fillRect(0,0,W,H);
@@ -1429,7 +1431,7 @@ function composeScreen(ctx, camOK, segOK){
   else if (board.on && board.img){ ctx.fillStyle='#FFFDF8'; ctx.fillRect(0,0,W,H); containDraw(ctx,board.img,board.img.naturalWidth,board.img.naturalHeight); }
   else if (scrStream && scr.readyState>=2 && scr.videoWidth) containDraw(ctx,scr,scr.videoWidth,scr.videoHeight);
   if (!camOK || bub.shape==='off') return;
-  var d={s:190,m:250,l:330}[bub.size]||250, m=26;
+  var d={xs:140,s:190,m:250,l:330}[bub.size]||250, m=(MATH&&frame8On)?24:26;
   var left=bub.pos.indexOf('l')>-1, top=bub.pos.indexOf('t')>-1;
   var cx= left ? m+d/2 : W-m-d/2, cy= top ? m+d/2 : H-m-d/2;
   if (bub.shape==='cutout' && segOK && haveMask){
@@ -1447,7 +1449,7 @@ function composeScreen(ctx, camOK, segOK){
   ctx.shadowColor='transparent'; ctx.clip();
   ctx.drawImage(camLayer,(W-H)/2,0,H,H,cx-d/2,cy-d/2,d,d);
   ctx.restore();
-  ctx.beginPath(); ctx.arc(cx,cy,d/2,0,Math.PI*2); ctx.lineWidth=5; ctx.strokeStyle='#E8A531'; ctx.stroke();
+  ctx.beginPath(); ctx.arc(cx,cy,d/2,0,Math.PI*2); ctx.lineWidth=d<170?4:5; ctx.strokeStyle='#E8A531'; ctx.stroke();
 }
 /* slow computers (Chromebooks): watch how long each frame takes and step down */
 var perf={sum:0,n:0,since:0,warned:false}, userPickedModel=false;
@@ -1627,7 +1629,8 @@ function markSeg(id,val,attr){ [].forEach.call($(id).children,function(b){ b.cla
 function applySrc(m){
   srcMode=m; markSeg('srcSeg',m,'s');
   if (typeof markClean==='function') markClean();
-  $('bubbleOpts').hidden = m!=='screen';
+  $('bubbleOpts').hidden = m!=='screen' && !MATH;   /* math: boards put you in the corner too, so the size and corner are always here */
+  $('reshare').hidden = m!=='screen';
   $('mirror').disabled = m==='screen';
   $('srcNote').textContent = m==='screen'
     ? 'Sharing: '+(scrStream && scrStream.getVideoTracks()[0] ? scrStream.getVideoTracks()[0].label || 'your screen' : '—')+'. Your preview isn’t mirrored here, so text reads the right way.'
@@ -1649,10 +1652,11 @@ function setSrc(m){
 }
 [].forEach.call($('srcSeg').children,function(b){ b.onclick=function(){ setSrc(b.dataset.s); }; });
 $('reshare').onclick=function(){ startScreen().then(function(ok){ if(ok) applySrc('screen'); }); };
+if (MATH){ $('bubbleOpts').hidden=false; $('reshare').hidden=true; }
 [['bubShape','shape'],['bubSize','size'],['bubPos','pos']].forEach(function(p){
   markSeg(p[0],bub[p[1]],'v');
   [].forEach.call($(p[0]).children,function(b){ b.onclick=function(){
-    bub[p[1]]=b.dataset.v; store.set('bub'+p[1],b.dataset.v); markSeg(p[0],b.dataset.v,'v');
+    bub[p[1]]=b.dataset.v; store.set(p[1]==='size'?BUBKEY:'bub'+p[1],b.dataset.v); markSeg(p[0],b.dataset.v,'v');
     if (p[1]==='shape' && b.dataset.v==='cutout' && !segmenter) toast('Cut-out needs the background tool, which is still loading');
   }; });
 });
@@ -1688,7 +1692,9 @@ function clockT(now){
 function ease(t){ t=t<0?0:t>1?1:t; return t*t*(3-2*t); }
 function rrect(ctx,x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
 function fitText(ctx,txt,maxW,size,weight){ var s=size; do { ctx.font=weight+' '+s+'px Nunito, system-ui, sans-serif'; s-=2; } while (ctx.measureText(txt).width>maxW && s>14); }
-function wrapLines(ctx,txt,maxW){ var words=String(txt).split(/\s+/), lines=[], cur=''; words.forEach(function(w){ var t=cur?cur+' '+w:w; if (ctx.measureText(t).width>maxW && cur){ lines.push(cur); cur=w; } else cur=t; }); if(cur) lines.push(cur); return lines; }
+/* keep an amount with its unit on one line (1 m 65 cm never breaks as "1 m 65 / cm") */
+function keepUnits(t){ return String(t).replace(/(\d) (?=(?:m|cm|mm|km|L|mL|kg|g|ft|in|yd|lb|oz)\b)/g,'$1\u00a0').replace(/(\b(?:m|cm|kg|L)) (?=\d)/g,'$1\u00a0'); }
+function wrapLines(ctx,txt,maxW){ var words=String(txt).split(/[ \t\r\n]+/), lines=[], cur=''; words.forEach(function(w){ var t=cur?cur+' '+w:w; if (ctx.measureText(t).width>maxW && cur){ lines.push(cur); cur=w; } else cur=t; }); if(cur) lines.push(cur); return lines; }
 function drawTitleCard(ctx,t){
   var a = t<2.6 ? 1 : 1-ease((t-2.6)/0.6); if (a<=0) return;
   var at=autoTitle(), title=T.title||at[0], sub=T.sub||at[1];
@@ -1767,8 +1773,10 @@ function drawWordCard(ctx){
   var w=word.show, k=ease(word.k); if (!w || k<0.01) return;
   var cw=500;
   ctx.save();
-  ctx.font='600 26px Nunito, system-ui, sans-serif';
-  var dl=w.d?wrapLines(ctx,w.d,cw-56).slice(0,4):[], chh=w.d?132+dl.length*36+24:150;
+  /* the whole meaning always shows: smaller words before any line is dropped */
+  var dSize=26, dl=[];
+  if (w.d){ do { ctx.font='600 '+dSize+'px Nunito, system-ui, sans-serif'; dl=wrapLines(ctx,keepUnits(w.d),cw-56); dSize-=2; } while (dl.length>(dSize>=24?4:7) && dSize>18); dSize+=2; }
+  var chh=w.d?132+dl.length*36+24:150;
   var x=W-cw-44+(1-k)*(cw+90), y=Math.max(40,H*0.42-chh/2);
   ctx.globalAlpha=Math.min(1,k*1.3);
   ctx.translate(x+cw/2,y+chh/2); ctx.rotate(-0.02*k); ctx.translate(-cw/2,-chh/2);
@@ -1781,7 +1789,7 @@ function drawWordCard(ctx){
   var ex=0;
   if (w.e){ ctx.font='44px "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif'; ctx.fillText(w.e,26,86); ex=62; }
   ctx.fillStyle=NAVY; fitText(ctx,w.w,cw-56-ex,52,'800'); ctx.fillText(w.w,28+ex,86);
-  ctx.fillStyle='#2b3245'; ctx.font='600 26px Nunito, system-ui, sans-serif'; dl.forEach(function(l,i){ ctx.fillText(l,28,132+i*36); });
+  ctx.fillStyle='#2b3245'; ctx.font='600 '+dSize+'px Nunito, system-ui, sans-serif'; dl.forEach(function(l,i){ ctx.fillText(l,28,132+i*36); });
   ctx.restore();
 }
 /* a quote from the book, on a band across the bottom, while you read it */
@@ -2684,10 +2692,13 @@ function drawPartCard(ctx){
   if (p.rows && p.rows.some(function(r){ return r.part; })){
     rows=p.rows.map(function(r){ ctx.font='600 22px Nunito, system-ui, sans-serif'; return {part:r.part, lines:wrapLines(ctx,r.rest,cw-pad*2)}; });
   } else {
-    do { ctx.font='600 '+bodySize+'px Nunito, system-ui, sans-serif'; lines=wrapLines(ctx,p.body,cw-pad*2); bodySize-=2; } while (lines.length>8 && bodySize>18);
+    do { ctx.font='600 '+bodySize+'px Nunito, system-ui, sans-serif'; lines=wrapLines(ctx,keepUnits(p.body),cw-pad*2); bodySize-=2; } while (lines.length>8 && bodySize>18);
     bodySize+=2;
   }
-  var lh=bodySize*1.36, headH=p.title?96:62, bodyH;
+  /* the title wraps to 2 lines and shrinks until it fits inside the card (no text past the edge) */
+  var tSize=34, tLines=[];
+  if (p.title){ do { ctx.font='800 '+tSize+'px Nunito, system-ui, sans-serif'; tLines=wrapLines(ctx,keepUnits(p.title),cw-pad*2); tSize-=2; } while ((tLines.length>2 || tLines.some(function(l){ return ctx.measureText(l).width>cw-pad*2; })) && tSize>20); tSize+=2; }
+  var lh=bodySize*1.36, headH=p.title?62+tLines.length*Math.round(tSize*1.15)+6:62, bodyH;
   if (rows) bodyH=rows.reduce(function(n,r){ return n+46+r.lines.length*30+10; },0);
   else bodyH=lines.length*lh;
   var ch=headH+bodyH+28, x=W-cw-40+(1-k)*(cw+90), y=Math.max(30,Math.min(H-ch-30,H*0.45-ch/2));
@@ -2696,8 +2707,8 @@ function drawPartCard(ctx){
   ctx.fillStyle='#fffdf6'; rrect(ctx,x,y,cw,ch,10); ctx.fill(); ctx.shadowColor='transparent';
   ctx.fillStyle=p.col; rrect(ctx,x,y,cw,10,5); ctx.fill(); ctx.fillRect(x,y+5,cw,5);
   ctx.textAlign='left'; ctx.textBaseline='alphabetic';
-  ctx.fillStyle=p.col; ctx.font='800 15px Nunito, system-ui, sans-serif'; ctx.fillText(p.tag,x+pad,y+40);
-  if (p.title){ ctx.fillStyle=NAVY; ctx.font='800 34px Nunito, system-ui, sans-serif'; ctx.fillText(p.title,x+pad,y+82); }
+  ctx.fillStyle=p.col; ctx.font='800 15px Nunito, system-ui, sans-serif'; ctx.fillText(p.tag,x+pad,y+40,cw-pad*2);
+  if (p.title){ ctx.fillStyle=NAVY; ctx.font='800 '+tSize+'px Nunito, system-ui, sans-serif'; tLines.forEach(function(l,i){ ctx.fillText(l,x+pad,y+48+tSize+i*Math.round(tSize*1.15)); }); }
   var yy=y+headH+bodySize;
   if (rows){
     yy=y+headH+8;
