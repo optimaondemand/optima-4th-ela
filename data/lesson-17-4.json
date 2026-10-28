@@ -197,5 +197,30 @@
    ],
    "credit": "A Danish rescue boat in the collection of the United States Holocaust Memorial Museum. Photo: Brigade Piron, CC BY 3.0, via Wikimedia Commons."
   }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Weigh the cost",
+   "intro": "More than one person is brave in Ch. 8.",
+   "fields": [
+    {
+     "label": "Who is brave, and what they could lose",
+     "hint": "Uncle Henrik: …",
+     "rows": 4
+    }
+   ],
+   "end": {
+    "label": "Who risks the most, and the words that show it",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }

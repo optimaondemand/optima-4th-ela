@@ -255,5 +255,36 @@
    "sub": "Looking out to sea from Gilleleje.",
    "caption": "Drag the line. On the left, a painting from 1930 of a fishing boat sailing out from Gilleleje. On the right, a photograph taken at Gilleleje, looking out over the water. The dark line on the far side is Kullen, in Sweden."
   }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Feeling or doing?",
+   "intro": "Two lists as you read Ch. 7.",
+   "fields": [
+    {
+     "label": "What Annemarie feels",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "What Annemarie does",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "Is keeping a quiet promise courage? My answer",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }

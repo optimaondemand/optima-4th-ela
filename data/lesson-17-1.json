@@ -213,5 +213,35 @@
    "credit": "A yellow badge (Judenstern) in the Jewish Museum Westphalia, Dorsten, Germany. Photo: Daniel Ullrich, Threedots, CC BY-SA 3.0, via Wikimedia Commons.",
    "sub": "A real object from the war years."
   }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Point to the moment",
+   "intro": "Bravery lives in an action. Find it in Ch. 5.",
+   "fields": [
+    {
+     "label": "The moment she acts",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "What could have gone wrong",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "Annemarie is brave because she…",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }
