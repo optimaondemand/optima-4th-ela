@@ -191,5 +191,35 @@
   "wordParts": "spect means “to look” (inspect, respect). struct means “to build” (construct, instruct).",
   "grammar": "A linking verb joins the subject to a word that describes or renames it: Anne was happy. Some verbs, like felt and looked, can do either job. The test: can you swap in was?",
   "spelling": "One syllable: add -er or -est (small, smallest). Three or more syllables: use more or most (most difficult). Two syllables ending in y: change the y to i, then add the ending (funny, funnier)."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Said out loud, or shown?",
+   "intro": "Ch. 31 has a theme said right out loud. Look for it shown, too.",
+   "fields": [
+    {
+     "label": "A line that says something true about life",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "A choice that turned out well or badly",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "This chapter says that growing up is…",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 24,
+  "journal-q3": 16
  }
 }
