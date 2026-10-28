@@ -3613,8 +3613,36 @@ function addCaptions(v, src) {
     t.src = vtt;                 /* no `default`: off until CC is pressed */
     v.appendChild(t);
     if (t.track) t.track.mode = 'disabled';
+    ccButton(v, t);
   }).catch(function () {});
 }
+
+/* a big, plain Captions button under every teacher video that has a
+   .vtt (the Video Studio saves one). Off by default; a student's choice
+   is remembered for every video on every lesson. */
+function capsOn() { try { return localStorage.getItem('oao.g4ela.captions') === '1'; } catch (e) { return false; } }
+function ccButton(v, t) {
+  if (v.getAttribute('data-spk-ccb')) return;
+  v.setAttribute('data-spk-ccb', '1');
+  var b = document.createElement('button');
+  b.type = 'button'; b.className = 'spk-cc';
+  b.innerHTML = '<span class="spk-cc-i">CC</span> <span class="spk-cc-t">Captions: off</span>';
+  function apply(on) {
+    if (t.track) t.track.mode = on ? 'showing' : 'hidden';
+    b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.querySelector('.spk-cc-t').textContent = on ? 'Captions: on' : 'Captions: off';
+  }
+  b.__set = apply;
+  b.addEventListener('click', function () {
+    var on = !b.classList.contains('on');
+    try { localStorage.setItem('oao.g4ela.captions', on ? '1' : '0'); } catch (e) {}
+    document.querySelectorAll('.spk-cc').forEach(function (x) { if (x.__set) x.__set(on); });
+  });
+  t.addEventListener('load', function () { apply(capsOn()); });
+  v.parentNode.insertBefore(b, v.nextSibling);
+  apply(capsOn());
+}
+
 function captionAllFilms() {
   var vs = document.querySelectorAll('video');
   for (var i = 0; i < vs.length; i++) { addCaptions(vs[i]); addQuestions(vs[i]); }
@@ -4057,6 +4085,18 @@ function hookGather() {
       extra += '\n✎ COPIA — SAY IT THREE WAYS\n────────────────\n';
       copia.forEach(function (c, i) { extra += (i + 1) + '. ' + c + '\n'; });
     }
+    /* the boxes the layer added (the DOL fix, reading notes, other on-page
+       answers) go into what the student copies and turns in */
+    var added = Array.prototype.filter.call(document.querySelectorAll('textarea.spk-onpage'), function (e) { return e.value.trim(); });
+    if (added.length) {
+      extra += '\n📝 MORE OF MY WORK\n────────────────\n';
+      added.forEach(function (e) { extra += (e.getAttribute('data-label') || e.id) + '\n' + e.value.trim() + '\n\n'; });
+    }
+    /* many lessons' own header names another day's chapter (copied
+       forward from week 7); say the right lesson and chapter */
+    if (LESSON.bookTitle && LESSON.chapters) {
+      out.value = out.value.replace(/^LESSON [^\n]*\n/, 'LESSON ' + LID + ' \u2014 ' + LESSON.bookTitle + ', ' + LESSON.chapters + '\n');
+    }
     out.value += extra;
     return r;
   };
@@ -4430,6 +4470,274 @@ function buildNtsKit() {
   document.head.appendChild(s);
 }
 
+
+/* ══════════════════════════════════════════════════════════════
+   THE COMPACT PAGE TOP (28 Oct 2026, from science / social studies)
+   One header row: title, a meta line, a 🔊 Read aloud pill that opens
+   the existing read-aloud player, and a ⓘ Lesson details pill that
+   holds the unit / week / reading / focus cells and the standards.
+   The progress bar, the standards bar and the info strip leave the
+   top. The chapter numeral, quote and Big Question show on the first
+   tab only (the plate already folds off it). Nothing is deleted: the
+   original nodes are moved or hidden, so the lesson's own scripts
+   keep working.
+   ══════════════════════════════════════════════════════════════ */
+function buildTop() {
+  var header = document.querySelector('.header'); if (!header) return;
+  var root = document.documentElement;
+  root.classList.add('spk-top');
+  header.classList.add('spk-hd');
+
+  var title = header.querySelector('.header-title');
+  var badge = header.querySelector('.header-badge-text');
+  var meta = document.createElement('div');
+  meta.className = 'spk-hd-meta';
+  var bits = [];
+  if (badge && badge.textContent.trim()) bits.push('<b>' + esc(badge.textContent.trim()) + '</b>');
+  if (LESSON.week) bits.push('Week ' + LESSON.week);
+  meta.innerHTML = bits.join(' · ');
+  if (title) title.appendChild(meta);
+
+  var tools = document.createElement('div');
+  tools.className = 'spk-hd-tools';
+  header.appendChild(tools);
+
+  var after = header;
+  function panel(html) {
+    var pn = document.createElement('div');
+    pn.className = 'spk-hd-panel';
+    pn.innerHTML = html || '';
+    after.parentNode.insertBefore(pn, after.nextSibling);
+    after = pn;
+    return pn;
+  }
+  function pill(label, pn, aria) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'spk-pill'; b.innerHTML = label;
+    b.setAttribute('aria-expanded', 'false');
+    if (aria) b.setAttribute('aria-label', aria);
+    b.addEventListener('click', function () {
+      var open = !pn.classList.contains('open');
+      document.querySelectorAll('.spk-hd-panel.open').forEach(function (x) { x.classList.remove('open'); });
+      document.querySelectorAll('.spk-pill[aria-expanded="true"]').forEach(function (x) { x.setAttribute('aria-expanded', 'false'); });
+      if (open) { pn.classList.add('open'); b.setAttribute('aria-expanded', 'true'); }
+      try { localStorage.setItem('oao.g4ela.hdOpen', open ? (pn.getAttribute('data-k') || '') : ''); } catch (e) {}
+    });
+    tools.appendChild(b);
+    return b;
+  }
+
+  /* 🔊 Read aloud — the player itself is the page's own, just moved */
+  var ra = document.getElementById('optima-read-aloud');
+  var raPill = null;
+  if (ra) {
+    var rp = panel(''); rp.setAttribute('data-k', 'ra'); rp.classList.add('spk-hd-ra');
+    rp.appendChild(ra);
+    raPill = pill('🔊 Read aloud', rp);
+  }
+
+  /* ⓘ Lesson details — the info strip cells and both standards lists */
+  var dl = '';
+  document.querySelectorAll('.info-strip .info-cell').forEach(function (c) {
+    var l = c.querySelector('.info-label'), v = c.querySelector('.info-value'), d = c.querySelector('.info-detail');
+    if (!l || !v) return;
+    dl += '<dt>' + esc(l.textContent.trim()) + '</dt><dd><b>' + esc(v.textContent.trim()) + '</b>' +
+          (d && d.textContent.trim() ? ' · ' + esc(d.textContent.replace(/\s+/g, ' ').trim()) : '') + '</dd>';
+  });
+  document.querySelectorAll('.standards-panel .standards-group').forEach(function (g) {
+    var l = g.querySelector('.standards-group-label');
+    var codes = Array.prototype.map.call(g.querySelectorAll('.standards-codes span'), function (x) { return x.textContent.trim(); })
+      .filter(function (x) { return x && x !== '·'; });
+    if (!l || !codes.length) return;
+    dl += '<dt>' + esc(l.textContent.trim()) + '</dt><dd class="spk-std">' + codes.map(esc).join(' · ') + '</dd>';
+  });
+  if (dl) {
+    var dp = panel('<dl>' + dl + '</dl>'); dp.setAttribute('data-k', 'details');
+    pill('ⓘ Lesson details', dp);
+  }
+
+  /* the first tab carries the chapter's front matter; the others don't */
+  function mark(id) { root.setAttribute('data-spk-tab', id || 'warmup'); }
+  var active = document.querySelector('.tab-panel.active');
+  mark(active && active.id ? active.id.replace(/^tab-/, '') : 'warmup');
+  var inner = window.switchTab;
+  if (typeof inner === 'function') {
+    window.switchTab = function (id) { var r = inner.apply(this, arguments); mark(id); return r; };
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   EVERYTHING ANSWERED ON THE PAGE (28 Oct 2026)
+   1. Every "rewrite this sentence … in your notebook" (the Daily Oral
+      Language fix, the mimic lines) gets a box right there, and the
+      line is reworded to point at it.
+   2. DATA.inputs adds a box anywhere else a lesson asks for writing
+      with nowhere to put it:
+        inputs: [{ id, after: '<text the element starts with or contains>',
+                   label, hint, rows, min }]
+   3. Every journal box shows a live word counter. A goal shows only when
+      DATA.counters[id] sets one (about 8 words per sentence the task
+      asks for); with no goal it simply counts.
+   Each box is a journal-box with a data-label, so it is saved, and it
+   reaches the journal download under its tab.
+   ══════════════════════════════════════════════════════════════ */
+function onPageBox(id, label, hint, rows) {
+  var ta = document.createElement('textarea');
+  ta.className = 'journal-box spk-onpage';
+  ta.id = id;
+  ta.setAttribute('data-label', label);
+  ta.placeholder = hint || 'Type here…';
+  ta.rows = rows || 2;
+  try { var v = localStorage.getItem(window._lessonKey + '-' + id); if (v) ta.value = v; } catch (e) {}
+  ta.addEventListener('input', function () {
+    try { localStorage.setItem(window._lessonKey + '-' + id, ta.value); } catch (e) {}
+    if (window.gatherAnswers) try { window.gatherAnswers(); } catch (e) {}
+  });
+  return ta;
+}
+var NOTEBOOK_RX = /\b(?:rewrite|write|try)\b[^.]*?\b(?:in|into) your (?:reading )?(?:notebook|journal)\b/i;
+
+/* ══════════════════════════════════════════════════════════════
+   WHAT GOOD READERS DO: THE NOTE-CATCHER (28 Oct 2026)
+   The reading move asks students to jot, chart or tally while they
+   read; this gives them the place to do it, shaped like that day's
+   How-to. It sits in What Good Readers Do, follows the student to the
+   Reading tab as a "📝 My reading notes" drawer, opens from the
+   Assignment question that uses the same skill, and its boxes go into
+   the journal.
+     DATA.wgrd = { catcher: { title, intro, layout: 'stack'|'row',
+                              fields: [{ label, hint, rows }],
+                              end: { label, hint } },          // optional "put it together" line
+                   useAt: ['journal-q1', …] }
+   Short notes, no word goals.
+   ══════════════════════════════════════════════════════════════ */
+function buildCatcher() {
+  var W = DATA.wgrd, C = W && W.catcher;
+  if (!C || !C.fields || !C.fields.length) return;
+  var act = null;
+  document.querySelectorAll('.activity').forEach(function (a) {
+    var t = a.querySelector('.activity-title');
+    if (!act && t && /What Good Readers Do/i.test(t.textContent)) act = a;
+  });
+  if (!act) return;
+  var body = act.querySelector('.activity-body') || act;
+  var card = document.createElement('div');
+  card.className = 'spk-catcher' + (C.layout === 'row' ? ' spk-catcher-row' : '');
+  var html = '<div class="spk-catcher-head">📝 ' + esc(C.title || 'My reading notes') + '</div>' +
+    (C.intro ? '<p class="spk-catcher-intro">' + C.intro + '</p>' : '') + '<div class="spk-catcher-fields"></div>';
+  card.innerHTML = html;
+  var wrap = card.querySelector('.spk-catcher-fields');
+  C.fields.forEach(function (f, i) {
+    var cell = document.createElement('label');
+    cell.className = 'spk-catcher-cell';
+    cell.innerHTML = '<span class="spk-catcher-l">' + esc(f.label) + '</span>';
+    var ta = onPageBox('journal-wgrd' + (i + 1), 'Reading notes: ' + f.label, f.hint || '', f.rows || 2);
+    ta.classList.add('spk-catcher-box');
+    cell.appendChild(ta);
+    wrap.appendChild(cell);
+  });
+  if (C.end) {
+    var endc = document.createElement('label');
+    endc.className = 'spk-catcher-cell spk-catcher-end';
+    endc.innerHTML = '<span class="spk-catcher-l">' + esc(C.end.label) + '</span>';
+    var te = onPageBox('journal-wgrd-end', 'Reading notes: ' + C.end.label, C.end.hint || '', 2);
+    te.classList.add('spk-catcher-box');
+    endc.appendChild(te);
+    card.appendChild(endc);
+  }
+  var before = body.querySelector('.socratic-box');
+  if (before) before.parentNode.insertBefore(card, before); else body.appendChild(card);
+  var home = card.parentNode, homeNext = card.nextSibling;
+
+  /* the drawer: the same card, carried along to the Reading tab */
+  var drawer = document.createElement('div');
+  drawer.className = 'spk-notes-drawer';
+  drawer.setAttribute('role', 'dialog');
+  drawer.setAttribute('aria-label', 'My reading notes');
+  drawer.innerHTML = '<div class="spk-notes-top"><b>📝 My reading notes</b><button type="button" class="spk-notes-x" aria-label="Close my reading notes">✕</button></div><div class="spk-notes-in"></div>';
+  document.body.appendChild(drawer);
+  var fab = document.createElement('button');
+  fab.type = 'button'; fab.className = 'spk-notes-fab'; fab.textContent = '📝 My reading notes';
+  document.body.appendChild(fab);
+  function open() { drawer.querySelector('.spk-notes-in').appendChild(card); drawer.classList.add('open'); fab.classList.add('hide'); var f = card.querySelector('textarea'); if (f) try { f.focus({ preventScroll: true }); } catch (e) {} }
+  function close() { home.insertBefore(card, homeNext && homeNext.parentNode === home ? homeNext : null); drawer.classList.remove('open'); fab.classList.remove('hide'); }
+  fab.addEventListener('click', open);
+  drawer.querySelector('.spk-notes-x').addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+  /* put the card home before the journal reads the page */
+  var dj = window.downloadJournal;
+  if (typeof dj === 'function') window.downloadJournal = function () { if (drawer.classList.contains('open')) close(); return dj.apply(this, arguments); };
+
+  (W.useAt || []).forEach(function (id) {
+    var ta = document.getElementById(id); if (!ta) return;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'spk-notes-use'; b.textContent = '📝 Use your reading notes';
+    b.addEventListener('click', open);
+    ta.parentNode.insertBefore(b, ta);
+  });
+}
+
+function buildOnPage() {
+  var made = 0;
+  /* 1. the notebook lines */
+  document.querySelectorAll('.dol-hint, .tab-panel p, .tab-panel div').forEach(function (el) {
+    if (el.closest('.spk-card') || el.getAttribute('data-spk-np')) return;
+    if (Array.prototype.some.call(el.children, function (c) { return !/^(B|I|EM|STRONG|SPAN|U|BR)$/.test(c.tagName); })) return;
+    var t = el.textContent.replace(/\s+/g, ' ').trim();
+    if (t.length > 220 || !NOTEBOOK_RX.test(t)) return;
+    if (/cursive|copywork|copy (?:it|this|the)/i.test(t)) return;   /* handwriting stays on paper */
+    el.setAttribute('data-spk-np', '1');
+    var isDol = !!el.closest('.dol-fix, [class*="dol"]') || el.classList.contains('dol-hint') || /rewrite this sentence/i.test(t);
+    var id = isDol ? 'journal-dol' : ('journal-np' + (++made));
+    if (document.getElementById(id)) id = 'journal-np' + (++made);
+    /* swap only the words "in your notebook / journal", keeping the line's own formatting */
+    var tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), tn;
+    while ((tn = tw.nextNode())) tn.nodeValue = tn.nodeValue.replace(/\s*\b(?:in|into) your (?:reading )?(?:notebook|journal)\b/i, ' in the box below');
+    var box = onPageBox(id, isDol ? 'Daily Oral Language: my fixed sentence' : 'My sentence',
+      isDol ? 'Type your sentence here, with every fix made…' : 'Type your sentence here…', 2);
+    el.parentNode.insertBefore(box, el.nextSibling);
+  });
+  /* 2. DATA.inputs */
+  (DATA.inputs || []).forEach(function (I, n) {
+    if (!I || !I.after || document.getElementById(I.id || ('journal-in' + n))) return;
+    var want = String(I.after).toLowerCase(), hit = null;
+    document.querySelectorAll('.tab-panel p, .tab-panel li, .tab-panel div, .tab-panel h3, .tab-panel h4').forEach(function (el) {
+      if (hit || el.children.length > 3) return;
+      if (el.textContent.replace(/\s+/g, ' ').trim().toLowerCase().indexOf(want) >= 0) hit = el;
+    });
+    if (!hit) { (window.OAO_SPARKLE_MISSED = window.OAO_SPARKLE_MISSED || []).push('inputs: ' + I.after); return; }
+    var box = onPageBox(I.id || ('journal-in' + n), I.label || 'My notes', I.hint, I.rows || 2);
+    if (I.swap) hit.innerHTML = I.swap;
+    hit.parentNode.insertBefore(box, hit.nextSibling);
+    if (I.min) (DATA.counters = DATA.counters || {})[box.id] = I.min;
+  });
+  /* 3. word counters on every journal box */
+  document.querySelectorAll('textarea.journal-box').forEach(addCounter);
+}
+function words(t) { return (String(t).trim().match(/[A-Za-z0-9’']+/g) || []).length; }
+function addCounter(ta) {
+  if (!ta || ta.getAttribute('data-spk-wc') || ta.readOnly || ta.id === 'gatheredOutput') return;
+  if (document.getElementById(ta.id + '-count')) return;      /* My Story keeps its own counter */
+  ta.setAttribute('data-spk-wc', '1');
+  /* goals come only from DATA.counters, set from each task by hand:
+     reading the number off the prompt guessed wrong too often ("pick ONE
+     sentence from Anne" is a quote, not a length) */
+  var goal = (DATA.counters && DATA.counters[ta.id]) || 0;
+  var c = document.createElement('div');
+  c.className = 'spk-wc';
+  c.setAttribute('aria-live', 'polite');
+  ta.parentNode.insertBefore(c, ta.nextSibling);
+  function upd() {
+    var n = words(ta.value);
+    if (goal) {
+      c.textContent = '📝 ' + n + ' of ' + goal + ' words' + (n >= goal ? ' ✓' : n ? '. Keep going…' : '');
+      c.classList.toggle('met', n >= goal);
+    } else c.textContent = '📝 ' + n + (n === 1 ? ' word' : ' words');
+  }
+  ta.addEventListener('input', upd); upd();
+  setTimeout(upd, 600);            /* after the lesson restores saved answers */
+}
+
 function boot() {
   /* Each step is isolated. Previously all eighteen sat inside one
      try/catch, so a lesson whose DATA was missing a key — no DOL pair,
@@ -4444,6 +4752,7 @@ function boot() {
     ['warm',        function () { document.body.classList.add('spk-warm'); }],
     ['hooks',       function () { hookProgress(); hookTabs(); hookGather(); hookTabScroll(); }],
     ['declutter',   declutter],
+    ['top',         buildTop],
     ['numeral',     buildNumeral],
     ['plate',       buildPlate],
     ['writing',     buildWritingProject],
@@ -4469,6 +4778,8 @@ function boot() {
     ['ntskit',      buildNtsKit],
     ['ftkit',       buildFtKit],
     ['publish',     buildPublish],
+    ['catcher',     buildCatcher],
+    ['onpage',      buildOnPage],
     ['journal',     buildJournal],
     ['marginalia',  marginalia],
     ['ornaments',   ornaments],

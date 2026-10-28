@@ -1539,3 +1539,81 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
 
 /* Flow fix (Oct 28 2026): "② Then watch your teacher" over a film paired with a character clip */
 .spk-step-label{font:700 14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;color:#0E1C42;margin:0 0 8px;}
+
+/* ══════════════════════════════════════════════════════════════
+   THE COMPACT PAGE TOP (28 Oct 2026) — see buildTop() in sparkle.js
+   ══════════════════════════════════════════════════════════════ */
+html.spk-top .progress-wrap,
+html.spk-top .standards-toggle-bar,
+html.spk-top .standards-panel,
+html.spk-top .info-strip { display:none !important; }
+html.spk-top .header.spk-hd { display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding:12px 18px 14px; }
+html.spk-top .header.spk-hd::after { display:none; }
+html.spk-top .spk-hd .header-brand { margin:0; }
+html.spk-top .spk-hd .header-brand > div:not(.header-logo) { display:none; }
+html.spk-top .spk-hd .header-logo { width:38px; height:38px; }
+html.spk-top .spk-hd .header-logo img { width:32px; height:26px; }
+html.spk-top .spk-hd .header-title { flex:1 1 260px; min-width:0; margin:0; font-size:22px; line-height:1.2; }
+html.spk-top .spk-hd .header-badge { display:none; }
+.spk-hd-meta { font:700 12.5px/1.5 'Nunito',sans-serif; color:#B8C6E0; margin-top:3px; letter-spacing:.01em; }
+.spk-hd-meta b { color:#fff; font-weight:800; }
+.spk-hd-tools { display:flex; gap:6px; flex-wrap:wrap; }
+.spk-pill { font:800 12.5px 'Nunito',sans-serif; color:#fff; background:rgba(85,200,232,.14); border:1.5px solid rgba(85,200,232,.45);
+  border-radius:999px; padding:6px 12px; cursor:pointer; white-space:nowrap; display:inline-flex; gap:5px; align-items:center; }
+.spk-pill:hover, .spk-pill[aria-expanded="true"] { background:#55C8E8; color:#0E1C42; border-color:#55C8E8; }
+.spk-pill:focus-visible { outline:3px solid #E9C46A; outline-offset:2px; }
+.spk-hd-panel { display:none; background:#F4F9FC; border-bottom:1px solid #C5DCE5; padding:12px 18px; font:600 13.5px/1.5 'Nunito',sans-serif; color:#22304A; }
+.spk-hd-panel.open { display:block; }
+.spk-hd-panel #optima-read-aloud { margin:0 !important; border:0 !important; background:none !important; padding:0 !important; box-shadow:none !important; }
+.spk-hd-panel dl { display:grid; grid-template-columns:max-content 1fr; gap:5px 16px; margin:0; }
+.spk-hd-panel dt { font:800 10.5px 'Nunito',sans-serif; letter-spacing:.12em; text-transform:uppercase; color:#5B667A; padding-top:3px; }
+.spk-hd-panel dd { margin:0; }
+.spk-hd-panel dd.spk-std { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:12.5px; }
+/* the chapter's front matter belongs to the first tab */
+html.spk-top:not([data-spk-tab="warmup"]) .spk-numeral,
+html.spk-top:not([data-spk-tab="warmup"]) .quote-strip,
+html.spk-top:not([data-spk-tab="warmup"]) .intro-section { display:none !important; }
+/* a smaller plate */
+html.spk-top .spk-plate { padding:16px 24px 18px; }
+html.spk-top .spk-plate img { max-width:420px; max-height:300px; width:auto; }
+html.spk-top .spk-plate-photo img { max-width:420px; max-height:300px; width:auto; }
+@media (max-width:640px) {
+  html.spk-top .spk-hd .header-title { font-size:18px; }
+  .spk-hd-panel dl { grid-template-columns:1fr; gap:0 0; }
+  .spk-hd-panel dt { padding-top:8px; }
+}
+
+/* captions button under each teacher video */
+.spk-cc{display:inline-flex;align-items:center;gap:8px;margin:8px 0 0;padding:7px 14px;border-radius:999px;border:2px solid #0E1C42;background:#fff;color:#0E1C42;font:800 14px/1 Nunito,system-ui,sans-serif;cursor:pointer;}
+.spk-cc .spk-cc-i{background:#0E1C42;color:#fff;border-radius:5px;padding:3px 5px;font-size:11.5px;letter-spacing:.04em;}
+.spk-cc.on{background:#0E1C42;color:#fff;}
+.spk-cc.on .spk-cc-i{background:#E9C46A;color:#0E1C42;}
+.spk-cc:focus-visible{outline:3px solid #55C8E8;outline-offset:2px;}
+
+/* on-page boxes and live word counters */
+textarea.spk-onpage { display:block; width:100%; box-sizing:border-box; margin:10px 0 0; min-height:58px; }
+.spk-wc { font:700 12.5px/1.4 'Nunito',sans-serif; color:#6B7690; margin:4px 2px 8px; }
+.spk-wc.met { color:#3E7B3A; }
+
+/* What Good Readers Do note-catcher + the reading-notes drawer */
+.spk-catcher { margin:14px 0; padding:14px 16px 12px; background:#FFFDF7; border:1.5px solid #E3D3A9; border-left:5px solid #C7922C; border-radius:12px; }
+.spk-catcher-head { font:800 15px 'Nunito',sans-serif; color:#0E1C42; margin-bottom:4px; }
+.spk-catcher-intro { font-size:14px !important; color:#4A5670; margin:0 0 8px !important; line-height:1.5; }
+.spk-catcher-fields { display:grid; gap:8px; }
+.spk-catcher-row .spk-catcher-fields { grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); }
+.spk-catcher-cell { display:block; }
+.spk-catcher-l { display:block; font:800 12px 'Nunito',sans-serif; letter-spacing:.04em; color:#7A5A1E; margin:0 0 3px; }
+.spk-catcher textarea.spk-catcher-box { margin:0; min-height:44px; font-size:14.5px; }
+.spk-catcher-end { margin-top:10px; padding-top:10px; border-top:1px dashed #E3D3A9; }
+.spk-catcher + .spk-wc, .spk-catcher .spk-wc { display:none; }
+.spk-notes-fab { position:fixed; left:16px; bottom:16px; z-index:60; display:none; font:800 13.5px 'Nunito',sans-serif; color:#0E1C42; background:#FFF3D6; border:2px solid #C7922C; border-radius:999px; padding:9px 15px; cursor:pointer; box-shadow:0 6px 18px -8px rgba(14,28,66,.5); }
+html[data-spk-tab="reading"] .spk-notes-fab:not(.hide) { display:block; }
+.spk-notes-drawer { position:fixed; left:12px; bottom:12px; z-index:61; width:min(380px, calc(100vw - 24px)); max-height:min(70vh, 560px); overflow:auto; display:none; background:#FFFDF7; border:2px solid #C7922C; border-radius:14px; box-shadow:0 18px 40px -16px rgba(14,28,66,.55); }
+.spk-notes-drawer.open { display:block; }
+.spk-notes-top { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:#FFF3D6; border-bottom:1px solid #E3D3A9; font:800 14px 'Nunito',sans-serif; color:#0E1C42; position:sticky; top:0; }
+.spk-notes-x { border:0; background:none; font-size:16px; cursor:pointer; color:#0E1C42; }
+.spk-notes-in { padding:4px 12px 12px; }
+.spk-notes-in .spk-catcher { margin:8px 0 0; border:0; padding:0; background:none; }
+.spk-notes-in .spk-catcher-head { display:none; }
+.spk-notes-in .spk-catcher-row .spk-catcher-fields { grid-template-columns:1fr; }
+.spk-notes-use { display:inline-block; margin:6px 0; font:800 13px 'Nunito',sans-serif; color:#7A5A1E; background:#FFF3D6; border:1.5px solid #E3C88C; border-radius:999px; padding:5px 12px; cursor:pointer; }

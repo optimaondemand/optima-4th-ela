@@ -45,6 +45,8 @@
   + 'body.ftk-on{overflow:hidden;}'
   + '.ftk-replay{font:800 12px "Nunito",sans-serif;color:#0E1C42;background:#FFF8E9;border:2px solid #E7D3A4;border-radius:999px;padding:5px 12px;cursor:pointer;margin-left:10px;white-space:nowrap;}'
   + '.ftk-replay:hover,.ftk-replay:focus-visible{border-color:#C7922C;outline:none;}'
+  + '.ftk-replay.spk-pill{margin-left:0;color:#fff;background:rgba(85,200,232,.14);border:1.5px solid rgba(85,200,232,.45);padding:6px 12px;font-size:12.5px;}'
+  + '.ftk-replay.spk-pill:hover,.ftk-replay.spk-pill:focus-visible{background:#55C8E8;color:#0E1C42;border-color:#55C8E8;}'
   /* songs */
   + '.ftk-card{background:#fff;border:1px solid #E6EBF5;border-radius:12px;overflow:hidden;margin:18px 0;box-shadow:0 1px 4px rgba(14,28,66,.05);border-left:5px solid #7A5A2A;font-family:"Lora",Georgia,serif;color:#0E1C42;}'
   + '.ftk-head{display:flex;gap:12px;align-items:center;padding:12px 18px;background:linear-gradient(135deg,#FBF4E6,#F3E6CC);border-bottom:1px solid #E7D3A4;}'
@@ -263,12 +265,14 @@
     setTimeout(function () { var b = c.querySelector('.ftk-skip'); if (b) b.focus({ preventScroll: true }); }, 50);
   }
   function replayButton() {
-    var hdr = document.querySelector('.header-title') || document.querySelector('.header');
+    /* with the compact page top it is one more pill beside Read aloud */
+    var tools = document.querySelector('.spk-hd-tools');
+    var hdr = tools || document.querySelector('.header-title') || document.querySelector('.header');
     if (!hdr || document.querySelector('.ftk-replay')) return;
-    var b = document.createElement('button'); b.type = 'button'; b.className = 'ftk-replay';
+    var b = document.createElement('button'); b.type = 'button'; b.className = tools ? 'ftk-replay spk-pill' : 'ftk-replay';
     b.textContent = '🎬 Replay opening'; b.title = 'Watch the lesson opening again';
     b.onclick = function (e) { e.stopPropagation(); play(reduced()); };
-    hdr.appendChild(b);
+    if (tools) tools.insertBefore(b, tools.firstChild); else hdr.appendChild(b);
   }
   /* the cover the lesson's <head> put up (html.ftk-pre) comes down the
      moment the opening is on screen, or straight away if it won't play */
