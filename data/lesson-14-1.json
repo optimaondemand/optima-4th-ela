@@ -91,9 +91,9 @@
  "writingFocus": "Publish",
  "dol": {
   "a": {
-   "raw": "anne and gilbert have studied together for months they will graduate in june",
-   "fixed": "<strong>Anne</strong> and <strong>Gilbert</strong> have studied together for <strong>months.</strong> <strong>They</strong> will graduate in <strong>June.</strong>",
-   "why": "Capitals on Anne, Gilbert and June, a period after months, a capital T to start the second sentence, and a period at the end. Have studied and will graduate are helping verb + main verb."
+   "raw": "anne and gilbert have worked hard all winter they will both try for the medal",
+   "fixed": "<strong>Anne</strong> and <strong>Gilbert</strong> have worked hard all <strong>winter.</strong> <strong>They</strong> will both try for the <strong>medal.</strong>",
+   "why": "Capitals on Anne and Gilbert, a period after winter, a capital T to start the second sentence, and a period at the end. Have worked and will try are helping verb + main verb."
   },
   "b": {
    "raw": "the exams will start next week jane has lost seven pounds",
