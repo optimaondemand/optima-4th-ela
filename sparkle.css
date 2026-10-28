@@ -1510,3 +1510,29 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
 @keyframes spkCueTagIn { from { opacity:0; transform: translateY(6px); } to { opacity:1; transform:none; } }
 @media (max-width:700px) { .spk-cue-point::before { left:-6px; top:-14px; transform:none; font-size:22px; } }
 @media (prefers-reduced-motion: reduce) { .spk-cue-now, .spk-cue-pop, .spk-cue-wiggle, .spk-cue-trace, .spk-cue-point::before, .spk-cue-tag { animation:none !important; } .spk-cue-wait { transform:none; } .spk-cue-trace { background-size:100% 35%; } }
+
+/* ── Sew the quilt (Freedom Train word game) ── */
+.spk-qu-scene { border-radius:12px; overflow:hidden; border:1px solid #2A1D14; box-shadow:inset 0 0 0 3px #FFFDF6, 0 1px 0 #fff; background:#3B2A1E; }
+.spk-qu-svg { display:block; width:100%; height:auto; }
+.spk-qu-svg .lg { fill:#4A3526; stroke:#2E2017; stroke-width:1.2; }
+.spk-qu-svg .win .frm { fill:none; stroke:#2A1D14; stroke-width:4; }
+.spk-qu-svg .win .ws { fill:#F3D27A; }
+.spk-qu-svg .rope { fill:none; stroke:#C9B48A; stroke-width:1.4; }
+.spk-qu-svg .pole { fill:#6B4A2E; }
+.spk-qu-svg .back { fill:#EFE4CC; stroke:#B9A57E; stroke-width:1; }
+.spk-qu-svg .floor { fill:#2A1D14; }
+.spk-qu-svg .pt .bk { fill:#F4EBD6; stroke:#B9A57E; stroke-width:1; stroke-dasharray:3 3; }
+.spk-qu-svg .pt .fab { opacity:0; transform-box:fill-box; transform-origin:50% 50%; transition:opacity .5s; }
+.spk-qu-svg .pt .st { fill:none; stroke:#FFF6DE; stroke-width:1.1; stroke-dasharray:4 3; opacity:.8; }
+.spk-qu-svg .pt.on .fab { opacity:1; }
+.spk-qu-svg .pt.old .fab { filter:saturate(.85) brightness(.96); }
+.spk-qu-svg .pt.pop .fab { animation:spk-qu-pop .7s cubic-bezier(.2,1.4,.4,1); }
+@keyframes spk-qu-pop { 0% { transform:scale(.3) rotate(-10deg); opacity:0; } 100% { transform:none; opacity:1; } }
+.spk-qu-svg .ns path { fill:none; stroke:#F3D27A; stroke-width:3; stroke-dasharray:6 4; stroke-linejoin:round; }
+.spk-qu-svg .ns { opacity:0; transition:opacity 1.2s; }
+.spk-quilt.free .spk-qu-svg .ns { opacity:1; }
+.spk-quilt.free .spk-qu-svg .win .ws { animation:spk-qu-tw 2.4s ease-in-out infinite; }
+@keyframes spk-qu-tw { 50% { opacity:.45; } }
+@media (prefers-reduced-motion: reduce) {
+  .spk-qu-svg .pt.pop .fab, .spk-quilt.free .spk-qu-svg .win .ws { animation:none !important; }
+}

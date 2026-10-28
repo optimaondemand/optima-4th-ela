@@ -133,11 +133,46 @@
       title: 'Sympathy',
       author: 'Paul Laurence Dunbar',
       note: 'Lyrics of the Hearthside, 1899 — public domain',
+      /* Bethany, 27 Oct 2026: the same plan as Number the Stars. The
+         first poetry day (20.2) reads the WHOLE poem; the ladder fades
+         the last four lines of stanza 3, the song that is "not a carol
+         of joy" (it sits beside Ch. 3's songs with a hidden meaning).
+         Checked line by line against USF Lit2Go (Lyrics of the
+         Hearthside, no. 25).                                          */
+      unit: 'all four lines',
+      span: 'four lines',
+      /* "Meet the poem" (first poetry day): the defaults are Teasdale's */
+      meet: 'This is the one for <i>Freedom Train</i>. Paul Laurence Dunbar, whose mother and father had both been enslaved, wrote it in 1899.',
+      gap: 'Each stanza is one picture of the caged bird.',
+      think: 'the poem never says the word <i>slavery</i>. Why do you think Dunbar wrote about a bird in a cage instead? Who might the bird stand for?',
       lines: [
-        ['I know what the caged bird feels, alas!', 0],
-        ['When the sun is bright on the upland slopes;', 1],
-        ['When the wind stirs soft through the springing grass,', 0],
-        ['And the river flows like a stream of glass;', 0]
+        ['It is not a carol of joy or glee,', 0],
+        ['But a prayer that he sends from his heart’s deep core,', 1],
+        ['But a plea, that upward to Heaven he flings—', 1],
+        ['I know why the caged bird sings!', 0]
+      ],
+      full: [
+        'I know what the caged bird feels, alas!',
+        'When the sun is bright on the upland slopes;',
+        'When the wind stirs soft through the springing grass,',
+        'And the river flows like a stream of glass;',
+        'When the first bird sings and the first bud opes,',
+        'And the faint perfume from its chalice steals—',
+        'I know what the caged bird feels!', null,
+        'I know why the caged bird beats his wing',
+        'Till its blood is red on the cruel bars;',
+        'For he must fly back to his perch and cling',
+        'When he fain would be on the bough a-swing;',
+        'And a pain still throbs in the old, old scars',
+        'And they pulse again with a keener sting—',
+        'I know why he beats his wing!', null,
+        'I know why the caged bird sings, ah me,',
+        'When his wing is bruised and his bosom sore,—',
+        'When he beats his bars and he would be free;',
+        'It is not a carol of joy or glee,',
+        'But a prayer that he sends from his heart’s deep core,',
+        'But a plea, that upward to Heaven he flings—',
+        'I know why the caged bird sings!'
       ]
     },
     pc: {
@@ -709,8 +744,9 @@
         '<div class="oao-bh-sub">“' + esc(poem.title) + '” · ' + esc(poem.author) + ' · the poem that travels with this book</div>' +
       '</div></div>' +
       '<div class="oao-bh-body">' +
-        '<p class="oao-bh-intro">Every book this year comes with a poem. This is the one for <i>Number the Stars</i>. ' +
-          'Sara Teasdale wrote it near the end of the First World War. Today you just meet it: ' +
+        '<p class="oao-bh-intro">Every book this year comes with a poem. ' +
+          (poem.meet || 'This is the one for <i>Number the Stars</i>. Sara Teasdale wrote it near the end of the First World War.') +
+          ' Today you just meet it: ' +
           'listen to it, read the whole thing, and think about what it says. ' +
           'The <b>' + esc(poem.span || 'highlighted lines') + ' in gold</b> are the ones you will learn by heart, ' +
           'a little at a time, over the coming weeks.</p>' +
@@ -721,12 +757,12 @@
         '<div class="oao-bh-how"><h4>How to read a poem</h4><ol>' +
           '<li><b>Listen first.</b> Hear the whole poem read aloud before you read it yourself.</li>' +
           '<li><b>Read it aloud, slowly.</b> Pause at the commas and periods, not at the end of every line. If a line has no punctuation, keep going into the next one.</li>' +
-          '<li><b>Stop at each gap.</b> Each pair of lines is one picture. Close your eyes and see it before you move on.</li>' +
+          '<li><b>Stop at each gap.</b> ' + (poem.gap || 'Each pair of lines is one picture.') + ' Close your eyes and see it before you move on.</li>' +
           '<li><b>Find the turn.</b> Somewhere in the middle, the poem changes direction. Find the line where it happens, and ask yourself why the poet turned there.</li>' +
           '<li><b>Read it one more time.</b> A poem gives you more on the second and third reading than on the first.</li>' +
         '</ol></div>' +
-        '<div class="oao-bh-think">🧠 <b>Think about it:</b> the poem is called “' + esc(poem.title) + ',” and it was written during a war. ' +
-          'Why do you think a poet would fill a war poem with rain, birds, frogs and trees?</div>' +
+        '<div class="oao-bh-think">🧠 <b>Think about it:</b> ' + (poem.think || ('the poem is called “' + esc(poem.title) + ',” and it was written during a war. ' +
+          'Why do you think a poet would fill a war poem with rain, birds, frogs and trees?')) + '</div>' +
         '<div class="oao-bh-row" style="margin-top:12px;">' +
           '<button type="button" class="oao-bh-btn" data-role="said">I read it aloud</button>' +
           '<span class="oao-bh-note" data-role="note"></span>' +
