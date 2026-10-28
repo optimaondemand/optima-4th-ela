@@ -143,5 +143,40 @@
    }
   ],
   "songsIntro": "In Chapter 4, Jim tells Harriet about two kinds of railroad. Then, in the barn, he sings about a third train."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Idea and two proofs",
+   "intro": "Say what Ch. 4 is mostly about, then prove it.",
+   "fields": [
+    {
+     "label": "My idea in one sentence",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Proof 1",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Proof 2",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "Would a reader land on my idea from these two details?",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }
