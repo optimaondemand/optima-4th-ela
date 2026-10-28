@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 20 Parent Guide · 4th Grade ELA · Optima Academy Online</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+.b-rose{background:#FDEEEE;border-radius:12px;padding:14px 16px;} .b-rose .box-label{color:#A8434A;}
+
+.p-museum{background:var(--sky-bg);color:#1F6F8C;}
+.p-extra{background:var(--green-bg);color:#1F8452;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.extras .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.essay{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.essay span{font-size:15px;font-weight:800;border-radius:999px;padding:4px 12px;background:var(--paper);border:1px solid var(--line);color:var(--muted);}
+.essay span.now{background:var(--gold-bg);border-color:#F5E6C8;color:#9A6C14;}
+.essay span.done{background:var(--green-bg);border-color:#CDEFDB;color:#1F8452;}
+@media (max-width:720px){.extras{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 4th Grade ELA</div>
+      <h1>Week 20: The North Star</h1>
+      <div class="sub"><em>Freedom Train</em> by Dorothy Sterling, Chapters 1–4</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">Ch. 1–4</span>
+        <span class="chip">Check-In at week’s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('https://optimaondemand.github.io/optima-4th-ela/assets/covers/ft.jpg');background-position:center 35%;" role="img" aria-label="Cover of Freedom Train by Dorothy Sterling"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>🔊</span><strong>Two buttons at the top:</strong> <strong>Read aloud</strong> opens the page reader (with a speed control), and <strong>Lesson details</strong> shows the unit, week, chapter and standards.</li>
+      <li><span>📝</span><strong>Every answer goes on the page.</strong> There’s a box for each one, including the Daily Oral Language sentence, and a word count under it shows how much is expected.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📓</span><strong>Download your ELA journal for the day</strong> at the bottom of the Assignment tab saves everything as one page. Use it (or Copy) to <strong>submit in Canvas</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the book nearby.</li>
+    </ul>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>A new unit and a new kind of book. <em>Freedom Train</em> is a <strong>biography</strong>: a true story of a real person’s life. It begins in 1827 on a plantation in Maryland, where Harriet Tubman was born into slavery. This week she is a child, then a teenager. She works from before sunrise until after dark, learns from the people around her, and keeps looking north. Your student also starts a new writing project: a research report.</p>
+    <div class="box b-rose" style="margin-bottom:12px;"><div class="box-label">💛 A heads-up for families</div>The book tells the truth about slavery, at a fourth-grade level. This week Harriet is whipped by the woman she works for, the grown-ups hear news of Nat Turner’s rebellion, and at the end of Chapter 4 Harriet is badly hurt when an overseer throws a heavy weight. The book also uses the words of its time: “slave,” “Master” and “Mistress.” Reading together, or checking in after each chapter, helps. The full list is on the <a href="parent-guide-ft-unit.html" style="color:#A8434A;font-weight:700;">unit guide</a>.</div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>Finding the central idea in a biography.</strong> Instead of holding on to every fact, your student asks what each chapter is mostly about, and proves it with details.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>Learning to look north.</strong> With no school and no books, Harriet still learns: from her father, from songs, and from the stars.</div>
+    </div>
+    <p class="quote">“That’s the North Star, child. The best star there is.”<small>Daddy Ben, Chapter 1</small></p>
+  </section>
+
+  <!-- DAY BY DAY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">20.1<span>Day 1</span></td>
+          <td><span class="ch">Chapter 1 · Little Girl, Little Girl!</span><br>Harriet, not yet eight, works for Miss Sarah from before sunrise until after dark, rocking the baby and tending the fires. Through the window she watches birds fly north.<br><span class="pill p-guide">Guide: Marcus</span><span class="pill p-extra">The quilt opening</span></td>
+          <td>What does her ordinary day tell us about her life, and what she dreams of?</td>
+        </tr>
+        <tr>
+          <td class="day-n">20.2<span>Day 2</span></td>
+          <td><span class="ch">Chapter 2 · Peck of Trouble</span><br>Back in her family’s cabin, her mother and father try to help her in different ways. Harriet refuses to smile at Mistress, even when it would make her life easier.<br><span class="pill p-guide">Guide: Marcus</span><span class="pill p-poem">By Heart poem: first day</span></td>
+          <td>What kind of trouble is Harriet in, and what does it tell us about her?</td>
+        </tr>
+        <tr>
+          <td class="day-n">20.3<span>Day 3</span></td>
+          <td><span class="ch">Chapter 3 · School Days</span><br>No classroom, but teachers everywhere: field work, stories, songs, news passed from cabin to cabin, and Daddy Ben’s lessons in the woods.<br><span class="pill p-guide">Guide: Marcus</span><span class="pill p-extra">Songs With a Hidden Meaning</span></td>
+          <td>How does Harriet learn when she can’t go to school?</td>
+        </tr>
+        <tr>
+          <td class="day-n">20.4<span>Day 4</span></td>
+          <td><span class="ch">Chapter 4 · The Train Whistle Blows</span><br>Harriet, now fifteen, meets Jim, who tells her about the new steam train and about a secret “railroad” that runs north. The chapter ends with a hard choice.<br><span class="pill p-guide">Guide: Marcus</span><span class="pill p-poem">By Heart poem</span><span class="pill p-extra">Songs With a Hidden Meaning</span></td>
+          <td>What does the train mean to Harriet?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">A passage from Chapter 1. Your student reads it three times, for accuracy, smoothness and expression, then <strong>records and submits it in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point wrap-up on the week: adjectives, word parts and vocabulary, spelling, and reading questions about Chapters 1–4.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words"><div class="word"><b>biography</b><span>a true book about someone’s life, written by another person</span></div><div class="word"><b>plantation</b><span>a large farm where one crop is grown; in the South, often worked by enslaved people</span></div><div class="word"><b>extend</b><span>to stretch out or reach further</span></div><div class="word"><b>postpone</b><span>to put off until a later time</span></div></div>
+    <div class="skills">
+      <div class="box b-sky"><div class="box-label">Word parts</div><strong>ex-</strong> means “out of.” <strong>post-</strong> means “after.”<span class="eg">exit · extend · postpone · postscript</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>Syllable division in names.</strong> Find the vowels, split between the consonants, and read each chunk.<span class="eg">Mar·y·land · Bal·ti·more · Phil·a·del·phi·a</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>Adjectives</strong> describe nouns: what kind, how many, which one.<span class="eg">a cold spring · three geese · a brave, determined girl</span></div>
+    </div>
+  </section>
+
+  <!-- EXTRAS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✨</span><h2>New in the Lessons</h2></div>
+    <p>A new book brings a new guide and a new look. Look for these:</p>
+    <div class="extras">
+      <div class="box b-gold"><div class="box-label">🎧 Marcus, the unit guide</div>Short audio clips from Marcus, a college history student who grew up on Maryland’s Eastern Shore near the Choptank River and used to lead walking tours there. He welcomes each lesson, sets up the day’s Freedom Watch, and says what to notice before reading. Marcus is a made-up guide; Harriet’s story is true.</div>
+      <div class="box b-sky"><div class="box-label">🌌 The quilt opening</div>Each Freedom Train lesson opens with a short animation: a quilt, one square of it turning into a night sky, and the stars leading to the North Star. Students can replay it from the top of the page.</div>
+      <div class="box b-plum"><div class="box-label">🧵 Sew the Quilt</div>This week’s word-parts game. Each right <strong>ex-</strong> or <strong>post-</strong> word sews a patch onto a quilt, four patches a day, and on Day 4 a North Star is stitched in. The game says plainly that historians don’t think quilts were secret escape maps; quilts were part of family life, like the one Harriet’s mother made.</div>
+      <div class="box b-green"><div class="box-label">🎵 Songs With a Hidden Meaning</div>On Days 3 and 4, a card shows real spirituals, such as “Go Down, Moses” and “The Gospel Train,” with what an overseer heard and what the singers meant. Students think first, then reveal the meaning.</div>
+      <div class="box b-rose"><div class="box-label">📝 My reading notes</div>A small note-taking box in What Good Readers Do, shaped to each day’s reading skill: three facts and one sentence, a four-column chart, a list of who taught Harriet, and an idea with two proofs. The notes follow your student to the Reading tab and into the journal.</div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student’s Research Report</h2><span class="tag">Writer’s Workshop</span></div>
+    <div class="essay"><span class="now">Wk 20 · Choose a question</span><span>Wk 21 · Gather notes</span><span>Wk 22 · Draft</span><span>Wk 23 · Add facts and examples</span><span>Wk 24 · Revise and edit</span><span>Wk 25 · Publish and present</span></div>
+    <p>A research report answers a real question with facts. This week your student writes one opinion sentence and one research sentence to feel the difference, brainstorms questions about Harriet Tubman, the Underground Railroad or Maryland in the 1820s, picks one and tests that it isn’t too big or too small, and plans three sources: the book, a website, and the library (or a family member).</p>
+  </section>
+
+  <!-- BY HEART -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>By Heart: the New Unit Poem</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">It is not a carol of joy or glee,<br>But a prayer that he sends from his heart’s deep core,<br>But a plea, that upward to Heaven he flings—<br>I know why the caged bird sings!<small>Paul Laurence Dunbar, “Sympathy” (1899), the last four lines</small></div>
+      <div><p>On Day 2 your student hears the whole poem, read by Marcus. From then on, they learn these four lines, with a little less help on the screen each time.</p><p><strong>How to help:</strong> Ask what the caged bird wants, and why its song isn’t a happy one. Then ask your student to say the lines to you.</p></div>
+    </div>
+  </section>
+
+  <!-- ASK AT HOME -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than “How was school?”</span></div>
+    <ol class="ask"><li><span class="q">What was one day like for Harriet when she was eight?</span><span class="listen">Listen for: up before the sun, tending fires and the baby, working until after dark.</span></li><li><span class="q">How did Harriet learn without a school?</span><span class="listen">Listen for: from her father, from songs and stories, and from news passed from cabin to cabin.</span></li><li><span class="q">What did Daddy Ben teach her about finding north?</span><span class="listen">Listen for: moss on the north side of the trees by day, the North Star at night.</span></li><li><span class="q">What’s your research question?</span><span class="listen">Listen for: a real question about Harriet or her time, not too big and not too small.</span></li></ol>
+  </section>
+
+  <!-- TURN IN + TRY AT HOME -->
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check"><li><strong>Each lesson:</strong> 3 chapter questions plus word-study and writing responses, submitted in Canvas</li><li><strong>Research plan:</strong> a final research question and three planned sources by Day 4</li><li><strong>Fluency:</strong> a recording of a passage from Chapter 1</li><li><strong>Check-In:</strong> at the end of the week</li></ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> chapter answers that name the central idea and prove it with details from the book.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check"><li><strong>Find the North Star</strong> together on a clear night: follow the two end stars of the Big Dipper.</li><li><strong>Find Maryland’s Eastern Shore</strong> on a map, then trace north to Philadelphia.</li><li><strong>Help brainstorm questions</strong> for the research report.</li></ul>
+    </section>
+  </div>
+
+  <!-- NEED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong><em>Freedom Train</em></strong> by Dorothy Sterling · <strong>A device that records audio</strong> for the fluency reading</p>
+  </section>
+
+  <!-- NEXT WEEK -->
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 21</h2></div>
+    <p><strong><em>Freedom Train</em>, Chapters 5–9.</strong> Harriet’s master tries to break her spirit and fails. She decides to leave, walks north by night and hides by day, and reaches Philadelphia free, but alone. The reading skill is <strong>keeping events in time order</strong>, grammar moves to <strong>comparing adjectives</strong>, and the research report moves on to <strong>gathering notes</strong>.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-ft-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole Freedom Train unit →</a><br><br>Optima Academy Online · 4th Grade ELA · Week 20 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+</body>
+</html>
