@@ -198,5 +198,41 @@
    "credit": "King Christian X on his horse in Gyldenløvesgade, Copenhagen, 1940. The Museum of Danish Resistance, Nationalmuseet, no known copyright restrictions, via Wikimedia Commons.",
    "sub": "A real photograph from the war years."
   }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Check your list",
+   "intro": "Use only what Lowry says in the Afterword.",
+   "fields": [
+    {
+     "label": "Real",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "Made up",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "Still unsure",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "What the story taught me that the facts could not",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 24
  }
 }
