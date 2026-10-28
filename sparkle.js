@@ -3746,6 +3746,16 @@ function mediaMount(slot) {
   return null;
 }
 
+/* Flow fix (Oct 28 2026, parent feedback): who speaks a clip, read from its folder
+   (assets/audio/guide/marilla/... -> "Marilla"). Generic slot folders
+   (guide/read/, guide/turn/ ...) give no name. */
+var _GENERIC = /^(chapter|copia|copywork|dol|grammar|morph|poetry|read|rwm|shelf|spelling|turn|vocab|welcome|wgrd|wordconn|workshop)$/;
+function speakerOf(slot) {
+  var m = /(?:^|\/)guide\/([a-z-]+)\//.exec(mediaPath(slot) || slot.src || '');
+  if (!m || _GENERIC.test(m[1])) return '';
+  return m[1].charAt(0).toUpperCase() + m[1].slice(1);
+}
+
 function buildMedia() {
   /* Safe to call more than once. On a first visit the greeting does
      not exist at boot — it appears only after the student enters a
@@ -3792,12 +3802,30 @@ function buildMedia() {
       wrap.appendChild(el);
       if (vid) wrap.appendChild(vid);
     }
+    /* Flow fix (Oct 28 2026, parent feedback): audio and film together = two steps, in order.
+       Labels go on only once the film really loads (a missing film is
+       removed, and then the audio stays a plain single step). */
+    if (vid) {
+      var v0 = vid.querySelector('video');
+      var stepUp = function () {
+        var lab = el.querySelector('.spk-audio-label');
+        if (lab && lab.textContent.indexOf('\u2460') !== 0) lab.textContent = '\u2460 Listen first \u00b7 ' + lab.textContent;
+        if (!vid.querySelector('.spk-step-label')) {
+          var step2 = document.createElement('div');
+          step2.className = 'spk-step-label';
+          step2.textContent = '\u2461 Then watch your teacher';
+          vid.insertBefore(step2, vid.firstChild);
+        }
+      };
+      if (v0) v0.addEventListener('loadedmetadata', stepUp);
+    }
     if (words) {
       var ra = document.createElement('details');
       ra.className = 'spk-note spk-readalong';
       ra.hidden = true;
       var raSum = document.createElement('summary');
-      raSum.textContent = 'Read along';
+      var whoRA = speakerOf(slot);
+      raSum.textContent = '\ud83d\udcc4 Read ' + (whoRA ? whoRA + '\u2019s' : 'the') + ' words instead';
       ra.appendChild(raSum);
       var raBody = document.createElement('div');
       raBody.className = 'spk-note-body';
@@ -4466,5 +4494,29 @@ function boot() {
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
 else boot();
+
+/* Flow fix (Oct 28 2026, parent feedback): remember the open tab, so a Canvas reload (after
+   Submit) reopens where the student was instead of on Warm-Up. */
+(function () {
+  var KEY = 'oao-tab-' + location.pathname;
+  function put(v) { try { localStorage.setItem(KEY, v); } catch (e) { try { sessionStorage.setItem(KEY, v); } catch (e2) {} } }
+  function get() { try { return localStorage.getItem(KEY); } catch (e) { try { return sessionStorage.getItem(KEY); } catch (e2) { return null; } } }
+  function hook() {
+    if (typeof window.switchTab !== 'function' || window.switchTab._remembers) return;
+    var orig = window.switchTab;
+    var wrapped = function (id) { var r = orig.apply(this, arguments); put(id); return r; };
+    wrapped._remembers = true;
+    window.switchTab = wrapped;
+    var last = get();
+    if (last && last !== 'warmup' && document.getElementById('tab-' + last)) {
+      var pt = document.getElementById('pageTop'), keep = pt && pt.scrollIntoView;
+      if (pt) pt.scrollIntoView = function () {};   /* no jump on restore */
+      try { orig(last); } catch (e) {}
+      if (pt) pt.scrollIntoView = keep;
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hook);
+  else hook();
+})();
 
 })();

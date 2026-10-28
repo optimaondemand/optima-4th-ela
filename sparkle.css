@@ -1536,3 +1536,6 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
 @media (prefers-reduced-motion: reduce) {
   .spk-qu-svg .pt.pop .fab, .spk-quilt.free .spk-qu-svg .win .ws { animation:none !important; }
 }
+
+/* Flow fix (Oct 28 2026): "② Then watch your teacher" over a film paired with a character clip */
+.spk-step-label{font:700 14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;color:#0E1C42;margin:0 0 8px;}
