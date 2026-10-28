@@ -232,6 +232,21 @@ details.week>summary{position:relative;padding-left:24px}
 .inkbar .sw{width:22px;height:22px;border-radius:50%;border:3px solid transparent;cursor:pointer;padding:0}
 .inkbar .sw.on{border-color:var(--ink)}
 .inkbar[hidden]{display:none}
+.boardbar{margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;background:rgba(14,28,66,.88);border-radius:12px;padding:6px 8px}
+.boardbar[hidden]{display:none}
+.boardbar>button{border:0;border-radius:9px;padding:7px 12px;font:800 14px Nunito,system-ui,sans-serif;background:#fff;color:#0E1C42;cursor:pointer}
+.boardbar>button.on{background:#F5C518}
+.boardbar .bbsw{display:flex;gap:5px}.boardbar .sw{width:22px;height:22px;border-radius:50%;border:3px solid #fff3;cursor:pointer;padding:0}.boardbar .sw.on{border-color:#fff}
+.boardbar .bbnote{color:#dfe6f5;font:700 12px Nunito,system-ui,sans-serif}
+.livepanel{margin-top:12px;background:#0b1530;border:2px solid #E8A531;border-radius:12px;padding:10px}
+.livepanel[hidden]{display:none}
+.screenrow.haslive{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:12px;align-items:start}
+.screenrow.haslive .livepanel{margin-top:0}
+@media (max-width:1100px){.screenrow.haslive{grid-template-columns:1fr}}
+.livepanel .lpfoot{color:#c9d3ea;font:600 12px Nunito,system-ui,sans-serif;margin-top:6px}
+.livepanel .lphead{color:#f3cf86;font:700 13px Nunito,system-ui,sans-serif;margin-bottom:8px}.livepanel .lphead span{color:#c9d3ea;font-weight:600}
+.livepanel .lpframe{aspect-ratio:16/9;width:100%;background:#FFFDF8;border-radius:8px;overflow:hidden}
+.livepanel iframe{width:100%;height:100%;border:0;display:block}
 .btn.on{background:var(--gold);color:#0E1C42}
 .meter{height:8px;border-radius:5px;background:var(--soft);overflow:hidden;margin:6px 0 2px}
 .meter i{display:block;height:100%;width:0;background:var(--green);transition:width .08s}
@@ -293,6 +308,7 @@ body.dimrec .onscreen{position:relative;z-index:51;background:#000;border-color:
 .ptext .seccue{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:-4px 0 12px;font-size:.55em;font-weight:800;color:var(--gold)}
 .ptext .seccue button{border:1px solid rgba(232,165,49,.6);background:transparent;color:#f3cf86;border-radius:8px;padding:3px 9px;font:inherit;cursor:pointer}
 .ptext .seccue button.on{background:var(--gold);color:#0E1C42}
+.ptext .drawcue{margin:-4px 0 12px;font-size:.6em;font-weight:800;color:#9FE3C2;font-style:italic} /* pen directions: do, don't read */
 .ptext .vw{border-bottom:2px dotted var(--gold);cursor:pointer}
 .ptext .vw.on{background:rgba(232,165,49,.3);border-radius:4px}
 body.dimrec .ptext .seccue{opacity:.5}
@@ -398,6 +414,8 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
           </div>
         </div>
 
+        <div class="screenrow" id="screenRow">
+        <div class="screencol">
         <div class="screen" id="screenBox">
           <canvas id="view" width="1280" height="720"></canvas>
           <div class="recbadge" id="recbadge"><i></i><span id="rectime">0:00</span></div>
@@ -409,6 +427,21 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
           </div>
         </div>
 
+          <div class="boardbar" id="boardBar" hidden>
+            <button type="button" id="bbPen" title="Pen: draw on the board (D)">✏️ Pen</button>
+            <span class="bbsw" id="bbSw"><button type="button" class="sw on" data-c="#ff3b3b" style="background:#ff3b3b" title="Red"></button><button type="button" class="sw" data-c="#2f9eff" style="background:#2f9eff" title="Blue"></button><button type="button" class="sw" data-c="#1E8C5A" style="background:#1E8C5A" title="Green"></button><button type="button" class="sw" data-c="#0E1C42" style="background:#0E1C42" title="Navy"></button></span>
+            <button type="button" id="bbUndo" title="Take back the last line">↶ Undo</button>
+            <button type="button" id="bbClear" title="Wipe the ink off this board">🧽 Clear</button>
+            <button type="button" id="bbOff" title="Back to just you">✕ Board off</button>
+            <span class="bbnote" id="bbNote"></span>
+          </div>
+        </div>
+        <div class="livepanel" id="livePanel" hidden>
+          <div class="lphead"><b>🖐 Live board</b> <span>Use it right here: drag, tap and trade. It shows full screen behind you in the video. To circle or point, use ✏️ Pen under the video.</span></div>
+          <div class="lpframe"><iframe id="liveFrame" title="Live board" allow="autoplay"></iframe></div>
+          <div class="lpfoot">Keep this box on screen while you record. The video copies what you see here.</div>
+        </div>
+        </div>
         <div class="controls">
           <button class="btn rec" id="recBtn" disabled>● Record</button>
           <button class="btn" id="pauseBtn" hidden>❚❚ Pause</button>
@@ -1055,6 +1088,7 @@ function renderLessonDoc(c, L){
       if (qt) d.onclick=function(){ showQuote({t:qt,a:attribOf(c)}); };
     }
     if (!b.h && /^\[\s*ON SCREEN\s*:/i.test(b.t)) d=cueLine(b.t, c, target<0 || inside);
+    if (!b.h && /^\[\s*(DRAW|DO)\s*:/i.test(b.t)){ var dk=/^\[\s*DO/i.test(b.t); d.className='drawcue'; d.textContent=(dk?'🖐 ':'✏️ ')+b.t.replace(/^\[\s*(DRAW|DO)\s*:\s*/i,'').replace(/\]\s*$/,''); }
     if (target>-1 && !inside) d.classList.add('dim');
     else if (d.className==='pp') linkWords(d, c);
     if (i===target){ d.classList.add('here'); targetEl=d; }
@@ -1388,7 +1422,12 @@ function containDraw(ctx, src, sw, sh){
 var bub={shape:store.get('bubshape','circle'), size:store.get('bubsize','m'), pos:store.get('bubpos','br')};
 function composeScreen(ctx, camOK, segOK){
   ctx.fillStyle='#0E1C42'; ctx.fillRect(0,0,W,H);
-  if (scrStream && scr.readyState>=2 && scr.videoWidth) containDraw(ctx,scr,scr.videoWidth,scr.videoHeight);
+  if (live.on && live.vid.readyState>=2 && live.vid.videoWidth){ ctx.fillStyle='#FFFDF8'; ctx.fillRect(0,0,W,H);
+    if (live.manual){ var r=$('liveFrame').getBoundingClientRect(), k=live.vid.videoWidth/window.innerWidth, sw=r.width*k, sh=r.height*k, s2=Math.min(W/sw,H/sh);
+      ctx.drawImage(live.vid, r.left*k, r.top*k, sw, sh, (W-sw*s2)/2, (H-sh*s2)/2, sw*s2, sh*s2); }
+    else containDraw(ctx,live.vid,live.vid.videoWidth,live.vid.videoHeight); }
+  else if (board.on && board.img){ ctx.fillStyle='#FFFDF8'; ctx.fillRect(0,0,W,H); containDraw(ctx,board.img,board.img.naturalWidth,board.img.naturalHeight); }
+  else if (scrStream && scr.readyState>=2 && scr.videoWidth) containDraw(ctx,scr,scr.videoWidth,scr.videoHeight);
   if (!camOK || bub.shape==='off') return;
   var d={s:190,m:250,l:330}[bub.size]||250, m=26;
   var left=bub.pos.indexOf('l')>-1, top=bub.pos.indexOf('t')>-1;
@@ -1432,8 +1471,8 @@ var fpsWin={n:0,t0:0}, recFrames=0;
 function frame(){
   requestAnimationFrame(frame);
   var camOK = camStream && cam.readyState>=2 && cam.videoWidth;
-  var scrOK = srcMode==='screen' && scrStream;
-  var bubbled = srcMode==='screen';
+  var scrOK = (srcMode==='screen' && scrStream) || board.on || live.on;
+  var bubbled = srcMode==='screen' || board.on || live.on;
   if (!camOK && !scrOK) return;
   var t0=performance.now();
   var wantSeg = bubbled ? (bub.shape==='cutout' || (bub.shape==='circle' && bgMode!=='none')) : bgMode!=='none';
@@ -1712,7 +1751,7 @@ function stepFx(now){
   fx.forEach(function(f){
     if (f.type==='confetti') f.p.forEach(function(p){ p.vy+=260*dt; p.vx*=0.995; p.x+=p.vx*dt+Math.sin(now/300+p.ph)*0.8; p.y+=p.vy*dt; p.r+=p.vr*dt; });
   });
-  strokes=strokes.filter(function(s){ return !(inkFade && s.done && now-s.end>3400); });
+  strokes=strokes.filter(function(s){ return s.keep || !(inkFade && s.done && now-s.end>3400); });  /* board ink stays */
 }
 function drawFx(ctx,f,now){
   var t=(now-f.t0)/1000, fade=1-ease((t-(f.life-0.6))/0.6);
@@ -1769,15 +1808,50 @@ var strokes=[], inkColor='#ff3b3b', inkFade=store.get('inkfade',true), drawMode=
 function drawInk(ctx,now){
   strokes.forEach(function(s){
     if (s.pts.length<2) return;
-    var a = inkFade && s.done ? 1-ease((now-s.end-2600)/800) : 1; if (a<=0) return;
+    var a = inkFade && s.done && !s.keep ? 1-ease((now-s.end-2600)/800) : 1; if (a<=0) return;
     ctx.save(); ctx.globalAlpha=a; ctx.lineCap='round'; ctx.lineJoin='round';
     ctx.strokeStyle='rgba(0,0,0,.35)'; ctx.lineWidth=11; ctx.beginPath(); s.pts.forEach(function(p,i){ i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]); }); ctx.stroke();
     ctx.strokeStyle=s.c; ctx.lineWidth=7; ctx.stroke();
     ctx.restore();
   });
 }
+/* 8-bit frame (math): a thin navy + gold pixel border with a star, a coin and a heart in three corners.
+   The bottom-right corner stays empty for the camera bubble. One frame for the whole year. */
+var frame8On = MATH && store.get('frame8', true);
+var PIX = {
+  star:  ["....1....","...111...","...121...","111121111",".1112111.","..11111..","..11.11..",".11...11.",".1.....1."],
+  coin:  ["..3333..",".311113.","31211113","31211113","31211113","31111113",".311113.","..3333.."],
+  heart: [".111.111.","122111111","121111111","111111111",".1111111.","..11111..","...111...","....1...."]
+};
+var PIXC = { star:['#F5C518','#FFF4B0','#C98A0B'], coin:['#F2B33D','#FFE9A6','#A8650E'], heart:['#FF5A7A','#FFC6D2','#C7304F'] };
+function pix(ctx, name, x, y, u){
+  var rows=PIX[name], c=PIXC[name], r, i, ch;
+  ctx.fillStyle='rgba(14,28,66,.9)';           /* a one-pixel shadow keeps it crisp on light boards */
+  for (r=0;r<rows.length;r++) for (i=0;i<rows[r].length;i++) if (rows[r][i]!=='.') ctx.fillRect(x+(i+1)*u, y+(r+1)*u, u, u);
+  for (r=0;r<rows.length;r++) for (i=0;i<rows[r].length;i++){ ch=rows[r][i]; if (ch==='.') continue; ctx.fillStyle=c[+ch-1]; ctx.fillRect(x+i*u, y+r*u, u, u); }
+}
+function drawFrame8(ctx, now){
+  var w=ctx.canvas.width, h=ctx.canvas.height, u=Math.max(2,Math.round(w/320));
+  ctx.save();
+  ctx.fillStyle='rgba(14,28,66,.88)';            /* navy edge */
+  ctx.fillRect(0,0,w,u*2); ctx.fillRect(0,h-u*2,w,u*2); ctx.fillRect(0,0,u*2,h); ctx.fillRect(w-u*2,0,u*2,h);
+  ctx.fillStyle='rgba(232,165,49,.95)';          /* gold line, with stepped pixel corners */
+  ctx.fillRect(u*4,u*2,w-u*8,u); ctx.fillRect(u*4,h-u*3,w-u*8,u); ctx.fillRect(u*2,u*4,u,h-u*8); ctx.fillRect(w-u*3,u*4,u,h-u*8);
+  [[u*3,u*3],[w-u*4,u*3],[u*3,h-u*4],[w-u*4,h-u*4]].forEach(function(p){ ctx.fillRect(p[0],p[1],u,u); });
+  /* twinkles along the edges (slow, soft); none near the camera corner */
+  var tw=[[.22,0],[.5,0],[.78,0],[0,.5],[1,.3],[.3,1]];
+  tw.forEach(function(p,k){
+    var a=Math.max(0,Math.sin(now/900+k*1.7)); if (a<.05) return;
+    var x=Math.round(p[0]*(w-u*6))+u*2, y=Math.round(p[1]*(h-u*6))+u*2;
+    ctx.fillStyle='rgba(255,255,255,'+(a*.9).toFixed(2)+')';
+    ctx.fillRect(x+u,y,u,u*3); ctx.fillRect(x,y+u,u*3,u);
+  });
+  var q=u; pix(ctx,'star', u, u, q); pix(ctx,'coin', w-q*9-u, u, q); pix(ctx,'heart', u, h-q*9-u, q);
+  ctx.restore();
+}
 function drawOverlays(ctx, now){
   var t=clockT(now);
+  if (frame8On) drawFrame8(ctx, now);
   if (t>=0){
     var nameStart = T.titleOn ? 3.4 : 0.6;
     if (T.nameOn) drawNameBanner(ctx, t-nameStart);
@@ -1800,15 +1874,18 @@ function logInk(p, end){
   if (end){ recStroke.end=t; recStroke=null; return; }
   recStroke.pts.push([+p[0].toFixed(1), +p[1].toFixed(1), +t.toFixed(3)]);
 }
-view.addEventListener('pointerdown',function(e){ if(!drawMode) return; e.preventDefault(); view.setPointerCapture(e.pointerId); var pt=inkPt(e); strokes.push({c:inkColor,pts:[pt],done:false,end:0}); logInk('new'); logInk(pt); });
+view.addEventListener('pointerdown',function(e){ if(!drawMode) return; e.preventDefault(); view.setPointerCapture(e.pointerId); var pt=inkPt(e); strokes.push({c:inkColor,pts:[pt],done:false,end:0,keep:board.on||live.on}); logInk('new'); logInk(pt); });
 view.addEventListener('pointermove',function(e){ if(!drawMode) return; var s=strokes[strokes.length-1]; if (s && !s.done){ var pt=inkPt(e); s.pts.push(pt); logInk(pt); } });
 ['pointerup','pointercancel'].forEach(function(ev){ view.addEventListener(ev,function(){ var s=strokes[strokes.length-1]; if (s && !s.done){ s.done=true; s.end=performance.now(); logInk(null,true); } }); });
-function setDraw(on){ drawMode=on; $('drawBtn').classList.toggle('on',on); $('inkBar').hidden=!on; $('screenBox').classList.toggle('drawing',on); }
+function setDraw(on){ drawMode=on; $('drawBtn').classList.toggle('on',on); $('inkBar').hidden=!on; $('screenBox').classList.toggle('drawing',on); if (typeof paintBoardBar==='function') paintBoardBar(); }
 $('drawBtn').onclick=function(){ setDraw(!drawMode); };
 [].forEach.call($('inkBar').querySelectorAll('.sw'),function(b){ b.onclick=function(){ inkColor=b.dataset.c; [].forEach.call($('inkBar').querySelectorAll('.sw'),function(x){ x.classList.toggle('on',x===b); }); }; });
 $('inkFade').checked=inkFade; $('inkFade').onchange=function(){ inkFade=this.checked; store.set('inkfade',inkFade); var n=performance.now(); strokes.forEach(function(s){ if(s.done) s.end=n; }); };
 $('inkClear').onclick=function(){ strokes=[]; };
 [].forEach.call($('flairBar').querySelectorAll('button[data-f]'),function(b){ b.onclick=function(){ fire(b.dataset.f); b.blur(); }; });
+if (MATH){ (function(){ var l=document.createElement('label'); l.className='check'; l.style.cssText='margin:0 0 0 10px;font-size:12.5px'; l.title='A thin 8-bit border on every math video';
+  l.innerHTML='<input type="checkbox" id="frame8"> 8-bit frame'; $('flairBar').appendChild(l);
+  $('frame8').checked=frame8On; $('frame8').onchange=function(){ frame8On=this.checked; store.set('frame8',frame8On); }; })(); }
 $('flairSnd').checked=store.get('flairsnd',false); $('flairSnd').onchange=function(){ store.set('flairsnd',this.checked); };
 document.addEventListener('keydown',function(e){
   var tg=e.target.tagName; if (tg==='INPUT'||tg==='SELECT'||tg==='TEXTAREA'||e.ctrlKey||e.metaKey||e.altKey) return;
@@ -2351,7 +2428,7 @@ function renderOnScreen(){
   var ps=partsFor(c);
   $('partRow').hidden=!ps.length;
   ps.forEach(function(p){
-    var on = p.kind==='plate' ? (plate.on && (!p.path || plate.path===p.path)) : samePart(part.cur,p)||samePart(strip.cur,p);
+    var on = p.kind==='live' ? (live.on && live.url===p.url) : p.kind==='board' ? (board.on && board.path===p.path) : p.kind==='plate' ? (plate.on && (!p.path || plate.path===p.path)) : samePart(part.cur,p)||samePart(strip.cur,p);
     pb.appendChild(chip(p.label,'p',on,function(){ showPart(p); },null,p.tip));
     if (p.kind==='strip' && samePart(strip.cur,p)){
       pb.appendChild(chip(strip.fix?'↺ Show it unfixed':'✓ Show the fix','p',strip.fix,function(){ strip.fix=!strip.fix; renderOnScreen(); },null,p.why||''));
@@ -2403,6 +2480,8 @@ function partsFor(c){
     /* G4 Science: each slot lists its own cards and photos (tools/video_shotlist_science.py) */
     return (C.sci[c.id]||[]).map(function(p,i){
       if (p.kind==='photo') return {kind:'plate', id:'pic-'+p.pic, label:p.label||'🖼 Photo', path:'sci:'+p.pic, tip:PICCAP[p.pic]||p.label};
+      if (p.kind==='board') return {kind:'board', id:'bd-'+p.pic, label:p.label, path:'sci:'+p.pic, tip:'Show this board full screen, with you in a corner. Draw on it with the pen.'};
+      if (p.kind==='live') return {kind:'live', id:'lv-'+p.model, label:p.label, url:'../../optima-4th-math/'+p.page+'?board='+encodeURIComponent(p.model), tip:'Open this model live under the video: what you do there shows behind you.'};
       return {kind:'card', id:c.id+'-'+i, label:p.label, tag:p.tag||'', title:p.title||'', body:p.body||'', col:p.col||'#2F7A55', tip:p.body||p.title||p.label,
         rows:p.rows ? p.rows.map(function(r){ return {part:r[0], rest:r[1]}; }) : null};
     });
@@ -2456,7 +2535,7 @@ function renderPromptSide(){
   function head(t){ var h=document.createElement('div'); h.className='pslbl'; h.textContent=t; box.appendChild(h); }
   function btn(label,cls,on,fn,tip){ var b=document.createElement('button'); b.textContent=label; if(cls) b.className=cls; if(on) b.classList.add('on'); b.title=tip||label; b.onclick=fn; box.appendChild(b); n++; }
   if (ps.length){ head('🎬 On screen'); ps.forEach(function(p){
-    var on = p.kind==='plate' ? (plate.on && (!p.path || plate.path===p.path)) : samePart(part.cur,p)||samePart(strip.cur,p);
+    var on = p.kind==='live' ? (live.on && live.url===p.url) : p.kind==='board' ? (board.on && board.path===p.path) : p.kind==='plate' ? (plate.on && (!p.path || plate.path===p.path)) : samePart(part.cur,p)||samePart(strip.cur,p);
     btn(p.label,'',on,function(){ showPart(p); },p.tip);
     if (p.kind==='strip' && samePart(strip.cur,p)) btn(strip.fix?'↺ Unfixed':'✓ Show the fix','',strip.fix,function(){ strip.fix=!strip.fix; renderOnScreen(); },p.why);
   }); }
@@ -2490,7 +2569,7 @@ function syncPromptCue(){
   renderPromptSide();
   [].forEach.call(document.querySelectorAll('#ptext .seccue button'),function(b){
     var id=b.dataset.pid;
-    b.classList.toggle('on', id==='plate' ? plate.on : /^pic-/.test(id||'') ? (plate.on && plate.path==='sci:'+id.slice(4)) : !!((part.cur && part.cur.id===id) || (strip.cur && strip.cur.id===id)));
+    b.classList.toggle('on', /^lv-/.test(id||'') ? (live.on && live.id===id) : /^bd-/.test(id||'') ? (board.on && board.path==='sci:'+id.slice(3)) : id==='plate' ? plate.on : /^pic-/.test(id||'') ? (plate.on && plate.path==='sci:'+id.slice(4)) : !!((part.cur && part.cur.id===id) || (strip.cur && strip.cur.id===id)));
   });
   [].forEach.call(document.querySelectorAll('#ptext .vw'),function(s){ s.classList.toggle('on', !!(word.cur && word.cur.w===s.dataset.w)); });
 }
@@ -2498,12 +2577,65 @@ function samePart(a,b){ return a && b && a.id===b.id; }
 function showPart(p){
   if (!p) { part.cur=null; strip.cur=null; renderOnScreen(); return; }
   if (p.kind==='plate'){ var pp=p.path||null; setPlate(!(plate.on && (!pp || plate.path===pp)), pp); return; }
+  if (p.kind==='board'){ setBoard(!(board.on && board.path===p.path), p.path); return; }
+  if (p.kind==='live'){ setLive(!(live.on && live.url===p.url), p.url, p.id); return; }
   if (p.kind==='strip'){ if (samePart(strip.cur,p)) strip.cur=null; else { clearFlair('part'); part.cur=null; strip.cur=p; strip.fix=false; } }
   else if (samePart(part.cur,p)) part.cur=null; else { clearFlair('part'); strip.cur=null; part.cur=p; }
   renderOnScreen();
 }
+/* math boards: a picture that fills the video (like sharing a screen), you in the corner bubble, and pen ink that stays
+   until you switch boards. Boards come from optima-4th-math/tools/sparkle/boards.js and travel in the shot list. */
+var board={on:false,img:null,path:''};
+function boardsChanged(){ renderOnScreen(); if (typeof syncPromptCue==='function') syncPromptCue(); paintBoardBar(); }
+function setBoard(on, path){
+  strokes=[];
+  if (!on){ board.on=false; board.img=null; board.path=''; boardsChanged(); return; }
+  loadPlate(path).then(function(img){ if (!img){ toast('That board couldn’t load'); return; }
+    stopLive(); board.img=img; board.path=path; board.on=true; boardsChanged();
+    if (!drawMode) toast('Board on. Tap ✏️ Pen to draw on it. Your ink stays until you switch boards.'); });
+}
+/* live boards: the lesson's real model (page?board=<model>) in a panel under the video. Chrome films just that panel
+   (Region Capture), so what you drag and tap there fills the video behind you. One "share this tab" OK per session. */
+var live={on:false,url:'',id:'',stream:null,vid:document.createElement('video')};
+live.vid.muted=true; live.vid.playsInline=true;
+function stopLive(){ live.on=false; live.url=''; live.id=''; $('livePanel').hidden=true; $('screenRow').classList.remove('haslive'); }
+function liveCapture(){
+  if (live.stream && live.stream.active) return Promise.resolve(true);
+  if (!window.CropTarget || !navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia){ toast('Live boards need Chrome on a computer'); return Promise.resolve(false); }
+  toast('Chrome will ask to share this tab. Pick this tab and press Share: only the live board panel goes in the video.');
+  return navigator.mediaDevices.getDisplayMedia({video:{frameRate:{ideal:30}}, audio:false, preferCurrentTab:true, selfBrowserSurface:'include'}).then(function(s){
+    var t=s.getVideoTracks()[0];
+    /* Region Capture crops the tab to the panel; without it (older Chrome) the studio crops the panel out of the tab itself */
+    var crop = t.cropTo ? CropTarget.fromElement($('liveFrame')).then(function(ct){ return t.cropTo(ct); }).then(function(){ live.manual=false; })
+                        : Promise.resolve().then(function(){ live.manual=true; });
+    return crop.then(function(){
+      live.stream=s; live.vid.srcObject=s; live.vid.play();
+      t.onended=function(){ live.stream=null; if (live.on){ stopLive(); boardsChanged(); toast('Live board sharing stopped'); } };
+      return true;
+    });
+  }).catch(function(e){ console.warn(e); toast('No live board: Chrome wasn’t allowed to share this tab'); return false; });
+}
+function setLive(on, url, id){
+  strokes=[];
+  if (!on){ stopLive(); boardsChanged(); return; }
+  board.on=false; board.img=null; board.path='';
+  $('livePanel').hidden=false; $('screenRow').classList.add('haslive');
+  try{ $('screenRow').scrollIntoView({block:'nearest'}); }catch(e){}
+  var f=$('liveFrame'); if (f.dataset.src!==url){ f.dataset.src=url; f.src=url; }
+  liveCapture().then(function(ok){ if (!ok){ stopLive(); boardsChanged(); return; } live.on=true; live.url=url; live.id=id; if (drawMode) setDraw(false); boardsChanged(); });
+}
+function paintBoardBar(){
+  var on=board.on||live.on; $('boardBar').hidden=!on;
+  $('bbPen').classList.toggle('on',drawMode); $('bbPen').textContent=drawMode?'✏️ Pen on':'✏️ Pen';
+  $('bbNote').textContent = live.on ? (drawMode?'Pen on: draw on the video here.':'Move pieces on the live board →') : '';
+}
+$('bbPen').onclick=function(){ setDraw(!drawMode); };
+[].forEach.call($('bbSw').querySelectorAll('.sw'),function(b){ b.onclick=function(){ inkColor=b.dataset.c; [].forEach.call($('bbSw').querySelectorAll('.sw'),function(x){ x.classList.toggle('on',x===b); }); if(!drawMode) setDraw(true); }; });
+$('bbUndo').onclick=function(){ strokes.pop(); };
+$('bbClear').onclick=function(){ strokes=[]; };
+$('bbOff').onclick=function(){ setDraw(false); if (live.on) setLive(false); else setBoard(false); };
 function nextPart(){
-  var ps=partsFor(byPath[sel]).filter(function(p){ return p.kind!=='plate'; });
+  var ps=partsFor(byPath[sel]).filter(function(p){ return p.kind!=='plate' && p.kind!=='board'; });
   if (!ps.length){ toast('Nothing to show for this part'); return; }
   var cur=part.cur||strip.cur, i=cur ? ps.findIndex(function(p){ return p.id===cur.id; }) : -1;
   part.cur=null; strip.cur=null;
@@ -3154,7 +3286,7 @@ window.addEventListener('beforeunload',function(e){
    ══════════════════════════════════════════════════════════════ */
 var CLEAN_OK = !!(window.VideoEncoder && window.VideoDecoder && window.VideoFrame && window.MP4Box && window.Mp4Muxer && /mp4/.test(MIME));
 var cleanPref = store.get('clean', true);
-function cleanOn(){ return CLEAN_OK && cleanPref && srcMode!=='screen'; }
+function cleanOn(){ return CLEAN_OK && cleanPref && srcMode!=='screen' && !MATH; }  /* math boards are part of the picture, so record what's on screen */
 var recClean=false, recLog=null, recSig='', recStroke=null, recSet=null;
 function snapState(){
   return { q: quote.cur ? {t:quote.cur.t, a:quote.cur.a} : null,

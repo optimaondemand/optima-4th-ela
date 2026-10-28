@@ -14,6 +14,11 @@ def t_(h): return html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', h)))
 def pic(path):
     f = os.path.join(SCI, path)
     if not os.path.exists(f): return ''
+    if '/boards/' in path.replace('\\', '/'):
+        # video boards are big: the studio loads them from the math site when you click one (same github.io host),
+        # with a version tag so a remade board is never an old cached copy
+        import hashlib
+        return '../../optima-4th-math/%s?v=%s' % (path, hashlib.md5(open(f, 'rb').read()).hexdigest()[:8])
     if Image is None:
         return 'data:image/%s;base64,' % ('png' if f.endswith('.png') else 'jpeg') + base64.b64encode(open(f, 'rb').read()).decode()
     im = Image.open(f).convert('RGB'); im.thumbnail((900, 900)); b = io.BytesIO(); im.save(b, 'JPEG', quality=84)
@@ -24,7 +29,7 @@ if os.path.exists(os.path.join(SCI, 'video-manifest.json')):
 lessons, pics, caps, docs = [], {}, {}, {}
 def tidy(t):
     # each [ON SCREEN: …] cue must be its own paragraph for the studio to turn it into buttons
-    return re.sub(r'(\[\s*ON SCREEN\s*:[^\]]*\])[ \t]*\n(?!\n)', r'\1\n\n', t or '').strip()
+    return re.sub(r'(\[\s*(?:ON SCREEN|DRAW|DO)\s*:[^\]]*\])[ \t]*\n(?!\n)', r'\1\n\n', t or '').strip()
 for vf in sorted(glob.glob(os.path.join(SCI, 'data', 'videos', 'lesson-*.json'))):
     V = json.load(open(vf, encoding='utf-8'))
     w, d = V['lesson'].split('.')
