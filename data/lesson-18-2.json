@@ -181,5 +181,41 @@
   "src": "plates/nts-18-2.jpg",
   "alt": "An old, worn psalm book standing open in a museum case.",
   "credit": "A Danish psalm book printed in Copenhagen in 1806, used for church and home prayers. Public domain photo, via Wikimedia Commons."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "The repeat list",
+   "intro": "Keep a tally each time one of these comes up in Ch. 10.",
+   "fields": [
+    {
+     "label": "The casket",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "The candles",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "The stars",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "Which one keeps coming back, and what it might stand for",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }

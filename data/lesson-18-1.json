@@ -213,5 +213,31 @@
    "credit": "A Danish resistance armband worn by Israel Donde, Sweden, 1944–1945. Photo: Oleg Yunakov, CC BY-SA 4.0, via Wikimedia Commons.",
    "sub": "A real object from the war years."
   }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "What he keeps saying",
+   "intro": "Listen to Uncle Henrik’s answer in Ch. 9.",
+   "fields": [
+    {
+     "label": "Words or ideas he comes back to",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "The big idea they might stand for",
+     "hint": "",
+     "rows": 2
+    }
+   ]
+  },
+  "useAt": [
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }
