@@ -372,9 +372,9 @@ function buildWritingProject() {
       '<div class="spk-keep-title">Keep your writing in one place</div>' +
       '<p>Make one document just for this project and call it <b>My ' +
       titleCase(arc.name.replace(/^an? /, '').replace(/^your /, '')) +
-      '</b> \u2014 a Google Doc, a Word file, or a page in your notebook. ' +
+      '</b> \u2014 a Google Doc or a Word file. ' +
       'Every day: write in the box below, then <b>copy it into your own document</b>. ' +
-      'That way your whole story is in one place and nothing gets lost.</p>' +
+      'That way your whole ' + (/report/i.test(arc.name) ? 'report' : /essay|analysis/i.test(arc.name) ? 'essay' : /project/i.test(arc.name) ? 'project' : 'story') + ' is in one place and nothing gets lost.</p>' +
     '</div>';
   var firstReal = document.querySelector('.spk-arc-head');
   if (firstReal && firstReal.parentNode === body) body.insertBefore(goal, firstReal.nextSibling);
@@ -3186,7 +3186,7 @@ function buildCopia() {
   var html =
     '<div class="spk-card-head"><div class="spk-card-num">✎</div><div>' +
     '<div class="spk-card-title">Copia · Say It Three Ways</div>' +
-    '<div class="spk-card-sub">Erasmus had his students rewrite one sentence a hundred ways. You only need three.</div>' +
+    '<div class="spk-card-sub">Long ago, a teacher named Erasmus had his students rewrite one sentence a hundred ways. You only need three.</div>' +
     '</div></div><div class="spk-card-body">' +
     '<p style="font-size:15px;color:#3A4A6B;">Here is one sentence from this week’s chapter. There is no wrong answer here — only more ways to say it.</p>' +
     '<div class="spk-copia-seed">' + DATA.copia.seed + '</div>';
