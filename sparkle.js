@@ -4697,9 +4697,14 @@ function buildOnPage() {
     /* swap only the words "in your notebook / journal", keeping the line's own formatting */
     var tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), tn;
     while ((tn = tw.nextNode())) tn.nodeValue = tn.nodeValue.replace(/\s*\b(?:in|into) your (?:reading )?(?:notebook|journal)\b/i, ' in the box below');
+    /* a "Your turn" line followed by a fill-in frame (Statement: ___) gets
+       its box under the frame, so students read the frame first */
+    var at = el, nx = el.nextElementSibling;
+    if (!isDol && nx && /_{3,}/.test(nx.textContent)) at = nx;
     var box = onPageBox(id, isDol ? 'Daily Oral Language: my fixed sentence' : 'My sentence',
-      isDol ? 'Type your sentence here, with every fix made…' : 'Type your sentence here…', 2);
-    el.parentNode.insertBefore(box, el.nextSibling);
+      isDol ? 'Type your sentence here, with every fix made…' : (at !== el ? 'Copy the frame and fill it in here…' : 'Type your sentence here…'), at !== el ? 3 : 2);
+    if (at !== el) el.innerHTML = el.innerHTML.replace(' in the box below', ' in the box under the frame');
+    at.parentNode.insertBefore(box, at.nextSibling);
   });
   /* 2. DATA.inputs */
   (DATA.inputs || []).forEach(function (I, n) {
