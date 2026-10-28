@@ -183,5 +183,46 @@
   "src": "plates/bridge-15-4.jpg",
   "alt": "Looking across the water from Helsingør, Denmark, toward the coast of Sweden.",
   "credit": "Looking across the Øresund from Helsingør, Denmark. The Swedish coast is less than three miles away. Photo: Albertyanks, 2010, public domain, via Wikimedia Commons."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Four days, one picture",
+   "intro": "One line for what each of this week’s readings told you.",
+   "fields": [
+    {
+     "label": "Day 1: the war",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Day 2: Denmark",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Day 3: the star",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Day 4: the rescue",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "One big question I want the novel to answer",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 24,
+  "journal-q3": 16
  }
 }
