@@ -197,5 +197,37 @@
   "wordParts": "over- means “above,” “across,” or “too much”: overlook, overcoat. Review: sub- and under- mean “below”: submarine, underground.",
   "grammar": "Concrete nouns name things you can see, touch, or hear (hat). Abstract nouns name feelings or ideas (imagination, despair). Collective nouns name a group acting as one (class, congregation).",
   "spelling": "In an unstressed syllable the vowel often blurs into a lazy “uh” sound called schwa. It can be spelled a, e, or o (about, garden, lesson), so you have to know which letter the word uses."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Before and after a choice",
+   "intro": "Pick one choice a character makes in Ch. 11.",
+   "layout": "row",
+   "fields": [
+    {
+     "label": "The choice",
+     "hint": "Anne decides to…",
+     "rows": 3
+    },
+    {
+     "label": "What pushed her (before)",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "What it causes (after)",
+     "hint": "",
+     "rows": 3
+    }
+   ]
+  },
+  "useAt": [
+   "journal-q1"
+  ]
+ },
+ "counters": {
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 16
  }
 }
