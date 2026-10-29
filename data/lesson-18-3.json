@@ -91,9 +91,9 @@
  "writingFocus": "Elaborate + Explain",
  "dol": {
   "a": {
-   "raw": "ellen couldnt say goodbye without crying it wasnt easy",
-   "fixed": "<strong>Ellen</strong> couldn<strong>’</strong>t say goodbye without crying<strong>.</strong> <strong>It</strong> wasn<strong>’</strong>t easy<strong>.</strong>",
-   "why": "A capital E on Ellen, an apostrophe in couldn’t (could + not), a period after the first sentence, a capital I to start the second, and an apostrophe in wasn’t (was + not)."
+   "raw": "ellen didnt complain about the shabby jacket she wasnt used to old clothes",
+   "fixed": "<strong>Ellen</strong> didn<strong>’</strong>t complain about the shabby jacket<strong>.</strong> <strong>She</strong> wasn<strong>’</strong>t used to old clothes<strong>.</strong>",
+   "why": "A capital E on Ellen, an apostrophe in didn’t (did + not), a period after the first sentence, a capital S to start the second, and an apostrophe in wasn’t (was + not)."
   },
   "b": {
    "raw": "peter couldnt stay long there wasnt time",
