@@ -1543,7 +1543,6 @@ body.spk-warm .flip-card-back .fc-word-back{color:#A8801F;}
 /* ══════════════════════════════════════════════════════════════
    THE COMPACT PAGE TOP (28 Oct 2026) — see buildTop() in sparkle.js
    ══════════════════════════════════════════════════════════════ */
-html.spk-top .progress-wrap,
 html.spk-top .standards-toggle-bar,
 html.spk-top .standards-panel,
 html.spk-top .info-strip { display:none !important; }
