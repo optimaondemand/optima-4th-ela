@@ -34,6 +34,10 @@ body.dimrec .overlay.big{color:#6b7385;text-shadow:none}
 body.dimrec .recbadge{background:#5a2020;color:#b9a0a0}
 body.dimrec .controls .hint{visibility:hidden}
 body.dimrec #recBtn{color:#8a93a6}
+/* a board or live board is the work surface: keep it bright and keep its tools reachable while dimmed */
+body.dimrec .boardbar,body.dimrec .livepanel{position:relative;z-index:51}
+body.dimrec.boardon .screen canvas{filter:none}
+body.dimrec.boardon .ptext{color:#aab2c4}
 .theme-btn{margin-left:10px;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:8px;padding:6px 12px;font-weight:800;cursor:pointer;font:inherit;font-size:13px}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -240,7 +244,9 @@ details.week>summary{position:relative;padding-left:24px}
 .boardbar .bbnote{color:#dfe6f5;font:700 12px Nunito,system-ui,sans-serif}
 .livepanel{margin-top:12px;background:#0b1530;border:2px solid #E8A531;border-radius:12px;padding:10px}
 .livepanel[hidden]{display:none}
-.screenrow.haslive{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:12px;align-items:start}
+.screenrow.haslive{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:12px;align-items:start}
+body.livebig .stage{grid-template-columns:minmax(0,1fr)}body.livebig .stage>div:nth-child(2){display:none}body.livebig .app{grid-template-columns:1fr}body.livebig .app>*:first-child{display:none}
+.livepanel .lpbig{float:right;border:0;border-radius:8px;padding:3px 9px;font:800 12px Nunito,system-ui,sans-serif;background:#F5C518;color:#0E1C42;cursor:pointer}
 .screenrow.haslive .livepanel{margin-top:0}
 @media (max-width:1100px){.screenrow.haslive{grid-template-columns:1fr}}
 .livepanel .lpfoot{color:#c9d3ea;font:600 12px Nunito,system-ui,sans-serif;margin-top:6px}
@@ -305,10 +311,10 @@ body.dimrec .flair{position:relative;z-index:51;background:#000;border-color:#22
 body.dimrec .onscreen{position:relative;z-index:51;background:#000;border-color:#222;opacity:.6}
 .ptext .qcue{display:flex;gap:10px;align-items:center;background:var(--gold);color:#0E1C42;border-radius:10px;padding:6px 10px;margin:0 0 10px;font-size:.6em;font-weight:800;cursor:pointer;white-space:normal}
 .ptext .qcue.on{background:#fff}
-.ptext .seccue{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:-4px 0 12px;font-size:.55em;font-weight:800;color:var(--gold)}
+.ptext .seccue{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:-4px 0 12px;font-size:.7em;font-weight:800;color:var(--gold)}
 .ptext .seccue button{border:1px solid rgba(232,165,49,.6);background:transparent;color:#f3cf86;border-radius:8px;padding:3px 9px;font:inherit;cursor:pointer}
 .ptext .seccue button.on{background:var(--gold);color:#0E1C42}
-.ptext .drawcue{margin:-4px 0 12px;font-size:.6em;font-weight:800;color:#9FE3C2;font-style:italic} /* pen directions: do, don't read */
+.ptext .drawcue{margin:-4px 0 12px;font-size:.8em;font-weight:800;color:#9FE3C2;font-style:italic} /* pen directions: do, don't read */
 .ptext .vw{border-bottom:2px dotted var(--gold);cursor:pointer}
 .ptext .vw.on{background:rgba(232,165,49,.3);border-radius:4px}
 body.dimrec .ptext .seccue{opacity:.5}
@@ -437,7 +443,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
           </div>
         </div>
         <div class="livepanel" id="livePanel" hidden>
-          <div class="lphead"><b>🖐 Live board</b> <span>Use it right here: drag, tap and trade. It shows full screen behind you in the video. To circle or point, use ✏️ Pen under the video.</span></div>
+          <div class="lphead"><button type="button" class="lpbig" id="lpBig" title="Hide the side panels so the live board is big enough to work on">⤢ Bigger</button><b>🖐 Live board</b> <span>Use it right here: drag, tap and trade. It shows full screen behind you in the video. To circle or point, use ✏️ Pen under the video.</span></div>
           <div class="lpframe"><iframe id="liveFrame" title="Live board" allow="autoplay"></iframe></div>
           <div class="lpfoot">Keep this box on screen while you record. The video copies what you see here.</div>
         </div>
@@ -450,7 +456,7 @@ dialog.help kbd{background:var(--soft);border:1px solid var(--line);border-radiu
             <button class="sw on" data-c="#ff3b3b" style="background:#ff3b3b" title="Red"></button>
             <button class="sw" data-c="#E8A531" style="background:#E8A531" title="Gold"></button>
             <button class="sw" data-c="#2f9eff" style="background:#2f9eff" title="Blue"></button>
-            <button class="sw" data-c="#ffffff" style="background:#fff" title="White"></button>
+            <button class="sw" data-c="#0E1C42" style="background:#0E1C42;border-color:#fff8" title="Navy"></button>
             <label class="check" style="margin:0 4px"><input type="checkbox" id="inkFade" checked> Fade</label>
             <button class="btn sm" id="inkClear">Clear</button>
           </div>
@@ -1568,7 +1574,7 @@ $('mirror').checked=mirrorOn;
 $('mirror').onchange=function(){ mirrorOn=this.checked; store.set('mirror',mirrorOn); };
 $('poster').checked=store.get('poster',true);
 $('poster').onchange=function(){ store.set('poster',this.checked); };
-$('dimRec').checked=store.get('dimrec',true);
+$('dimRec').checked=store.get('dimrec',!MATH);  /* math: a board is on screen, so no dimming by default */
 $('dimRec').onchange=function(){ store.set('dimrec',this.checked); };
 
 /* ---------- sound: studio chain, level meter, a mix for flair sounds ----------
@@ -1887,7 +1893,7 @@ view.addEventListener('pointermove',function(e){ if(!drawMode) return; var s=str
 ['pointerup','pointercancel'].forEach(function(ev){ view.addEventListener(ev,function(){ var s=strokes[strokes.length-1]; if (s && !s.done){ s.done=true; s.end=performance.now(); logInk(null,true); } }); });
 function setDraw(on){ drawMode=on; $('drawBtn').classList.toggle('on',on); $('inkBar').hidden=!on; $('screenBox').classList.toggle('drawing',on); if (typeof paintBoardBar==='function') paintBoardBar(); }
 $('drawBtn').onclick=function(){ setDraw(!drawMode); };
-[].forEach.call($('inkBar').querySelectorAll('.sw'),function(b){ b.onclick=function(){ inkColor=b.dataset.c; [].forEach.call($('inkBar').querySelectorAll('.sw'),function(x){ x.classList.toggle('on',x===b); }); }; });
+[].forEach.call($('inkBar').querySelectorAll('.sw'),function(b){ b.onclick=function(){ inkColor=b.dataset.c; [].forEach.call(document.querySelectorAll('#bbSw .sw, #inkBar .sw'),function(x){ x.classList.toggle('on',x.dataset.c===b.dataset.c); }); }; });
 $('inkFade').checked=inkFade; $('inkFade').onchange=function(){ inkFade=this.checked; store.set('inkfade',inkFade); var n=performance.now(); strokes.forEach(function(s){ if(s.done) s.end=n; }); };
 $('inkClear').onclick=function(){ strokes=[]; };
 [].forEach.call($('flairBar').querySelectorAll('button[data-f]'),function(b){ b.onclick=function(){ fire(b.dataset.f); b.blur(); }; });
@@ -2583,6 +2589,7 @@ function syncPromptCue(){
 }
 function samePart(a,b){ return a && b && a.id===b.id; }
 function showPart(p){
+  if (document.activeElement && document.activeElement.tagName==='BUTTON') document.activeElement.blur();  /* Space must start recording, not re-click the cue */
   if (!p) { part.cur=null; strip.cur=null; renderOnScreen(); return; }
   if (p.kind==='plate'){ var pp=p.path||null; setPlate(!(plate.on && (!pp || plate.path===pp)), pp); return; }
   if (p.kind==='board'){ setBoard(!(board.on && board.path===p.path), p.path); return; }
@@ -2596,6 +2603,7 @@ function showPart(p){
 var board={on:false,img:null,path:''};
 function boardsChanged(){ renderOnScreen(); if (typeof syncPromptCue==='function') syncPromptCue(); paintBoardBar(); }
 function setBoard(on, path){
+  if (strokes.length) toast('Ink cleared (new board)');
   strokes=[];
   if (!on){ board.on=false; board.img=null; board.path=''; boardsChanged(); return; }
   loadPlate(path).then(function(img){ if (!img){ toast('That board couldn’t load'); return; }
@@ -2606,7 +2614,7 @@ function setBoard(on, path){
    (Region Capture), so what you drag and tap there fills the video behind you. One "share this tab" OK per session. */
 var live={on:false,url:'',id:'',stream:null,vid:document.createElement('video')};
 live.vid.muted=true; live.vid.playsInline=true;
-function stopLive(){ live.on=false; live.url=''; live.id=''; $('livePanel').hidden=true; $('screenRow').classList.remove('haslive'); }
+function stopLive(){ live.on=false; live.url=''; live.id=''; $('livePanel').hidden=true; $('screenRow').classList.remove('haslive'); document.body.classList.remove('livebig'); $('lpBig').textContent='⤢ Bigger'; }
 function liveCapture(){
   if (live.stream && live.stream.active) return Promise.resolve(true);
   if (!window.CropTarget || !navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia){ toast('Live boards need Chrome on a computer'); return Promise.resolve(false); }
@@ -2624,22 +2632,25 @@ function liveCapture(){
   }).catch(function(e){ console.warn(e); toast('No live board: Chrome wasn’t allowed to share this tab'); return false; });
 }
 function setLive(on, url, id){
+  if (strokes.length) toast('Ink cleared (new board)');
   strokes=[];
   if (!on){ stopLive(); boardsChanged(); return; }
   board.on=false; board.img=null; board.path='';
   $('livePanel').hidden=false; $('screenRow').classList.add('haslive');
+  if (!document.body.classList.contains('livebig')){ document.body.classList.add('livebig'); $('lpBig').textContent='⤡ Smaller'; }  /* start big: a small panel is unusable on a laptop */
   try{ $('screenRow').scrollIntoView({block:'nearest'}); }catch(e){}
   var f=$('liveFrame'); if (f.dataset.src!==url){ f.dataset.src=url; f.src=url; }
   liveCapture().then(function(ok){ if (!ok){ stopLive(); boardsChanged(); return; } live.on=true; live.url=url; live.id=id; if (drawMode) setDraw(false); boardsChanged(); });
 }
 function paintBoardBar(){
-  var on=board.on||live.on; $('boardBar').hidden=!on;
+  var on=board.on||live.on; $('boardBar').hidden=!on; document.body.classList.toggle('boardon',on);
   $('bbPen').classList.toggle('on',drawMode); $('bbPen').textContent=drawMode?'✏️ Pen on':'✏️ Pen';
   $('bbNote').textContent = live.on ? (drawMode?'Pen on: draw on the video here.':'Move pieces on the live board →') : '';
 }
 $('bbPen').onclick=function(){ setDraw(!drawMode); };
-[].forEach.call($('bbSw').querySelectorAll('.sw'),function(b){ b.onclick=function(){ inkColor=b.dataset.c; [].forEach.call($('bbSw').querySelectorAll('.sw'),function(x){ x.classList.toggle('on',x===b); }); if(!drawMode) setDraw(true); }; });
+[].forEach.call($('bbSw').querySelectorAll('.sw'),function(b){ b.onclick=function(){ inkColor=b.dataset.c; [].forEach.call(document.querySelectorAll('#bbSw .sw, #inkBar .sw'),function(x){ x.classList.toggle('on',x.dataset.c===b.dataset.c); }); if(!drawMode) setDraw(true); }; });
 $('bbUndo').onclick=function(){ strokes.pop(); };
+$('lpBig').onclick=function(){ var on=document.body.classList.toggle('livebig'); this.textContent=on?'⤡ Smaller':'⤢ Bigger'; };
 $('bbClear').onclick=function(){ strokes=[]; };
 $('bbOff').onclick=function(){ setDraw(false); if (live.on) setLive(false); else setBoard(false); };
 function nextPart(){
