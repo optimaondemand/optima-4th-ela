@@ -1022,7 +1022,7 @@ function openSave() {
       (S.note[p.id].trim() ? '<div class="txt">' + esc(S.note[p.id].trim()) + "</div>" : '<div class="missing">Note not written yet.</div>') + hc + "</div></div>";
   }).join("");
   var v = document.createElement("div"); v.className = "saveview"; v.id = "saveview"; v.setAttribute("role", "dialog"); v.setAttribute("aria-label", "Save your project as a PDF");
-  v.innerHTML = '<div class="save-bar"><h2>Step 6 · Save your PDF</h2>' +
+  v.innerHTML = '<div class="save-bar"><h2>Step 7 · Save your PDF</h2>' +
     (missing.length ? '<div class="warn">Not finished yet: <b>' + missing.map(esc).join(", ") + "</b>. You can still save, but finish these first for full credit.</div>" : "") +
     (nm ? "" : '<div class="warn">Type your name at the top of the page so your teacher knows whose project this is.</div>') +
     "<b>How to turn it in</b><ol><li>Look over your pages below. Fix anything before you save.</li><li>Press <b>Save as PDF</b>. A print window opens.</li><li>Next to <b>Destination</b>, choose <b>Save as PDF</b>, then press <b>Save</b>.</li><li>Name the file <b>" + esc(fname) + "</b>.</li><li>Upload the PDF to the <b>Number the Stars Final Project</b> assignment in Canvas.</li></ol>" +

@@ -52,7 +52,9 @@ Filenames were deliberately NOT renamed - they are the published Canvas iframe U
 
 **All 20 chapters are now covered.** Actual week coverage:
 
-Week 20: Ch. 1-4 - Week 21: Ch. 5-9 - Week 22: Ch. 10-14 - Week 23: Ch. 15-16 (+ Combahee) - Week 24: Ch. 17-20
+Week 20: Ch. 1-4 - Week 21: Ch. 5-9 - Week 22: Ch. 10-14 - Week 23: Ch. 15, 16, 16 again (Combahee), 17 - Week 24: Ch. 18, 19, 20, final reflection - Week 25: comparing sources
+
+(Checked lesson by lesson on 29 Oct 2026: every title, header and "Open your biography" line matches this.)
 
 ### Still to fill - marked in the files
 

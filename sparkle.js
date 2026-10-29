@@ -3188,7 +3188,7 @@ function buildCopia() {
     '<div class="spk-card-title">Copia · Say It Three Ways</div>' +
     '<div class="spk-card-sub">Long ago, a teacher named Erasmus had his students rewrite one sentence a hundred ways. You only need three.</div>' +
     '</div></div><div class="spk-card-body">' +
-    '<p style="font-size:15px;color:#3A4A6B;">Here is one sentence from this week’s chapter. There is no wrong answer here — only more ways to say it.</p>' +
+    '<p style="font-size:15px;color:#3A4A6B;">Here is one sentence about this week’s reading. There is no wrong answer here — only more ways to say it.</p>' +
     '<div class="spk-copia-seed">' + DATA.copia.seed + '</div>';
   slots.forEach(function (s, i) {
     var id = 'journal-copia' + (i + 1);
