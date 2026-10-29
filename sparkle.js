@@ -4645,8 +4645,28 @@ function buildCatcher() {
     endc.appendChild(te);
     card.appendChild(endc);
   }
-  var before = body.querySelector('.socratic-box');
-  if (before) before.parentNode.insertBefore(card, before); else body.appendChild(card);
+  /* the notes live where the reading happens: at the end of the Read activity on
+     the Reading tab, every day. If What Good Readers Do sits on another tab (days
+     1-2), it gets a one-line pointer instead, so nobody clicks back mid-chapter. */
+  var readAct = null;
+  document.querySelectorAll('#tab-reading .activity').forEach(function (a) {
+    var t = a.querySelector('.activity-title');
+    if (!readAct && t && /^\W*Read\b/.test(t.textContent.trim())) readAct = a;
+  });
+  var wgrdPanel = act.closest('.tab-panel');
+  if (readAct) {
+    (readAct.querySelector('.activity-body') || readAct).appendChild(card);
+    if (!(wgrdPanel && wgrdPanel.id === 'tab-reading')) {
+      var ptr = document.createElement('p');
+      ptr.className = 'spk-catcher-ptr';
+      ptr.innerHTML = '📝 Your note boxes for this, <b>' + esc(C.title || 'My reading notes') + '</b>, are on the <b>Reading</b> tab, right where you read.';
+      var bx = body.querySelector('.socratic-box');
+      if (bx) bx.parentNode.insertBefore(ptr, bx); else body.appendChild(ptr);
+    }
+  } else {
+    var before = body.querySelector('.socratic-box');
+    if (before) before.parentNode.insertBefore(card, before); else body.appendChild(card);
+  }
   var home = card.parentNode, homeNext = card.nextSibling;
 
   /* the drawer: the same card, carried along to the Reading tab */
@@ -4658,8 +4678,8 @@ function buildCatcher() {
   document.body.appendChild(drawer);
   var fab = document.createElement('button');
   fab.type = 'button'; fab.className = 'spk-notes-fab'; fab.textContent = '📝 My reading notes';
-  /* on days 3 and 4 What Good Readers Do already sits on the Reading tab, so
-     the notes are right there and the floating button would only repeat them */
+  /* the notes sit on the Reading tab now, so the floating button would only
+     repeat them there; 'Use your reading notes' still opens the drawer later */
   var homePanel = card.closest('.tab-panel');
   if (homePanel && homePanel.id === 'tab-reading') fab.classList.add('hide');
   document.body.appendChild(fab);
