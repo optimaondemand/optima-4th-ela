@@ -847,7 +847,7 @@ function panelPart(i) {
     '<p class="frame">Try: ' + w.frame + "</p>" +
     '<textarea class="write" data-note="' + pid + '" aria-label="' + esc(w.noteName + " for " + o.name) + '" placeholder="Write your ' + esc(w.noteName) + ' here...">' + esc(S.note[pid]) + "</textarea>" +
     '<div class="meter" data-meter="' + pid + '">' + meterHTML(n, wc, ok) + "</div>" +
-    '<div class="picrow"><span>Picture (optional): a drawing, a photo of a real object, or a picture you made in ENGAGE.</span><label class="btn ghost" style="cursor:pointer;">' + (S.pic[pid] ? "Change picture" : "Add a picture") + '<input type="file" accept="image/*" data-pic="' + pid + '" hidden></label>' + (S.pic[pid] ? '<button type="button" class="btn ghost" data-unpic="' + pid + '">Remove picture</button>' : "") + "</div></div>" +
+    '<div class="picrow"><span>Picture (optional): a drawing, a photo of a real object, or another picture you made yourself.</span><label class="btn ghost" style="cursor:pointer;">' + (S.pic[pid] ? "Change picture" : "Add a picture") + '<input type="file" accept="image/*" data-pic="' + pid + '" hidden></label>' + (S.pic[pid] ? '<button type="button" class="btn ghost" data-unpic="' + pid + '">Remove picture</button>' : "") + "</div></div>" +
     '<div class="remember"><b>Remember:</b> ' + esc(w.remember) + "</div>";
   return h + navHTML(i);
 }
