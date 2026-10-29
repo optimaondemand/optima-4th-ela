@@ -56,7 +56,11 @@ Week 20: Ch. 1-4 - Week 21: Ch. 5-9 - Week 22: Ch. 10-14 - Week 23: Ch. 15, 16, 
 
 (Checked lesson by lesson on 29 Oct 2026: every title, header and "Open your biography" line matches this.)
 
-### Still to fill - marked in the files
+### Filled 29 Oct 2026 (from Sterling, borrowed on Internet Archive)
+
+All eight TO FILL badges in 21.4 (Ch. 8) and 22.2 (Ch. 11) now carry real events from the text.
+
+### Original note: still to fill - marked in the files
 
 Each added chapter is fully wired: title tag, header, info strip, Today's Path,
 video-pane title, teacher recording notes, WGRD prompt, Story Journey tracker,
