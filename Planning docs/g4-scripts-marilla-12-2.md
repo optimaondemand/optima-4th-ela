@@ -52,7 +52,7 @@ The opening paragraph under the greeting is also in her voice (text only, 63 wor
 
 ## `marilla\g4ela-12-2-dol.mp3` — Warm-Up · Daily Oral Language
 
-> The top sentence is from the book, I’m sorry to say, and every word of it is true. Look at the two doing words that changed inside themselves, and the one that only took the usual ending. The bottom sentence is two thoughts jammed together with no stop between them. Give each its own. And the girl in it wants her capital, whatever she’s done.
+> Two sentences today, and both are about that dreadful dye, I’m sorry to say. Each one is really two thoughts run together with no stop between them. Find where the first thought ends and give it a period. Then the next thought needs its capital. And Anne needs hers in both, whatever she’s done. While you’re at it, spot the past-tense verbs that changed inside themselves. *(Re-voiced 29 Oct 2026.)*
 
 ## `marilla\g4ela-12-2-guide1.mp3` — Word Study tab
 
