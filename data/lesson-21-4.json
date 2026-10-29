@@ -1,0 +1,166 @@
+{
+ "connector": "Chapter 7 ended with a stranger handing Harriet a broom and telling her to sweep the yard. Now the Underground Railroad passes her from one Quaker house to the next, up to the line into Pennsylvania. Then she must find her way in a city she has never seen. Read to find out what freedom feels like with no one to share it.",
+ "writingFocus": "Gather Notes",
+ "dol": {
+  "a": {
+   "raw": "the city was bigger than the plantation but it was lonelier too",
+   "fixed": "<strong>The</strong> city was bigger than the plantation<strong>,</strong> but it was lonelier too<strong>.</strong>",
+   "why": "Capital T to start the sentence; the comparative adjectives bigger and lonelier compare two things; a comma before but joins two complete thoughts; a period ends the sentence."
+  },
+  "b": {
+   "raw": "philadelphia was busier than any town harriet knew but no one noticed her",
+   "fixed": "<strong>Philadelphia</strong> was busier than any town <strong>Harriet</strong> knew<strong>,</strong> but no one noticed her<strong>.</strong>",
+   "why": "Capital P on the city name Philadelphia; capital H on Harriet; the comparative adjective busier compares the city with other towns; a comma before but joins two complete thoughts; a period ends the sentence."
+  }
+ },
+ "scholar": {
+  "journal-q4": "… and explain which stop or disguise you think mattered most for getting her across the line, and why.",
+  "journal-q1": "… and explain why Harriet keeps changing jobs after that first week.",
+  "journal-q2": "… and explain how her story about the man who comes home from prison matches what she feels.",
+  "journal-q3": "… and explain how Harriet’s promise to bring her family north turns her loneliness into a plan."
+ },
+ "flags": {
+  "journal-q4": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "Long ago, this paper message came over the wires from a faraway town. Which part means far?",
+   "why": "tele- means far: tele + gram (something written) = a written message sent from far away."
+  },
+  "fill2": {
+   "h1": "You use this to talk with someone who lives in another state. Which part means far?",
+   "why": "tele- means far: tele + phone (sound) = a tool that carries your voice far away."
+  },
+  "fill3": {
+   "h1": "When a plane flies itself while the real pilot rests, it is on this. Which part means self?",
+   "why": "auto- means self: auto + pilot = a system that steers the plane by itself."
+  },
+  "fill4": {
+   "h1": "A famous person writes their own name in your book. Which part means self?",
+   "why": "auto- means self: auto + graph (write) = your own name, written by yourself."
+  }
+ },
+ "notes": {
+  "wgrd": "A chapter can move forward and look back at once. For each event, ask: is this happening to Harriet now, or is she remembering? Put the new events in order, then compare where she ends with where she began.",
+  "vocab": [
+   [
+    "chronology",
+    "The order in which events happened, from first to last."
+   ],
+   [
+    "testimony",
+    "A personal account of what someone has seen or done."
+   ],
+   [
+    "autograph",
+    "A person’s own signature; literally, ‘self-writing.’"
+   ],
+   [
+    "emancipation",
+    "The act of being set free."
+   ]
+  ],
+  "wordParts": "tele- means “far” or “far away,” and auto- means “self”: telegram, telephone, autopilot, autograph, autobiography.",
+  "grammar": "To compare, add -er or use more, but never both. More safer is one comparison too many, so cut more: safer. The same goes for -est and most: hardest, not most hardest.",
+  "spelling": "When -ion is added, the base word can change. Keep every letter you hear: direct becomes direction, prepare becomes preparation. Some words change: decide becomes decision, permit becomes permission, with a double s."
+ },
+ "transcripts": {
+  "welcome": "Hey, it’s Marcus. Last time, Harriet handed a Quaker woman a note and got a broom back. Today we read two chapters, and they carry her a long way: from house to house on the Underground Railroad, and all the way to Philadelphia. Here’s today’s question, the one I keep circling in my paper: when Harriet finally gets her freedom, what does it feel like, and is anything missing?",
+  "guide2": "Freedom Watch: free, but not yet whole. Harriet has dreamed about crossing the line to freedom for a long time. Watch what she finds when she gets there, and who is around her. When I go back to the Choptank, I always think about the people who never got to leave. So ask yourself: can freedom feel complete while the people you love are still waiting?",
+  "read": "Two chapters today, so keep a running list of stops as you go. Watch the clothes Harriet wears from place to place, because each outfit has a job to do. Look for a room that isn’t where you’d expect it. In Chapter 9, notice the moments when her mind goes back home. And listen closely to the man she meets near the end."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-21-4-welcome",
+   "label": "Marcus’s welcome"
+  },
+  "guide2": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-21-4-guide2",
+   "label": "Marcus · Freedom Watch"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-21-4-read",
+   "label": "Marcus · before you read"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "wordgame": {
+  "type": "quilt",
+  "strand": "Morphology",
+  "kicker": "Sew the Quilt",
+  "h": "The last four patches",
+  "voice": "Tap a word part, then the word it finishes. Or drag the part onto the word. Ask what each word is about: far away, or self?",
+  "why": {
+   "icon": "🧵",
+   "q": "Why a quilt?",
+   "t": "In Chapter 5, Harriet sews her own patchwork quilt, as warm and beautiful as her mother’s, and pulls it around her shoulders to study the North Star through the cracks in the roof. In Chapter 6, she leaves it on the Quaker lady’s doorstep: thank you and farewell. <b>tele-</b> means <i>far</i>, and <b>auto-</b> means <i>self</i>. Each right word sews one patch into the quilt. Four each lesson, until the quilt is finished."
+  },
+  "meanings": {
+   "tele": "far",
+   "auto": "self"
+  },
+  "winDay": "Four more patches are sewn in. The next lesson’s words add more.",
+  "win": "The quilt is finished, and the North Star is stitched across its middle. <b>tele-</b> = far, <b>auto-</b> = self."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Now and then",
+   "intro": "As you read Ch. 8 and 9, sort what happens now from what Harriet thinks back to.",
+   "fields": [
+    {
+     "label": "Now, in order",
+     "hint": "Hunn farm: …",
+     "rows": 5
+    },
+    {
+     "label": "Then: what she thinks back to",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "end": {
+    "label": "Ch. 5 to now: what changed?",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q4",
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q4": 24,
+  "journal-q1": 16,
+  "journal-q2": 16,
+  "journal-q3": 24
+ }
+}
