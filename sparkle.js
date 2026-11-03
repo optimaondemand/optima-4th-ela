@@ -3835,6 +3835,9 @@ function buildMedia() {
     if (vid) {
       var v0 = vid.querySelector('video');
       var stepUp = function () {
+        /* Nov 3 2026: number the steps only when BOTH are really there.
+           No recording yet = the film stands alone, no "②". */
+        if (el.hidden || !el.isConnected || vid.hidden || !vid.isConnected) return;
         var lab = el.querySelector('.spk-audio-label');
         if (lab && lab.textContent.indexOf('\u2460') !== 0) lab.textContent = '\u2460 Listen first \u00b7 ' + lab.textContent;
         if (!vid.querySelector('.spk-step-label')) {
@@ -3845,6 +3848,10 @@ function buildMedia() {
         }
       };
       if (v0) v0.addEventListener('loadedmetadata', stepUp);
+      if (window.MutationObserver) {
+        var stObs = new MutationObserver(function () { if (!el.hidden) { stObs.disconnect(); stepUp(); } });
+        stObs.observe(el, { attributes: true, attributeFilter: ['hidden'] });
+      }
     }
     if (words) {
       var ra = document.createElement('details');
@@ -3859,8 +3866,9 @@ function buildMedia() {
       raBody.textContent = words;                /* never innerHTML */
       ra.appendChild(raBody);
       wrap.appendChild(ra);
-      /* shown once either the clip or its video is confirmed */
-      var seen = [el].concat(vid ? [vid] : []);
+      /* shown only once the clip itself is confirmed (Nov 3 2026): these
+         are the speaker's words, so a teacher film alone does not show them */
+      var seen = [el];
       var anyShown = function () { return seen.some(function (x) { return !x.hidden; }); };
       if (slot.kind === 'youtube' || anyShown()) ra.hidden = false;
       else if (window.MutationObserver) {
