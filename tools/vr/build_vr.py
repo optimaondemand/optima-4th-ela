@@ -3,8 +3,9 @@
 
 Scope for Imagination (Bethany, 9 Nov 2026): one VR page per week, always Day 2, its own Canvas
 assignment. The lessons never mention VR. Two paths on one page:
-  Imagination Trip (VR)  photo straight to Canvas from the headset; earns the unit's keepsake
-  Window Seat Day        an on-page game + a 40+ word paragraph -> PDF; earns the bookmark
+  Each path turns in ONE thing (Bethany, 9 Nov 2026): a video of 30 seconds or less with a 2 sentence explanation.
+  Imagination Trip (VR)  video recorded in the headset (Library > Camera > Video), straight to Canvas; earns the unit's keepsake
+  Window Seat Day        an on-page game, plan 2 sentences (not turned in), record in Canvas (Media); earns the bookmark
 The book's own guide voices 3 clips (one take): assets/audio/guide/<folder>/g4ela-<W>-vr-{brief,alt,saved}.mp3
 Teacher video slot: assets/video/teacher/g4ela-<W>-vr.mp4 (hidden until it exists).
 
@@ -49,11 +50,11 @@ HS = [
   ('08-models', 'The Models tab open in an ocean map, with a list of models.', 'Bring out the models', 'Click <b>Models</b>. Type the exact name in the search box, or scroll with your thumbstick. Click a model to bring it out.'),
   ('08b-move', 'A controller moving a fish model in an ocean map.', 'Move and resize', 'Grab a model with the <b>palm trigger</b>. Turn and move it with the thumbstick. Use <b>both</b> palm triggers to make it bigger or smaller.'),
   ('09-placed', 'A picture file placed in an ocean map.', 'Need a file?', 'Click <b>Library</b>, then <b>Files</b>. Pick your file to place it in the world, next to your model.'),
-  ('10-camera', 'The Library camera, with the Height slider and the Take photo button circled.', 'Take a photo', 'Click <b>Library</b>, then <b>Camera</b>. Move the tablet until your whole scene fits. Slide <b>Height</b> or the zoom bar if you need to. Click <b>Take photo</b>.'),
-  ('11-choose', 'The My Files list in the headset, with the newest file circled.', 'Pick your photo', 'Click the <b>Canvas</b> tab and pick our assignment. Click <b>Choose from My Files</b>, pick your newest photo, then click <b>Use this file</b>.'),
+  ('10-camera', 'The Library camera, with the Height slider circled.', 'Record a video', 'Click <b>Library</b>, then <b>Camera</b>. Move the tablet until your whole scene fits. Slide <b>Height</b> or the zoom bar if you need to. Switch to <b>Video</b> and start recording. Say your 2 sentences, then stop at 30 seconds or less.'),
+  ('11-choose', 'The My Files list in the headset, with the newest file circled.', 'Pick your video', 'Click the <b>Canvas</b> tab and pick our assignment. Click <b>Choose from My Files</b>, pick your newest video, then click <b>Use this file</b>.'),
   ('12-submitted', 'The Canvas tab after submitting, with the green Submitted tag circled.', 'Submit to Canvas', 'Click <b>Submit to Canvas</b> and look for the green <b>Submitted</b> tag. To leave VR, press the <b>Meta button</b> on your right controller, then click <b>Quit</b>.')]),
  ('🔁 Didn’t work in VR? Two other ways', [
-  ('13-portal-submit', 'The Canvas page on the website, with the Choose from My Files button circled.', 'Use the website', 'Go to <a href="https://xr.optimaed.com" target="_blank" rel="noopener">xr.optimaed.com</a> and click <b>Canvas</b>. Pick our assignment, click <b>Choose from My Files</b>, pick your photo and submit it.')])]
+  ('13-portal-submit', 'The Canvas page on the website, with the Choose from My Files button circled.', 'Use the website', 'Go to <a href="https://xr.optimaed.com" target="_blank" rel="noopener">xr.optimaed.com</a> and click <b>Canvas</b>. Pick our assignment, click <b>Choose from My Files</b>, pick your video and submit it.')])]
 n = 0
 hd = ''
 for title, items in HS:
@@ -65,7 +66,7 @@ for title, items in HS:
 HELP = ('<details class="helpdrawer" id="vr-help"><summary><span class="hd-ic">🛟</span><span><b>Having trouble in VR?</b><small>Steps with pictures, and a how-to video</small></span><span class="hd-chev" aria-hidden="true">▾</span></summary>'
         '<div class="hd-body"><div class="hd-video"><div class="hd-frame" data-src="https://www.youtube-nocookie.com/embed/slDH-WN4scY?rel=0"></div><p class="hd-cap">How-to video: Optima On-Demand and Canvas</p></div>'
         '<p class="hd-note">These pictures come from other maps. Your map will be <b>%s</b>, but the buttons are the same.</p>%s'
-        '<p class="hd-alt">Your photos save to <b>My Files</b> at xr.optimaed.com on their own. You can also download your photo there and upload it to the Canvas assignment yourself.</p></div></details>') % (e(D['map']), hd)
+        '<p class="hd-alt">Your videos save to <b>My Files</b> at xr.optimaed.com on their own. You can also download your video there and upload it to the Canvas assignment yourself.</p></div></details>') % (e(D['map']), hd)
 
 # ── Window Seat Day game ──
 A = D['alt']

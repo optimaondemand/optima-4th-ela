@@ -38,7 +38,7 @@
       $('#order-lock').hidden = renDone();
       $$('.stop', $('#stops')).forEach(function (b) { b.addEventListener('click', function () {
         var k = +b.dataset.k;
-        if (k === st.ord.length) { st.ord.push(k); save(); KIT.ding(); KIT.say(ordDone() ? '✓ The whole drive, in order! Now write your paragraph.' : '✓ Stop ' + st.ord.length + ' is on the road.', true); if (ordDone()) KIT.fanfare(); }
+        if (k === st.ord.length) { st.ord.push(k); save(); KIT.ding(); KIT.say(ordDone() ? '✓ The whole drive, in order! Now plan your 2 sentences.' : '✓ Stop ' + st.ord.length + ' is on the road.', true); if (ordDone()) KIT.fanfare(); }
         else { KIT.bonk(); b.classList.add('shake'); setTimeout(function () { b.classList.remove('shake'); }, 400); KIT.say(G.orderMiss); return; }
         render();
       }); });

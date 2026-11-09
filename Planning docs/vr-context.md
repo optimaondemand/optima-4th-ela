@@ -34,7 +34,7 @@ This file holds items 1–3 plus a taxonomy for item 4. The full asset inventory
 - **Rooms cannot be copied** from the Live app to the On-Demand app.
 - **No single-user mode** in the Live app.
 - **No respawn** on many maps — fall off the edge and you keep falling. Teleport out.
-- **No in-app recording.** Meta screen-recording works but is clunky (permissions, file transfer via cable). Better in-app camera reportedly in progress.
+- **In-app video works (Bethany, 9 Nov 2026).** Library → Camera can now record video, and it goes to My Files → Canvas like a photo. G4 ELA VR turns in ONE video, 30 seconds or less, with a 2 sentence explanation. (Sept 2026 note, now out of date: no in-app recording; Meta screen recording needed a cable.)
 
 ### Navigation notes
 

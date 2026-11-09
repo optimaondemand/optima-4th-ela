@@ -166,6 +166,8 @@ textarea.answer:focus{outline:none;border-color:var(--gold)}
 .btn{border:0;border-radius:999px;padding:10px 18px;font-weight:900;font-size:16px;cursor:pointer;background:var(--navy);color:#fff}
 .btn.green{background:var(--green)}
 .turnin{font-size:15px;margin-top:8px}
+.turn-steps{margin:0 0 0 20px;font-size:16px}.turn-steps li{margin:4px 0}
+.timer-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:10px 0}.timer{font-size:22px;color:var(--navy);font-variant-numeric:tabular-nums}.timer.up{color:var(--red)}
 footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px solid #EADFCB}
 {{GAME_CSS}}
 @media (max-width:700px){.postcard{grid-template-columns:1fr}.pc-l{border-right:0;border-bottom:2px dashed #D9C49A}.groups{grid-template-columns:1fr}.hd-step{grid-template-columns:1fr}.hd-title{font-size:21px}}
@@ -208,7 +210,7 @@ footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px soli
       <div class="peek" aria-hidden="true">{{KEEP_ART}}<small>{{KEEP_SHORT}}</small></div>
     </div>
     <div class="mission-body">
-      <div class="jobline"><span class="job-k">Your job</span><span class="job-s"><i>1</i>{{JOB}}</span><span class="job-a">→</span><span class="job-s"><i>2</i>Take a photo</span><span class="job-a">→</span><span class="job-s"><i>3</i>Submit it to Canvas</span></div>
+      <div class="jobline"><span class="job-k">Your job</span><span class="job-s"><i>1</i>{{JOB}}</span><span class="job-a">→</span><span class="job-s"><i>2</i>Record a 30 second video</span><span class="job-a">→</span><span class="job-s"><i>3</i>Submit it to Canvas</span></div>
       <div class="meter"><div class="meter-bar"><i id="vr-bar"></i></div><b id="vr-count">0 of 7 steps</b></div>
       <p style="font-size:15px">Tap the box next to each step when you finish it.</p>
       <ol class="steps" id="vr-steps">
@@ -217,11 +219,11 @@ footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px soli
         <li class="phase">🥽 In VR</li>
         <li class="step"><button class="chk" type="button" aria-label="Mark step 2 done"></button><div><div class="step-n">Step 2 · Go in</div><div class="step-t"><div class="howto" style="margin:0 0 8px">🔗 <b>First time only:</b> connect Canvas at <a href="https://xr.optimaed.com" target="_blank" rel="noopener">xr.optimaed.com</a> before you go in. The steps are in <b>Having trouble in VR?</b> below.</div>Put on your headset and open the <b>On-Demand</b> app. Click the <b>Explore</b> tab and type <b>{{MAP_FILTER}}</b> in the <b>Filter environments</b> box. Click <b>{{MAP}}</b>, then click <b>Begin Solo</b>.</div></div></li>
         <li class="step"><button class="chk" type="button" aria-label="Mark step 3 done"></button><div><div class="step-n">Step 3 · Build it</div><div class="step-t">{{S_BUILD}}<div class="howto">✋ <b>To move a model:</b> grab it with the <b>palm trigger</b> (under your middle finger). Use <b>both</b> palm triggers to make it bigger or smaller.</div></div></div></li>
-        <li class="step"><button class="chk" type="button" aria-label="Mark step 4 done"></button><div><div class="step-n">Step 4 · Say it out loud</div><div class="step-t">{{S_SAY}}<div class="howto">🗣 {{S_FRAME}}</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 4 done"></button><div><div class="step-n">Step 4 · Practice your 2 sentences</div><div class="step-t">{{S_SAY}}<div class="howto">🗣 {{S_FRAME}}</div></div></div></li>
         <li class="step"><button class="chk" type="button" aria-label="Mark step 5 done"></button><div><div class="step-n">Step 5 · Extra</div><div class="step-t"><span class="xtag">VR only</span>{{S_EXTRA}} Skip this step if you run out of time.</div></div></li>
-        <li class="step"><button class="chk" type="button" aria-label="Mark step 6 done"></button><div><div class="step-n">Step 6 · Snap and submit</div><div class="step-t">Stand back so you can see {{FITS}}. Open your menu, click <b>Library</b>, then <b>Camera</b>. Move the tablet until it all fits, then click <b>Take photo</b>. Now click the <b>Canvas</b> tab and pick <b>{{CANVAS}}</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.<div class="howto">🔁 Want to fix something? Move the models, take a new photo and submit again.</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 6 done"></button><div><div class="step-n">Step 6 · Record and submit</div><div class="step-t">Stand back so you can see {{FITS}}. Open your menu, click <b>Library</b>, then <b>Camera</b>. Switch to <b>Video</b> and start recording. Show your build and say your 2 sentences. Stop at <b>30 seconds</b> or less. Now click the <b>Canvas</b> tab and pick <b>{{CANVAS}}</b>. Click <b>Choose from My Files</b>, pick your video, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.<div class="howto">📌 This video is the only thing you turn in. 🔁 Want to fix something? Record a new video and submit again.</div></div></div></li>
         <li class="phase">✅ After</li>
-        <li class="step"><button class="chk" type="button" aria-label="Mark step 7 done"></button><div><div class="step-n">Step 7 · Check and leave</div><div class="step-t">Press the <b>Meta button</b> on your right controller, then click <b>Quit</b>. Take off your headset and open the Canvas assignment. Your photo should be there. Not there? Open <b>Having trouble in VR?</b> below for two other ways to turn it in.</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 7 done"></button><div><div class="step-n">Step 7 · Check and leave</div><div class="step-t">Press the <b>Meta button</b> on your right controller, then click <b>Quit</b>. Take off your headset and open the Canvas assignment. Your video should be there. Not there? Open <b>Having trouble in VR?</b> below for two other ways to turn it in.</div></div></li>
       </ol>
       {{HELP}}
       <div class="points">⭐ <b>Full points:</b><ul><li>{{POINTS}}</li></ul></div>
@@ -239,7 +241,7 @@ footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px soli
       <div class="kicker">Window Seat Day · no headset</div>
       <h2>{{ALT_H}}</h2>
       <div class="radio" data-clip="alt" data-label="{{L_ALT}}" style="margin:8px 0 12px"></div>
-      <div class="jobline"><span class="job-k">Your job</span><span class="job-s"><i>1</i>{{ALT_JOB}}</span><span class="job-a">→</span><span class="job-s"><i>2</i>Write a paragraph</span><span class="job-a">→</span><span class="job-s"><i>3</i>Upload your PDF</span></div>
+      <div class="jobline"><span class="job-k">Your job</span><span class="job-s"><i>1</i>{{ALT_JOB}}</span><span class="job-a">→</span><span class="job-s"><i>2</i>Plan 2 sentences</span><span class="job-a">→</span><span class="job-s"><i>3</i>Record a 30 second video</span></div>
       <p>{{ALT_P}}</p>
       {{GAME_HTML}}
       <div class="msg" id="g-msg" role="status" aria-live="polite"></div>
@@ -249,24 +251,27 @@ footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px soli
 
     <div class="card"><div class="card-pad">
       <div class="kicker">Explain your thinking</div>
-      <h3>Write a paragraph (4 or 5 sentences)</h3>
+      <h3>Say 2 sentences on video (30 seconds or less)</h3>
       <p class="write-q">{{WRITE_Q}}</p>
-      <textarea class="answer" id="para" data-label="My paragraph" placeholder="Type your paragraph here..."></textarea>
-      <div class="counter" id="para-count">0 of 40 words</div>
-      <div class="chips"><span class="lbl">Your paragraph needs</span>{{CHIPS}}</div>
+      <textarea class="answer" id="para" data-label="My 2 sentences" placeholder="Plan your 2 sentences here. You do not turn this in."></textarea>
+      <div class="counter" id="para-count">0 of 2 sentences</div>
+      <div class="chips"><span class="lbl">Your sentences need</span>{{CHIPS}}</div>
       <button class="help-btn" type="button" id="help-btn">💡 Need help starting?</button>
       <div class="helps" id="helps">Try these sentence starters:<ul>{{STARTERS}}</ul></div>
-      <div class="points">⭐ <b>Full points:</b><ul><li>You finished the game.</li><li>Your paragraph is at least 40 words and all {{NCHIPS}} checks are lit.</li></ul></div>
+      <div class="timer-row"><button class="btn" type="button" id="timer-btn">⏱ Practice with a 30 second timer</button><b class="timer" id="timer" aria-live="polite"></b></div>
+      <div class="points">⭐ <b>Full points:</b><ul><li>You finished the game.</li><li>Your video is 30 seconds or less.</li><li>Your 2 sentences have all {{NCHIPS}} checks.</li></ul></div>
     </div></div>
 
     <div class="gathered-card">
-      <div class="gathered-header"><span class="ic">📓</span><div><div class="k">Turn it in</div><div class="t">My Gathered Answers</div></div></div>
+      <div class="gathered-header"><span class="ic">🎥</span><div><div class="k">Turn it in</div><div class="t">Record your video</div></div></div>
       <div class="gathered-body">
-        <div class="name-row"><label for="g-name">First name:</label><input id="g-name" autocomplete="off" maxlength="30" placeholder="Your first name" /></div>
-        <div class="name-msg" id="name-msg" role="status"></div>
-        <div class="g-out" id="g-out"></div>
-        <button class="btn green" type="button" id="pdf-btn">📄 Download my answers (PDF)</button>
-        <p class="turnin"><b>How to turn it in:</b> click the green button, choose <b>Save as PDF</b>, then upload that file to the Canvas assignment.</p>
+        <ol class="turn-steps">
+          <li>Open the Canvas assignment <b>{{CANVAS}}</b> and click <b>Start Assignment</b>.</li>
+          <li>Click <b>Media</b>, then <b>Record/Upload Media</b>, then <b>Start Recording</b>.</li>
+          <li>Say your 2 sentences. Stop at <b>30 seconds</b> or less. Click <b>Finish</b>, then <b>Save</b>.</li>
+          <li>Click <b>Submit Assignment</b>.</li>
+        </ol>
+        <p class="turnin">📌 This video is the only thing you turn in.</p>
       </div>
     </div>
   </section>
@@ -374,74 +379,30 @@ footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px soli
   };
 {{GAME_JS}}
 
-  /* paragraph: counter + chips + help */
-  var para = $('#para'), MIN = 40, RX = {};
+  /* 2 sentences: counter + chips + help (planning only, not turned in) */
+  var para = $('#para'), MIN = 2, RX = {};
   D.chips.forEach(function (c) { RX[c.k] = new RegExp(c.rx, 'i'); });
-  function words(t) { return (t.trim().match(/[A-Za-z0-9'’]+/g) || []).length; }
+  function sentences(t) { return t.split(/[.!?]+/).filter(function (s) { return /[A-Za-z]{2,}/.test(s); }).length; }
   function updPara() {
-    var t = para.value, n = words(t), cnt = $('#para-count');
-    cnt.textContent = n + ' of ' + MIN + ' words' + (n >= MIN ? ' ✓' : ''); cnt.classList.toggle('met', n >= MIN);
+    var t = para.value, n = sentences(t), cnt = $('#para-count');
+    cnt.textContent = Math.min(n, 9) + ' of ' + MIN + ' sentences' + (n >= MIN ? ' ✓' : ''); cnt.classList.toggle('met', n >= MIN);
     $$('[data-chip]').forEach(function (c) { c.classList.toggle('on', RX[c.dataset.chip].test(t)); });
-    set('para', t); refreshG();
+    set('para', t);
   }
   para.value = get('para', ''); para.addEventListener('input', updPara);
   $('#help-btn').addEventListener('click', function () { $('#helps').classList.toggle('show'); });
+  function refreshG() {}
 
-  /* name box (kind names only) */
-  var NAME_WORDS = ['ass','arse','butt','butts','booty','bum','poo','poop','poopy','pee','peepee','wee','weewee','piss','pp',
-    'dick','cock','tit','tits','titty','boob','boobs','balls','nut','nuts','weiner','wiener','sex','crap','damn','hell',
-    'turd','doodoo','dookie','fart','farts','puke','barf','booger','boogers','snot','toilet','diaper','suck','sucks',
-    'shit','shits','shitty','stupid','dumb','idiot','loser','ugly','fat','kill','die','dead','hate','kys','noob','sus'];
-  var NAME_START = ['butt','poop','fart','boob','crap','piss'];
-  var NAME_ANY = ['fuck','fuk','fck','bitch','biatch','cunt','nigg','niga','faggot','slut','whore','penis','vagina','pussy',
-    'porn','dildo','asshole','dumbass','jackass','badass','retard','nazi','hitler','sexy','poophead','butthead','buttface',
-    'fartface','poopface','shithead','shitface','dickhead','wtf','stfu','bastard','motherf','kkk'];
-  var LEET = { '0': 'o', '1': 'i', '!': 'i', '|': 'i', '3': 'e', '4': 'a', '@': 'a', '5': 's', '$': 's', '7': 't', '8': 'b', '9': 'g', '+': 't' };
-  function wordRe(w, how) { var r = w.split('').map(function (c) { return c + '+'; }).join(''); return new RegExp(how === 'any' ? r : how === 'start' ? '^' + r : '^' + r + '$'); }
-  var NAME_RES = NAME_WORDS.map(function (w) { return wordRe(w, 'word'); }), NAME_RES_S = NAME_START.map(function (w) { return wordRe(w, 'start'); }),
-      NAME_RES_A = NAME_ANY.map(function (w) { return wordRe(w, 'any'); });
-  function unkind(n) {
-    var low = String(n || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[0-9!|@$+]/g, function (c) { return LEET[c] || c; });
-    var toks = low.split(/[^a-z]+/).filter(Boolean), squash = toks.join('');
-    if (NAME_RES_A.some(function (r) { return r.test(squash); })) return true;
-    var all = toks.concat(toks.length > 1 ? [squash] : []);
-    return all.some(function (t) { return NAME_RES.some(function (r) { return r.test(t); }) || NAME_RES_S.some(function (r) { return r.test(t); }); });
-  }
-  function nameProblem(n) {
-    if (!n) return ''; if (n.length < 2) return 'Type your first name (at least 2 letters).';
-    if (!/^[A-Za-zÀ-ÿ' -]+$/.test(n)) return 'Use letters only, please.';
-    if (unkind(n)) return 'Let’s keep it kind. Please type your real first name.'; return '';
-  }
-  var nameIn = $('#g-name');
-  /* the lessons' sparkle profile (same site) already knows the first name */
-  try { var prof = JSON.parse(localStorage.getItem('oao.profile') || 'null'); nameIn.value = get('name', '') || (prof && prof.name) || ''; } catch (e) { nameIn.value = get('name', ''); }
-  function goodName() { var n = nameIn.value.trim(); return nameProblem(n) ? '' : n; }
-  nameIn.addEventListener('input', function () { var n = nameIn.value.trim(), p = nameProblem(n); $('#name-msg').textContent = p; if (!p) set('name', n); refreshG(); });
-
-  /* gathered answers + PDF */
-  function refreshG() {
-    var p = (para && para.value.trim()) || '';
-    var t = 'Name: ' + (goodName() || '(add your name)') + '\n' + D.canvas + ' (Window Seat Day)\n\n' + GAME.text() +
-      '\n\nMy paragraph (' + words(p) + ' words):\n' + (p || '(not written yet)');
-    var g = $('#g-out'); if (g) g.textContent = t;
-  }
-  $('#pdf-btn').addEventListener('click', function () {
-    var p = para.value.trim(), nm = goodName() || '(add your name)';
-    var chips = $$('[data-chip]').map(function (c) { return (c.classList.contains('on') ? '✓ ' : '○ ') + c.textContent; }).join(' &nbsp; ');
-    var h = '<!doctype html><html><head><meta charset="utf-8"><title>' + esc(D.canvas) + ' · ' + esc(nm) + '</title><style>' +
-      'body{font-family:Nunito,Arial,sans-serif;color:#2B1D12;max-width:760px;margin:24px auto;padding:0 18px;line-height:1.55}h1{font-family:Lora,Georgia,serif;font-size:22px;color:#0E1C42;margin:2px 0 6px}' +
-      'h2{font-size:16px;color:#0E1C42;border-bottom:2px solid #C9B489;padding-bottom:3px;margin:20px 0 8px}.k{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#8A6420;font-weight:800}' +
-      'table{border-collapse:collapse;width:100%}th{background:#0E1C42;color:#fff;font-size:12px;text-align:left;padding:5px 8px}td{border:1px solid #DDD;padding:6px 8px;vertical-align:top;font-size:13.5px}.p{border:1px solid #DDD;border-radius:6px;padding:8px 12px;white-space:pre-wrap}' +
-      '.st{display:inline-block;border:3px solid #B5476B;color:#B5476B;font-weight:900;letter-spacing:2px;padding:3px 12px;border-radius:8px;transform:rotate(-3deg);text-transform:uppercase;margin-top:6px}@media print{button{display:none}}</style></head><body>' +
-      '<div class="k">Optima Academy Online · 4th Grade ELA · Week ' + D.week + '</div><h1>' + esc(D.canvas) + ' (Window Seat Day)</h1>' +
-      '<p><b>Reader:</b> ' + esc(nm) + ' &nbsp; <b>Date:</b> ' + new Date().toLocaleDateString() + '</p>' + GAME.html() +
-      (GAME.complete() ? '<div class="st">Window Seat bookmark</div>' : '') +
-      '<h2>My paragraph (' + words(p) + ' words)</h2><p><i>' + D.writeQ + '</i></p><div class="p">' + (p ? esc(p) : '<i>(not written yet)</i>') + '</div><p style="font-size:13px;color:#8A6420">' + chips + '</p>' +
-      '<p style="margin-top:24px"><button onclick="print()">🖨 Print or save as PDF</button></p></body></html>';
-    var w = null; try { w = window.open('', '_blank'); } catch (e) {}
-    if (w && w.document) { w.document.open(); w.document.write(h); w.document.close(); setTimeout(function () { try { w.focus(); w.print(); } catch (e) {} }, 700); }
-    else { var bl = new Blob([h], { type: 'text/html' }), x = document.createElement('a'); x.href = URL.createObjectURL(bl); x.download = PRE + '-window-seat.html'; document.body.appendChild(x); x.click(); x.remove(); }
-    window.VR_LAST_PDF = h;
+  /* 30 second practice timer */
+  var tick = null;
+  $('#timer-btn').addEventListener('click', function () {
+    var left = 30, el = $('#timer'), btn = this;
+    if (tick) { clearInterval(tick); tick = null; el.textContent = ''; el.classList.remove('up'); btn.textContent = '⏱ Practice with a 30 second timer'; return; }
+    btn.textContent = '■ Stop the timer'; el.classList.remove('up'); el.textContent = '0:30'; ding();
+    tick = setInterval(function () {
+      left--; el.textContent = '0:' + (left < 10 ? '0' : '') + left;
+      if (left <= 0) { clearInterval(tick); tick = null; el.textContent = 'Time!'; el.classList.add('up'); bonk(); btn.textContent = '⏱ Practice again'; }
+    }, 1000);
   });
 
   GAME.render(); updPara();

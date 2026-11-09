@@ -1,7 +1,7 @@
 // Play a built G4 ELA VR page end to end in Chromium.
 // usage: node tools/vr/playtest_vr.js 7 [port]   (run from the repo root; serves the repo itself)
 // Both paths at 1150 and 420 px: the 6 required VR steps -> keepsake; help drawer images load;
-// Window Seat Day: a wrong pick and a wrong stop first, then the right ones -> bookmark; paragraph chips; PDF.
+// Window Seat Day: a wrong pick and a wrong stop first, then the right ones -> bookmark; 2 sentence chips; timer; no PDF.
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const W = process.argv[2] || '7', PORT = +(process.argv[3] || 8765), ROOT = process.cwd();
@@ -54,18 +54,15 @@ const srv = http.createServer((q, r) => {
     for (let k = 0; k < order.length; k++) await page.click(`.stop[data-k="${k}"]`);
     ok(await page.$eval('#bmark', b => b.classList.contains('show')), 'bookmark shows when the game is done');
     ok(await scrollW() <= 0, 'no horizontal scroll (Window Seat Day)');
-    const para = 'Anne renamed the Avenue. She called it the White Way of Delight because the apple trees were all white with blossoms over the road. ' +
-      'The plain name had no meaning for her. In Chapter 2 she says a name that suits exactly gives her a thrill, so she picked a better one.';
+    const para = 'Anne renamed the Avenue the White Way of Delight. She chose that name because the apple blossoms made a white roof over the road.';
     await page.fill('#para', para);
-    ok(await page.$$eval('.chip', c => c.every(x => x.classList.contains('on'))), 'a good paragraph lights every chip');
-    ok(/40 words ✓/.test(await page.textContent('#para-count')), 'word counter reaches 40');
-    await page.fill('#g-name', 'Maya');
-    const g = await page.textContent('#g-out');
-    ok(/Maya/.test(g) && /White Way of Delight/.test(g) && /5\. Green Gables/.test(g), 'Gathered Answers has the name, the names and the order');
-    await page.evaluate(() => { window.open = () => null; });
-    await page.click('#pdf-btn');
-    const pdf = await page.evaluate(() => window.VR_LAST_PDF || '');
-    ok(/Window Seat bookmark/.test(pdf) && /My paragraph/.test(pdf), 'PDF has the game, the bookmark and the paragraph');
+    ok(await page.$$eval('.chip', c => c.every(x => x.classList.contains('on'))), '2 good sentences light every chip');
+    ok(/2 of 2 sentences ✓/.test(await page.textContent('#para-count')), 'sentence counter reaches 2');
+    ok(await page.$('#pdf-btn') === null && await page.$('#g-name') === null, 'no PDF and no name box: the video is the only thing turned in');
+    ok((await page.$$('.turn-steps li')).length === 4, 'Turn it in shows the 4 Canvas recording steps');
+    await page.click('#timer-btn'); await page.waitForTimeout(1200);
+    ok(/^0:2\d$/.test(await page.textContent('#timer')), 'the 30 second timer counts down');
+    await page.click('#timer-btn');
     if (width === 1150) await page.screenshot({ path: `/tmp/vr${W}-alt-${width}.png`, fullPage: true });
     else await page.screenshot({ path: `/tmp/vr${W}-alt-${width}.png`, fullPage: false });
     await page.reload();
