@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-7-vr",
+ "voice": "XiPS9cXxAVbaIWtGDHDh",
+ "folder": "anne",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/anne/g4ela-7-vr-brief.mp3",
+   "prompt": "[brightly] Oh, hello! It’s me, Anne. I’ve just had the most wonderful drive of my whole life, eight miles with Mr. Cuthbert. [dreamy] The people here give such plain names to such beautiful places, so I gave them better ones. Will you build our drive with me, stop by stop, in the very same order? Then tell me my new names out loud. It would give me such a thrill.",
+   "transcript": "Oh, hello! It’s me, Anne. I’ve just had the most wonderful drive of my whole life, eight miles with Mr. Cuthbert. The people here give such plain names to such beautiful places, so I gave them better ones. Will you build our drive with me, stop by stop, in the very same order? Then tell me my new names out loud. It would give me such a thrill."
+  },
+  "alt": {
+   "file": "assets/audio/guide/anne/g4ela-7-vr-alt.mp3",
+   "prompt": "[warmly] No headset today? That’s all right. We can take the trip from a window seat, with only our imaginations. That’s a very fine way to travel. Choose the name I gave each place, then lay out our drive in order, from the station all the way to Green Gables. [brightly] If you can see it in your mind, you’ve been there too.",
+   "transcript": "No headset today? That’s all right. We can take the trip from a window seat, with only our imaginations. That’s a very fine way to travel. Choose the name I gave each place, then lay out our drive in order, from the station all the way to Green Gables. If you can see it in your mind, you’ve been there too."
+  },
+  "saved": {
+   "file": "assets/audio/guide/anne/g4ela-7-vr-saved.mp3",
+   "prompt": "[gasps] You did it! You built the whole drive, and every stop is right where it belongs. I’ve pressed an apple blossom from the White Way of Delight, just for you. [softly] Keep it safe, so you’ll always remember our trip.",
+   "transcript": "You did it! You built the whole drive, and every stop is right where it belongs. I’ve pressed an apple blossom from the White Way of Delight, just for you. Keep it safe, so you’ll always remember our trip."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-7-vr.mp4",
+  "script": "Hi everyone. Today you’re taking an Imagination Trip into Chapter 2. Anne rides eight miles with Matthew, and she renames two places on the way. In VR you’ll build that drive as a road of four stops: the station, the horse and buggy, the apple blossoms and the pond. Then walk your road and say Anne’s names out loud. Take one photo and submit it to Canvas. No headset? Pick Window Seat Day and do the same trip on your computer."
+ }
+}

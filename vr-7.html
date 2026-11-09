@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – G4 ELA 7.2 VR · The White Way of Delight</title>
+<!--
+  7.2 VR · The White Way of Delight · Anne of Green Gables, Chapter 2. Guide: Anne Shirley (folder anne, voice XiPS9cXxAVbaIWtGDHDh). Map: The Countryside. Models: Bench, Leather Suit Case (Closed); Orange Horse - Idle, Wooden Cart; Flower Set 1; Lilypads - White Lily, Frog. Extra: Williamsburg - Full House, Lantern On. Window Seat Day game: rename-order.
+  Built by tools/vr/build_vr.py from tools/vr/week7.json. Edit the JSON, not this file.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0E1C42;--gold:#C7922C;--cream:#FFF3DC;--paper:#FFFDF7;--ink:#2B1D12;--soft:#4F5A73;--edge:#EBD9AF;--rose:#B5476B;--teal:#1F6F78;--green:#2F7A55;--red:#C8553D}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',Verdana,sans-serif;background:#F3EEE4;color:var(--ink);line-height:1.6}
+.wrap{max-width:920px;margin:0 auto;background:#FBF8F2;min-height:100vh;box-shadow:0 0 40px rgba(43,29,18,.06);overflow:hidden}
+img{max-width:100%}button{font-family:inherit}
+h2,h3,.hd-title{font-family:'Lora',Georgia,serif}
+.hd{background:linear-gradient(135deg,#0E1C42,#1B2C5E 60%,#0E1C42);border-bottom:5px solid var(--gold);padding:14px 22px;display:flex;align-items:center;gap:14px}
+.hd-logo{width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hd-logo img{width:40px;height:32px}
+.hd-org{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#C9D2EE;font-weight:800}
+.hd-title{font-size:25px;color:#fff;font-weight:700;line-height:1.2}
+.hd-sub{font-size:13px;color:#C9D2EE;margin-top:3px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.hd-sub b{color:#fff}
+.wk{background:var(--cream);color:var(--navy);font-weight:900;font-size:11px;letter-spacing:1px;padding:2px 8px;border-radius:4px;transform:rotate(-2deg);display:inline-block}
+.banner{border-bottom:4px solid var(--gold);background:#F6D7C3;line-height:0}
+.banner svg{width:100%;height:auto;display:block}
+main{padding:22px 22px 40px}
+.card{background:var(--paper);border:2px solid #EADFCB;border-radius:18px;box-shadow:0 2px 12px rgba(43,29,18,.06);margin:0 0 22px}
+.card-pad{padding:18px 22px}
+.kicker{font-size:11px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:#8A6420}
+h2{font-size:23px;color:var(--navy);line-height:1.25;margin:2px 0 8px;font-weight:700}
+h3{font-size:19px;color:var(--navy);margin:0 0 6px;font-weight:700}
+p{font-size:17px;color:var(--soft);line-height:1.7;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.media{margin:0 0 18px}
+.vslot-ph{display:none}html.review .vslot-ph.on{display:block;border:2px dashed #C9B489;border-radius:12px;padding:10px 14px;font-size:13px;color:#7A6A55;margin-bottom:10px}
+.vid video{width:100%;border-radius:12px;display:block;background:#000}
+.cc-btn{margin-top:6px;background:#fff;border:1.5px solid #C9B489;border-radius:999px;padding:3px 12px;font-weight:800;font-size:12px;cursor:pointer}
+.cc-btn[aria-pressed="true"]{background:var(--navy);color:#fff}
+/* guide clip */
+.radio{display:flex;gap:14px;align-items:center;background:var(--cream);border:1.5px solid var(--edge);border-radius:14px;padding:10px 14px}
+.radio.hidden{display:none}
+.av{width:62px;height:62px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font:900 22px 'Nunito',sans-serif;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.35),rgba(255,255,255,0) 62%),var(--avc);border:3px solid #fff;box-shadow:0 0 0 2px var(--avc),0 3px 8px rgba(0,0,0,.18);position:relative}
+.radio.playing .av::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:3px solid var(--gold);animation:ring 1.3s ease-out infinite}
+@keyframes ring{from{opacity:.9;transform:scale(.92)}to{opacity:0;transform:scale(1.18)}}
+.r-body{flex:1;min-width:0}
+.r-who{font:900 12px 'Nunito',sans-serif;color:#8A6420;text-transform:uppercase;letter-spacing:.8px}
+.r-label{font-size:16px;font-weight:900;color:var(--navy);margin:1px 0 5px}
+.r-ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.r-play{background:var(--navy);color:#fff;border:0;border-radius:999px;padding:6px 14px;font:800 14px 'Nunito',sans-serif;cursor:pointer}
+.r-read{background:none;border:0;color:#8A6420;font:800 13px 'Nunito',sans-serif;text-decoration:underline;cursor:pointer}
+.r-tr{display:none;margin-top:8px;font-size:16px;line-height:1.6;background:rgba(255,255,255,.7);border-radius:10px;padding:8px 12px}
+.r-tr.open{display:block}
+.radio.playing .r-tr span:not(.said):not(.now){color:#9C8C70}
+.r-tr span.now{background:#FFE08A;border-radius:4px;box-shadow:0 0 0 2px #FFE08A}
+/* postcard */
+.postcard{display:grid;grid-template-columns:1.25fr .9fr;gap:0;background:#FFFBF1;border:2px solid #E5D3AE;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(43,29,18,.10);transform:rotate(-.6deg);margin:0 0 22px}
+.pc-l{padding:18px 22px;border-right:2px dashed #D9C49A}
+.pc-l p{font-family:'Lora',Georgia,serif;font-style:italic;color:#3D2E1E;font-size:18px}
+.pc-sign{font-family:'Lora',Georgia,serif;font-style:italic;font-weight:700;color:var(--rose);font-size:20px;text-align:right}
+.pc-r{padding:16px 18px;display:flex;flex-direction:column;gap:12px;background:repeating-linear-gradient(0deg,#FFFBF1 0 30px,#EFE3CA 30px 31px)}
+.pc-stamp{align-self:flex-end;width:74px;height:88px;border:3px dotted #C9B489;background:#F7E7E1;display:flex;align-items:center;justify-content:center;transform:rotate(4deg)}
+.pc-word{background:#fff;border-left:4px solid var(--gold);border-radius:8px;padding:8px 12px;font-size:15px;color:var(--soft)}
+.pc-word b{color:var(--navy)}
+/* path bar */
+.pathbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 22px}
+.pb{display:flex;gap:12px;align-items:center;text-align:left;border:2.5px solid #E2D6C4;background:#fff;border-radius:16px;padding:12px 14px;cursor:pointer;color:var(--ink)}
+.pb:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.pb-ic{font-size:30px}
+.pb-t b{display:block;font-size:17px;color:var(--navy)}
+.pb-t small{display:block;font-size:13.5px;color:var(--soft);line-height:1.35}
+.pb[aria-pressed="true"]{border-color:var(--navy);background:var(--navy)}
+.pb[aria-pressed="true"] b{color:#fff}.pb[aria-pressed="true"] small{color:#D6DEF2}
+.alt{display:none}body.path-alt .alt{display:block}body.path-alt .vr-only{display:none}
+/* mission */
+.mission-top{display:flex;gap:14px;align-items:center;padding:18px 22px;border-bottom:2px solid #EFE6D3}
+.mission-ic{font-size:40px}
+.peek{margin-left:auto;text-align:center;flex-shrink:0}
+.peek small{display:block;font-size:12px;font-weight:800;color:#8A6420;line-height:1.2}
+.peek svg{width:70px;height:70px}
+.mission-body{padding:18px 22px}
+.jobline{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;background:#F4F7FD;border:1.5px solid #CBD6EE;border-radius:12px;padding:8px 12px;margin:0 0 12px;font-size:15px}
+.job-k{font-weight:900;color:var(--navy);text-transform:uppercase;font-size:11.5px;letter-spacing:1px;margin-right:4px}
+.job-s{font-weight:800;color:var(--navy)}
+.job-s i{font-style:normal;display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;align-items:center;justify-content:center;font-size:12px;margin-right:5px}
+.job-a{color:#9AA6C4}
+.meter{display:flex;align-items:center;gap:10px;margin:0 0 6px}
+.meter-bar{flex:1;height:10px;background:#EDE5D6;border-radius:999px;overflow:hidden}
+.meter-bar i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
+.meter b{font-size:14px;color:var(--navy)}
+.steps{list-style:none;margin:6px 0 14px}
+.phase{font-weight:900;color:#8A6420;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;margin:16px 0 6px;display:flex;gap:6px;align-items:center}
+.phase:first-child{margin-top:4px}
+.step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:2px solid #EADFCB;border-radius:14px;padding:12px 14px;margin:0 0 10px}
+.step.done{background:#EEF8F0;border-color:#B8E8CF}
+.chk{width:34px;height:34px;flex-shrink:0;border-radius:9px;border:2.5px solid #C9B489;background:#fff;font-weight:900;font-size:18px;color:#fff;cursor:pointer}
+.step.done .chk{background:var(--green);border-color:var(--green)}
+.chk:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.step-n{font-weight:900;color:var(--navy);font-size:15px}
+.step-t{font-size:16.5px;color:#3E4558;line-height:1.6}
+.step-t b{color:var(--navy)}
+.groups{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 4px}
+.grp{background:#FFFBF1;border:1.5px solid #E8D9B8;border-left:5px solid var(--gc);border-radius:10px;padding:8px 12px;font-size:15px}
+.grp .gk{display:block;font-weight:900;color:var(--gc);font-size:14px}
+.grp .gm{font-weight:800;color:var(--navy)}
+.grp small{display:block;color:#7A6A55;font-size:12.5px}
+.grp small b{background:#F1EAD9;padding:0 4px;border-radius:4px;color:#5A4D3E}
+.grp .gw{display:block;margin-top:2px;color:#4F5A73;font-size:14px;line-height:1.45}
+.howto{background:#F4F7FD;border:1.5px solid #CBD6EE;border-radius:10px;padding:8px 12px;margin-top:8px;font-size:15px;color:#3E4558}
+.xtag{display:inline-block;background:var(--gold);color:#fff;font-weight:900;font-size:11px;letter-spacing:.8px;border-radius:999px;padding:1px 9px;margin-right:6px;text-transform:uppercase}
+.points{background:#FFF8E6;border:1.5px solid #F2D58E;border-radius:12px;padding:10px 14px;margin:12px 0;font-size:15.5px;color:#5A4D3E}
+.points ul{margin:4px 0 0 20px}
+.done-box{display:none;text-align:center;background:linear-gradient(180deg,#FFFDF7,var(--cream));border:2px solid var(--edge);border-radius:16px;padding:16px 18px;margin-top:12px}
+.done-box.show{display:block}
+.done-box svg.keep{width:120px;height:120px;animation:press .7s ease-out}
+@keyframes press{from{transform:scale(1.4) rotate(-12deg);opacity:0}to{transform:none;opacity:1}}
+/* help drawer */
+.helpdrawer{border:2px solid #CBD6EE;border-radius:14px;background:#F8FAFE;margin:12px 0}
+.helpdrawer summary{list-style:none;display:flex;gap:10px;align-items:center;padding:10px 14px;cursor:pointer}
+.helpdrawer summary::-webkit-details-marker{display:none}
+.helpdrawer summary b{display:block;color:var(--navy)}.helpdrawer summary small{display:block;color:var(--soft);font-size:13px}
+.hd-ic{font-size:24px}.hd-chev{margin-left:auto;transition:transform .2s}.helpdrawer[open] .hd-chev{transform:rotate(180deg)}
+.hd-body{padding:4px 14px 14px}
+.hd-frame{position:relative;padding-top:56.25%;background:#0E1C42;border-radius:10px;overflow:hidden}
+.hd-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.hd-cap{font-size:13px;text-align:center;margin-top:4px}
+.hd-note{font-size:14.5px;background:#FFF8E6;border-radius:8px;padding:6px 10px;margin:10px 0}
+.hd-group{font-size:15px;color:var(--navy);margin:14px 0 6px}
+.hd-steps{list-style:none}
+.hd-step{display:grid;grid-template-columns:200px 1fr;gap:12px;align-items:start;background:#fff;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px;margin-bottom:8px}
+.hd-step img{width:100%;border-radius:6px;border:1px solid #DDD}
+.hd-step b{color:var(--navy)}.hd-step p{font-size:14.5px;margin:2px 0 0}
+.hd-n{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;font-weight:900;align-items:center;justify-content:center;margin-right:6px}
+.hd-alt{font-size:14.5px}
+/* window seat day */
+.alt-note{display:flex;gap:10px;align-items:center;background:#F4F7FD;border-radius:10px;padding:8px 12px;font-size:14.5px;color:#3E4558;margin-top:12px}
+.msg{display:none;margin:10px 0;padding:8px 12px;border-radius:10px;font-weight:700;font-size:15.5px;background:#FDECEA;color:#8A2E22}
+.msg.show{display:block}.msg.ok{background:#EEF8F0;color:#1a6b35}
+.bmark{display:none;margin:12px auto 0;text-align:center}.bmark.show{display:block}
+.bmark svg{width:90px;height:150px;animation:press .7s ease-out}
+.bmark b{display:block;color:var(--navy)}
+.write-q{font-size:17px;color:#3E4558}
+textarea.answer{width:100%;min-height:150px;border:2px solid #E2D6C4;border-radius:12px;padding:10px 12px;font:16.5px/1.6 'Nunito',sans-serif;margin-top:8px;resize:vertical}
+textarea.answer:focus{outline:none;border-color:var(--gold)}
+.counter{font-size:14px;font-weight:800;color:#8A6420;margin:4px 0}.counter.met{color:var(--green)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
+.chips .lbl{font-size:13px;font-weight:800;color:#7A6A55}
+.chip{border:1.5px solid #D0C8BE;border-radius:999px;padding:2px 10px;font-size:13.5px;font-weight:800;color:#7A6A55;background:#fff}
+.chip.on{background:#EEF8F0;border-color:#34B76F;color:#1a6b35}.chip.on::before{content:'✓ '}
+.help-btn{background:none;border:0;color:#8A6420;font-weight:800;text-decoration:underline;cursor:pointer;font-size:14.5px;margin:4px 0}
+.helps{display:none;background:#FFF8E6;border-radius:10px;padding:8px 14px;font-size:15px}.helps.show{display:block}
+.helps ul{margin:4px 0 0 18px}
+.gathered-card{background:#fff;border:2px solid #CBD6EE;border-radius:18px;overflow:hidden;margin:0 0 22px}
+.gathered-header{display:flex;gap:12px;align-items:center;background:var(--navy);color:#fff;padding:12px 18px}
+.gathered-header .ic{font-size:26px}.gathered-header .k{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:#C9D2EE;font-weight:800}
+.gathered-header .t{font-family:'Lora',Georgia,serif;font-size:19px;font-weight:700}
+.gathered-body{padding:14px 18px}
+.name-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.name-row label{font-weight:800;color:var(--navy)}
+.name-row input{flex:1 1 200px;border:2px solid #E2D6C4;border-radius:10px;padding:8px 12px;font:16px 'Nunito',sans-serif}
+.name-msg{color:var(--red);font-size:14px;min-height:1em}
+.g-out{white-space:pre-wrap;background:#FAFAF6;border:1px solid #E2E8F4;border-radius:10px;padding:10px 12px;font-size:14px;margin:8px 0;max-height:260px;overflow:auto}
+.btn{border:0;border-radius:999px;padding:10px 18px;font-weight:900;font-size:16px;cursor:pointer;background:var(--navy);color:#fff}
+.btn.green{background:var(--green)}
+.turnin{font-size:15px;margin-top:8px}
+footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px solid #EADFCB}
+.gh{font-size:15px;color:var(--navy);margin:14px 0 6px;font-family:'Lora',Georgia,serif}
+.ren{background:#fff;border:2px solid #EADFCB;border-radius:14px;padding:10px 12px;margin:0 0 10px}
+.ren.got{border-color:#B8E8CF;background:#F6FCF8}
+.ren-q{margin-bottom:6px}.ren-plain{font-weight:900;color:var(--navy);font-size:17px}
+.ren-q small{display:block;color:#7A6A55;font-size:13.5px}
+.ren-opts{display:flex;flex-wrap:wrap;gap:8px}
+.ropt{border:2px solid #E2D6C4;background:#FFFBF1;border-radius:999px;padding:7px 14px;font-weight:800;font-size:15px;color:var(--navy);cursor:pointer;font-family:'Lora',Georgia,serif;font-style:italic}
+.ropt:hover:not([disabled]){border-color:var(--gold)}
+.ropt.no{border-color:#E7B3A9;background:#FDECEA;color:#8A2E22;text-decoration:line-through}
+.ropt.ok{border-color:#34B76F;background:#EEF8F0;color:#1a6b35}
+.ropt[disabled]:not(.ok){opacity:.45}
+.ren-why{margin-top:6px;font-size:14.5px;color:#1a6b35}
+.road{position:relative;margin:8px 0 10px;padding:6px 0 0}
+.road::before{content:'';position:absolute;left:26px;top:20px;bottom:20px;width:10px;border-radius:6px;background:#E8D3BD}
+.road::after{content:'';position:absolute;left:26px;top:20px;width:10px;border-radius:6px;background:linear-gradient(#C8553D,#B5476B);height:calc((100% - 40px) * var(--fill,0%) / 100%);transition:height .4s}
+.mile{list-style:none;position:relative;z-index:1}
+.ms{display:flex;align-items:center;gap:10px;min-height:44px;margin:0 0 6px;padding-left:10px}
+.ms-n{width:42px;height:42px;flex-shrink:0;border-radius:50%;background:#fff;border:3px solid #E2D6C4;display:flex;align-items:center;justify-content:center;font-weight:900;color:#B9A98F}
+.ms.on .ms-n{border-color:#B5476B;color:#B5476B}
+.ms.next .ms-n{border-color:var(--gold);box-shadow:0 0 0 4px rgba(199,146,44,.18)}
+.ms i{color:#B9A98F;font-style:normal}.ms-ic{font-size:22px}.ms b{color:var(--navy)}
+.stops{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stop{display:flex;gap:10px;align-items:center;text-align:left;background:#fff;border:2px solid #E2D6C4;border-radius:12px;padding:8px 10px;cursor:pointer}
+.stop:hover:not([disabled]){border-color:var(--gold)}
+.stop b{display:block;color:var(--navy);font-size:15px}.stop small{display:block;color:#7A6A55;font-size:13px;line-height:1.35}
+.s-ic{font-size:24px}
+.stop.used{opacity:.35}.stop[disabled]{cursor:default}
+.stop.shake{animation:shk .35s}@keyframes shk{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.lock{font-size:14.5px;color:#7A6A55;font-style:italic;margin:0 0 6px}
+@media (max-width:560px){.stops{grid-template-columns:1fr}}
+.b7-sway{animation:b7sway 6s ease-in-out infinite;transform-origin:460px 260px}@keyframes b7sway{0%,100%{transform:rotate(0)}50%{transform:rotate(.35deg)}}.b7-petals{animation:b7fall 9s linear infinite}@keyframes b7fall{from{transform:translate(0,-10px)}to{transform:translate(-30px,40px);opacity:.2}}.b7-star{animation:b7tw 2.6s ease-in-out infinite;transform-origin:745px 53px}@keyframes b7tw{50%{opacity:.6}}
+@media (max-width:700px){.postcard{grid-template-columns:1fr}.pc-l{border-right:0;border-bottom:2px dashed #D9C49A}.groups{grid-template-columns:1fr}.hd-step{grid-template-columns:1fr}.hd-title{font-size:21px}}
+@media (max-width:480px){main{padding:16px 14px 30px}.card-pad,.mission-body,.mission-top{padding:14px}.pathbar{grid-template-columns:1fr}.hd{padding:12px 14px}.peek{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hd">
+  <div class="hd-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>
+  <div>
+    <div class="hd-org">Optima Academy Online · 4th Grade ELA</div>
+    <div class="hd-title">The White Way of Delight</div>
+    <div class="hd-sub"><span class="wk">WEEK 7</span><span>Anne of Green Gables, Chapter 2 · Guide: <b>Anne Shirley</b></span></div>
+  </div>
+</header>
+<div class="banner" aria-hidden="true"><svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A red country road under arching apple trees in bloom, with a sunset sky ahead"><defs><linearGradient id="sky7" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B3F7A"/><stop offset=".45" stop-color="#C77BA0"/><stop offset=".8" stop-color="#F6C27A"/><stop offset="1" stop-color="#FBE3B0"/></linearGradient><radialGradient id="glow7" cx=".5" cy=".62" r=".35"><stop offset="0" stop-color="#FFF4D6" stop-opacity=".95"/><stop offset="1" stop-color="#FFF4D6" stop-opacity="0"/></radialGradient><linearGradient id="pond7" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E7A9B8"/><stop offset=".5" stop-color="#B9D8C9"/><stop offset="1" stop-color="#9CC3D6"/></linearGradient></defs><rect width="920" height="260" fill="url(#sky7)"/><rect width="920" height="260" fill="url(#glow7)"/><g class="b7-star"><path d="M745 38 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4z" fill="#FFFFFF"/><circle cx="745" cy="53" r="16" fill="#FFFFFF" opacity=".18"/></g><path d="M0 182 Q160 150 330 168 T640 160 T920 172 V260 H0Z" fill="#6E8F5A"/><path d="M690 160 l18 -12 18 12 v16 h-36z" fill="#F4EFE4"/><path d="M686 161 l22 -15 22 15" fill="none" stroke="#3E6B45" stroke-width="3"/><rect x="703" y="166" width="6" height="10" fill="#E9C46A"/><path d="M560 196 Q640 178 760 186 Q880 194 920 188 V214 Q820 222 700 214 Q600 210 560 206Z" fill="url(#pond7)" opacity=".95"/><g fill="#FFFFFF"><ellipse cx="640" cy="200" rx="10" ry="3"/><ellipse cx="702" cy="206" rx="12" ry="3.5"/><ellipse cx="820" cy="200" rx="9" ry="3"/></g><g fill="#F8DCE3"><circle cx="640" cy="198" r="3"/><circle cx="702" cy="203" r="3.5"/><circle cx="820" cy="198" r="3"/></g><path d="M330 260 L440 168 L470 168 L600 260Z" fill="#B5543A"/><path d="M445 175 L465 175 L520 260 L410 260Z" fill="#C8693F" opacity=".5"/><path d="M250 260 Q264 190 318 110" stroke="#5B3A26" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M180 260 Q198 190 256 110" stroke="#5B3A26" stroke-width="11" fill="none" stroke-linecap="round"/><path d="M95 260 Q117 190 179 110" stroke="#5B3A26" stroke-width="13" fill="none" stroke-linecap="round"/><path d="M20 260 Q46 190 112 110" stroke="#5B3A26" stroke-width="15" fill="none" stroke-linecap="round"/><path d="M560 260 Q546 190 492 110" stroke="#5B3A26" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M640 260 Q622 190 564 110" stroke="#5B3A26" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M720 260 Q698 190 636 110" stroke="#5B3A26" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M800 260 Q774 190 708 110" stroke="#5B3A26" stroke-width="16" fill="none" stroke-linecap="round"/><g class="b7-sway"><circle cx="90.1" cy="21.6" r="8.3" fill="#FFFFFF" opacity="0.96"/><circle cx="12.0" cy="69.1" r="9.5" fill="#FDF1F3" opacity="0.76"/><circle cx="127.4" cy="12.7" r="5.5" fill="#FFF7F0" opacity="0.76"/><circle cx="172.3" cy="109.2" r="8.2" fill="#FFFFFF" opacity="0.89"/><circle cx="114.9" cy="112.4" r="5.2" fill="#FDF1F3" opacity="0.82"/><circle cx="29.0" cy="18.0" r="6.5" fill="#FDF1F3" opacity="0.78"/><circle cx="174.2" cy="25.7" r="5.5" fill="#FFFFFF" opacity="0.89"/><circle cx="190.5" cy="59.6" r="7.7" fill="#F8DCE3" opacity="0.87"/><circle cx="294.0" cy="44.8" r="6.2" fill="#FDF1F3" opacity="0.92"/><circle cx="63.0" cy="68.2" r="7.6" fill="#F8DCE3" opacity="0.93"/><circle cx="77.9" cy="112.8" r="5.6" fill="#FFF7F0" opacity="0.79"/><circle cx="96.3" cy="107.7" r="7.1" fill="#FFFFFF" opacity="0.94"/><circle cx="174.8" cy="101.3" r="6.6" fill="#F8DCE3" opacity="0.90"/><circle cx="177.2" cy="55.2" r="9.2" fill="#F8DCE3" opacity="0.87"/><circle cx="205.8" cy="11.7" r="8.5" fill="#FFF7F0" opacity="0.82"/><circle cx="111.2" cy="78.6" r="5.1" fill="#FFF7F0" opacity="0.84"/><circle cx="187.7" cy="59.3" r="6.1" fill="#F8DCE3" opacity="0.78"/><circle cx="64.2" cy="48.0" r="9.4" fill="#FFFFFF" opacity="0.79"/><circle cx="116.6" cy="35.6" r="5.7" fill="#FFF7F0" opacity="0.97"/><circle cx="74.7" cy="50.7" r="6.8" fill="#FFF7F0" opacity="0.99"/><circle cx="31.3" cy="24.4" r="6.2" fill="#FDF1F3" opacity="0.75"/><circle cx="262.6" cy="25.1" r="6.4" fill="#FDF1F3" opacity="0.85"/><circle cx="105.5" cy="67.3" r="9.8" fill="#FFFFFF" opacity="0.86"/><circle cx="276.1" cy="109.7" r="8.4" fill="#FFF7F0" opacity="0.85"/><circle cx="114.0" cy="58.0" r="7.0" fill="#FDF1F3" opacity="0.77"/><circle cx="51.0" cy="22.9" r="6.7" fill="#FFFFFF" opacity="0.78"/><circle cx="172.7" cy="64.0" r="9.7" fill="#FFFFFF" opacity="0.77"/><circle cx="50.7" cy="46.4" r="8.2" fill="#F8DCE3" opacity="0.90"/><circle cx="141.2" cy="17.7" r="7.4" fill="#FFF7F0" opacity="0.87"/><circle cx="86.0" cy="20.9" r="8.7" fill="#F8DCE3" opacity="0.87"/><circle cx="215.3" cy="61.8" r="6.0" fill="#F8DCE3" opacity="0.79"/><circle cx="164.7" cy="8.0" r="7.6" fill="#FFFFFF" opacity="0.92"/><circle cx="68.8" cy="45.3" r="5.8" fill="#FDF1F3" opacity="0.88"/><circle cx="244.9" cy="41.3" r="6.1" fill="#FDF1F3" opacity="0.95"/><circle cx="258.2" cy="86.4" r="6.1" fill="#FFF7F0" opacity="0.84"/><circle cx="-10.1" cy="8.1" r="6.4" fill="#F8DCE3" opacity="0.80"/><circle cx="185.7" cy="42.9" r="9.0" fill="#F8DCE3" opacity="0.99"/><circle cx="104.0" cy="29.3" r="6.1" fill="#FDF1F3" opacity="0.83"/><circle cx="144.1" cy="113.4" r="8.1" fill="#FFFFFF" opacity="0.87"/><circle cx="202.0" cy="93.0" r="5.4" fill="#FFFFFF" opacity="0.98"/><circle cx="246.0" cy="87.5" r="7.4" fill="#FDF1F3" opacity="0.86"/><circle cx="196.2" cy="14.5" r="9.7" fill="#FFF7F0" opacity="0.87"/><circle cx="232.7" cy="14.3" r="5.8" fill="#FDF1F3" opacity="0.76"/><circle cx="180.9" cy="56.2" r="8.3" fill="#FFF7F0" opacity="0.91"/><circle cx="99.1" cy="65.4" r="5.7" fill="#FFFFFF" opacity="0.95"/><circle cx="227.0" cy="16.3" r="8.7" fill="#FDF1F3" opacity="0.86"/><circle cx="276.4" cy="95.9" r="6.1" fill="#F8DCE3" opacity="0.80"/><circle cx="150.4" cy="89.0" r="6.6" fill="#FFF7F0" opacity="0.96"/><circle cx="0.7" cy="86.4" r="9.5" fill="#FFF7F0" opacity="0.96"/><circle cx="278.6" cy="19.4" r="5.8" fill="#FFFFFF" opacity="0.97"/><circle cx="244.0" cy="71.9" r="8.9" fill="#FDF1F3" opacity="0.79"/><circle cx="141.0" cy="84.8" r="7.8" fill="#F8DCE3" opacity="0.92"/><circle cx="160.4" cy="58.1" r="8.9" fill="#FFFFFF" opacity="0.81"/><circle cx="74.2" cy="89.9" r="7.5" fill="#FFFFFF" opacity="0.94"/><circle cx="290.2" cy="53.8" r="8.1" fill="#FDF1F3" opacity="0.92"/><circle cx="133.8" cy="63.7" r="7.4" fill="#FDF1F3" opacity="0.92"/><circle cx="278.0" cy="108.6" r="6.3" fill="#FDF1F3" opacity="0.96"/><circle cx="26.6" cy="18.4" r="7.2" fill="#FFFFFF" opacity="0.92"/><circle cx="125.6" cy="28.4" r="6.5" fill="#FFFFFF" opacity="0.97"/><circle cx="32.5" cy="83.8" r="8.3" fill="#FDF1F3" opacity="0.81"/><circle cx="26.7" cy="56.5" r="8.7" fill="#FFFFFF" opacity="0.85"/><circle cx="145.7" cy="113.9" r="9.2" fill="#FDF1F3" opacity="0.93"/><circle cx="318.0" cy="49.4" r="7.1" fill="#F8DCE3" opacity="0.83"/><circle cx="225.5" cy="7.1" r="7.8" fill="#FFF7F0" opacity="0.93"/><circle cx="110.7" cy="61.9" r="6.5" fill="#FFFFFF" opacity="0.78"/><circle cx="292.3" cy="30.1" r="9.4" fill="#FFFFFF" opacity="0.82"/><circle cx="-6.5" cy="90.7" r="6.4" fill="#FDF1F3" opacity="0.95"/><circle cx="268.9" cy="79.4" r="9.7" fill="#FFF7F0" opacity="0.79"/><circle cx="292.5" cy="67.8" r="8.5" fill="#FFFFFF" opacity="0.82"/><circle cx="251.9" cy="25.2" r="9.5" fill="#F8DCE3" opacity="0.98"/><circle cx="195.7" cy="93.2" r="5.4" fill="#FDF1F3" opacity="0.77"/><circle cx="273.3" cy="54.9" r="6.7" fill="#FFF7F0" opacity="0.98"/><circle cx="71.1" cy="19.2" r="7.6" fill="#FDF1F3" opacity="0.98"/><circle cx="309.5" cy="33.8" r="5.9" fill="#F8DCE3" opacity="0.91"/><circle cx="160.6" cy="27.6" r="7.2" fill="#FDF1F3" opacity="0.82"/><circle cx="253.3" cy="114.4" r="5.2" fill="#FFFFFF" opacity="0.93"/><circle cx="167.4" cy="25.8" r="7.4" fill="#FFF7F0" opacity="0.78"/><circle cx="258.4" cy="52.5" r="7.5" fill="#FFF7F0" opacity="0.99"/><circle cx="84.6" cy="28.7" r="6.1" fill="#FDF1F3" opacity="0.96"/><circle cx="220.3" cy="75.0" r="7.0" fill="#F8DCE3" opacity="1.00"/><circle cx="264.6" cy="6.6" r="8.1" fill="#F8DCE3" opacity="0.86"/><circle cx="-1.2" cy="78.2" r="6.9" fill="#F8DCE3" opacity="0.90"/><circle cx="215.5" cy="10.0" r="5.9" fill="#F8DCE3" opacity="0.86"/><circle cx="69.5" cy="110.8" r="9.9" fill="#F8DCE3" opacity="0.81"/><circle cx="308.3" cy="39.1" r="6.8" fill="#FFFFFF" opacity="0.83"/><circle cx="8.5" cy="35.7" r="8.3" fill="#FDF1F3" opacity="0.88"/><circle cx="-18.3" cy="34.1" r="5.4" fill="#FFF7F0" opacity="0.90"/><circle cx="114.0" cy="38.0" r="8.1" fill="#FFFFFF" opacity="0.90"/><circle cx="159.9" cy="87.6" r="8.3" fill="#FFF7F0" opacity="0.94"/><circle cx="225.0" cy="59.4" r="6.4" fill="#FDF1F3" opacity="0.76"/><circle cx="264.0" cy="103.1" r="8.1" fill="#FDF1F3" opacity="0.98"/><circle cx="236.0" cy="67.5" r="9.1" fill="#FFFFFF" opacity="0.96"/><circle cx="178.6" cy="103.2" r="8.4" fill="#FDF1F3" opacity="0.77"/><circle cx="-5.8" cy="75.1" r="9.8" fill="#FFF7F0" opacity="0.96"/><circle cx="169.9" cy="74.1" r="8.1" fill="#FDF1F3" opacity="0.87"/><circle cx="-18.9" cy="92.7" r="8.7" fill="#FFFFFF" opacity="0.91"/><circle cx="2.5" cy="86.0" r="6.3" fill="#FFFFFF" opacity="0.96"/><circle cx="59.8" cy="88.2" r="6.2" fill="#FFF7F0" opacity="0.87"/><circle cx="110.1" cy="57.7" r="8.4" fill="#FFFFFF" opacity="0.90"/><circle cx="198.5" cy="13.5" r="5.7" fill="#F8DCE3" opacity="0.91"/><circle cx="215.6" cy="73.3" r="5.7" fill="#FFF7F0" opacity="0.77"/><circle cx="71.4" cy="78.9" r="8.5" fill="#FFF7F0" opacity="0.82"/><circle cx="155.6" cy="56.1" r="7.3" fill="#FFFFFF" opacity="1.00"/><circle cx="166.7" cy="39.3" r="5.4" fill="#FFF7F0" opacity="0.75"/><circle cx="136.1" cy="95.2" r="9.8" fill="#FFF7F0" opacity="1.00"/><circle cx="111.5" cy="105.8" r="9.7" fill="#FFFFFF" opacity="0.90"/><circle cx="28.2" cy="62.6" r="9.8" fill="#FDF1F3" opacity="0.90"/><circle cx="194.8" cy="35.8" r="5.6" fill="#F8DCE3" opacity="0.81"/><circle cx="285.2" cy="58.5" r="5.1" fill="#FFFFFF" opacity="0.99"/><circle cx="211.7" cy="49.6" r="8.6" fill="#FFF7F0" opacity="0.84"/><circle cx="87.5" cy="97.4" r="5.0" fill="#F8DCE3" opacity="0.96"/><circle cx="20.8" cy="106.9" r="8.6" fill="#F8DCE3" opacity="0.81"/><circle cx="2.1" cy="47.9" r="9.3" fill="#FFFFFF" opacity="0.84"/><circle cx="125.5" cy="35.3" r="5.2" fill="#FFFFFF" opacity="0.76"/><circle cx="205.1" cy="74.8" r="5.7" fill="#F8DCE3" opacity="0.86"/><circle cx="87.3" cy="90.1" r="8.9" fill="#FFF7F0" opacity="0.97"/><circle cx="256.1" cy="74.4" r="9.6" fill="#FDF1F3" opacity="0.93"/><circle cx="-3.2" cy="85.6" r="7.3" fill="#FDF1F3" opacity="0.91"/><circle cx="77.3" cy="10.4" r="9.6" fill="#FDF1F3" opacity="0.79"/><circle cx="121.1" cy="36.0" r="6.3" fill="#F8DCE3" opacity="0.85"/><circle cx="61.1" cy="58.2" r="8.3" fill="#FFFFFF" opacity="0.79"/><circle cx="35.0" cy="27.9" r="9.5" fill="#FFF7F0" opacity="0.89"/><circle cx="134.0" cy="41.6" r="8.8" fill="#FFF7F0" opacity="0.78"/><circle cx="45.4" cy="15.0" r="6.7" fill="#FFFFFF" opacity="0.83"/><circle cx="105.2" cy="94.0" r="6.0" fill="#FFFFFF" opacity="0.94"/><circle cx="120.3" cy="50.5" r="7.6" fill="#FFF7F0" opacity="0.82"/><circle cx="235.7" cy="59.8" r="7.9" fill="#F8DCE3" opacity="0.78"/><circle cx="151.2" cy="74.3" r="9.3" fill="#FDF1F3" opacity="0.77"/><circle cx="284.9" cy="47.3" r="8.2" fill="#FFF7F0" opacity="0.99"/><circle cx="268.6" cy="101.0" r="5.1" fill="#FFFFFF" opacity="0.86"/><circle cx="239.7" cy="93.5" r="9.8" fill="#FFF7F0" opacity="0.75"/><circle cx="113.1" cy="107.0" r="9.1" fill="#FFF7F0" opacity="0.99"/><circle cx="64.5" cy="17.0" r="5.8" fill="#FFFFFF" opacity="0.99"/><circle cx="225.4" cy="76.2" r="8.8" fill="#FFF7F0" opacity="0.77"/><circle cx="244.1" cy="5.2" r="5.6" fill="#FFFFFF" opacity="0.91"/><circle cx="83.3" cy="19.1" r="6.3" fill="#FFF7F0" opacity="0.92"/><circle cx="18.1" cy="12.7" r="7.6" fill="#FDF1F3" opacity="0.85"/><circle cx="56.0" cy="71.1" r="5.1" fill="#F8DCE3" opacity="1.00"/><circle cx="74.7" cy="39.8" r="9.2" fill="#FDF1F3" opacity="0.87"/><circle cx="59.8" cy="32.2" r="9.8" fill="#F8DCE3" opacity="0.76"/><circle cx="46.0" cy="102.3" r="8.2" fill="#FFFFFF" opacity="0.81"/><circle cx="206.9" cy="106.8" r="6.1" fill="#FFFFFF" opacity="0.92"/><circle cx="224.2" cy="44.9" r="7.0" fill="#FFFFFF" opacity="0.95"/><circle cx="231.3" cy="60.5" r="6.0" fill="#FDF1F3" opacity="0.83"/><circle cx="258.8" cy="30.4" r="6.1" fill="#F8DCE3" opacity="0.78"/><circle cx="192.0" cy="72.1" r="9.5" fill="#FFF7F0" opacity="0.85"/><circle cx="206.2" cy="109.4" r="5.7" fill="#FFF7F0" opacity="0.76"/><circle cx="-12.0" cy="70.6" r="7.1" fill="#FFFFFF" opacity="0.80"/><circle cx="132.9" cy="83.3" r="6.6" fill="#FFFFFF" opacity="1.00"/><circle cx="296.7" cy="41.2" r="5.9" fill="#FFF7F0" opacity="0.76"/><circle cx="205.9" cy="46.6" r="6.9" fill="#F8DCE3" opacity="0.86"/><circle cx="17.0" cy="13.6" r="5.4" fill="#FFF7F0" opacity="0.99"/><circle cx="22.1" cy="111.1" r="6.0" fill="#F8DCE3" opacity="0.94"/><circle cx="85.0" cy="93.4" r="5.4" fill="#FFF7F0" opacity="0.80"/><circle cx="164.1" cy="54.1" r="6.6" fill="#FFF7F0" opacity="0.76"/><circle cx="119.7" cy="94.3" r="8.8" fill="#FFFFFF" opacity="0.84"/><circle cx="137.8" cy="93.4" r="5.3" fill="#FDF1F3" opacity="0.94"/><circle cx="285.5" cy="42.3" r="6.4" fill="#FFFFFF" opacity="0.82"/><circle cx="223.7" cy="39.8" r="6.4" fill="#FFFFFF" opacity="0.93"/><circle cx="182.5" cy="93.6" r="9.7" fill="#FFFFFF" opacity="0.76"/><circle cx="59.5" cy="57.3" r="9.8" fill="#FFF7F0" opacity="0.95"/><circle cx="290.6" cy="94.6" r="5.7" fill="#FFF7F0" opacity="0.80"/><circle cx="252.9" cy="86.2" r="9.1" fill="#FDF1F3" opacity="0.90"/><circle cx="91.5" cy="40.2" r="6.8" fill="#FFFFFF" opacity="0.88"/><circle cx="113.2" cy="22.6" r="7.0" fill="#FFFFFF" opacity="0.87"/><circle cx="165.2" cy="22.7" r="7.1" fill="#FFFFFF" opacity="1.00"/><circle cx="70.1" cy="14.2" r="5.5" fill="#FFF7F0" opacity="1.00"/><circle cx="310.5" cy="24.1" r="5.7" fill="#FFF7F0" opacity="0.91"/><circle cx="209.2" cy="87.3" r="9.2" fill="#FFFFFF" opacity="0.94"/><circle cx="79.9" cy="35.7" r="6.3" fill="#F8DCE3" opacity="0.93"/><circle cx="585.7" cy="32.2" r="6.2" fill="#FDF1F3" opacity="0.82"/><circle cx="854.9" cy="25.7" r="5.3" fill="#F8DCE3" opacity="1.00"/><circle cx="702.8" cy="30.5" r="9.0" fill="#FFF7F0" opacity="1.00"/><circle cx="548.9" cy="57.2" r="9.1" fill="#FFF7F0" opacity="0.98"/><circle cx="525.3" cy="37.3" r="5.6" fill="#FDF1F3" opacity="0.90"/><circle cx="824.6" cy="26.4" r="5.4" fill="#FDF1F3" opacity="0.86"/><circle cx="608.8" cy="90.6" r="9.7" fill="#FFFFFF" opacity="0.91"/><circle cx="779.7" cy="43.5" r="5.2" fill="#F8DCE3" opacity="0.79"/><circle cx="587.5" cy="33.0" r="8.0" fill="#FDF1F3" opacity="0.95"/><circle cx="821.2" cy="50.0" r="6.9" fill="#F8DCE3" opacity="0.77"/><circle cx="522.0" cy="59.5" r="7.4" fill="#FFF7F0" opacity="0.78"/><circle cx="660.2" cy="65.5" r="8.2" fill="#FFFFFF" opacity="0.91"/><circle cx="661.2" cy="34.8" r="9.9" fill="#F8DCE3" opacity="0.85"/><circle cx="529.5" cy="87.0" r="9.4" fill="#FFF7F0" opacity="0.85"/><circle cx="838.4" cy="114.6" r="6.8" fill="#FDF1F3" opacity="0.85"/><circle cx="663.9" cy="108.6" r="7.2" fill="#FDF1F3" opacity="0.86"/><circle cx="821.7" cy="49.7" r="9.4" fill="#FFF7F0" opacity="0.94"/><circle cx="559.4" cy="10.7" r="5.7" fill="#FFF7F0" opacity="0.77"/><circle cx="746.4" cy="45.8" r="7.5" fill="#FDF1F3" opacity="0.84"/><circle cx="571.5" cy="23.9" r="5.3" fill="#FFF7F0" opacity="0.87"/><circle cx="815.8" cy="111.4" r="6.0" fill="#FDF1F3" opacity="0.96"/><circle cx="526.5" cy="105.4" r="6.6" fill="#FFF7F0" opacity="0.77"/><circle cx="780.7" cy="80.7" r="9.5" fill="#FDF1F3" opacity="0.91"/><circle cx="743.6" cy="26.6" r="7.4" fill="#FDF1F3" opacity="0.76"/><circle cx="866.6" cy="22.2" r="6.8" fill="#FDF1F3" opacity="0.81"/><circle cx="785.5" cy="103.7" r="5.2" fill="#FFFFFF" opacity="0.92"/><circle cx="633.2" cy="47.9" r="7.3" fill="#F8DCE3" opacity="0.91"/><circle cx="627.1" cy="32.4" r="6.9" fill="#F8DCE3" opacity="0.86"/><circle cx="676.6" cy="7.6" r="8.1" fill="#FFF7F0" opacity="0.87"/><circle cx="679.8" cy="73.0" r="9.1" fill="#FDF1F3" opacity="0.95"/><circle cx="662.1" cy="12.4" r="6.8" fill="#F8DCE3" opacity="0.77"/><circle cx="677.9" cy="61.1" r="5.2" fill="#FDF1F3" opacity="0.77"/><circle cx="788.7" cy="90.5" r="7.6" fill="#FFFFFF" opacity="0.94"/><circle cx="850.0" cy="76.8" r="8.9" fill="#FFFFFF" opacity="0.96"/><circle cx="888.5" cy="85.5" r="9.1" fill="#FDF1F3" opacity="0.78"/><circle cx="846.6" cy="36.7" r="9.1" fill="#FDF1F3" opacity="0.92"/><circle cx="784.0" cy="29.3" r="9.2" fill="#F8DCE3" opacity="0.79"/><circle cx="850.7" cy="35.2" r="9.1" fill="#FDF1F3" opacity="0.81"/><circle cx="876.4" cy="57.8" r="8.0" fill="#FDF1F3" opacity="0.83"/><circle cx="524.0" cy="25.0" r="5.8" fill="#F8DCE3" opacity="0.92"/><circle cx="850.3" cy="23.6" r="8.9" fill="#FFFFFF" opacity="0.94"/><circle cx="528.5" cy="99.4" r="9.8" fill="#FFF7F0" opacity="0.89"/><circle cx="730.4" cy="102.1" r="5.5" fill="#FFF7F0" opacity="0.93"/><circle cx="651.2" cy="46.3" r="6.8" fill="#FDF1F3" opacity="0.84"/><circle cx="800.6" cy="53.7" r="5.9" fill="#FFFFFF" opacity="0.82"/><circle cx="706.1" cy="39.1" r="9.8" fill="#F8DCE3" opacity="0.93"/><circle cx="793.9" cy="29.4" r="6.5" fill="#FFF7F0" opacity="0.85"/><circle cx="648.4" cy="10.3" r="7.4" fill="#FFFFFF" opacity="0.76"/><circle cx="511.0" cy="44.0" r="5.5" fill="#F8DCE3" opacity="0.88"/><circle cx="667.0" cy="38.1" r="5.7" fill="#F8DCE3" opacity="0.91"/><circle cx="690.5" cy="19.8" r="9.7" fill="#FDF1F3" opacity="0.93"/><circle cx="681.3" cy="12.0" r="5.7" fill="#F8DCE3" opacity="0.85"/><circle cx="610.4" cy="6.3" r="8.2" fill="#F8DCE3" opacity="0.90"/><circle cx="729.8" cy="71.2" r="7.6" fill="#FFF7F0" opacity="0.81"/><circle cx="853.3" cy="9.8" r="7.7" fill="#FFF7F0" opacity="0.80"/><circle cx="570.5" cy="105.3" r="5.5" fill="#FDF1F3" opacity="0.79"/><circle cx="585.8" cy="71.9" r="7.5" fill="#FFF7F0" opacity="0.95"/><circle cx="576.4" cy="39.0" r="6.5" fill="#FFFFFF" opacity="1.00"/><circle cx="785.2" cy="57.6" r="7.7" fill="#FFF7F0" opacity="0.96"/><circle cx="793.2" cy="56.2" r="8.7" fill="#FFF7F0" opacity="0.79"/><circle cx="888.7" cy="33.8" r="8.2" fill="#FFFFFF" opacity="0.83"/><circle cx="794.9" cy="81.5" r="9.2" fill="#FFFFFF" opacity="0.82"/><circle cx="720.4" cy="53.0" r="8.9" fill="#F8DCE3" opacity="0.82"/><circle cx="862.9" cy="103.4" r="5.4" fill="#FFFFFF" opacity="0.79"/><circle cx="853.8" cy="97.6" r="6.0" fill="#FDF1F3" opacity="0.94"/><circle cx="634.2" cy="101.8" r="6.6" fill="#FDF1F3" opacity="0.84"/><circle cx="833.7" cy="106.4" r="9.9" fill="#FFF7F0" opacity="0.87"/><circle cx="711.6" cy="5.7" r="5.1" fill="#FDF1F3" opacity="0.89"/><circle cx="626.9" cy="28.3" r="8.1" fill="#FFFFFF" opacity="0.89"/><circle cx="575.2" cy="8.6" r="5.6" fill="#FDF1F3" opacity="0.84"/><circle cx="563.9" cy="8.2" r="5.2" fill="#FFFFFF" opacity="0.92"/><circle cx="790.0" cy="12.2" r="8.0" fill="#F8DCE3" opacity="0.80"/><circle cx="872.7" cy="63.7" r="8.3" fill="#FFF7F0" opacity="0.78"/><circle cx="588.2" cy="17.3" r="5.2" fill="#FFFFFF" opacity="0.96"/><circle cx="750.0" cy="36.6" r="5.5" fill="#FFFFFF" opacity="0.95"/><circle cx="755.6" cy="37.4" r="6.7" fill="#F8DCE3" opacity="0.76"/><circle cx="607.5" cy="36.1" r="8.6" fill="#F8DCE3" opacity="0.98"/><circle cx="802.3" cy="71.2" r="7.4" fill="#F8DCE3" opacity="0.90"/><circle cx="521.8" cy="50.4" r="7.2" fill="#FFFFFF" opacity="0.84"/><circle cx="777.8" cy="64.2" r="6.1" fill="#FFFFFF" opacity="0.89"/><circle cx="619.1" cy="53.0" r="7.6" fill="#F8DCE3" opacity="0.94"/><circle cx="881.6" cy="5.5" r="7.5" fill="#FFF7F0" opacity="0.92"/><circle cx="823.6" cy="111.4" r="8.0" fill="#F8DCE3" opacity="0.89"/><circle cx="570.4" cy="94.7" r="9.7" fill="#FDF1F3" opacity="0.87"/><circle cx="551.8" cy="75.0" r="5.4" fill="#FFFFFF" opacity="0.91"/><circle cx="645.1" cy="49.1" r="7.0" fill="#FFFFFF" opacity="0.86"/><circle cx="755.4" cy="45.9" r="6.5" fill="#FFF7F0" opacity="0.98"/><circle cx="700.5" cy="46.7" r="9.4" fill="#FDF1F3" opacity="0.99"/><circle cx="558.2" cy="70.3" r="8.4" fill="#FFFFFF" opacity="0.84"/><circle cx="634.1" cy="22.1" r="9.2" fill="#F8DCE3" opacity="0.79"/><circle cx="676.7" cy="90.1" r="7.9" fill="#FDF1F3" opacity="0.83"/><circle cx="754.2" cy="81.6" r="7.5" fill="#F8DCE3" opacity="0.83"/><circle cx="777.2" cy="97.8" r="5.8" fill="#FDF1F3" opacity="0.99"/><circle cx="784.8" cy="71.3" r="6.7" fill="#FDF1F3" opacity="0.83"/><circle cx="581.9" cy="112.3" r="8.6" fill="#FFFFFF" opacity="0.79"/><circle cx="760.0" cy="26.5" r="5.8" fill="#FDF1F3" opacity="0.95"/><circle cx="788.7" cy="52.8" r="6.0" fill="#FFFFFF" opacity="0.82"/><circle cx="846.4" cy="56.0" r="5.1" fill="#FFF7F0" opacity="0.92"/><circle cx="700.2" cy="74.6" r="7.3" fill="#FDF1F3" opacity="0.81"/><circle cx="790.5" cy="5.6" r="6.2" fill="#FFF7F0" opacity="0.93"/><circle cx="733.2" cy="76.2" r="9.2" fill="#FDF1F3" opacity="0.92"/><circle cx="753.8" cy="54.9" r="6.6" fill="#FFFFFF" opacity="0.97"/><circle cx="602.1" cy="49.0" r="8.6" fill="#FDF1F3" opacity="0.81"/><circle cx="671.0" cy="55.1" r="8.1" fill="#FFF7F0" opacity="0.88"/><circle cx="761.2" cy="101.0" r="9.5" fill="#F8DCE3" opacity="0.94"/><circle cx="657.7" cy="58.9" r="9.9" fill="#FFFFFF" opacity="0.81"/><circle cx="592.8" cy="83.8" r="9.8" fill="#FDF1F3" opacity="0.88"/><circle cx="548.4" cy="68.2" r="7.7" fill="#FFF7F0" opacity="0.88"/><circle cx="752.9" cy="96.2" r="7.6" fill="#FFF7F0" opacity="0.94"/><circle cx="683.6" cy="113.9" r="5.9" fill="#FFFFFF" opacity="0.93"/><circle cx="743.3" cy="75.1" r="6.3" fill="#FFF7F0" opacity="0.85"/><circle cx="515.1" cy="51.0" r="7.1" fill="#F8DCE3" opacity="0.90"/><circle cx="551.5" cy="38.4" r="7.0" fill="#FDF1F3" opacity="1.00"/><circle cx="875.1" cy="55.8" r="5.8" fill="#FFFFFF" opacity="0.95"/><circle cx="751.0" cy="56.6" r="7.8" fill="#FDF1F3" opacity="0.95"/><circle cx="565.6" cy="78.3" r="9.2" fill="#FFF7F0" opacity="0.87"/><circle cx="621.9" cy="65.3" r="5.6" fill="#FFF7F0" opacity="0.84"/><circle cx="833.3" cy="34.4" r="6.9" fill="#F8DCE3" opacity="1.00"/><circle cx="768.0" cy="58.0" r="9.0" fill="#F8DCE3" opacity="0.84"/><circle cx="758.7" cy="40.2" r="7.4" fill="#FFFFFF" opacity="0.91"/><circle cx="647.7" cy="107.2" r="9.3" fill="#FFFFFF" opacity="0.77"/><circle cx="724.5" cy="40.7" r="9.7" fill="#F8DCE3" opacity="0.91"/><circle cx="515.7" cy="6.3" r="9.8" fill="#F8DCE3" opacity="0.81"/><circle cx="548.6" cy="20.7" r="6.2" fill="#FFF7F0" opacity="0.84"/><circle cx="568.0" cy="104.4" r="9.0" fill="#FDF1F3" opacity="0.90"/><circle cx="771.4" cy="112.5" r="5.5" fill="#F8DCE3" opacity="0.80"/><circle cx="773.3" cy="63.4" r="8.7" fill="#FFF7F0" opacity="0.92"/><circle cx="554.5" cy="18.0" r="7.1" fill="#FDF1F3" opacity="0.87"/><circle cx="721.7" cy="58.3" r="9.5" fill="#FFF7F0" opacity="0.81"/><circle cx="572.6" cy="71.0" r="8.7" fill="#FDF1F3" opacity="0.96"/><circle cx="687.8" cy="66.9" r="8.3" fill="#FFF7F0" opacity="0.84"/><circle cx="669.2" cy="110.7" r="5.4" fill="#F8DCE3" opacity="0.91"/><circle cx="520.8" cy="72.1" r="8.4" fill="#F8DCE3" opacity="0.95"/><circle cx="545.7" cy="58.3" r="8.8" fill="#FDF1F3" opacity="0.76"/><circle cx="782.9" cy="73.8" r="6.7" fill="#F8DCE3" opacity="0.84"/><circle cx="805.8" cy="66.0" r="9.6" fill="#F8DCE3" opacity="0.86"/><circle cx="670.5" cy="65.9" r="9.1" fill="#F8DCE3" opacity="0.84"/><circle cx="697.6" cy="41.7" r="9.9" fill="#F8DCE3" opacity="0.99"/><circle cx="758.7" cy="92.1" r="6.7" fill="#F8DCE3" opacity="0.93"/><circle cx="558.5" cy="112.0" r="5.4" fill="#FFFFFF" opacity="0.85"/><circle cx="720.6" cy="49.7" r="7.9" fill="#FFF7F0" opacity="0.83"/><circle cx="512.4" cy="25.9" r="9.6" fill="#FFFFFF" opacity="0.95"/><circle cx="855.7" cy="72.3" r="8.1" fill="#FFFFFF" opacity="0.80"/><circle cx="763.5" cy="55.4" r="8.8" fill="#FFFFFF" opacity="0.92"/><circle cx="840.3" cy="51.4" r="5.5" fill="#FFFFFF" opacity="0.84"/><circle cx="822.6" cy="91.5" r="7.8" fill="#F8DCE3" opacity="0.97"/><circle cx="580.2" cy="8.8" r="5.1" fill="#FFFFFF" opacity="0.87"/><circle cx="708.4" cy="95.7" r="8.9" fill="#FFF7F0" opacity="0.89"/><circle cx="859.1" cy="54.1" r="5.1" fill="#FFF7F0" opacity="0.90"/><circle cx="887.4" cy="77.5" r="5.8" fill="#FFF7F0" opacity="0.89"/><circle cx="541.5" cy="56.9" r="9.5" fill="#FFFFFF" opacity="0.86"/><circle cx="513.5" cy="78.6" r="9.9" fill="#FFFFFF" opacity="0.80"/><circle cx="556.1" cy="57.0" r="6.4" fill="#FDF1F3" opacity="0.86"/><circle cx="792.8" cy="106.5" r="6.8" fill="#FDF1F3" opacity="0.93"/><circle cx="542.0" cy="74.1" r="8.5" fill="#FFF7F0" opacity="0.92"/><circle cx="848.2" cy="105.5" r="5.3" fill="#FFFFFF" opacity="0.75"/><circle cx="515.6" cy="76.6" r="9.1" fill="#FFFFFF" opacity="0.85"/><circle cx="628.7" cy="71.0" r="9.8" fill="#FFF7F0" opacity="0.90"/><circle cx="630.2" cy="109.4" r="8.6" fill="#FFF7F0" opacity="0.92"/><circle cx="565.1" cy="92.7" r="6.8" fill="#FDF1F3" opacity="0.91"/><circle cx="668.8" cy="47.4" r="8.9" fill="#F8DCE3" opacity="0.95"/><circle cx="725.4" cy="37.2" r="5.3" fill="#F8DCE3" opacity="0.97"/><circle cx="785.8" cy="6.7" r="5.8" fill="#F8DCE3" opacity="0.90"/><circle cx="881.0" cy="32.1" r="6.9" fill="#FFF7F0" opacity="0.90"/><circle cx="850.5" cy="93.8" r="6.4" fill="#FFFFFF" opacity="0.83"/><circle cx="611.8" cy="22.3" r="9.6" fill="#FFFFFF" opacity="0.82"/><circle cx="563.5" cy="103.0" r="10.0" fill="#FDF1F3" opacity="0.82"/><circle cx="833.4" cy="93.8" r="8.4" fill="#FFF7F0" opacity="0.84"/><circle cx="542.3" cy="65.9" r="9.0" fill="#FDF1F3" opacity="0.95"/><circle cx="784.4" cy="113.1" r="6.5" fill="#FFFFFF" opacity="0.92"/><circle cx="446.0" cy="9.1" r="6.3" fill="#FFFFFF" opacity="0.95"/><circle cx="444.5" cy="3.9" r="9.0" fill="#FFFFFF" opacity="0.81"/><circle cx="475.7" cy="39.5" r="9.4" fill="#F8DCE3" opacity="0.87"/><circle cx="478.2" cy="8.3" r="6.0" fill="#FDF1F3" opacity="0.95"/><circle cx="400.3" cy="25.4" r="6.8" fill="#FDF1F3" opacity="0.81"/><circle cx="564.9" cy="21.7" r="9.3" fill="#F8DCE3" opacity="0.91"/><circle cx="529.7" cy="6.9" r="8.0" fill="#F8DCE3" opacity="0.82"/><circle cx="482.9" cy="4.1" r="6.0" fill="#FFF7F0" opacity="0.90"/><circle cx="380.5" cy="40.7" r="6.4" fill="#FFFFFF" opacity="0.99"/><circle cx="524.5" cy="36.0" r="9.8" fill="#F8DCE3" opacity="0.96"/><circle cx="413.1" cy="43.8" r="6.9" fill="#FFFFFF" opacity="0.76"/><circle cx="469.9" cy="38.3" r="7.3" fill="#FFFFFF" opacity="0.97"/><circle cx="491.4" cy="40.6" r="8.5" fill="#FFFFFF" opacity="0.81"/><circle cx="471.8" cy="28.2" r="9.8" fill="#FFF7F0" opacity="0.80"/><circle cx="545.9" cy="16.3" r="6.2" fill="#FDF1F3" opacity="0.79"/><circle cx="569.8" cy="41.4" r="5.3" fill="#FFFFFF" opacity="0.96"/><circle cx="337.2" cy="34.6" r="8.5" fill="#FFF7F0" opacity="0.76"/><circle cx="362.6" cy="33.2" r="9.7" fill="#F8DCE3" opacity="0.90"/><circle cx="439.7" cy="28.7" r="7.4" fill="#F8DCE3" opacity="0.81"/><circle cx="357.3" cy="21.2" r="5.8" fill="#FDF1F3" opacity="0.95"/><circle cx="562.7" cy="39.3" r="7.3" fill="#FDF1F3" opacity="0.95"/><circle cx="365.8" cy="36.6" r="5.4" fill="#F8DCE3" opacity="0.97"/><circle cx="361.3" cy="19.7" r="5.5" fill="#FFF7F0" opacity="0.96"/><circle cx="488.4" cy="19.9" r="6.7" fill="#FDF1F3" opacity="0.87"/><circle cx="488.3" cy="6.3" r="6.1" fill="#FFFFFF" opacity="0.80"/><circle cx="442.4" cy="39.1" r="7.2" fill="#FDF1F3" opacity="0.82"/><circle cx="432.1" cy="6.9" r="6.4" fill="#F8DCE3" opacity="0.83"/><circle cx="368.6" cy="21.6" r="6.6" fill="#FFF7F0" opacity="0.78"/><circle cx="579.4" cy="2.5" r="9.5" fill="#FDF1F3" opacity="0.89"/><circle cx="542.2" cy="5.2" r="8.8" fill="#F8DCE3" opacity="0.86"/><circle cx="393.0" cy="10.5" r="6.2" fill="#FFF7F0" opacity="0.82"/><circle cx="558.0" cy="2.5" r="8.6" fill="#F8DCE3" opacity="0.79"/><circle cx="491.4" cy="19.5" r="7.5" fill="#FDF1F3" opacity="0.86"/><circle cx="530.3" cy="41.5" r="6.4" fill="#F8DCE3" opacity="0.86"/><circle cx="562.1" cy="9.6" r="7.9" fill="#FDF1F3" opacity="0.96"/><circle cx="460.6" cy="10.1" r="5.9" fill="#FFFFFF" opacity="0.96"/><circle cx="556.2" cy="32.2" r="8.8" fill="#FDF1F3" opacity="0.80"/><circle cx="484.2" cy="31.1" r="9.1" fill="#F8DCE3" opacity="0.80"/><circle cx="342.1" cy="32.2" r="7.0" fill="#FFFFFF" opacity="0.88"/><circle cx="415.4" cy="12.4" r="8.2" fill="#FFF7F0" opacity="0.77"/><circle cx="431.5" cy="33.6" r="5.7" fill="#F8DCE3" opacity="0.81"/><circle cx="471.4" cy="43.4" r="5.2" fill="#F8DCE3" opacity="0.89"/><circle cx="548.1" cy="15.7" r="9.7" fill="#FFFFFF" opacity="0.78"/><circle cx="510.8" cy="35.9" r="9.3" fill="#F8DCE3" opacity="0.94"/><circle cx="550.7" cy="25.4" r="9.5" fill="#F8DCE3" opacity="0.97"/><circle cx="573.1" cy="21.8" r="7.6" fill="#FDF1F3" opacity="0.76"/><circle cx="576.5" cy="9.8" r="5.9" fill="#FFFFFF" opacity="0.83"/><circle cx="469.4" cy="42.0" r="5.1" fill="#FDF1F3" opacity="0.82"/><circle cx="542.7" cy="28.0" r="7.3" fill="#FDF1F3" opacity="0.93"/><circle cx="351.7" cy="38.3" r="8.6" fill="#FFFFFF" opacity="0.82"/><circle cx="445.9" cy="25.8" r="8.8" fill="#FFFFFF" opacity="0.78"/><circle cx="430.5" cy="6.0" r="8.0" fill="#FDF1F3" opacity="0.79"/><circle cx="473.9" cy="32.8" r="5.8" fill="#FFFFFF" opacity="0.98"/><circle cx="426.1" cy="18.5" r="9.2" fill="#FFFFFF" opacity="0.85"/><circle cx="569.7" cy="34.2" r="6.7" fill="#FDF1F3" opacity="0.96"/><circle cx="511.0" cy="37.1" r="7.8" fill="#F8DCE3" opacity="0.95"/><circle cx="545.4" cy="2.4" r="7.6" fill="#F8DCE3" opacity="0.81"/><circle cx="434.8" cy="27.8" r="6.8" fill="#FDF1F3" opacity="0.77"/><circle cx="437.6" cy="22.2" r="5.1" fill="#FDF1F3" opacity="0.86"/><circle cx="428.2" cy="43.9" r="7.3" fill="#FFFFFF" opacity="0.95"/></g><g transform="translate(436 176) scale(.55)"><path d="M10 30 Q2 14 14 8 L22 6 L26 0 L30 2 L28 8 Q36 12 34 20 L32 30Z" fill="#8A4B2A"/><rect x="34" y="12" width="34" height="14" rx="3" fill="#2B1D12"/><circle cx="40" cy="30" r="7" fill="none" stroke="#2B1D12" stroke-width="2.5"/><circle cx="62" cy="30" r="7" fill="none" stroke="#2B1D12" stroke-width="2.5"/><circle cx="50" cy="6" r="4" fill="#C8553D"/><circle cx="58" cy="7" r="3.5" fill="#5B4A36"/></g><g class="b7-petals" fill="#FFFFFF"><circle cx="101" cy="94" r="2.4" opacity=".9"/><circle cx="716" cy="169" r="2.4" opacity=".9"/><circle cx="332" cy="176" r="2.4" opacity=".9"/><circle cx="698" cy="124" r="2.4" opacity=".9"/><circle cx="703" cy="159" r="2.4" opacity=".9"/><circle cx="96" cy="169" r="2.4" opacity=".9"/><circle cx="162" cy="122" r="2.4" opacity=".9"/><circle cx="184" cy="156" r="2.4" opacity=".9"/><circle cx="73" cy="145" r="2.4" opacity=".9"/><circle cx="302" cy="95" r="2.4" opacity=".9"/><circle cx="354" cy="104" r="2.4" opacity=".9"/><circle cx="372" cy="134" r="2.4" opacity=".9"/><circle cx="723" cy="111" r="2.4" opacity=".9"/><circle cx="183" cy="97" r="2.4" opacity=".9"/><circle cx="668" cy="155" r="2.4" opacity=".9"/><circle cx="334" cy="100" r="2.4" opacity=".9"/><circle cx="537" cy="165" r="2.4" opacity=".9"/><circle cx="606" cy="108" r="2.4" opacity=".9"/><circle cx="510" cy="105" r="2.4" opacity=".9"/><circle cx="583" cy="106" r="2.4" opacity=".9"/><circle cx="360" cy="142" r="2.4" opacity=".9"/><circle cx="651" cy="126" r="2.4" opacity=".9"/><circle cx="340" cy="121" r="2.4" opacity=".9"/><circle cx="813" cy="101" r="2.4" opacity=".9"/><circle cx="818" cy="159" r="2.4" opacity=".9"/><circle cx="354" cy="197" r="2.4" opacity=".9"/></g></svg></div>
+<main>
+  <section class="media">
+    <div class="vslot-ph" data-ph="vr">🎥 Teacher video slot: assets/video/teacher/g4ela-7-vr.mp4 (+ .jpg, .vtt). Hidden from students until the file exists.</div>
+    <div id="vslot-vr"></div>
+    <div class="vr-only"><div class="radio" data-clip="brief" data-label="Anne · our drive"></div></div>
+  </section>
+
+  <section class="postcard" aria-label="A postcard from Anne">
+    <div class="pc-l"><div class="kicker">A postcard from Anne</div><h2>The best drive of my whole life</h2><p>Matthew Cuthbert drove me eight miles from Bright River station today. The people here gave the prettiest places such plain names, so I gave them better ones.</p><p>Will you build our drive, stop by stop, so I never forget a single bit of it?</p><div class="pc-sign">Anne</div></div>
+    <div class="pc-r"><div class="pc-stamp" aria-hidden="true"><svg class="pcs" viewBox="0 0 120 120" width="60" height="60" aria-hidden="true"><rect x="12" y="12" width="96" height="96" rx="6" fill="#FFFBF1" stroke="#E5D3AE" stroke-width="2" transform="rotate(-4 60 60)"/><path d="M60 64 Q70 90 92 100" stroke="#6E8F5A" stroke-width="3" fill="none"/><ellipse cx="82" cy="88" rx="9" ry="4" fill="#7FA66A" transform="rotate(30 82 88)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(0 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(72 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(144 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(216 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(288 60 60)"/><circle cx="60" cy="60" r="8" fill="#F6C27A"/><g fill="#C7922C"><circle cx="56" cy="57" r="1.4"/><circle cx="63" cy="56" r="1.4"/><circle cx="61" cy="63" r="1.4"/></g><rect x="40" y="6" width="40" height="13" fill="#F2E3B8" opacity=".85" transform="rotate(-6 60 12)"/></svg></div><div class="pc-word"><b>Scope for imagination</b> means room to imagine. Anne waited outside the station because it had more of it.</div></div>
+  </section>
+
+  <div class="pathbar" role="group" aria-label="Choose how you will do this activity">
+    <button type="button" class="pb" id="pb-vr"><span class="pb-ic">🥽</span><span class="pb-t"><b>Imagination Trip</b><small>Use your headset and earn a pressed apple blossom</small></span></button>
+    <button type="button" class="pb" id="pb-alt"><span class="pb-ic">🪟</span><span class="pb-t"><b>No headset today?</b><small>Do Window Seat Day on your computer</small></span></button>
+  </div>
+
+  <section class="card vr-only" id="vr">
+    <div class="mission-top">
+      <div class="mission-ic" aria-hidden="true">🥽</div>
+      <div><div class="kicker">Imagination Trip · about 12 minutes</div><h2>Build the drive to Green Gables</h2><p>Lay out Anne’s drive as a road of four stops, in the order she saw them.</p></div>
+      <div class="peek" aria-hidden="true"><svg class="peekart" viewBox="0 0 120 120" width="70" height="70" aria-hidden="true"><rect x="12" y="12" width="96" height="96" rx="6" fill="#FFFBF1" stroke="#E5D3AE" stroke-width="2" transform="rotate(-4 60 60)"/><path d="M60 64 Q70 90 92 100" stroke="#6E8F5A" stroke-width="3" fill="none"/><ellipse cx="82" cy="88" rx="9" ry="4" fill="#7FA66A" transform="rotate(30 82 88)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(0 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(72 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(144 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(216 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(288 60 60)"/><circle cx="60" cy="60" r="8" fill="#F6C27A"/><g fill="#C7922C"><circle cx="56" cy="57" r="1.4"/><circle cx="63" cy="56" r="1.4"/><circle cx="61" cy="63" r="1.4"/></g><rect x="40" y="6" width="40" height="13" fill="#F2E3B8" opacity=".85" transform="rotate(-6 60 12)"/></svg><small>Pressed apple blossom</small></div>
+    </div>
+    <div class="mission-body">
+      <div class="jobline"><span class="job-k">Your job</span><span class="job-s"><i>1</i>Build the drive in VR</span><span class="job-a">→</span><span class="job-s"><i>2</i>Take a photo</span><span class="job-a">→</span><span class="job-s"><i>3</i>Submit it to Canvas</span></div>
+      <div class="meter"><div class="meter-bar"><i id="vr-bar"></i></div><b id="vr-count">0 of 7 steps</b></div>
+      <p style="font-size:15px">Tap the box next to each step when you finish it.</p>
+      <ol class="steps" id="vr-steps">
+        <li class="phase">🖥️ Before you put on your headset</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 1 done"></button><div><div class="step-n">Step 1 · Know your models</div><div class="step-t">Type the gray words in the <b>Filter models</b> box.<div class="groups"><div class="grp" style="--gc:#5A6B8C"><span class="gk">🚉 Stop 1 · Bright River station</span><span class="gm">Bench, Leather Suit Case (Closed)</span><small>type: <b>Bench · Suit Case</b></small><span class="gw">The bench is the <b>pile of shingles</b> Anne sat on. The suitcase is her <b>old carpet bag</b>.</span></div><div class="grp" style="--gc:#9A5B2E"><span class="gk">🐴 Stop 2 · The road</span><span class="gm">Orange Horse · Idle, Wooden Cart</span><small>type: <b>Orange Horse · Cart</b></small><span class="gw">Matthew’s <b>sorrel mare</b> (a reddish brown horse) and his <b>buggy</b>.</span></div><div class="grp" style="--gc:#B5476B"><span class="gk">🌸 Stop 3 · The Avenue</span><span class="gm">Flower Set 1</span><small>type: <b>Flower Set</b></small><span class="gw">Apple trees in bloom made a <b>white roof</b> over the road. Use two or three.</span></div><div class="grp" style="--gc:#1F6F78"><span class="gk">💧 Stop 4 · Barry’s pond</span><span class="gm">Lilypads · White Lily, Frog</span><small>type: <b>Lily · Frog</b></small><span class="gw">The frogs were <b>singing</b> by the pond.</span></div></div>This list is also in VR: open your menu, click the <b>Canvas</b> tab, then pick our assignment.</div></div></li>
+        <li class="phase">🥽 In VR</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 2 done"></button><div><div class="step-n">Step 2 · Go in</div><div class="step-t"><div class="howto" style="margin:0 0 8px">🔗 <b>First time only:</b> connect Canvas at <a href="https://xr.optimaed.com" target="_blank" rel="noopener">xr.optimaed.com</a> before you go in. The steps are in <b>Having trouble in VR?</b> below.</div>Put on your headset and open the <b>On-Demand</b> app. Click the <b>Explore</b> tab and type <b>Country</b> in the <b>Filter environments</b> box. Click <b>The Countryside</b>, then click <b>Begin Solo</b>.</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 3 done"></button><div><div class="step-n">Step 3 · Build it</div><div class="step-t">Open your menu with the <b>top button on your right controller</b> and click <b>Models</b>. Make a long road. Put the <b>station</b> at one end and the <b>pond</b> at the other. Put the horse and cart near the station, ready to drive.<div class="howto">✋ <b>To move a model:</b> grab it with the <b>palm trigger</b> (under your middle finger). Use <b>both</b> palm triggers to make it bigger or smaller.</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 4 done"></button><div><div class="step-n">Step 4 · Say it out loud</div><div class="step-t">Walk your road from start to end. At stops 3 and 4, say the plain name, then <b>Anne’s name</b> for it. Tell one detail from Chapter 2 that shows why she chose it.<div class="howto">🗣 “This is Barry’s pond. Anne calls it the ___ because ___.”</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 5 done"></button><div><div class="step-n">Step 5 · Extra</div><div class="step-t"><span class="xtag">VR only</span>Add <b>Green Gables</b> at the end of your road: <b>Williamsburg · Full House</b>. Hang a <b>Lantern On</b> high above it for the bright white star Anne saw shining over her new home. Skip this step if you run out of time.</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 6 done"></button><div><div class="step-n">Step 6 · Snap and submit</div><div class="step-t">Stand back so you can see your whole road. Open your menu, click <b>Library</b>, then <b>Camera</b>. Move the tablet until it all fits, then click <b>Take photo</b>. Now click the <b>Canvas</b> tab and pick <b>7.2 VR · The White Way of Delight</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.<div class="howto">🔁 Want to fix something? Move the models, take a new photo and submit again.</div></div></div></li>
+        <li class="phase">✅ After</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 7 done"></button><div><div class="step-n">Step 7 · Check and leave</div><div class="step-t">Press the <b>Meta button</b> on your right controller, then click <b>Quit</b>. Take off your headset and open the Canvas assignment. Your photo should be there. Not there? Open <b>Having trouble in VR?</b> below for two other ways to turn it in.</div></div></li>
+      </ol>
+      <details class="helpdrawer" id="vr-help"><summary><span class="hd-ic">🛟</span><span><b>Having trouble in VR?</b><small>Steps with pictures, and a how-to video</small></span><span class="hd-chev" aria-hidden="true">▾</span></summary><div class="hd-body"><div class="hd-video"><div class="hd-frame" data-src="https://www.youtube-nocookie.com/embed/slDH-WN4scY?rel=0"></div><p class="hd-cap">How-to video: Optima On-Demand and Canvas</p></div><p class="hd-note">These pictures come from other maps. Your map will be <b>The Countryside</b>, but the buttons are the same.</p><h4 class="hd-group">🖥️ First time only: connect Canvas (on your computer)</h4><ol class="hd-steps"><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-01-login.jpg" alt="The Optima On Demand login page, with the Sign In button circled."><div><span class="hd-n">1</span><b>Log in</b><p>Go to <a href="https://xr.optimaed.com" target="_blank" rel="noopener">xr.optimaed.com</a> on your computer. Log in with the same login you use in VR.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-02-authorize.jpg" alt="The Canvas box that asks to connect, with the Authorize button circled."><div><span class="hd-n">2</span><b>Connect to Canvas</b><p>Click <b>Connect to Canvas</b>. Log in with your usual Canvas username and password, then click <b>Authorize</b>. You will see <b>Canvas connection completed</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-03-connected.jpg" alt="The Canvas page on the website, with the Canvas button and the list of assignments circled."><div><span class="hd-n">3</span><b>Find our class</b><p>Click <b>Canvas</b> on the left and pick our class. Our assignments show up. You only do this part one time.</p></div></li></ol><h4 class="hd-group">📄 Only if the assignment has a file</h4><ol class="hd-steps"><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-04-upload.jpg" alt="The Upload file box, with the Upload File button circled."><div><span class="hd-n">4</span><b>Get the file ready</b><p>Open the assignment and click <b>Open in Canvas</b> to download the file. Then click <b>My Files</b> and <b>Upload File</b>.</p></div></li></ol><h4 class="hd-group">🥽 In the headset</h4><ol class="hd-steps"><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-05-explore.jpg" alt="The Explore tab in the headset, with the tab and the filter box circled."><div><span class="hd-n">5</span><b>Explore tab</b><p>Put on your headset. Click the <b>Explore</b> tab and type the map’s name in <b>Filter environments</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-06-begin-solo.jpg" alt="A map is picked and the Begin Solo button is circled."><div><span class="hd-n">6</span><b>Begin Solo</b><p>Click the map, then click <b>Begin Solo</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-07-canvas.jpg" alt="The Canvas tab in the headset, with the tab and the assignment box circled."><div><span class="hd-n">7</span><b>Read the assignment</b><p>Press the <b>top button on your right controller</b> to open your menu. Click the <b>Canvas</b> tab and pick our assignment to read the directions. Tip: point at a mint side grip and squeeze to pull the tablet to your hand.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-08-models.jpg" alt="The Models tab open in an ocean map, with a list of models."><div><span class="hd-n">8</span><b>Bring out the models</b><p>Click <b>Models</b>. Type the exact name in the search box, or scroll with your thumbstick. Click a model to bring it out.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-08b-move.jpg" alt="A controller moving a fish model in an ocean map."><div><span class="hd-n">9</span><b>Move and resize</b><p>Grab a model with the <b>palm trigger</b>. Turn and move it with the thumbstick. Use <b>both</b> palm triggers to make it bigger or smaller.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-09-placed.jpg" alt="A picture file placed in an ocean map."><div><span class="hd-n">10</span><b>Need a file?</b><p>Click <b>Library</b>, then <b>Files</b>. Pick your file to place it in the world, next to your model.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-10-camera.jpg" alt="The Library camera, with the Height slider and the Take photo button circled."><div><span class="hd-n">11</span><b>Take a photo</b><p>Click <b>Library</b>, then <b>Camera</b>. Move the tablet until your whole scene fits. Slide <b>Height</b> or the zoom bar if you need to. Click <b>Take photo</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-11-choose.jpg" alt="The My Files list in the headset, with the newest file circled."><div><span class="hd-n">12</span><b>Pick your photo</b><p>Click the <b>Canvas</b> tab and pick our assignment. Click <b>Choose from My Files</b>, pick your newest photo, then click <b>Use this file</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-12-submitted.jpg" alt="The Canvas tab after submitting, with the green Submitted tag circled."><div><span class="hd-n">13</span><b>Submit to Canvas</b><p>Click <b>Submit to Canvas</b> and look for the green <b>Submitted</b> tag. To leave VR, press the <b>Meta button</b> on your right controller, then click <b>Quit</b>.</p></div></li></ol><h4 class="hd-group">🔁 Didn’t work in VR? Two other ways</h4><ol class="hd-steps"><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-13-portal-submit.jpg" alt="The Canvas page on the website, with the Choose from My Files button circled."><div><span class="hd-n">14</span><b>Use the website</b><p>Go to <a href="https://xr.optimaed.com" target="_blank" rel="noopener">xr.optimaed.com</a> and click <b>Canvas</b>. Pick our assignment, click <b>Choose from My Files</b>, pick your photo and submit it.</p></div></li></ol><p class="hd-alt">Your photos save to <b>My Files</b> at xr.optimaed.com on their own. You can also download your photo there and upload it to the Canvas assignment yourself.</p></div></details>
+      <div class="points">⭐ <b>Full points:</b><ul><li>Your photo shows all four stops in story order: the station, the horse and cart, the blossoms and the pond.</li></ul></div>
+      <div class="done-box" id="vr-done">
+        <svg class="keep" viewBox="0 0 120 120" width="120" height="120" aria-hidden="true"><rect x="12" y="12" width="96" height="96" rx="6" fill="#FFFBF1" stroke="#E5D3AE" stroke-width="2" transform="rotate(-4 60 60)"/><path d="M60 64 Q70 90 92 100" stroke="#6E8F5A" stroke-width="3" fill="none"/><ellipse cx="82" cy="88" rx="9" ry="4" fill="#7FA66A" transform="rotate(30 82 88)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(0 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(72 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(144 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(216 60 60)"/><ellipse cx="60" cy="38" rx="13" ry="19" fill="#FDF1F3" stroke="#E7B3C2" stroke-width="1.5" transform="rotate(288 60 60)"/><circle cx="60" cy="60" r="8" fill="#F6C27A"/><g fill="#C7922C"><circle cx="56" cy="57" r="1.4"/><circle cx="63" cy="56" r="1.4"/><circle cx="61" cy="63" r="1.4"/></g><rect x="40" y="6" width="40" height="13" fill="#F2E3B8" opacity=".85" transform="rotate(-6 60 12)"/></svg>
+        <h3>Pressed apple blossom earned!</h3>
+        <p style="font-size:15px">Only Imagination Trip travelers earn this one. Press it in your book so you always remember the White Way of Delight.</p>
+        <div class="radio" data-wait data-clip="saved" data-label="Photo submitted!" style="text-align:left;margin-top:10px"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="card"><div class="card-pad">
+      <div class="kicker">Window Seat Day · no headset</div>
+      <h2>Rename it like Anne</h2>
+      <div class="radio" data-clip="alt" data-label="Anne · a window seat trip" style="margin:8px 0 12px"></div>
+      <div class="jobline"><span class="job-k">Your job</span><span class="job-s"><i>1</i>Rename and order</span><span class="job-a">→</span><span class="job-s"><i>2</i>Write a paragraph</span><span class="job-a">→</span><span class="job-s"><i>3</i>Upload your PDF</span></div>
+      <p>Anne never keeps a plain name for a place she loves. Pick her name for each place. Then lay out the drive in order.</p>
+      <h3 class="gh">1 · Anne’s names</h3><div id="ren"></div><h3 class="gh">2 · The drive, in order</h3><p class="lock" id="order-lock">Finish part 1 first.</p><p style="font-size:16px">Tap the stops in the order Anne and Matthew passed them.</p><div class="road" id="road"><ol class="mile" id="mile"></ol></div><div class="stops" id="stops"></div>
+      <div class="msg" id="g-msg" role="status" aria-live="polite"></div>
+      <div class="bmark" id="bmark"><svg viewBox="0 0 90 150" aria-hidden="true"><path d="M14 4 H76 V140 L45 118 L14 140Z" fill="#B5476B"/><path d="M20 10 H70 V128 L45 110 L20 128Z" fill="none" stroke="#FFF3DC" stroke-width="2" stroke-dasharray="4 4"/><rect x="30" y="30" width="30" height="36" rx="2" fill="#FFF3DC"/><path d="M33 34 h24 v28 h-24z" fill="#BFD9E0"/><path d="M45 34 v28 M33 48 h24" stroke="#FFF3DC" stroke-width="2"/><circle cx="45" cy="86" r="6" fill="#FFF3DC"/></svg><b>Window Seat bookmark earned!</b></div>
+      <div class="alt-note">📌 <span>Imagination Trip travelers earn a pressed apple blossom. You’ll earn the Window Seat bookmark. Got a headset after all? Pick <b>Imagination Trip</b> at the top.</span></div>
+    </div></div>
+
+    <div class="card"><div class="card-pad">
+      <div class="kicker">Explain your thinking</div>
+      <h3>Write a paragraph (4 or 5 sentences)</h3>
+      <p class="write-q">Pick one place Anne renamed. Why was the plain name not good enough for her? Use <b>one detail from Chapter 2</b>.</p>
+      <textarea class="answer" id="para" data-label="My paragraph" placeholder="Type your paragraph here..."></textarea>
+      <div class="counter" id="para-count">0 of 40 words</div>
+      <div class="chips"><span class="lbl">Your paragraph needs</span><span class="chip" data-chip="place">a place</span><span class="chip" data-chip="name">Anne’s name</span><span class="chip" data-chip="detail">a detail</span><span class="chip" data-chip="why">because</span></div>
+      <button class="help-btn" type="button" id="help-btn">💡 Need help starting?</button>
+      <div class="helps" id="helps">Try these sentence starters:<ul><li>Anne renamed ___.</li><li>She called it ___.</li><li>The plain name was not good enough because ___.</li><li>In Chapter 2, ___.</li></ul></div>
+      <div class="points">⭐ <b>Full points:</b><ul><li>You finished the game.</li><li>Your paragraph is at least 40 words and all 4 checks are lit.</li></ul></div>
+    </div></div>
+
+    <div class="gathered-card">
+      <div class="gathered-header"><span class="ic">📓</span><div><div class="k">Turn it in</div><div class="t">My Gathered Answers</div></div></div>
+      <div class="gathered-body">
+        <div class="name-row"><label for="g-name">First name:</label><input id="g-name" autocomplete="off" maxlength="30" placeholder="Your first name" /></div>
+        <div class="name-msg" id="name-msg" role="status"></div>
+        <div class="g-out" id="g-out"></div>
+        <button class="btn green" type="button" id="pdf-btn">📄 Download my answers (PDF)</button>
+        <p class="turnin"><b>How to turn it in:</b> click the green button, choose <b>Save as PDF</b>, then upload that file to the Canvas assignment.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>Drawings made for this page. Anne of Green Gables by L. M. Montgomery (1908) is in the public domain.</footer>
+</div>
+<script type="application/json" id="vr-data">{"week": 7, "pre": "g4ela-7-vr", "canvas": "7.2 VR · The White Way of Delight", "guide": {"name": "Anne Shirley", "initials": "AS", "color": "#B4532A", "folder": "anne"}, "transcripts": {"brief": "Oh, hello! It’s me, Anne. I’ve just had the most wonderful drive of my whole life, eight miles with Mr. Cuthbert. The people here give such plain names to such beautiful places, so I gave them better ones. Will you build our drive with me, stop by stop, in the very same order? Then tell me my new names out loud. It would give me such a thrill.", "alt": "No headset today? That’s all right. We can take the trip from a window seat, with only our imaginations. That’s a very fine way to travel. Choose the name I gave each place, then lay out our drive in order, from the station all the way to Green Gables. If you can see it in your mind, you’ve been there too.", "saved": "You did it! You built the whole drive, and every stop is right where it belongs. I’ve pressed an apple blossom from the White Way of Delight, just for you. Keep it safe, so you’ll always remember our trip."}, "game": {"rename": [{"plain": "the Avenue", "hint": "a road under apple trees in bloom", "opts": ["the White Way of Delight", "the Blossom Tunnel", "Apple Tree Lane"], "ok": 0, "why": "The blossoms were white, and Anne felt pure delight under them."}, {"plain": "Barry’s pond", "hint": "long, winding water at sunset", "opts": ["the Silver Mirror", "the Lake of Shining Waters", "Frog Pond"], "ok": 1, "why": "The water shone with sunset colors, and the name gave Anne a thrill."}], "order": [{"t": "Bright River station", "s": "Anne waits on the shingles", "ic": "🚉"}, {"t": "The steep little hill", "s": "Anne breaks off a wild plum branch", "ic": "🌿"}, {"t": "The White Way of Delight", "s": "a roof of apple blossoms", "ic": "🌸"}, {"t": "The Lake of Shining Waters", "s": "they cross the bridge", "ic": "💧"}, {"t": "Green Gables", "s": "a white star shines over it", "ic": "⭐"}], "orderMiss": "Not yet. Think back: what came right after the stop you placed last?"}, "chips": [{"k": "place", "rx": "\\b(avenue|pond|lake|road|white way|shining waters)\\b"}, {"k": "name", "rx": "(white way|delight|lake of shining|shining waters)"}, {"k": "detail", "rx": "\\b(blossoms?|bloom\\w*|apple|trees?|sunset|sky|water|colou?rs?|frogs?|bridge|white|pink|purple|gold|thrill\\w*|shin\\w+)\\b"}, {"k": "why", "rx": "\\b(because|since|so)\\b"}], "writeQ": "Pick one place Anne renamed. Why was the plain name not good enough for her? Use one detail from Chapter 2."}</script>
+<script>
+(function () {
+  'use strict';
+  var D = JSON.parse(document.getElementById('vr-data').textContent);
+  var PRE = D.pre, AUDIO = 'assets/audio/guide/' + D.guide.folder + '/', VIDEO = 'assets/video/teacher/';
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function get(k, d) { try { var v = localStorage.getItem(PRE + '-' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function set(k, v) { try { localStorage.setItem(PRE + '-' + k, JSON.stringify(v)); } catch (e) {} }
+  if (/[?&]review\b/.test(location.search)) document.documentElement.classList.add('review');
+
+  /* sounds (WebAudio, never on load) */
+  var AC = null;
+  function ac() { try { AC = AC || new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} return AC; }
+  function tone(f, t0, d, type, vol) { var c = ac(); if (!c) return; var o = c.createOscillator(), g = c.createGain(); o.type = type || 'sine'; o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, c.currentTime + t0); g.gain.exponentialRampToValueAtTime(vol || 0.08, c.currentTime + t0 + 0.015); g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + t0 + d);
+    o.connect(g); g.connect(c.destination); o.start(c.currentTime + t0); o.stop(c.currentTime + t0 + d + 0.05); }
+  function ding() { tone(660, 0, 0.18); tone(990, 0.09, 0.25); }
+  function bonk() { tone(180, 0, 0.18, 'triangle', 0.06); }
+  function fanfare() { [523, 659, 784, 1047].forEach(function (f, i) { tone(f, i * 0.11, 0.3, 'triangle', 0.07); }); }
+
+  /* guide clips: hidden until the mp3 exists */
+  var current = null;
+  function makeRadio(host) {
+    var id = host.dataset.clip, src = AUDIO + PRE + '-' + id + '.mp3', words = (D.transcripts[id] || '').split(/(\s+)/);
+    host.classList.add('hidden');
+    host.innerHTML = '<div class="av" style="--avc:' + D.guide.color + '">' + esc(D.guide.initials) + '</div>' +
+      '<div class="r-body"><div class="r-who">' + esc(D.guide.name) + '</div><div class="r-label">' + esc(host.dataset.label) + '</div>' +
+      '<div class="r-ctl"><button class="r-play" type="button">▶ Listen</button><button class="r-read" type="button">Read along</button></div>' +
+      '<div class="r-tr">' + words.map(function (w, i) { return /^\s+$/.test(w) ? w : '<span data-w="' + i + '">' + esc(w) + '</span>'; }).join('') + '</div></div>';
+    var audio = new Audio(); audio.preload = 'metadata';
+    var wait = host.hasAttribute('data-wait');
+    function showIf() { if (host.dataset.ok && (!wait || host.dataset.reveal)) host.classList.remove('hidden'); }
+    audio.addEventListener('loadedmetadata', function () { host.dataset.ok = '1'; showIf(); });
+    audio.src = src;
+    var b = $('.r-play', host), tr = $('.r-tr', host), wordEls = $$('[data-w]', tr), raf = null;
+    $('.r-read', host).addEventListener('click', function () { tr.classList.toggle('open'); });
+    function frame() { if (audio.duration) { var k = Math.floor(audio.currentTime / audio.duration * wordEls.length); wordEls.forEach(function (w, i) { w.classList.toggle('said', i < k); w.classList.toggle('now', i === k); }); } raf = requestAnimationFrame(frame); }
+    function stop() { host.classList.remove('playing'); b.textContent = '▶ Listen'; cancelAnimationFrame(raf); wordEls.forEach(function (w) { w.classList.remove('now'); }); }
+    b.addEventListener('click', function () {
+      if (!audio.paused) { audio.pause(); return; }
+      if (current && current !== audio) current.pause();
+      current = audio; tr.classList.add('open'); audio.play().then(function () { host.classList.add('playing'); b.textContent = '❚❚ Pause'; frame(); }).catch(function () {});
+    });
+    audio.addEventListener('pause', stop); audio.addEventListener('ended', function () { stop(); wordEls.forEach(function (w) { w.classList.add('said'); }); });
+    host.reveal = function () { host.dataset.reveal = '1'; showIf(); };
+  }
+  $$('.radio').forEach(makeRadio);
+
+  /* teacher video slot: hidden until the file exists */
+  function probe(url, cb) { fetch(url, { method: 'HEAD', cache: 'no-store' }).then(function (r) { cb(r.ok && !/text\/html/.test(r.headers.get('content-type') || '')); }).catch(function () { cb(false); }); }
+  (function () {
+    var file = VIDEO + PRE + '.mp4', host = $('#vslot-vr'), ph = $('[data-ph="vr"]');
+    probe(file, function (ok) {
+      if (!ok) { ph.classList.add('on'); return; }
+      host.innerHTML = '<div class="vid"><video controls playsinline preload="metadata" poster="' + file.replace('.mp4', '.jpg') + '" src="' + file + '"><track kind="captions" srclang="en" label="English" src="' + file.replace('.mp4', '.vtt') + '"></video><button class="cc-btn" type="button" aria-pressed="false">CC Captions</button></div>';
+      var v = $('video', host), cc = $('.cc-btn', host);
+      function setCC(on) { if (v.textTracks[0]) v.textTracks[0].mode = on ? 'showing' : 'hidden'; cc.setAttribute('aria-pressed', on ? 'true' : 'false'); set('cc', on); }
+      v.addEventListener('loadedmetadata', function () { setCC(!!get('cc', false)); });
+      cc.addEventListener('click', function () { setCC(cc.getAttribute('aria-pressed') !== 'true'); });
+    });
+  })();
+
+  /* help drawer: the video loads only when opened */
+  (function () { var d = $('#vr-help'); if (!d) return; d.addEventListener('toggle', function () { var f = $('.hd-frame', d); if (d.open && f && !f.firstChild) { var i = document.createElement('iframe'); i.src = f.dataset.src; i.title = 'How-to video: Optima On-Demand and Canvas'; i.allow = 'encrypted-media; picture-in-picture; fullscreen'; i.allowFullscreen = true; f.appendChild(i); } }); })();
+
+  /* path toggle (VR is the default) */
+  function setPath(p) {
+    document.body.classList.toggle('path-alt', p === 'alt'); set('path', p);
+    $('#pb-vr').setAttribute('aria-pressed', p === 'alt' ? 'false' : 'true'); $('#pb-alt').setAttribute('aria-pressed', p === 'alt' ? 'true' : 'false');
+  }
+  $('#pb-alt').addEventListener('click', function () { setPath('alt'); });
+  $('#pb-vr').addEventListener('click', function () { setPath('vr'); });
+  setPath(get('path', 'vr'));
+
+  /* VR checklist: index 4 is the Extra; the keepsake needs the other six */
+  var steps = $$('#vr-steps .step'), vrDone = get('steps', []);
+  function vrUpd(celebrate) {
+    var n = 0; steps.forEach(function (s, i) { var on = vrDone.indexOf(i) >= 0; s.classList.toggle('done', on); $('.chk', s).textContent = on ? '✓' : ''; $('.chk', s).setAttribute('aria-pressed', on ? 'true' : 'false'); if (on) n++; });
+    $('#vr-bar').style.width = (n / steps.length * 100) + '%'; $('#vr-count').textContent = n + ' of ' + steps.length + ' steps';
+    var req = [0, 1, 2, 3, 5, 6].every(function (i) { return vrDone.indexOf(i) >= 0; });
+    var box = $('#vr-done'), was = box.classList.contains('show');
+    box.classList.toggle('show', req);
+    if (req) $('#vr-done .radio').reveal();
+    if (req && !was && celebrate) { fanfare(); setTimeout(function () { box.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 200); }
+  }
+  steps.forEach(function (s, i) { $('.chk', s).addEventListener('click', function () { var k = vrDone.indexOf(i); if (k >= 0) vrDone.splice(k, 1); else { vrDone.push(i); ding(); } set('steps', vrDone); vrUpd(true); }); });
+  vrUpd(false);
+
+  /* shared helpers for the game */
+  var msg = $('#g-msg');
+  var KIT = {
+    D: D, $: $, $$: $$, esc: esc, get: get, set: set, ding: ding, bonk: bonk, fanfare: fanfare,
+    say: function (t, ok) { msg.textContent = t; msg.className = 'msg show' + (ok ? ' ok' : ''); },
+    done: function (yes) { $('#bmark').classList.toggle('show', !!yes); },
+    refresh: function () { refreshG(); }
+  };
+  /* ── Window Seat Day game: rename-order ──
+     Part 1: pick Anne's name for each plain place name (3 choices, one try at a time).
+     Part 2: tap the stops in story order; each lands on the next milestone of the road. */
+  var GAME = (function () {
+    var G = D.game, $ = KIT.$, $$ = KIT.$$, esc = KIT.esc;
+    var st = KIT.get('game', { ren: [], ord: [] });   /* ren[i] = chosen index once right; ord = placed stop indexes */
+    var deck = (function () { var a = G.order.map(function (_, i) { return i; }), s = 7; for (var i = a.length - 1; i > 0; i--) { s = (s * 9301 + 49297) % 233280; var j = Math.floor(s / 233280 * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } if (a.join() === G.order.map(function (_, i) { return i; }).join()) a.reverse(); return a; })();
+    function renDone() { return G.rename.every(function (r, i) { return st.ren[i] === r.ok; }); }
+    function ordDone() { return st.ord.length === G.order.length; }
+    function complete() { return renDone() && ordDone(); }
+    function save() { KIT.set('game', st); }
+
+    function renderRename() {
+      $('#ren').innerHTML = G.rename.map(function (r, i) {
+        var got = st.ren[i] === r.ok;
+        return '<div class="ren' + (got ? ' got' : '') + '"><div class="ren-q"><span class="ren-plain">' + esc(r.plain) + '</span><small>' + esc(r.hint) + '</small></div><div class="ren-opts">' +
+          r.opts.map(function (o, k) { return '<button type="button" class="ropt' + (got && k === r.ok ? ' ok' : '') + '" data-i="' + i + '" data-k="' + k + '"' + (got ? ' disabled' : '') + '>' + esc(o) + '</button>'; }).join('') +
+          '</div>' + (got ? '<div class="ren-why">✓ ' + esc(r.why) + '</div>' : '') + '</div>';
+      }).join('');
+      $$('.ropt', $('#ren')).forEach(function (b) { b.addEventListener('click', function () {
+        var i = +b.dataset.i, k = +b.dataset.k, r = G.rename[i];
+        if (k === r.ok) { st.ren[i] = k; save(); KIT.ding(); KIT.say('✓ Yes! Anne calls ' + r.plain + ' “' + r.opts[k] + '.”', true); }
+        else { KIT.bonk(); b.classList.add('no'); KIT.say('Not that one. Anne’s name for ' + r.plain + ' shows how it made her feel. Try again.'); return; }
+        render();
+      }); });
+    }
+    function renderOrder() {
+      var road = $('#road'), n = G.order.length;
+      $('#mile').innerHTML = G.order.map(function (_, i) {
+        var k = st.ord[i], on = k !== undefined;
+        return '<li class="ms' + (on ? ' on' : '') + (i === st.ord.length ? ' next' : '') + '"><span class="ms-n">' + (i + 1) + '</span>' + (on ? '<span class="ms-ic">' + G.order[k].ic + '</span><b>' + esc(G.order[k].t) + '</b>' : '<i>?</i>') + '</li>';
+      }).join('');
+      road.style.setProperty('--fill', (st.ord.length / n * 100) + '%');
+      $('#stops').innerHTML = deck.map(function (k) {
+        var used = st.ord.indexOf(k) > -1, o = G.order[k];
+        return '<button type="button" class="stop' + (used ? ' used' : '') + '" data-k="' + k + '"' + (used || !renDone() ? ' disabled' : '') + '><span class="s-ic">' + o.ic + '</span><span><b>' + esc(o.t) + '</b><small>' + esc(o.s) + '</small></span></button>';
+      }).join('');
+      $('#order-lock').hidden = renDone();
+      $$('.stop', $('#stops')).forEach(function (b) { b.addEventListener('click', function () {
+        var k = +b.dataset.k;
+        if (k === st.ord.length) { st.ord.push(k); save(); KIT.ding(); KIT.say(ordDone() ? '✓ The whole drive, in order! Now write your paragraph.' : '✓ Stop ' + st.ord.length + ' is on the road.', true); if (ordDone()) KIT.fanfare(); }
+        else { KIT.bonk(); b.classList.add('shake'); setTimeout(function () { b.classList.remove('shake'); }, 400); KIT.say(G.orderMiss); return; }
+        render();
+      }); });
+    }
+    function render() { renderRename(); renderOrder(); KIT.done(complete()); KIT.refresh(); }
+    function text() {
+      return 'Rename it like Anne:\n' + G.rename.map(function (r, i) { return '  ' + r.plain + ' → ' + (st.ren[i] === r.ok ? r.opts[r.ok] : '(not done yet)'); }).join('\n') +
+        '\n\nThe drive, in order (' + st.ord.length + ' of ' + G.order.length + '):\n' + (st.ord.length ? st.ord.map(function (k, i) { return '  ' + (i + 1) + '. ' + G.order[k].t; }).join('\n') : '  (none yet)');
+    }
+    function html() {
+      return '<h2>Rename it like Anne</h2><table><tr><th>Plain name</th><th>Anne’s name</th></tr>' + G.rename.map(function (r, i) { return '<tr><td>' + esc(r.plain) + '</td><td>' + (st.ren[i] === r.ok ? esc(r.opts[r.ok]) : '<i>not done yet</i>') + '</td></tr>'; }).join('') + '</table>' +
+        '<h2>The drive, in order: ' + st.ord.length + ' of ' + G.order.length + '</h2><table><tr><th>#</th><th>Stop</th><th>What happens</th></tr>' + G.order.map(function (o, i) { var k = st.ord[i]; return '<tr><td>' + (i + 1) + '</td><td>' + (k !== undefined ? esc(G.order[k].t) : '<i>not placed yet</i>') + '</td><td>' + (k !== undefined ? esc(G.order[k].s) : '') + '</td></tr>'; }).join('') + '</table>';
+    }
+    return { render: render, text: text, html: html, complete: complete };
+  })();
+
+
+  /* paragraph: counter + chips + help */
+  var para = $('#para'), MIN = 40, RX = {};
+  D.chips.forEach(function (c) { RX[c.k] = new RegExp(c.rx, 'i'); });
+  function words(t) { return (t.trim().match(/[A-Za-z0-9'’]+/g) || []).length; }
+  function updPara() {
+    var t = para.value, n = words(t), cnt = $('#para-count');
+    cnt.textContent = n + ' of ' + MIN + ' words' + (n >= MIN ? ' ✓' : ''); cnt.classList.toggle('met', n >= MIN);
+    $$('[data-chip]').forEach(function (c) { c.classList.toggle('on', RX[c.dataset.chip].test(t)); });
+    set('para', t); refreshG();
+  }
+  para.value = get('para', ''); para.addEventListener('input', updPara);
+  $('#help-btn').addEventListener('click', function () { $('#helps').classList.toggle('show'); });
+
+  /* name box (kind names only) */
+  var NAME_WORDS = ['ass','arse','butt','butts','booty','bum','poo','poop','poopy','pee','peepee','wee','weewee','piss','pp',
+    'dick','cock','tit','tits','titty','boob','boobs','balls','nut','nuts','weiner','wiener','sex','crap','damn','hell',
+    'turd','doodoo','dookie','fart','farts','puke','barf','booger','boogers','snot','toilet','diaper','suck','sucks',
+    'shit','shits','shitty','stupid','dumb','idiot','loser','ugly','fat','kill','die','dead','hate','kys','noob','sus'];
+  var NAME_START = ['butt','poop','fart','boob','crap','piss'];
+  var NAME_ANY = ['fuck','fuk','fck','bitch','biatch','cunt','nigg','niga','faggot','slut','whore','penis','vagina','pussy',
+    'porn','dildo','asshole','dumbass','jackass','badass','retard','nazi','hitler','sexy','poophead','butthead','buttface',
+    'fartface','poopface','shithead','shitface','dickhead','wtf','stfu','bastard','motherf','kkk'];
+  var LEET = { '0': 'o', '1': 'i', '!': 'i', '|': 'i', '3': 'e', '4': 'a', '@': 'a', '5': 's', '$': 's', '7': 't', '8': 'b', '9': 'g', '+': 't' };
+  function wordRe(w, how) { var r = w.split('').map(function (c) { return c + '+'; }).join(''); return new RegExp(how === 'any' ? r : how === 'start' ? '^' + r : '^' + r + '$'); }
+  var NAME_RES = NAME_WORDS.map(function (w) { return wordRe(w, 'word'); }), NAME_RES_S = NAME_START.map(function (w) { return wordRe(w, 'start'); }),
+      NAME_RES_A = NAME_ANY.map(function (w) { return wordRe(w, 'any'); });
+  function unkind(n) {
+    var low = String(n || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[0-9!|@$+]/g, function (c) { return LEET[c] || c; });
+    var toks = low.split(/[^a-z]+/).filter(Boolean), squash = toks.join('');
+    if (NAME_RES_A.some(function (r) { return r.test(squash); })) return true;
+    var all = toks.concat(toks.length > 1 ? [squash] : []);
+    return all.some(function (t) { return NAME_RES.some(function (r) { return r.test(t); }) || NAME_RES_S.some(function (r) { return r.test(t); }); });
+  }
+  function nameProblem(n) {
+    if (!n) return ''; if (n.length < 2) return 'Type your first name (at least 2 letters).';
+    if (!/^[A-Za-zÀ-ÿ' -]+$/.test(n)) return 'Use letters only, please.';
+    if (unkind(n)) return 'Let’s keep it kind. Please type your real first name.'; return '';
+  }
+  var nameIn = $('#g-name');
+  /* the lessons' sparkle profile (same site) already knows the first name */
+  try { var prof = JSON.parse(localStorage.getItem('oao.profile') || 'null'); nameIn.value = get('name', '') || (prof && prof.name) || ''; } catch (e) { nameIn.value = get('name', ''); }
+  function goodName() { var n = nameIn.value.trim(); return nameProblem(n) ? '' : n; }
+  nameIn.addEventListener('input', function () { var n = nameIn.value.trim(), p = nameProblem(n); $('#name-msg').textContent = p; if (!p) set('name', n); refreshG(); });
+
+  /* gathered answers + PDF */
+  function refreshG() {
+    var p = (para && para.value.trim()) || '';
+    var t = 'Name: ' + (goodName() || '(add your name)') + '\n' + D.canvas + ' (Window Seat Day)\n\n' + GAME.text() +
+      '\n\nMy paragraph (' + words(p) + ' words):\n' + (p || '(not written yet)');
+    var g = $('#g-out'); if (g) g.textContent = t;
+  }
+  $('#pdf-btn').addEventListener('click', function () {
+    var p = para.value.trim(), nm = goodName() || '(add your name)';
+    var chips = $$('[data-chip]').map(function (c) { return (c.classList.contains('on') ? '✓ ' : '○ ') + c.textContent; }).join(' &nbsp; ');
+    var h = '<!doctype html><html><head><meta charset="utf-8"><title>' + esc(D.canvas) + ' · ' + esc(nm) + '</title><style>' +
+      'body{font-family:Nunito,Arial,sans-serif;color:#2B1D12;max-width:760px;margin:24px auto;padding:0 18px;line-height:1.55}h1{font-family:Lora,Georgia,serif;font-size:22px;color:#0E1C42;margin:2px 0 6px}' +
+      'h2{font-size:16px;color:#0E1C42;border-bottom:2px solid #C9B489;padding-bottom:3px;margin:20px 0 8px}.k{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#8A6420;font-weight:800}' +
+      'table{border-collapse:collapse;width:100%}th{background:#0E1C42;color:#fff;font-size:12px;text-align:left;padding:5px 8px}td{border:1px solid #DDD;padding:6px 8px;vertical-align:top;font-size:13.5px}.p{border:1px solid #DDD;border-radius:6px;padding:8px 12px;white-space:pre-wrap}' +
+      '.st{display:inline-block;border:3px solid #B5476B;color:#B5476B;font-weight:900;letter-spacing:2px;padding:3px 12px;border-radius:8px;transform:rotate(-3deg);text-transform:uppercase;margin-top:6px}@media print{button{display:none}}</style></head><body>' +
+      '<div class="k">Optima Academy Online · 4th Grade ELA · Week ' + D.week + '</div><h1>' + esc(D.canvas) + ' (Window Seat Day)</h1>' +
+      '<p><b>Reader:</b> ' + esc(nm) + ' &nbsp; <b>Date:</b> ' + new Date().toLocaleDateString() + '</p>' + GAME.html() +
+      (GAME.complete() ? '<div class="st">Window Seat bookmark</div>' : '') +
+      '<h2>My paragraph (' + words(p) + ' words)</h2><p><i>' + D.writeQ + '</i></p><div class="p">' + (p ? esc(p) : '<i>(not written yet)</i>') + '</div><p style="font-size:13px;color:#8A6420">' + chips + '</p>' +
+      '<p style="margin-top:24px"><button onclick="print()">🖨 Print or save as PDF</button></p></body></html>';
+    var w = null; try { w = window.open('', '_blank'); } catch (e) {}
+    if (w && w.document) { w.document.open(); w.document.write(h); w.document.close(); setTimeout(function () { try { w.focus(); w.print(); } catch (e) {} }, 700); }
+    else { var bl = new Blob([h], { type: 'text/html' }), x = document.createElement('a'); x.href = URL.createObjectURL(bl); x.download = PRE + '-window-seat.html'; document.body.appendChild(x); x.click(); x.remove(); }
+    window.VR_LAST_PDF = h;
+  });
+
+  GAME.render(); updPara();
+})();
+</script>
+</body>
+</html>

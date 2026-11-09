@@ -1,0 +1,76 @@
+{
+ "week": 7,
+ "day": 2,
+ "bookId": "anne",
+ "book": "Anne of Green Gables",
+ "chapters": "Chapter 2",
+ "title": "The White Way of Delight",
+ "guide": {"name": "Anne Shirley", "short": "Anne", "initials": "AS", "color": "#B4532A", "folder": "anne", "voice": "XiPS9cXxAVbaIWtGDHDh"},
+ "map": "The Countryside",
+ "mapFilter": "Country",
+ "minutes": 12,
+ "keepsake": {"name": "pressed apple blossom", "art": "blossom", "line": "Only Imagination Trip travelers earn this one. Press it in your book so you always remember the White Way of Delight."},
+ "postcard": {
+  "kicker": "A postcard from Anne",
+  "h": "The best drive of my whole life",
+  "body": ["Matthew Cuthbert drove me eight miles from Bright River station today. The people here gave the prettiest places such plain names, so I gave them better ones.", "Will you build our drive, stop by stop, so I never forget a single bit of it?"],
+  "sign": "Anne",
+  "word": "<b>Scope for imagination</b> means room to imagine. Anne waited outside the station because it had more of it."
+ },
+ "mission": {"h": "Build the drive to Green Gables", "p": "Lay out Anne’s drive as a road of four stops, in the order she saw them."},
+ "job": "Build the drive in VR",
+ "groups": [
+  {"ic": "🚉", "name": "Stop 1 · Bright River station", "color": "#5A6B8C", "models": ["Bench", "Leather Suit Case (Closed)"], "type": "Bench · Suit Case", "why": "The bench is the <b>pile of shingles</b> Anne sat on. The suitcase is her <b>old carpet bag</b>."},
+  {"ic": "🐴", "name": "Stop 2 · The road", "color": "#9A5B2E", "models": ["Orange Horse - Idle", "Wooden Cart"], "type": "Orange Horse · Cart", "why": "Matthew’s <b>sorrel mare</b> (a reddish brown horse) and his <b>buggy</b>."},
+  {"ic": "🌸", "name": "Stop 3 · The Avenue", "color": "#B5476B", "models": ["Flower Set 1"], "type": "Flower Set", "why": "Apple trees in bloom made a <b>white roof</b> over the road. Use two or three."},
+  {"ic": "💧", "name": "Stop 4 · Barry’s pond", "color": "#1F6F78", "models": ["Lilypads - White Lily", "Frog"], "type": "Lily · Frog", "why": "The frogs were <b>singing</b> by the pond."}
+ ],
+ "steps": {
+  "build": "Open your menu with the <b>top button on your right controller</b> and click <b>Models</b>. Make a long road. Put the <b>station</b> at one end and the <b>pond</b> at the other. Put the horse and cart near the station, ready to drive.",
+  "say": "Walk your road from start to end. At stops 3 and 4, say the plain name, then <b>Anne’s name</b> for it. Tell one detail from Chapter 2 that shows why she chose it.",
+  "frame": "“This is Barry’s pond. Anne calls it the ___ because ___.”",
+  "extra": "Add <b>Green Gables</b> at the end of your road: <b>Williamsburg · Full House</b>. Hang a <b>Lantern On</b> high above it for the bright white star Anne saw shining over her new home.",
+  "extraModels": ["Williamsburg - Full House", "Lantern On"],
+  "fits": "your whole road"
+ },
+ "points": "Your photo shows all four stops in story order: the station, the horse and cart, the blossoms and the pond.",
+ "alt": {
+  "h": "Rename it like Anne",
+  "job": "Rename and order",
+  "p": "Anne never keeps a plain name for a place she loves. Pick her name for each place. Then lay out the drive in order.",
+  "game": "rename-order",
+  "rename": [
+   {"plain": "the Avenue", "hint": "a road under apple trees in bloom", "opts": ["the White Way of Delight", "the Blossom Tunnel", "Apple Tree Lane"], "ok": 0,
+    "why": "The blossoms were white, and Anne felt pure delight under them."},
+   {"plain": "Barry’s pond", "hint": "long, winding water at sunset", "opts": ["the Silver Mirror", "the Lake of Shining Waters", "Frog Pond"], "ok": 1,
+    "why": "The water shone with sunset colors, and the name gave Anne a thrill."}
+  ],
+  "orderQ": "Tap the stops in the order Anne and Matthew passed them.",
+  "order": [
+   {"t": "Bright River station", "s": "Anne waits on the shingles", "ic": "🚉"},
+   {"t": "The steep little hill", "s": "Anne breaks off a wild plum branch", "ic": "🌿"},
+   {"t": "The White Way of Delight", "s": "a roof of apple blossoms", "ic": "🌸"},
+   {"t": "The Lake of Shining Waters", "s": "they cross the bridge", "ic": "💧"},
+   {"t": "Green Gables", "s": "a white star shines over it", "ic": "⭐"}
+  ],
+  "orderMiss": "Not yet. Think back: what came right after the stop you placed last?"
+ },
+ "write": {
+  "q": "Pick one place Anne renamed. Why was the plain name not good enough for her? Use <b>one detail from Chapter 2</b>.",
+  "chips": [
+   {"k": "place", "t": "a place", "rx": "\\b(avenue|pond|lake|road|white way|shining waters)\\b"},
+   {"k": "name", "t": "Anne’s name", "rx": "(white way|delight|lake of shining|shining waters)"},
+   {"k": "detail", "t": "a detail", "rx": "\\b(blossoms?|bloom\\w*|apple|trees?|sunset|sky|water|colou?rs?|frogs?|bridge|white|pink|purple|gold|thrill\\w*|shin\\w+)\\b"},
+   {"k": "why", "t": "because", "rx": "\\b(because|since|so)\\b"}
+  ],
+  "starters": ["Anne renamed ___.", "She called it ___.", "The plain name was not good enough because ___.", "In Chapter 2, ___."]
+ },
+ "scripts": {
+  "brief": "[brightly] Oh, hello! It’s me, Anne. I’ve just had the most wonderful drive of my whole life, eight miles with Mr. Cuthbert. [dreamy] The people here give such plain names to such beautiful places, so I gave them better ones. Will you build our drive with me, stop by stop, in the very same order? Then tell me my new names out loud. It would give me such a thrill.",
+  "alt": "[warmly] No headset today? That’s all right. We can take the trip from a window seat, with only our imaginations. That’s a very fine way to travel. Choose the name I gave each place, then lay out our drive in order, from the station all the way to Green Gables. [brightly] If you can see it in your mind, you’ve been there too.",
+  "saved": "[gasps] You did it! You built the whole drive, and every stop is right where it belongs. I’ve pressed an apple blossom from the White Way of Delight, just for you. [softly] Keep it safe, so you’ll always remember our trip."
+ },
+ "labels": {"brief": "Anne · our drive", "alt": "Anne · a window seat trip", "saved": "Photo submitted!"},
+ "credits": "",
+ "video": "Hi everyone. Today you’re taking an Imagination Trip into Chapter 2. Anne rides eight miles with Matthew, and she renames two places on the way. In VR you’ll build that drive as a road of four stops: the station, the horse and buggy, the apple blossoms and the pond. Then walk your road and say Anne’s names out loud. Take one photo and submit it to Canvas. No headset? Pick Window Seat Day and do the same trip on your computer."
+}
