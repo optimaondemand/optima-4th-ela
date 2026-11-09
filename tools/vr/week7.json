@@ -36,56 +36,11 @@
   "p": "Lay out Anne’s drive as a road of four stops, in the order she saw them."
  },
  "job": "Build the drive in VR",
- "groups": [
-  {
-   "ic": "🚉",
-   "name": "Stop 1 · Bright River station",
-   "color": "#5A6B8C",
-   "models": [
-    "Bench",
-    "Leather Suit Case (Closed)"
-   ],
-   "type": "Bench · Suit Case",
-   "why": "The bench is the <b>pile of shingles</b> Anne sat on. The suitcase is her <b>old carpet bag</b>."
-  },
-  {
-   "ic": "🐴",
-   "name": "Stop 2 · The road",
-   "color": "#9A5B2E",
-   "models": [
-    "Orange Horse - Idle",
-    "Wooden Cart"
-   ],
-   "type": "Orange Horse · Cart",
-   "why": "Matthew’s <b>sorrel mare</b> (a reddish brown horse) and his <b>buggy</b>."
-  },
-  {
-   "ic": "🌸",
-   "name": "Stop 3 · The Avenue",
-   "color": "#B5476B",
-   "models": [
-    "Flower Set 1"
-   ],
-   "type": "Flower Set",
-   "why": "Apple trees in bloom made a <b>white roof</b> over the road. Use two or three."
-  },
-  {
-   "ic": "💧",
-   "name": "Stop 4 · Barry’s pond",
-   "color": "#1F6F78",
-   "models": [
-    "Lilypads - White Lily",
-    "Frog"
-   ],
-   "type": "Lily · Frog",
-   "why": "The frogs were <b>singing</b> by the pond."
-  }
- ],
  "steps": {
-  "build": "Open your menu with the <b>top button on your right controller</b> and click <b>Models</b>. Make a long road. Put the <b>station</b> at one end and the <b>pond</b> at the other. Put the horse and cart near the station, ready to drive.",
-  "say": "Walk your road from start to end. Pick stop 3 or 4. Practice 2 sentences: the plain name and <b>Anne’s name</b> for it, then one detail from Chapter 2 that shows why she chose it.",
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Line them up like a road, in this order:<ol class=\"road-order\"><li>bench and suitcase</li><li>horse and cart</li><li>flowers</li><li>lilies and frog</li></ol>",
+  "say": "Pick stop 3 or 4. Practice saying these 2 sentences out loud:",
   "frame": "“Anne renamed ___ the ___. She chose that name because ___.”",
-  "extra": "Add <b>Green Gables</b> at the end of your road: <b>Williamsburg · Full House</b>. Hang a <b>Lantern On</b> high above it for the bright white star Anne saw shining over her new home.",
+  "extra": "Put <b>Williamsburg · Full House</b> at the end of the road. That is Green Gables. Hang a <b>Lantern On</b> above it for the star.",
   "extraModels": [
    "Williamsburg - Full House",
    "Lantern On"
@@ -96,7 +51,7 @@
  "alt": {
   "h": "Rename it like Anne",
   "job": "Rename and order",
-  "p": "Anne never keeps a plain name for a place she loves. Pick her name for each place. Then lay out the drive in order.",
+  "p": "Pick Anne’s name for each place. Then put the drive in order.",
   "game": "rename-order",
   "rename": [
    {
@@ -192,5 +147,35 @@
   "saved": "Video submitted!"
  },
  "credits": "",
- "video": "Hi everyone. Today you’re taking an Imagination Trip into Chapter 2. Anne rides eight miles with Matthew, and she renames two places on the way. In VR you’ll build that drive as a road of four stops: the station, the horse and buggy, the apple blossoms and the pond. Then walk your road and say Anne’s names out loud. Then record a video, 30 seconds or less, where you say 2 sentences about one of Anne’s names, and submit it to Canvas. No headset? Pick Window Seat Day and do the same trip on your computer and record your 2 sentences in Canvas."
+ "video": "Hi everyone. Today you’re taking an Imagination Trip into Chapter 2. Anne rides eight miles with Matthew, and she renames two places on the way. In VR you’ll build that drive as a road of four stops: the station, the horse and buggy, the apple blossoms and the pond. Then walk your road and say Anne’s names out loud. Then record a video, 30 seconds or less, where you say 2 sentences about one of Anne’s names, and submit it to Canvas. No headset? Pick Window Seat Day and do the same trip on your computer and record your 2 sentences in Canvas.",
+ "models": [
+  {
+   "name": "Bench",
+   "is": "the shingles Anne sat on"
+  },
+  {
+   "name": "Leather Suit Case (Closed)",
+   "is": "Anne’s carpet bag"
+  },
+  {
+   "name": "Orange Horse - Idle",
+   "is": "Matthew’s horse"
+  },
+  {
+   "name": "Wooden Cart",
+   "is": "Matthew’s buggy"
+  },
+  {
+   "name": "Flower Set 1",
+   "is": "the apple trees in bloom (use 2 or 3)"
+  },
+  {
+   "name": "Lilypads - White Lily",
+   "is": "Barry’s pond"
+  },
+  {
+   "name": "Frog",
+   "is": "the singing frogs"
+  }
+ ]
 }

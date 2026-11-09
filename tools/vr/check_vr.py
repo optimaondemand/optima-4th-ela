@@ -17,7 +17,7 @@ errs, notes = [], []
 # 1. models + map exist in the asset list
 rows = list(csv.reader(open(os.path.join(ROOT, 'Planning docs', 'vr-assets.csv'), encoding='utf-8-sig')))
 names = {r[0].strip() for r in rows if r}
-models = [m for gr in D['groups'] for m in gr['models']]
+models = [m['name'] for m in D['models']]
 for m in models + D['steps']['extraModels']:
     if m not in names: errs.append('model not in vr-assets.csv: ' + m)
 if D['map'] not in names: errs.append('map not in vr-assets.csv: ' + D['map'])

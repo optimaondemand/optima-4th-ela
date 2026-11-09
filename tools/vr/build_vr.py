@@ -22,18 +22,17 @@ W, DAY = D['week'], D['day']
 PRE = 'g4ela-%d-vr' % W
 CANVAS = '%d.%d VR · %s' % (W, DAY, D['title'])
 e = lambda t: html.escape(str(t), quote=True)
-show = lambda name: name.replace(' - ', ' · ')   # app names use " - "; student text has no dashes
 
 
 def strip(t):
     return re.sub(r'<[^>]+>', '', t)
 
 
-# ── VR step 1: the model groups ──
-groups = ''.join(
-    '<div class="grp" style="--gc:%s"><span class="gk">%s %s</span><span class="gm">%s</span><small>type: <b>%s</b></small><span class="gw">%s</span></div>'
-    % (g['color'], g['ic'], e(g['name']), e(', '.join(show(m) for m in g['models'])), e(g['type']), g['why'])
-    for g in D['groups'])
+# ── VR step 1: one plain numbered list, "Name: what it is" (Bethany, 9 Nov 2026: no boxes, colors or search chips) ──
+def show(name):
+    """app names use " - " (Orange Horse - Idle); student text has no dashes -> Orange Horse (Idle)"""
+    return re.sub(r'^(.*?) - (.*)$', r'\1 (\2)', name)
+groups = '<ol class="mlist">' + ''.join('<li><b>%s</b>: %s</li>' % (e(show(m['name'])), e(m['is'])) for m in D['models']) + '</ol>'
 
 # ── help drawer (same as G4 science, images in assets/vr/) ──
 HS = [
@@ -90,7 +89,7 @@ TRANSCRIPTS = {k: re.sub(r'\s*\[[^\]]+\]\s*', ' ', v).strip() for k, v in D['scr
 g = D['guide']
 head = ('%s · %s, %s. Guide: %s (folder %s, voice %s). Map: %s. Models: %s. Extra: %s. Window Seat Day game: %s.'
         % (CANVAS, D['book'], D['chapters'], g['name'], g['folder'], g['voice'], D['map'],
-           '; '.join(', '.join(gr['models']) for gr in D['groups']), ', '.join(D['steps']['extraModels']), G)).replace('--', '-')
+           ', '.join(m['name'] for m in D['models']), ', '.join(D['steps']['extraModels']), G)).replace('--', '-')
 
 REPL = {
  '{{CANVAS}}': e(CANVAS), '{{HEADCOMMENT}}': e(head), '{{WEEK}}': str(W), '{{TITLE}}': e(D['title']), '{{BOOK}}': e(D['book']), '{{CHAPTERS}}': e(D['chapters']),
