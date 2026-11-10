@@ -1668,3 +1668,9 @@ html[data-spk-tab="reading"] .spk-notes-fab:not(.hide) { display:block; }
 .nav-do-h { font-family:Nunito,sans-serif; font-weight:800; font-size:16px; color:#8B6914; }
 .nav-do ol { margin:6px 0 2px 22px; padding:0; }
 .nav-do li { margin:3px 0; line-height:1.5; }
+
+/* 🔊 hear the word (Nov 2026) */
+.wordsay { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; margin-left:6px; padding:0; vertical-align:middle;
+  border:1px solid #D8D2C0; border-radius:999px; background:#fff; cursor:pointer; font-size:14px; line-height:1; font-style:normal; }
+.wordsay:hover { background:#FBF7E8; }
+.wordsay[hidden] { display:none; }

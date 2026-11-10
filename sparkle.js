@@ -4898,6 +4898,42 @@ function boot() {
 
      Now a builder that throws costs exactly its own feature. The names
      are logged so a broken lesson says which piece is missing. */
+/* ── Hear the word: 🔊 beside each vocabulary word (Nov 2026).
+   One recording per word, course-wide: assets/audio/words/g4ela-word-<word>.mp3
+   (Opti). No file, no button. Cards and the match game only; never on a
+   fill-in (it would give the answer away). ── */
+var _wordSayNow = null;
+function wordSaySlug(w) { return String(w).trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+function buildWordSay() {
+  var act = null;
+  [].forEach.call(document.querySelectorAll('#tab-words .activity-title, .activity-title'), function (t) {
+    if (!act && /Vocabulary/.test(t.textContent)) act = t.closest('.activity');
+  });
+  if (!act) return;
+  function add(el) {
+    if (!el || el.querySelector('.wordsay')) return;
+    var word = el.textContent.trim(); if (!word || /^-|-$/.test(word)) return;
+    var src = MEDIA.audioBase + 'words/g4ela-word-' + wordSaySlug(word) + '.mp3';
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'wordsay'; b.hidden = true; b.textContent = '🔊';
+    b.setAttribute('aria-label', 'Hear the word ' + word); b.title = 'Hear the word';
+    var probe = new Audio(); probe.preload = 'metadata';
+    probe.addEventListener('loadedmetadata', function () { b.hidden = false; });
+    probe.src = src;
+    b.addEventListener('click', function (e) {
+      e.stopPropagation(); e.preventDefault();
+      try {
+        if (_wordSayNow) _wordSayNow.pause();
+        var a = new Audio(src); _wordSayNow = a;
+        if (typeof audioStopAll === 'function') audioStopAll(a);
+        var p = a.play(); if (p && p.catch) p.catch(function () {});
+      } catch (err) {}
+    });
+    el.appendChild(b);
+  }
+  [].forEach.call(act.querySelectorAll('.fc-word, .match-item.is-word'), add);
+}
+
   var steps = [
     ['warm',        function () { document.body.classList.add('spk-warm'); }],
     ['hooks',       function () { hookProgress(); hookTabs(); hookGather(); hookTabScroll(); }],
@@ -4931,6 +4967,7 @@ function boot() {
     ['catcher',     buildCatcher],
     ['onpage',      buildOnPage],
     ['journal',     buildJournal],
+    ['wordsay',     buildWordSay],
     ['nav',         buildNav],
     ['marginalia',  marginalia],
     ['ornaments',   ornaments],
