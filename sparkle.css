@@ -1689,3 +1689,6 @@ html[data-spk-tab="reading"] .spk-notes-fab:not(.hide) { display:block; }
 .spk-2step .spk-readalong summary{font-size:14px;text-align:left;opacity:.85;}
 @media(max-width:700px){ .spk-guide-wrap.spk-2step{padding:14px 12px 8px 52px;} .spk-2step::before{left:29px;}
   .spk-2step > .spk-audio::before,.spk-2step > .spk-media::before{left:-42px;width:28px;height:28px;line-height:28px;} }
+
+/* audit Nov 10 2026: Sentence A / Sentence B are buttons, so they carry the tap hand */
+.nav-fixes .spk-dol-card .spk-dol-tag::before { content: '\1F446\00A0'; }
