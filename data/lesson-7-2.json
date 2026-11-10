@@ -187,5 +187,6 @@
     "journal-q1": 16,
     "journal-q2": 24,
     "journal-q3": 16
-  }
+  },
+  "navFixes": true
 }

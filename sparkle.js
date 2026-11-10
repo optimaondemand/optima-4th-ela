@@ -4193,6 +4193,7 @@ function declutter() {
    the length of the call, then putting the scroll back. */
 function hookTabScroll() {
   if (typeof window.switchTab !== 'function') return;
+  if (DATA.navFixes) return;   /* pilot-review fixes: a new tab goes to the top (buildNav) */
   var inner = window.switchTab;
   window.switchTab = function (tabId) {
     var y = window.pageYOffset || document.documentElement.scrollTop || 0;
@@ -4775,6 +4776,95 @@ function addCounter(ta) {
   setTimeout(upd, 600);            /* after the lesson restores saved answers */
 }
 
+/* ══════════════════════════════════════════════════════════════
+   PILOT-REVIEW FIXES (Nov 10 2026), from the G3 ELA pilot review,
+   applied to G4 ahead of its own review. Lesson by lesson: only a
+   lesson whose DATA has `navFixes: true` gets them (week 7 first).
+     · a new tab starts at the top of the lesson (and asks Canvas to
+       scroll its page up, since the lesson sits in an iframe there)
+     · 👆 on every button that does something; a key line under the
+       header says 👆 = tap, 🔊 = listen
+     · fewer words: the Writer's Workshop banner and the Explorer /
+       Scholar choice say it in one line each
+     · Opti's "How to use your lesson" video at the top of Warm-Up
+   ══════════════════════════════════════════════════════════════ */
+function navTabTop() {
+  if (typeof window.switchTab !== 'function' || window.switchTab._navTop) return;
+  var inner = window.switchTab;
+  var f = function () {
+    var r = inner.apply(this, arguments);
+    var top = document.getElementById('pageTop');
+    try { if (top) top.scrollIntoView({ block: 'start' }); else window.scrollTo(0, 0); } catch (e) { window.scrollTo(0, 0); }
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage(JSON.stringify({ subject: 'lti.scrollToTop' }), '*');
+        window.parent.postMessage({ subject: 'lti.scrollToTop' }, '*');
+      }
+    } catch (e) {}
+    return r;
+  };
+  f._navTop = true; window.switchTab = f;
+}
+var NAV_TAP_BTN = 'button.dol-check-btn, button.fillin-check-btn, button.tab-next-btn, button.spk-mini-btn, ' +
+  'button.spk-dol-swap, button.spk-btn, button.gathered-btn, button.spk-notes-use, button.check-btn, button.game-btn';
+function navTaps(root) {
+  (root || document).querySelectorAll(NAV_TAP_BTN).forEach(function (b) {
+    if (b.querySelector('.nav-hand')) return;
+    var t = b.firstChild;
+    if (t && t.nodeType === 3) t.nodeValue = t.nodeValue.replace(/^\s*(?:\p{Extended_Pictographic}️?\s*)+/u, '');
+    var h = document.createElement('span'); h.className = 'nav-hand'; h.setAttribute('aria-hidden', 'true'); h.textContent = '👆';
+    b.insertBefore(h, b.firstChild);
+  });
+  (root || document).querySelectorAll('.fc-tap').forEach(function (t) {
+    if (!/👆/.test(t.textContent)) t.textContent = '👆 ' + t.textContent;
+  });
+}
+function navKey() {
+  if (document.querySelector('.nav-key')) return;
+  var hdr = document.querySelector('.spk-hd, .header'); if (!hdr) return;
+  var k = document.createElement('div'); k.className = 'nav-key';
+  k.innerHTML = '<span><b>👆</b> You can tap it.</span><span><b>🔊</b> You can listen.</span>';
+  hdr.parentNode.insertBefore(k, hdr.nextSibling);
+}
+function navFewerWords() {
+  document.querySelectorAll('.spk-goal-gloss').forEach(function (g) { g.remove(); });
+  document.querySelectorAll('.spk-keep').forEach(function (k) {
+    if (k._nav) return; k._nav = true;
+    var b = k.querySelector('p b'); var name = b ? b.textContent : 'your project';
+    k.innerHTML = '<p><b>Every day:</b> copy your writing into one document called <b>' + name + '</b>.</p>';
+  });
+  var lab = document.querySelector('.spk-roads-label'); if (lab) lab.textContent = 'Pick one. Both finish the lesson.';
+  document.querySelectorAll('.spk-road[data-tier="scholar"] .spk-road-line').forEach(function (l) {
+    l.innerHTML = 'Add <b>one more</b> detail or reason to each answer. Earn the Scholar’s seal.';
+  });
+  document.querySelectorAll('.spk-roads-note').forEach(function (n) { n.remove(); });
+}
+function navHowTo() {
+  if (document.querySelector('.nav-howto')) return;
+  var warm = document.getElementById('tab-warmup'); if (!warm) return;
+  var src = window.NAV_HOWTO_SRC || 'assets/video/g4ela-howto.mp4';
+  var poster = window.NAV_HOWTO_POSTER || 'assets/video/g4ela-howto.jpg';
+  var card = document.createElement('section'); card.className = 'nav-howto';
+  card.innerHTML = '<div class="nav-howto-head"><span class="nav-howto-face" aria-hidden="true">' + owlSVG('optima', 52) + '</span>' +
+    '<div><div class="nav-howto-k">Watch this first</div><div class="nav-howto-t">How to use your lesson</div></div></div>' +
+    '<video class="nav-howto-v" controls preload="metadata" playsinline></video>';
+  var v = card.querySelector('video');
+  v.poster = poster;
+  v.addEventListener('play', function () { audioStopAll(); });
+  v.src = src;
+  warm.insertBefore(card, warm.firstChild);
+}
+function buildNav() {
+  if (!DATA.navFixes) return;
+  document.body.classList.add('nav-fixes');
+  navTabTop(); navKey(); navFewerWords(); navHowTo(); navTaps();
+  if (window.MutationObserver) {
+    var t = null;
+    new MutationObserver(function () { clearTimeout(t); t = setTimeout(function () { navTaps(); }, 60); })
+      .observe(document.body, { childList: true, subtree: true });
+  }
+}
+
 function boot() {
   /* Each step is isolated. Previously all eighteen sat inside one
      try/catch, so a lesson whose DATA was missing a key — no DOL pair,
@@ -4818,6 +4908,7 @@ function boot() {
     ['catcher',     buildCatcher],
     ['onpage',      buildOnPage],
     ['journal',     buildJournal],
+    ['nav',         buildNav],
     ['marginalia',  marginalia],
     ['ornaments',   ornaments],
     ['seal',        function () { sealCheck(true); }],
