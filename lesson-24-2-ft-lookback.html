@@ -1950,7 +1950,7 @@ return all.length?all[all.length-1]:null;}
   <div class="standards-panel-inner">
     <div class="standards-group">
       <div class="standards-group-label">Florida B.E.S.T.</div>
-      <div class="standards-codes"><span class="fl-code">ELA.4.R.1.4</span> · <span class="fl-code">ELA.4.R.2.2</span> · <span class="fl-code">ELA.4.C.1.1</span> · <span class="fl-code">ELA.4.C.1.4</span> · <span class="fl-code">ELA.4.C.1.5</span> · <span class="fl-code">ELA.4.C.3.1</span> · <span class="fl-code">ELA.4.F.1.3</span> · <span class="fl-code">ELA.4.F.1.4</span> · <span class="fl-code">ELA.4.V.1.2</span></div>
+      <div class="standards-codes"><span class="fl-code">ELA.4.R.1.4</span> · <span class="fl-code">ELA.4.R.2.2</span> · <span class="fl-code">ELA.4.C.1.1</span> · <span class="fl-code">ELA.4.C.1.4</span> · <span class="fl-code">ELA.4.C.1.5</span> · <span class="fl-code">ELA.4.C.3.1</span> · <span class="fl-code">ELA.4.C.5.2</span> · <span class="fl-code">ELA.4.F.1.3</span> · <span class="fl-code">ELA.4.F.1.4</span> · <span class="fl-code">ELA.4.V.1.2</span></div>
     </div>
     <div class="standards-group">
       <div class="standards-group-label">Texas TEKS</div>
@@ -2346,6 +2346,14 @@ While follow eyes the steady keel, the vessel grim and daring;
       <textarea class="journal-box" id="journal-q3" data-label="Q3: Train incident and limits of victory" placeholder="The train incident shows that even after the war..." oninput="autoSave(this,'dot-q3');gatherAnswers();"></textarea>
     </div>
   </div>
+<div class="activity" style="margin-bottom:14px;">
+  <div class="activity-head"><div class="activity-num" style="background:#1B7A4E;font-size:14px;">Q4</div><div><div class="activity-title">Q4 — Revise with a Digital Tool</div></div></div>
+  <div class="activity-body">
+    <p style="font-size:16px;line-height:1.6;margin-bottom:8px;color:#0E1C42;">Copy your research essay into a writing app (like Google Docs or Word). Use spell check, and use cut and paste to move one sentence to a better place. Write which sentence you moved and why, and one spelling or grammar fix the tool caught.</p>
+    <div class="textbox-prompt">Moving a sentence is a revision. Fixing a spelling is an edit. Do one of each.</div>
+    <textarea class="journal-box" id="journal-q4" data-label="Q4: revising with a digital tool" placeholder="I moved the sentence ... because ... The tool caught ..." oninput="autoSave(this,'dot-q4');gatherAnswers();"></textarea>
+  </div>
+</div>
 
   <!-- Part B: Word Study Connection -->
   <div class="activity bl-navy">
@@ -2432,7 +2440,8 @@ While follow eyes the steady keel, the vessel grim and daring;
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I answered all 3 chapter questions with evidence from the book.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Grammar SWYK (prepositional phrases) on the Word Study tab.</div></div>
         <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed the four-item revise &amp; edit pass on my research writing.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I revised my essay with a digital tool and wrote about two changes.</div></div>
+<div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
       </div>
     </div>
   </div>
@@ -2443,7 +2452,7 @@ While follow eyes the steady keel, the vessel grim and daring;
 <div class="footer">
   <div class="footer-main"><span>Optima Academy Online</span> · 4th Grade ELA · Week 24 · Lesson 24.2</div>
   <div class="footer-sub"><em>Freedom Train</em> &mdash; Ch. 19: Victory</div>
-  <div class="footer-standards">FL: ELA.4.R.1.4, ELA.4.R.2.2, ELA.4.C.1.1, ELA.4.C.1.4, ELA.4.C.1.5, ELA.4.C.3.1, ELA.4.F.1.3, ELA.4.F.1.4, ELA.4.V.1.2 · TX: 4.10.A, 4.12.B, 4.11, 4.2, 4.11.D</div>
+  <div class="footer-standards">FL: ELA.4.R.1.4, ELA.4.R.2.2, ELA.4.C.1.1, ELA.4.C.1.4, ELA.4.C.1.5, ELA.4.C.3.1, ELA.4.C.5.2, ELA.4.F.1.3, ELA.4.F.1.4, ELA.4.V.1.2 · TX: 4.10.A, 4.12.B, 4.11, 4.2, 4.11.D</div>
   <div class="footer-copy">&copy; Optima Academy Online · An Education Experience Company</div>
 </div>
 
@@ -2482,7 +2491,7 @@ function gatherAnswers() {
 
   output += '📖 CHAPTER THINKING\n';
   output += '────────────────────────────────\n';
-  ['journal-q1','journal-q2','journal-q3'].forEach(function(id) {
+  ['journal-q1','journal-q2','journal-q3','journal-q4'].forEach(function(id) {
     var el = document.getElementById(id);
     if (!el) return;
     var label = el.getAttribute('data-label') || id;
@@ -2856,7 +2865,7 @@ function downloadJournal() {
   gatherAnswers();
 
   var sections = [
-    { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3'] },
+    { title: '📖 CHAPTER THINKING', ids: ['journal-q1','journal-q2','journal-q3','journal-q4'] },
     { title: '✏️ GRAMMAR SWYK: PREPOSITIONAL PHRASES', ids: ['journal-grammar'] },
     { title: '🔎 WRITING CONNECTION: REVISE & EDIT', ids: ['journal-writing'] },
     { title: '📜 POETRY CORNER', ids: ['journal-poetry'] },
