@@ -4786,7 +4786,8 @@ function addCounter(ta) {
        header says 👆 = tap, 🔊 = listen
      · fewer words: the Writer's Workshop banner and the Explorer /
        Scholar choice say it in one line each
-     · Opti's "How to use your lesson" video at the top of Warm-Up
+     · Opti's "How to use your lesson" video in a Start here drawer at
+       the very top of the lesson
    ══════════════════════════════════════════════════════════════ */
 function navTabTop() {
   if (typeof window.switchTab !== 'function' || window.switchTab._navTop) return;
@@ -4840,19 +4841,24 @@ function navFewerWords() {
   document.querySelectorAll('.spk-roads-note').forEach(function (n) { n.remove(); });
 }
 function navHowTo() {
-  if (document.querySelector('.nav-howto')) return;
-  var warm = document.getElementById('tab-warmup'); if (!warm) return;
+  if (document.querySelector('.nav-start')) return;
   var src = window.NAV_HOWTO_SRC || 'assets/video/g4ela-howto.mp4';
   var poster = window.NAV_HOWTO_POSTER || 'assets/video/g4ela-howto.jpg';
-  var card = document.createElement('section'); card.className = 'nav-howto';
-  card.innerHTML = '<div class="nav-howto-head"><span class="nav-howto-face" aria-hidden="true">' + owlSVG('optima', 52) + '</span>' +
-    '<div><div class="nav-howto-k">Watch this first</div><div class="nav-howto-t">How to use your lesson</div></div></div>' +
-    '<video class="nav-howto-v" controls preload="metadata" playsinline></video>';
+  var card = document.createElement('details'); card.className = 'nav-start';
+  card.innerHTML = '<summary class="nav-start-bar"><span class="nav-start-play" aria-hidden="true">▶</span>' +
+    '<span class="nav-start-txt"><span class="nav-start-k">Start here</span>' +
+    '<span class="nav-start-t">Watch how to use your lesson · 1 minute</span></span>' +
+    '<span class="nav-start-face" aria-hidden="true">' + owlSVG('optima', 46) + '</span>' +
+    '<span class="nav-start-chev" aria-hidden="true">▾</span></summary>' +
+    '<div class="nav-howto"><video class="nav-howto-v" controls preload="metadata" playsinline></video></div>';
   var v = card.querySelector('video');
   v.poster = poster;
   v.addEventListener('play', function () { audioStopAll(); });
   v.src = src;
-  warm.insertBefore(card, warm.firstChild);
+  card.addEventListener('toggle', function () { if (!card.open) { try { v.pause(); } catch (e) {} } });
+  var key = document.querySelector('.nav-key') || document.querySelector('.spk-hd, .header');
+  if (key && key.parentNode) key.parentNode.insertBefore(card, key.nextSibling);
+  else document.body.insertBefore(card, document.body.firstChild);
 }
 function buildNav() {
   if (!DATA.navFixes) return;
