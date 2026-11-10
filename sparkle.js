@@ -3840,12 +3840,13 @@ function buildMedia() {
         /* Nov 3 2026: number the steps only when BOTH are really there.
            No recording yet = the film stands alone, no "②". */
         if (el.hidden || !el.isConnected || vid.hidden || !vid.isConnected) return;
-        var lab = el.querySelector('.spk-audio-label');
-        if (lab && lab.textContent.indexOf('\u2460') !== 0) lab.textContent = '\u2460 Listen first \u00b7 ' + lab.textContent;
+        /* Nov 10 2026: the order is shown by two numbered dots joined by a
+           line (1 listen, 2 watch), not by ① ② words in the labels. */
+        wrap.classList.add('spk-2step');
         if (!vid.querySelector('.spk-step-label')) {
           var step2 = document.createElement('div');
           step2.className = 'spk-step-label';
-          step2.textContent = '\u2461 Then watch your teacher';
+          step2.textContent = 'Watch your teacher';
           vid.insertBefore(step2, vid.firstChild);
         }
       };
@@ -5019,7 +5020,7 @@ else boot();
 
 })();
 
-/* Preview only: ?steps=1 turns on "one step at a time" (onestep.js), Nov 2026 */
-(function () { try { if (!/[?&]steps=1/.test(location.search)) return;
+/* One step at a time (onestep.js), on for every sparkled lesson since Nov 10 2026; ?steps=0 turns it off */
+(function () { try { if (/[?&]steps=0/.test(location.search)) return;
   var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "onestep.css"; document.head.appendChild(l);
   var s = document.createElement("script"); s.src = "onestep.js"; document.body.appendChild(s); } catch (e) {} })();

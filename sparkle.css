@@ -1674,3 +1674,18 @@ html[data-spk-tab="reading"] .spk-notes-fab:not(.hide) { display:block; }
   border:1px solid #D8D2C0; border-radius:999px; background:#fff; cursor:pointer; font-size:14px; line-height:1; font-style:normal; }
 .wordsay:hover { background:#FBF7E8; }
 .wordsay[hidden] { display:none; }
+
+/* listen, then watch: one card, two numbered dots joined by a line (Nov 10 2026) */
+.spk-guide-wrap.spk-2step{position:relative;max-width:600px;margin:6px auto 24px;padding:16px 18px 10px 64px;
+  background:#FFFCF3;border:1px solid #EADFC4;border-radius:16px;}
+.spk-2step::before{content:'';position:absolute;left:35px;top:44px;height:calc(100% - 120px);border-left:2px dashed #D9C79C;}
+.spk-2step > .spk-audio,.spk-2step > .spk-media{position:relative;margin:0 0 16px !important;max-width:none;justify-content:flex-start;}
+.spk-2step > .spk-audio::before,.spk-2step > .spk-media::before{position:absolute;left:-46px;top:4px;width:32px;height:32px;border-radius:999px;
+  background:#0E1C42;color:#fff;font:800 15px/32px system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center;z-index:1;}
+.spk-2step > .spk-audio::before{content:'1';top:7px;}
+.spk-2step > .spk-media::before{content:'2';}
+.spk-2step .spk-guide .spk-audio-btn{font-size:16px;padding:9px 18px 9px 12px;}
+.spk-2step .spk-step-label{font-size:15px;margin:6px 0 10px;color:#0E1C42;text-align:left;}
+.spk-2step .spk-readalong summary{font-size:14px;text-align:left;opacity:.85;}
+@media(max-width:700px){ .spk-guide-wrap.spk-2step{padding:14px 12px 8px 52px;} .spk-2step::before{left:29px;}
+  .spk-2step > .spk-audio::before,.spk-2step > .spk-media::before{left:-42px;width:28px;height:28px;line-height:28px;} }
