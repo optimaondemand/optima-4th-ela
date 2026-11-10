@@ -2315,7 +2315,89 @@ body {
   "journal-q2": 16,
   "journal-q3": 16
  },
- "navFixes": true
+ "navFixes": true,
+ "todo": [
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry",
+   "steps": [
+    "Read the poem out loud.",
+    "Read the Think About It question.",
+    "Think of your answer. Nothing to write here."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what con- and com- mean.",
+    "Tap a word part, then tap its meaning.",
+    "Match them all."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Pick ONE activity from the menu.",
+    "Write your answer in the Show What You Know box."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the short draft.",
+    "Tap only the sentences with a plural mistake.",
+    "In the box, fix one and say why the -s rule does not work."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Tap only the words that are spelled wrong.",
+    "In the box, fix one and name the rule it broke."
+   ]
+  },
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the three How to Do It steps.",
+    "Keep the question in your head while you read Chapter 5.",
+    "Nothing to write here."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 5.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Move the chair boxes."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam showed Mateo's reaction.",
+    "Climb the reaction ladder: what your kid says, what your kid does, and what your kid's body does.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ]
 }
 </script>
 </head>
@@ -2677,7 +2759,6 @@ return all.length?all[all.length-1]:null;}
   <div class="activity bl-cyan">
     <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">1</div><div><div class="activity-title">✏️ Daily Oral Language</div><div class="activity-sub">Study the model, then fix the sentence.</div></div></div>
     <div class="activity-body">
-      <p>The first sentence is <strong>correct</strong>. Tap the parts you notice are done right &mdash; capital letters, punctuation, quotation marks, anything that follows the rules. Then use it as a model to fix the second sentence.</p>
 
       <div class="task-box">
         <div class="dol-model-label">✅ Correct Model — from the novel</div>
@@ -2807,7 +2888,7 @@ Fluttering and dancing in the breeze.</div>
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Irregular Plural Nouns</div><div class="activity-sub">Day 4: Review &mdash; nobody will tell you which ones.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Grammar Detective</span></div></div></div>
     <div class="activity-body">
-<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Editor at work</div><p>A short draft. Some plurals are right. Some are not.</p></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Tap only the ones that need your attention. Leave the rest alone.</p></div><p style="font-size:14px;color:#3A4A6B;margin:10px 0 4px;">Tap the sentences with a <strong>plural problem</strong>:</p><div class="spotter-game" id="g4w7hGame"><div class="spotter-sentence" id="g4w7h" style="line-height:2.6;"><span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="false">The children played by the brook.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="true">Three womans waited at the door.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="false">Anne washed the knives carefully.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="true">Her foots ached from the long walk.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="false">The geese crossed the road.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="true">Two mouses lived in the barn.</span><div class="spotter-result" id="g4w7h-result"></div></div></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Fix one you tapped and say why the ordinary -s rule does not work on that word.</div><div class="textbox-prompt">Fix one, then justify.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="The one I tapped was... My fix is... I knew because..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Editor at work</div><p>A short draft. Some plurals are right. Some are not.</p></div><p style="font-size:14px;color:#3A4A6B;margin:10px 0 4px;">Tap the sentences with a <strong>plural problem</strong>:</p><div class="spotter-game" id="g4w7hGame"><div class="spotter-sentence" id="g4w7h" style="line-height:2.6;"><span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="false">The children played by the brook.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="true">Three womans waited at the door.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="false">Anne washed the knives carefully.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="true">Her foots ached from the long walk.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="false">The geese crossed the road.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w7h')" data-correct="true">Two mouses lived in the barn.</span><div class="spotter-result" id="g4w7h-result"></div></div></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Fix one you tapped and say why the ordinary -s rule does not work on that word.</div><div class="textbox-prompt">Fix one, then justify.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="The one I tapped was... My fix is... I knew because..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
 </div>
   </div>
 
@@ -2922,7 +3003,6 @@ Fluttering and dancing in the breeze.</div>
     <div class="activity-body">
       
       <!-- pause-before-reading -->
-      <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x23F8;&#xFE0F;</span><p><strong>Read these first.</strong> Look them over before you open your book, then stop and answer each one when you reach that part.</p></div>
       <div class="socratic-box" style="margin-top:14px;">
         <div class="socratic-label">⏸️ Pause After Chapter 5</div>
         <p class="socratic-q">Anne has lived a hard life. <strong>What has kept her hopeful? Find one specific thing she relies on.</strong></p>

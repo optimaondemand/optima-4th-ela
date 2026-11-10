@@ -27,6 +27,10 @@ RULES = [
   # Writer's Workshop: the book link folds behind one line
   ('ww-book-fold', r'<div class="callout callout-info"([^>]*)><span class="callout-icon">📖</span><p([^>]*)><strong>(\w+) did it too\.</strong>(.*?)</p></div>',
    r'<details class="nav-fold"><summary>📖 How \3 did it too</summary><div class="callout callout-info"\1><span class="callout-icon">📖</span><p\2>\4</p></div></details>'),
+  # ── G4 with "What to do" boxes (DATA.todo): the old instruction lines that now repeat it ──
+  ('dol-intro', r'\s*<p>The first sentence is <strong>correct</strong>\. Tap the parts you notice are done right &mdash; capital letters, punctuation, quotation marks, anything that follows the rules\. Then use it as a model to fix the second sentence\.</p>', ''),
+  ('read-first', r'\s*<div class="callout callout-info"[^>]*><span class="callout-icon">&#x23F8;&#xFE0F;</span><p><strong>Read these first\.</strong> Look them over before you open your book, then stop and answer each one when you reach that part\.</p></div>', ''),
+  ('directions', r'<div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong>[^<]*</p></div>', ''),
   # Vocabulary: the "Your turn!" line in fewer words
   ('vocab-your-turn', r'<strong>Your turn!</strong> Each word below has a sentence above it\. Read the sentence, look for word parts, and guess what the word means\. Then tap the card to check\.',
    r'<strong>Your turn!</strong> Read each sentence, guess what the word means, then tap the card to check.'),

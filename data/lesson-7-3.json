@@ -247,5 +247,81 @@
   "journal-q2": 16,
   "journal-q3": 16
  },
- "navFixes": true
+ "navFixes": true,
+ "todo": [
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what con- and com- mean.",
+    "Type the missing prefix at the start of each word.",
+    "Tap Check My Work."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read each sentence.",
+    "Type the missing word from the word bank.",
+    "Tap Check My Work."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Type the plural of each word in brackets.",
+    "Tap Check My Work.",
+    "In the box, write your own sentence with an irregular plural."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Type the plural of each word in brackets.",
+    "Tap Check My Work.",
+    "In the box, make one more plural and name the rule."
+   ]
+  },
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the three How to Do It steps.",
+    "Keep the question in your head while you read Chapters 3 and 4.",
+    "Nothing to write here."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapters 3 and 4.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Whose word is it? boxes."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam swapped plain words for specific ones.",
+    "Use the word-choice planner to pick specific words for your kid.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ]
 }

@@ -4862,10 +4862,25 @@ function navHowTo() {
   if (key && key.parentNode) key.parentNode.insertBefore(card, key.nextSibling);
   else document.body.insertBefore(card, document.body.firstChild);
 }
+/* "What to do" at the top of every activity: DATA.todo = [{find:'title regex', steps:[...]}] */
+function navTodo() {
+  (DATA.todo || []).forEach(function (T) {
+    var re = new RegExp(T.find, 'i'), mod = null, t = document.querySelectorAll('.activity-title, .spk-card-title');
+    for (var i = 0; i < t.length; i++) if (re.test(t[i].textContent || '')) { mod = t[i].closest('.activity, .spk-card'); break; }
+    if (!mod) return;
+    var body = mod.querySelector('.activity-body, .spk-card-body') || mod;
+    if (body.querySelector(':scope > .nav-do')) return;
+    var box = document.createElement('div'); box.className = 'nav-do';
+    box.innerHTML = '<div class="nav-do-h">What to do</div><ol>' + (T.steps || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>';
+    var first = body.firstChild;
+    while (first && first.nodeType === 1 && /spk-guide-wrap|g3-opti-row|spk-arc-head/.test(first.className || '')) first = first.nextSibling;
+    body.insertBefore(box, first);
+  });
+}
 function buildNav() {
   if (!DATA.navFixes) return;
   document.body.classList.add('nav-fixes');
-  navTabTop(); navKey(); navFewerWords(); navHowTo(); navTaps();
+  navTabTop(); navKey(); navFewerWords(); navHowTo(); navTodo(); navTaps();
   if (window.MutationObserver) {
     var t = null;
     new MutationObserver(function () { clearTimeout(t); t = setTimeout(function () { navTaps(); }, 60); })

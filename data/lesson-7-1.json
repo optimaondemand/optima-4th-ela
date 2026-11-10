@@ -237,5 +237,93 @@
     "journal-q2": 24,
     "journal-q3": 16
   },
-  "navFixes": true
+  "navFixes": true,
+  "todo": [
+    {
+      "find": "What Good Readers",
+      "steps": [
+        "Read the tip and the three How to Do It steps.",
+        "Keep the question at the bottom in your head while you read.",
+        "Nothing to write here. Your note boxes are on the Reading tab."
+      ]
+    },
+    {
+      "find": "Daily Oral",
+      "steps": [
+        "Tap each yellow part of the first sentence to see why it is correct.",
+        "Pick Sentence A or Sentence B.",
+        "Type it the right way in the box, then tap Check My Work."
+      ]
+    },
+    {
+      "find": "Morphology",
+      "steps": [
+        "Read the four words. Look at how each one starts.",
+        "Answer the Try these first questions in your head.",
+        "Tap See if you cracked it.",
+        "Type the missing prefix in each word, then tap Check My Work.",
+        "Use a con- or com- word in a sentence in the Show What You Know box."
+      ]
+    },
+    {
+      "find": "Vocabulary",
+      "steps": [
+        "Read how we figured out companion.",
+        "Read each sentence, guess what the word means, then tap the card to check.",
+        "Play Quick Match: tap a word, then tap its meaning."
+      ]
+    },
+    {
+      "find": "Grammar",
+      "steps": [
+        "Look at the six plurals. Some follow the -s rule and some don't.",
+        "Tap a word, then tap Group A or Group B to sort it.",
+        "Tap Now check your thinking.",
+        "Name both groups in the Show What You Know box."
+      ]
+    },
+    {
+      "find": "Spelling",
+      "steps": [
+        "Look at the six plurals and how each one ends.",
+        "Tap a word, then tap the group it belongs in.",
+        "Tap Now check your thinking.",
+        "Write the rule in the Show What You Know box."
+      ]
+    },
+    {
+      "find": "Copia",
+      "steps": [
+        "Read the sentence about Mrs. Rachel.",
+        "Write it three new ways, one box at a time.",
+        "Stuck? Tap Show one way."
+      ]
+    },
+    {
+      "find": "^\\s*\\S*\\s*Read:",
+      "steps": [
+        "Read the Pause & Think questions first.",
+        "Open your book and read Chapter 1.",
+        "Stop at each question and think of your answer.",
+        "As you read, fill in the Whose view is it? boxes."
+      ]
+    },
+    {
+      "find": "Chapter Thinking",
+      "steps": [
+        "Pick Explorer or Scholar.",
+        "Answer all three questions in full sentences.",
+        "Use a detail from the book in every answer. The hint under each question helps."
+      ]
+    },
+    {
+      "find": "Writer.s Workshop",
+      "steps": [
+        "Read Today's focus. Then read how Sam picked his idea.",
+        "Make your own list of three ideas, then pick one. Write the one sentence that starts your story.",
+        "Type it in the box.",
+        "Tap Copy today's writing and paste it into your own document."
+      ]
+    }
+  ]
 }

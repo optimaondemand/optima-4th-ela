@@ -179,5 +179,87 @@
     "journal-q2": 16,
     "journal-q3": 16
   },
-  "navFixes": true
+  "navFixes": true,
+  "todo": [
+    {
+      "find": "Daily Oral",
+      "steps": [
+        "Tap each yellow part of the first sentence to see why it is correct.",
+        "Pick Sentence A or Sentence B.",
+        "Type it the right way in the box, then tap Check My Work."
+      ]
+    },
+    {
+      "find": "Poetry",
+      "steps": [
+        "Read the poem out loud.",
+        "Read the Think About It question.",
+        "Think of your answer. Nothing to write here."
+      ]
+    },
+    {
+      "find": "Morphology",
+      "steps": [
+        "Read what con- and com- mean.",
+        "Tap a word part, then tap its meaning.",
+        "Match them all."
+      ]
+    },
+    {
+      "find": "Vocabulary",
+      "steps": [
+        "Pick ONE activity from the menu.",
+        "Write your answer in the Show What You Know box."
+      ]
+    },
+    {
+      "find": "Grammar",
+      "steps": [
+        "Read the short draft.",
+        "Tap only the sentences with a plural mistake.",
+        "In the box, fix one and say why the -s rule does not work."
+      ]
+    },
+    {
+      "find": "Spelling",
+      "steps": [
+        "Tap only the words that are spelled wrong.",
+        "In the box, fix one and name the rule it broke."
+      ]
+    },
+    {
+      "find": "What Good Readers",
+      "steps": [
+        "Read the tip and the three How to Do It steps.",
+        "Keep the question in your head while you read Chapter 5.",
+        "Nothing to write here."
+      ]
+    },
+    {
+      "find": "^\\s*\\S*\\s*Read:",
+      "steps": [
+        "Read the Pause & Think questions first.",
+        "Open your book and read Chapter 5.",
+        "Stop at each question and think of your answer.",
+        "As you read, fill in the Move the chair boxes."
+      ]
+    },
+    {
+      "find": "Chapter Thinking",
+      "steps": [
+        "Pick Explorer or Scholar.",
+        "Answer all three questions in full sentences.",
+        "Use a detail from the book in every answer. The hint under each question helps."
+      ]
+    },
+    {
+      "find": "Writer.s Workshop",
+      "steps": [
+        "Read Today's focus. Then read how Sam showed Mateo's reaction.",
+        "Climb the reaction ladder: what your kid says, what your kid does, and what your kid's body does.",
+        "Type it in the box.",
+        "Tap Copy today's writing and paste it into your own document."
+      ]
+    }
+  ]
 }
