@@ -10844,7 +10844,7 @@
 "text": "",
 "key": "",
 "chars": 0,
-"kind": "speech",
+"kind": "not-speech",
 "script_source": "",
 "bytes": 498240,
 "md5": "2eff0ae66435ac9e179e5ccd1fa88677"
@@ -10858,7 +10858,7 @@
 "text": "",
 "key": "",
 "chars": 0,
-"kind": "speech",
+"kind": "not-speech",
 "script_source": "",
 "bytes": 498240,
 "md5": "1452af50025f7f2e0cf5871ea00407cf"
@@ -10872,7 +10872,7 @@
 "text": "",
 "key": "",
 "chars": 0,
-"kind": "speech",
+"kind": "not-speech",
 "script_source": "",
 "bytes": 498240,
 "md5": "1c1fcc462877094e307f7d009692b6f1"
