@@ -1692,3 +1692,7 @@ html[data-spk-tab="reading"] .spk-notes-fab:not(.hide) { display:block; }
 
 /* audit Nov 10 2026: Sentence A / Sentence B are buttons, so they carry the tap hand */
 .nav-fixes .spk-dol-card .spk-dol-tag::before { content: '\1F446\00A0'; }
+
+/* the guide's words sit right under the listen button (Nov 11 2026) */
+.spk-2step > .spk-readalong{max-width:none;margin:-8px 0 16px;}
+.spk-2step > .spk-readalong summary{text-align:left;}

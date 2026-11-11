@@ -3868,7 +3868,8 @@ function buildMedia() {
       raBody.className = 'spk-note-body';
       raBody.textContent = words;                /* never innerHTML */
       ra.appendChild(raBody);
-      wrap.appendChild(ra);
+      /* Nov 11 2026 (Bethany): the words sit right under the listen button, before the film */
+      if (vid && vid.parentNode === wrap) wrap.insertBefore(ra, vid); else wrap.appendChild(ra);
       /* shown only once the clip itself is confirmed (Nov 3 2026): these
          are the speaker's words, so a teacher film alone does not show them */
       var seen = [el];
