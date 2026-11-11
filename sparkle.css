@@ -1696,3 +1696,6 @@ html[data-spk-tab="reading"] .spk-notes-fab:not(.hide) { display:block; }
 /* the guide's words sit right under the listen button (Nov 11 2026) */
 .spk-2step > .spk-readalong{max-width:none;margin:-8px 0 16px;}
 .spk-2step > .spk-readalong summary{text-align:left;}
+
+/* Nov 11 2026: "Tap the highlighted parts" now has highlights to tap */
+.nav-fixes .dol-highlight-word:not(.highlighted):not(.key-reveal) { background: #FFF3C4; border-bottom: 2px dotted #C7922C; }

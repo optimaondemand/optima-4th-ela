@@ -598,7 +598,7 @@ function showProfileCard(isEdit) {
       ? '<div class="spk-owl-label">Which owl will read with you?</div>' +
         '<div class="spk-owl-row" id="spkOwlRow">' + owls + '</div>'
       : '<div class="spk-companion-solo">' + owlSVG(defaultCompanion(), 62) +
-        '<span>This is the owl who reads along with you. You\u2019ll see it on the Reading Road.</span></div>');
+        '<span>This is Opti, the owl who reads along with you. You\u2019ll see him on the Reading Road.</span></div>');
   anchor.parentNode.insertBefore(card, anchor);
 
   var input = card.querySelector('#spkNameInput');
@@ -3861,7 +3861,7 @@ function buildMedia() {
       ra.className = 'spk-note spk-readalong';
       ra.hidden = true;
       var raSum = document.createElement('summary');
-      var whoRA = speakerOf(slot);
+      var whoRA = (slot.label && slot.label.indexOf(' \u00b7 ') > 0) ? slot.label.split(' \u00b7 ')[0] : speakerOf(slot);   /* same name as the button above it (Mrs. Lynde, not Rachel) */
       raSum.textContent = '\ud83d\udcc4 Read ' + (whoRA ? whoRA + '\u2019s' : 'the') + ' words instead';
       ra.appendChild(raSum);
       var raBody = document.createElement('div');
