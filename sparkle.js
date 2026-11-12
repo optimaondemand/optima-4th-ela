@@ -4890,6 +4890,161 @@ function buildNav() {
   }
 }
 
+
+/* ══════════════════════════════════════════════════════════════
+   READING LENS + VIRTUE WATCH AFTER READING — 4th grade PILOT (week 7,
+   Bethany Nov 12 2026). Same design as 5th grade (g5-sparkle.js):
+   * lens: the What Good Readers Do "How to Do It" list
+     (<li><strong>Name:</strong> tip</li>) becomes tap cards; the pick shows
+     as a bookmark in the Read box and comes back as one line at the end of
+     Chapter Thinking (into My Work as MY READING LENS).
+   * DATA.virtue: one after-reading job on the Reading tab; kind changes
+     across the week: line (one "I wonder" line), sort, log, meter.
+   Only on lessons whose DATA has "lens": true / a "virtue" block.
+   ══════════════════════════════════════════════════════════════ */
+function g4ActByTitle(re) {
+  var t = [].slice.call(document.querySelectorAll('.activity-title')).filter(function (x) { return re.test(x.textContent); })[0];
+  return t ? t.closest('.activity') : null;
+}
+function g4After(ref, node) { ref.parentNode.insertBefore(node, ref.nextSibling); }
+function buildLens4() {
+  if (!DATA.lens) return;
+  var act = g4ActByTitle(/What Good Readers Do/i); if (!act) return;
+  var src = [].slice.call(act.querySelectorAll('.callout, .key-concept')).filter(function (k) { return /How to Do It/i.test(k.textContent) && k.querySelector('ol li strong'); })[0];
+  if (!src) return;
+  var lenses = [];
+  [].forEach.call(src.querySelectorAll('ol > li'), function (li) {
+    var st = li.querySelector('strong'); if (!st) return;
+    lenses.push({ name: st.textContent.replace(/[:\s]+$/, '').trim(),
+                  tip: li.textContent.slice(li.textContent.indexOf(st.textContent) + st.textContent.length).trim() });
+  });
+  if (lenses.length < 2) return;
+  src.style.display = 'none'; src.classList.add('g4-lens-src');
+  var all = Sparkle.get('oao.g4ela.lens', {}), pick = all[LID];
+  var box = document.createElement('div'); box.className = 'g4-lens';
+  box.innerHTML = '<div class="g4-lens-h">🔍 Choose your reading lens</div><p class="g4-lens-sub">Tap one. You will read today’s chapter through it.</p><div class="g4-lens-row"></div><p class="g4-lens-said" aria-live="polite"></p>';
+  var row = box.querySelector('.g4-lens-row'), said = box.querySelector('.g4-lens-said');
+  lenses.forEach(function (L2, i) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'g4-lens-card';
+    b.innerHTML = '<span class="g4-lens-n">' + (i + 1) + '</span><span class="g4-lens-name">' + esc(L2.name) + '</span><span class="g4-lens-tip">' + esc(L2.tip) + '</span>';
+    b.onclick = function () { pick = i; all[LID] = i; Sparkle.set('oao.g4ela.lens', all); paint(); };
+    row.appendChild(b);
+  });
+  src.parentNode.insertBefore(box, src);
+  var mark = null, use = null, ta = null;
+  var ct = g4ActByTitle(/Chapter Thinking/i);
+  if (ct) {
+    var cb = ct.querySelector(':scope > .activity-body') || ct;
+    use = document.createElement('div'); use.className = 'g4-lens-use';
+    use.innerHTML = '<div class="g4-lens-use-h">🔍 Through your lens</div><p class="g4-lens-use-q"></p>';
+    ta = document.createElement('textarea'); ta.className = 'journal-box g4-lens-ta'; ta.id = 'journal-lens'; ta.rows = 3;
+    ta.placeholder = 'Through my lens, I noticed…';
+    var notes = Sparkle.get('oao.g4ela.lensNote', {}); ta.value = notes[LID] || '';
+    ta.addEventListener('input', function () { var n = Sparkle.get('oao.g4ela.lensNote', {}); n[LID] = ta.value; Sparkle.set('oao.g4ela.lensNote', n); if (window.gatherAnswers) try { window.gatherAnswers(); } catch (e) {} });
+    use.appendChild(ta); cb.appendChild(use);
+  }
+  function goHome() {
+    var home = box.closest('.tab-panel');
+    if (home && window.switchTab) window.switchTab(home.id.replace(/^tab-/, ''));
+    setTimeout(function () { box.scrollIntoView({ block: 'center' }); }, 60);
+  }
+  function paint() {
+    var L2 = typeof pick === 'number' ? lenses[pick] : null;
+    [].forEach.call(row.children, function (b, j) { b.setAttribute('aria-pressed', j === pick ? 'true' : 'false'); });
+    said.textContent = L2 ? 'Your lens today: ' + L2.name + '. Keep it in mind as you read. You will use it at the end.' : '';
+    if (mark) mark.remove(); mark = null;
+    var rd = g4ActByTitle(/^\W*Read:/i);
+    if (rd) {
+      var body = rd.querySelector(':scope > .activity-body') || rd;
+      mark = document.createElement('div'); mark.className = 'g4-lens-mark';
+      var first = body.querySelector(':scope > .os-todo') || body.querySelector(':scope > .spk-todo, :scope > .g4-todo');
+      if (first) g4After(first, mark); else body.insertBefore(mark, body.firstChild);
+      mark.innerHTML = L2 ? '<span class="g4-lens-mark-ico" aria-hidden="true">🔍</span><span><b>Your lens:</b> ' + esc(L2.name) + '<span class="g4-lens-mark-tip">' + esc(L2.tip) + '</span></span><button type="button" class="g4-lens-change">Change</button>'
+                          : '<span class="g4-lens-mark-ico" aria-hidden="true">🔍</span><span><b>Pick your reading lens first.</b></span><button type="button" class="g4-lens-change">Go pick</button>';
+      mark.querySelector('button').onclick = goHome;
+    }
+    if (use) use.querySelector('.g4-lens-use-q').innerHTML = L2 ? 'Your lens was <b>' + esc(L2.name) + '</b>. In 1 or 2 sentences, tell what it helped you notice in today’s chapter.' : 'First pick a reading lens in What Good Readers Do. Then tell what it helped you notice.';
+    if (window.gatherAnswers) try { window.gatherAnswers(); } catch (e) {}
+  }
+  var _o = window.gatherAnswers;
+  if (typeof _o === 'function') window.gatherAnswers = function () {
+    var r = _o.apply(this, arguments), out = document.getElementById('gatheredOutput');
+    if (out && typeof pick === 'number') out.value += '\n🔍 MY READING LENS\n────────────────\nLens: ' + lenses[pick].name + '\n' + ((ta && ta.value.trim()) || '(no answer)') + '\n';
+    return r;
+  };
+  paint();
+  window.addEventListener('load', function () { setTimeout(paint, 900); });   /* after onestep.js has moved things */
+}
+
+function buildVirtue4() {
+  var V = DATA.virtue; if (!V || !V.kind) return;
+  var wk = 'oao.g4ela.virtue.wk' + LESSON.week, all = Sparkle.get(wk, {}), mine = all[LESSON.day] || {};
+  function save() { all[LESSON.day] = mine; Sparkle.set(wk, all); if (window.gatherAnswers) try { window.gatherAnswers(); } catch (e) {} }
+  var card = document.createElement('div'); card.className = 'g4-virtue';
+  card.innerHTML = '<div class="g4-virtue-head"><span class="g4-virtue-ico" aria-hidden="true">🌱</span><div><div class="g4-virtue-k">' + esc(V.kicker || 'Growing-Up Watch · after you read') + '</div><div class="g4-virtue-t">' + esc(V.title) + '</div></div></div>' +
+    (V.intro ? '<p class="g4-virtue-intro">' + esc(V.intro) + '</p>' : '');
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+  function lineBox(ph) {
+    var ta = el('textarea', 'journal-box g4-virtue-ta'); ta.rows = 2; ta.placeholder = ph || '';
+    ta.value = mine.why || '';
+    ta.addEventListener('input', function () { mine.why = ta.value; save(); });
+    return ta;
+  }
+  if (V.kind === 'sort') {
+    mine.sort = mine.sort || {};
+    var yes = V.yes || 'Yes', no = V.no || 'Not this time';
+    V.items.forEach(function (it, i) {
+      var r = el('div', 'g4-virtue-row'); r.appendChild(el('p', 'g4-virtue-moment', it.t));
+      var btns = el('div', 'g4-virtue-btns'), fb = el('p', 'g4-virtue-fb'); fb.setAttribute('aria-live', 'polite');
+      [[true, '👆 ' + yes], [false, '👆 ' + no]].forEach(function (pr) {
+        var b = el('button', 'g4-virtue-btn', pr[1]); b.type = 'button';
+        b.onclick = function () { mine.sort[i] = pr[0]; show(); save(); };
+        btns.appendChild(b);
+      });
+      function show() {
+        var a = mine.sort[i]; if (a === undefined) return;
+        var right = a === it.ok;
+        [].forEach.call(btns.children, function (b, j) { b.setAttribute('aria-pressed', (j === 0) === a ? 'true' : 'false'); });
+        fb.className = 'g4-virtue-fb ' + (right ? 'ok' : 'no'); fb.textContent = (right ? '✓ Right. ' : 'Look again. ') + it.why;
+      }
+      r.appendChild(btns); r.appendChild(fb); card.appendChild(r); show();
+    });
+  } else if (V.kind === 'log') {
+    var g = el('div', 'g4-virtue-opts');
+    V.options.forEach(function (o, i) {
+      var b = el('button', 'g4-virtue-opt', o.t); b.type = 'button'; b.setAttribute('aria-pressed', mine.pick === i ? 'true' : 'false');
+      b.onclick = function () { mine.pick = i; mine.pickText = o.t; [].forEach.call(g.children, function (x, j) { x.setAttribute('aria-pressed', j === i ? 'true' : 'false'); }); save(); };
+      g.appendChild(b);
+    });
+    card.appendChild(g); card.appendChild(el('p', 'g4-virtue-q', V.line)); card.appendChild(lineBox(V.placeholder));
+  } else if (V.kind === 'meter') {
+    card.appendChild(el('p', 'g4-virtue-moment', V.moment)); card.appendChild(el('p', 'g4-virtue-q', V.ask));
+    var lab = V.scale || ['Not at all', 'A little', 'Some', 'A lot', 'More than anything'];
+    var wrap = el('div', 'g4-virtue-meter'), sl = el('input'); sl.type = 'range'; sl.min = 1; sl.max = lab.length; sl.step = 1; sl.value = mine.score || 3; sl.setAttribute('aria-label', V.ask);
+    var out = el('div', 'g4-virtue-meter-out'), take = el('div', 'g4-virtue-take'); take.hidden = true; take.textContent = V.take;
+    function pm() { out.textContent = lab[sl.value - 1]; }
+    sl.addEventListener('input', function () { mine.score = +sl.value; mine.scoreLabel = lab[mine.score - 1]; pm(); take.hidden = false; save(); });
+    wrap.appendChild(sl); wrap.appendChild(out); card.appendChild(wrap); pm();
+    card.appendChild(el('p', 'g4-virtue-q', V.line)); card.appendChild(lineBox(V.placeholder)); card.appendChild(take);
+    if (mine.score) take.hidden = false;
+  } else {   /* line */
+    card.appendChild(el('p', 'g4-virtue-q', V.line)); card.appendChild(lineBox(V.placeholder));
+  }
+  var rd = g4ActByTitle(/^\W*Read:/i), panel = document.getElementById('tab-reading');
+  if (rd) g4After(rd, card); else if (panel) panel.insertBefore(card, panel.querySelector(':scope > .tab-next-wrap'));
+  var _o = window.gatherAnswers;
+  if (typeof _o === 'function') window.gatherAnswers = function () {
+    var r = _o.apply(this, arguments), o = document.getElementById('gatheredOutput');
+    if (o) {
+      var t = '';
+      if (V.kind === 'sort') V.items.forEach(function (it, i) { if (mine.sort && mine.sort[i] !== undefined) t += (mine.sort[i] === it.ok ? '✅ ' : '⬜ ') + it.t + '\n'; });
+      else { if (mine.pickText) t += 'Moment: ' + mine.pickText + '\n'; if (mine.scoreLabel) t += 'Rating: ' + mine.scoreLabel + '\n'; t += ((mine.why && mine.why.trim()) || '(no answer)') + '\n'; }
+      o.value += '\n🌱 ' + V.title.toUpperCase() + '\n────────────────\n' + t;
+    }
+    return r;
+  };
+}
+
 function boot() {
   /* Each step is isolated. Previously all eighteen sat inside one
      try/catch, so a lesson whose DATA was missing a key — no DOL pair,
@@ -4967,6 +5122,8 @@ function buildWordSay() {
     ['ftkit',       buildFtKit],
     ['publish',     buildPublish],
     ['catcher',     buildCatcher],
+    ['lens',        buildLens4],
+    ['virtue',      buildVirtue4],
     ['onpage',      buildOnPage],
     ['journal',     buildJournal],
     ['wordsay',     buildWordSay],
