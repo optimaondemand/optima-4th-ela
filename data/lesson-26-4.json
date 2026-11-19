@@ -1,0 +1,258 @@
+{
+ "connector": "You’ve read three chapters. A station, an island, a ruin, a treasure chamber, a rescue. Today, step back the way I step back from a book I’ve just rebound. How did the setting grow from Chapter 1 to Chapter 3, and what kind of story do you think this is going to be?",
+ "writingFocus": "Reflect",
+ "dol": {
+  "a": {
+   "raw": "trumpkin finished his story and looked at the children and peter began to plan",
+   "fixed": "<strong>Trumpkin</strong> finished his story and looked at the children<strong>,</strong> and <strong>Peter</strong> began to plan<strong>.</strong>",
+   "why": "Capitals on Trumpkin and Peter; a comma before the last and, which joins a new complete thought; a period ends it."
+  },
+  "b": {
+   "raw": "edmund beat the ivy with a stick and the wall made a hollow sound",
+   "fixed": "<strong>Edmund</strong> beat the ivy with a stick<strong>,</strong> and the wall made a hollow sound<strong>.</strong>",
+   "why": "Capital E on Edmund; a comma before and joins two complete thoughts; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and use one detail from each chapter.",
+  "journal-q2": "… and say what the object stands for, not just what it does.",
+  "journal-q3": "… and name one thing that could only happen in Narnia.",
+  "journal-q4": "… and say whether their idea changed yours."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 3
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q4": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "notes": {
+  "wgrd": "Track how the setting grows across chapters: what the children knew at the start, what they figure out, and what it means for the story.",
+  "vocab": [
+   [
+    "junction",
+    "A place where things meet or connect, especially where train lines split."
+   ],
+   [
+    "thicket",
+    "A dense group of bushes or small trees growing closely together."
+   ],
+   [
+    "brambles",
+    "Thorny bushes, especially wild blackberry or raspberry bushes with prickly stems."
+   ],
+   [
+    "inhabited",
+    "Lived in; having people or creatures living there."
+   ]
+  ],
+  "wordParts": "Prefixes: pre- = before, re- = again or back, trans- = across, inter- = between: preview, return, transport, international.",
+  "grammar": "Conjunctions join ideas. And adds one idea to another; or offers a choice between them. Stay in the castle or ride into the woods means one, not both. Editing day: check that each and or or is doing the right job.",
+  "spelling": "To split a long word, peel off the prefix and suffix first, then the base is easy: un + familiar, transport + ed, discover + ed."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "How the setting grew",
+   "intro": "Look back at Ch. 1–3.",
+   "fields": [
+    {
+     "label": "Ch. 1: where they think they are",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Ch. 2: what they figure out",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Ch. 3: what they learn about Narnia now",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "What kind of story I think this will be",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1"
+  ]
+ },
+ "counters": {
+  "journal-q1": 40,
+  "journal-q2": 32,
+  "journal-q3": 32,
+  "journal-q4": 24
+ },
+ "virtue": {
+  "kind": "log",
+  "title": "This week’s strongest pillar",
+  "intro": "Think about Chapters 1–3. Which pillar did the children show most this week? Tap one.",
+  "options": [
+   {
+    "t": "Honesty"
+   },
+   {
+    "t": "Respect"
+   },
+   {
+    "t": "Courtesy"
+   },
+   {
+    "t": "Responsibility"
+   },
+   {
+    "t": "Courage"
+   },
+   {
+    "t": "Service"
+   },
+   {
+    "t": "Perseverance"
+   }
+  ],
+  "line": "Name one moment that proves it.",
+  "placeholder": "The strongest pillar was … because in Chapter … ",
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-26-4-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-26-4-read",
+   "label": "Nell · looking back"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-26-4-grammar",
+   "label": "Nell · the right joining word"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. You’ve read three chapters of Prince Caspian. Today you step back and look at the whole room before you open the next door. Today’s question: what kind of story do you think this is going to be, and what clues have you seen so far?",
+  "read": "Flip back through Chapters 1 to 3. Find one place the children stood in each chapter. Notice how much more they understand by the end. Then pick one treasure they found and ask what it means to the person it belongs to.",
+  "grammar": "Editing day. Read each sentence that uses and or or out loud. Ask if it’s doing the right job. And adds. Or offers a choice. And if a sentence has and, and, and, and, it’s time to cut a few and let one idea lead."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Read the poem.",
+    "Follow the By Heart steps on the card."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Play the match: tap a prefix, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Guess each word, then tap the card to check.",
+    "Pick one activity from the choice board and do it in the box."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read each sentence.",
+    "Tap every sentence where the joining word does the wrong job.",
+    "In the box, fix one and defend it."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words.",
+    "Tap only the ones that are wrong.",
+    "In the box, fix one and name the part that went wrong."
+   ]
+  },
+  {
+   "find": "Week at a Glance",
+   "steps": [
+    "Look back at Chapters 1 to 3.",
+    "Fill in the note boxes, one chapter at a time.",
+    "After you write, do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Talk It Over",
+   "steps": [
+    "Talk about question 3 with someone at home.",
+    "Write one of their ideas, your question, and your answer."
+   ]
+  },
+  {
+   "find": "Writing Connection",
+   "steps": [
+    "Read the prompt.",
+    "Write your reflection in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ]
+}

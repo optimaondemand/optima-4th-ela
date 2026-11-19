@@ -1,0 +1,295 @@
+{
+ "connector": "The children have worked out the hardest clue: hundreds of years have passed in Narnia since they left. Today a boat comes round the point with two soldiers and a struggling bundle. Watch how quickly the children act, and listen to what the stranger they rescue tells them about the Narnia of now.",
+ "writingFocus": "Setting",
+ "dol": {
+  "a": {
+   "raw": "lucys knife stayed in its sheath and the children hided among the trees and watched the boat",
+   "fixed": "<strong>Lucy’s</strong> knife stayed in its sheath<strong>,</strong> and the children <strong>hid</strong> among the trees and watched the boat<strong>.</strong>",
+   "why": "Capital L and an apostrophe in Lucy’s; a comma before and joins two complete thoughts; hid, not hided; a period ends it."
+  },
+  "b": {
+   "raw": "peter and susan plunged into the water and they hauled the boat to the bank",
+   "fixed": "<strong>Peter</strong> and <strong>Susan</strong> plunged into the water<strong>,</strong> and they hauled the boat to the bank<strong>.</strong>",
+   "why": "Capitals on Peter and Susan; a comma before and joins two complete thoughts; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and compare it to something from our world, the way Peter does.",
+  "journal-q2": "… and quote what Susan says about shooting.",
+  "journal-q3": "… and name the two kinds of Narnians the Dwarf talks about."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "hints": {
+  "s4w26cf1": {
+   "h1": "Peel off un-. What word is left?",
+   "why": "un + familiar: the base is familiar."
+  },
+  "s4w26cf2": {
+   "h1": "Peel off -ed. What word is left?",
+   "why": "transport + ed: the base is transport."
+  },
+  "s4w26cf3": {
+   "h1": "Peel off -ed. What word is left?",
+   "why": "discover + ed: the base is discover."
+  },
+  "s4w26cf4": {
+   "h1": "Peel off -ed. What word is left?",
+   "why": "desert + ed: the base is desert."
+  }
+ },
+ "notes": {
+  "wgrd": "Use setting details to learn how this world works: soldiers in steel caps, a Dwarf, stories of ghosts in the woods. Each one is a rule of the new Narnia.",
+  "vocab": [
+   [
+    "junction",
+    "A place where things meet or connect, especially where train lines split."
+   ],
+   [
+    "thicket",
+    "A dense group of bushes or small trees growing closely together."
+   ],
+   [
+    "brambles",
+    "Thorny bushes, especially wild blackberry or raspberry bushes with prickly stems."
+   ],
+   [
+    "inhabited",
+    "Lived in; having people or creatures living there."
+   ]
+  ],
+  "wordParts": "Prefixes: pre- = before, re- = again or back, trans- = across, inter- = between: preview, return, transport, international.",
+  "grammar": "Conjunctions join ideas. And adds one idea to another; or offers a choice between them. Stay in the castle or ride into the woods means one, not both. Too many ands in a row give every idea the same weight.",
+  "spelling": "To split a long word, peel off the prefix and suffix first, then the base is easy: un + familiar, transport + ed, discover + ed."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Rules of the new Narnia",
+   "intro": "As you read Ch. 3, catch what has changed.",
+   "fields": [
+    {
+     "label": "What the children remember",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "What Narnia is like now",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "My prediction about what has happened",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 32,
+  "journal-q3": 32
+ },
+ "wordgame": {
+  "type": "treasure",
+  "strand": "Morphology",
+  "kicker": "Fill the Treasure Chamber",
+  "h": "The chamber fills",
+  "voice": "Tap a prefix, then the word it starts. Or drag the prefix onto the word.",
+  "why": {
+   "icon": "🗝️",
+   "q": "Why a treasure chamber?",
+   "t": "In Chapter 2, the children find the treasure chamber of their old castle, dusty and forgotten, its treasures waiting in the dark. Each word you build sets one treasure back in its place. This week’s word parts tell when and where: <b>pre-</b> (before), <b>re-</b> (again), <b>trans-</b> (across) and <b>inter-</b> (between)."
+  },
+  "meanings": {
+   "pre": "before",
+   "re": "again",
+   "trans": "across",
+   "inter": "between"
+  },
+  "winDay": "Four treasures are back in their niches.",
+  "win": "The treasure chamber is full again, and every torch is lit. <b>pre-</b> = before, <b>re-</b> = again, <b>trans-</b> = across, <b>inter-</b> = between."
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "In Chapter 3 the children save a stranger’s life. Read each moment. Tap the pillar it shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "Two soldiers are about to drown a bound Dwarf. Susan shoots; she is very pale, but she is already fitting a second arrow.",
+    "ok": [
+     "Courage"
+    ],
+    "why": "She is scared and acts anyway to save a life.",
+    "hint": "How does Susan feel, and what does she do?"
+   },
+   {
+    "t": "Peter and Susan plunge into the water fully dressed and haul the boat to the bank.",
+    "ok": [
+     "Service",
+     "Courage"
+    ],
+    "why": "They help someone who cannot help himself.",
+    "hint": "Who are they helping?"
+   },
+   {
+    "t": "The Dwarf says, “Ghosts or not, you’ve saved my life and I’m extremely obliged to you.”",
+    "ok": [
+     "Courtesy",
+     "Respect"
+    ],
+    "why": "He thanks them properly, even though he doesn’t know who they are.",
+    "hint": "What kind of words does he use?"
+   },
+   {
+    "t": "The Dwarf says they must hide the boat. Peter says, “I ought to have thought of that myself.”",
+    "ok": [
+     "Honesty"
+    ],
+    "why": "Peter admits he missed something.",
+    "hint": "What does Peter admit?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-26-3-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-26-3-read",
+   "label": "Nell · before you read"
+  },
+  "spelling": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-26-3-spelling",
+   "label": "Nell · take long words apart"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. The children have worked out something strange about time in Narnia. Today a boat comes round the point, and they have to decide fast. Today’s question: what does one rescue tell us about the children, and about the Narnia they’ve come back to?",
+  "read": "Read Edmund’s idea about time slowly. It explains everything you’ve seen so far. Then watch the boat. Notice how fast the children act, and listen to the stranger they save. Everything he says is a clue about what Narnia is like now.",
+  "spelling": "Long words look scary until you take them apart. Peel off the beginning and the ending first. What’s left is usually a word you already know. Unhappy: take off un, and there’s happy. Then the syllables almost split themselves."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the four prefixes.",
+    "Play the game: tap a prefix, then the word it starts.",
+    "Tap Check My Work."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the word bank.",
+    "Type the word that fits each sentence.",
+    "Tap Check My Work."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the worked example.",
+    "Write the three ideas as one sentence without three ands.",
+    "Write a second version that puts a different idea in charge."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the Before and After.",
+    "Type the base word for each, then tap Check My Work.",
+    "In the box, break the three long words into parts."
+   ]
+  },
+  {
+   "find": "Read Like a Reader",
+   "steps": [
+    "Read Lewis’s sentence about the Dwarf.",
+    "Tap through Reader, Writer, and Mimic.",
+    "Write your own sentence that measures one character against a whole people."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  }
+ ]
+}

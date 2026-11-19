@@ -1,0 +1,312 @@
+{
+ "connector": "Welcome to a new book. I mend old books for a living, and this one I’ve read every winter since I was nine. Four children are sitting at a train station when something pulls at them. Where do they land, and when? Read for clues the way you’d read the cracks in an old binding: each one tells you how much time has passed.",
+ "writingFocus": "Setting",
+ "dol": {
+  "a": {
+   "raw": "all around them stood trees sand seagulls and the wide blue water",
+   "fixed": "<strong>All</strong> around them stood trees<strong>,</strong> sand<strong>,</strong> seagulls<strong>,</strong> and the wide blue water<strong>.</strong>",
+   "why": "Capital A starts the sentence; commas separate the four things in the list, including the one before and; a period ends it."
+  },
+  "b": {
+   "raw": "the children found apples ivy daisies and an old stone wall",
+   "fixed": "<strong>The</strong> children found apples<strong>,</strong> ivy<strong>,</strong> daisies<strong>,</strong> and an old stone wall<strong>.</strong>",
+   "why": "Capital T starts the sentence; commas separate the four things the children found, including the one before and; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and use one detail for sight, one for sound, and one for feeling.",
+  "journal-q2": "… and quote the words that make the change feel sudden.",
+  "journal-q3": "… and ask one question the ruins make you wonder about."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "Seeing something before it happens. Which prefix means before?",
+   "why": "pre- means before: pre + view."
+  },
+  "fill2": {
+   "h1": "Coming back again. Which prefix means again or back?",
+   "why": "re- means again or back: re + turn."
+  },
+  "fill3": {
+   "h1": "Carrying something across a distance. Which prefix means across?",
+   "why": "trans- means across: trans + port."
+  },
+  "fill4": {
+   "h1": "Between nations. Which prefix means between?",
+   "why": "inter- means between: inter + national."
+  }
+ },
+ "copia": {
+  "seed": "The children <b data-verb>found</b> an old stone wall.",
+  "eg": [
+   "Deep in the orchard, the children found an old stone wall.",
+   "The children <i>stumbled on</i> an old stone wall.",
+   "The children found an old stone wall, broken down and covered with moss."
+  ]
+ },
+ "notes": {
+  "wgrd": "In a fantasy setting, collect place clues (what the children see and touch) and time clues (what has crumbled or grown wild). Then say where and when they are in one sentence.",
+  "vocab": [
+   [
+    "junction",
+    "A place where things meet or connect, especially where train lines split."
+   ],
+   [
+    "thicket",
+    "A dense group of bushes or small trees growing closely together."
+   ],
+   [
+    "brambles",
+    "Thorny bushes, especially wild blackberry or raspberry bushes with prickly stems."
+   ],
+   [
+    "inhabited",
+    "Lived in; having people or creatures living there."
+   ]
+  ],
+  "wordParts": "Prefixes: pre- = before, re- = again or back, trans- = across, inter- = between: preview, return, transport, international.",
+  "grammar": "Conjunctions join ideas. And adds one idea to another; or offers a choice between them. Stay in the castle or ride into the woods means one, not both.",
+  "spelling": "To split a long word, peel off the prefix and suffix first, then the base is easy: un + familiar, transport + ed, discover + ed."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Setting clues",
+   "intro": "As you read Ch. 1, catch the clues.",
+   "fields": [
+    {
+     "label": "Place clues: what they see and touch",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "Time clues: what has crumbled or grown wild",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "Where and when they are, in one sentence",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 24,
+  "journal-q3": 32
+ },
+ "wordgame": {
+  "type": "treasure",
+  "strand": "Morphology",
+  "kicker": "Fill the Treasure Chamber",
+  "h": "Prefixes of time and place",
+  "voice": "Tap a prefix, then the word it starts. Or drag the prefix onto the word.",
+  "why": {
+   "icon": "🗝️",
+   "q": "Why a treasure chamber?",
+   "t": "In Chapter 2, the children find the treasure chamber of their old castle, dusty and forgotten, its treasures waiting in the dark. Each word you build sets one treasure back in its place. This week’s word parts tell when and where: <b>pre-</b> (before), <b>re-</b> (again), <b>trans-</b> (across) and <b>inter-</b> (between)."
+  },
+  "meanings": {
+   "pre": "before",
+   "re": "again",
+   "trans": "across",
+   "inter": "between"
+  },
+  "winDay": "Four treasures are back in their niches.",
+  "win": "Four treasures are back in their niches. <b>pre-</b> = before, <b>re-</b> = again, <b>trans-</b> = across, <b>inter-</b> = between."
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "The OAO Seven Pillars are honesty, respect, courtesy, responsibility, courage, service and perseverance. In Chapter 1 the children are hungry, thirsty and lost. Read each moment. Tap the pillar it shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "There are only two lunches among four children. They divide the sandwiches into four portions, even though nobody has quite enough.",
+    "ok": [
+     "Service",
+     "Respect",
+     "Courtesy"
+    ],
+    "why": "They share fairly with each other instead of each keeping their own.",
+    "hint": "Think about who gets the food."
+   },
+   {
+    "t": "Edmund and Lucy want to leave their shoes on the beach. Susan says they might never find them again, and they will want them when night comes and it gets cold.",
+    "ok": [
+     "Responsibility"
+    ],
+    "why": "Susan thinks ahead about what the group will need later.",
+    "hint": "Who is thinking about tonight?"
+   },
+   {
+    "t": "Peter thinks they may soon have to eat eggs raw, but he doesn’t say it out loud. Then he says, “Come on, Ed is right. And we must try to do something.”",
+    "ok": [
+     "Responsibility",
+     "Perseverance",
+     "Courage"
+    ],
+    "why": "He keeps the others from losing heart and keeps the group moving.",
+    "hint": "What does Peter do instead of complaining?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-26-1-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-26-1-read",
+   "label": "Nell · before you read"
+  },
+  "morphology": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-26-1-morphology",
+   "label": "Nell · prefixes of time and place"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, I’m Nell. I mend old books, and this one I’ve read every winter since I was nine. It’s called Prince Caspian. Four children are waiting at a train station, and then they aren’t. Today’s question: what kind of place have they arrived at, and what clues tell you?",
+  "read": "Read like a detective with a magnifying glass. Every time Lewis names something the children can see or touch, picture it. The water, the trees, the stone. Then watch for things that have crumbled or gone wild. Those tell you how long a place has been left alone.",
+  "morphology": "Some word parts tell you when and where. Pre means before. Re means again, or back. Trans means across. Inter means between. Find the part at the front, ask what it adds to the word, and set one more treasure back in its place."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the words. Look at how each one starts.",
+    "Tap See if you cracked it.",
+    "Play the game: tap a prefix, then the word it starts.",
+    "In Show What You Know, use one prefix in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read how we figure out junction.",
+    "Guess each word, then tap the card to check.",
+    "Play the Match Game: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read both versions.",
+    "Tap the stronger one.",
+    "Tap Now check your thinking, then write what or told the reader."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the sentence.",
+    "Tap every word with three or more syllables.",
+    "In the box, write the rule in your own words."
+   ]
+  },
+  {
+   "find": "Copia",
+   "steps": [
+    "Read the sentence.",
+    "Write it three new ways, one box at a time.",
+    "Stuck? Tap Show one way."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writing Connection",
+   "steps": [
+    "Think about the train station and the island.",
+    "Write two or three sentences comparing them.",
+    "Use one detail from each place."
+   ]
+  }
+ ]
+}
