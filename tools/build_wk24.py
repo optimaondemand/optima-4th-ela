@@ -28,7 +28,7 @@ def quilt(h, meanings, why, win):
 def media(d, ws, wslabel):
     m = {"welcome": {"kind": "audio", "path": "guide/marcus/g4ela-24-%d-welcome" % d, "label": "Marcus’s welcome"},
          "read": {"kind": "audio", "path": "guide/marcus/g4ela-24-%d-read" % d, "label": "Marcus · before you read" if d < 4 else "Marcus · looking back"},
-         ws: {"kind": "audio", "path": "guide/marcus/g4ela-24-%d-%s" % (d, ws), "label": "Marcus · " + wslabel}}
+         ws: {"kind": "video", "path": "guide/marcus/g4ela-24-%d-%s" % (d, ws), "label": "Marcus · " + wslabel}}
     for off in ("guide1", "guide2", "guide3", "rwm", "copia"): m[off] = {"kind": ""}
     return m
 def hint(h1, why): return {"h1": h1, "why": why}
