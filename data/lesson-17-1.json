@@ -243,5 +243,101 @@
   "journal-q1": 16,
   "journal-q2": 16,
   "journal-q3": 16
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the words. Guess what the shared root means.",
+    "Tap See if you were right.",
+    "Play the game: tap a root, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read each sentence, guess what the word means, then tap the card to check.",
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the sentences about Chapter 5.",
+    "Tap every pronoun that is paired with a verb.",
+    "In the box, write the rule in your own words."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the sentences about Chapter 5.",
+    "Tap every word built from a base plus a prefix or suffix.",
+    "In the box, write the rule in your own words."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 5.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Point to the moment boxes.",
+    "After you read, do the Courage Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Build your quote sandwich.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ],
+ "virtue": {
+  "kind": "line",
+  "title": "Brave in seconds",
+  "intro": "In Chapter 5, the soldiers are at the bedroom door. Ellen can't open her necklace. Annemarie says, “Hold still. This will hurt,” and yanks the chain until it breaks.",
+  "line": "Write one sentence: Annemarie is brave in this moment because she…",
+  "placeholder": "Annemarie is brave because she…",
+  "kicker": "Courage Watch · after you read",
+  "icon": "🛡️",
+  "name": "courage"
  }
 }

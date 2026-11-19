@@ -251,5 +251,126 @@
   "journal-q1": 16,
   "journal-q2": 16,
   "journal-q3": 16
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the roots mean.",
+    "Play the game: tap a root, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the paragraph about Chapter 6.",
+    "Tap every pronoun and every verb that has to agree with it.",
+    "In the box, pick one you tapped and tell what it is doing."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the paragraph about Chapter 6.",
+    "Tap every word with a prefix and every word with a suffix.",
+    "In the box, pick one you tapped and tell what it is doing."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 6.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Short, exact evidence boxes.",
+    "After you read, do the Courage Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Build your intro.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ],
+ "virtue": {
+  "kind": "sort",
+  "title": "Courage or not?",
+  "yes": "Courage",
+  "no": "Not this time",
+  "intro": "In Chapter 6, the grown-ups make hard choices. Read each moment. Tap Courage or Not this time.",
+  "items": [
+   {
+    "t": "Mama says she will take the girls to Uncle Henrik's by herself. “I am not afraid to go alone.”",
+    "ok": true,
+    "why": "She takes the danger on herself to keep everyone safer."
+   },
+   {
+    "t": "Papa talks to Uncle Henrik on the phone about a carton of cigarettes, almost as if he were speaking in code.",
+    "ok": true,
+    "why": "He sends a secret message where anyone could be listening."
+   },
+   {
+    "t": "Kirsti wishes they could stop and visit Kronborg Castle.",
+    "ok": false,
+    "why": "That is Kirsti dreaming about kings and queens, not courage."
+   },
+   {
+    "t": "On the train, a soldier asks where they are going. Mama answers calmly, “Gilleleje.”",
+    "ok": true,
+    "why": "She keeps her voice calm while a soldier questions her."
+   },
+   {
+    "t": "Annemarie asks if she can run ahead to be the first to see the house.",
+    "ok": false,
+    "why": "That is just Annemarie being excited."
+   }
+  ],
+  "kicker": "Courage Watch · after you read",
+  "icon": "🛡️",
+  "name": "courage"
  }
 }

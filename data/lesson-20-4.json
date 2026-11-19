@@ -178,5 +178,101 @@
   "journal-q1": 16,
   "journal-q2": 16,
   "journal-q3": 16
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the word parts mean.",
+    "Play the game: tap a word part, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read each sentence, guess what the word means, then tap the card to check.",
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Tap the adjectives that are doing no work.",
+    "In the box, fix one and tell why."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Tap the wrongly split words.",
+    "In the box, fix one and tell why."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 4.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Idea and two proofs boxes.",
+    "After you read, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Plan your 3 sources.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ],
+ "virtue": {
+  "kind": "meter",
+  "title": "The freedom meter",
+  "intro": "Think about one moment from Chapter 4.",
+  "moment": "Jim tells Harriet about another railroad: “But the Underground Railroad's got some mighty fine conductors.” When Jim runs, Harriet stretches out her arms in the doorway to block the overseer.",
+  "ask": "How much do Jim's stories change what Harriet thinks is possible? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "Jim's stories change Harriet because…",
+  "take": "One way to see it: a lot. She hears about the Underground Railroad, and then she helps Jim get away.",
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
  }
 }

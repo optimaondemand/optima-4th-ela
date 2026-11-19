@@ -169,5 +169,101 @@
   "journal-q1": 24,
   "journal-q2": 16,
   "journal-q3": 16
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the words. Guess what the shared word part means.",
+    "Tap See if you cracked it.",
+    "Play the game: tap a word part, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read each sentence, guess what the word means, then tap the card to check.",
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the sentences about Chapter 1.",
+    "Tap every adjective.",
+    "In the box, write the rule in your own words."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the sentences about Chapter 1.",
+    "Tap every word of three or more syllables.",
+    "In the box, write the rule in your own words."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 1.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Three facts, one sentence boxes.",
+    "After you read, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Write one opinion sentence and one research sentence about Harriet (using Ch. 1).",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ],
+ "virtue": {
+  "kind": "line",
+  "title": "I wonder…",
+  "intro": "In Chapter 1, Harriet rocks the baby and looks out the window. A flock of geese flies north. She whispers, “Wonder what it's really like.”",
+  "line": "Write one “I wonder” question Harriet might ask about the North.",
+  "placeholder": "I wonder…",
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
  }
 }

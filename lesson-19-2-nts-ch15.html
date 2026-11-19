@@ -2370,6 +2370,127 @@ body {
   "journal-q1": 16,
   "journal-q2": 16,
   "journal-q3": 16
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the roots mean.",
+    "Play the game: tap a root, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the paragraph about Chapter 15.",
+    "Tap every homophone that is the wrong one for its sentence.",
+    "In the box, pick one you tapped and tell what it is doing."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the paragraph about Chapter 15.",
+    "Tap every homophone that is the wrong one for its sentence.",
+    "In the box, pick one you tapped and tell what it is doing."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 15.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Hold a detail up to a fact boxes.",
+    "After you read, do the Courage Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Revise your draft.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ],
+ "virtue": {
+  "kind": "sort",
+  "title": "Courage or not?",
+  "yes": "Courage",
+  "no": "Not this time",
+  "intro": "In Chapter 15, Annemarie acts like a silly little girl to fool the soldiers. Read each moment. Tap Courage or Not this time.",
+  "items": [
+   {
+    "t": "Annemarie giggles and chatters about Uncle Henrik not liking fish, the way Kirsti would.",
+    "ok": true,
+    "why": "Acting silly is how she keeps the packet safe."
+   },
+   {
+    "t": "The soldier breaks the bread and tosses it to the dogs.",
+    "ok": false,
+    "why": "That is the soldier being cruel."
+   },
+   {
+    "t": "The soldier asks, “No meat?” Annemarie answers, “Your army eats all of Denmark's meat.”",
+    "ok": true,
+    "why": "She talks back like a cross child so he won't guess the truth."
+   },
+   {
+    "t": "Annemarie tells the soldier the dogs smell squirrels and he should take them hunting.",
+    "ok": true,
+    "why": "She stays quick and calm while the dogs pull at the basket."
+   },
+   {
+    "t": "The soldier laughs at the handkerchief and throws it on the ground.",
+    "ok": false,
+    "why": "That is the soldier making fun of her, not courage."
+   }
+  ],
+  "kicker": "Courage Watch · after you read",
+  "icon": "🛡️",
+  "name": "courage"
  }
 }
 </script>
@@ -2754,7 +2875,6 @@ return all.length?all[all.length-1]:null;}
   <div class="activity bl-cyan">
     <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">2</div><div><div class="activity-title">✏️ Daily Oral Language</div><div class="activity-sub">Study the model, then fix the sentence.</div></div></div>
     <div class="activity-body">
-      <p>The first sentence is <strong>correct</strong>. Tap the parts you notice are done right &mdash; capital letters, punctuation, quotation marks, anything that follows the rules. Then use it as a model to fix the second sentence.</p>
 
       <div class="task-box">
         <div class="dol-model-label">✅ Correct Model — about the novel</div>
@@ -2876,7 +2996,7 @@ While follow eyes the steady keel, the vessel grim and daring;</div>
   <div class="activity bl-gold">
     <div class="activity-head"><div class="activity-num" style="background:#C7922C;">3</div><div><div class="activity-title">✏️ Grammar: Homophones</div><div class="activity-sub">Day 2: Identify &mdash; a whole paragraph, and more than one thing to look for.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Reviser</span></div></div></div>
     <div class="activity-body">
-<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Two things at once</div><p>About Chapter 15. Homophones used correctly and incorrectly, side by side.</p></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Hunt across the whole paragraph. The wrong words come from more than one sound-alike pair.</p></div><p style="font-size:14px;color:#3A4A6B;margin:10px 0 4px;">Tap every homophone that is the <strong>wrong</strong> one for its sentence:</p><div class="spotter-game" id="g4w19bGame"><div class="spotter-sentence" id="g4w19b" style="line-height:2.6;"><span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">Annemarie</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="true">new</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">the</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">path</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="true">buy</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">heart.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="true">Their</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">were</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">four</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">soldiers,</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">and</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="true">too</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">of</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">them</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">held</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">dogs.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">She</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">would</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">not</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="true">loose</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">the</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">basket.</span><div class="spotter-result" id="g4w19b-result"></div></div></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Pick one you tapped, give the correct spelling, and say what the wrong one actually means.</div><div class="textbox-prompt">Name one and explain what it is doing.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="The one I chose is... It is doing..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Two things at once</div><p>About Chapter 15. Homophones used correctly and incorrectly, side by side.</p></div><p style="font-size:14px;color:#3A4A6B;margin:10px 0 4px;">Tap every homophone that is the <strong>wrong</strong> one for its sentence:</p><div class="spotter-game" id="g4w19bGame"><div class="spotter-sentence" id="g4w19b" style="line-height:2.6;"><span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">Annemarie</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="true">new</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">the</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">path</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="true">buy</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">heart.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="true">Their</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">were</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">four</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">soldiers,</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">and</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="true">too</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">of</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">them</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">held</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">dogs.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">She</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">would</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">not</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="true">loose</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">the</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'g4w19b')" data-correct="false">basket.</span><div class="spotter-result" id="g4w19b-result"></div></div></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Pick one you tapped, give the correct spelling, and say what the wrong one actually means.</div><div class="textbox-prompt">Name one and explain what it is doing.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="The one I chose is... It is doing..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
 </div>
   </div>
 
@@ -2884,7 +3004,7 @@ While follow eyes the steady keel, the vessel grim and daring;</div>
   <div class="activity bl-navy">
     <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">🔠 Spelling: Homophones in Context</div><div class="activity-sub">Day 2: Identify &mdash; a whole paragraph, and more than one kind of problem.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Spelling Level: Word Reviser</span></div></div></div>
     <div class="activity-body">
-<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Two things at once</div><p>About Chapter 15. Correct and incorrect homophones, side by side.</p></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Hunt across the whole paragraph. The wrong words come from more than one sound-alike pair.</p></div><p style="font-size:14px;color:#3A4A6B;margin:10px 0 4px;">Tap every homophone that is the <strong>wrong</strong> one for its sentence:</p><div class="spotter-game" id="s4w19bGame"><div class="spotter-sentence" id="s4w19b" style="line-height:2.6;"><span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">She</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="true">new</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">the</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">path</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">by</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">heart.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="true">Their</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">were</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">four</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">soldiers,</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">and</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="true">too</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">held</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">dogs</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">on</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">leashes.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">She</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">would</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">not</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="true">loose</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">her</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">basket.</span><div class="spotter-result" id="s4w19b-result"></div></div></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Pick one you tapped. Give the right spelling and say what the wrong word actually means.</div><div class="textbox-prompt">Name one and explain what it is doing.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="The word I chose is... What it shows is..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Two things at once</div><p>About Chapter 15. Correct and incorrect homophones, side by side.</p></div><p style="font-size:14px;color:#3A4A6B;margin:10px 0 4px;">Tap every homophone that is the <strong>wrong</strong> one for its sentence:</p><div class="spotter-game" id="s4w19bGame"><div class="spotter-sentence" id="s4w19b" style="line-height:2.6;"><span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">She</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="true">new</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">the</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">path</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">by</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">heart.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="true">Their</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">were</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">four</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">soldiers,</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">and</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="true">too</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">held</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">dogs</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">on</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">leashes.</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">She</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">would</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">not</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="true">loose</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">her</span> <span class="spotter-word" onclick="_oaoSpotAll(this,'s4w19b')" data-correct="false">basket.</span><div class="spotter-result" id="s4w19b-result"></div></div></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Pick one you tapped. Give the right spelling and say what the wrong word actually means.</div><div class="textbox-prompt">Name one and explain what it is doing.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="The word I chose is... What it shows is..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
 </div>
   </div>
 
@@ -2966,7 +3086,6 @@ While follow eyes the steady keel, the vessel grim and daring;</div>
     <div class="activity-body">
       
       <!-- pause-before-reading -->
-      <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x23F8;&#xFE0F;</span><p><strong>Read these first.</strong> Look them over before you open your book, then stop and answer each one when you reach that part.</p></div>
       <div class="pause-columns">
         <div class="pause-col">
           

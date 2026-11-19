@@ -217,5 +217,126 @@
   "journal-q1": 16,
   "journal-q2": 16,
   "journal-q3": 16
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the roots mean.",
+    "Play the game: tap a root, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the paragraph about Chapter 10.",
+    "Tap every contraction — leave the possessives alone.",
+    "In the box, pick one you tapped and tell what it is doing."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the paragraph about Chapter 10.",
+    "Tap every word ending in a final stable syllable — -le, -tion, -ture.",
+    "In the box, pick one you tapped and tell what it is doing."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 10.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the boxes for The repeat list.",
+    "After you read, do the Courage Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Zoom in on one word in your quote.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ],
+ "virtue": {
+  "kind": "sort",
+  "title": "Courage or not?",
+  "yes": "Courage",
+  "no": "Not this time",
+  "intro": "In Chapter 10, soldiers come to the house in the middle of the night. Read each moment. Tap Courage or Not this time.",
+  "items": [
+   {
+    "t": "The officer asks who died. Annemarie answers, “My Great-aunt Birte,” in a firm voice.",
+    "ok": true,
+    "why": "She keeps the secret with soldiers watching her."
+   },
+   {
+    "t": "Mama walks straight to the officer and tells him Aunt Birte died of typhus.",
+    "ok": true,
+    "why": "She uses a quick trick to keep the casket closed."
+   },
+   {
+    "t": "The officer presses a candle flame out with his thumb.",
+    "ok": false,
+    "why": "That is the officer showing his power, not courage."
+   },
+   {
+    "t": "After the soldiers leave, Peter reads a psalm in a strong voice.",
+    "ok": true,
+    "why": "He helps everyone stay calm while danger is close."
+   },
+   {
+    "t": "Mama brings the teapot and a tray of cups from the kitchen.",
+    "ok": false,
+    "why": "That is Mama being a kind host."
+   }
+  ],
+  "kicker": "Courage Watch · after you read",
+  "icon": "🛡️",
+  "name": "courage"
  }
 }

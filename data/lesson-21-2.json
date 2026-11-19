@@ -183,5 +183,127 @@
   "journal-q1": 16,
   "journal-q2": 24,
   "journal-q3": 16
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the word parts mean.",
+    "Play the game: tap a word part, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read each sentence, guess what the word means, then tap the card to check.",
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the paragraph about Chapter 6.",
+    "Tap every comparative (comparing two) and every superlative (the most of all).",
+    "In the box, pick one you tapped and tell what it is doing."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the paragraph about Chapter 6.",
+    "Tap every -ion word whose base verb changed its spelling.",
+    "In the box, pick one you tapped and tell what it is doing."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 6.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Before, turn, after boxes.",
+    "After you read, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Take notes from your website source.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ],
+ "virtue": {
+  "kind": "sort",
+  "title": "A step toward freedom?",
+  "yes": "A step toward freedom",
+  "no": "Not this time",
+  "intro": "In Chapter 6, Harriet decides to leave. Read each moment. Tap A step toward freedom or Not this time.",
+  "items": [
+   {
+    "t": "Harriet asks the Quaker lady about Mr. Garrett while pretending to buy eggs.",
+    "ok": true,
+    "why": "She finds out where to go and who will help her."
+   },
+   {
+    "t": "John tells Harriet, “There have always been masters and slaves.”",
+    "ok": false,
+    "why": "John thinks nothing can change."
+   },
+   {
+    "t": "Harriet tells her brothers, “There are two things I have a right to, liberty or death.”",
+    "ok": true,
+    "why": "She has made up her mind to be free."
+   },
+   {
+    "t": "In the rain, her brothers turn back.",
+    "ok": false,
+    "why": "Fear sends them home."
+   },
+   {
+    "t": "Harriet sings a farewell song as she walks past the slave quarters.",
+    "ok": true,
+    "why": "She says good-bye in a way only her people understand."
+   }
+  ],
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
  }
 }

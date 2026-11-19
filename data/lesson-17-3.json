@@ -286,5 +286,114 @@
   "journal-q1": 16,
   "journal-q2": 16,
   "journal-q3": 16
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the roots mean.",
+    "Play the game: tap a root, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Say each meaning in your own words first.",
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the Before and After.",
+    "Type the verb form that agrees with its pronoun. Then tap Check My Work.",
+    "In the box, revise this sentence: The soldiers was angry, and Annemarie run upstairs."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the Before and After.",
+    "Type the word with all its parts joined. Then tap Check My Work.",
+    "In the box, correct this line: The unfreindly soldier asked carefuly about the hopefull resistence."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 7.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Feeling or doing? boxes.",
+    "After you read, do the Courage Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Draft your body paragraph 1.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ],
+ "virtue": {
+  "kind": "log",
+  "title": "Courage log",
+  "intro": "In Chapter 7, courage is quiet. Tap the moment you think shows it best.",
+  "options": [
+   {
+    "t": "Annemarie tells Ellen she hid the necklace in a safe place and will keep it until it is safe to wear again."
+   },
+   {
+    "t": "Mama tells the girls to stay away from people while they are at Uncle Henrik's."
+   },
+   {
+    "t": "Ellen wonders where her parents are. Annemarie pats her hand, and they sit together quietly."
+   },
+   {
+    "t": "Mama says it is a bad time. Annemarie answers, “It is not a bad time, then. Not if there is applesauce.”"
+   }
+  ],
+  "line": "Finish the sentence: This moment shows courage because…",
+  "placeholder": "This moment shows courage because…",
+  "kicker": "Courage Watch · after you read",
+  "icon": "🛡️",
+  "name": "courage"
  }
 }

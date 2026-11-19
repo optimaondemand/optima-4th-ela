@@ -162,5 +162,101 @@
   "journal-q1": 16,
   "journal-q2": 16,
   "journal-q3": 24
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the word parts mean.",
+    "Play the game: tap a word part, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read each sentence, guess what the word means, then tap the card to check.",
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Tap every sentence with a comparison problem.",
+    "In the box, fix one and tell why."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Tap the misspelled words.",
+    "In the box, fix one and tell why."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapters 8 and 9.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Now and then boxes.",
+    "After you read, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Sort your notes into 2-3 categories.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ],
+ "virtue": {
+  "kind": "meter",
+  "title": "The freedom meter",
+  "intro": "Think about Chapters 8 and 9.",
+  "moment": "In Philadelphia, Harriet earns two silver dollars. “They're mine,” she says. But her family is still in Maryland, and she feels like a stranger in a strange land.",
+  "ask": "How free is Harriet at the end of Chapter 9? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "Harriet is this free because…",
+  "take": "One way to see it: free, but not yet whole. She says, “I'm free, but there is no one to welcome me to the land of freedom.”",
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
  }
 }

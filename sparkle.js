@@ -4981,7 +4981,7 @@ function buildVirtue4() {
   var wk = 'oao.g4ela.virtue.wk' + LESSON.week, all = Sparkle.get(wk, {}), mine = all[LESSON.day] || {};
   function save() { all[LESSON.day] = mine; Sparkle.set(wk, all); if (window.gatherAnswers) try { window.gatherAnswers(); } catch (e) {} }
   var card = document.createElement('div'); card.className = 'g4-virtue';
-  card.innerHTML = '<div class="g4-virtue-head"><span class="g4-virtue-ico" aria-hidden="true">🌱</span><div><div class="g4-virtue-k">' + esc(V.kicker || 'Growing-Up Watch · after you read') + '</div><div class="g4-virtue-t">' + esc(V.title) + '</div></div></div>' +
+  card.innerHTML = '<div class="g4-virtue-head"><span class="g4-virtue-ico" aria-hidden="true">' + esc(V.icon || '🌱') + '</span><div><div class="g4-virtue-k">' + esc(V.kicker || 'Growing-Up Watch · after you read') + '</div><div class="g4-virtue-t">' + esc(V.title) + '</div></div></div>' +
     (V.intro ? '<p class="g4-virtue-intro">' + esc(V.intro) + '</p>' : '');
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
   function lineBox(ph) {

@@ -234,5 +234,100 @@
   "journal-q1": 16,
   "journal-q2": 16,
   "journal-q3": 24
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the roots mean.",
+    "Play the game: tap a root, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Tap every sentence containing a homophone error.",
+    "In the box, fix one and tell why."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Tap every homophone error.",
+    "In the box, fix one and tell why."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read the Afterword.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the Check your list boxes.",
+    "After you read, do the Courage Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Write your reflection.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ],
+ "virtue": {
+  "kind": "meter",
+  "title": "The courage meter",
+  "intro": "Think about the Afterword.",
+  "moment": "Lois Lowry says Annemarie is made up, but the rescue is real. Nearly seven thousand Jewish people were smuggled across the sea to Sweden. The Danes hid them, fed them, and helped them to safety.",
+  "ask": "How much does it change the story to know this really happened? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "Knowing it really happened…",
+  "take": "One way to see it: a lot. Lowry writes about “the courage and integrity of the Danish people.”",
+  "kicker": "Courage Watch · after you read",
+  "icon": "🛡️",
+  "name": "courage"
  }
 }
