@@ -1,0 +1,285 @@
+{
+ "connector": "Chapter 15 ended with the Civil War beginning. Harriet watched soldiers march off singing “John Brown’s Body” and decided she would join the Union Army somehow. In Chapter 16 she sails south. Notice which moments Sterling gives whole pages to, and which get one line.",
+ "writingFocus": "Elaborate w/ Facts",
+ "dol": {
+  "a": {
+   "raw": "the ship sailed slowly up the river harriet watched more closely than the lieutenant",
+   "fixed": "<strong>The</strong> ship sailed slowly up the river<strong>.</strong> <strong>Harriet</strong> watched more closely than the lieutenant<strong>.</strong>",
+   "why": "Capital T starts the sentence; a period ends the first sentence; capital H on Harriet. Slowly is a plain adverb; more closely compares how two people watched."
+  },
+  "b": {
+   "raw": "general hunter paced faster as he talked harriet listened more carefully than ever",
+   "fixed": "<strong>General Hunter</strong> paced faster as he talked<strong>.</strong> <strong>Harriet</strong> listened more carefully than ever<strong>.</strong>",
+   "why": "Capital G and H on General Hunter (a title with a name); a period ends the first sentence; capital H on Harriet. Faster and more carefully are comparative adverbs."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and tell which job Harriet seems to care about most.",
+  "journal-q2": "… and use one thing the General says.",
+  "journal-q3": "… and name one thing Sterling keeps short or leaves out."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "An elevator lifts you up to a higher floor. Which root means lift?",
+   "why": "lev means lift: e + lev + ate = lift up."
+  },
+  "fill2": {
+   "h1": "A lever is a bar you push down to lift something heavy. Which root means lift?",
+   "why": "lev means lift: lev + er = a tool for lifting."
+  },
+  "fill3": {
+   "h1": "When you stand against something and won’t give in, which root means stand?",
+   "why": "sist means stand: re + sist = stand against."
+  },
+  "fill4": {
+   "h1": "To keep standing through hard times and never quit. Which root means stand?",
+   "why": "sist means stand: per + sist = stand through, keep going."
+  }
+ },
+ "notes": {
+  "wgrd": "An author also shows her perspective by what she puts in and what she leaves out. The moments she spends whole pages on are the moments she thinks matter most.",
+  "vocab": [
+   [
+    "elevate",
+    "To lift up; to raise to a higher level."
+   ],
+   [
+    "resist",
+    "To stand against; to refuse to give in."
+   ],
+   [
+    "persist",
+    "To keep going; to refuse to stop."
+   ],
+   [
+    "abolitionist",
+    "A person who worked to end (abolish) slavery."
+   ]
+  ],
+  "wordParts": "lev means “lift” and sist means “stand”: elevate, lever, resist, persist.",
+  "grammar": "A comparative adjective describes a noun (a faster horse). A comparative adverb describes a verb (the horse ran faster). Ask what each comparing word describes.",
+  "spelling": "In a long word, one syllable gets the stress and is said loud and clear. A vowel in a quiet syllable often fades to a lazy “uh,” the schwa: ab·o·LI·tion. To spell it, find a related word where that syllable is stressed: a·BOL·ish."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Where the pages go",
+   "intro": "As you read Ch. 16, sort the moments.",
+   "fields": [
+    {
+     "label": "Long parts (a page or more)",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "Short parts (a line or two)",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "What the long parts tell me Sterling cares about",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 24,
+  "journal-q2": 24,
+  "journal-q3": 16
+ },
+ "wordgame": {
+  "type": "quilt",
+  "strand": "Morphology",
+  "kicker": "Sew the Quilt",
+  "h": "The quilt grows",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. Ask what each word is about: lifting, or standing?",
+  "why": {
+   "icon": "🧵",
+   "q": "Why a quilt?",
+   "t": "At the end of Chapter 16, in the camp outside Beaufort, a woman pieces together an American flag from scraps of old clothing and says, “Our time is coming.” <b>lev</b> means <i>lift</i>, and <b>sist</b> means <i>stand</i>. Each right word sews one patch. Four each lesson, until the quilt is finished."
+  },
+  "meanings": {
+   "lev": "lift",
+   "sist": "stand"
+  },
+  "winDay": "Four more patches are sewn in. The next lesson’s words add more.",
+  "win": "The quilt is finished, and a North Star is stitched across its middle. <b>lev</b> = lift, <b>sist</b> = stand."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-23-2-welcome",
+   "label": "Marcus’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-23-2-read",
+   "label": "Marcus · before you read"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-23-2-grammar",
+   "label": "Marcus · adjective or adverb?"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hey, it’s Marcus. The Civil War has started, and Harriet won’t sit it out. Chapter 16 takes her south to Beaufort, South Carolina, where thousands of people have just escaped to the Union army. Today’s question: what can Harriet do there that nobody else can?",
+  "read": "Notice where Sterling spends her pages. Some moments get a whole page, and some get one line. Watch Harriet’s talk with General Hunter, and listen for a story about a snake. Then walk the camp at night with her. On my tours, people always ask about the book those kids were reading.",
+  "grammar": "Faster can describe a horse, or it can describe how the horse runs. When it describes a thing, it’s an adjective. When it tells how someone did something, it’s an adverb. So don’t just spot the comparing words. Ask what each one is describing."
+ },
+ "navFixes": true,
+ "lens": true,
+ "virtue": {
+  "kind": "sort",
+  "title": "Moving freedom forward?",
+  "yes": "Moving freedom forward",
+  "no": "Holding it back",
+  "intro": "In Chapter 16, thousands of people have escaped to the Union army in Beaufort. Read each moment. Tap Moving freedom forward or Holding it back.",
+  "items": [
+   {
+    "t": "Mr. Lincoln won’t let escaped slaves join the army. He is afraid of losing Maryland and Kentucky.",
+    "ok": false,
+    "why": "While he waits, the people in Beaufort are called contrabands of war, not free men."
+   },
+   {
+    "t": "General Hunter forms the First South Carolina regiment from freed men.",
+    "ok": true,
+    "why": "Men who were enslaved now drill as soldiers, ready to fight for freedom."
+   },
+   {
+    "t": "By the firelight, a woman slowly spells aloud, “Cat, bat, pat.”",
+    "ok": true,
+    "why": "Learning to read is a freedom slavery tried to keep from her."
+   },
+   {
+    "t": "The soldiers are promised pay like the white soldiers, but the money never comes.",
+    "ok": false,
+    "why": "Without pay, a soldier with hungry children is only ‘half free.’"
+   },
+   {
+    "t": "Harriet tells the General the war can’t be won by half measures.",
+    "ok": true,
+    "why": "She is pushing the Union to set the slaves free."
+   }
+  ],
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
+ },
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the roots mean.",
+    "Play the game: tap a root, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read each sentence, guess what the word means, then tap the card to check.",
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the paragraph.",
+    "Tap only the comparing words that describe a verb (not a noun).",
+    "In the box, pick one you tapped and one you left. Tell what each one describes."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the paragraph.",
+    "Tap every word where the stress is not on the first syllable.",
+    "In the box, pick one you tapped and tell what it is doing."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 16.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the note boxes.",
+    "After you read, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Make your facts specific.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ]
+}

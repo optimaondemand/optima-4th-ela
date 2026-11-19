@@ -1,0 +1,282 @@
+{
+ "connector": "Chapter 16 ended at a campfire, with a woman sewing a flag from scraps and saying, “Our time is coming.” In Chapter 17 those words come back again and again. Imagine a Union officer telling this chapter, and notice what Sterling keeps that he might leave out.",
+ "writingFocus": "Elaborate w/ Facts",
+ "dol": {
+  "a": {
+   "raw": "the women sewed faster than before harriet baked pies more often for the soldiers",
+   "fixed": "<strong>The</strong> women sewed faster than before<strong>.</strong> <strong>Harriet</strong> baked pies more often for the soldiers<strong>.</strong>",
+   "why": "Capital T starts the sentence; a period ends the first sentence; capital H on Harriet. Faster and more often are comparative adverbs."
+  },
+  "b": {
+   "raw": "on january 1 1863 the people sang louder than ever harriet spoke last",
+   "fixed": "<strong>On January 1, 1863,</strong> the people sang louder than ever<strong>.</strong> <strong>Harriet</strong> spoke last<strong>.</strong>",
+   "why": "Capital O starts the sentence; capital J on January; a comma after the day and after the year; a period ends the first sentence; capital H on Harriet. Louder compares; last tells when."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote one thing Harriet said about the hospital.",
+  "journal-q2": "… and explain what finally comes true at the end of the chapter.",
+  "journal-q3": "… and quote the last thing Harriet says in the chapter."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 2
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "Medicine can lift a pain away. Which root means lift?",
+   "why": "lev means lift: al + lev + iate = lift away, make lighter."
+  },
+  "fill2": {
+   "h1": "A magician seems to make someone rise into the air. Which root means lift?",
+   "why": "lev means lift: lev + itate = rise into the air."
+  },
+  "fill3": {
+   "h1": "If you stand firm and won’t back down, which root means stand?",
+   "why": "sist means stand: in + sist = stand firm on a point."
+  },
+  "fill4": {
+   "h1": "A helper stands with you. Which root means stand?",
+   "why": "sist means stand: as + sist = stand with, help."
+  }
+ },
+ "notes": {
+  "wgrd": "Imagine the same events told by someone else: a soldier, a nurse, an officer. Whatever that teller would change or leave out shows you the choices your author made.",
+  "vocab": [
+   [
+    "elevate",
+    "To lift up; to raise to a higher level."
+   ],
+   [
+    "resist",
+    "To stand against; to refuse to give in."
+   ],
+   [
+    "persist",
+    "To keep going; to refuse to stop."
+   ],
+   [
+    "abolitionist",
+    "A person who worked to end (abolish) slavery."
+   ]
+  ],
+  "wordParts": "lev means “lift” and sist means “stand”: elevate, lever, resist, persist.",
+  "grammar": "Editing day. Leave correct comparisons alone. Fix the two mistakes: doubling up (more louder) and an adjective doing an adverb’s job (moved quicker).",
+  "spelling": "In a long word, one syllable gets the stress and is said loud and clear. A vowel in a quiet syllable often fades to a lazy “uh,” the schwa: ab·o·LI·tion. To spell it, find a related word where that syllable is stressed: a·BOL·ish."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Another teller",
+   "intro": "Pick one scene from Ch. 17.",
+   "fields": [
+    {
+     "label": "Who else could tell it",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "What they would leave out or change",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "So Sterling’s perspective is …",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 24,
+  "journal-q2": 16,
+  "journal-q3": 24
+ },
+ "wordgame": {
+  "type": "quilt",
+  "strand": "Morphology",
+  "kicker": "Sew the Quilt",
+  "h": "The last four patches",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. Ask what each word is about: lifting, or standing?",
+  "why": {
+   "icon": "🧵",
+   "q": "Why a quilt?",
+   "t": "At the end of Chapter 16, in the camp outside Beaufort, a woman pieces together an American flag from scraps of old clothing and says, “Our time is coming.” <b>lev</b> means <i>lift</i>, and <b>sist</b> means <i>stand</i>. Each right word sews one patch. Four each lesson, until the quilt is finished."
+  },
+  "meanings": {
+   "lev": "lift",
+   "sist": "stand"
+  },
+  "winDay": "Four more patches are sewn in. The next lesson’s words add more.",
+  "win": "The quilt is finished, and a North Star is stitched across its middle. <b>lev</b> = lift, <b>sist</b> = stand."
+ },
+ "ft": {
+  "songsIntro": "On January 1, 1863, a crowd gathers in a grove of live oaks outside Beaufort to hear Mr. Lincoln’s proclamation read aloud. Nobody cheers. Then one voice starts to sing, a voice “which had been heard before, on lonely paths in the woods under the North Star.”",
+  "songs": [
+   {
+    "title": "My Country, ’Tis of Thee",
+    "lines": [
+     "My country, ’tis of thee,",
+     "Sweet land of liberty,",
+     "Of thee I sing.",
+     "Land where my fathers died!",
+     "Land of the Pilgrims’ pride!",
+     "From every mountainside",
+     "Let freedom ring!"
+    ],
+    "source": "Words by Samuel Francis Smith, 1831 · public domain",
+    "heardBy": "What the song usually meant",
+    "heard": "A song about America that people sang on the Fourth of July. For most of the people in the grove, the “land of liberty” in the song had never included them.",
+    "meant": "This morning, for the first time, the song could be theirs too. When the singing stops, Harriet says, “This is the first day we have ever had a country.”",
+    "q": "Harriet sang this song on the day of the proclamation. Why might the words feel different to her that morning?",
+    "a": "The country had kept her people enslaved. Now its President promised them freedom, so for the first time the song was about them too."
+   }
+  ]
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-23-4-welcome",
+   "label": "Marcus’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-23-4-read",
+   "label": "Marcus · before you read"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-23-4-grammar",
+   "label": "Marcus · editing day"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hey, it’s Marcus. Chapter 17 is called Our Time Is Coming. Somebody says those words at the end of Chapter 16, and now Sterling keeps bringing them back. Today’s question: what does it feel like to be this close to something you’ve waited your whole life for?",
+  "read": "Imagine a Union officer telling this chapter instead. What would he skip? Sterling keeps the small things: ice water in a basin, gingerbread for sale, herb tea for a fever ward. Then comes the first day of 1863. Listen to the very last thing Harriet says. It’s my favorite line in the whole book.",
+  "grammar": "Editing day. Some comparing words are already right, so leave them alone. Look for two mistakes. One is doubling up, like more louder. The other is an adjective doing an adverb’s job, like moved quicker. Fix those, then read the sentence out loud to check."
+ },
+ "navFixes": true,
+ "lens": true,
+ "virtue": {
+  "kind": "meter",
+  "title": "The freedom meter",
+  "intro": "Think about the last pages of Chapter 17.",
+  "moment": "On January 1, 1863, a doctor reads the President’s proclamation in a grove outside Beaufort. The crowd sings “My country, ’tis of thee.” Harriet says, “This is the first day we have ever had a country.”",
+  "ask": "How free do the people in the grove feel that morning? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "They feel this free because…",
+  "take": "One way to see it: Harriet calls it the first flag “which promised us anything.” A promise is a beginning, not the end of the fight.",
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
+ },
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the roots mean.",
+    "Play the game: tap a root, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read each sentence, guess what the word means, then tap the card to check.",
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Tap every sentence where the comparing word is wrong.",
+    "In the box, fix one and tell why."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Tap the misspelled words.",
+    "In the box, fix one and tell why."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 17.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the note boxes.",
+    "After you read, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Fully elaborate one body paragraph.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ]
+}
