@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 23 Family Guide · Freedom Train Ch. 15–17 · 4th Grade ELA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+.b-rose{background:#FDEEEE;border-radius:12px;padding:14px 16px;} .b-rose .box-label{color:#A8434A;}
+
+.p-museum{background:var(--sky-bg);color:#1F6F8C;}
+.p-extra{background:var(--green-bg);color:#1F8452;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.extras .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.essay{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.essay span{font-size:15px;font-weight:800;border-radius:999px;padding:4px 12px;background:var(--paper);border:1px solid var(--line);color:var(--muted);}
+.essay span.now{background:var(--gold-bg);border-color:#F5E6C8;color:#9A6C14;}
+.essay span.done{background:var(--green-bg);border-color:#CDEFDB;color:#1F8452;}
+@media (max-width:720px){.extras{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 4th Grade ELA</div>
+      <h1>Week 23: Our Time Is Coming</h1>
+      <div class="sub"><em>Freedom Train</em> by Dorothy Sterling, Chapters 15–17</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">Ch. 15–17</span>
+        <span class="chip">Check-In at week’s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('https://optimaondemand.github.io/optima-4th-ela/assets/covers/ft.jpg');background-position:center 35%;" role="img" aria-label="Cover of Freedom Train by Dorothy Sterling"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>🔊</span><strong>Two buttons at the top:</strong> <strong>Read aloud</strong> opens the page reader (with a speed control), and <strong>Lesson details</strong> shows the unit, week, chapter and standards.</li>
+      <li><span>📝</span><strong>Every answer goes on the page.</strong> There’s a box for each one, including the Daily Oral Language sentence, and a word count under it shows how much is expected.</li>
+      <li><span>▶️</span><strong>Start here:</strong> a gold drawer at the very top of every page holds a one-minute video on how to use the lesson.</li>
+      <li><span>👆</span><strong>One step at a time:</strong> each activity opens with a short “What to do” list, and the page shows one step at a time. Tap 👆 Next to move on, or ◂ Back to look again.</li>
+      <li><span>🔍</span><strong>Reading lens:</strong> before reading, your student picks one of three lenses to read through. A bookmark in the reading box keeps it in view, and one line at the end of the questions asks what it helped them notice.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📓</span><strong>Download your ELA journal for the day</strong> at the bottom of the Assignment tab saves everything as one page. Use it (or Copy) to <strong>submit in Canvas</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the book nearby.</li>
+    </ul>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>Harriet’s fame spreads across the North. She speaks at antislavery meetings, helps a crowd rescue a captured runaway named Charles Nalle, and plans with John Brown, who calls her “General Tubman.” Then the Civil War begins. Harriet sails south to Beaufort, South Carolina, where thousands of people have escaped to the Union army. She nurses the sick, teaches freedwomen to earn a living, and is there on January 1, 1863, when the Emancipation Proclamation is read aloud. In Writer’s Workshop, your student makes the research report stronger with more facts, exact names and numbers, and a quote.</p>
+    <div class="box b-rose" style="margin-bottom:12px;"><div class="box-label">💛 A heads-up for families</div>In Chapter 15, a fight breaks out in Troy, New York, when a crowd frees Charles Nalle from the police: people are clubbed, and one man is struck with a hatchet. John Brown leads an armed raid on Harpers Ferry and is hanged. In Chapter 17, Harriet nurses soldiers with wounds, fever and smallpox. The book uses the words of its time, such as “master,” “contrabands” and “Negro.” Reading together, or checking in after each chapter, helps. The full list is on the <a href="parent-guide-ft-unit.html" style="color:#A8434A;font-weight:700;">unit guide</a>.</div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>The author’s perspective.</strong> Your student looks at how Dorothy Sterling feels about Harriet: the words she chooses, the moments she gives the most pages to, the difference between a fact and her opinion of it, and what another person telling the same story might leave out.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>Free, but not yet all the way free.</strong> In Beaufort, people who have escaped say “We’s all free,” but a soldier says they are only half free until they have land and fair pay. On January 1, 1863, freedom is promised.</div>
+    </div>
+    <p class="quote">“This is the first day we have ever had a country.”<small>Harriet, Chapter 17</small></p>
+  </section>
+
+  <!-- DAY BY DAY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">23.1<span>Day 1</span></td>
+          <td><span class="ch">Chapter 15 · “The Most of a Man”</span><br>Harriet speaks at meetings across the North and helps a crowd free Charles Nalle in Troy. John Brown plans with her in Canada, calls her General Tubman, and writes that she is “the most of a man” he ever met. Brown’s raid on Harpers Ferry fails, and soon the Civil War begins.<br><span class="pill p-guide">Guide: Marcus</span><span class="pill p-extra">Copia: Say It Three Ways</span><span class="pill p-extra">Freedom Watch</span></td>
+          <td>How does Sterling want you to see Harriet, and how can you tell?</td>
+        </tr>
+        <tr>
+          <td class="day-n">23.2<span>Day 2</span></td>
+          <td><span class="ch">Chapter 16 · Department of the South</span><br>Harriet sails to Beaufort, South Carolina. She tells General Hunter the war can’t be won “by half measures,” with a story about a snake, and he puts her to work with the people who have escaped to the Union lines.<br><span class="pill p-guide">Guide: Marcus</span><span class="pill p-poem">By Heart poem</span><span class="pill p-extra">Freedom Watch</span></td>
+          <td>What can Harriet do in Beaufort that nobody else can?</td>
+        </tr>
+        <tr>
+          <td class="day-n">23.3<span>Day 3</span></td>
+          <td><span class="ch">Chapter 16 again · a close read</span><br>Back to Harriet’s talk with General Hunter, pages 152–155, to sort facts anyone could check from what Sterling believes about them. Then the campfire, where a soldier says they are only half free.<br><span class="pill p-guide">Guide: Marcus</span><span class="pill p-extra">Freedom Watch</span></td>
+          <td>Which parts are facts, and which tell you what Sterling believes?</td>
+        </tr>
+        <tr>
+          <td class="day-n">23.4<span>Day 4</span></td>
+          <td><span class="ch">Chapter 17 · “Our Time Is Coming”</span><br>Harriet nurses the sick, brews herb tea for a fever ward in Florida, and builds a washhouse so freedwomen can earn money. On January 1, 1863, the Emancipation Proclamation is read in a grove outside Beaufort.<br><span class="pill p-guide">Guide: Marcus</span><span class="pill p-poem">By Heart poem</span><span class="pill p-extra">A Song That Changed Its Meaning</span><span class="pill p-extra">Freedom Watch</span></td>
+          <td>What does it feel like to be this close to something you’ve waited your whole life for?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">A passage from Chapter 15, where John Brown writes to his son about Harriet. Your student reads it three times, for accuracy, smoothness and expression, then <strong>records and submits it in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point wrap-up on the week: comparative adverbs, word parts and vocabulary, schwa and stress in long words, reading questions about Sterling’s perspective, and a fact-plus-meaning sentence to write.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words"><div class="word"><b>elevate</b><span>to lift up; to raise to a higher level</span></div><div class="word"><b>resist</b><span>to stand against; to refuse to give in</span></div><div class="word"><b>persist</b><span>to keep going; to refuse to stop</span></div><div class="word"><b>abolitionist</b><span>a person who worked to end slavery</span></div></div>
+    <div class="skills">
+      <div class="box b-sky"><div class="box-label">Word parts</div><strong>lev</strong> means “lift.” <strong>sist</strong> means “stand.”<span class="eg">elevate · lever · resist · persist</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>Schwa and stress.</strong> In a long word, a vowel in a quiet syllable fades to “uh.” To spell it, say a related word where that syllable is loud.<span class="eg">abolition → abolish · definition → define</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>Comparative adverbs</strong> compare how two things were done. Short ones take -er; most -ly ones take more. Never both.<span class="eg">ran faster · listened more carefully · not “more louder”</span></div>
+    </div>
+  </section>
+
+  <!-- EXTRAS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✨</span><h2>New in the Lessons</h2></div>
+    <p>The third-quarter lesson pages work the same way as last week. This week’s extras:</p>
+    <div class="extras">
+      <div class="box b-gold"><div class="box-label">⭐ Freedom Watch, after reading</div>A short job at the end of the Reading tab: one sentence on Day 1, a sort on Day 2 (“moving freedom forward, or holding it back?”), a log on Day 3, and a slider on Day 4. Every moment in it is taken from the book.</div>
+      <div class="box b-sky"><div class="box-label">🔍 Reading lens</div>Before reading, your student picks one of three lenses, such as “Pick the event” or “Ask why,” and reads through it. One line at the end of the chapter questions asks what the lens helped them notice.</div>
+      <div class="box b-plum"><div class="box-label">🧵 Sew the Quilt</div>The word-parts game goes on with new roots, <strong>lev</strong> (lift) and <strong>sist</strong> (stand). It is tied to the flag a woman in the Beaufort camp pieces together from scraps of old clothing in Chapter 16. Four patches a day.</div>
+      <div class="box b-green"><div class="box-label">🎵 A Song That Changed Its Meaning</div>On Day 4, the card shows “My Country, ’Tis of Thee,” the song the crowd sings on January 1, 1863. Most of them had never been included in its “land of liberty.” That morning, Harriet says, “This is the first day we have ever had a country.”</div>
+      <div class="box b-rose"><div class="box-label">🎧 Marcus</div>Two clips from Marcus in every lesson, a welcome and what to notice before reading, plus a short film on the Word Study tab about the day’s word work.</div>
+      <div class="box b-sky"><div class="box-label">✎ Copia: Say It Three Ways</div>On Day 1, your student rewrites “Harriet told her story to the crowd” three ways: a new opening, a stronger verb, and an added detail.</div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Your Student’s Research Report</h2><span class="tag">Writer’s Workshop</span></div>
+    <div class="essay"><span class="done">Wk 20 · Choose a question</span><span class="done">Wk 21 · Gather notes</span><span class="done">Wk 22 · Draft</span><span class="now">Wk 23 · Add facts and examples</span><span>Wk 24 · Revise and edit</span><span>Wk 25 · Publish and present</span></div>
+    <p>This week your student makes the draft stronger, one move a day. Day 1: add one more fact to each body paragraph. Day 2: swap vague words for exact names, dates and numbers. Day 3: add a short quote, set up and explained (a “quote sandwich”). Day 4: rewrite one body paragraph with all three moves. Sam, the example writer, uses songs Harriet really sang in <em>Freedom Train</em>, with page numbers. Each day’s work goes into <strong>My Research Report</strong>.</p>
+  </section>
+
+  <!-- BY HEART -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>By Heart: the Unit Poem</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">It is not a carol of joy or glee,<br>But a prayer that he sends from his heart’s deep core,<br>But a plea, that upward to Heaven he flings—<br>I know why the caged bird sings!<small>Paul Laurence Dunbar, “Sympathy” (1899), the last four lines</small></div>
+      <div><p>On Days 2 and 4 your student practices the same four lines, with a little less help on the screen each time. The whole poem, read aloud, is still a tap away.</p><p><strong>How to help:</strong> Ask your student to say the lines to you without looking. Then ask how the caged bird’s song is like the song the crowd sings on January 1, 1863, and how it is different.</p></div>
+    </div>
+  </section>
+
+  <!-- ASK AT HOME -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than “How was school?”</span></div>
+    <ol class="ask"><li><span class="q">What did John Brown call Harriet, and why?</span><span class="listen">Listen for: “General Tubman.” He was so impressed by her courage and leadership that he wrote she was “the most of a man” he ever met.</span></li><li><span class="q">How did Harriet help free Charles Nalle?</span><span class="listen">Listen for: she slipped past the guards, sent boys to ring the fire bell for a bigger crowd, and held on to Nalle through the fight until he got away to Canada.</span></li><li><span class="q">What was Harriet’s snake story about?</span><span class="listen">Listen for: treating each bite won’t help while the snake keeps biting. The snake is slavery; Mr. Lincoln has to set the slaves free.</span></li><li><span class="q">Why did a soldier say they were only “half free”?</span><span class="listen">Listen for: they had escaped, but they still had no land to farm and no soldier’s pay.</span></li><li><span class="q">What happened on January 1, 1863?</span><span class="listen">Listen for: the Emancipation Proclamation was read aloud, everyone sang “My country, ’tis of thee,” and Harriet said it was the first day they ever had a country.</span></li><li><span class="q">How does Dorothy Sterling feel about Harriet? How can you tell?</span><span class="listen">Listen for: she admires her, and a word or moment from the book that shows it.</span></li></ol>
+  </section>
+
+  <!-- TURN IN + TRY AT HOME -->
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check"><li><strong>Each lesson:</strong> 3 chapter questions plus word-study and writing responses, submitted in Canvas</li><li><strong>Research report:</strong> one stronger body paragraph a day: an extra fact, exact details, a quote, then all three</li><li><strong>Fluency:</strong> a recording of a passage from Chapter 15</li><li><strong>Check-In:</strong> at the end of the week</li></ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> chapter answers that say what Sterling thinks of Harriet and point to the exact word or moment that shows it.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check"><li><strong>Find Beaufort, South Carolina</strong> on a map, and trace Harriet’s trip there by sea from New York.</li><li><strong>Read the first lines of the Emancipation Proclamation</strong> together, and ask your student who it freed and who it did not free yet.</li><li><strong>Sing “My Country, ’Tis of Thee”</strong> and talk about why it sounded different to the crowd in Beaufort.</li></ul>
+    </section>
+  </div>
+
+  <!-- NEED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong><em>Freedom Train</em></strong> by Dorothy Sterling · <strong>A device that records audio</strong> for the fluency reading</p>
+  </section>
+
+  <!-- NEXT WEEK -->
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 24</h2></div>
+    <p><strong><em>Freedom Train</em>, Chapters 18–20.</strong> Harriet scouts behind enemy lines and guides the Union gunboats up the Combahee River, the war ends, and she goes home to Auburn. Your student revises and edits the research report, and the unit ends with a look back at the whole book.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-ft-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole Freedom Train unit →</a><br><br>Optima Academy Online · 4th Grade ELA · Week 23 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+</body>
+</html>
