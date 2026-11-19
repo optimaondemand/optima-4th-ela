@@ -1,0 +1,276 @@
+{
+ "connector": "At the end of Chapter 9, Harriet stood in Philadelphia, free and earning her own money. But her family was still in Maryland. She told William Still she would go down, like Moses into Egypt, to lead them out. In Chapter 10, look for what makes each trip happen, and what each trip leads to.",
+ "writingFocus": "Organize + Draft",
+ "dol": {
+  "a": {
+   "raw": "harriet walked carefully south her steps were silent and her heart beat loudly",
+   "fixed": "<strong>Harriet</strong> walked carefully south<strong>.</strong> <strong>Her</strong> steps were silent<strong>,</strong> and her heart beat loudly<strong>.</strong>",
+   "why": "Capital H on Harriet; a period ends the first sentence; capital H starts the second; a comma before and joins two complete thoughts. Carefully and loudly are adverbs that tell how."
+  },
+  "b": {
+   "raw": "mary ann sailed quietly up the bay harriet waited anxiously in baltimore",
+   "fixed": "<strong>Mary Ann</strong> sailed quietly up the <strong>Bay</strong><strong>.</strong> <strong>Harriet</strong> waited anxiously in <strong>Baltimore</strong><strong>.</strong>",
+   "why": "Capital M and A on Mary Ann (a name); capital B on the Bay, the name of a place; a period ends the first sentence; capital H on Harriet; capital B on Baltimore (a city). Quietly and anxiously are adverbs that tell how."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and name one person Harriet goes back for in Chapter 10.",
+  "journal-q2": "… and add a second effect that came from the first one.",
+  "journal-q3": "… and explain where Harriet first sang the question in the title, back in Chapter 3."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "When you say your feelings out loud, you push them out of you. Which root means push?",
+   "why": "press means push: ex + press = push out."
+  },
+  "fill2": {
+   "h1": "Pressing a stamp into wax leaves a mark. Which root means push?",
+   "why": "press means push: im + press = push in, leave a mark."
+  },
+  "fill3": {
+   "h1": "A box keeps everything together inside it. Which root means hold?",
+   "why": "tain means hold: con + tain = hold together."
+  },
+  "fill4": {
+   "h1": "If you keep something and won’t let it go, which root means hold?",
+   "why": "tain means hold: re + tain = hold back, keep."
+  }
+ },
+ "copia": {
+  "seed": "Harriet <b data-verb>led</b> her people north.",
+  "eg": [
+   "Through the snow on Christmas Eve, Harriet led her people north.",
+   "Harriet <i>guided</i> her people north.",
+   "Harriet led her people north, from the swamp to John Hunn’s kitchen."
+  ]
+ },
+ "notes": {
+  "wgrd": "In history, things happen for reasons. Name the event, look back for what made it happen, and say it with because: Harriet did this because …",
+  "vocab": [
+   [
+    "abolition",
+    "The act of ending something, especially slavery."
+   ],
+   [
+    "conductor",
+    "A guide on the Underground Railroad; or, the person who runs a train."
+   ],
+   [
+    "obtain",
+    "To get or acquire something."
+   ],
+   [
+    "express",
+    "To make a thought, feeling, or idea known to others."
+   ]
+  ],
+  "wordParts": "press means “push” and tain means “hold”: express, impress, contain, obtain.",
+  "grammar": "An adverb tells more about a verb: how, when, or where. Many end in -ly, like slowly. Some don’t, like again and outside.",
+  "spelling": "The suffixes -ive, -al, and -ic turn a word into a describing word: act → active, music → musical, hero → heroic. Look at the base word first. Sometimes a letter drops, like a silent e."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Because …",
+   "intro": "Pick one trip in Ch. 10. Write what made it happen, and what happened because of it.",
+   "fields": [
+    {
+     "label": "The cause",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "The effect",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "Say it with because",
+    "hint": "Harriet … because …"
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 24,
+  "journal-q2": 24,
+  "journal-q3": 16
+ },
+ "wordgame": {
+  "type": "quilt",
+  "strand": "Morphology",
+  "kicker": "Sew the Quilt",
+  "h": "The first four patches",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. Ask what each word is about: pushing, or holding?",
+  "why": {
+   "icon": "🧵",
+   "q": "Why a quilt?",
+   "t": "In Chapter 2, Harriet’s mother, Old Rit, finishes a patchwork quilt, the family’s only treasure. Years later, in Chapter 12, Harriet tucks that same quilt over her parents’ legs as she drives them out of slavery. <b>press</b> means <i>push</i>, and <b>tain</b> means <i>hold</i>. Each right word sews one patch into the quilt. Four each lesson, until the quilt is finished."
+  },
+  "meanings": {
+   "press": "push",
+   "tain": "hold"
+  },
+  "winDay": "Four more patches are sewn in. The next lesson’s words add more.",
+  "win": "Old Rit’s quilt is finished, and a North Star is stitched across its middle. <b>press</b> = push, <b>tain</b> = hold."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-22-1-welcome",
+   "label": "Marcus’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-22-1-read",
+   "label": "Marcus · before you read"
+  },
+  "morphology": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-22-1-morphology",
+   "label": "Marcus · the word game"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hey, it’s Marcus. Last time, Harriet stood in Philadelphia, free, and said she would go back for her people. Chapter 10 is called Why Not Every Man? It comes from a song she sang in the fields as a girl. Today’s question: once you’re free, what do you owe the people still waiting?",
+  "read": "Chapter 10 moves fast, one trip after another. Keep a list: who Harriet brings out each time, and what goes wrong. Watch a cold river, a door that should open and doesn’t, and a man talking to himself near a swamp. Ask what made each trip happen.",
+  "morphology": "New roots this week. One means push. One means hold. Think of a printing press pushing ink onto paper, or a jar that holds jam. Every word in the quilt is pushing something or holding something. Ask which one, then sew."
+ },
+ "navFixes": true,
+ "lens": true,
+ "virtue": {
+  "kind": "line",
+  "title": "Why isn’t it enough?",
+  "intro": "In Chapter 10, Harriet is free, but she keeps going back into Maryland: for her sister Mary Ann, her brother James, and William Henry. In two years she leads forty people out. She tells William Still, “My people must go free.”",
+  "line": "Write one sentence: Why isn’t Harriet’s own freedom enough for her?",
+  "placeholder": "Harriet’s freedom isn’t enough because…",
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
+ },
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the words. Guess what the shared root means.",
+    "Tap See if you were right.",
+    "Play the game: tap a root, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read each sentence, guess what the word means, then tap the card to check.",
+    "Play Quick Match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the sentences about Chapter 10.",
+    "Tap every adverb.",
+    "In the box, write the rule in your own words."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the sentences about Chapter 10.",
+    "Tap every word ending in -ive, -al or -ic.",
+    "In the box, write the rule in your own words."
+   ]
+  },
+  {
+   "find": "Copia",
+   "steps": [
+    "Read the sentence.",
+    "Write it three new ways, one box at a time.",
+    "Stuck? Tap Show one way."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 10.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the note boxes.",
+    "After you read, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus. Then read how Sam did it.",
+    "Build your thesis.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ]
+}
