@@ -1,0 +1,313 @@
+{
+ "connector": "Chapter 19 ended with Harriet hurt in a baggage car, on her way home from the war she helped win. In Chapter 20 she goes home to Auburn and lives for almost fifty more years. Pick one detail and build the bridge: this detail shows ___ about Harriet, because ___.",
+ "writingFocus": "Revise + Edit",
+ "dol": {
+  "a": {
+   "raw": "harriet sold vegetables from door to door in auburn",
+   "fixed": "<strong>Harriet</strong> sold vegetables from door to door in <strong>Auburn</strong><strong>.</strong>",
+   "why": "Capital H on Harriet; capital A on Auburn (a city); a period ends it. From door, to door, and in Auburn are prepositional phrases."
+  },
+  "b": {
+   "raw": "a package from england came to the house on south street",
+   "fixed": "<strong>A</strong> package from <strong>England</strong> came to the house on <strong>South Street</strong><strong>.</strong>",
+   "why": "Capital A starts the sentence; capital E on England (a country); capital S on South Street (the name of a street); a period ends it. From England, to the house, and on South Street are prepositional phrases."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and name the people she took into her home.",
+  "journal-q2": "… and explain where the twelve hundred dollars from Mrs. Bradford’s book went.",
+  "journal-q3": "… and quote the message she sent to the women working for the vote."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 2
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "To pay someone back for what they lost. Which root means pay or weigh out?",
+   "why": "pens means pay: com + pens + ate = pay back."
+  },
+  "fill2": {
+   "h1": "Someone who trusts in herself. Which root means trust?",
+   "why": "fid means trust: con + fid + ent = trusting in yourself."
+  },
+  "fill3": {
+   "h1": "To pick the best ones out of a group. Which root means choose?",
+   "why": "lect means choose: se + lect = choose apart, pick carefully."
+  },
+  "fill4": {
+   "h1": "Voters pick their leaders. Which root means choose?",
+   "why": "lect means choose: e + lect = choose by voting."
+  },
+  "g4w24cf1": {
+   "h1": "When did they start out? Which word in the bank tells the time ahead of sunrise?",
+   "why": "before tells when: before sunrise."
+  },
+  "g4w24cf2": {
+   "h1": "The papers were under the floorboards. Which bank word means under?",
+   "why": "beneath tells where: beneath the floorboards."
+  },
+  "g4w24cf3": {
+   "h1": "She walked in the direction of the light. Which bank word means in the direction of?",
+   "why": "toward tells where she walked: toward the lantern."
+  },
+  "g4w24cf4": {
+   "h1": "The wagon went from one side of the field to the other.",
+   "why": "across tells where: across the frozen field."
+  },
+  "s4w24cf1": {
+   "h1": "run has a short u and ends in one consonant.",
+   "why": "Double the n: running."
+  },
+  "s4w24cf2": {
+   "h1": "hope ends in a silent e.",
+   "why": "Drop the e: hoping."
+  },
+  "s4w24cf3": {
+   "h1": "happy ends in a consonant and y.",
+   "why": "Change y to i: happiest."
+  },
+  "s4w24cf4": {
+   "h1": "carry ends in a consonant and y.",
+   "why": "Change y to i: carried."
+  }
+ },
+ "notes": {
+  "wgrd": "A detail turns into evidence when you say how it proves your idea. Build the bridge: this detail shows ___ about Harriet, because ___.",
+  "vocab": [
+   [
+    "centenarians",
+    "People who are 100 years old or older."
+   ],
+   [
+    "pension",
+    "Regular payments given to a veteran or retired person."
+   ],
+   [
+    "mortgage",
+    "A loan used to buy property, paid back over time."
+   ],
+   [
+    "temperance",
+    "The movement to reduce or ban alcohol."
+   ]
+  ],
+  "wordParts": "pens = pay or weigh out, fid = trust, lect = choose: pension, confident, select, elect.",
+  "grammar": "Prepositional phrases add detail, but too many in one sentence bury the verb. Keep the ones the reader needs.",
+  "spelling": "Four suffix rules, one year: double the last consonant after a short vowel (run → running), drop the silent e (hope → hoping), and change y to i (happy → happiest, carry → carried). Look at the end of the base word first."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Build the bridge",
+   "intro": "Pick one detail from Ch. 20.",
+   "fields": [
+    {
+     "label": "One detail",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "The bigger idea it serves",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "The bridge",
+    "hint": "This detail shows … about Harriet, because …"
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 32,
+  "journal-q3": 32
+ },
+ "wordgame": {
+  "type": "quilt",
+  "strand": "Morphology",
+  "kicker": "Sew the Quilt",
+  "h": "The last patches",
+  "voice": "Tap a root, then the word it finishes. Or drag the root onto the word. Ask what each word is doing.",
+  "why": {
+   "icon": "🧵",
+   "q": "Why a quilt?",
+   "t": "The last patches of the year. In Chapter 20, Harriet fights for years for a <b>pension</b>, and by the end of the century she is a legend in Auburn. <b>pens</b> means <i>pay</i>, <b>fid</b> means <i>trust</i>, and <b>lect</b> means <i>choose</i>."
+  },
+  "meanings": {
+   "pens": "pay",
+   "fid": "trust",
+   "lect": "choose"
+  },
+  "winDay": "Four more patches are sewn in.",
+  "win": "The quilt is finished, and the North Star is stitched across its middle, the same star Harriet followed north. <b>pens</b> = pay, <b>fid</b> = trust, <b>lect</b> = choose."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-24-3-welcome",
+   "label": "Marcus’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-24-3-read",
+   "label": "Marcus · before you read"
+  },
+  "spelling": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-24-3-spelling",
+   "label": "Marcus · four rules"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hey, it’s Marcus. The war is over, and Harriet goes home to Auburn. Chapter 20 is called The Years of Peace. But you’ll see she never really learns to sit still. Today’s question: what does Harriet keep doing when nobody is watching anymore?",
+  "read": "Pick one small detail as you read, something Harriet does, keeps, or says, and ask what bigger idea it proves. Watch for a package from England, a wheelchair, and a garden. Read the very last sentence slowly. Notice what Sterling puts in the sky.",
+  "spelling": "Here’s the whole year in four words. Running: double the last letter after a short vowel. Hoping: drop the silent e. Happiest and carried: change y to i. Look at the end of the base word first. It tells you which rule fires."
+ },
+ "navFixes": true,
+ "lens": true,
+ "virtue": {
+  "kind": "log",
+  "title": "Freedom log",
+  "intro": "In Chapter 20, Harriet keeps working for freedom for the rest of her life. Tap the moment you think shows it best.",
+  "options": [
+   {
+    "t": "She sells vegetables and chickens to support two freedmen’s schools in the South."
+   },
+   {
+    "t": "She speaks from the same platform as Elizabeth Cady Stanton and Susan B. Anthony for women’s rights."
+   },
+   {
+    "t": "She buys twenty-five acres to make a home for old people who have nowhere else to go."
+   },
+   {
+    "t": "From her bed, she sends a message to the women working for the vote: “stand together.”"
+   }
+  ],
+  "line": "Finish the sentence: This moment shows freedom because…",
+  "placeholder": "This moment shows freedom because…",
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
+ },
+ "todo": [
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the three roots mean.",
+    "Play the game: tap a root, then the word it finishes.",
+    "In Show What You Know, use one of the words in a sentence."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the four words and what they mean.",
+    "Type the right word in each sentence. Each word is used once.",
+    "Tap Check My Work."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the Before and After.",
+    "Type the preposition that fits each sentence. Then tap Check My Work.",
+    "In the box, revise the last sentence by cutting the phrases the reader doesn’t need."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the Before and After.",
+    "Type each word with its suffix. Then tap Check My Work.",
+    "In the box, correct the last line and name the rule behind each fix."
+   ]
+  },
+  {
+   "find": "RWM",
+   "steps": [
+    "Read the last sentence of the book.",
+    "Answer Read like a Reader, then Read like a Writer.",
+    "Write your own sentence in the same pattern."
+   ]
+  },
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 20.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the note boxes.",
+    "After you read, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  }
+ ]
+}

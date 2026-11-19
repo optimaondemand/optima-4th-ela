@@ -1,0 +1,235 @@
+{
+ "connector": "You have read the whole biography, from a little girl asking Daddy Ben about the star “that never moves” to the last page, where the North Star shines again. Today, say in one sentence what the whole book is about, then test it against the beginning, the middle, and the end.",
+ "writingFocus": "Conclusion",
+ "plate": {
+  "src": "plates/ft-ch1.png",
+  "alt": "Daddy Ben points out the North Star to young Harriet outside a cabin in Maryland.",
+  "credit": "From Chapter 1. The same star shines on the book’s last page."
+ },
+ "dol": {
+  "a": {
+   "raw": "from her wheelchair harriet sang songs about the war",
+   "fixed": "<strong>From</strong> her wheelchair <strong>Harriet</strong> sang songs about the war<strong>.</strong>",
+   "why": "Capital F starts the sentence; capital H on Harriet; a period ends it. From her wheelchair and about the war are prepositional phrases."
+  },
+  "b": {
+   "raw": "at dusk the north star shone in the darkening sky",
+   "fixed": "<strong>At</strong> dusk the <strong>North Star</strong> shone in the darkening sky<strong>.</strong>",
+   "why": "Capital A starts the sentence; capital N and S on North Star (the name of one star); a period ends it. At dusk and in the darkening sky are prepositional phrases."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and use one detail from each part of the book: early, middle, and end.",
+  "journal-q2": "… and name three different kinds of freedom from different chapters.",
+  "journal-q3": "… and connect your moment to one other moment in the book."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 3
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 3
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "notes": {
+  "wgrd": "Say the whole book’s idea in one sentence. Check the first pages and the last against it. Gather one detail from early, one from the middle, one from the end.",
+  "vocab": [
+   [
+    "centenarians",
+    "People who are 100 years old or older."
+   ],
+   [
+    "pension",
+    "Regular payments given to a veteran or retired person."
+   ],
+   [
+    "mortgage",
+    "A loan used to buy property, paid back over time."
+   ],
+   [
+    "temperance",
+    "The movement to reduce or ban alcohol."
+   ]
+  ],
+  "wordParts": "pens = pay or weigh out, fid = trust, leg/lect = choose or gather: pension, confident, legend, elect.",
+  "grammar": "Editing day. Cut the prepositional phrases the reader doesn’t need, then read it aloud. You should hear the verb again.",
+  "spelling": "Four suffix rules, one year: double the last consonant after a short vowel (run → running), drop the silent e (hope → hoping), and change y to i (happy → happiest, carry → carried). Look at the end of the base word first."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Early, middle, end",
+   "intro": "Look back across the whole book.",
+   "fields": [
+    {
+     "label": "The whole book in one sentence",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "A detail from early in the book",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "A detail from the middle",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "A detail from the end",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "Does my sentence still fit? What would I change?",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 40,
+  "journal-q2": 32,
+  "journal-q3": 32
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-24-4-welcome",
+   "label": "Marcus’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-24-4-read",
+   "label": "Marcus · looking back"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-24-4-grammar",
+   "label": "Marcus · the editor’s cut"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hey, it’s Marcus. You finished Freedom Train. That’s a whole life, from a little girl asking about a star to a woman the whole country knew. Today’s question: what does Harriet’s life mean, taken all together?",
+  "read": "Today you flip back, not forward. Find one moment from the beginning, one from the middle, and one from the end. Check that all three point to the same big idea. If they don’t, maybe your idea needs to grow. Then hold Chapter 1 and the last page side by side.",
+  "grammar": "Last grammar job: the editor’s cut. Some sentences pile up so many little phrases that the action gets buried. Keep the ones the reader needs. Cut the rest. Then read it out loud. You should hear the verb again."
+ },
+ "navFixes": true,
+ "lens": true,
+ "virtue": {
+  "kind": "meter",
+  "title": "The freedom meter",
+  "intro": "Think about the whole book.",
+  "moment": "A little girl asks Daddy Ben about the star “that never moves.” Years later she crosses into Maryland nineteen times, guides the gunboats up the Combahee, and tells the women working for the vote to “stand together.” On the last page, the North Star is shining again.",
+  "ask": "How much did Harriet change the world around her? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "Harriet changed the world this much because…",
+  "take": "One way to see it: when William Still told her to stay safe, she said, “I must go down, like Moses into Egypt, to lead them out.” She kept going down for the rest of her life.",
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
+ },
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read what the roots mean.",
+    "Play the match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Say what each word means, then tap the card to check.",
+    "Pick one activity from the choice board and write your answer in the box."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Tap every sentence with too many prepositional phrases.",
+    "In the box, fix one and tell what the reader gains."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Tap the misspelled words.",
+    "In the box, fix one and name the rule."
+   ]
+  },
+  {
+   "find": "Look Back",
+   "steps": [
+    "Flip back through your book.",
+    "Find one moment from early in the book and one from late.",
+    "After you look back, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Whole-Book Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use details from anywhere in the book.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus.",
+    "Write your three-move conclusion.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ]
+}

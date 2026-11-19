@@ -1,0 +1,259 @@
+{
+ "connector": "Chapter 18 ended with almost eight hundred people aboard the “Lincoln boats.” In Chapter 19 the war really ends. As you read, sort the details: some show the victory is real, and some show it is not finished yet.",
+ "writingFocus": "Revise + Edit",
+ "dol": {
+  "a": {
+   "raw": "harriet traveled to washington in february of 1865",
+   "fixed": "<strong>Harriet</strong> traveled to <strong>Washington</strong> in <strong>February</strong> of 1865<strong>.</strong>",
+   "why": "Capital H on Harriet; capital W on Washington (a city); capital F on February (a month); a period ends it. To Washington, in February, and of 1865 are prepositional phrases."
+  },
+  "b": {
+   "raw": "three passengers dragged harriet down the aisle into the baggage car",
+   "fixed": "<strong>Three</strong> passengers dragged <strong>Harriet</strong> down the aisle into the baggage car<strong>.</strong>",
+   "why": "Capital T starts the sentence; capital H on Harriet; a period ends it. Down the aisle and into the baggage car are prepositional phrases that tell where."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote what Old Rit or Ben says about pay.",
+  "journal-q2": "… and tell what the Surgeon General appoints her to be.",
+  "journal-q3": "… and explain why Sterling ends the chapter right here."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 1
+  }
+ },
+ "notes": {
+  "wgrd": "Write the chapter’s big idea at the top. List five details. Keep only the ones that point back at your sentence.",
+  "vocab": [
+   [
+    "furlough",
+    "An official leave of absence, especially for a soldier."
+   ],
+   [
+    "reproaches",
+    "Expressions of blame or disapproval."
+   ],
+   [
+    "querulous",
+    "Complaining; grumbling."
+   ],
+   [
+    "matron",
+    "A woman in charge of a household or hospital."
+   ]
+  ],
+  "wordParts": "vict = conquer, liber = free, port = carry, matr = mother: victory, liberty, transport, matron.",
+  "grammar": "A prepositional phrase starts with a preposition (in, on, at, through, past, toward) and ends with a noun. It tells where, when, or how. Find the first word, then the noun that closes the phrase.",
+  "spelling": "Four suffix rules, one year: double the last consonant after a short vowel (run → running), drop the silent e (hope → hoping), and change y to i (happy → happiest, carry → carried). Look at the end of the base word first."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Two piles",
+   "intro": "Sort the details as you read Ch. 19.",
+   "fields": [
+    {
+     "label": "The victory is real",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "The victory is not finished",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "Which pile the last scene belongs in, and why",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 24,
+  "journal-q3": 32
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-24-2-welcome",
+   "label": "Marcus’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-24-2-read",
+   "label": "Marcus · before you read"
+  },
+  "grammar": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-24-2-grammar",
+   "label": "Marcus · little packages"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hey, it’s Marcus. Chapter 19 is called Victory, and the war really does end. But Sterling doesn’t stop at the celebration. Today’s question: what does victory really mean, and who gets to have it?",
+  "read": "Sort your details into two piles as you read: the victory is real, and the victory isn’t finished. Watch Harriet talk with her parents about pay, a hospital that needs cleaning, and a night in Washington the whole country remembers. Then read the train ride slowly. Decide which pile it goes in.",
+  "grammar": "A prepositional phrase is a little package. It starts with a word like in, on, under, or through, and it ends with a noun. In the baggage car. Through the woods. Find the first word, then find the noun that closes the package."
+ },
+ "navFixes": true,
+ "lens": true,
+ "virtue": {
+  "kind": "sort",
+  "title": "Real victory, or not yet?",
+  "yes": "A real victory",
+  "no": "Not finished yet",
+  "intro": "In Chapter 19 the war ends, but not every moment feels like winning. Read each one. Tap A real victory or Not finished yet.",
+  "items": [
+   {
+    "t": "Secretary Seward tells her, “This is your victory, Harriet. You fought for it long before the rest of us did.”",
+    "ok": true,
+    "why": "Someone powerful says out loud what Harriet has done."
+   },
+   {
+    "t": "Black soldiers are first offered seven dollars a month. White soldiers get thirteen.",
+    "ok": false,
+    "why": "Unequal pay means the fight for fair treatment isn’t over."
+   },
+   {
+    "t": "Congress passes a law giving Black soldiers the same pay as white soldiers, even for the months they fought without wages.",
+    "ok": true,
+    "why": "The soldiers who refused unequal pay finally win."
+   },
+   {
+    "t": "Charleston falls, and Lee surrenders at Appomattox.",
+    "ok": true,
+    "why": "The Union wins the war that ended slavery."
+   },
+   {
+    "t": "Three passengers throw Harriet into the baggage car, even with her War Department pass.",
+    "ok": false,
+    "why": "The war is won, but Black Americans are still not treated as equals."
+   }
+  ],
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
+ },
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. You will use it at the end. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the four roots and their meanings.",
+    "Play the match: tap a word, then tap its root meaning.",
+    "Read how the roots show up in Chapter 19."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the four words.",
+    "Play Quick Match: tap a word, then tap its meaning.",
+    "Read how each word is used in Chapter 19."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the sentence.",
+    "Tap every preposition and every noun that ends its phrase.",
+    "In the box, pick one phrase and tell what it tells the reader: where, when, or how."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words.",
+    "Tap every word where a suffix rule fired.",
+    "In the box, pick one and name the rule."
+   ]
+  },
+  {
+   "find": "^\\s*\\S*\\s*Read:",
+   "steps": [
+    "Read the Pause & Think questions first.",
+    "Open your book and read Chapter 19.",
+    "Stop at each question and think of your answer.",
+    "As you read, fill in the note boxes.",
+    "After you read, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Revise with a Digital Tool",
+   "steps": [
+    "Copy your essay into a writing app.",
+    "Move one sentence and fix one spelling or grammar mistake.",
+    "In the box, tell what you moved and why, and what the tool caught."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read Today's focus.",
+    "Make the four editing passes, one at a time.",
+    "Type it in the box.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ]
+}
