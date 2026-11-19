@@ -1,0 +1,21 @@
+/* Fill the Treasure Chamber (Prince Caspian, weeks 26–30) */
+.spk-tr-scene { border-radius:12px; overflow:hidden; border:1px solid #1A1714; box-shadow:inset 0 0 0 3px #FFFDF6, 0 1px 0 #fff; background:#25211F; }
+.spk-tr-svg { display:block; width:100%; height:auto; }
+.spk-tr-svg .bkk { fill:#3A3430; stroke:#2A2522; stroke-width:1.2; }
+.spk-tr-svg .glow { opacity:.35; transition:opacity 1.2s; }
+.spk-tr-svg .arch { fill:#1C1917; stroke:#4A423C; stroke-width:3; }
+.spk-tr-svg .floor { fill:#1A1714; }
+.spk-tr-svg .pt .bk { fill:#141210; stroke:#6B5B45; stroke-width:1; stroke-dasharray:3 3; }
+.spk-tr-svg .pt .fab { opacity:0; transform-box:fill-box; transform-origin:50% 50%; transition:opacity .5s; }
+.spk-tr-svg .pt.on .fab { opacity:1; }
+.spk-tr-svg .pt.on .bk { stroke:#C99A2E; stroke-dasharray:none; }
+.spk-tr-svg .pt.old .fab { filter:saturate(.85) brightness(.95); }
+.spk-tr-svg .pt.pop .fab { animation:spk-tr-pop .7s cubic-bezier(.2,1.4,.4,1); }
+@keyframes spk-tr-pop { 0% { opacity:0; transform:translateY(-8px) scale(.5); } 100% { opacity:1; transform:none; } }
+.spk-tr-svg .torch .fl { fill:#F2A54A; opacity:.35; transform-box:fill-box; transform-origin:50% 100%; }
+.spk-treasure.free .spk-tr-svg .glow { opacity:1; }
+.spk-treasure.free .spk-tr-svg .torch .fl { opacity:1; animation:spk-tr-fl 1.1s ease-in-out infinite; }
+@keyframes spk-tr-fl { 50% { transform:scaleY(.86) scaleX(1.08); } }
+@media (prefers-reduced-motion: reduce) {
+  .spk-tr-svg .pt.pop .fab, .spk-treasure.free .spk-tr-svg .torch .fl { animation:none !important; }
+}
