@@ -300,7 +300,7 @@
         '<div class="ftk-lyric"><span class="t">' + esc(s.title) + '</span>' + s.lines.map(function (l) { return esc(l); }).join('<br>') +
           '<small>' + esc(s.source || 'A traditional spiritual · public domain') + '</small></div>' +
         '<div class="ftk-two">' +
-          '<div class="ftk-side ftk-heard"><b>👂 What the overseer heard</b>' + esc(s.heard) + '</div>' +
+          '<div class="ftk-side ftk-heard"><b>👂 ' + esc(s.heardBy || 'What the overseer heard') + '</b>' + esc(s.heard) + '</div>' +
           '<div class="ftk-side ftk-meant"><b>🤫 What the singers meant</b>' +
             '<div class="cover"><button type="button" class="ftk-btn ftk-show">Think first, then show me</button></div>' +
             '<div class="txt" hidden>' + esc(s.meant) + '</div></div>' +
