@@ -1,0 +1,288 @@
+{
+ "connector": "Yesterday you met two newspaper accounts. Today a third writer joins them: Sarah Bradford, who wrote a book about Harriet six years later. Pick one fact, like how many people were freed, and find it in every source. Where do they agree, and where don’t they?",
+ "writingFocus": "Edit",
+ "plate": {
+  "src": "plates/ft-ch18.png",
+  "alt": "Harriet Tubman stands in a rowboat on the Combahee River at night, singing to families hurrying aboard while Union gunboats wait in the moonlight.",
+  "credit": "The Combahee River Raid, June 1863, the night all three sources describe."
+ },
+ "dol": {
+  "a": {
+   "raw": "the freed families carried babies bundles and chickens onto the waiting steamboats",
+   "fixed": "<strong>The</strong> freed families carried babies<strong>,</strong> bundles<strong>,</strong> and chickens onto the waiting steamboats<strong>.</strong>",
+   "why": "Capital T starts the sentence; commas separate babies, bundles, and chickens; a period ends it."
+  },
+  "b": {
+   "raw": "the scouts watched the river the woods and the roads for rebel guards",
+   "fixed": "<strong>The</strong> scouts watched the river<strong>,</strong> the woods<strong>,</strong> and the roads for <strong>Rebel</strong> guards<strong>.</strong>",
+   "why": "Capital T starts the sentence; commas separate the river, the woods, and the roads; capital R on Rebel, the way Sterling writes it; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and name the source each detail comes from.",
+  "journal-q2": "… and connect the disadvantage to Source C.",
+  "journal-q3": "… and say what the other two sources would add.",
+  "journal-q4": "… and compare it with one more row."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q4": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "notes": {
+  "wgrd": "Pick one fact that more than one source reports. Write each version side by side. Decide if the difference is small or changes what you think happened.",
+  "vocab": [
+   [
+    "gallant",
+    "Brave and heroic, especially in a noble cause."
+   ],
+   [
+    "commissary",
+    "A place where food and supplies are stored, especially for an army."
+   ],
+   [
+    "rebeldom",
+    "The Confederate states; the land of the rebellion."
+   ],
+   [
+    "contraband",
+    "During the Civil War, enslaved people who escaped to Union lines."
+   ]
+  ],
+  "wordParts": "Prefixes that tell where: trans- = across, inter- = between, sub- = under, super- = above or beyond: transportation, international, submarine, supernatural.",
+  "grammar": "Commas in a series: put a comma after each item in a list of three or more, including before and. She packed bread, cheese, and a knife.",
+  "spelling": "Some words sound alike but mean different things. Affect is the action, effect is the result. It’s means it is; its shows belonging. Their means belonging to them, there is a place, they’re means they are. Accept means take; except means leave out."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "One fact, three versions",
+   "intro": "Pick a fact more than one source reports.",
+   "fields": [
+    {
+     "label": "The fact I picked",
+     "hint": "how many were freed, what they call her…",
+     "rows": 1
+    },
+    {
+     "label": "Source A says",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Source B says",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Source C says",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "Small gap, or does it change the story?",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q4"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 32,
+  "journal-q3": 32,
+  "journal-q4": 24
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-25-2-welcome",
+   "label": "Marcus’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-25-2-read",
+   "label": "Marcus · before you read the sources"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/marcus/g4ela-25-2-grammar",
+   "label": "Marcus · commas in a list"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hey, it’s Marcus. Today a third writer joins the story: Sarah Bradford, who wrote a book about Harriet six years after the raid. Today’s question: when writers tell the same story differently, what can the differences teach us?",
+  "read": "Pick one fact, like how many people were freed, or what each writer calls Harriet. Find it in every source and set the versions side by side. Some gaps are small. Some change the whole picture. Read the table straight across, one row at a time.",
+  "grammar": "A list needs commas so the reader can tell where one thing stops and the next begins. Lanterns, quilts, and dried meat. Without commas, you might wonder what a quilt meat is. Put a comma after every item but the last, and keep the one before and."
+ },
+ "navFixes": true,
+ "lens": true,
+ "virtue": {
+  "kind": "sort",
+  "title": "Moving freedom forward, or holding it back?",
+  "yes": "Moves freedom forward",
+  "no": "Holds it back",
+  "intro": "These moments come from this week’s sources and Chapter 18. Tap Moves freedom forward or Holds it back.",
+  "items": [
+   {
+    "t": "Harriet guides the gunboats past the torpedoes hidden in the river.",
+    "ok": true,
+    "why": "Her scouting keeps the boats safe so they can reach the people waiting on the banks."
+   },
+   {
+    "t": "The Rebels hide torpedoes in the river to sink Union boats.",
+    "ok": false,
+    "why": "The torpedoes were set to stop the boats before anyone could be freed."
+   },
+   {
+    "t": "A newspaper prints the story but leaves out Harriet’s name.",
+    "ok": false,
+    "why": "Her work is real, but she gets no credit for it."
+   },
+   {
+    "t": "Harriet tells her own account, and it is printed in The Commonwealth.",
+    "ok": true,
+    "why": "Her own words reach readers, so the story is told by the person who led it."
+   },
+   {
+    "t": "Nearly all the able-bodied men who were freed join the Black regiments.",
+    "ok": true,
+    "why": "People who were just freed fight to free others. (Bradford reprints this from 1863.)"
+   }
+  ],
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
+ },
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you compare the sources. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Say the four lines you are learning.",
+    "Follow the By Heart steps on the card."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the four prefixes and what they mean.",
+    "Play the match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Tap a word, then tap the column where it belongs.",
+    "Read what the words mean to check."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read each sentence.",
+    "Tap every list that is missing a comma it needs.",
+    "In the box, pick one and say where the commas go."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the paragraph.",
+    "Tap every word that needs a change.",
+    "In the box, name the kind of error for two of them."
+   ]
+  },
+  {
+   "find": "Open Your Sources",
+   "steps": [
+    "Read Source C. Look back at Sources A and B.",
+    "Fill in the note boxes with one fact from each source."
+   ]
+  },
+  {
+   "find": "Side-by-Side",
+   "steps": [
+    "Read the table one row at a time, straight across.",
+    "Think about the two Pause & Think questions.",
+    "After you read, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Source Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the sources in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Read the Table",
+   "steps": [
+    "Pick one row of the table.",
+    "Write what that row helps you see."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Read the editing checklist.",
+    "Fix two errors in your essay.",
+    "In the box, write the two fixes and why.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ]
+}

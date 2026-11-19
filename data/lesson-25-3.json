@@ -1,0 +1,324 @@
+{
+ "connector": "You’ve spent two days with three accounts of one night. Today, put each writer in their place: who was close to the raid, and who wrote about it later? Then pull it together. What do you understand now that you could never get from one source alone?",
+ "writingFocus": "Publish",
+ "plate": {
+  "src": "plates/ft-ch18.png",
+  "alt": "Harriet Tubman stands in a rowboat on the Combahee River at night, singing to families hurrying aboard while Union gunboats wait in the moonlight.",
+  "credit": "The Combahee River Raid, June 1863, the night all three sources describe."
+ },
+ "dol": {
+  "a": {
+   "raw": "harriets guides watched the roads counted the guards and warned the families before dawn",
+   "fixed": "<strong>Harriet’s</strong> guides watched the roads<strong>,</strong> counted the guards<strong>,</strong> and warned the families before dawn<strong>.</strong>",
+   "why": "Capital H and an apostrophe in Harriet’s (the guides belong to her); commas separate the three actions; a period ends it."
+  },
+  "b": {
+   "raw": "the reporter wrote about the boats the soldiers and the burning barns",
+   "fixed": "<strong>The</strong> reporter wrote about the boats<strong>,</strong> the soldiers<strong>,</strong> and the burning barns<strong>.</strong>",
+   "why": "Capital T starts the sentence; commas separate the boats, the soldiers, and the burning barns; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and say why Source A alone would leave it out.",
+  "journal-q2": "… and give one example of each from this week’s sources.",
+  "journal-q3": "… and quote the line you would use."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 1
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "Carrying people across state lines. Which prefix means across?",
+   "why": "trans- means across: trans + port."
+  },
+  "fill2": {
+   "h1": "Courage beyond what a person usually has. Which prefix means beyond?",
+   "why": "super- means above or beyond: super + human."
+  },
+  "fill3": {
+   "h1": "The torpedoes were hidden under the water. Which prefix means under?",
+   "why": "sub- means under: sub + merged."
+  },
+  "fill4": {
+   "h1": "The scouts and the gunboats worked with each other. Which prefix means between?",
+   "why": "inter- means between: inter + connected."
+  },
+  "vc1": {
+   "h1": "The newspaper praised the soldiers as brave. Which word means brave and noble?",
+   "why": "gallant: “Montgomery’s gallant band.”"
+  },
+  "vc2": {
+   "h1": "Food and supplies for an army. Which word names where they are kept?",
+   "why": "commissary: an army’s store of food and supplies."
+  },
+  "vc3": {
+   "h1": "The army’s word for people who escaped to its lines.",
+   "why": "contraband: Tubman writes “known up in your region as ‘contrabands.’”"
+  },
+  "vc4": {
+   "h1": "The land of the rebellion. Which word ends in -dom, like kingdom?",
+   "why": "rebeldom: the Confederate states."
+  },
+  "s4w25cf1": {
+   "h1": "Here you need the action word: what will the testimony do?",
+   "why": "affect is the verb: the testimony will affect the conclusion."
+  },
+  "s4w25cf2": {
+   "h1": "Here you need a thing, the result. It comes after The.",
+   "why": "effect is the noun: the effect of the new source."
+  },
+  "s4w25cf3": {
+   "h1": "Say it with it is. Does it still make sense?",
+   "why": "It’s = it is: It is the only account written that year."
+  },
+  "s4w25cf4": {
+   "h1": "The page belongs to the document. Which one shows belonging?",
+   "why": "its shows belonging, with no apostrophe."
+  }
+ },
+ "notes": {
+  "wgrd": "Ask where each writer stood: close to the event, or writing years later. Close tells you what the day looked like. Later tells you what it came to mean.",
+  "vocab": [
+   [
+    "gallant",
+    "Brave and heroic, especially in a noble cause."
+   ],
+   [
+    "commissary",
+    "A place where food and supplies are stored, especially for an army."
+   ],
+   [
+    "rebeldom",
+    "The Confederate states; the land of the rebellion."
+   ],
+   [
+    "contraband",
+    "During the Civil War, enslaved people who escaped to Union lines."
+   ]
+  ],
+  "wordParts": "Prefixes that tell where: trans- = across, inter- = between, sub- = under, super- = above or beyond: transportation, international, submarine, supernatural.",
+  "grammar": "Commas in a series: put a comma after each item in a list of three or more, including before and. She packed bread, cheese, and a knife. A series can also join three ideas into one sentence so they feel true all at once.",
+  "spelling": "Some words sound alike but mean different things. Affect is the action, effect is the result. It’s means it is; its shows belonging. Their means belonging to them, there is a place, they’re means they are. Accept means take; except means leave out."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Where each writer stood",
+   "intro": "Put each source in its place.",
+   "fields": [
+    {
+     "label": "Close to the raid (and when)",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Writing later (and when)",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "What I understand now that one source couldn’t give me",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 32,
+  "journal-q3": 32
+ },
+ "wordgame": {
+  "type": "quilt",
+  "strand": "Morphology",
+  "kicker": "Sew the Border",
+  "h": "The border, finished",
+  "voice": "Tap a prefix, then the word it starts. Or drag the prefix onto the word. Ask where each word points.",
+  "why": {
+   "icon": "🧵",
+   "q": "Why a border?",
+   "t": "Harriet’s mother finished a patchwork quilt in Chapter 2, and all year the word-parts game sewed patches like hers. The quilt was finished last week. This week you sew its border with four prefixes that tell <i>where</i>: <b>trans-</b> (across), <b>inter-</b> (between), <b>sub-</b> (under) and <b>super-</b> (above)."
+  },
+  "meanings": {
+   "trans": "across",
+   "inter": "between",
+   "sub": "under",
+   "super": "above"
+  },
+  "winDay": "Four border patches are sewn in.",
+  "win": "The border is finished all the way around. <b>trans-</b> = across, <b>inter-</b> = between, <b>sub-</b> = under, <b>super-</b> = above. The quilt is ready to hang."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-25-3-welcome",
+   "label": "Marcus’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-25-3-read",
+   "label": "Marcus · before you read the sources"
+  },
+  "spelling": {
+   "kind": "video",
+   "path": "guide/marcus/g4ela-25-3-spelling",
+   "label": "Marcus · words that sound alike"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hey, it’s Marcus. You’ve spent two days with three accounts of one night. Today you pull it all together. Today’s question: what do you understand now that you could never get from just one source?",
+  "read": "Put each writer in their place. Who was close to the raid, and who wrote about it later from other people’s words? Close can tell you what the night looked like. Later can tell you what it meant. Then ask which one you’d quote first in a report.",
+  "spelling": "Some mistakes slip past a spellchecker because they’re real words in the wrong place. Affect is the action. Effect is the result. It’s means it is. Its shows something belongs. When you’re not sure, say the long form out loud. If it sounds wrong, it is."
+ },
+ "navFixes": true,
+ "lens": true,
+ "virtue": {
+  "kind": "log",
+  "title": "Freedom log",
+  "intro": "Which moment from this week’s sources shows freedom best? Tap one.",
+  "options": [
+   {
+    "t": "Almost eight hundred people climb aboard the “Lincoln boats” in one night."
+   },
+   {
+    "t": "The raiders return “without losing a man or receiving a scratch.”"
+   },
+   {
+    "t": "Harriet, who could not write, dictates her own account so her words are printed."
+   },
+   {
+    "t": "Freed men join the Black regiments to fight for the Union."
+   }
+  ],
+  "line": "Finish the sentence: This moment shows freedom because…",
+  "placeholder": "This moment shows freedom because…",
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
+ },
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you review the sources. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the four prefixes.",
+    "Play the game: tap a prefix, then the word it starts.",
+    "Tap Check My Work."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the word bank.",
+    "Type the word that fits each sentence.",
+    "Tap Check My Work."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the worked example.",
+    "Write the three sentences as one sentence with a series.",
+    "Then write them as three sentences, and say which you kept."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the Before and After.",
+    "Type the correct word in each blank, then tap Check My Work.",
+    "In the box, correct the last line."
+   ]
+  },
+  {
+   "find": "Open Your Sources",
+   "steps": [
+    "Read all three sources again.",
+    "Fill in the note boxes: who was close, and who wrote later."
+   ]
+  },
+  {
+   "find": "Synthesis",
+   "steps": [
+    "Think about the two Pause & Think questions.",
+    "Write two or three sentences in the box.",
+    "After you write, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "RWM",
+   "steps": [
+    "Read Tubman’s sentence.",
+    "Tap through Reader, Writer, and Mimic.",
+    "Write your own sentence that borrows the other side’s words."
+   ]
+  },
+  {
+   "find": "Source Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the sources in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  }
+ ]
+}

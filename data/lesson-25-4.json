@@ -1,0 +1,239 @@
+{
+ "connector": "This is the last day with Harriet. You read a whole biography and three real accounts of one night. When accounts disagree, a good reader picks one to lean on and can say why. Which account would you trust, and what can none of them tell you?",
+ "writingFocus": "Present",
+ "plate": {
+  "src": "plates/ft-ch20.png",
+  "alt": "An elderly Harriet Tubman rests on her porch in Auburn at dusk, looking up at the North Star.",
+  "credit": "From Chapter 20. Harriet lived to see her story told by others, and she told it herself."
+ },
+ "dol": {
+  "a": {
+   "raw": "tubman dictated her letter because she could not read or write",
+   "fixed": "<strong>Tubman</strong> dictated her letter because she could not read or write<strong>.</strong>",
+   "why": "Capital T on Tubman, a name; a period ends it. No comma is needed: there is no list here."
+  },
+  "b": {
+   "raw": "sanborn printed her words her name and her story in his newspaper",
+   "fixed": "<strong>Sanborn</strong> printed her words<strong>,</strong> her name<strong>,</strong> and her story in his newspaper<strong>.</strong>",
+   "why": "Capital S on Sanborn, a name; commas separate her words, her name, and her story; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and name what you would have missed with only that one source.",
+  "journal-q2": "… and quote one phrase from Source B that sounds like Harriet.",
+  "journal-q3": "… and name one other person whose story was told by someone else."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "notes": {
+  "wgrd": "When accounts disagree, choose one to lean on and say why: who wrote it, when, and how close they were. Then name what none of them can tell you.",
+  "vocab": [
+   [
+    "gallant",
+    "Brave and heroic, especially in a noble cause."
+   ],
+   [
+    "commissary",
+    "A place where food and supplies are stored, especially for an army."
+   ],
+   [
+    "rebeldom",
+    "The Confederate states; the land of the rebellion."
+   ],
+   [
+    "contraband",
+    "During the Civil War, enslaved people who escaped to Union lines."
+   ]
+  ],
+  "wordParts": "Prefixes that tell where: trans- = across, inter- = between, sub- = under, super- = above or beyond: transportation, international, submarine, supernatural.",
+  "grammar": "Commas in a series: put a comma after each item in a list of three or more, including before and. She packed bread, cheese, and a knife. Editing day: check every list for its commas.",
+  "spelling": "Some words sound alike but mean different things. Affect is the action, effect is the result. It’s means it is; its shows belonging. Their means belonging to them, there is a place, they’re means they are. Accept means take; except means leave out."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "The account I lean on",
+   "intro": "Think about all three sources.",
+   "fields": [
+    {
+     "label": "The source I trust most about that night",
+     "hint": "",
+     "rows": 1
+    },
+    {
+     "label": "Why: who, when, how close",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "end": {
+    "label": "One thing none of the sources can tell me",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 32,
+  "journal-q3": 32
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-25-4-welcome",
+   "label": "Marcus’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/marcus/g4ela-25-4-read",
+   "label": "Marcus · before you read the sources"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/marcus/g4ela-25-4-grammar",
+   "label": "Marcus · a last comma check"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hey, it’s Marcus. This is our last day with Harriet. You’ve read her whole life and three real accounts of her biggest night. Today’s question: what have you learned about how different writers tell the same story, and why it matters?",
+  "read": "Today you choose. If you had to tell a friend what happened on the Combahee, which account would you lean on? Say why: who wrote it, when, and how close they were. Then name one thing about that night none of them can tell you. Harriet could not write, but she still got her words printed.",
+  "grammar": "Editing day. Read every list in your writing out loud. If you hear three things, you need two commas. A comma can change what a sentence means, so don’t guess. Ask how many things are in the list, then count your commas. One more slow read, and you’re ready to present."
+ },
+ "navFixes": true,
+ "lens": true,
+ "virtue": {
+  "kind": "meter",
+  "title": "The freedom meter",
+  "intro": "Think about the whole unit.",
+  "moment": "In 1863 one newspaper told the story of the raid without Harriet’s name. Weeks later, her own words were printed. Six years later, a whole book told her life. Almost a hundred years later, Dorothy Sterling wrote Freedom Train for young readers like you.",
+  "ask": "How much does it matter who gets to tell the story? Slide to show.",
+  "line": "Tell why in one sentence.",
+  "placeholder": "It matters this much because…",
+  "take": "One way to see it: Harriet could not read or write, so she dictated her letter. Without that, we would know the raid only as the work of “a black woman.”",
+  "kicker": "Freedom Watch · after you read",
+  "icon": "⭐",
+  "name": "freedom"
+ },
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you look back at the sources. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Say the four lines you are learning.",
+    "Follow the By Heart steps on the card."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Play the match: tap a prefix, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Guess each word, then tap the card to check.",
+    "Pick one activity from the choice board and do it in the box."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read each line.",
+    "Tap every line with a comma problem.",
+    "In the box, fix one and say what it saves the reader from."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words.",
+    "Tap only the ones that are wrong.",
+    "In the box, fix each one and name the mix-up."
+   ]
+  },
+  {
+   "find": "Three Sources",
+   "steps": [
+    "Read the three sources one more time.",
+    "Fill in the note boxes: which one you lean on, and why."
+   ]
+  },
+  {
+   "find": "Reflect",
+   "steps": [
+    "Think about the two questions.",
+    "Write in the box what you will remember most.",
+    "After you write, do the Freedom Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Source Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the sources in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writer.s Workshop",
+   "steps": [
+    "Practice reading your essay out loud.",
+    "Pick one visual and the sentence where you show it.",
+    "In the box, sum up your essay and name your visual.",
+    "Tap Copy today's writing and paste it into your own document."
+   ]
+  }
+ ]
+}
