@@ -11274,6 +11274,20 @@
 "grade": "4",
 "subject": "ela",
 "voice": "opti",
+"file": "assets/audio/words/g4ela-word-abolition.mp3",
+"text": "abolition",
+"key": "abolition",
+"chars": 9,
+"kind": "speech",
+"script_source": "file name",
+"bytes": 35977,
+"md5": "4d6a3b01b79d23606a9b3c0f8c5c03ca"
+},
+{
+"repo": "optima-4th-ela",
+"grade": "4",
+"subject": "ela",
+"voice": "opti",
 "file": "assets/audio/words/g4ela-word-companion.mp3",
 "text": "companion",
 "key": "companion",
@@ -11282,6 +11296,20 @@
 "script_source": "file name",
 "bytes": 37231,
 "md5": "06d0ae394d3b87f15fd51508358d0794"
+},
+{
+"repo": "optima-4th-ela",
+"grade": "4",
+"subject": "ela",
+"voice": "opti",
+"file": "assets/audio/words/g4ela-word-conductor.mp3",
+"text": "conductor",
+"key": "conductor",
+"chars": 9,
+"kind": "speech",
+"script_source": "file name",
+"bytes": 34723,
+"md5": "c3d6196edff350c7a6d44775ca1eab0e"
 },
 {
 "repo": "optima-4th-ela",
@@ -11302,6 +11330,20 @@
 "grade": "4",
 "subject": "ela",
 "voice": "opti",
+"file": "assets/audio/words/g4ela-word-express.mp3",
+"text": "express",
+"key": "express",
+"chars": 7,
+"kind": "speech",
+"script_source": "file name",
+"bytes": 34723,
+"md5": "11ac3eff728244c0d3dfffca24a95f72"
+},
+{
+"repo": "optima-4th-ela",
+"grade": "4",
+"subject": "ela",
+"voice": "opti",
 "file": "assets/audio/words/g4ela-word-imagine.mp3",
 "text": "imagine",
 "key": "imagine",
@@ -11310,6 +11352,20 @@
 "script_source": "file name",
 "bytes": 34723,
 "md5": "47206f3178d741496d9e41a40f4f7987"
+},
+{
+"repo": "optima-4th-ela",
+"grade": "4",
+"subject": "ela",
+"voice": "opti",
+"file": "assets/audio/words/g4ela-word-obtain.mp3",
+"text": "obtain",
+"key": "obtain",
+"chars": 6,
+"kind": "speech",
+"script_source": "file name",
+"bytes": 34723,
+"md5": "3460f61898467fe24e703107d438fbed"
 },
 {
 "repo": "optima-4th-ela",
