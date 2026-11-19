@@ -23,7 +23,7 @@ def quilt(h):
 def media(d, ws, wslabel):
     m = {"welcome": {"kind": "audio", "path": "guide/marcus/g4ela-23-%d-welcome" % d, "label": "Marcus’s welcome"},
          "read": {"kind": "audio", "path": "guide/marcus/g4ela-23-%d-read" % d, "label": "Marcus · before you read"},
-         ws: {"kind": "audio", "path": "guide/marcus/g4ela-23-%d-%s" % (d, ws), "label": "Marcus · " + wslabel}}
+         ws: {"kind": "video", "path": "guide/marcus/g4ela-23-%d-%s" % (d, ws), "label": "Marcus · " + wslabel}}  # film (tools/g4video)
     for off in ("guide1", "guide2", "guide3", "rwm", "copia"): m[off] = {"kind": ""}
     return m
 def hint(h1, why): return {"h1": h1, "why": why}
