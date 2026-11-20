@@ -156,7 +156,7 @@ L[4] = {
 T = {
  1: {"welcome": "Hello, it’s Nell. The Dwarf is telling the children a story, and now we hear it too. It’s about a boy who grew up in a castle where the old stories were forbidden. Today’s question: why would the truth ever need to be hidden?",
      "read": "Keep two lists as you read. Everyone who helps Caspian goes on one. Everyone who controls him goes on the other. If you can’t tell yet, write the name with a question mark. Watch the nurse, the King, and the Doctor with the great spectacles.",
-     "morphology": "Some words are built on old Latin bases. Port means carry, so transport carries something across. Tract means pull, so extract pulls something out. Struct means build, so construct builds something together. Find the base, ask what it does, and set a treasure back in its place."},
+     "morphology": "Some words are built on old Latin bases. Port means carry, so a porter carries bags. Tract means pull, so a tractor pulls a plow. Struct means build, so a structure is something built. Find the base, ask what it does, and set a treasure back in its place."},
  2: {"welcome": "Hello again, it’s Nell. Last time, Caspian learned the old stories are true. Tonight, the Doctor wakes him in the dark with a message that can’t wait. Today’s question: who welcomes Caspian when he runs, and who doesn’t, and why?",
      "read": "Read the Doctor’s warning slowly. Notice what happened only two hours before, and the gift he puts in Caspian’s hands. Then the storm. When Caspian wakes up, he’s with three strangers. Listen to each one. They don’t all agree about him.",
      "grammar": "But and so are tiny hinges. But says, here comes a surprise: Caspian’s heart was sinking, but he tried to take it all in. So says, here’s what happened because of it. Put a comma before each when it joins two whole sentences."},
@@ -165,7 +165,7 @@ T = {
      "spelling": "Here’s a trick for long words. Say the word and listen for the strong beat. Be-GIN. If the beat is on the last part, and it ends in one vowel and one consonant, double the consonant: beginning. VIS-it has its beat at the front, so no double: visiting."},
  4: {"welcome": "Hello, it’s Nell. Three chapters of the Dwarf’s story are done. A castle, a storm, a cave, a forge, a moonlit dance. Today’s question: what changed for Caspian this week, and what made the change possible?",
      "read": "Line up every group you met this week, from Miraz’s court to the Fauns. Say what each group wants. Then find the two groups that want opposite things. They’re going to meet, and when they do, it won’t be gentle.",
-     "grammar": "Editing day. Read each sentence with but or so, and ask if the logic is right. They were outnumbered, but they fought anyway. That works. They were outnumbered, so they fought anyway. That doesn’t. One small word, and the meaning flips."},
+     "grammar": "Editing day. Read each sentence with but or so, and ask if the logic is right. Caspian was tired, but he rode on. That works. Caspian was tired, so he rode on. That doesn’t. One small word, and the meaning flips."},
 }
 WS = {1: ("morphology", "bases that carry, pull and build"), 2: ("grammar", "but and so"), 3: ("spelling", "listen for the beat"), 4: ("grammar", "the right hinge")}
 
