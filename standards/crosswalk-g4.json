@@ -1,0 +1,625 @@
+{
+ "grade": 4,
+ "subject": "English Language Arts",
+ "anchor": "FL (B.E.S.T. via CPALMS course 5010045)",
+ "built": "2026-11-20",
+ "status": "DRAFT - for review",
+ "source_db": {
+  "repo": "optimaondemand/optima-standards",
+  "commit": "0d182a7",
+  "files": {
+   "FL": "jurisdictions/us-fl/cpalms-course-standards/english/5010045-language-arts-grade-four.json",
+   "TX": "jurisdictions/us-tx/teks/110-english-language-arts-and-reading/110.6-english-language-arts-and-reading-grade-4-adopted-2017.json",
+   "AR": "jurisdictions/us-ar/ar-academic-standards/english-language-arts/grade-4.json",
+   "MO": "jurisdictions/us-mo/mls/english-language-arts/grade-4.json",
+   "AL": "jurisdictions/us-al/al-cos/english-language-arts/grade-4.json",
+   "TN": "jurisdictions/us-tn/tn-academic-standards/english-language-arts/grade-4.json",
+   "PR": "jurisdictions/us-pr/prde-content-standards/english-program/grade-4-english-program.json"
+  }
+ },
+ "notes": {
+  "method": "Each FL benchmark is matched to the closest standard(s) in each state by reading both texts. Empty list = no close match in that state.",
+  "TN": "5.FL.PWR.3 is the code as printed in TN's grade 4 document (a source misprint for 4.FL.PWR.3, flagged in the database).",
+  "PR": "Pending. PR's English Program is a second-language framework and the database carries codes only (PRDE text withheld for rights). Matching needs the PRDE PDF.",
+  "TX": "Codes are TAC citations; short form 110.6(b)(8)(A) = TEKS 4.8.A."
+ },
+ "map": {
+  "ELA.4.R.1.1": {
+   "TX": [
+    "110.6(b)(8)(B)",
+    "110.6(b)(8)(C)",
+    "110.6(b)(8)(D)"
+   ],
+   "AR": [
+    "4.RC.7.RL",
+    "4.RC.8.RL"
+   ],
+   "MO": [
+    "4.R.2.A.a",
+    "4.R.2.A.b",
+    "4.R.2.A.c"
+   ],
+   "AL": [
+    "15",
+    "15b"
+   ],
+   "TN": [
+    "4.RL.KID.3"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.R.1.2": {
+   "TX": [
+    "110.6(b)(8)(A)"
+   ],
+   "AR": [
+    "4.RC.9.RL"
+   ],
+   "MO": [
+    "4.R.2.A.a"
+   ],
+   "AL": [
+    "19a"
+   ],
+   "TN": [
+    "4.RL.KID.2"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.R.1.3": {
+   "TX": [
+    "110.6(b)(10)(E)"
+   ],
+   "AR": [
+    "4.RC.12.RL"
+   ],
+   "MO": [
+    "4.R.2.A.e"
+   ],
+   "AL": [
+    "17",
+    "17a"
+   ],
+   "TN": [
+    "4.RL.CS.6"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.R.1.4": {
+   "TX": [
+    "110.6(b)(9)(B)",
+    "110.6(b)(10)(D)"
+   ],
+   "AR": [
+    "4.RC.13.RL"
+   ],
+   "MO": [
+    "4.R.2.B.a"
+   ],
+   "AL": [
+    "25",
+    "26"
+   ],
+   "TN": [
+    "4.RL.CS.5"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.R.2.1": {
+   "TX": [
+    "110.6(b)(9)(D)",
+    "110.6(b)(10)(B)",
+    "110.6(b)(10)(C)"
+   ],
+   "AR": [
+    "4.RC.16.RI",
+    "4.RC.17.RI"
+   ],
+   "MO": [
+    "4.R.3.A.a"
+   ],
+   "AL": [
+    "23",
+    "23a",
+    "23b"
+   ],
+   "TN": [
+    "4.RI.CS.5",
+    "4.RI.IKI.7"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.R.2.2": {
+   "TX": [
+    "110.6(b)(6)(G)",
+    "110.6(b)(9)(D)"
+   ],
+   "AR": [
+    "4.RC.3.RF"
+   ],
+   "MO": [
+    "4.R.3.C.b"
+   ],
+   "AL": [
+    "21",
+    "21a"
+   ],
+   "TN": [
+    "4.RI.KID.2"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.R.2.3": {
+   "TX": [
+    "110.6(b)(10)(A)"
+   ],
+   "AR": [],
+   "MO": [
+    "4.R.3.C.c"
+   ],
+   "AL": [
+    "22a"
+   ],
+   "TN": [],
+   "PR": "pending"
+  },
+  "ELA.4.R.2.4": {
+   "TX": [
+    "110.6(b)(9)(E)"
+   ],
+   "AR": [
+    "4.RC.14.RI"
+   ],
+   "MO": [
+    "4.R.3.B.b"
+   ],
+   "AL": [
+    "24"
+   ],
+   "TN": [
+    "4.RI.IKI.8"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.R.3.1": {
+   "TX": [
+    "110.6(b)(10)(D)",
+    "110.6(b)(9)(B)"
+   ],
+   "AR": [
+    "4.V.6"
+   ],
+   "MO": [
+    "4.R.1.B.d"
+   ],
+   "AL": [
+    "10b"
+   ],
+   "TN": [
+    "4.FL.VA.7b.i",
+    "4.FL.VA.7b.ii"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.R.3.2": {
+   "TX": [
+    "110.6(b)(7)(D)"
+   ],
+   "AR": [
+    "4.RC.3.RF"
+   ],
+   "MO": [
+    "4.R.2.A.a"
+   ],
+   "AL": [
+    "21c"
+   ],
+   "TN": [
+    "4.RL.KID.2",
+    "4.RI.KID.2"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.R.3.3": {
+   "TX": [
+    "110.6(b)(13)(D)",
+    "110.6(b)(7)(B)"
+   ],
+   "AR": [
+    "4.RC.18.RI"
+   ],
+   "MO": [
+    "4.R.3.C.d"
+   ],
+   "AL": [
+    "18a",
+    "20d"
+   ],
+   "TN": [
+    "4.RI.CS.6"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.C.1.1": {
+   "TX": [
+    "110.6(b)(2)(C)"
+   ],
+   "AR": [
+    "4.FR.5.H"
+   ],
+   "MO": [
+    "4.L.1.B.a"
+   ],
+   "AL": [
+    "34"
+   ],
+   "TN": [
+    "4.FL.WC.4b"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.C.1.2": {
+   "TX": [
+    "110.6(b)(12)(A)"
+   ],
+   "AR": [
+    "4.W.3.S"
+   ],
+   "MO": [
+    "4.W.2.C"
+   ],
+   "AL": [
+    "35"
+   ],
+   "TN": [
+    "4.W.TTP.3"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.C.1.3": {
+   "TX": [
+    "110.6(b)(12)(C)"
+   ],
+   "AR": [
+    "4.W.1.S"
+   ],
+   "MO": [
+    "4.W.2.A"
+   ],
+   "AL": [
+    "37"
+   ],
+   "TN": [
+    "4.W.TTP.1"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.C.1.4": {
+   "TX": [
+    "110.6(b)(12)(B)"
+   ],
+   "AR": [
+    "4.W.2.S"
+   ],
+   "MO": [
+    "4.W.2.B"
+   ],
+   "AL": [
+    "36"
+   ],
+   "TN": [
+    "4.W.TTP.2"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.C.1.5": {
+   "TX": [
+    "110.6(b)(11)(A)",
+    "110.6(b)(11)(C)",
+    "110.6(b)(11)(D)"
+   ],
+   "AR": [
+    "4.W.7.P",
+    "4.W.8.P"
+   ],
+   "MO": [
+    "4.W.1.A",
+    "4.W.1.C"
+   ],
+   "AL": [
+    "R4"
+   ],
+   "TN": [
+    "4.W.PDW.5"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.C.2.1": {
+   "TX": [
+    "110.6(b)(1)(C)"
+   ],
+   "AR": [
+    "4.CC.3.P",
+    "4.CC.5.P"
+   ],
+   "MO": [
+    "4.SL.4.A"
+   ],
+   "AL": [
+    "42"
+   ],
+   "TN": [
+    "4.SL.PKI.4"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.C.3.1": {
+   "TX": [
+    "110.6(b)(11)(D)",
+    "110.6(b)(2)(B)"
+   ],
+   "AR": [
+    "4.W.8.P"
+   ],
+   "MO": [
+    "4.L.1.A",
+    "4.L.1.B"
+   ],
+   "AL": [
+    "38",
+    "39"
+   ],
+   "TN": [
+    "4.FL.SC.6",
+    "4.FL.WC.4a"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.C.4.1": {
+   "TX": [
+    "110.6(b)(13)(A)",
+    "110.6(b)(13)(C)"
+   ],
+   "AR": [
+    "4.W.9.P",
+    "4.W.10.P"
+   ],
+   "MO": [
+    "4.W.3.A"
+   ],
+   "AL": [
+    "33"
+   ],
+   "TN": [
+    "4.W.RBPK.7",
+    "4.W.RBPK.8"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.C.5.1": {
+   "TX": [
+    "110.6(b)(13)(H)"
+   ],
+   "AR": [
+    "4.CC.4.P"
+   ],
+   "MO": [
+    "4.SL.4.A.d"
+   ],
+   "AL": [
+    "29"
+   ],
+   "TN": [
+    "4.SL.PKI.5"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.C.5.2": {
+   "TX": [
+    "110.6(b)(11)(E)"
+   ],
+   "AR": [],
+   "MO": [
+    "4.W.1.D.a"
+   ],
+   "AL": [
+    "R3"
+   ],
+   "TN": [
+    "4.W.PDW.6"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.F.1.3": {
+   "TX": [
+    "110.6(b)(2)(A)"
+   ],
+   "AR": [
+    "4.FR.1.PD"
+   ],
+   "MO": [
+    "4.RF.3.A.a"
+   ],
+   "AL": [
+    "1",
+    "3"
+   ],
+   "TN": [
+    "5.FL.PWR.3"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.F.1.4": {
+   "TX": [
+    "110.6(b)(4)"
+   ],
+   "AR": [
+    "4.FR.6.F"
+   ],
+   "MO": [
+    "4.RF.4.A"
+   ],
+   "AL": [
+    "5",
+    "6"
+   ],
+   "TN": [
+    "4.FL.F.5",
+    "4.FL.F.5b"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.V.1.1": {
+   "TX": [
+    "110.6(b)(7)(F)"
+   ],
+   "AR": [
+    "4.V.5"
+   ],
+   "MO": [
+    "4.R.1.B.f"
+   ],
+   "AL": [
+    "9",
+    "13"
+   ],
+   "TN": [
+    "4.FL.VA.7c"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.V.1.2": {
+   "TX": [
+    "110.6(b)(3)(C)"
+   ],
+   "AR": [
+    "4.V.7"
+   ],
+   "MO": [
+    "4.R.1.B.a"
+   ],
+   "AL": [
+    "3"
+   ],
+   "TN": [
+    "4.FL.VA.7a.ii"
+   ],
+   "PR": "pending"
+  },
+  "ELA.4.V.1.3": {
+   "TX": [
+    "110.6(b)(3)(B)",
+    "110.6(b)(3)(A)"
+   ],
+   "AR": [
+    "4.V.2",
+    "4.V.3",
+    "4.V.4"
+   ],
+   "MO": [
+    "4.R.1.B.b",
+    "4.R.1.B.e"
+   ],
+   "AL": [
+    "R2",
+    "10c",
+    "12"
+   ],
+   "TN": [
+    "4.FL.VA.7a.i",
+    "4.FL.VA.7a.iii"
+   ],
+   "PR": "pending"
+  },
+  "ELA.K12.EE.1.1": {
+   "TX": [
+    "110.6(b)(7)(C)"
+   ],
+   "AR": [
+    "4.RC.2.RF"
+   ],
+   "MO": [
+    "4.R.1.A.a"
+   ],
+   "AL": [
+    "20",
+    "28"
+   ],
+   "TN": [
+    "4.RL.KID.1",
+    "4.RI.KID.1"
+   ],
+   "PR": "pending"
+  },
+  "ELA.K12.EE.2.1": {
+   "TX": [
+    "110.6(b)(5)"
+   ],
+   "AR": [
+    "4.RC.6.RF"
+   ],
+   "MO": [
+    "4.R.1.D.a"
+   ],
+   "AL": [
+    "14"
+   ],
+   "TN": [
+    "4.RL.RRTC.10"
+   ],
+   "PR": "pending"
+  },
+  "ELA.K12.EE.3.1": {
+   "TX": [
+    "110.6(b)(6)(F)"
+   ],
+   "AR": [
+    "4.RC.5.RF"
+   ],
+   "MO": [
+    "4.R.1.A.a"
+   ],
+   "AL": [
+    "16c"
+   ],
+   "TN": [
+    "4.RL.KID.1"
+   ],
+   "PR": "pending"
+  },
+  "ELA.K12.EE.4.1": {
+   "TX": [
+    "110.6(b)(1)(A)"
+   ],
+   "AR": [
+    "4.CC.1.OL"
+   ],
+   "MO": [
+    "4.SL.1.A.b"
+   ],
+   "AL": [
+    "R1"
+   ],
+   "TN": [
+    "4.SL.CC.1"
+   ],
+   "PR": "pending"
+  },
+  "ELA.K12.EE.6.1": {
+   "TX": [],
+   "AR": [
+    "4.CC.5.P"
+   ],
+   "MO": [
+    "4.SL.4.A.f"
+   ],
+   "AL": [
+    "R6"
+   ],
+   "TN": [
+    "4.SL.PKI.6"
+   ],
+   "PR": "pending"
+  }
+ }
+}
