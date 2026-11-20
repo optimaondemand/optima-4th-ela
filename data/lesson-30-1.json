@@ -1,0 +1,288 @@
+{
+ "connector": "Peter, Edmund and Trumpkin found Caspian just in time. Now the High King is in command, and there is a war still to settle. Today, ask what this story still has to answer, and watch the way Peter chooses to answer it. The way someone settles a fight shows what they value.",
+ "writingFocus": "Resolution",
+ "dol": {
+  "a": {
+   "raw": "peter told caspian that he was to wounded to fight miraz in single combat",
+   "fixed": "<strong>Peter</strong> told <strong>Caspian</strong> that he was <strong>too</strong> wounded to fight <strong>Miraz</strong> in single combat<strong>.</strong>",
+   "why": "Capitals on Peter, Caspian and Miraz; too (meaning more than enough), not to; a period ends it."
+  },
+  "b": {
+   "raw": "edmund carried the challenge and glenstorm and wimbleweather walked beside him",
+   "fixed": "<strong>Edmund</strong> carried the challenge<strong>,</strong> and <strong>Glenstorm</strong> and <strong>Wimbleweather</strong> walked beside him<strong>.</strong>",
+   "why": "Capitals on the three names; a comma before the and that starts a new complete thought; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote one line from the challenge letter.",
+  "journal-q2": "… and quote one thing a lord says to Miraz.",
+  "journal-q3": "… and quote Reepicheep."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 3
+  }
+ },
+ "copia": {
+  "seed": "Peter <b data-verb>sent</b> Miraz a challenge.",
+  "eg": [
+   "To save his army, Peter sent Miraz a challenge.",
+   "Peter <i>dared</i> Miraz to single combat.",
+   "Peter sent Miraz a challenge, written by Doctor Cornelius in the old formal words."
+  ]
+ },
+ "notes": {
+  "wgrd": "Explain how resolution reveals theme: name what the story still has to settle, notice the way the characters choose to settle it, and ask what that way values.",
+  "vocab": [
+   [
+    "challenge",
+    "An invitation to fight or compete that must be answered."
+   ],
+   [
+    "combat",
+    "Fighting; single combat is one against one."
+   ],
+   [
+    "dictate",
+    "To say words aloud for someone else to write down."
+   ],
+   [
+    "marshal",
+    "An official who oversees a contest and keeps order."
+   ]
+  ],
+  "wordParts": "Review of the unit’s bases: port, tract, struct, spect, ject, script/scribe, rupt, duct/duce, form, plus press = push, tain = hold, lev = lift.",
+  "grammar": "Dialogue punctuation: quotation marks fence off the exact words; the comma or end mark goes inside the closing quotation mark; a tag like said Peter joins with a comma.",
+  "spelling": "Cumulative review: a hard word is often two or three rules stacked up. Take it apart: se + par + ate + ion; forget + t + able."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "What still has to be settled",
+   "intro": "As you read Ch. 13, catch the question and the way.",
+   "fields": [
+    {
+     "label": "The question this story still has to answer",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "The way Peter chooses, and the way he turns down",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "He would rather … than …",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 32,
+  "journal-q3": 40
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "The OAO Seven Pillars are honesty, respect, courtesy, responsibility, courage, service and perseverance. In Chapter 13, Peter takes command. Read each moment. Tap the pillar it shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "Caspian is wounded, so Peter will not let him fight. Peter sends Miraz a challenge to single combat with himself, so that two armies won’t have to fight.",
+    "ok": [
+     "Courage",
+     "Responsibility",
+     "Service"
+    ],
+    "why": "He puts himself in danger to protect everyone else.",
+    "hint": "Who is in danger now, and who is safer?"
+   },
+   {
+    "t": "The Bear says the bears always had the right to supply one marshal. Peter says, “It is your right. And you shall be one of the marshals.”",
+    "ok": [
+     "Respect"
+    ],
+    "why": "Peter honours an old right, even though Trumpkin warns him the Bear will suck his paws.",
+    "hint": "What does Peter honour?"
+   },
+   {
+    "t": "Reepicheep asks to be a marshal. Peter gravely tells him it would not be quite fair to Miraz, since some humans are afraid of mice.",
+    "ok": [
+     "Courtesy",
+     "Respect"
+    ],
+    "why": "He says no without laughing at the Mouse.",
+    "hint": "How does Peter say no?"
+   },
+   {
+    "t": "Edmund asks if Peter can beat Miraz. Peter says, “That’s what I’m fighting him to find out.”",
+    "ok": [
+     "Honesty",
+     "Courage"
+    ],
+    "why": "He doesn’t pretend to be sure, and he goes anyway.",
+    "hint": "Does Peter promise to win?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-30-1-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-30-1-read",
+   "label": "Nell · before you read"
+  },
+  "morphology": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-30-1-morphology",
+   "label": "Nell · every base in the unit"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. Peter has found Caspian, and the High King is in command. Today’s question: when there is more than one way to settle a fight, what does the way you choose say about you?",
+  "read": "Listen to the challenge letter. It’s full of old, formal words, and every one of them is chosen on purpose. Then watch Peter choose his marshals, and say no to one volunteer. Notice how he says no.",
+  "morphology": "This is a review of every base in the unit. Port, carry. Tract, pull. Struct, build. Spect, look. Ject, throw. Script, write. Rupt, break. Duct, lead. Form, shape. You know a lot of Latin now. Take a long word apart, and it will tell you what it means."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the eight bases and what each one means.",
+    "Tap the word that fits each blank.",
+    "In Show What You Know, pick two bases and give an example word for each."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read how we figure out challenge.",
+    "Guess each word, then tap the card to check.",
+    "Match each word to its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read both versions.",
+    "Tap the stronger one.",
+    "Tap Now check your thinking, then write the rule for where the comma goes."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the sentence.",
+    "Tap every word that needs more than one pattern.",
+    "In the box, say what order you check the patterns in."
+   ]
+  },
+  {
+   "find": "Copia",
+   "steps": [
+    "Read the sentence.",
+    "Write it three new ways, one box at a time.",
+    "Stuck? Tap Show one way."
+   ]
+  },
+  {
+   "find": "Pause & Think",
+   "steps": [
+    "Read the two Pause & Think questions first.",
+    "Keep them in mind as you read."
+   ]
+  },
+  {
+   "find": "Open Your Book",
+   "steps": [
+    "Open your book and read Chapter 13.",
+    "Fill in the note boxes as you read.",
+    "After you read, do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Writing Connection",
+   "steps": [
+    "Read the opening of Peter’s challenge letter.",
+    "Write three or four sentences about why he uses such formal words.",
+    "Say what the words show about Peter and the moment."
+   ]
+  }
+ ]
+}

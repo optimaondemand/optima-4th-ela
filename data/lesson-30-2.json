@@ -1,0 +1,277 @@
+{
+ "connector": "Today the fight is settled. But the part that carries the theme isn’t who wins. It’s how the winning happens. Watch for one moment in the duel that could easily have gone the other way, and ask what that small choice proves.",
+ "writingFocus": "Resolution",
+ "dol": {
+  "a": {
+   "raw": "trumpkin danced with delight and shouted the high king up old narnia",
+   "fixed": "<strong>Trumpkin</strong> danced with delight and shouted<strong>,</strong> &ldquo;<strong>The High King</strong><strong>!</strong> <strong>Up</strong><strong>,</strong> <strong>Old Narnia</strong><strong>!</strong>&rdquo;",
+   "why": "Capital T on Trumpkin; no comma after delight (danced and shouted share one subject); a comma after shouted before the quote; capitals and exclamation points inside the quotation marks."
+  },
+  "b": {
+   "raw": "edmund bit his lips till the blood came as the sword flashed down on peter",
+   "fixed": "<strong>Edmund</strong> bit his lips till the blood came<strong>,</strong> as the sword flashed down on <strong>Peter</strong><strong>.</strong>",
+   "why": "Lewis’s own sentence. Capitals on Edmund and Peter; a comma before as, which adds what was happening at that moment; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote what Edmund thinks.",
+  "journal-q2": "… and give one detail from each story.",
+  "journal-q3": "… and quote what Glozelle shouts."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 1
+  }
+ },
+ "notes": {
+  "wgrd": "Watch how the fight is settled, not just who wins. Find the moment it could have gone otherwise, and name the idea it proves.",
+  "vocab": [
+   [
+    "challenge",
+    "An invitation to fight or compete that must be answered."
+   ],
+   [
+    "combat",
+    "Fighting; single combat is one against one."
+   ],
+   [
+    "dictate",
+    "To say words aloud for someone else to write down."
+   ],
+   [
+    "marshal",
+    "An official who oversees a contest and keeps order."
+   ],
+   [
+    "hauberk",
+    "A coat of chain-mail armor."
+   ],
+   [
+    "treachery",
+    "Betraying someone who trusted you."
+   ]
+  ],
+  "wordParts": "Review of the unit’s bases: port, tract, struct, spect, ject, script/scribe, rupt, duct/duce, form, plus press = push, tain = hold, lev = lift.",
+  "grammar": "Dialogue punctuation: quotation marks fence off the exact words; the comma or end mark goes inside the closing quotation mark; a tag like said Peter joins with a comma. Lewis lets a speaker shout in fragments when the action is fast.",
+  "spelling": "Cumulative review: a hard word is often two or three rules stacked up. Take it apart: se + par + ate + ion; forget + t + able."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "How it was settled",
+   "intro": "As you read Ch. 14, catch the how.",
+   "fields": [
+    {
+     "label": "The steps of the duel",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "The moment it could have gone otherwise",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "Because it was settled this way, this book believes that …",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 40,
+  "journal-q2": 40,
+  "journal-q3": 32
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "In Chapter 14 the duel is fought and Narnia wakes. Read each moment. Tap the pillar it shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "During a rest, Peter says quietly, “Give my love to — to everyone at home, Ed, if he gets me.” Then he goes back into the lists.",
+    "ok": [
+     "Courage"
+    ],
+    "why": "He knows he might die and goes back anyway.",
+    "hint": "What does Peter think might happen?"
+   },
+   {
+    "t": "Miraz trips on a tussock and falls face down. Peter steps back and waits for him to rise.",
+    "ok": [
+     "Courtesy",
+     "Respect"
+    ],
+    "why": "He won’t strike an enemy who has fallen by accident.",
+    "hint": "What could Peter have done?"
+   },
+   {
+    "t": "Peter’s wrist is hurt. Edmund and Doctor Cornelius bind it up tight so he can keep fighting.",
+    "ok": [
+     "Service"
+    ],
+    "why": "They help him keep going.",
+    "hint": "What do they do for Peter?"
+   },
+   {
+    "t": "Aslan finds a little old woman dying in her bed. She opens her eyes and says, “Oh, Aslan! I knew it was true. I’ve been waiting for this all my life.”",
+    "ok": [
+     "Perseverance"
+    ],
+    "why": "She kept believing her whole life, when no one around her did.",
+    "hint": "How long has she waited?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-30-2-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-30-2-read",
+   "label": "Nell · before you read"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-30-2-grammar",
+   "label": "Nell · dialogue marks"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello again, it’s Nell. Today the duel is fought. Today’s question: what matters more, who wins, or how?",
+  "read": "Read the duel slowly, through Edmund’s eyes. Find the moment when Peter could have done the easy thing, and didn’t. Then follow Aslan, Lucy and Susan through the countryside, where a whole country is waking up.",
+  "grammar": "Dialogue. Quotation marks go around the exact words. The comma or the end mark goes inside the closing quotation mark. Then the tag: said Trumpkin, cried Edmund. A fast shout can be just a fragment. The marks around it still follow the rules."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Read the lines from the poem.",
+    "Think about how Peter’s courage is like the riders’.",
+    "Write your thinking in the box."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the three roots.",
+    "Play the match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Tap a word, then tap the column where it belongs.",
+    "Read what the words mean to check."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read each line.",
+    "Tap every line that is punctuated correctly.",
+    "In the box, name every mark in one line and its job."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the sentences.",
+    "Tap every word that needs correcting.",
+    "In the box, pick three and name a different kind of error for each."
+   ]
+  },
+  {
+   "find": "Pause & Think",
+   "steps": [
+    "Read the two Pause & Think questions first.",
+    "Keep them in mind as you read."
+   ]
+  },
+  {
+   "find": "Open Your Book",
+   "steps": [
+    "Open your book and read Chapter 14.",
+    "Fill in the note boxes as you read.",
+    "After you read, do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "RWM",
+   "steps": [
+    "Read Trumpkin’s words.",
+    "Think through Reader and Writer.",
+    "Write your own fragment, tag and excited comment."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  }
+ ]
+}

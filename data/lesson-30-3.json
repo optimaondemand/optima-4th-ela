@@ -1,0 +1,303 @@
+{
+ "connector": "The last chapter. A story does its final work here: it hands out endings, and the endings show you who each character has become. Read with a then-and-now question in your head. Who is different from the person you met on the first page?",
+ "writingFocus": "Resolution",
+ "dol": {
+  "a": {
+   "raw": "caspian kissed the lions paw and said i dont think i do sir",
+   "fixed": "<strong>Caspian</strong> kissed the <strong>Lion’s</strong> paw and said<strong>,</strong> &ldquo;<strong>I don’t</strong> think <strong>I</strong> do<strong>,</strong> <strong>Sir</strong><strong>.</strong>&rdquo;",
+   "why": "Capitals on Caspian, Lion’s, I and Sir; apostrophes in Lion’s and don’t; a comma before the quote and before Sir; the period goes inside the quotation marks."
+  },
+  "b": {
+   "raw": "the mice said they would cut off their own tails if their chief must go without his",
+   "fixed": "<strong>The</strong> <strong>Mice</strong> said they would cut off their own tails if their <strong>Chief</strong> must go without his<strong>.</strong>",
+   "why": "Lewis capitalizes the Mice and their Chief like names of a people and a title; no comma before if at the end; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote Aslan’s answer.",
+  "journal-q2": "… and quote what Peepiceek says.",
+  "journal-q3": "… and quote what Peter says to Lucy."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 1
+  }
+ },
+ "hints": {
+  "s4w30cf1": {
+   "h1": "separate ends in silent e. What happens before -ion?",
+   "why": "Drop the e: separate + ion = separation."
+  },
+  "s4w30cf2": {
+   "h1": "celebrate ends in silent e. What happens before -ion?",
+   "why": "Drop the e: celebrate + ion = celebration."
+  },
+  "s4w30cf3": {
+   "h1": "restore ends in silent e. What happens before -ation?",
+   "why": "Drop the e: restore + ation = restoration."
+  },
+  "s4w30cf4": {
+   "h1": "for·GET has its beat on the last syllable. Double or not?",
+   "why": "Double the t: forget + t + able = forgettable."
+  }
+ },
+ "notes": {
+  "wgrd": "Make a then-and-now list for two or three characters, write what each change cost, and mark the line that shows it.",
+  "vocab": [
+   [
+    "challenge",
+    "An invitation to fight or compete that must be answered."
+   ],
+   [
+    "combat",
+    "Fighting; single combat is one against one."
+   ],
+   [
+    "dictate",
+    "To say words aloud for someone else to write down."
+   ],
+   [
+    "marshal",
+    "An official who oversees a contest and keeps order."
+   ],
+   [
+    "sufficient",
+    "Enough for what is needed."
+   ],
+   [
+    "coronation",
+    "The ceremony of crowning a king or queen."
+   ],
+   [
+    "lineage",
+    "The line of people you come from."
+   ]
+  ],
+  "wordParts": "Review of the unit’s bases: port, tract, struct, spect, ject, script/scribe, rupt, duct/duce, form, plus press = push, tain = hold, lev = lift.",
+  "grammar": "Dialogue punctuation: quotation marks fence off the exact words; the comma or end mark goes inside the closing quotation mark; a tag like said Peter joins with a comma. Moving the tag changes the rhythm of a line.",
+  "spelling": "Cumulative review: a hard word is often two or three rules stacked up. Take it apart: se + par + ate + ion; forget + t + able."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Then and now",
+   "intro": "As you read Ch. 15, compare.",
+   "fields": [
+    {
+     "label": "Who they were at the start of the book",
+     "hint": "Caspian: … Peter: …",
+     "rows": 3
+    },
+    {
+     "label": "Who they are now, and what it cost",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "The line that shows the biggest change",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 40,
+  "journal-q2": 40,
+  "journal-q3": 40
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "In Chapter 15 the story hands out its endings. Read each moment. Tap the pillar it shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "Aslan asks Caspian if he feels himself sufficient to be King. Caspian says, “I — I don’t think I do, Sir. I’m only a kid.”",
+    "ok": [
+     "Honesty"
+    ],
+    "why": "He tells the truth about himself, even about a crown.",
+    "hint": "What could Caspian have said instead?"
+   },
+   {
+    "t": "The Mice draw their swords, ready to cut off their own tails so their Chief won’t be the only one without one.",
+    "ok": [
+     "Service",
+     "Respect"
+    ],
+    "why": "They give up something of their own for their leader.",
+    "hint": "Whose tail is missing?"
+   },
+   {
+    "t": "Aslan offers the Telmarines a door to a new world. A burly soldier pushes forward first: “Well, I’ll take the offer.”",
+    "ok": [
+     "Courage"
+    ],
+    "why": "He goes first into the unknown.",
+    "hint": "Who goes first?"
+   },
+   {
+    "t": "Peter learns he will never come back to Narnia. Lucy asks if he can bear it. He says, “Well, I think I can.”",
+    "ok": [
+     "Perseverance",
+     "Courage"
+    ],
+    "why": "He accepts a hard ending without complaining.",
+    "hint": "How does Peter take the news?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-30-3-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-30-3-read",
+   "label": "Nell · before you read"
+  },
+  "spelling": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-30-3-spelling",
+   "label": "Nell · stack the rules"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. This is the last chapter. Today’s question: who has changed the most since the first page, and what did the change cost them?",
+  "read": "Make a then-and-now list as you read. Caspian, Peter, Susan, Reepicheep. Who were they at the start, and who are they now? Slow down for the goodbyes, especially what Peter tells Lucy about coming back.",
+  "spelling": "A hard word is usually two or three easy rules stacked up. Hopeful: hope, plus ful, and the e stays because ful starts with a consonant. Take the word apart, use the rules one at a time, and put it back together."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the unit words.",
+    "Answer each question: which word has the root?",
+    "Tap Show Answers to check."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the word meanings.",
+    "Type the word that fits each sentence.",
+    "Tap Check My Answers."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the worked example.",
+    "Punctuate Susan’s line.",
+    "Write it a second way with the tag moved, and say which you’d keep."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the Before and After.",
+    "Type each complete word.",
+    "Tap Check My Work.",
+    "In the box, fix the line and name every rule."
+   ]
+  },
+  {
+   "find": "Pause & Think",
+   "steps": [
+    "Read the two Pause & Think questions first.",
+    "Keep them in mind as you read."
+   ]
+  },
+  {
+   "find": "Open Your Book",
+   "steps": [
+    "Open your book and read Chapter 15, the last chapter.",
+    "Fill in the note boxes as you read.",
+    "After you read, do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "RWM",
+   "steps": [
+    "Read Aslan’s words.",
+    "Think through Reader and Writer.",
+    "Write one balanced sentence: both ___ enough to ___, and ___ enough to ___."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  }
+ ]
+}

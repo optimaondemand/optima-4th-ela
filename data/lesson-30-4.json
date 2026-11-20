@@ -1,0 +1,267 @@
+{
+ "connector": "You’ve finished Prince Caspian. All week you watched the story settle its big question. Today, say what that settling means. Not what the book is about, but what it believes, and prove it from the last three chapters.",
+ "writingFocus": "Resolution",
+ "dol": {
+  "a": {
+   "raw": "sire said reepicheep my life is ever at your command but my honour is my own",
+   "fixed": "&ldquo;<strong>Sire</strong><strong>,</strong>&rdquo; said <strong>Reepicheep</strong><strong>.</strong> &ldquo;<strong>My</strong> life is ever at your command<strong>,</strong> but my honour is my own<strong>.</strong>&rdquo;",
+   "why": "Reepicheep’s real words (Chapter 13). Each part of his speech gets quotation marks; capitals on Sire, Reepicheep and My; a comma before but; periods inside the quotation marks."
+  },
+  "b": {
+   "raw": "well said peter we have had a time",
+   "fixed": "&ldquo;<strong>Well</strong><strong>!</strong>&rdquo; said <strong>Peter</strong><strong>.</strong> &ldquo;<strong>We</strong> have had a time<strong>.</strong>&rdquo;",
+   "why": "The book’s own last lines. Capitals on Well, Peter and We; the exclamation point goes inside the quotation mark; periods end each sentence."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote Edmund’s thought about Peter.",
+  "journal-q2": "… and say what Caspian learns about his own people.",
+  "journal-q3": "… and use one character from early in the book."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "notes": {
+  "wgrd": "Say what the book believes, not what it is about, and anchor it in the ending.",
+  "vocab": [
+   [
+    "challenge",
+    "An invitation to fight or compete that must be answered."
+   ],
+   [
+    "combat",
+    "Fighting; single combat is one against one."
+   ],
+   [
+    "dictate",
+    "To say words aloud for someone else to write down."
+   ],
+   [
+    "marshal",
+    "An official who oversees a contest and keeps order."
+   ],
+   [
+    "sufficient",
+    "Enough for what is needed."
+   ],
+   [
+    "coronation",
+    "The ceremony of crowning a king or queen."
+   ],
+   [
+    "treachery",
+    "Betraying someone who trusted you."
+   ]
+  ],
+  "wordParts": "Review of the unit’s bases: port, tract, struct, spect, ject, script/scribe, rupt, duct/duce, form, plus press = push, tain = hold, lev = lift.",
+  "grammar": "Dialogue punctuation: quotation marks fence off the exact words; the comma or end mark goes inside the closing quotation mark; a tag like said Peter joins with a comma. Editing day.",
+  "spelling": "Cumulative review: a hard word is often two or three rules stacked up. Take it apart: se + par + ate + ion; forget + t + able."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "What this book believes",
+   "intro": "Look back at Ch. 13–15, and the whole book.",
+   "fields": [
+    {
+     "label": "What got settled",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "What did not",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Who had to let go of something",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "Prince Caspian believes that …",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 48,
+  "journal-q2": 40,
+  "journal-q3": 48
+ },
+ "plate": {
+  "src": "plates/pc-ch15.png",
+  "alt": "A glade at sunset where two wooden stakes and a third across the top make an empty doorway, with a great golden lion beside it.",
+  "credit": "From Chapter 15, the door in the air."
+ },
+ "virtue": {
+  "kind": "log",
+  "title": "This book’s strongest pillar",
+  "intro": "Think about all of Prince Caspian. Which pillar did the characters show most? Tap one.",
+  "options": [
+   {
+    "t": "Honesty"
+   },
+   {
+    "t": "Respect"
+   },
+   {
+    "t": "Courtesy"
+   },
+   {
+    "t": "Responsibility"
+   },
+   {
+    "t": "Courage"
+   },
+   {
+    "t": "Service"
+   },
+   {
+    "t": "Perseverance"
+   }
+  ],
+  "line": "Name one moment that proves it.",
+  "placeholder": "The strongest pillar was … because in Chapter … ",
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-30-4-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-30-4-read",
+   "label": "Nell · looking back"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-30-4-grammar",
+   "label": "Nell · check every line of talk"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. You’ve finished the book. I always sit for a minute with a book I’ve just finished. Today’s question: what does Prince Caspian believe, and what in the ending proves it?",
+  "read": "Say what got settled, what didn’t, and who had to let go of something. Then finish the sentence: this book believes that. Not what it’s about. What it believes. Turn to the page in the ending that proves it.",
+  "grammar": "Editing day, the last one for this book. Check every line of dialogue. Are the exact words inside quotation marks? Is the comma or end mark inside too? Does the tag join with a comma? Fix each one and say why."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Read the lines from the poem.",
+    "Think about Peter and Susan’s goodbye.",
+    "Write your thinking in the box."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Play the quick match.",
+    "Pick one base from the unit and explain it in the box."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the unit word list.",
+    "Pick one option from the choice board.",
+    "Write it in the box, starting with the letter you chose."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read each line.",
+    "Tap every line with a dialogue punctuation problem.",
+    "In the box, fix one and explain each change."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words.",
+    "Tap only the ones that are wrong.",
+    "In the box, fix one and name every rule it breaks."
+   ]
+  },
+  {
+   "find": "Chapters 13–15",
+   "steps": [
+    "Look back at Chapters 13 to 15 and the whole book.",
+    "Fill in the note boxes.",
+    "Think about the three questions.",
+    "Then name this book’s strongest pillar at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Final Literary Response",
+   "steps": [
+    "Pick one of the two questions.",
+    "Write five to seven sentences: a claim, three pieces of evidence from the book, and why it matters.",
+    "Tap Copy today’s writing and paste it into your own document."
+   ]
+  }
+ ]
+}
