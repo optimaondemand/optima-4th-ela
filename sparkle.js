@@ -4376,22 +4376,43 @@ function declutter() {
    the length of the call, then putting the scroll back. */
 function hookTabScroll() {
   if (typeof window.switchTab !== 'function') return;
-  if (DATA.navFixes) return;   /* pilot-review fixes: a new tab goes to the top (buildNav) */
+  if (DATA.navFixes) return;   /* buildNav's navTabTop does the same job */
+  if (window.switchTab._tabTop) return;
   var inner = window.switchTab;
-  window.switchTab = function (tabId) {
-    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+  var f = function (tabId) {
     var top = document.getElementById('pageTop');
     var real = top && top.scrollIntoView;
-    if (real) top.scrollIntoView = function () {};     /* muzzle it */
+    if (real) top.scrollIntoView = function () {};     /* goTabTop places the page instead */
     try { return inner.apply(this, arguments); }
-    finally {
-      if (real) top.scrollIntoView = real;
-      /* the browser may still settle a frame later, so put it back
-         twice rather than fight the timing */
-      window.scrollTo(0, y);
-      requestAnimationFrame(function () { window.scrollTo(0, y); });
-    }
+    finally { if (real) top.scrollIntoView = real; goTabTop(tabId); }
   };
+  f._tabTop = true; window.switchTab = f;
+}
+
+/* Every tab change lands at the top of the new tab (Bethany, Nov 19 2026):
+   the new panel's first line sits just under the sticky progress bar and
+   tab bar, not at the very top of the page and not where the last tab
+   was left. Placed twice, because the plate folding and the intro
+   collapsing can still move the panel a frame or two later. Skipped when
+   the page is restoring the last-used tab on load. */
+function goTabTop(tabId) {
+  if (window.__oaoRestoringTab) return;
+  function place() {
+    var panel = document.getElementById('tab-' + tabId) || document.querySelector('.tab-panel.active');
+    if (!panel) { window.scrollTo(0, 0); return; }
+    var off = 8, bar = document.querySelector('.tab-bar');
+    if (bar) { var cs = getComputedStyle(bar); off += (parseFloat(cs.top) || 0) + bar.offsetHeight; }
+    var y = panel.getBoundingClientRect().top + (window.pageYOffset || 0) - off;
+    window.scrollTo(0, Math.max(0, Math.round(y)));
+    last = Math.round(window.pageYOffset || 0);
+  }
+  /* a later pass only re-places the page if nothing else has moved it
+     since (a button that jumps to a spot on the new tab, or the student) */
+  function again() { if (Math.abs((window.pageYOffset || 0) - last) <= 2) place(); }
+  var last = -1;
+  place();
+  requestAnimationFrame(again);
+  setTimeout(again, 380);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -4977,8 +4998,7 @@ function navTabTop() {
   var inner = window.switchTab;
   var f = function () {
     var r = inner.apply(this, arguments);
-    var top = document.getElementById('pageTop');
-    try { if (top) top.scrollIntoView({ block: 'start' }); else window.scrollTo(0, 0); } catch (e) { window.scrollTo(0, 0); }
+    try { goTabTop(arguments[0]); } catch (e) { window.scrollTo(0, 0); }
     try {
       if (window.parent && window.parent !== window) {
         window.parent.postMessage(JSON.stringify({ subject: 'lti.scrollToTop' }), '*');
@@ -5368,7 +5388,9 @@ else boot();
     if (last && last !== 'warmup' && document.getElementById('tab-' + last)) {
       var pt = document.getElementById('pageTop'), keep = pt && pt.scrollIntoView;
       if (pt) pt.scrollIntoView = function () {};   /* no jump on restore */
+      window.__oaoRestoringTab = true;
       try { orig(last); } catch (e) {}
+      window.__oaoRestoringTab = false;
       if (pt) pt.scrollIntoView = keep;
     }
   }
