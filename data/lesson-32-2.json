@@ -1,0 +1,212 @@
+{
+ "connector": "Last time you polished your writing. Today you write about yourself as a reader. Who were you in August, and who are you now? Bring proof, the way you would for a character.",
+ "dol": {
+  "a": {
+   "raw": "put this packet underneath do you understand hurry",
+   "fixed": "&ldquo;<strong>Put</strong> this packet underneath<strong>;</strong> do you understand<strong>?</strong> <strong>Hurry</strong><strong>.</strong>&rdquo;",
+   "why": "Mama’s real words in Number the Stars: three short pieces, each with its own mark, inside one pair of quotation marks."
+  },
+  "b": {
+   "raw": "in august i read slowly but now i read with a pencil in my hand",
+   "fixed": "<strong>In</strong> <strong>August</strong> <strong>I</strong> read slowly<strong>,</strong> but now <strong>I</strong> read with a pencil in my hand<strong>.</strong>",
+   "why": "Capitals on In, August and I; a comma before but joins two complete thoughts; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and name a book from the start and one from the end.",
+  "journal-q2": "… and quote the moment.",
+  "journal-q3": "… and name who should NOT read it, too."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Reader then and now",
+   "intro": "Look back.",
+   "fields": [
+    {
+     "label": "Me as a reader in August",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Me as a reader now",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "My proof",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 64,
+  "journal-q2": 32,
+  "journal-q3": 32
+ },
+ "writingFocus": "Reflect",
+ "notes": {
+  "wgrd": "Reflect on how your reading habits have grown: who you were as a reader in August, who you are now, and the proof.",
+  "vocab": [
+   [
+    "revise",
+    "To change your writing to make the ideas better."
+   ],
+   [
+    "proofread",
+    "To check writing for mistakes in capitals, usage, punctuation and spelling."
+   ],
+   [
+    "portfolio",
+    "A collection of your best work."
+   ],
+   [
+    "reflect",
+    "To think back on something and what it taught you."
+   ]
+  ],
+  "wordParts": "Every base from the year: port, tract, struct, spect, ject, script, rupt, duct, form, press, tain, lev, plus prefixes like pre-, re-, trans-, inter-.",
+  "grammar": "Spiral review: capitals, commas, quotation marks, complete sentences. Read your sentence out loud and check each mark has a job.",
+  "spelling": "Spiral review: drop the silent e, change y to i, double the last consonant when the beat is on the last syllable, and spell each word part the same way every time."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/opti/g4ela-32-2-welcome",
+   "label": "Opti’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/opti/g4ela-32-2-read",
+   "label": "Opti · before you start"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/opti/g4ela-32-2-grammar",
+   "label": "Opti · proofread like an editor"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hoo, hello! It’s Opti. Today you write about yourself as a reader. Today’s question: who were you as a reader in August, and who are you now?",
+  "read": "Think about the first book this year and the last. What can you do now that you couldn’t do then? Name the skill. Then prove it, the way you’d prove something about a character, with a real example.",
+  "grammar": "Proofread like an editor. Read slowly, one sentence at a time. Check capitals, then usage, then punctuation, then spelling. Four quick passes catch more than one long one."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you work."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Read the poem slowly.",
+    "Think about the question under it.",
+    "Write your thinking in the box."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the word parts in the box.",
+    "Do the activity: tap, match or build.",
+    "In the box, explain one part and a word that uses it."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the words and what they mean.",
+    "Do the activity.",
+    "Check your answers."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the example.",
+    "Do the editing task.",
+    "In the box, explain one change you made."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words or sentence.",
+    "Find and fix each mistake.",
+    "In the box, name the rule for one fix."
+   ]
+  },
+  {
+   "find": "Reading Shelf",
+   "steps": [
+    "Look at the five books from this year.",
+    "Think about how you read each one.",
+    "Fill in the note boxes."
+   ]
+  },
+  {
+   "find": "Reader’s Growth",
+   "steps": [
+    "Think about you as a reader in August and now.",
+    "Fill in the boxes."
+   ]
+  },
+  {
+   "find": "Part A",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer every question in full sentences.",
+    "Use a detail from a book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  }
+ ]
+}

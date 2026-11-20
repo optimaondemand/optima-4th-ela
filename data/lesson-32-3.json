@@ -1,0 +1,208 @@
+{
+ "connector": "Today you build your portfolio page: your best piece of writing from the whole year, and why it’s your best. Choose the one that shows how you think, not just the longest one.",
+ "dol": {
+  "a": {
+   "raw": "marilla she demanded presently do you think that i shall ever have a bosom friend in avonlea",
+   "fixed": "&ldquo;<strong>Marilla</strong><strong>,</strong>&rdquo; she demanded presently<strong>,</strong> &ldquo;do you think that <strong>I</strong> shall ever have a bosom friend in <strong>Avonlea</strong><strong>?</strong>&rdquo;",
+   "why": "Anne’s real words (Ch. 8): the tag splits one sentence, so do stays lowercase; the question mark goes inside the last quotation mark."
+  },
+  "b": {
+   "raw": "my best piece is my comparison paragraph because it uses evidence from two books",
+   "fixed": "<strong>My</strong> best piece is my comparison paragraph because it uses evidence from two books<strong>.</strong>",
+   "why": "Capital M to start; no comma needed before because at the end; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and copy one sentence you’re proudest of.",
+  "journal-q2": "… and name the skill in one word.",
+  "journal-q3": "… and say when you learned it."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "My portfolio piece",
+   "intro": "Choose and explain.",
+   "fields": [
+    {
+     "label": "The piece I chose",
+     "hint": "",
+     "rows": 1
+    },
+    {
+     "label": "What it shows I can do",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "Advice to me in Week 1",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 32,
+  "journal-q3": 32
+ },
+ "writingFocus": "Reflect",
+ "notes": {
+  "wgrd": "Reflect on how your reading habits have grown: who you were as a reader in August, who you are now, and the proof.",
+  "vocab": [
+   [
+    "revise",
+    "To change your writing to make the ideas better."
+   ],
+   [
+    "proofread",
+    "To check writing for mistakes in capitals, usage, punctuation and spelling."
+   ],
+   [
+    "portfolio",
+    "A collection of your best work."
+   ],
+   [
+    "reflect",
+    "To think back on something and what it taught you."
+   ]
+  ],
+  "wordParts": "Every base from the year: port, tract, struct, spect, ject, script, rupt, duct, form, press, tain, lev, plus prefixes like pre-, re-, trans-, inter-.",
+  "grammar": "Spiral review: capitals, commas, quotation marks, complete sentences. Read your sentence out loud and check each mark has a job.",
+  "spelling": "Spiral review: drop the silent e, change y to i, double the last consonant when the beat is on the last syllable, and spell each word part the same way every time."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/opti/g4ela-32-3-welcome",
+   "label": "Opti’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/opti/g4ela-32-3-read",
+   "label": "Opti · before you start"
+  },
+  "spelling": {
+   "kind": "video",
+   "path": "guide/opti/g4ela-32-3-spelling",
+   "label": "Opti · the last check"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello again, it’s Opti. Today you build your portfolio page. Today’s question: what is the most important thing you learned this year?",
+  "read": "Look through your writing from the whole year. Choose the piece that shows how you think, not just the longest one. Then explain what makes it your best, and what you’d tell yourself back in Week 1.",
+  "spelling": "One last spelling check. Read your piece out loud and touch each long word. Find the part you know. Check the ending. If a word looks strange, it probably is. Fix it now, and your best piece stays your best."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you work."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the word parts in the box.",
+    "Do the activity: tap, match or build.",
+    "In the box, explain one part and a word that uses it."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the words and what they mean.",
+    "Do the activity.",
+    "Check your answers."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the example.",
+    "Do the editing task.",
+    "In the box, explain one change you made."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words or sentence.",
+    "Find and fix each mistake.",
+    "In the box, name the rule for one fix."
+   ]
+  },
+  {
+   "find": "Your Portfolio",
+   "steps": [
+    "Read what goes in a portfolio page."
+   ]
+  },
+  {
+   "find": "Build Your Portfolio",
+   "steps": [
+    "Choose your best piece from the year.",
+    "Fill in the boxes."
+   ]
+  },
+  {
+   "find": "Part A",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer every question in full sentences.",
+    "Use a detail from a book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  }
+ ]
+}

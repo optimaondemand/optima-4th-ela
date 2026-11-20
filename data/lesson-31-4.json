@@ -1,0 +1,243 @@
+{
+ "connector": "Five books, side by side. Today you step back and ask what you discovered. Your theme isn’t just about Narnia or Denmark or Avonlea. It’s about people. Say what it means, in one sentence you’d be proud to sign.",
+ "dol": {
+  "a": {
+   "raw": "peter said he says were getting too old",
+   "fixed": "<strong>Peter</strong> said<strong>,</strong> &ldquo;<strong>He</strong> says <strong>we’re</strong> getting too old<strong>.</strong>&rdquo;",
+   "why": "Peter’s real words to Lucy (Prince Caspian, Ch. 15): we’re is we are, so it needs an apostrophe."
+  },
+  "b": {
+   "raw": "my favorite book this year was number the stars because annemarie was so brave",
+   "fixed": "<strong>My</strong> favorite book this year was <strong>Number the Stars</strong><strong>,</strong> because <strong>Annemarie</strong> was so brave<strong>.</strong>",
+   "why": "Capitals on My, on each main word of the title and on Annemarie; a period ends it. (A comma before because is optional here.)"
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and name what surprised you.",
+  "journal-q2": "… and quote one line from it.",
+  "journal-q3": "… and say what you think they would answer."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "What I discovered",
+   "intro": "Look back at the whole week.",
+   "fields": [
+    {
+     "label": "My theme across the books",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "What it says about people",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "My one-sentence takeaway",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1"
+  ]
+ },
+ "counters": {
+  "journal-q1": 40,
+  "journal-q2": 40,
+  "journal-q3": 32
+ },
+ "virtue": {
+  "kind": "log",
+  "title": "This year’s strongest pillar",
+  "intro": "Think about all five books. Which pillar did the characters show most this year? Tap one.",
+  "options": [
+   {
+    "t": "Honesty"
+   },
+   {
+    "t": "Respect"
+   },
+   {
+    "t": "Courtesy"
+   },
+   {
+    "t": "Responsibility"
+   },
+   {
+    "t": "Courage"
+   },
+   {
+    "t": "Service"
+   },
+   {
+    "t": "Perseverance"
+   }
+  ],
+  "line": "Name one moment from any book that proves it.",
+  "placeholder": "The strongest pillar this year was … because in …",
+  "kicker": "Seven Pillars Watch",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "writingFocus": "Compare",
+ "notes": {
+  "wgrd": "Compare themes across texts: name a theme, find it in two books, and say how the characters show it alike and differently.",
+  "vocab": [
+   [
+    "theme",
+    "The big idea about life that a story keeps showing."
+   ],
+   [
+    "compare",
+    "To tell how two things are alike."
+   ],
+   [
+    "contrast",
+    "To tell how two things are different."
+   ],
+   [
+    "evidence",
+    "Details from the text that prove what you say."
+   ]
+  ],
+  "wordParts": "Every base from the year: port, tract, struct, spect, ject, script, rupt, duct, form, press, tain, lev, plus prefixes like pre-, re-, trans-, inter-.",
+  "grammar": "Spiral review: capitals, commas, quotation marks, complete sentences. Read your sentence out loud and check each mark has a job.",
+  "spelling": "Spiral review: drop the silent e, change y to i, double the last consonant when the beat is on the last syllable, and spell each word part the same way every time."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/opti/g4ela-31-4-welcome",
+   "label": "Opti’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/opti/g4ela-31-4-read",
+   "label": "Opti · before you start"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/opti/g4ela-31-4-grammar",
+   "label": "Opti · your best sentence"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hoo! It’s Opti. Five books, side by side. Today’s question: what did you discover about people from all of them together?",
+  "read": "Step back from the whole week. Your theme is about more than one story. It’s about real people too. Write what you discovered in one strong sentence you would be proud to sign.",
+  "grammar": "Your best sentence deserves a careful check. Capital at the start. Names capitalized. Commas where they join or separate. Quotation marks around exact words. An end mark that fits. Then read it out loud one last time."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you work."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Read the poem slowly.",
+    "Think about the question under it.",
+    "Write your thinking in the box."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the word parts in the box.",
+    "Do the activity: tap, match or build.",
+    "In the box, explain one part and a word that uses it."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the words and what they mean.",
+    "Do the activity.",
+    "Check your answers."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the example.",
+    "Do the editing task.",
+    "In the box, explain one change you made."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words or sentence.",
+    "Find and fix each mistake.",
+    "In the box, name the rule for one fix."
+   ]
+  },
+  {
+   "find": "Reading Shelf",
+   "steps": [
+    "Look back at all five books.",
+    "Fill in the note boxes.",
+    "Then name this year’s strongest pillar at the end of this tab."
+   ]
+  },
+  {
+   "find": "Part A",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer every question in full sentences.",
+    "Use a detail from a book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Writing Connection",
+   "steps": [
+    "Write one sentence: your theme across the books and in real life.",
+    "Tap Copy today’s writing."
+   ]
+  }
+ ]
+}

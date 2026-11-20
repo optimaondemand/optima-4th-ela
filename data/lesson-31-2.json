@@ -1,0 +1,256 @@
+{
+ "connector": "Last time you chose a theme. Today you find it in two different books and line the two characters up side by side. How do they show the same idea, and how do they show it differently?",
+ "dol": {
+  "a": {
+   "raw": "we might be some good to her said matthew suddenly and unexpectedly",
+   "fixed": "&ldquo;<strong>We</strong> might be some good to her<strong>,</strong>&rdquo; said <strong>Matthew</strong> suddenly and unexpectedly<strong>.</strong>",
+   "why": "Matthew’s real words (Anne of Green Gables, Ch. 3): the comma goes inside the closing quotation mark, then the tag, then a period."
+  },
+  "b": {
+   "raw": "anne and annemarie are both brave but they show it in different ways",
+   "fixed": "<strong>Anne</strong> and <strong>Annemarie</strong> are both brave<strong>,</strong> but they show it in different ways<strong>.</strong>",
+   "why": "Capitals on both names; a comma before but joins two complete thoughts; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote each character once.",
+  "journal-q2": "… and name what drives each one.",
+  "journal-q3": "… and say what would change if that moment were missing."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Two characters, one theme",
+   "intro": "Line them up.",
+   "fields": [
+    {
+     "label": "Character 1, book, and moment",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Character 2, book, and moment",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "Alike: … Different: …",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 40,
+  "journal-q2": 40,
+  "journal-q3": 32
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "More moments from this year’s books. Tap the pillar each one shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "Number the Stars: When the soldiers come, Annemarie clutches Ellen’s Star of David so hard it leaves its print in her hand.",
+    "ok": [
+     "Courage",
+     "Service"
+    ],
+    "why": "She protects her friend in a dangerous moment.",
+    "hint": "Whose secret is she keeping safe?"
+   },
+   {
+    "t": "Prince Caspian: Susan says to Lucy, “I see him now. I’m sorry.”",
+    "ok": [
+     "Honesty"
+    ],
+    "why": "She admits she was wrong.",
+    "hint": "What does Susan admit?"
+   },
+   {
+    "t": "Prince Caspian: Trufflehunter says, “I’m a beast and we don’t change. I’m a badger, what’s more, and we hold on.”",
+    "ok": [
+     "Perseverance"
+    ],
+    "why": "He held on to the truth for a very long time.",
+    "hint": "What does holding on mean?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "writingFocus": "Compare",
+ "notes": {
+  "wgrd": "Compare themes across texts: name a theme, find it in two books, and say how the characters show it alike and differently.",
+  "vocab": [
+   [
+    "theme",
+    "The big idea about life that a story keeps showing."
+   ],
+   [
+    "compare",
+    "To tell how two things are alike."
+   ],
+   [
+    "contrast",
+    "To tell how two things are different."
+   ],
+   [
+    "evidence",
+    "Details from the text that prove what you say."
+   ]
+  ],
+  "wordParts": "Every base from the year: port, tract, struct, spect, ject, script, rupt, duct, form, press, tain, lev, plus prefixes like pre-, re-, trans-, inter-.",
+  "grammar": "Spiral review: capitals, commas, quotation marks, complete sentences. Read your sentence out loud and check each mark has a job.",
+  "spelling": "Spiral review: drop the silent e, change y to i, double the last consonant when the beat is on the last syllable, and spell each word part the same way every time."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/opti/g4ela-31-2-welcome",
+   "label": "Opti’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/opti/g4ela-31-2-read",
+   "label": "Opti · before you start"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/opti/g4ela-31-2-grammar",
+   "label": "Opti · every mark has a job"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hoo! It’s Opti. You chose a theme. Today you find it in two different books. Today’s question: how can two characters show the same idea in different ways?",
+  "read": "Pick two characters from two books who show your theme. Write one moment for each. Then ask: how are they alike, and how are they different? Think about what makes each one act.",
+  "grammar": "Every punctuation mark has a job. A capital starts a sentence and a name. A comma joins or separates. Quotation marks hold someone’s exact words. Read your sentence out loud, and ask each mark: what’s your job?"
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you work."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Read the poem slowly.",
+    "Think about the question under it.",
+    "Write your thinking in the box."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the word parts in the box.",
+    "Do the activity: tap, match or build.",
+    "In the box, explain one part and a word that uses it."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the words and what they mean.",
+    "Do the activity.",
+    "Check your answers."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the example.",
+    "Do the editing task.",
+    "In the box, explain one change you made."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words or sentence.",
+    "Find and fix each mistake.",
+    "In the box, name the rule for one fix."
+   ]
+  },
+  {
+   "find": "Reading Shelf",
+   "steps": [
+    "Look at the five books from this year.",
+    "Think of one moment from each that fits your theme.",
+    "Fill in the note boxes. Then do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Theme Evidence Hunt",
+   "steps": [
+    "Find one moment for each of your two characters.",
+    "Write the book and the moment in the boxes."
+   ]
+  },
+  {
+   "find": "Part A",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer every question in full sentences.",
+    "Use a detail from a book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  }
+ ]
+}

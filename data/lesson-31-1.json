@@ -1,0 +1,271 @@
+{
+ "connector": "Hoo, hello! You’ve read five books this year: Mrs. Frisby and the Rats of NIMH, Anne of Green Gables, Number the Stars, Freedom Train and Prince Caspian. This week you put them side by side. A theme is a big idea a story keeps coming back to, and the best ones show up in more than one book. Pick one today.",
+ "dol": {
+  "a": {
+   "raw": "peter said to caspian i havent come to take your place you know but to put you into it",
+   "fixed": "<strong>Peter</strong> said to <strong>Caspian</strong><strong>,</strong> &ldquo;<strong>I haven’t</strong> come to take your place<strong>,</strong> you know<strong>,</strong> but to put you into it<strong>.</strong>&rdquo;",
+   "why": "Peter’s real words (Prince Caspian, Ch. 12): capitals on Peter, Caspian and I; an apostrophe in haven’t; commas around you know; the period inside the quotation marks."
+  },
+  "b": {
+   "raw": "this year we read five books and we kept a learning journal",
+   "fixed": "<strong>This</strong> year we read five books<strong>,</strong> and we kept a learning journal<strong>.</strong>",
+   "why": "Capital T to start; a comma before and joins two complete thoughts; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and say how a theme is different from a topic.",
+  "journal-q2": "… and name two books where you see it.",
+  "journal-q3": "… and quote the character."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 1
+  }
+ },
+ "copia": {
+  "seed": "Annemarie <b data-verb>kept</b> Ellen’s necklace safe.",
+  "eg": [
+   "When the soldiers came, Annemarie kept Ellen’s necklace safe.",
+   "Annemarie <i>clutched</i> Ellen’s necklace.",
+   "Annemarie kept Ellen’s necklace safe, hidden in her fist."
+  ]
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "My theme",
+   "intro": "Choose a theme and find it.",
+   "fields": [
+    {
+     "label": "The theme I chose",
+     "hint": "courage, loyalty, belonging…",
+     "rows": 1
+    },
+    {
+     "label": "Books and moments where I see it",
+     "hint": "",
+     "rows": 4
+    }
+   ],
+   "end": {
+    "label": "What this theme means in real life",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q2",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 32,
+  "journal-q3": 40
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "The OAO Seven Pillars are honesty, respect, courtesy, responsibility, courage, service and perseverance. These moments come from three books this year. Tap the pillar each one shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "Number the Stars: Uncle Henrik tells Annemarie, “That’s all that brave means — not thinking about the dangers. Just thinking about what you must do.”",
+    "ok": [
+     "Courage"
+    ],
+    "why": "Brave means doing what you must, even when you are afraid.",
+    "hint": "What does Uncle Henrik say brave means?"
+   },
+   {
+    "t": "Anne of Green Gables: Matthew says, “Well now, I’d rather have you than a dozen boys, Anne.”",
+    "ok": [
+     "Respect",
+     "Courtesy"
+    ],
+    "why": "He tells Anne she is valued just as she is.",
+    "hint": "How does Matthew make Anne feel?"
+   },
+   {
+    "t": "Prince Caspian: Peter tells Caspian, “I haven’t come to take your place, you know, but to put you into it.”",
+    "ok": [
+     "Service",
+     "Respect"
+    ],
+    "why": "He uses his power to help Caspian, not to replace him.",
+    "hint": "Who could have been king?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "writingFocus": "Compare",
+ "notes": {
+  "wgrd": "Compare themes across texts: name a theme, find it in two books, and say how the characters show it alike and differently.",
+  "vocab": [
+   [
+    "theme",
+    "The big idea about life that a story keeps showing."
+   ],
+   [
+    "compare",
+    "To tell how two things are alike."
+   ],
+   [
+    "contrast",
+    "To tell how two things are different."
+   ],
+   [
+    "evidence",
+    "Details from the text that prove what you say."
+   ]
+  ],
+  "wordParts": "Every base from the year: port, tract, struct, spect, ject, script, rupt, duct, form, press, tain, lev, plus prefixes like pre-, re-, trans-, inter-.",
+  "grammar": "Spiral review: capitals, commas, quotation marks, complete sentences. Read your sentence out loud and check each mark has a job.",
+  "spelling": "Spiral review: drop the silent e, change y to i, double the last consonant when the beat is on the last syllable, and spell each word part the same way every time."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/opti/g4ela-31-1-welcome",
+   "label": "Opti’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/opti/g4ela-31-1-read",
+   "label": "Opti · before you start"
+  },
+  "morphology": {
+   "kind": "video",
+   "path": "guide/opti/g4ela-31-1-morphology",
+   "label": "Opti · a year of word parts"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hoo, hello! It’s Opti. You’ve read five books this year, and now you get to put them side by side. Today’s question: what big ideas show up in more than one story?",
+  "read": "A theme isn’t one word on a page. It’s a big idea about life that a story keeps showing, like courage or belonging. Look at your reading shelf. Pick one theme, and find one character who shows it.",
+  "morphology": "You learned a lot of word parts this year. Port means carry. Spect means look. Rupt means break. Pre means before. When you meet a long word, find a part you know, and the word starts to explain itself."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you work."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the word parts in the box.",
+    "Do the activity: tap, match or build.",
+    "In the box, explain one part and a word that uses it."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the words and what they mean.",
+    "Do the activity.",
+    "Check your answers."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the example.",
+    "Do the editing task.",
+    "In the box, explain one change you made."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words or sentence.",
+    "Find and fix each mistake.",
+    "In the box, name the rule for one fix."
+   ]
+  },
+  {
+   "find": "Pause & Think",
+   "steps": [
+    "Read the questions.",
+    "Think about them. No writing needed here."
+   ]
+  },
+  {
+   "find": "Reading Shelf",
+   "steps": [
+    "Look at the five books from this year.",
+    "Think of one moment from each that fits your theme.",
+    "Fill in the note boxes. Then do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Part A",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer every question in full sentences.",
+    "Use a detail from a book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Writing Connection",
+   "steps": [
+    "Think about your theme in real life.",
+    "Write two or three sentences.",
+    "Tap Copy today’s writing."
+   ]
+  }
+ ]
+}
