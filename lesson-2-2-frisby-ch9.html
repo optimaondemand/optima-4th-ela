@@ -2955,7 +2955,27 @@ function switchTab(tabId) {
   // Auto-gather answers when arriving at assignment tab
   if (tabId === 'assignment') { gatherAnswers(); }
 
-  document.getElementById('pageTop').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  /* land at the top of the new tab, just under the sticky tab bar */
+  (function () {
+    var last = -1;
+    function place() {
+      var panel = document.getElementById('tab-' + tabId);
+      if (!panel) { window.scrollTo(0, 0); return; }
+      var off = 8, bar = document.querySelector('.tab-bar');
+      if (bar) { var cs = getComputedStyle(bar); off += (parseFloat(cs.top) || 0) + bar.offsetHeight; }
+      var y = panel.getBoundingClientRect().top + (window.pageYOffset || 0) - off;
+      window.scrollTo(0, Math.max(0, Math.round(y)));
+      last = Math.round(window.pageYOffset || 0);
+    }
+    function again() { if (Math.abs((window.pageYOffset || 0) - last) <= 2) place(); }
+    place(); requestAnimationFrame(again); setTimeout(again, 380);
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage(JSON.stringify({ subject: 'lti.scrollToTop' }), '*');
+        window.parent.postMessage({ subject: 'lti.scrollToTop' }, '*');
+      }
+    } catch (e) {}
+  })();
 }
 
 function expandIntro() {

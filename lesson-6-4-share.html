@@ -2468,9 +2468,9 @@ return all.length?all[all.length-1]:null;}
 </div>
 </div>
 
-
-  
-
+  <!-- DOL -->
+  <div class="activity bl-cyan">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">1</div><div><div class="activity-title">✏️ Daily Oral Language</div><div class="activity-sub">Study the model, then fix the sentence.</div></div></div>
     <div class="activity-body">
       <p>The first sentence is <strong>correct</strong>. Tap the parts you notice are done right &mdash; capital letters, punctuation, quotation marks, anything that follows the rules. Then use it as a model to fix the second sentence.</p>
 
@@ -2526,7 +2526,7 @@ Each singing what belongs to him or her and to none else.</div>
       </div>
       <div class="thinking-stop">💭 Pause and think — no need to write here.</div>
     </div>
-  
+  </div>
 
   <div class="tab-next-wrap">
     <p class="tab-transition-voice">Now that your mind is warmed up, let&rsquo;s sharpen your words and skills.</p>
@@ -2738,7 +2738,27 @@ function switchTab(tabId) {
   // Auto-gather answers when arriving at assignment tab
   if (tabId === 'assignment') { gatherAnswers(); }
 
-  document.getElementById('pageTop').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  /* land at the top of the new tab, just under the sticky tab bar */
+  (function () {
+    var last = -1;
+    function place() {
+      var panel = document.getElementById('tab-' + tabId);
+      if (!panel) { window.scrollTo(0, 0); return; }
+      var off = 8, bar = document.querySelector('.tab-bar');
+      if (bar) { var cs = getComputedStyle(bar); off += (parseFloat(cs.top) || 0) + bar.offsetHeight; }
+      var y = panel.getBoundingClientRect().top + (window.pageYOffset || 0) - off;
+      window.scrollTo(0, Math.max(0, Math.round(y)));
+      last = Math.round(window.pageYOffset || 0);
+    }
+    function again() { if (Math.abs((window.pageYOffset || 0) - last) <= 2) place(); }
+    place(); requestAnimationFrame(again); setTimeout(again, 380);
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage(JSON.stringify({ subject: 'lti.scrollToTop' }), '*');
+        window.parent.postMessage({ subject: 'lti.scrollToTop' }, '*');
+      }
+    } catch (e) {}
+  })();
 }
 
 function expandIntro() {
