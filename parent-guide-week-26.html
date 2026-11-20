@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 26 Family Guide · Prince Caspian Ch. 1–3 · 4th Grade ELA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+.b-rose{background:#FDEEEE;border-radius:12px;padding:14px 16px;} .b-rose .box-label{color:#A8434A;}
+
+.p-museum{background:var(--sky-bg);color:#1F6F8C;}
+.p-extra{background:var(--green-bg);color:#1F8452;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.extras .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.essay{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.essay span{font-size:15px;font-weight:800;border-radius:999px;padding:4px 12px;background:var(--paper);border:1px solid var(--line);color:var(--muted);}
+.essay span.now{background:var(--gold-bg);border-color:#F5E6C8;color:#9A6C14;}
+.essay span.done{background:var(--green-bg);border-color:#CDEFDB;color:#1F8452;}
+@media (max-width:720px){.extras{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 4th Grade ELA</div>
+      <h1>Week 26: Back to Narnia</h1>
+      <div class="sub"><em>Prince Caspian</em> by C. S. Lewis, Chapters 1–3</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">Ch. 1–3</span>
+        <span class="chip">A new book</span>
+        <span class="chip">Check-In at week’s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('https://optimaondemand.github.io/optima-4th-ela/assets/covers/pc.jpg');background-position:center 35%;" role="img" aria-label="Cover of Prince Caspian by C. S. Lewis"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>🔊</span><strong>Two buttons at the top:</strong> <strong>Read aloud</strong> opens the page reader (with a speed control), and <strong>Lesson details</strong> shows the unit, week, chapter and standards.</li>
+      <li><span>📝</span><strong>Every answer goes on the page.</strong> There’s a box for each one, including the Daily Oral Language sentence, and a word count under it shows how much is expected.</li>
+      <li><span>▶️</span><strong>Start here:</strong> a gold drawer at the very top of every page holds a one-minute video on how to use the lesson.</li>
+      <li><span>👆</span><strong>One step at a time:</strong> each activity opens with a short “What to do” list, and the page shows one step at a time. Tap 👆 Next to move on, or ◂ Back to look again.</li>
+      <li><span>🔍</span><strong>Reading lens:</strong> before reading, your student picks one of three lenses to read through. A bookmark in the reading box keeps it in view, and one line at the end of the questions asks what it helped them notice.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📓</span><strong>Download your ELA journal for the day</strong> at the bottom of the Assignment tab saves everything as one page. Use it (or Copy) to <strong>submit in Canvas</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the book nearby.</li>
+    </ul>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>A new book begins. Peter, Susan, Edmund and Lucy are waiting at a train station when they are pulled away to a wild island. They find an old orchard and a ruined castle, and work out that it is their own Cair Paravel from their first adventure in Narnia: hundreds of Narnian years have passed while only one passed in England. Then they rescue a Dwarf from two soldiers, and he tells them he is a messenger of “King Caspian.” Each day your student also writes a short Writing Connection.</p>
+    <div class="box b-rose" style="margin-bottom:12px;"><div class="box-label">💛 A heads-up for families</div>In Chapter 3, two soldiers are about to drown a tied-up Dwarf. Susan shoots an arrow that knocks one soldier into the water; both soldiers get away, and nobody is killed. The full list for the book is on the <a href="parent-guide-pc-unit.html" style="color:#A8434A;font-weight:700;">unit guide</a>.</div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>Reading a fantasy setting.</strong> Your student collects place clues (what the children see and touch) and time clues (what has crumbled or grown wild), then says where and when the children are in one sentence.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>Coming back to a place that has changed.</strong> The children remember a castle full of life. They find a ruin, and have to figure out what happened while they were gone.</div>
+    </div>
+    <p class="quote">“This must have been an orchard — long, long ago…”<small>Susan, Chapter 1</small></p>
+  </section>
+
+  <!-- DAY BY DAY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">26.1<span>Day 1</span></td>
+          <td><span class="ch">Chapter 1 · The Island</span><br>The children are pulled from a train station into a thick wood on an island. Hungry and thirsty, they find a stream, an orchard gone wild, and an old stone wall.<br><span class="pill p-guide">Guide: Nell</span><span class="pill p-extra">Copia: Say It Three Ways</span><span class="pill p-extra">Seven Pillars Watch</span></td>
+          <td>What kind of place have they arrived at, and what clues tell you?</td>
+        </tr>
+        <tr>
+          <td class="day-n">26.2<span>Day 2</span></td>
+          <td><span class="ch">Chapter 2 · The Ancient Treasure House</span><br>Susan finds a little golden chess-knight. Peter lays out the clues: this is Cair Paravel. Behind the ivy they find the door to the treasure chamber, and their old gifts. Susan’s horn is missing.<br><span class="pill p-guide">Guide: Nell</span><span class="pill p-poem">By Heart poem</span><span class="pill p-extra">Read · Write · Mimic</span><span class="pill p-extra">Seven Pillars Watch</span></td>
+          <td>What new details do you learn about this place, and how is the children’s understanding of it changing?</td>
+        </tr>
+        <tr>
+          <td class="day-n">26.3<span>Day 3</span></td>
+          <td><span class="ch">Chapter 3 · The Dwarf</span><br>Edmund works out that Narnian time runs differently. Then the children save a Dwarf from two soldiers. He tells them he is a messenger of King Caspian.<br><span class="pill p-guide">Guide: Nell</span><span class="pill p-extra">Read · Write · Mimic</span><span class="pill p-extra">Seven Pillars Watch</span></td>
+          <td>What does this rescue tell us about the children, and about the world they’ve returned to?</td>
+        </tr>
+        <tr>
+          <td class="day-n">26.4<span>Day 4</span></td>
+          <td><span class="ch">Chapters 1–3 · looking back</span><br>No new chapter. Your student traces how the setting grew from Chapter 1 to Chapter 3, picks one treasure and what it means, and names the week’s strongest pillar.<br><span class="pill p-guide">Guide: Nell</span><span class="pill p-poem">By Heart poem</span><span class="pill p-extra">Seven Pillars Watch</span></td>
+          <td>What kind of story do you think this is going to be, and what clues have you seen so far?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">A passage from Chapter 2, when Peter holds up his old sword and sounds like the High King again. Your student reads it three times, for accuracy, smoothness and expression, then <strong>records and submits it in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point wrap-up: and / or, the prefixes pre-, re-, trans- and inter-, splitting long words, and questions about the fantasy setting, with real passages from Chapters 1 and 2.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words"><div class="word"><b>junction</b><span>a place where things meet, especially where train lines split</span></div><div class="word"><b>thicket</b><span>a dense group of bushes or small trees</span></div><div class="word"><b>brambles</b><span>thorny bushes with prickly stems</span></div><div class="word"><b>inhabited</b><span>lived in</span></div></div>
+    <div class="skills">
+      <div class="box b-sky"><div class="box-label">Word parts</div>Prefixes that tell when and where: <strong>pre-</strong> (before), <strong>re-</strong> (again, back), <strong>trans-</strong> (across), <strong>inter-</strong> (between).<span class="eg">preview · return · transport · international</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>Long words, part by part.</strong> Peel off the prefix and suffix first; what’s left is a word you know, and the syllables split easily.<span class="eg">un · familiar · transport · ed</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>And and or.</strong> <em>And</em> joins ideas that are both true; <em>or</em> offers a choice. Too many <em>ands</em> in a row make every idea sound the same.<span class="eg">stay in the castle or ride into the woods</span></div>
+    </div>
+  </section>
+
+  <!-- EXTRAS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✨</span><h2>New in the Lessons</h2></div>
+    <p>The lesson pages work the same way as in Freedom Train. New for this book:</p>
+    <div class="extras">
+      <div class="box b-rose"><div class="box-label">🎧 Nell, the new guide</div>Nell is a bookbinder who mends old books and has read the Narnia books every winter since she was nine. She welcomes each lesson and leads a short captioned film on the Word Study tab. (She is made up for our lessons; she is not in the book.)</div>
+      <div class="box b-plum"><div class="box-label">🗝️ Fill the Treasure Chamber</div>On Days 1 and 3, each word your student builds sets a treasure back in the castle’s old treasure chamber, four a day, until every torch is lit.</div>
+      <div class="box b-gold"><div class="box-label">🏛️ Seven Pillars Watch, after reading</div>Real moments from the chapter, and your student taps which of the seven OAO pillars each one shows: honesty, respect, courtesy, responsibility, courage, service or perseverance. On Day 4, they name the week’s strongest pillar and prove it.</div>
+      <div class="box b-sky"><div class="box-label">🔍 Reading lens</div>Before reading, your student picks one of three lenses and reads through it. One line at the end of the questions asks what it helped them notice.</div>
+      <div class="box b-green"><div class="box-label">🪶 A new poem to learn</div>“The Forest Remembers,” four lines about a land that remembers the people who loved it.</div>
+      <div class="box b-sky"><div class="box-label">✎ Copia: Say It Three Ways</div>On Day 1, your student rewrites “The children found an old stone wall” three ways: a new opening, a stronger verb, and an added detail.</div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Writing This Week</h2><span class="tag">Writing Connection</span></div>
+    <p>No long essay in this unit. Each day ends with a short Writing Connection: Day 1 compares the train station with the island, Day 2 describes a place that changed, Day 3 retells a moment from Trumpkin’s point of view, and Day 4 names one thing C. S. Lewis does well as a writer, with an example.</p>
+  </section>
+
+  <!-- BY HEART -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>By Heart: the Unit Poem</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">The stones still stand where towers fell,<br>The river hums a half-lost spell,<br>The trees lean close as if to say,<br>“We knew you’d find your way back someday.”<small>“The Forest Remembers,” written for our Prince Caspian lessons</small></div>
+      <div><p>A new poem for a new book. On Day 2 your student reads it and starts learning it; on Day 4 a few words fade from the screen.</p><p><strong>How to help:</strong> Ask your student who “you” is in the last line. Then ask how the poem fits the children coming back to Cair Paravel.</p></div>
+    </div>
+  </section>
+
+  <!-- ASK AT HOME -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than “How was school?”</span></div>
+    <ol class="ask"><li><span class="q">How did the children get to Narnia this time?</span><span class="listen">Listen for: they were sitting at a train station and felt a pull; then they were standing in a thick wood.</span></li><li><span class="q">How did they figure out the ruin was Cair Paravel?</span><span class="listen">Listen for: Peter’s clues, such as the shape of the hall, the well, the chess-knight, and the orchard.</span></li><li><span class="q">Why did the castle look so old if they had only been gone a year?</span><span class="listen">Listen for: Edmund’s idea that time in Narnia runs differently, so hundreds of years passed there.</span></li><li><span class="q">What gifts did they find in the treasure chamber? What was missing?</span><span class="listen">Listen for: Lucy’s cordial, Susan’s bow, Peter’s sword and shield; Susan’s horn was gone.</span></li><li><span class="q">Who did the children rescue, and what did he tell them?</span><span class="listen">Listen for: a Dwarf the soldiers were about to drown; he is a messenger of King Caspian.</span></li><li><span class="q">Which pillar did you see most this week?</span><span class="listen">Listen for: a pillar and a real moment from Chapters 1–3.</span></li></ol>
+  </section>
+
+  <!-- TURN IN + TRY AT HOME -->
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check"><li><strong>Each lesson:</strong> 3 chapter questions plus word-study and writing responses, submitted in Canvas</li><li><strong>Writing Connection:</strong> a short piece each day</li><li><strong>Fluency:</strong> a recording of a passage from Chapter 2</li><li><strong>Check-In:</strong> at the end of the week</li></ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> answers that point to a specific detail the children saw, heard or found, and say what it tells the reader about Narnia now.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check"><li><strong>Visit a place from long ago</strong> (an old house, a park, a photo of where you grew up) and talk about what time changed.</li><li><strong>Ask your student to predict</strong> who King Caspian is, and write it down to check later.</li><li><strong>Look at pictures of real castle ruins</strong> and find the hall, the tower and the well.</li></ul>
+    </section>
+  </div>
+
+  <!-- NEED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong><em>Prince Caspian</em></strong> by C. S. Lewis · <strong>A device that records audio</strong> for the fluency reading</p>
+  </section>
+
+  <!-- NEXT WEEK -->
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 27</h2></div>
+    <p><strong><em>Prince Caspian</em>, Chapters 4–6.</strong> The Dwarf tells the story of Prince Caspian: his tutor, his uncle Miraz, his escape, and the Old Narnians hiding in the woods.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-pc-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole Prince Caspian unit →</a><br><br>Optima Academy Online · 4th Grade ELA · Week 26 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+</body>
+</html>
