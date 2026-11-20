@@ -1,0 +1,300 @@
+{
+ "connector": "The children are walking now, through wild woods and up to the edge of a deep gorge. Lucy sees something the others don’t, and the group has to vote. Watch each person weigh the choice. A vote tells you what someone values.",
+ "writingFocus": "Leadership",
+ "dol": {
+  "a": {
+   "raw": "although lucy saw aslan clearly the others kept walking because they could not see him at all",
+   "fixed": "<strong>Although</strong> <strong>Lucy</strong> saw <strong>Aslan</strong> clearly<strong>,</strong> the others kept walking because they could not see him at all<strong>.</strong>",
+   "why": "Capitals on Although, Lucy and Aslan; a comma after the opening although clause; no comma before because at the end; a period ends it."
+  },
+  "b": {
+   "raw": "because edmund remembered being wrong before he voted to believe lucy",
+   "fixed": "<strong>Because</strong> <strong>Edmund</strong> remembered being wrong before<strong>,</strong> he voted to believe <strong>Lucy</strong><strong>.</strong>",
+   "why": "Capitals on Because, Edmund and Lucy; a comma after the opening because clause; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote one person’s reason.",
+  "journal-q2": "… and quote Peter’s answer.",
+  "journal-q3": "… and say what the plain words leave out."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 4
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "hints": {
+  "s4w28cf1": {
+   "h1": "Think of finite. Which vowel do you hear clearly there?",
+   "why": "fin-ITE: the vowel is i, so defin<b>i</b>te."
+  },
+  "s4w28cf2": {
+   "h1": "Think of composite. Which vowel is stressed there?",
+   "why": "com-POS-ite: the vowel is i, so compos<b>i</b>tion."
+  },
+  "s4w28cf3": {
+   "h1": "Think of apart: separate means pulled apart. Which vowel?",
+   "why": "a-PART: the vowel is a, so sep<b>a</b>rate."
+  },
+  "s4w28cf4": {
+   "h1": "Think of councillor. Which consonant follows coun-?",
+   "why": "coun<b>c</b>il, like councillor."
+  }
+ },
+ "notes": {
+  "wgrd": "At the gorge, find the exact decision, weigh it from each voter’s side, and count what the choice costs.",
+  "vocab": [
+   [
+    "council",
+    "A group gathered to talk and decide what to do."
+   ],
+   [
+    "seneschal",
+    "The chief steward who runs a lord’s household."
+   ],
+   [
+    "entrenchments",
+    "Ditches and banks dug for defense."
+   ],
+   [
+    "consorts",
+    "Companions, especially of a king or queen."
+   ],
+   [
+    "gorge",
+    "A deep, narrow valley with steep sides."
+   ],
+   [
+    "bivouac",
+    "A rough camp without proper shelter."
+   ]
+  ],
+  "wordParts": "Latin bases: spect = look, ject = throw, script and scribe = write: inspect, reject, manuscript, spectacles.",
+  "grammar": "A complex sentence has a main clause and a dependent clause that starts with a word like because, although, when, if or since. If the dependent clause comes first, put a comma after it. Although and because let one sentence hold the doubt and the reason.",
+  "spelling": "Schwa is the lazy uh sound in an unstressed syllable. Your ear can’t spell it, so find a related word where that vowel is stressed: definite from finite, composition from compose."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "The vote at the gorge",
+   "intro": "As you read Ch. 9, record each vote.",
+   "fields": [
+    {
+     "label": "Who votes up, and why",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Who votes down, and why",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "What the choice costs",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 48,
+  "journal-q2": 40,
+  "journal-q3": 32
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "In Chapter 9 the group votes on which way to go. Read each moment. Tap the pillar it shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "Edmund says, “It was Lucy who discovered it first and none of us would believe her. I was the worst of the lot, I know.”",
+    "ok": [
+     "Honesty",
+     "Courage"
+    ],
+    "why": "He admits his old mistake in front of everyone.",
+    "hint": "What does Edmund admit?"
+   },
+   {
+    "t": "Susan says, “Don’t be angry, Lu, but I do think we should go down. I’m dead tired.”",
+    "ok": [
+     "Honesty",
+     "Courtesy"
+    ],
+    "why": "She tells the truth about how she feels, and says it gently.",
+    "hint": "Does Susan hide her reason?"
+   },
+   {
+    "t": "Peter says he’d much rather not have to vote. Trumpkin answers sternly, “You’re the High King.”",
+    "ok": [
+     "Responsibility"
+    ],
+    "why": "Trumpkin reminds Peter that deciding is his job.",
+    "hint": "Whose job is the choice?"
+   },
+   {
+    "t": "Peter says, “I know Lucy may be right after all, but I can’t help it. We must do one or the other.”",
+    "ok": [
+     "Responsibility",
+     "Honesty"
+    ],
+    "why": "He makes the hard call and admits he might be wrong.",
+    "hint": "What does Peter admit, and what does he still do?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-28-3-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-28-3-read",
+   "label": "Nell · before you read"
+  },
+  "spelling": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-28-3-spelling",
+   "label": "Nell · find the loud cousin"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. The children are on foot now, and they come to the edge of a deep gorge. Today’s question: what does a vote tell you about the person who casts it?",
+  "read": "Read the vote slowly. Listen to each person’s reason: Trumpkin, Susan, Edmund, then Peter. Nobody is silly here. Each one is weighing something real. Then notice the very last sentence of the chapter, and how plain it is.",
+  "spelling": "Schwa is the lazy uh sound in a word. You can’t hear which vowel it is. So find a cousin of the word where the vowel is loud. Definite sounds like uh in the middle. But finite says its i clearly. So definite has an i."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Look at each base and its choices.",
+    "Tap every part that makes a real word.",
+    "Tap Show Answers to check."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the two new words.",
+    "Type the word that fits each sentence.",
+    "Tap Check My Answers."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the worked example.",
+    "Combine the three sentences into one complex sentence.",
+    "Write a second version with a different main idea, and say which you’d keep."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the Before and After.",
+    "Type the missing letter, using the related word.",
+    "Tap Check My Work.",
+    "In the box, fix the four words and name each related word."
+   ]
+  },
+  {
+   "find": "Pause & Think",
+   "steps": [
+    "Read the two Pause & Think questions first.",
+    "Keep them in mind as you read."
+   ]
+  },
+  {
+   "find": "Open Your Book",
+   "steps": [
+    "Open your book and read Chapter 9.",
+    "Fill in the note boxes as you read.",
+    "After you read, do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "RWM",
+   "steps": [
+    "Read Lewis’s last sentence of the chapter.",
+    "Think through Reader and Writer.",
+    "Write one short sentence that shows a choice without explaining the feeling."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  }
+ ]
+}

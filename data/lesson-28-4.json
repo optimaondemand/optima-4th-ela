@@ -1,0 +1,263 @@
+{
+ "connector": "Three chapters, three hard choices: a council in the dark, a long row in the sun, and a vote at the edge of a gorge. Not every choice was right. Today you pick one, judge it, and prove your answer from the book.",
+ "writingFocus": "Leadership",
+ "dol": {
+  "a": {
+   "raw": "because susan was dead tired she voted to go down so the group turned downstream",
+   "fixed": "<strong>Because</strong> <strong>Susan</strong> was dead tired<strong>,</strong> she voted to go down<strong>,</strong> so the group turned downstream<strong>.</strong>",
+   "why": "Capitals on Because and Susan; a comma after the opening because clause and before so; a period ends it."
+  },
+  "b": {
+   "raw": "although trumpkin did not believe in the horn he went to cair paravel because caspian was his king",
+   "fixed": "<strong>Although</strong> <strong>Trumpkin</strong> did not believe in the <strong>Horn</strong><strong>,</strong> he went to <strong>Cair Paravel</strong> because <strong>Caspian</strong> was his king<strong>.</strong>",
+   "why": "Capitals on the names and on the Horn; a comma after the opening although clause; no comma before because at the end; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote each leader once.",
+  "journal-q2": "… and say what would have changed if Edmund had kept quiet.",
+  "journal-q3": "… and use two different chapters for your two pieces of evidence."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "notes": {
+  "wgrd": "Pick one choice from Ch. 7–9, say what the person was up against, and bring the moment from the book that proves your judgment.",
+  "vocab": [
+   [
+    "council",
+    "A group gathered to talk and decide what to do."
+   ],
+   [
+    "seneschal",
+    "The chief steward who runs a lord’s household."
+   ],
+   [
+    "entrenchments",
+    "Ditches and banks dug for defense."
+   ],
+   [
+    "consorts",
+    "Companions, especially of a king or queen."
+   ],
+   [
+    "gorge",
+    "A deep, narrow valley with steep sides."
+   ],
+   [
+    "bivouac",
+    "A rough camp without proper shelter."
+   ]
+  ],
+  "wordParts": "Latin bases: spect = look, ject = throw, script and scribe = write: inspect, reject, manuscript, spectacles.",
+  "grammar": "A complex sentence has a main clause and a dependent clause that starts with a word like because, although, when, if or since. If the dependent clause comes first, put a comma after it. Editing day: fix fragments and run-ons, and check each joint.",
+  "spelling": "Schwa is the lazy uh sound in an unstressed syllable. Your ear can’t spell it, so find a related word where that vowel is stressed: definite from finite, composition from compose."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Three hard choices",
+   "intro": "Look back at Ch. 7–9.",
+   "fields": [
+    {
+     "label": "Ch. 7: Caspian at the council",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Ch. 8: the children on the water",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Ch. 9: Peter at the gorge",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "The choice I’ll judge, and my verdict",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 40,
+  "journal-q2": 32,
+  "journal-q3": 48
+ },
+ "plate": {
+  "src": "plates/pc-ch9.png",
+  "alt": "Five small figures pick their way along the edge of a steep gorge above a rushing river.",
+  "credit": "From Chapter 9, the vote at the gorge."
+ },
+ "virtue": {
+  "kind": "log",
+  "title": "This week’s strongest pillar",
+  "intro": "Think about Chapters 7–9. Which pillar did the characters show most this week? Tap one.",
+  "options": [
+   {
+    "t": "Honesty"
+   },
+   {
+    "t": "Respect"
+   },
+   {
+    "t": "Courtesy"
+   },
+   {
+    "t": "Responsibility"
+   },
+   {
+    "t": "Courage"
+   },
+   {
+    "t": "Service"
+   },
+   {
+    "t": "Perseverance"
+   }
+  ],
+  "line": "Name one moment that proves it.",
+  "placeholder": "The strongest pillar was … because in Chapter … ",
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-28-4-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-28-4-read",
+   "label": "Nell · looking back"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-28-4-grammar",
+   "label": "Nell · pieces and joints"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. Three chapters, three hard choices. Today’s question: what makes a good leader, and which choice this week proves it?",
+  "read": "Pick one choice from this week. Say what the person was up against before you judge them. Then find the page that proves what you think. One choice, looked at closely, beats three you mention quickly.",
+  "grammar": "Editing day. Read each line out loud. Does it stand on its own? Because the castle was taken. That’s a piece, not a sentence. Does it run two sentences together with no joint? Fix the piece, mend the joint, and say why."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Read the poem slowly.",
+    "Think about the question under it.",
+    "Write your thinking in the box."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Play the quick match.",
+    "Pick one base and think how you’d explain it to a second grader."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the six words.",
+    "Pick one option from the choice board.",
+    "Write it in the box, starting with the letter you chose."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read each line.",
+    "Tap every line that is a fragment, a run-on or a weak joint.",
+    "In the box, fix three and name each problem."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words.",
+    "Tap only the ones that are wrong.",
+    "In the box, fix one and name the related word."
+   ]
+  },
+  {
+   "find": "Review",
+   "steps": [
+    "Look back at Chapters 7 to 9.",
+    "Fill in the note boxes.",
+    "Think about the three questions.",
+    "Then do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Writing Connection",
+   "steps": [
+    "Decide what makes a good leader.",
+    "Write five to seven sentences: your claim, two pieces of evidence from Ch. 7–9, and why they prove it.",
+    "Use two complex sentences. Then tap Copy today’s writing."
+   ]
+  }
+ ]
+}
