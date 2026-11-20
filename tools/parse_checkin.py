@@ -41,11 +41,11 @@ def parse(fn):
     for sm in re.finditer(r'<div class="section">', body):
         sec = body[sm.start():div_block(body, sm.start())]
         stitle = plain(re.search(r'<div class="section-title">(.*?)</div>', sec, re.S).group(1))
-        spts = int(re.search(r'(\d+) points?', re.search(r'<div class="section-pts">(.*?)</div>', sec, re.S).group(1)).group(1))
+        spts = int(re.search(r'(\d+) points?', re.search(r'<div class="section-pts">(.*?)</div>', sec, re.S).group(1), re.I).group(1)) if False else int(re.search(r'(\d+)', re.search(r'<div class="section-pts">(.*?)</div>', sec, re.S).group(1)).group(1))
         pending = []
         pos = 0
         while True:
-            m = re.search(r'<div class="(excerpt|question)">', sec[pos:])
+            m = re.search(r'<div class="(excerpt|question)"[^>]*>', sec[pos:])
             if not m: break
             st = pos + m.start(); en = div_block(sec, st)
             blk = sec[st:en]; pos = en
@@ -57,7 +57,7 @@ def parse(fn):
             q = {'section': stitle, 'section_pts': spts}
             q['label'] = clean(re.search(r'<div class="q-label">(.*?)</div>', blk, re.S).group(1))
             qn = re.search(r'<span class="q-number">(\d+)</span>', blk)
-            q['n'] = int(qn.group(1))
+            q['n'] = int(qn.group(1)) if qn else len(out['questions']) + 1
             pts = re.search(r'\((\d) points?\)|<span class="pts">(\d) pts?</span>', blk)
             q['points'] = int(pts.group(1) or pts.group(2)) if pts else 1
             parts = []
