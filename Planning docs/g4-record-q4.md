@@ -1,8 +1,8 @@
-# G4 ELA Q4 record list (weeks 25–30) · to voice when credits allow
+# G4 ELA Q4 record list (weeks 25–32) · to voice when credits allow
 
 Each clip: save as `assets/<path>.mp3` (audio slots). For Word Study films, record the script, save the mp3 under the same name, then re-run timeline + capture + encode (not --silent) so the captions match the voice.
 
-**72 clips, about 15,728 characters.** Voices: Marcus (week 25), Nell (weeks 26–30, ElevenLabs voice `VNHNa6nN6yJdVF3YRyuF`).
+**96 clips, about 19,993 characters.** Voices: Marcus (week 25), Nell (weeks 26–30, ElevenLabs voice `VNHNa6nN6yJdVF3YRyuF`), Opti (weeks 31–32; voice still to choose — the G3 Opti is `LRkukhGJZOFsyrZCwQaZ`, the old G4 Opti voice is gone).
 
 ## Week 25 · Marcus
 
@@ -105,3 +105,37 @@ Each clip: save as `assets/<path>.mp3` (audio slots). For Word Study films, reco
 | `guide/nell/g4ela-30-4-welcome` | audio | Hello, it’s Nell. You’ve finished the book. I always sit for a minute with a book I’ve just finished. Today’s question: what does Prince Caspian believe, and what in the ending proves it? |
 | `guide/nell/g4ela-30-4-read` | audio | Say what got settled, what didn’t, and who had to let go of something. Then finish the sentence: this book believes that. Not what it’s about. What it believes. Turn to the page in the ending that proves it. |
 | `guide/nell/g4ela-30-4-grammar` | video | Editing day, the last one for this book. Check every line of dialogue. Are the exact words inside quotation marks? Is the comma or end mark inside too? Does the tag join with a comma? Fix each one and say why. |
+
+## Week 31 · Opti
+
+| Clip | Kind | Script |
+|---|---|---|
+| `guide/opti/g4ela-31-1-welcome` | audio | Hoo, hello! It’s Opti. You’ve read five books this year, and now you get to put them side by side. Today’s question: what big ideas show up in more than one story? |
+| `guide/opti/g4ela-31-1-read` | audio | A theme isn’t one word on a page. It’s a big idea about life that a story keeps showing, like courage or belonging. Look at your reading shelf. Pick one theme, and find one character who shows it. |
+| `guide/opti/g4ela-31-1-morphology` | video | You learned a lot of word parts this year. Port means carry. Spect means look. Rupt means break. Pre means before. When you meet a long word, find a part you know, and the word starts to explain itself. |
+| `guide/opti/g4ela-31-2-welcome` | audio | Hoo! It’s Opti. You chose a theme. Today you find it in two different books. Today’s question: how can two characters show the same idea in different ways? |
+| `guide/opti/g4ela-31-2-read` | audio | Pick two characters from two books who show your theme. Write one moment for each. Then ask: how are they alike, and how are they different? Think about what makes each one act. |
+| `guide/opti/g4ela-31-2-grammar` | video | Every punctuation mark has a job. A capital starts a sentence and a name. A comma joins or separates. Quotation marks hold someone’s exact words. Read your sentence out loud, and ask each mark: what’s your job? |
+| `guide/opti/g4ela-31-3-welcome` | audio | Hello again, it’s Opti. Today you build your comparison paragraph. Today’s question: how do you prove two characters share a theme? |
+| `guide/opti/g4ela-31-3-read` | audio | Start with your theme sentence. Then evidence from the first book, then the second. Then say how they’re alike and how they’re different. Use real words from the books as your proof. |
+| `guide/opti/g4ela-31-3-spelling` | video | Before you hand in writing, check the patterns you know. Did a silent e drop before a suffix? Did a y change to i? Did a consonant double? Check one pattern at a time, and you’ll catch more. |
+| `guide/opti/g4ela-31-4-welcome` | audio | Hoo! It’s Opti. Five books, side by side. Today’s question: what did you discover about people from all of them together? |
+| `guide/opti/g4ela-31-4-read` | audio | Step back from the whole week. Your theme is about more than one story. It’s about real people too. Write what you discovered in one strong sentence you would be proud to sign. |
+| `guide/opti/g4ela-31-4-grammar` | video | Your best sentence deserves a careful check. Capital at the start. Names capitalized. Commas where they join or separate. Quotation marks around exact words. An end mark that fits. Then read it out loud one last time. |
+
+## Week 32 · Opti
+
+| Clip | Kind | Script |
+|---|---|---|
+| `guide/opti/g4ela-32-1-welcome` | audio | Hoo! It’s Opti. This is the last week of 4th grade ELA. Today’s question: what makes a strong comparison paragraph, and how can you make yours even stronger? |
+| `guide/opti/g4ela-32-1-read` | audio | Read your paragraph as if someone else wrote it. Is the theme clear in the first sentence? Is there proof from both books? Change one sentence to make it sharper, then check capitals, usage, punctuation and spelling. |
+| `guide/opti/g4ela-32-1-morphology` | video | You know more roots than you think. Some you haven’t used yet. Try putting them to work: press means push, tain means hold, lev means lift. Find a word with one of them and use it in your own writing. |
+| `guide/opti/g4ela-32-2-welcome` | audio | Hoo, hello! It’s Opti. Today you write about yourself as a reader. Today’s question: who were you as a reader in August, and who are you now? |
+| `guide/opti/g4ela-32-2-read` | audio | Think about the first book this year and the last. What can you do now that you couldn’t do then? Name the skill. Then prove it, the way you’d prove something about a character, with a real example. |
+| `guide/opti/g4ela-32-2-grammar` | video | Proofread like an editor. Read slowly, one sentence at a time. Check capitals, then usage, then punctuation, then spelling. Four quick passes catch more than one long one. |
+| `guide/opti/g4ela-32-3-welcome` | audio | Hello again, it’s Opti. Today you build your portfolio page. Today’s question: what is the most important thing you learned this year? |
+| `guide/opti/g4ela-32-3-read` | audio | Look through your writing from the whole year. Choose the piece that shows how you think, not just the longest one. Then explain what makes it your best, and what you’d tell yourself back in Week 1. |
+| `guide/opti/g4ela-32-3-spelling` | video | One last spelling check. Read your piece out loud and touch each long word. Find the part you know. Check the ending. If a word looks strange, it probably is. Fix it now, and your best piece stays your best. |
+| `guide/opti/g4ela-32-4-welcome` | audio | Hoo! It’s Opti. The last day of 4th grade ELA. Today’s question: if you had one minute to tell someone what this year of reading did for you, what would you say first? |
+| `guide/opti/g4ela-32-4-read` | audio | Look back at all five books and everything you wrote. Then look forward. Set one goal for next year, a real one. And write the last sentence of your year. Make it one you’d want to remember. |
+| `guide/opti/g4ela-32-4-grammar` | video | Your final sentence deserves your best care. Capital at the start. A complete thought. The right mark at the end. Read it out loud. If it sounds like you, it’s ready. |
