@@ -1,0 +1,262 @@
+{
+ "connector": "Three chapters, and one question asked three times: whom do you trust, and what does trusting cost? Today you test your theme sentence on a character you haven’t used yet. If it holds, bring the page that proves it. If it doesn’t, make it wider.",
+ "writingFocus": "Theme",
+ "dol": {
+  "a": {
+   "raw": "caspian spoke sadly of nikabrik and said he had gone sour inside from long suffering and hateing",
+   "fixed": "<strong>Caspian</strong> spoke sadly of <strong>Nikabrik</strong> and said<strong>,</strong> &ldquo;<strong>He</strong> had gone sour inside from long suffering and <strong>hating</strong><strong>.</strong>&rdquo;",
+   "why": "Capitals on Caspian, Nikabrik and He; a comma before the quotation; hating drops the silent e before -ing; the period goes inside the closing quotation mark."
+  },
+  "b": {
+   "raw": "wraiths and wreckage gasped trumpkin in the ghost of a voice",
+   "fixed": "&ldquo;<strong>Wraiths</strong> and wreckage<strong>!</strong>&rdquo; gasped <strong>Trumpkin</strong> in the ghost of a voice<strong>.</strong>",
+   "why": "Lewis’s own sentence. Capitals on Wraiths and Trumpkin; the exclamation point goes inside the quotation marks; a period ends the sentence."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote each character once.",
+  "journal-q2": "… and say which response Lewis seems to admire most.",
+  "journal-q3": "… and use two different chapters."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 3
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 3
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "notes": {
+  "wgrd": "Test your theme sentence on someone new from Ch. 10–12. Keep it if it fits; widen it if it doesn’t.",
+  "vocab": [
+   [
+    "precipice",
+    "A very steep cliff or drop."
+   ],
+   [
+    "bivouac",
+    "A rough camp without proper shelter."
+   ],
+   [
+    "luminous",
+    "Giving off light; glowing."
+   ],
+   [
+    "sentient",
+    "Able to feel and sense things; aware."
+   ],
+   [
+    "revelry",
+    "Wild, noisy celebration."
+   ],
+   [
+    "sorcery",
+    "Dark magic."
+   ],
+   [
+    "treason",
+    "Betraying your own king or country."
+   ]
+  ],
+  "wordParts": "Latin bases: rupt = break, duct and duce = lead, form = shape: interrupt, conduct, introduce, transform.",
+  "grammar": "Commas in dates and places: a comma between the day and the year (June 12, 1941), between a town and its county or country (Dover, Kent), and another after them if the sentence goes on. Narnia has no calendar, so practice dates are made up. Editing day.",
+  "spelling": "Greek and Latin parts you know: port (carry), spect (look), script and scribe (write), rupt (break), tele (far). Spell the part the same way every time: inter + rupt + ion."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Test the theme",
+   "intro": "Look back at Ch. 10–12.",
+   "fields": [
+    {
+     "label": "My theme sentence",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "A new character to test it on, and their choice",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "Does it hold? Keep it or widen it",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 48,
+  "journal-q2": 40,
+  "journal-q3": 40
+ },
+ "plate": {
+  "src": "plates/pc-ch11.png",
+  "alt": "A great golden lion on a hill at dawn, head raised in a roar, while trees bend and move like dancers.",
+  "credit": "From Chapter 11, the night the trees woke."
+ },
+ "virtue": {
+  "kind": "log",
+  "title": "This week’s strongest pillar",
+  "intro": "Think about Chapters 10–12. Which pillar did the characters show most this week? Tap one.",
+  "options": [
+   {
+    "t": "Honesty"
+   },
+   {
+    "t": "Respect"
+   },
+   {
+    "t": "Courtesy"
+   },
+   {
+    "t": "Responsibility"
+   },
+   {
+    "t": "Courage"
+   },
+   {
+    "t": "Service"
+   },
+   {
+    "t": "Perseverance"
+   }
+  ],
+  "line": "Name one moment that proves it.",
+  "placeholder": "The strongest pillar was … because in Chapter … ",
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-29-4-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-29-4-read",
+   "label": "Nell · looking back"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-29-4-grammar",
+   "label": "Nell · check every date and place"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. Three chapters, one question asked three times: whom do you trust, and what does it cost? Today’s question: does your theme sentence hold for everyone?",
+  "read": "Say your theme sentence out loud. Then try it on someone you haven’t used yet: Susan, Trumpkin, Nikabrik, Caspian. If it fits, find the page. If it doesn’t, change the sentence. Never leave the character out to protect it.",
+  "grammar": "Editing day. Read each date and place. Is there a comma between the day and the year? Between the town and the bigger place? And if the sentence keeps going, is there a comma after? Fix each one and say what it separates."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Read the lines from the poem.",
+    "Think about which character keeps a steady head.",
+    "Write your thinking in the box."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Play the quick match.",
+    "Pick one base and think how you’d explain it."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the word list.",
+    "Pick one option from the choice board.",
+    "Write it in the box, starting with the letter you chose."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read each line.",
+    "Tap every line with a comma problem.",
+    "In the box, fix one and say what each comma separates."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words.",
+    "Tap only the ones that are wrong.",
+    "In the box, fix one and name its root and prefix."
+   ]
+  },
+  {
+   "find": "Chapters 10–12",
+   "steps": [
+    "Look back at Chapters 10 to 12.",
+    "Fill in the note boxes: your theme sentence and a new character to test it on.",
+    "Think about the three questions.",
+    "Then do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Writing Connection",
+   "steps": [
+    "State a theme in one sentence.",
+    "Give two examples from Chapters 10–12 and explain how each one shows it.",
+    "Tap Copy today’s writing and paste it into your own document."
+   ]
+  }
+ ]
+}

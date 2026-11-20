@@ -1,0 +1,300 @@
+{
+ "connector": "While the children were finding Aslan, Caspian was losing hope in the dark of Aslan’s How. Tonight Nikabrik brings two strange guests to the council. You have a pattern now, and a word for it. Today, turn it into a sentence about what the book believes.",
+ "writingFocus": "Theme",
+ "dol": {
+  "a": {
+   "raw": "nikabrik wanted caspian dead but trufflehunter the badger said we dont change we hold on",
+   "fixed": "<strong>Nikabrik</strong> wanted <strong>Caspian</strong> dead<strong>,</strong> but <strong>Trufflehunter</strong> the badger said<strong>,</strong> &ldquo;We <strong>don’t</strong> change<strong>.</strong> We hold on<strong>.</strong>&rdquo;",
+   "why": "Capitals on the three names; a comma before but; a comma before the quotation; don’t needs an apostrophe; Trufflehunter’s words from Chapter 5 are two short sentences inside the quotation marks."
+  },
+  "b": {
+   "raw": "caspian said i am sorry for nikabrik",
+   "fixed": "<strong>Caspian</strong> said<strong>,</strong> &ldquo;<strong>I</strong> am sorry for <strong>Nikabrik</strong><strong>.</strong>&rdquo;",
+   "why": "Capitals on Caspian, I and Nikabrik; a comma before the quotation; the period goes inside the closing quotation mark."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote Nikabrik’s reason in his own words.",
+  "journal-q2": "… and say what Peter could have done instead.",
+  "journal-q3": "… and name one character who suffered and did not turn bitter."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 1
+  }
+ },
+ "hints": {
+  "s4w29cf1": {
+   "h1": "A porter carries bags. What does port mean?",
+   "why": "port = carry."
+  },
+  "s4w29cf2": {
+   "h1": "Spectacles help you do what?",
+   "why": "spect = look."
+  },
+  "s4w29cf3": {
+   "h1": "A scribe’s job is to …?",
+   "why": "script = write."
+  },
+  "s4w29cf4": {
+   "h1": "When a volcano erupts, the ground …?",
+   "why": "rupt = break."
+  }
+ },
+ "notes": {
+  "wgrd": "Turn the pattern into a theme sentence: what repeats, what happens to people who choose each way, then cut the names so it is true about people.",
+  "vocab": [
+   [
+    "precipice",
+    "A very steep cliff or drop."
+   ],
+   [
+    "bivouac",
+    "A rough camp without proper shelter."
+   ],
+   [
+    "luminous",
+    "Giving off light; glowing."
+   ],
+   [
+    "sentient",
+    "Able to feel and sense things; aware."
+   ],
+   [
+    "sorcery",
+    "Dark magic."
+   ],
+   [
+    "treason",
+    "Betraying your own king or country."
+   ]
+  ],
+  "wordParts": "Latin bases: rupt = break, duct and duce = lead, form = shape: interrupt, conduct, introduce, transform.",
+  "grammar": "Commas in dates and places: a comma between the day and the year (June 12, 1941), between a town and its county or country (Dover, Kent), and another after them if the sentence goes on. Narnia has no calendar, so practice dates are made up.",
+  "spelling": "Greek and Latin parts you know: port (carry), spect (look), script and scribe (write), rupt (break), tele (far). Spell the part the same way every time: inter + rupt + ion."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Two roads",
+   "intro": "As you read Ch. 12, watch both roads.",
+   "fields": [
+    {
+     "label": "Nikabrik’s choice, and where it leads",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "Peter’s and Caspian’s choices, and where they lead",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "My theme sentence: when people have to choose whom to trust, …",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 40,
+  "journal-q2": 32,
+  "journal-q3": 40
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "In Chapter 12, Caspian’s council faces a terrible offer. Read each moment. Tap the pillar it shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "Nikabrik says the Dwarfs are always sent on the dangerous raids and go short when the rations fail. The Badger answers, “Lies! All lies!”",
+    "ok": [
+     "Honesty",
+     "Courage"
+    ],
+    "why": "He says out loud that something is false, to an angry Dwarf with a weapon.",
+    "hint": "Is it safe to say this?"
+   },
+   {
+    "t": "Peter meets Caspian for the first time and says, “I haven’t come to take your place, you know, but to put you into it.”",
+    "ok": [
+     "Respect",
+     "Service"
+    ],
+    "why": "The High King uses his power to help Caspian, not to replace him.",
+    "hint": "Who could Peter have made king?"
+   },
+   {
+    "t": "Peter thanks Trufflehunter for never doubting them. The Badger says, “No credit to me, your Majesty. I’m a beast and we don’t change.”",
+    "ok": [
+     "Perseverance"
+    ],
+    "why": "He held on to the truth for a very long time.",
+    "hint": "What does holding on mean here?"
+   },
+   {
+    "t": "Caspian says, “I am sorry for Nikabrik, though he hated me from the first moment he saw me.”",
+    "ok": [
+     "Respect",
+     "Courtesy"
+    ],
+    "why": "He is fair even to someone who wanted him dead.",
+    "hint": "How does Caspian speak of his enemy?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-29-3-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-29-3-read",
+   "label": "Nell · before you read"
+  },
+  "spelling": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-29-3-spelling",
+   "label": "Nell · spell the part you know"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. While the children found Aslan, Caspian’s side was losing hope in the dark. Today’s question: when people have to choose whom to trust, what does this book seem to believe?",
+  "read": "This is a dark chapter. Watch Nikabrik’s road and Peter’s road side by side. Where does each one lead? Then, at the end, listen to what Caspian says about Nikabrik. It tells you a lot about Caspian.",
+  "spelling": "Long words are built from parts you already know. Find the part, and spell it the same way every time. Portable: port, able. Spectator: spect, a, tor. The part never changes its spelling, even when the word around it does."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Look at each root and its choices.",
+    "Tap every part that makes a real word.",
+    "Tap Show Answers to check."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read the word meanings.",
+    "Type the word that fits each sentence.",
+    "Tap Check My Answers."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read the worked example.",
+    "Punctuate the practice sentence.",
+    "Write it a second way with the date at the end, and say which you’d keep."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the Before and After.",
+    "Type the meaning of each root in one word.",
+    "Tap Check My Work.",
+    "In the box, build and break apart three words."
+   ]
+  },
+  {
+   "find": "Pause & Think",
+   "steps": [
+    "Read the two Pause & Think questions first.",
+    "Keep them in mind as you read."
+   ]
+  },
+  {
+   "find": "Open Your Book",
+   "steps": [
+    "Open your book and read Chapter 12.",
+    "Fill in the note boxes as you read.",
+    "After you read, do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "RWM",
+   "steps": [
+    "Read Trufflehunter’s words.",
+    "Think through Reader and Writer.",
+    "Write your own two sentences with the same pattern."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  }
+ ]
+}

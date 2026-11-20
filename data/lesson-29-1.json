@@ -1,0 +1,280 @@
+{
+ "connector": "Last week ended with Lucy coming last, crying. Tonight she wakes alone and hears the voice she likes best in the world. This week, watch the choices that keep coming back. When one choice echoes another, the story is pointing at its big idea.",
+ "writingFocus": "Theme",
+ "dol": {
+  "a": {
+   "raw": "at night lucy crept out of the camp because she herd aslan calling her name in the forrest",
+   "fixed": "<strong>At</strong> night<strong>,</strong> <strong>Lucy</strong> crept out of the camp because she <strong>heard</strong> <strong>Aslan</strong> calling her name in the <strong>forest</strong><strong>.</strong>",
+   "why": "Capitals on At, Lucy and Aslan; a comma after the opening phrase At night; heard, not herd; forest has one r; a period ends it."
+  },
+  "b": {
+   "raw": "edmund woke first but he could not see aslan in the moonlight",
+   "fixed": "<strong>Edmund</strong> woke first<strong>,</strong> but he could not see <strong>Aslan</strong> in the moonlight<strong>.</strong>",
+   "why": "Capitals on Edmund and Aslan; a comma before but joins two complete thoughts; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and quote the words Lewis uses for the voice.",
+  "journal-q2": "… and say what else could grow besides size.",
+  "journal-q3": "… and name the earlier time Lucy saw what others couldn’t."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "copia": {
+  "seed": "Lucy <b data-verb>woke</b> the others.",
+  "eg": [
+   "Though she knew they wouldn’t believe her, Lucy woke the others.",
+   "Lucy <i>shook</i> the others awake.",
+   "Lucy woke the others, one by one, starting with Edmund."
+  ]
+ },
+ "notes": {
+  "wgrd": "Notice theme through repeated choices: mark each choice in a few words, hunt for an earlier choice it echoes, and say the two together.",
+  "vocab": [
+   [
+    "precipice",
+    "A very steep cliff or drop."
+   ],
+   [
+    "bivouac",
+    "A rough camp without proper shelter."
+   ],
+   [
+    "luminous",
+    "Giving off light; glowing."
+   ],
+   [
+    "sentient",
+    "Able to feel and sense things; aware."
+   ]
+  ],
+  "wordParts": "Latin bases: rupt = break, duct and duce = lead, form = shape: interrupt, conduct, introduce, transform.",
+  "grammar": "Commas in dates and places: a comma between the day and the year (June 12, 1941), between a town and its county or country (Dover, Kent), and another after them if the sentence goes on.",
+  "spelling": "Greek and Latin parts you know: port (carry), spect (look), script and scribe (write), rupt (break), tele (far). Spell the part the same way every time: inter + rupt + ion."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Echoes",
+   "intro": "As you read Ch. 10, catch the choices.",
+   "fields": [
+    {
+     "label": "A choice someone makes now",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "An earlier choice it echoes",
+     "hint": "Ch. 9…",
+     "rows": 2
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "Earlier, someone had to … and now someone has to …",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q3"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 32,
+  "journal-q3": 32
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "The OAO Seven Pillars are honesty, respect, courtesy, responsibility, courage, service and perseverance. In Chapter 10, Lucy finds Aslan and has to go back for the others. Read each moment. Tap the pillar it shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "Lucy starts to complain that the others wouldn’t believe her. Then she says, “I’m sorry. I didn’t mean to start slanging the others.”",
+    "ok": [
+     "Honesty",
+     "Respect"
+    ],
+    "why": "She stops blaming others and owns what she said.",
+    "hint": "What does Lucy stop doing?"
+   },
+   {
+    "t": "Aslan tells Lucy she must wake the others and follow him, even if they don’t believe her. She hides her face in his mane, then sits up: “I’m sorry, Aslan. I’m ready now.”",
+    "ok": [
+     "Courage"
+    ],
+    "why": "She is afraid of being laughed at and goes anyway.",
+    "hint": "What is Lucy afraid of?"
+   },
+   {
+    "t": "Lucy has to tell her story to each of them. Each time she says it, it sounds less convincing. She keeps saying it.",
+    "ok": [
+     "Perseverance"
+    ],
+    "why": "She keeps going when it gets harder each time.",
+    "hint": "What happens each time she says it?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-29-1-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-29-1-read",
+   "label": "Nell · before you read"
+  },
+  "morphology": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-29-1-morphology",
+   "label": "Nell · break, lead and shape"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. Last time, Lucy lost the vote and came last, crying. Tonight she wakes up alone, and someone is calling her name. Today’s question: what does it cost to trust what only you can see?",
+  "read": "Watch for echoes. Has anyone in this book already had to decide whether to believe Lucy? Mark each choice in a few words as you read. And listen closely to what Aslan tells her about what would have happened.",
+  "morphology": "Three more Latin bases. Rupt means break, so to interrupt is to break in. Duct and duce mean lead, so an aqueduct leads water across a valley. Form means shape, so a formation is a shape made by many people. Find the base. It carries the meaning."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read each sentence.",
+    "Tap the word that fits the blank.",
+    "Tap See if you were right, then read what each base means.",
+    "In Show What You Know, explain one base with one example word."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read how we figure out precipice.",
+    "Guess each word, then tap the card to check.",
+    "Match each word to its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read both versions.",
+    "Tap the stronger one.",
+    "Tap Now check your thinking, then write the rule for dates and places."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the sentence.",
+    "Tap every word built from a Greek or Latin part.",
+    "In the box, say how knowing the part helps you read a new word."
+   ]
+  },
+  {
+   "find": "Copia",
+   "steps": [
+    "Read the sentence.",
+    "Write it three new ways, one box at a time.",
+    "Stuck? Tap Show one way."
+   ]
+  },
+  {
+   "find": "Pause & Think",
+   "steps": [
+    "Read the two Pause & Think questions first.",
+    "Keep them in mind as you read."
+   ]
+  },
+  {
+   "find": "Open Your Book",
+   "steps": [
+    "Open your book and read Chapter 10.",
+    "Fill in the note boxes as you read.",
+    "After you read, do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Writing Connection",
+   "steps": [
+    "Read Aslan’s words in the box.",
+    "Write three or four sentences about what he means.",
+    "Say what we can know, even if we can’t know what would have happened."
+   ]
+  }
+ ]
+}
