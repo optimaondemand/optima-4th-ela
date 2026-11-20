@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 28 Family Guide · Prince Caspian Ch. 7–9 · 4th Grade ELA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+  --navy:#0E1C42; --ink:#3A4A6B; --muted:#5E6C8C; --line:#E2E8F4;
+  --sky:#55C8E8; --sky-bg:#EAF8FD; --gold:#C7922C; --gold-bg:#FFF3DC;
+  --green:#34B76F; --green-bg:#E3F8ED; --plum:#8B6FC0; --plum-bg:#F1ECFA;
+  --paper:#FAFBFF; --cream:#FFF8F0;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:"Nunito",sans-serif;font-size:18px;line-height:1.6;}
+.wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+h1,h2,h3{font-family:"Lora",Georgia,serif;color:var(--navy);margin:0;}
+p{margin:0 0 10px;}
+strong{color:var(--navy);}
+
+/* header */
+.hero{background:var(--navy);color:#fff;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;}
+.hero-text{padding:28px 28px 26px;}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BFD0EE;margin-bottom:14px;}
+.brand img{width:38px;height:38px;border-radius:50%;background:#fff;}
+.hero h1{color:#fff;font-size:34px;line-height:1.2;margin-bottom:6px;}
+.hero .sub{font-size:19px;color:#DCE6F7;margin-bottom:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 13px;font-size:16px;font-weight:700;color:#fff;}
+.hero-art{background:#F5E6C8 center/cover no-repeat;min-height:240px;}
+
+/* cards */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.card-head .ico{font-size:26px;line-height:1;}
+.card-head h2{font-size:24px;}
+.card-head .tag{margin-left:auto;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.glance .box{border-radius:12px;padding:14px 16px;}
+.box-label{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.b-sky{background:var(--sky-bg);} .b-sky .box-label{color:#1F8CB0;}
+.b-gold{background:var(--gold-bg);} .b-gold .box-label{color:#9A6C14;}
+.b-green{background:var(--green-bg);} .b-green .box-label{color:#1F8452;}
+.b-plum{background:var(--plum-bg);} .b-plum .box-label{color:#6A4FA3;}
+.quote{font-family:"Lora",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:16px 0 0;}
+.quote small{display:block;font-family:"Nunito",sans-serif;font-style:normal;font-size:15px;color:var(--muted);margin-top:4px;}
+
+/* day table */
+.days{width:100%;border-collapse:collapse;}
+.days th{font-size:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+.days tr:last-child td{border-bottom:none;}
+.day-n{font-family:"Lora",Georgia,serif;font-weight:700;font-size:20px;color:var(--navy);white-space:nowrap;}
+.day-n span{display:block;font-family:"Nunito",sans-serif;font-size:15px;font-weight:700;color:var(--muted);}
+.ch{font-weight:800;color:var(--navy);}
+.small{font-size:16px;color:var(--muted);}
+.pill{display:inline-block;font-size:14px;font-weight:800;border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;}
+.p-poem{background:var(--plum-bg);color:#6A4FA3;}
+.p-guide{background:var(--cream);color:#9A6C14;border:1px solid #F5E6C8;}
+.extra-row td{background:var(--paper);}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px 16px;}
+.word b{font-family:"Lora",Georgia,serif;font-size:21px;color:var(--navy);display:block;}
+.word span{font-size:17px;}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.skills .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.eg{display:block;margin-top:6px;font-weight:700;color:var(--navy);}
+
+/* poem */
+.poem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;}
+.poem{font-family:"Lora",Georgia,serif;font-size:22px;line-height:1.9;color:var(--navy);background:var(--plum-bg);border-radius:12px;padding:16px 22px;}
+.poem small{display:block;font-family:"Nunito",sans-serif;font-size:15px;color:var(--muted);line-height:1.4;margin-top:6px;}
+
+/* ask */
+.ask{list-style:none;margin:0;padding:0;counter-reset:q;}
+.ask li{counter-increment:q;position:relative;padding:12px 0 12px 50px;border-bottom:1px dashed var(--line);}
+.ask li:last-child{border-bottom:none;}
+.ask li::before{content:counter(q);position:absolute;left:0;top:11px;width:34px;height:34px;border-radius:50%;background:var(--gold-bg);color:#9A6C14;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.ask .q{font-weight:800;color:var(--navy);display:block;}
+.ask .listen{font-size:16px;color:var(--muted);}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;}
+.check li{padding:7px 0 7px 34px;position:relative;}
+.check li::before{content:"✓";position:absolute;left:4px;top:6px;color:var(--green);font-weight:900;font-size:19px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+
+.next{background:var(--navy);color:#DCE6F7;border:none;}
+.next h2{color:#fff;}
+.next strong{color:#fff;}
+.foot{text-align:center;font-size:15px;color:var(--muted);margin-top:26px;}
+
+.print-btn{display:inline-block;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:"Nunito",sans-serif;font-weight:800;font-size:16px;cursor:pointer;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{min-height:180px;order:-1;}
+  .glance,.words,.skills,.poem-wrap,.two{grid-template-columns:1fr;}
+  .days thead{display:none;}
+  .days tr{display:block;border-bottom:1px solid var(--line);padding:8px 0;}
+  .days td{display:block;border:none;padding:4px 0;}
+}
+@media print{
+  body{background:#fff;font-size:15px;}
+  .wrap{padding:0;}
+  .print-btn{display:none;}
+  .card{break-inside:avoid;margin-top:12px;padding:14px 16px;}
+  .hero,.next{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* lesson mechanics */
+.howto{background:var(--cream);border:1px solid #F5E6C8;border-radius:16px;padding:18px 22px;margin-top:18px;}
+.howto h2{font-size:21px;margin-bottom:10px;}
+.howto ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;}
+.howto li{position:relative;padding-left:32px;font-size:17px;line-height:1.5;}
+.howto li span{position:absolute;left:0;top:0;font-size:20px;}
+@media (max-width:760px){.howto ul{grid-template-columns:1fr;}}
+@media print{.howto{break-inside:avoid;}}
+.b-rose{background:#FDEEEE;border-radius:12px;padding:14px 16px;} .b-rose .box-label{color:#A8434A;}
+
+.p-museum{background:var(--sky-bg);color:#1F6F8C;}
+.p-extra{background:var(--green-bg);color:#1F8452;}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.extras .box{border-radius:12px;padding:14px 16px;font-size:17px;}
+.essay{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.essay span{font-size:15px;font-weight:800;border-radius:999px;padding:4px 12px;background:var(--paper);border:1px solid var(--line);color:var(--muted);}
+.essay span.now{background:var(--gold-bg);border-color:#F5E6C8;color:#9A6C14;}
+.essay span.done{background:var(--green-bg);border-color:#CDEFDB;color:#1F8452;}
+@media (max-width:720px){.extras{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-text">
+      <div class="brand"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online">Family Guide · 4th Grade ELA</div>
+      <h1>Week 28: Hard Choices</h1>
+      <div class="sub"><em>Prince Caspian</em> by C. S. Lewis, Chapters 7–9</div>
+      <div class="chips">
+        <span class="chip">4 lessons</span>
+        <span class="chip">1 fluency recording</span>
+        <span class="chip">Ch. 7–9</span>
+        <span class="chip">Leadership</span>
+        <span class="chip">Check-In at week’s end</span>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+    </div>
+    <div class="hero-art" style="background-image:url('https://optimaondemand.github.io/optima-4th-ela/assets/covers/pc.jpg');background-position:center 35%;" role="img" aria-label="Cover of Prince Caspian by C. S. Lewis"></div>
+  </header>
+
+  <!-- HOW THE LESSON PAGES WORK -->
+  <section class="howto">
+    <h2>🧭 How the Lesson Pages Work</h2>
+    <ul>
+      <li><span>🗂️</span><strong>Four tabs, in order:</strong> Warm-Up → Word Study → Reading → Assignment. A button at the bottom of each tab moves to the next.</li>
+      <li><span>🔊</span><strong>Two buttons at the top:</strong> <strong>Read aloud</strong> opens the page reader (with a speed control), and <strong>Lesson details</strong> shows the unit, week, chapter and standards.</li>
+      <li><span>📝</span><strong>Every answer goes on the page.</strong> There’s a box for each one, including the Daily Oral Language sentence, and a word count under it shows how much is expected.</li>
+      <li><span>▶️</span><strong>Start here:</strong> a gold drawer at the very top of every page holds a one-minute video on how to use the lesson.</li>
+      <li><span>👆</span><strong>One step at a time:</strong> each activity opens with a short “What to do” list, and the page shows one step at a time. Tap 👆 Next to move on, or ◂ Back to look again.</li>
+      <li><span>🔍</span><strong>Reading lens:</strong> before reading, your student picks one of three lenses to read through. A bookmark in the reading box keeps it in view, and one line at the end of the questions asks what it helped them notice.</li>
+      <li><span>💾</span><strong>Answers save as you type</strong>, but only in that browser on that computer. Switching computers or clearing the browser loses them.</li>
+      <li><span>📓</span><strong>Download your ELA journal for the day</strong> at the bottom of the Assignment tab saves everything as one page. Use it (or Copy) to <strong>submit in Canvas</strong>. A lesson isn’t turned in until it’s submitted there.</li>
+      <li><span>🎙️</span><strong>Fluency is a separate page</strong> in the Canvas module, because recording doesn’t work inside a lesson. Keep the book nearby.</li>
+    </ul>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🧭</span><h2>This Week at a Glance</h2></div>
+    <p>Caspian’s army of Old Narnians holds its council, retreats to an ancient mound called Aslan’s How, and starts losing the war. On the worst night, Caspian blows Queen Susan’s Horn, and Trumpkin goes to meet whoever answers. That is how the Dwarf’s story ends. Then the four children set out to find Caspian, and at the edge of a gorge Lucy sees Aslan when no one else does. The group votes, and she loses. Each day your student also writes a short Writing Connection.</p>
+    <div class="box b-rose" style="margin-bottom:12px;"><div class="box-label">💛 A heads-up for families</div>Chapter 7 describes Caspian’s side losing battles: a Bear and a Centaur are badly hurt. Nikabrik offers to kill Doctor Cornelius, and Caspian stands up for his old tutor. No one is killed in these chapters.</div>
+    <div class="glance">
+      <div class="box b-sky"><div class="box-label">Reading skill</div><strong>Conflict and leadership choices.</strong> Your student names who is set against whom, what is at stake, and the moment someone has to decide.</div>
+      <div class="box b-green"><div class="box-label">Big idea</div><strong>What a leader does when the choice is hard.</strong> Caspian at the council, Peter at the gorge, and Edmund standing up for his sister.</div>
+    </div>
+    <p class="quote">“I know the difference between giving advice and taking orders.”<small>Trumpkin, Chapter 7</small></p>
+  </section>
+
+  <!-- DAY BY DAY -->
+  <section class="card">
+    <div class="card-head"><span class="ico">📅</span><h2>Day by Day</h2></div>
+    <table class="days">
+      <thead><tr><th>Lesson</th><th>Reading</th><th>Big question</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-n">28.1<span>Day 1</span></td>
+          <td><span class="ch">Chapter 7 · Old Narnia in Danger</span><br>At the great council every group wants something different. Doctor Cornelius arrives with a warning, and the army moves to Aslan’s How. After a terrible defeat, Caspian decides to blow the Horn, and Trumpkin volunteers to go to Cair Paravel.<br><span class="pill p-guide">Guide: Nell</span><span class="pill p-extra">Copia: Say It Three Ways</span><span class="pill p-extra">Seven Pillars Watch</span></td>
+          <td>When everyone around a leader is arguing, what should the leader do?</td>
+        </tr>
+        <tr>
+          <td class="day-n">28.2<span>Day 2</span></td>
+          <td><span class="ch">Chapter 8 · How They Left the Island</span><br>The children prove who they are to a doubtful Trumpkin: Edmund beats him with swords, Susan beats him at archery, and Lucy heals his wound with her cordial. Then they row toward Caspian along the coast.<br><span class="pill p-guide">Guide: Nell</span><span class="pill p-poem">Poetry Corner</span><span class="pill p-extra">Read · Write · Mimic</span><span class="pill p-extra">Seven Pillars Watch</span></td>
+          <td>What does leading look like when there’s no battle to fight?</td>
+        </tr>
+        <tr>
+          <td class="day-n">28.3<span>Day 3</span></td>
+          <td><span class="ch">Chapter 9 · What Lucy Saw</span><br>At the edge of a deep gorge, Lucy sees Aslan, and the others don’t. The group votes. Edmund sides with Lucy; Peter, Susan and Trumpkin vote to go the other way.<br><span class="pill p-guide">Guide: Nell</span><span class="pill p-extra">Read · Write · Mimic</span><span class="pill p-extra">Seven Pillars Watch</span></td>
+          <td>What does a vote tell you about the person who casts it?</td>
+        </tr>
+        <tr>
+          <td class="day-n">28.4<span>Day 4</span></td>
+          <td><span class="ch">Chapters 7–9 · looking back</span><br>No new chapter. Your student judges one hard choice from the week, writes a paragraph about what makes a good leader, and names the week’s strongest pillar.<br><span class="pill p-guide">Guide: Nell</span><span class="pill p-poem">Poetry Corner</span><span class="pill p-extra">Seven Pillars Watch</span></td>
+          <td>What makes a good leader, and which choice this week proves it?</td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">🎙️<span>Fluency</span></td>
+          <td colspan="2">A passage from Chapter 7: Trumpkin volunteers to carry the message, even though he doesn’t believe in the Horn. Your student reads it three times, for accuracy, smoothness and expression, then <strong>records and submits it in Canvas.</strong></td>
+        </tr>
+        <tr class="extra-row">
+          <td class="day-n">📋<span>Check-In</span></td>
+          <td colspan="2">A 14-point wrap-up: complex sentences, the Latin bases spect, ject and script/scribe, the schwa sound, and questions about Peter’s choice at the gorge, with real passages from Chapters 7 and 9.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WORDS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2><span class="tag">Use them at home!</span></div>
+    <div class="words"><div class="word"><b>council</b><span>a group gathered to talk and decide</span></div><div class="word"><b>entrenchments</b><span>ditches and banks dug for defense</span></div><div class="word"><b>consorts</b><span>companions, especially of a king or queen</span></div><div class="word"><b>gorge</b><span>a deep, narrow valley with steep sides</span></div></div>
+    <div class="skills">
+      <div class="box b-sky"><div class="box-label">Word parts</div>Latin bases: <strong>spect</strong> (look), <strong>ject</strong> (throw), <strong>script / scribe</strong> (write).<span class="eg">respect · eject · scribe</span></div>
+      <div class="box b-gold"><div class="box-label">Spelling</div><strong>The schwa sound.</strong> The lazy “uh” in an unstressed syllable can’t be heard, so find a related word where that vowel is loud.<span class="eg">opposite (from oppose)</span></div>
+      <div class="box b-green"><div class="box-label">Grammar</div><strong>Complex sentences.</strong> A clause that starts with <em>because, although, when</em> or <em>if</em> can’t stand alone; it leans on the main clause. When it comes first, a comma follows it.<span class="eg">If we start at once, we can be at the head of Glasswater before dark.</span></div>
+    </div>
+  </section>
+
+  <!-- EXTRAS -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✨</span><h2>New in the Lessons</h2></div>
+    <p>Nell, the Seven Pillars Watch and the reading lens continue. This week:</p>
+    <div class="extras">
+      <div class="box b-plum"><div class="box-label">⚖️ Catching the choice</div>Note boxes on the Reading tab ask your student to record each side of an argument and the moment someone decides: the council, the rowing, the vote at the gorge.</div>
+      <div class="box b-gold"><div class="box-label">🎭 Two short original poems</div>“The Summons” (Day 2) and “What I Saw” (Day 4) were written for these lessons, about being called and about being right when no one believes you.</div>
+      <div class="box b-sky"><div class="box-label">🗝️ No treasure game this week</div>This week’s word-base activities are tap-and-choose, so the treasure chamber rests until a fill-in week.</div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="card">
+    <div class="card-head"><span class="ico">✍️</span><h2>Writing This Week</h2><span class="tag">Writing Connection</span></div>
+    <p>This week builds toward a claim paragraph. Day 1 is two or three sentences about a time a group couldn’t agree; Days 2 and 3 practice Lewis’s sentence patterns (a string of “Do you remember…” questions, and one plain sentence that shows a choice); Day 4 is a full paragraph (five to seven sentences) about what makes a good leader, with two pieces of evidence from Chapters 7–9.</p>
+  </section>
+
+  <!-- BY HEART -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🪶</span><h2>By Heart: the Unit Poem</h2></div>
+    <div class="poem-wrap">
+      <div class="poem">The stones still stand where towers fell,<br>The river hums a half-lost spell,<br>The trees lean close as if to say,<br>“We knew you’d find your way back someday.”<small>“The Forest Remembers,” written for our Prince Caspian lessons</small></div>
+      <div><p>The unit poem stays the same all five weeks. This week the lessons also include two short original poems on Days 2 and 4.</p><p><strong>How to help:</strong> Ask your student which lines fit Lucy at the gorge.</p></div>
+    </div>
+  </section>
+
+  <!-- ASK AT HOME -->
+  <section class="card">
+    <div class="card-head"><span class="ico">💬</span><h2>Ask at Home</h2><span class="tag">Better than “How was school?”</span></div>
+    <ol class="ask"><li><span class="q">What did the different groups want at the council?</span><span class="listen">Listen for: the Bears wanted supper first, the Mice wanted to attack at once, the Moles wanted to dig, the Fauns wanted to dance.</span></li><li><span class="q">Why did Caspian wait so long to blow the Horn?</span><span class="listen">Listen for: he was told to use it only at his greatest need, and he worried there might be a worse need later.</span></li><li><span class="q">Why did Trumpkin go to Cair Paravel if he didn’t believe in the Horn?</span><span class="listen">Listen for: Caspian was his King; he gave his advice, then followed orders.</span></li><li><span class="q">How did the children prove to Trumpkin who they were?</span><span class="listen">Listen for: Edmund’s sword fight, Susan’s archery, Lucy healing his shoulder.</span></li><li><span class="q">How did each person vote at the gorge, and was Peter right?</span><span class="listen">Listen for: Edmund voted with Lucy; Peter, Susan and Trumpkin voted to go down. Any opinion, with a reason.</span></li><li><span class="q">Which pillar did you see most this week?</span><span class="listen">Listen for: a pillar and a real moment from Chapters 7–9.</span></li></ol>
+  </section>
+
+  <!-- TURN IN + TRY AT HOME -->
+  <div class="two">
+    <section class="card">
+      <div class="card-head"><span class="ico">📬</span><h2>What Gets Turned In</h2></div>
+      <ul class="check"><li><strong>Each lesson:</strong> 3 chapter questions plus word-study and writing responses, submitted in Canvas</li><li><strong>Writing:</strong> a claim paragraph about leadership on Day 4</li><li><strong>Fluency:</strong> a recording of a passage from Chapter 7</li><li><strong>Check-In:</strong> at the end of the week</li></ul>
+      <p class="small" style="margin-top:10px;"><strong>Done well looks like:</strong> answers that name the choice, say what the person was up against, and point to the moment in the book that proves the answer.</p>
+    </section>
+    <section class="card">
+      <div class="card-head"><span class="ico">🏡</span><h2>Try at Home</h2><span class="tag">5 minutes</span></div>
+      <ul class="check"><li><strong>Hold a family council</strong> about something small (dinner, a weekend plan). Afterward, talk about who decided and how.</li><li><strong>Try a fair vote</strong> where everyone gives a reason first, like the children at the gorge.</li><li><strong>Talk about a time</strong> someone in the family was right when no one believed them</li></ul>
+    </section>
+  </div>
+
+  <!-- NEED -->
+  <section class="card">
+    <div class="card-head"><span class="ico">🎒</span><h2>Have on Hand</h2></div>
+    <p><strong><em>Prince Caspian</em></strong> by C. S. Lewis · <strong>A device that records audio</strong> for the fluency reading</p>
+  </section>
+
+  <!-- NEXT WEEK -->
+  <section class="card next">
+    <div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 29</h2></div>
+    <p><strong><em>Prince Caspian</em>, Chapters 10–12.</strong> Lucy wakes in the night and finds Aslan. The children follow him, one by one, and some of them see him at last. Meanwhile, in Aslan’s How, Nikabrik brings two strange guests to Caspian’s council.</p>
+  </section>
+
+  <p class="foot"><a href="parent-guide-pc-unit.html" style="color:#1F6FA8;font-weight:700;">See the whole Prince Caspian unit →</a><br><br>Optima Academy Online · 4th Grade ELA · Week 28 Family Guide<br>Questions? Reach out to your student’s teacher anytime.</p>
+</div>
+</body>
+</html>
