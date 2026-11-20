@@ -2,7 +2,7 @@
 
 Each clip: save as `assets/<path>.mp3` (audio slots). For Word Study films, record the script, save the mp3 under the same name, then re-run timeline + capture + encode (not --silent) so the captions match the voice.
 
-**72 clips, about 15,728 characters.** Voices: Marcus (week 25), Nell (weeks 26–30, voice not picked yet).
+**72 clips, about 15,728 characters.** Voices: Marcus (week 25), Nell (weeks 26–30, ElevenLabs voice `VNHNa6nN6yJdVF3YRyuF`).
 
 ## Week 25 · Marcus
 
