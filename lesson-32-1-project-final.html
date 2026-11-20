@@ -2745,25 +2745,31 @@ return all.length?all[all.length-1]:null;}
       <div class="task-box">
         <div class="dol-model-label">&#10003; Correct Model &mdash; Dialogue Punctuation (from <em>Number the Stars</em>)</div>
         <div class="dol-sentence-wrap" id="dolModel">
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;Ellen is a proper noun — a character name. Always capitalized.&quot;)">Ellen</span>
-          <span> whispered</span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;A comma separates the speaker tag from the quoted speech.&quot;)">,</span>
-          <span> &ldquo;I will think of you every day</span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;Annemarie is a proper noun — the character name. Always capitalized.&quot;)">, Annemarie</span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;The period stays INSIDE the closing quotation marks.&quot;)">.</span>
-          <span class="dol-highlight-word" onclick="dolHighlight(this,&quot;Closing quotation marks end the exact words Ellen speaks.&quot;)">&rdquo;</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'The first word of the sentence is capitalized.')">He</span>
+          <span> interrupted her</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Commas set off the extra detail.')">,</span>
+          <span> smiling</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'A comma comes before the quote.')">,</span>
+          <span> </span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Opening quotation mark begins the exact words.')">&ldquo;</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'The first word of a quotation is capitalized; the apostrophe shows That is.')">That&rsquo;s</span>
+          <span> all that brave means</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'A dash adds the explanation.')">&mdash;</span>
+          <span>not thinking about the dangers</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'The period goes inside the closing quotation mark.')">.</span>
+          <span class="dol-highlight-word" onclick="dolHighlight(this,'Closing quotation mark ends the exact words.')">&rdquo;</span>
         </div>
         <div id="dolExplain" style="min-height:24px;margin-top:6px;font-size:13px;color:#34B76F;font-weight:700;"></div>
         <div class="dol-hint">Tap highlighted parts to see what&rsquo;s correct.</div>
         <div class="dol-fix-label">🔧 Now fix this sentence (it is a DIFFERENT sentence from the model &mdash; Anne of Green Gables style)</div>
         <div class="dol-sentence-wrap" style="border-left:4px solid #C7922C;">
-          marilla looked at matthew and said that child has bewitched us both and I dont know how she did it
+          matthew cuthbert i believe that child has bewitched you said marilla
         </div>
-        <div class="dol-hint">Fix these mistakes: <em>marilla</em> &rarr; <em>Marilla</em>, <em>matthew</em> &rarr; <em>Matthew</em> (proper nouns). Add a comma before the quote (&ldquo;said,&rdquo;), add opening and closing quotation marks around the spoken words, add an apostrophe in <em>don&rsquo;t</em>, and add a period before the closing quote mark.</div>
+        <div class="dol-hint">Find: quotation marks around Marilla&rsquo;s words, capitals on <em>matthew cuthbert</em> and <em>i</em>, a comma after the name of the person spoken to, an exclamation point inside the quotation marks, a capital M on <em>marilla</em>.</div>
         <button class="dol-check-btn" style="margin-top:12px;" onclick="document.getElementById('dolAns').classList.toggle('show')">🔍 Check My Work</button>
         <div class="dol-answer" id="dolAns">
-          <p style="margin-bottom:6px;"><strong>Corrected:</strong> <strong>M</strong>arilla looked at <strong>M</strong>atthew and said, &ldquo;That child has bewitched us both and I don&rsquo;t know how she did it.&rdquo;</p>
-          <p style="font-size:13px;color:#7A88A8;font-style:italic;"><strong>Marilla</strong> and <strong>Matthew</strong> are proper nouns &mdash; character names are always capitalized. Dialogue needs a comma before the opening quote, quotation marks around the spoken words, an apostrophe in <em>don&rsquo;t</em>, and a period inside the closing quotation marks. Compare: both sentences use the pattern speaker + verb + comma + quoted speech + period inside closing quote.</p>
+          <p style="margin-bottom:6px;"><strong>Corrected:</strong> &ldquo;<strong>M</strong>atthew <strong>C</strong>uthbert<strong>,</strong> <strong>I</strong> believe that child has bewitched you<strong>!</strong>&rdquo; said <strong>M</strong>arilla<strong>.</strong></p>
+          <p style="font-size:13px;color:#7A88A8;font-style:italic;">Marilla&rsquo;s real words in <em>Anne of Green Gables</em>, Chapter 3. A comma follows the name of the person spoken to; the exclamation point goes inside the quotation marks; the tag &ldquo;said Marilla&rdquo; ends with a period.</p>
         </div>
       </div>
     </div>
@@ -2774,12 +2780,12 @@ return all.length?all[all.length-1]:null;}
     <div class="activity-body">
       <p>C. S. Lewis wrote this in <em>Prince Caspian</em>. It is a statement about loyalty that rings true forever. Copy it carefully <strong>in cursive</strong> into your reading journal.</p>
       <div class="copywork-box">
-        <p style="font-family:'Lora',Georgia,serif;font-size:16px;line-height:1.8;color:#0E1C42;">&ldquo;Once a king or queen in Narnia, always a king or queen.&rdquo;</p>
-        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">&mdash; C. S. Lewis, <em>Prince Caspian</em></p>
+        <p style="font-family:'Lora',Georgia,serif;font-size:16px;line-height:1.8;color:#0E1C42;">&ldquo;I haven&rsquo;t come to take your place, you know, but to put you into it.&rdquo;</p>
+        <p style="font-size:13px;color:#7A88A8;margin-top:8px;font-style:italic;">&mdash; Peter to Caspian, <em>Prince Caspian</em>, Ch. 12</p>
       </div>
       <div class="callout callout-think" style="margin-top:14px;">
         <span class="callout-icon">✍️</span>
-        <p><strong>Craft notice:</strong> Lewis builds this sentence with a satisfying parallel structure: &ldquo;Once a king or queen&hellip; always a king or queen.&rdquo; The repeated phrase creates a sense of permanence &mdash; some things do not change. This kind of echo is a writer&rsquo;s way of making an idea feel inevitable and true.</p>
+        <p><strong>Craft notice:</strong> Lewis builds this sentence on a turn: &ldquo;not to take &hellip; but to put.&rdquo; Two opposite actions with the same object, your place, show exactly what kind of king Peter is. This kind of echo is a writer&rsquo;s way of making an idea feel inevitable and true.</p>
       </div>
       <p style="margin-top:12px;font-size:14px;color:#3A4A6B;">Copy the sentence in cursive in your reading journal. Take your time &mdash; let your hand follow each letter carefully.</p>
     </div>
