@@ -103,6 +103,5 @@ between('<div class="card-head"><span class="ico">🔭</span><h2>Coming Up in We
   '<div class="card-head"><span class="ico">🔭</span><h2>Coming Up in Week 31</h2></div>\n    <p><strong>Synthesis week.</strong> Your student compares the books from this year side by side, with Opti as the guide again.</p>\n  ')
 s = s.replace('href="parent-guide-ft-unit.html"', 'href="parent-guide-pc-unit.html"').replace('See the whole Freedom Train unit →', 'See the whole Prince Caspian unit →')
 import re
-s = re.sub(r'\n\s*<td colspan="2">A 14-point wrap-up on the whole book:.*?</td>', '', s, count=1)
 io.open('parent-guide-week-30.html', 'w', encoding='utf-8').write(s)
 print('ok', s.count('Freedom'), s.count('Harriet'), s.count('Marcus'), s.count('25.'))
