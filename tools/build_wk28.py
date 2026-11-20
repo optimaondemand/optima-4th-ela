@@ -150,13 +150,13 @@ T = {
      "morphology": "Three more Latin bases. Spect means look, so to respect someone is to look up to them. Ject means throw, so eject means throw out. Script and scribe mean write, and a scribe is a person whose job is writing. Find the base, and the word starts to explain itself."},
  2: {"welcome": "Hello again, it’s Nell. The Dwarf has finished his story, and the children know now who called them. Today’s question: what does leading look like when there’s no battle to fight?",
      "read": "This chapter has a sword fight for fun, an archery match, and a long, hot row. Watch who moves first when something has to be done. Nobody gives orders, but somebody always picks up the oar.",
-     "grammar": "A complex sentence leans on a little word like because, although, when or if. If we start at once, we can be there before dark. The if part can’t stand alone. It leans on the rest. When it comes first, put a comma after it."},
+     "grammar": "A complex sentence leans on a little word like because, although, when or if. Because Peter was worn out, he answered shortly. The because part can’t stand alone. It leans on the rest. When it comes first, put a comma after it."},
  3: {"welcome": "Hello, it’s Nell. The children are on foot now, and they come to the edge of a deep gorge. Today’s question: what does a vote tell you about the person who casts it?",
      "read": "Read the vote slowly. Listen to each person’s reason: Trumpkin, Susan, Edmund, then Peter. Nobody is silly here. Each one is weighing something real. Then notice the very last sentence of the chapter, and how plain it is.",
-     "spelling": "Schwa is the lazy uh sound in a word. You can’t hear which vowel it is. So find a cousin of the word where the vowel is loud. Definite sounds like uh in the middle. But finite says its i clearly. So definite has an i."},
+     "spelling": "Schwa is the lazy uh sound in a word. You can’t hear which vowel it is. So find a cousin of the word where the vowel is loud. Opposite sounds like uh in the middle. But oppose says its o clearly. So opposite has an o."},
  4: {"welcome": "Hello, it’s Nell. Three chapters, three hard choices. Today’s question: what makes a good leader, and which choice this week proves it?",
      "read": "Pick one choice from this week. Say what the person was up against before you judge them. Then find the page that proves what you think. One choice, looked at closely, beats three you mention quickly.",
-     "grammar": "Editing day. Read each line out loud. Does it stand on its own? Because the castle was taken. That’s a piece, not a sentence. Does it run two sentences together with no joint? Fix the piece, mend the joint, and say why."},
+     "grammar": "Editing day. Read each line out loud. Does it stand on its own? Because it was raining. That’s a piece, not a sentence. Does it run two sentences together with no joint? Fix the piece, mend the joint, and say why."},
 }
 WS = {1: ("morphology", "look, throw and write"), 2: ("grammar", "sentences that lean"), 3: ("spelling", "find the loud cousin"), 4: ("grammar", "pieces and joints")}
 
