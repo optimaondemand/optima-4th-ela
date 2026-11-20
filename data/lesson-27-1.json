@@ -1,0 +1,309 @@
+{
+ "connector": "The Dwarf has started his story, and it’s a story inside a story: the four children are sitting by the fire, listening, while we go back to a castle and a boy named Caspian. Keep two lists as you read today: who is with Caspian, and who is against him.",
+ "writingFocus": "Compare",
+ "dol": {
+  "a": {
+   "raw": "the nurse told him about old narnia but miraz sent her away",
+   "fixed": "<strong>The</strong> nurse told him about <strong>Old Narnia</strong><strong>,</strong> but <strong>Miraz</strong> sent her away<strong>.</strong>",
+   "why": "Capitals start the sentence and name Old Narnia and Miraz; a comma comes before but because it joins two complete sentences; a period ends it."
+  },
+  "b": {
+   "raw": "caspian loved history so doctor cornelius taught him in secret",
+   "fixed": "<strong>Caspian</strong> loved history<strong>,</strong> so <strong>Doctor Cornelius</strong> taught him in secret<strong>.</strong>",
+   "why": "Capitals on Caspian and Doctor Cornelius; a comma before so, which joins a cause to what it led to; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and give each character a different word.",
+  "journal-q2": "… and quote what Miraz calls the old stories.",
+  "journal-q3": "… and quote something Caspian says on the tower."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 4
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": true,
+   "count": 1
+  }
+ },
+ "hints": {
+  "fill1": {
+   "h1": "Carrying something across. Which base means carry?",
+   "why": "port means carry: trans + port."
+  },
+  "fill2": {
+   "h1": "Pulling something out. Which base means pull?",
+   "why": "tract means pull or draw: ex + tract."
+  },
+  "fill3": {
+   "h1": "Putting parts together. Which base means build?",
+   "why": "struct means build: con + struct."
+  },
+  "fill4": {
+   "h1": "Carrying goods in. Which base means carry?",
+   "why": "port means carry: im + port."
+  }
+ },
+ "copia": {
+  "seed": "Caspian <b data-verb>listened</b> to the old stories.",
+  "eg": [
+   "Every night at bedtime, Caspian listened to the old stories.",
+   "Caspian <i>drank in</i> the old stories.",
+   "Caspian listened to the old stories of Talking Beasts, Dwarfs and Fauns."
+  ]
+ },
+ "notes": {
+  "wgrd": "Track groups of characters: when someone new appears, put the name on one of two lists (with Caspian, or against him). Leave a question mark if you’re not sure yet.",
+  "vocab": [
+   [
+    "tutor",
+    "A private teacher who teaches one student or a few."
+   ],
+   [
+    "usurper",
+    "Someone who takes power, like a throne, without the right to it."
+   ],
+   [
+    "astronomy",
+    "The study of the stars, planets and sky."
+   ],
+   [
+    "sternly",
+    "In a strict, serious, firm way."
+   ]
+  ],
+  "wordParts": "Latin bases: port = carry, tract = pull or draw, struct = build: transport, attract, construct, instructed.",
+  "grammar": "But and so join two complete sentences. But says the second part goes against what you expected; so says the second part happens because of the first. Put a comma before each.",
+  "spelling": "Suffix rules: drop the silent e (hope + ing = hoping); change y to i (empty + er = emptier); double the last consonant when the last syllable is stressed (begin + ing = beginning, but visit + ing = visiting)."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Who is on which side?",
+   "intro": "As you read Ch. 4, sort the characters.",
+   "fields": [
+    {
+     "label": "With Caspian",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "Against Caspian (or not sure yet?)",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "The person Caspian trusts most, and why",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1",
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 40,
+  "journal-q2": 32,
+  "journal-q3": 32
+ },
+ "wordgame": {
+  "type": "treasure",
+  "strand": "Morphology",
+  "kicker": "Fill the Treasure Chamber",
+  "h": "Bases that carry, pull and build",
+  "voice": "Tap a word base, then the word it belongs in. Or drag the base onto the word.",
+  "why": {
+   "icon": "🗝️",
+   "q": "Why a treasure chamber?",
+   "t": "The treasure chamber at Cair Paravel is still waiting for its treasures. This week Caspian learns that the old stories are true, and the Old Narnians come out of hiding one by one. Each word you build sets one more treasure in its place. This week’s Latin bases: <b>port</b> (carry), <b>tract</b> (pull) and <b>struct</b> (build)."
+  },
+  "meanings": {
+   "port": "carry",
+   "tract": "pull",
+   "struct": "build"
+  },
+  "winDay": "More treasures are back in their niches.",
+  "win": "Four treasures are back in their niches. <b>port</b> = carry, <b>tract</b> = pull, <b>struct</b> = build."
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "The OAO Seven Pillars are honesty, respect, courtesy, responsibility, courage, service and perseverance. Chapter 4 happens in Miraz’s castle, where the old stories are a secret. Read each moment. Tap the pillar it shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "Miraz asks what more anyone could wish for than to be King. Caspian answers, “All the same, I do wish,” and tells his uncle the truth: he wishes he could have lived in the Old Days.",
+    "ok": [
+     "Honesty"
+    ],
+    "why": "Caspian says what he really thinks, even to the King.",
+    "hint": "Does Caspian hide what he wishes?"
+   },
+   {
+    "t": "Doctor Cornelius whispers that if the King found him telling Caspian secrets, he would lose his head. He goes on teaching Caspian the truth anyway.",
+    "ok": [
+     "Courage",
+     "Service"
+    ],
+    "why": "He takes a terrible risk so Caspian can know the truth.",
+    "hint": "What could happen to the Doctor?"
+   },
+   {
+    "t": "On the tower, the Doctor says Caspian can help the hidden Old Narnians when he is King. Caspian says, “I do, I do. But how can I help?”",
+    "ok": [
+     "Service",
+     "Responsibility"
+    ],
+    "why": "Caspian wants to help people who need it.",
+    "hint": "What does Caspian ask?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-27-1-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-27-1-read",
+   "label": "Nell · before you read"
+  },
+  "morphology": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-27-1-morphology",
+   "label": "Nell · bases that carry, pull and build"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. The Dwarf is telling the children a story, and now we hear it too. It’s about a boy who grew up in a castle where the old stories were forbidden. Today’s question: why would the truth ever need to be hidden?",
+  "read": "Keep two lists as you read. Everyone who helps Caspian goes on one. Everyone who controls him goes on the other. If you can’t tell yet, write the name with a question mark. Watch the nurse, the King, and the Doctor with the great spectacles.",
+  "morphology": "Some words are built on old Latin bases. Port means carry, so transport carries something across. Tract means pull, so extract pulls something out. Struct means build, so construct builds something together. Find the base, ask what it does, and set a treasure back in its place."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Copywork",
+   "steps": [
+    "Read the sentence and the note under it.",
+    "Copy it in cursive in your reading journal, slowly."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the three bases and the example words.",
+    "Tap See if you were right.",
+    "Play the game: tap a base, then the word it belongs in.",
+    "In Show What You Know, pick one base and two words that use it."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Read how we figure out usurper.",
+    "Guess each word, then tap the card to check.",
+    "Play the Match Game: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read both versions.",
+    "Tap the stronger one.",
+    "Tap Now check your thinking, then write what but and so each promise."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the sentence.",
+    "Tap every word whose base changed when the suffix came.",
+    "In the box, write the three rules in your own words."
+   ]
+  },
+  {
+   "find": "Copia",
+   "steps": [
+    "Read the sentence.",
+    "Write it three new ways, one box at a time.",
+    "Stuck? Tap Show one way."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Word Study Connection",
+   "steps": [
+    "Nothing to do here. Your Word Study answer shows up in your work below."
+   ]
+  },
+  {
+   "find": "Writing Connection",
+   "steps": [
+    "Think about Miraz and Doctor Cornelius.",
+    "Write one way they are alike and one way they are different.",
+    "Use a detail from Chapter 4."
+   ]
+  }
+ ]
+}

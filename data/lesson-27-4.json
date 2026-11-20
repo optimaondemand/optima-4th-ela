@@ -1,0 +1,248 @@
+{
+ "connector": "Three chapters of the Dwarf’s story are done. Caspian started in a castle full of Telmarines. He ends the week in a moonlit glade full of Fauns. Today, line up every group you met, say what each one wants, and find the two groups that are heading straight for each other.",
+ "writingFocus": "Compare",
+ "dol": {
+  "a": {
+   "raw": "the telmarines had swords but the old narnians had something stronger the memory of aslan so they refused to give up",
+   "fixed": "<strong>The Telmarines</strong> had swords<strong>,</strong> but the <strong>Old Narnians</strong> had something stronger <strong>—</strong> the memory of <strong>Aslan</strong><strong>,</strong> so they refused to give up<strong>.</strong>",
+   "why": "Capitals on Telmarines, Old Narnians and Aslan; a comma before but and before so; a dash sets off the important detail; a period ends it."
+  },
+  "b": {
+   "raw": "nikabrik hated the telmarines so he did not trust caspian at first",
+   "fixed": "<strong>Nikabrik</strong> hated the <strong>Telmarines</strong><strong>,</strong> so he did not trust <strong>Caspian</strong> at first<strong>.</strong>",
+   "why": "Capitals on the names; a comma before so joins the cause to its result; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and give one reason for every name on your web.",
+  "journal-q2": "… and say what Caspian needs that only one of them can give.",
+  "journal-q3": "… and use one detail from Chapter 4 and one from Chapter 6."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 5
+  },
+  "journal-q2": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "notes": {
+  "wgrd": "Line up every group from Ch. 4–6, say what each wants, and find the two groups heading for each other.",
+  "vocab": [
+   [
+    "tutor",
+    "A private teacher who teaches one student or a few."
+   ],
+   [
+    "usurper",
+    "Someone who takes power, like a throne, without the right to it."
+   ],
+   [
+    "astronomy",
+    "The study of the stars, planets and sky."
+   ],
+   [
+    "sternly",
+    "In a strict, serious, firm way."
+   ]
+  ],
+  "wordParts": "Latin bases: port = carry, tract = pull or draw, struct = build: transport, attract, construct, instructed.",
+  "grammar": "But and so join two complete sentences. But says the second part goes against what you expected; so says the second part happens because of the first. Put a comma before each. Editing day: check that each but or so carries the right logic.",
+  "spelling": "Suffix rules: drop the silent e (hope + ing = hoping); change y to i (empty + er = emptier); double the last consonant when the last syllable is stressed (begin + ing = beginning, but visit + ing = visiting)."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "Every group, one goal",
+   "intro": "Look back at Ch. 4–6.",
+   "fields": [
+    {
+     "label": "Groups with Caspian, and what they want",
+     "hint": "",
+     "rows": 3
+    },
+    {
+     "label": "Groups against him, and what they want",
+     "hint": "",
+     "rows": 3
+    }
+   ],
+   "layout": "row",
+   "end": {
+    "label": "The two groups heading for each other",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q1"
+  ]
+ },
+ "counters": {
+  "journal-q1": 48,
+  "journal-q2": 32,
+  "journal-q3": 40
+ },
+ "virtue": {
+  "kind": "log",
+  "title": "This week’s strongest pillar",
+  "intro": "Think about Chapters 4–6. Which pillar did Caspian and his friends show most this week? Tap one.",
+  "options": [
+   {
+    "t": "Honesty"
+   },
+   {
+    "t": "Respect"
+   },
+   {
+    "t": "Courtesy"
+   },
+   {
+    "t": "Responsibility"
+   },
+   {
+    "t": "Courage"
+   },
+   {
+    "t": "Service"
+   },
+   {
+    "t": "Perseverance"
+   }
+  ],
+  "line": "Name one moment that proves it.",
+  "placeholder": "The strongest pillar was … because in Chapter … ",
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "plate": {
+  "src": "plates/pc-ch6.png",
+  "alt": "Fauns dance in the moonlight around a boy at the edge of a wide circle of grass.",
+  "credit": "From Chapter 6, the night the old stories came alive for Caspian."
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-27-4-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-27-4-read",
+   "label": "Nell · looking back"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-27-4-grammar",
+   "label": "Nell · the right hinge"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello, it’s Nell. Three chapters of the Dwarf’s story are done. A castle, a storm, a cave, a forge, a moonlit dance. Today’s question: what changed for Caspian this week, and what made the change possible?",
+  "read": "Line up every group you met this week, from Miraz’s court to the Fauns. Say what each group wants. Then find the two groups that want opposite things. They’re going to meet, and when they do, it won’t be gentle.",
+  "grammar": "Editing day. Read each sentence with but or so, and ask if the logic is right. They were outnumbered, but they fought anyway. That works. They were outnumbered, so they fought anyway. That doesn’t. One small word, and the meaning flips."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Read the poem.",
+    "Think about the question under it. No writing needed."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Pick one base.",
+    "Think how you would explain it to a younger student. No writing needed."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Guess each word, then tap the card to check.",
+    "Pick one activity from the choice board and do it in the box."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read each sentence.",
+    "Tap every sentence where but or so does the wrong job.",
+    "In the box, fix one and explain the logic."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the words.",
+    "Tap only the ones that are wrong.",
+    "In the box, fix one and name the rule it broke."
+   ]
+  },
+  {
+   "find": "Discussion Prompts",
+   "steps": [
+    "Look back at Chapters 4 to 6.",
+    "Fill in the note boxes.",
+    "Think about the two discussion questions.",
+    "Then do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  },
+  {
+   "find": "Writing Connection",
+   "steps": [
+    "Pick two characters from this week.",
+    "Write five to seven sentences: one way alike, one way different, two conjunctions, one detail.",
+    "Tap Copy today’s writing and paste it into your own document."
+   ]
+  }
+ ]
+}

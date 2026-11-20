@@ -1,0 +1,266 @@
+{
+ "connector": "Yesterday Caspian learned the old stories are true. Tonight the Doctor wakes him with news that changes everything, and puts a horn in his hands. Keep your lists going: by the end of today, Caspian has new friends, and not all of them trust him.",
+ "writingFocus": "Compare",
+ "dol": {
+  "a": {
+   "raw": "queen prunaprismia had a son but caspian was the true king so miraz wanted him gone",
+   "fixed": "<strong>Queen Prunaprismia</strong> had a son<strong>,</strong> but <strong>Caspian</strong> was the true king<strong>,</strong> so <strong>Miraz</strong> wanted him gone<strong>.</strong>",
+   "why": "Capitals on the three names; a comma before but (it goes against what you expect) and before so (it tells what happened because of it); a period ends it."
+  },
+  "b": {
+   "raw": "the horn was a great treasure but caspian must not use it except at his greatest need",
+   "fixed": "<strong>The</strong> horn was a great treasure<strong>,</strong> but <strong>Caspian</strong> must not use it except at his greatest need<strong>.</strong>",
+   "why": "Capital T and capital C; a comma before but joins the two complete thoughts; a period ends it."
+  }
+ },
+ "scholar": {
+  "journal-q1": "… and name what happened two hours before.",
+  "journal-q2": "… and quote what Trufflehunter says about beasts.",
+  "journal-q3": "… and name one risk the Doctor took in Chapter 4, too."
+ },
+ "flags": {
+  "journal-q1": {
+   "quote": false,
+   "count": 2
+  },
+  "journal-q2": {
+   "quote": true,
+   "count": 1
+  },
+  "journal-q3": {
+   "quote": false,
+   "count": 2
+  }
+ },
+ "notes": {
+  "wgrd": "Inside one group, members can feel opposite ways about the same person. Trufflehunter and Trumpkin save Caspian; Nikabrik wants him dead. Mark each reaction and ask what each one knows.",
+  "vocab": [
+   [
+    "tutor",
+    "A private teacher who teaches one student or a few."
+   ],
+   [
+    "usurper",
+    "Someone who takes power, like a throne, without the right to it."
+   ],
+   [
+    "astronomy",
+    "The study of the stars, planets and sky."
+   ],
+   [
+    "sternly",
+    "In a strict, serious, firm way."
+   ]
+  ],
+  "wordParts": "Latin bases: port = carry, tract = pull or draw, struct = build: transport, attract, construct, instructed.",
+  "grammar": "But and so join two complete sentences. But says the second part goes against what you expected; so says the second part happens because of the first. Put a comma before each. Lewis uses but when a hope runs into trouble.",
+  "spelling": "Suffix rules: drop the silent e (hope + ing = hoping); change y to i (empty + er = emptier); double the last consonant when the last syllable is stressed (begin + ing = beginning, but visit + ing = visiting)."
+ },
+ "wgrd": {
+  "catcher": {
+   "title": "One group, three answers",
+   "intro": "As you read Ch. 5, catch how each one treats Caspian.",
+   "fields": [
+    {
+     "label": "Trufflehunter",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Trumpkin",
+     "hint": "",
+     "rows": 2
+    },
+    {
+     "label": "Nikabrik",
+     "hint": "",
+     "rows": 2
+    }
+   ],
+   "end": {
+    "label": "Why they don’t agree",
+    "hint": ""
+   }
+  },
+  "useAt": [
+   "journal-q2"
+  ]
+ },
+ "counters": {
+  "journal-q1": 32,
+  "journal-q2": 40,
+  "journal-q3": 32
+ },
+ "virtue": {
+  "kind": "pillars",
+  "title": "Which pillar is it?",
+  "intro": "In Chapter 5 Caspian runs for his life. Read each moment. Tap the pillar it shows best.",
+  "pillars": [
+   "Honesty",
+   "Respect",
+   "Courtesy",
+   "Responsibility",
+   "Courage",
+   "Service",
+   "Perseverance"
+  ],
+  "items": [
+   {
+    "t": "The Doctor wakes Caspian and says, “Trust me and do exactly as I tell you.” Caspian is very surprised, but he begins doing what he is told at once.",
+    "ok": [
+     "Respect"
+    ],
+    "why": "Caspian trusts his teacher and listens right away.",
+    "hint": "How does Caspian treat his Tutor’s words?"
+   },
+   {
+    "t": "Caspian asks the Doctor to come with him. The Doctor says, “I dare not. It would make your danger greater.”",
+    "ok": [
+     "Service",
+     "Responsibility"
+    ],
+    "why": "He stays behind to keep Caspian safer.",
+    "hint": "Who is the Doctor thinking about?"
+   },
+   {
+    "t": "Nikabrik grabs his dagger to stab Caspian. Trufflehunter and Trumpkin get in the way and hold him down.",
+    "ok": [
+     "Courage",
+     "Service"
+    ],
+    "why": "They protect a stranger, even from their own friend.",
+    "hint": "Who steps in?"
+   },
+   {
+    "t": "Trufflehunter says, “I’m a beast, I am, and a Badger what’s more. We don’t change. We hold on.”",
+    "ok": [
+     "Perseverance"
+    ],
+    "why": "He has held on to the old truth for hundreds of years.",
+    "hint": "What does holding on mean here?"
+   }
+  ],
+  "kicker": "Seven Pillars Watch · after you read",
+  "icon": "🏛️",
+  "name": "pillars"
+ },
+ "media": {
+  "welcome": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-27-2-welcome",
+   "label": "Nell’s welcome"
+  },
+  "read": {
+   "kind": "audio",
+   "path": "guide/nell/g4ela-27-2-read",
+   "label": "Nell · before you read"
+  },
+  "grammar": {
+   "kind": "video",
+   "path": "guide/nell/g4ela-27-2-grammar",
+   "label": "Nell · but and so"
+  },
+  "guide1": {
+   "kind": ""
+  },
+  "guide2": {
+   "kind": ""
+  },
+  "guide3": {
+   "kind": ""
+  },
+  "rwm": {
+   "kind": ""
+  },
+  "copia": {
+   "kind": ""
+  }
+ },
+ "transcripts": {
+  "welcome": "Hello again, it’s Nell. Last time, Caspian learned the old stories are true. Tonight, the Doctor wakes him in the dark with a message that can’t wait. Today’s question: who welcomes Caspian when he runs, and who doesn’t, and why?",
+  "read": "Read the Doctor’s warning slowly. Notice what happened only two hours before, and the gift he puts in Caspian’s hands. Then the storm. When Caspian wakes up, he’s with three strangers. Listen to each one. They don’t all agree about him.",
+  "grammar": "But and so are tiny hinges. But says, here comes a surprise: Caspian’s heart was sinking, but he tried to take it all in. So says, here’s what happened because of it. Put a comma before each when it joins two whole sentences."
+ },
+ "navFixes": true,
+ "lens": true,
+ "todo": [
+  {
+   "find": "What Good Readers",
+   "steps": [
+    "Read the tip and the lenses.",
+    "Tap the lens you will use today.",
+    "Keep it in mind as you read. Your note boxes are on the Reading tab."
+   ]
+  },
+  {
+   "find": "Daily Oral",
+   "steps": [
+    "Tap each yellow part of the first sentence to see why it is correct.",
+    "Pick Sentence A or Sentence B.",
+    "Type it the right way in the box, then tap Check My Work."
+   ]
+  },
+  {
+   "find": "Poetry Corner",
+   "steps": [
+    "Read the poem slowly.",
+    "Think about how it fits Caspian’s night ride.",
+    "Write your thinking in the box."
+   ]
+  },
+  {
+   "find": "Morphology",
+   "steps": [
+    "Read the three bases.",
+    "Play the match: tap a word, then tap its meaning."
+   ]
+  },
+  {
+   "find": "Vocabulary",
+   "steps": [
+    "Tap a word, then tap the column where it belongs.",
+    "Read what the words mean to check."
+   ]
+  },
+  {
+   "find": "Grammar",
+   "steps": [
+    "Read Lewis’s two sentences.",
+    "Tap every but.",
+    "In the box, say what the first half led you to expect."
+   ]
+  },
+  {
+   "find": "Spelling",
+   "steps": [
+    "Read the sentence.",
+    "Tap every word whose base changed before the suffix.",
+    "In the box, name the base, the suffix and the change."
+   ]
+  },
+  {
+   "find": "Pause & Think",
+   "steps": [
+    "Read the two Pause & Think questions first.",
+    "Keep them in mind as you read."
+   ]
+  },
+  {
+   "find": "Open Your Book",
+   "steps": [
+    "Open your book and read Chapter 5.",
+    "Fill in the note boxes as you read.",
+    "After you read, do the Seven Pillars Watch at the end of this tab."
+   ]
+  },
+  {
+   "find": "Chapter Thinking",
+   "steps": [
+    "Pick Explorer or Scholar.",
+    "Answer all three questions in full sentences.",
+    "Use a detail from the book in every answer. The hint under each question helps.",
+    "Last, write one or two sentences about your reading lens."
+   ]
+  }
+ ]
+}
