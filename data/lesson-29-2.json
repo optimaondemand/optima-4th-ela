@@ -270,5 +270,10 @@
     "Last, write one or two sentences about your reading lens."
    ]
   }
- ]
+ ],
+ "plate": {
+  "src": "plates/pc-ch11.jpg",
+  "alt": "A lion stands alone on open ground, head up, looking into the distance.",
+  "credit": "Lion (The Lookout), Rosa Bonheur, 19th century. Public domain, via Wikimedia Commons."
+ }
 }

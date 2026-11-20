@@ -305,5 +305,10 @@
     "Use a detail from Chapter 4."
    ]
   }
- ]
+ ],
+ "plate": {
+  "src": "plates/pc-ch4.jpg",
+  "alt": "A teacher shows a model of the planets by lamplight while children lean in to watch.",
+  "credit": "A Philosopher Lecturing on the Orrery, Joseph Wright of Derby, about 1766. Public domain, via Wikimedia Commons."
+ }
 }

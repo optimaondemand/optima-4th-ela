@@ -273,5 +273,10 @@
     "Last, write one or two sentences about your reading lens."
    ]
   }
- ]
+ ],
+ "plate": {
+  "src": "plates/pc-ch14.jpg",
+  "alt": "Knights in armour on white and dark horses charge with long lances.",
+  "credit": "The Battle of San Romano, Paolo Uccello, about 1438–1440. Public domain, via Wikimedia Commons."
+ }
 }

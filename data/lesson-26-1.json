@@ -308,5 +308,10 @@
     "Use one detail from each place."
    ]
   }
- ]
+ ],
+ "plate": {
+  "src": "plates/pc-ch1.jpg",
+  "alt": "A wild, rocky island shore under a dark sky, with thin trees and a wood behind.",
+  "credit": "On Valaam Island, Arkhip Kuindzhi, 1873. Public domain, via Wikimedia Commons."
+ }
 }

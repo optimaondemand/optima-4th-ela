@@ -100,9 +100,9 @@
   "journal-q3": 40
  },
  "plate": {
-  "src": "plates/pc-ch11.png",
-  "alt": "A great golden lion on a hill at dawn, head raised in a roar, while trees bend and move like dancers.",
-  "credit": "From Chapter 11, the night the trees woke."
+  "src": "plates/pc-ch11.jpg",
+  "alt": "A lion stands alone on open ground, head up, looking into the distance.",
+  "credit": "From Chapter 11. Lion (The Lookout), Rosa Bonheur, 19th century. Public domain, via Wikimedia Commons."
  },
  "virtue": {
   "kind": "log",
@@ -237,7 +237,7 @@
    "steps": [
     "Look back at Chapters 10 to 12.",
     "Fill in the note boxes: your theme sentence and a new character to test it on.",
-    "Think about the three questions.",
+    "Think about the question.",
     "Then do the Seven Pillars Watch at the end of this tab."
    ]
   },

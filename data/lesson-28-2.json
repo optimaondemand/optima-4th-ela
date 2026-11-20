@@ -265,5 +265,10 @@
     "Last, write one or two sentences about your reading lens."
    ]
   }
- ]
+ ],
+ "plate": {
+  "src": "plates/pc-ch8.jpg",
+  "alt": "Three boys and a man sail a small boat that leans into the wind over choppy water.",
+  "credit": "Breezing Up (A Fair Wind), Winslow Homer, 1873–1876. Public domain, via Wikimedia Commons."
+ }
 }

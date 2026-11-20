@@ -2,7 +2,7 @@
 
 Each clip: save as `assets/<path>.mp3` (audio slots). For Word Study films, record the script, save the mp3 under the same name, then re-run timeline + capture + encode (not --silent) so the captions match the voice.
 
-**96 clips, about 19,993 characters.** Voices: Marcus (week 25), Nell (weeks 26–30, ElevenLabs voice `VNHNa6nN6yJdVF3YRyuF`), Opti (weeks 31–32; voice still to choose — the G3 Opti is `LRkukhGJZOFsyrZCwQaZ`, the old G4 Opti voice is gone).
+**96 clips, about 19,993 characters.** Voices: Marcus (week 25), Nell (weeks 26–30, ElevenLabs voice `VNHNa6nN6yJdVF3YRyuF`), Opti (weeks 31–32, the G3 Opti voice `LRkukhGJZOFsyrZCwQaZ`).
 
 ## Week 25 · Marcus
 
