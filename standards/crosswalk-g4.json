@@ -21,7 +21,8 @@
   "method": "Each FL benchmark is matched to the closest standard(s) in each state by reading both texts. Empty list = no close match in that state.",
   "TN": "5.FL.PWR.3 is the code as printed in TN's grade 4 document (a source misprint for 4.FL.PWR.3, flagged in the database).",
   "PR": "Pending. PR's English Program is a second-language framework and the database carries codes only (PRDE text withheld for rights). Matching needs the PRDE PDF.",
-  "TX": "Codes are TAC citations; short form 110.6(b)(8)(A) = TEKS 4.8.A."
+  "TX": "Codes are TAC citations; short form 110.6(b)(8)(A) = TEKS 4.8.A.",
+  "EE.5.1": "EE.5.1 (accepted rules of a specific format) has no close match in the six states' grade 4 ELA standards."
  },
  "map": {
   "ELA.4.R.1.1": {
@@ -619,6 +620,14 @@
    "TN": [
     "4.SL.PKI.6"
    ],
+   "PR": "pending"
+  },
+  "ELA.K12.EE.5.1": {
+   "TX": [],
+   "AR": [],
+   "MO": [],
+   "AL": [],
+   "TN": [],
    "PR": "pending"
   }
  }

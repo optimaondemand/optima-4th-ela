@@ -140,6 +140,8 @@ def main(outdir):
             z.writestr("%s/assessment_meta.xml" % q["gid"], q["ameta"])
     for q in Q: print("  %s: %d questions, %d points" % (q["title"], q["n"], q["total"]))
     print("wrote", p1, "and", p2)
+    from tag_qti import tag   # each question's standards, from the page tags (tools/std_tag.py)
+    tag(p1); tag(p2)
 
 if __name__ == "__main__":
     main(sys.argv[1] if len(sys.argv) > 1 else ".")
