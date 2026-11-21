@@ -123,6 +123,12 @@ def tag_page(path, lid, week, W):
         out.append(s[pos:m.end()]); out.append(f' data-std="{" ".join(fl)}" data-std-id="{bid}"'); pos = m.end()
         blocks.append(dict(id=bid, title=title, **expand(fl)))
     out.append(s[pos:]); s = ''.join(out)
+    if not blocks and bar and not is_checkin:   # unit project pages: steps are built by script, so tag the page
+        m = re.search(r'<div class="wrap"', s)
+        if m:
+            fl = [c for c in re.findall(r'fl-code">([^<]*)<', bm.group(1))]; bid = f'{lid}-01'
+            s = s[:m.end()] + f' data-std="{" ".join(fl)}" data-std-id="{bid}"' + s[m.end():]
+            blocks.append(dict(id=bid, title='Unit project (whole page; its steps are built by script)', **expand(fl)))
     allfl = []
     for b in blocks:
         for c in b['FL']:
@@ -135,6 +141,16 @@ def tag_page(path, lid, week, W):
     s = s[:i] + f'<script type="application/json" id="oao-standards">{js}</script>\n' + s[i:]
     open(path, 'w', encoding='utf8', newline='').write(s)
     return page, untagged
+
+# Unit project pages (bars added Nov 20 2026 by tools/add_project_bars.py): python3 tools/std_tag.py projects
+PROJECTS = {'lesson-14-scrapbook.html': (14, '14.project'), 'lesson-19-nts-project.html': (19, '19.project')}
+if sys.argv[1:] == ['projects']:
+    man = dict(grade=4, status='DRAFT - for review', pages=[])
+    for p, (week, lid) in PROJECTS.items():
+        pg, un = tag_page(p, lid, week, {})
+        man['pages'].append(pg); print(f'{p}: {len(pg["blocks"])} blocks, FL {pg["lesson_tags"]["FL"]}')
+    json.dump(man, open('standards/g4-projects.json', 'w', encoding='utf8'), indent=1, ensure_ascii=False)
+    sys.exit()
 
 for week in [int(a) for a in sys.argv[1:]]:
     W = WEEKS[week]
