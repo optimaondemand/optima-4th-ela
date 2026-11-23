@@ -1,0 +1,241 @@
+{
+ "week": 27,
+ "day": 2,
+ "bookId": "pc",
+ "book": "Prince Caspian",
+ "bookCredit": "Prince Caspian by C. S. Lewis (1951) is quoted only in short lines.",
+ "chapters": "Chapter 5",
+ "title": "Into Trufflehunter’s Cave",
+ "guide": {
+  "name": "Nell",
+  "short": "Nell",
+  "initials": "N",
+  "color": "#7A4E8C",
+  "folder": "nell",
+  "voice": "VNHNa6nN6yJdVF3YRyuF"
+ },
+ "map": "Medieval Forest",
+ "mapFilter": "Medieval",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "storm",
+  "alt": "A storm over black mountains and a dark pine forest, with one warm firelit cave mouth low in the hills",
+  "ground": "#1E2A24",
+  "groundY": 210,
+  "motifs": [
+   [
+    "hills",
+    -100,
+    1.3,
+    {
+     "color": "#2E3446",
+     "y": 150
+    }
+   ],
+   [
+    "hills",
+    300,
+    1.1,
+    {
+     "color": "#3A4258",
+     "y": 180
+    }
+   ],
+   [
+    "pines",
+    -20,
+    1.2,
+    {
+     "n": 6,
+     "color": "#0F1E18"
+    }
+   ],
+   [
+    "pines",
+    560,
+    1.1,
+    {
+     "n": 6,
+     "color": "#0F1E18"
+    }
+   ],
+   [
+    "cove",
+    380,
+    1.0,
+    {
+     "color": "#2A2A2A"
+    }
+   ],
+   [
+    "torch",
+    470,
+    1.2,
+    {
+     "y": 214
+    }
+   ],
+   [
+    "lantern",
+    180,
+    0.8,
+    {
+     "y": 150
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "golden apple",
+  "art": "apple",
+  "line": "Only Imagination Trip travelers earn this one. From the orchard the moles planted, grown wild up to the walls."
+ },
+ "postcard": {
+  "style": "note",
+  "kicker": "A note from Nell",
+  "h": "What a prince carries at midnight",
+  "body": [
+   "The Doctor wakes Caspian, packs a wallet with cold chicken, bread, an apple and a flask, then hands him a purse of gold and a horn.",
+   "Then a storm, a bolting horse, and three faces by a cave fire."
+  ],
+  "sign": "Nell",
+  "word": "A <b>usurper</b> takes a throne that is not theirs. The word fits Miraz."
+ },
+ "mission": {
+  "h": "Build the start and end of Caspian’s night",
+  "p": "One side: what he carried from the castle. Other side: Trufflehunter’s firelit cave."
+ },
+ "job": "Build the night in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>the start: the wallet, the chicken, the flask, the purse of gold</li><li>between: Destrier, running through the pines</li><li>the end: the fire in the cave, the Badger beside it</li></ol>",
+  "say": "Stand by the cave fire, where Caspian woke. Practice these 2 sentences:",
+  "frame": "“___ does / does not trust Caspian. I know because ___.”",
+  "extra": "Put a <b>Wooden Mug</b> by the fire: the sweet, hot drink Trufflehunter gives him.",
+  "extraModels": [
+   "Wooden Mug"
+  ],
+  "fits": "the wallet, the horse and the cave"
+ },
+ "points": "Your video is 30 seconds or less, shows the wallet and purse, Destrier, and the fire with the Badger, and you say 2 sentences: one of the three in the cave, whether they trust Caspian, and a detail from Chapter 5.",
+ "alt": {
+  "h": "Friends, foes and a horse",
+  "job": "Match the characters",
+  "p": "Six characters from Chapter 5. Match each one to what the chapter tells you about them.",
+  "game": "match",
+  "gameH": "Tap a name, then tap what the chapter says",
+  "leftLabel": "Who",
+  "rightLabel": "What Chapter 5 says",
+  "pairs": [
+   {
+    "a": "Doctor Cornelius",
+    "ic": "🕯️",
+    "b": "wakes Caspian at night and gives him two gifts",
+    "why": "A little purse of gold, and something far better: Queen Susan’s horn."
+   },
+   {
+    "a": "Miraz",
+    "ic": "👑",
+    "b": "called himself Lord Protector before he called himself King",
+    "why": "He weeded out the great lords one by one, the Doctor says."
+   },
+   {
+    "a": "Destrier",
+    "ic": "🐎",
+    "b": "saddled and waiting at the corner of the orchard",
+    "why": "He bolts in the storm when thunder cracks overhead."
+   },
+   {
+    "a": "Trufflehunter",
+    "ic": "🦡",
+    "b": "the oldest and kindest of the three, a Badger",
+    "why": "He gives Caspian a drink and says beasts do not change; they hold on."
+   },
+   {
+    "a": "Nikabrik",
+    "ic": "⚫",
+    "b": "the Black Dwarf who wants to be rid of the Human",
+    "why": "He jumps up with a hand on his dagger when Caspian says Miraz is his uncle."
+   },
+   {
+    "a": "Trumpkin",
+    "ic": "🔴",
+    "b": "the Red Dwarf who says it is not the creature’s fault",
+    "why": "Bulbs and bolsters! He and the Badger hold Nikabrik back."
+   }
+  ],
+  "miss": "Not that one. Think about who was in the castle and who was in the cave."
+ },
+ "write": {
+  "q": "Pick one of the three in the cave: Trufflehunter, Nikabrik or Trumpkin. In <b>2 sentences</b>, say whether they trust Caspian and give <b>one thing they do in Chapter 5</b> that shows it.",
+  "chips": [
+   {
+    "k": "who",
+    "t": "one of the three",
+    "rx": "\\b(trufflehunter|nikabrik|trumpkin|the badger|badger|black dwarf|red dwarf|dwarf)\\b"
+   },
+   {
+    "k": "trust",
+    "t": "trust or not",
+    "rx": "\\b(trusts?|trusted|suspicious|kind\\w*|friendly|believes?|doubts?|hates?|afraid|wary|welcome\\w*|guest|betray\\w*|prisoner)\\b"
+   },
+   {
+    "k": "does",
+    "t": "what they do",
+    "rx": "\\b(drink|bandag\\w*|dagger|sit on|took him in|head|fire|story|promise\\w*|hold\\w*|held|stab\\w*|laugh\\w*|asks?|says?|said|long life|king)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "___ does not trust Caspian.",
+   "I know because in Chapter 5 ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hello, dear. It’s Nell. In Chapter 5 the Doctor wakes Caspian in the night and packs a wallet with cold chicken, bread, an apple and a flask. Then come a purse of gold, a horn, a storm, a bolting horse, and a cave with three faces by the fire. Build where the night began and where it ended, and tell me which of the three trusted the boy.",
+  "alt": "No headset? Sit by my bench. Chapter 5 is crowded with new names: a tutor, a usurper, a horse, a badger and two dwarfs. Match each one to what the chapter tells you, and the cave will feel like a room you know.",
+  "saved": "Both ends of the night are built, and the fire is lit in the cave. Here is your golden apple. Keep it, and remember that a badger holds on when dwarfs and men forget."
+ },
+ "labels": {
+  "brief": "Nell · the cave",
+  "alt": "Nell · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "Nikabrik does not trust Caspian. I know because in Chapter 5 he jumps up with his hand on his dagger when he hears Miraz is Caspian's uncle.",
+ "models": [
+  {
+   "name": "Empty Sack",
+   "is": "the wallet the Doctor packed"
+  },
+  {
+   "name": "Chicken Drumstick",
+   "is": "the cold chicken"
+  },
+  {
+   "name": "Green Glass Bottle",
+   "is": "the little flask"
+  },
+  {
+   "name": "Gold Coin",
+   "is": "the purse of gold"
+  },
+  {
+   "name": "Red Horse - Running",
+   "is": "Destrier, bolting"
+  },
+  {
+   "name": "Optima Domi Fire",
+   "is": "the fire in the cave"
+  },
+  {
+   "name": "Badger",
+   "is": "Trufflehunter"
+  }
+ ]
+}

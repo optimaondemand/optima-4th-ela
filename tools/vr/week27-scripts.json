@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-27-vr",
+ "voice": "VNHNa6nN6yJdVF3YRyuF",
+ "folder": "nell",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/nell/g4ela-27-vr-brief.mp3",
+   "prompt": "Hello, dear. It’s Nell. In Chapter 5 the Doctor wakes Caspian in the night and packs a wallet with cold chicken, bread, an apple and a flask. Then come a purse of gold, a horn, a storm, a bolting horse, and a cave with three faces by the fire. Build where the night began and where it ended, and tell me which of the three trusted the boy.",
+   "transcript": "Hello, dear. It’s Nell. In Chapter 5 the Doctor wakes Caspian in the night and packs a wallet with cold chicken, bread, an apple and a flask. Then come a purse of gold, a horn, a storm, a bolting horse, and a cave with three faces by the fire. Build where the night began and where it ended, and tell me which of the three trusted the boy."
+  },
+  "alt": {
+   "file": "assets/audio/guide/nell/g4ela-27-vr-alt.mp3",
+   "prompt": "No headset? Sit by my bench. Chapter 5 is crowded with new names: a tutor, a usurper, a horse, a badger and two dwarfs. Match each one to what the chapter tells you, and the cave will feel like a room you know.",
+   "transcript": "No headset? Sit by my bench. Chapter 5 is crowded with new names: a tutor, a usurper, a horse, a badger and two dwarfs. Match each one to what the chapter tells you, and the cave will feel like a room you know."
+  },
+  "saved": {
+   "file": "assets/audio/guide/nell/g4ela-27-vr-saved.mp3",
+   "prompt": "Both ends of the night are built, and the fire is lit in the cave. Here is your golden apple. Keep it, and remember that a badger holds on when dwarfs and men forget.",
+   "transcript": "Both ends of the night are built, and the fire is lit in the cave. Here is your golden apple. Keep it, and remember that a badger holds on when dwarfs and men forget."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-27-vr.mp4",
+  "script": ""
+ }
+}
