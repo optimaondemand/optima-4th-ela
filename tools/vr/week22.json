@@ -1,0 +1,244 @@
+{
+ "week": 22,
+ "day": 2,
+ "bookId": "ft",
+ "book": "Freedom Train",
+ "bookCredit": "Freedom Train: The Story of Harriet Tubman by Dorothy Sterling (1954) is quoted only in short lines.",
+ "chapters": "Chapters 11 and 12",
+ "title": "A Carriage from the Junk Heap",
+ "guide": {
+  "name": "Marcus",
+  "short": "Marcus",
+  "initials": "M",
+  "color": "#2F7A55",
+  "folder": "marcus",
+  "voice": "FsK9b8Cv2pGkFUtfpOyM"
+ },
+ "map": "Western Town",
+ "mapFilter": "Western",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "dusk",
+  "alt": "A rough two-wheeled carriage with a horse on a dirt road at dusk, the North Star above, and a train waiting in the distance",
+  "ground": "#6B5A3E",
+  "groundY": 206,
+  "motifs": [
+   [
+    "stars",
+    0,
+    1,
+    {
+     "n": 18,
+     "y": 90,
+     "big": [
+      460,
+      40
+     ],
+     "seed": 22
+    }
+   ],
+   [
+    "hills",
+    -40,
+    1.2,
+    {
+     "color": "#4D4A5A",
+     "y": 190
+    }
+   ],
+   [
+    "train",
+    700,
+    0.9,
+    {
+     "y": 236
+    }
+   ],
+   [
+    "path",
+    60,
+    1.2,
+    {
+     "y": 226,
+     "color": "#8A7A5A"
+    }
+   ],
+   [
+    "wagon",
+    300,
+    1.2,
+    {
+     "y": 240
+    }
+   ],
+   [
+    "trees",
+    120,
+    0.9,
+    {
+     "n": 2,
+     "color": "#3A4A34",
+     "y": 236
+    }
+   ],
+   [
+    "lantern",
+    660,
+    1,
+    {
+     "y": 196
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "quilt square",
+  "art": "quilt",
+  "line": "Only Imagination Trip travelers earn this one. Pieced from scraps, like the quilt Old Rit sewed."
+ },
+ "postcard": {
+  "style": "postcard",
+  "kicker": "A postcard from Marcus",
+  "h": "Two wheels and two stout boards",
+  "body": [
+   "Ben is in the one-room jail, and Harriet’s parents are past eighty. They could never walk north. So the children search the junk heap.",
+   "Build what she made from it."
+  ],
+  "sign": "Marcus",
+  "word": "A <b>chaise</b> is a light two-wheeled carriage. Harriet’s wheels came from an old one."
+ },
+ "mission": {
+  "h": "Build Harriet’s carriage",
+  "p": "Put the carriage from Chapter 12 together, part by part, with the horse in front."
+ },
+ "job": "Build the carriage in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>two wheels, the same size</li><li>a board between them for the seat, one below for the footrest</li><li>rope to hang the footrest</li><li>the horse in front, the quilt on the seat</li></ol>",
+  "say": "Stand by the seat, like Harriet. Practice these 2 sentences out loud:",
+  "frame": "“The ___ ___ for the old folks. In Chapter 12, ___.”",
+  "extra": "Put the <b>Western Town Green Train</b> down the road with a <b>Lantern On</b>: the steam cars at Burrsville.",
+  "extraModels": [
+   "Western Town Green Train",
+   "Lantern On"
+  ],
+  "fits": "the horse and the whole carriage"
+ },
+ "points": "Your video is 30 seconds or less, shows the wheels, boards, rope, horse and quilt, and you say 2 sentences: one part of the rescue and what it did for the old folks, with a detail from Chapter 12.",
+ "alt": {
+  "h": "Signals and disguises",
+  "job": "Match the signals",
+  "p": "Chapters 11 and 12 are full of messages that mean more than they say. Match each one to its real meaning.",
+  "game": "match",
+  "gameH": "Tap a signal, then tap what it meant",
+  "leftLabel": "The signal",
+  "rightLabel": "What it really meant",
+  "pairs": [
+   {
+    "a": "“When the good old ship of Zion comes along, be ready to step on board.”",
+    "ic": "✉️",
+    "b": "Harriet is coming. Brothers, be ready.",
+    "why": "Jacob Jackson pretends he can’t make head or tail of the letter, then hurries to find Benjamin."
+   },
+   {
+    "a": "Two live chickens let loose in the street",
+    "ic": "🐔",
+    "b": "a trick so John Stewart would not see her face",
+    "why": "He laughs at the little old woman chasing her birds and never looks twice."
+   },
+   {
+    "a": "A sunbonnet and a dusty shawl",
+    "ic": "👒",
+    "b": "Harriet’s disguise as an elderly granny",
+    "why": "On every trip she dresses as a man or an old woman."
+   },
+   {
+    "a": "“Good news, the chariot’s coming”",
+    "ic": "🎵",
+    "b": "Harriet has arrived to rescue Ben",
+    "why": "Old Rit sings it when she brings his breakfast to the jail. Ben’s eyes light up."
+   },
+   {
+    "a": "“Will you come out tonight?”",
+    "ic": "🌙",
+    "b": "be ready tonight, when they come",
+    "why": "The second song, sung as the key grates in the lock."
+   },
+   {
+    "a": "A handkerchief tied over Ben’s eyes",
+    "ic": "🧣",
+    "b": "so Ben can honestly say he never saw his children",
+    "why": "He walks an hour with them blindfolded, then turns back for Rit."
+   }
+  ],
+  "miss": "Not that one. Ask who sent the signal, and who was supposed to understand it."
+ },
+ "write": {
+  "q": "Pick one part of the rescue: a wheel, a board, the rope, the horse, the quilt, the tickets or the lantern. In <b>2 sentences</b>, say what it did for the old folks, with <b>one detail from Chapter 12</b>.",
+  "chips": [
+   {
+    "k": "part",
+    "t": "a part",
+    "rx": "\\b(wheels?|boards?|seat|footrest|rope|horse|quilt|lantern|tickets?|passes|carriage|saw)\\b"
+   },
+   {
+    "k": "did",
+    "t": "what it did",
+    "rx": "\\b(carried|carries|covered|covers|pulled|pulls|held|holds|kept|keeps|warm\\w*|bought|signal\\w*|cut|hung|rolled|took|got|let)\\b"
+   },
+   {
+    "k": "who",
+    "t": "the old folks",
+    "rx": "\\b(ben|rit|parents|old folks|old people|dad|ma|father|mother)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "The ___ ___ for the old folks.",
+   "In Chapter 12, ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hey, it’s Marcus. In Chapter 12 Old Ben is in a one-room jail, and Harriet’s parents are past eighty. They could never walk north. So she sends the village children to the junk heap for two wheels and two stout boards, and borrows Jacob Jackson’s old horse. Build the carriage she put together, part by part, and tell me what one part did for the old folks.",
+  "alt": "No headset? Take the window seat. Chapters 11 and 12 are full of signals: a letter about a ship, two loose chickens, a song at the jail door. Match each one to what it really meant, and you will see how Harriet talked without being understood by the wrong people.",
+  "saved": "The carriage is built, and the quilt is over the seat. That quilt and Ben’s broadax were the only things the old folks took from slavery. Here is your square of it. Keep it close."
+ },
+ "labels": {
+  "brief": "Marcus · the junk heap",
+  "alt": "Marcus · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "The quilt covered the old folks' legs on the narrow seat. In Chapter 12 it mattered because it and Ben's broadax were the only things they took from slavery.",
+ "models": [
+  {
+   "name": "Covered Wagon Front Wheel",
+   "is": "the chaise wheels (use 2)"
+  },
+  {
+   "name": "Lumber 1",
+   "is": "the pine board seat"
+  },
+  {
+   "name": "Lumber 2",
+   "is": "the footrest board"
+  },
+  {
+   "name": "Rope 1",
+   "is": "rope for the footrest"
+  },
+  {
+   "name": "Yellow Horse - Idle",
+   "is": "Jacob Jackson’s horse"
+  },
+  {
+   "name": "Williamsburg - Blanket",
+   "is": "Old Rit’s quilt on the seat"
+  }
+ ]
+}

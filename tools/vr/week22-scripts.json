@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-22-vr",
+ "voice": "FsK9b8Cv2pGkFUtfpOyM",
+ "folder": "marcus",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/marcus/g4ela-22-vr-brief.mp3",
+   "prompt": "Hey, it’s Marcus. In Chapter 12 Old Ben is in a one-room jail, and Harriet’s parents are past eighty. They could never walk north. So she sends the village children to the junk heap for two wheels and two stout boards, and borrows Jacob Jackson’s old horse. Build the carriage she put together, part by part, and tell me what one part did for the old folks.",
+   "transcript": "Hey, it’s Marcus. In Chapter 12 Old Ben is in a one-room jail, and Harriet’s parents are past eighty. They could never walk north. So she sends the village children to the junk heap for two wheels and two stout boards, and borrows Jacob Jackson’s old horse. Build the carriage she put together, part by part, and tell me what one part did for the old folks."
+  },
+  "alt": {
+   "file": "assets/audio/guide/marcus/g4ela-22-vr-alt.mp3",
+   "prompt": "No headset? Take the window seat. Chapters 11 and 12 are full of signals: a letter about a ship, two loose chickens, a song at the jail door. Match each one to what it really meant, and you will see how Harriet talked without being understood by the wrong people.",
+   "transcript": "No headset? Take the window seat. Chapters 11 and 12 are full of signals: a letter about a ship, two loose chickens, a song at the jail door. Match each one to what it really meant, and you will see how Harriet talked without being understood by the wrong people."
+  },
+  "saved": {
+   "file": "assets/audio/guide/marcus/g4ela-22-vr-saved.mp3",
+   "prompt": "The carriage is built, and the quilt is over the seat. That quilt and Ben’s broadax were the only things the old folks took from slavery. Here is your square of it. Keep it close.",
+   "transcript": "The carriage is built, and the quilt is over the seat. That quilt and Ben’s broadax were the only things the old folks took from slavery. Here is your square of it. Keep it close."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-22-vr.mp4",
+  "script": ""
+ }
+}
