@@ -1,0 +1,249 @@
+{
+ "week": 30,
+ "day": 2,
+ "bookId": "pc",
+ "book": "Prince Caspian",
+ "bookCredit": "Prince Caspian by C. S. Lewis (1951) is quoted only in short lines.",
+ "chapters": "Chapter 14",
+ "title": "Before and After Aslan",
+ "guide": {
+  "name": "Nell",
+  "short": "Nell",
+  "initials": "N",
+  "color": "#7A4E8C",
+  "folder": "nell",
+  "voice": "VNHNa6nN6yJdVF3YRyuF"
+ },
+ "map": "Medieval Town (Sunny)",
+ "mapFilter": "Sunny",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "day",
+  "alt": "A sunny river town: a bridge coming apart under climbing ivy, a schoolhouse with leaves at the windows, and a cottage with a bed in the open air",
+  "ground": "#6B8A52",
+  "groundY": 206,
+  "motifs": [
+   [
+    "sun",
+    140,
+    1.0,
+    {
+     "y": 62
+    }
+   ],
+   [
+    "water",
+    0,
+    1,
+    {
+     "y": 216,
+     "w": 920,
+     "color": "#7FB0C4",
+     "shine": "#FFFFFF"
+    }
+   ],
+   [
+    "hills",
+    200,
+    1.2,
+    {
+     "color": "#6B8A52",
+     "y": 200
+    }
+   ],
+   [
+    "bridge",
+    330,
+    1.0,
+    {
+     "y": 222,
+     "color": "#A89A86"
+    }
+   ],
+   [
+    "house",
+    620,
+    1.3,
+    {
+     "y": 236,
+     "wall": "#F4EFE4",
+     "roof": "#B5543A",
+     "lit": false
+    }
+   ],
+   [
+    "house",
+    120,
+    0.9,
+    {
+     "y": 236,
+     "wall": "#E8DCC3",
+     "roof": "#6B4A3A",
+     "lit": false,
+     "chimney": false
+    }
+   ],
+   [
+    "trees",
+    780,
+    1.1,
+    {
+     "n": 2,
+     "color": "#3E7A4A",
+     "y": 240
+    }
+   ],
+   [
+    "trees",
+    220,
+    0.8,
+    {
+     "n": 1,
+     "color": "#3E7A4A",
+     "y": 236
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "golden apple",
+  "art": "apple",
+  "line": "Only Imagination Trip travelers earn this one. From the moles’ orchard at Cair Paravel."
+ },
+ "postcard": {
+  "style": "program",
+  "kicker": "Nell · a program for a holiday",
+  "h": "We will make holiday",
+  "body": [
+   "While Peter fights Miraz, Aslan takes the girls on a holiday. Ivy pulls down a bridge. A schoolroom turns into a glade. A cottage lifts off a sick old woman.",
+   "Build three things before Aslan came, and after."
+  ],
+  "sign": "Nell",
+  "word": "A <b>ford</b> is a shallow place where you can walk across a river."
+ },
+ "mission": {
+  "h": "Build three befores and three afters",
+  "p": "Side by side, in pairs: bridge and ford, desk and rose bush, cottage and bed in the open air."
+ },
+ "job": "Build the pairs in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>pair 1: a board for the bridge, the splashing ford beside it</li><li>pair 2: Miss Prizzle’s desk, the rose bush it became</li><li>pair 3: the cottage, the bed in the open air</li></ol>",
+  "say": "Stand between the befores and afters. Practice these 2 sentences:",
+  "frame": "“Before Aslan, the ___ was ___. After, it ___, which shows ___.”",
+  "extra": "Put the <b>Lion (OptimaED)</b> at the head of the row: Aslan, the girls on his back.",
+  "extraModels": [
+   "Lion (OptimaED)"
+  ],
+  "fits": "all three pairs"
+ },
+ "points": "Your video is 30 seconds or less, shows all three pairs, and you say 2 sentences: one thing Aslan changed, before and after, and what it shows about his kind of victory, with a detail from Chapter 14.",
+ "alt": {
+  "h": "The holiday, in order",
+  "job": "Put the romp in order",
+  "p": "Aslan’s holiday moves from the hill to the battlefield. Tap the stops in order.",
+  "game": "sequence",
+  "gameH": "Tap the next stop on the romp",
+  "events": [
+   {
+    "t": "The girls wake and ride on Aslan’s back",
+    "s": "flutes, cymbals, Bacchus and his wild girls",
+    "ic": "🦁"
+   },
+   {
+    "t": "The river god asks to be loosed",
+    "s": "ivy climbs the piers and the Bridge of Beruna falls",
+    "ic": "🌉"
+   },
+   {
+    "t": "The girls’ school becomes a glade",
+    "s": "Miss Prizzle’s desk is a rose bush; Gwendolen stays",
+    "ic": "🌹"
+   },
+   {
+    "t": "Farm animals join the party",
+    "s": "dogs break their chains, horses kick their carts to pieces",
+    "ic": "🐎"
+   },
+   {
+    "t": "The cottage lifts off a sick old woman",
+    "s": "colour comes back to her face; she asks for breakfast",
+    "ic": "🏠"
+   },
+   {
+    "t": "The old woman runs to Caspian",
+    "s": "on the field where Miraz’s army has laid down its swords: his old nurse",
+    "ic": "🤗"
+   }
+  ],
+  "miss": "Not yet. Follow Aslan from the hill, down to the river, through the town, and out to the farms."
+ },
+ "write": {
+  "q": "Pick one thing Aslan changed in Chapter 14: the bridge, the schoolroom, the chained dogs, the cottage, or the old woman. In <b>2 sentences</b>, say what it was before and after, and what that shows about Aslan’s kind of victory.",
+  "chips": [
+   {
+    "k": "thing",
+    "t": "a thing he changed",
+    "rx": "\\b(bridge|ford|school\\w*|desk|rose\\w*|dogs?|chains?|horses?|carts?|cottage|house|bed|old woman|nurse|well|teacher|mistress)\\b"
+   },
+   {
+    "k": "change",
+    "t": "before and after",
+    "rx": "\\b(before|after|became|becomes|turned|turns|into|was|now|instead|fell|lifted|broke|free\\w*)\\b"
+   },
+   {
+    "k": "shows",
+    "t": "what it shows",
+    "rx": "\\b(joy|holiday|alive|awake|wake\\w*|kind\\w*|gentle|power\\w*|true|old narnia|no sword\\w*|without fighting|heals?|healing|free\\w*|laugh\\w*)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so|which)\\b"
+   }
+  ],
+  "starters": [
+   "Before Aslan, the ___ was ___.",
+   "After, it ___, which shows ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hello, dear. It’s Nell. Chapter 14 tells two stories at once. While Peter fights Miraz in the lists, Aslan takes the girls on a holiday: ivy pulls down a bridge, a schoolroom turns into a forest glade, and a cottage lifts right off a sick old woman. Build three things as they were before Aslan came and as he left them, side by side, and tell me what one of them shows.",
+  "alt": "No headset? Sit by my bench. Aslan’s holiday runs from the hill down to the river, through the town, past the farms, and out to the battlefield. Tap the stops in order, and you will see that his victory never needed a sword.",
+  "saved": "Three befores, three afters, and the Lion at the head of the row. Here is your golden apple, the last of the unit. Keep it, and remember the old nurse running across the field to Caspian."
+ },
+ "labels": {
+  "brief": "Nell · the holiday",
+  "alt": "Nell · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "Before Aslan, the cottage was a tiny house with a dying old woman inside. After, it fell apart and she sat up well again, which shows his victory heals instead of hurting.",
+ "models": [
+  {
+   "name": "Lumber 3",
+   "is": "the Bridge of Beruna, before"
+  },
+  {
+   "name": "Water Splash 1",
+   "is": "the ford, after"
+  },
+  {
+   "name": "Cafe Table",
+   "is": "Miss Prizzle’s desk, before"
+  },
+  {
+   "name": "Flower Set 2",
+   "is": "the rose bush, after"
+  },
+  {
+   "name": "Straw House",
+   "is": "the little cottage, before"
+  },
+  {
+   "name": "Williamsburg - Straw Bed",
+   "is": "the bed in the open air, after"
+  }
+ ]
+}

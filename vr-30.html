@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – G4 ELA 30.2 VR · Before and After Aslan</title>
+<!--
+  30.2 VR · Before and After Aslan · Prince Caspian, Chapter 14. Guide: Nell (folder nell, voice VNHNa6nN6yJdVF3YRyuF). Map: Medieval Town (Sunny). Models: Lumber 3, Water Splash 1, Cafe Table, Flower Set 2, Straw House, Williamsburg - Straw Bed. Extra: Lion (OptimaED). Window Seat Day game: sequence.
+  Built by tools/vr/build_vr.py from tools/vr/week30.json. Edit the JSON, not this file.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0E1C42;--gold:#C7922C;--cream:#FFF3DC;--paper:#FFFDF7;--ink:#2B1D12;--soft:#4F5A73;--edge:#EBD9AF;--rose:#B5476B;--teal:#1F6F78;--green:#2F7A55;--red:#C8553D}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',Verdana,sans-serif;background:#F3EEE4;color:var(--ink);line-height:1.6}
+.wrap{max-width:920px;margin:0 auto;background:#FBF8F2;min-height:100vh;box-shadow:0 0 40px rgba(43,29,18,.06);overflow:hidden}
+img{max-width:100%}button{font-family:inherit}
+h2,h3,.hd-title{font-family:'Lora',Georgia,serif}
+.hd{background:linear-gradient(135deg,#0E1C42,#1B2C5E 60%,#0E1C42);border-bottom:5px solid var(--gold);padding:14px 22px;display:flex;align-items:center;gap:14px}
+.hd-logo{width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hd-logo img{width:40px;height:32px}
+.hd-org{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#C9D2EE;font-weight:800}
+.hd-title{font-size:25px;color:#fff;font-weight:700;line-height:1.2}
+.hd-sub{font-size:13px;color:#C9D2EE;margin-top:3px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.hd-sub b{color:#fff}
+.wk{background:var(--cream);color:var(--navy);font-weight:900;font-size:11px;letter-spacing:1px;padding:2px 8px;border-radius:4px;transform:rotate(-2deg);display:inline-block}
+.banner{border-bottom:4px solid var(--gold);background:#F6D7C3;line-height:0}
+.banner svg{width:100%;height:auto;display:block}
+main{padding:22px 22px 40px}
+.card{background:var(--paper);border:2px solid #EADFCB;border-radius:18px;box-shadow:0 2px 12px rgba(43,29,18,.06);margin:0 0 22px}
+.card-pad{padding:18px 22px}
+.kicker{font-size:11px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:#8A6420}
+h2{font-size:23px;color:var(--navy);line-height:1.25;margin:2px 0 8px;font-weight:700}
+h3{font-size:19px;color:var(--navy);margin:0 0 6px;font-weight:700}
+p{font-size:17px;color:var(--soft);line-height:1.7;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.media{margin:0 0 18px}
+.vslot-ph{display:none}html.review .vslot-ph.on{display:block;border:2px dashed #C9B489;border-radius:12px;padding:10px 14px;font-size:13px;color:#7A6A55;margin-bottom:10px}
+.vid video{width:100%;border-radius:12px;display:block;background:#000}
+.cc-btn{margin-top:6px;background:#fff;border:1.5px solid #C9B489;border-radius:999px;padding:3px 12px;font-weight:800;font-size:12px;cursor:pointer}
+.cc-btn[aria-pressed="true"]{background:var(--navy);color:#fff}
+/* guide clip */
+.radio{display:flex;gap:14px;align-items:center;background:var(--cream);border:1.5px solid var(--edge);border-radius:14px;padding:10px 14px}
+.radio.hidden{display:none}
+.av{width:62px;height:62px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font:900 22px 'Nunito',sans-serif;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.35),rgba(255,255,255,0) 62%),var(--avc);border:3px solid #fff;box-shadow:0 0 0 2px var(--avc),0 3px 8px rgba(0,0,0,.18);position:relative}
+.radio.playing .av::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:3px solid var(--gold);animation:ring 1.3s ease-out infinite}
+@keyframes ring{from{opacity:.9;transform:scale(.92)}to{opacity:0;transform:scale(1.18)}}
+.r-body{flex:1;min-width:0}
+.r-who{font:900 12px 'Nunito',sans-serif;color:#8A6420;text-transform:uppercase;letter-spacing:.8px}
+.r-label{font-size:16px;font-weight:900;color:var(--navy);margin:1px 0 5px}
+.r-ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.r-play{background:var(--navy);color:#fff;border:0;border-radius:999px;padding:6px 14px;font:800 14px 'Nunito',sans-serif;cursor:pointer}
+.r-read{background:none;border:0;color:#8A6420;font:800 13px 'Nunito',sans-serif;text-decoration:underline;cursor:pointer}
+.r-tr{display:none;margin-top:8px;font-size:16px;line-height:1.6;background:rgba(255,255,255,.7);border-radius:10px;padding:8px 12px}
+.r-tr.open{display:block}
+.radio.playing .r-tr span:not(.said):not(.now){color:#9C8C70}
+.r-tr span.now{background:#FFE08A;border-radius:4px;box-shadow:0 0 0 2px #FFE08A}
+/* postcard */
+.postcard{display:grid;grid-template-columns:1.25fr .9fr;gap:0;background:#FFFBF1;border:2px solid #E5D3AE;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(43,29,18,.10);transform:rotate(-.6deg);margin:0 0 22px}
+.pc-l{padding:18px 22px;border-right:2px dashed #D9C49A}
+.pc-l p{font-family:'Lora',Georgia,serif;font-style:italic;color:#3D2E1E;font-size:18px}
+.pc-sign{font-family:'Lora',Georgia,serif;font-style:italic;font-weight:700;color:var(--rose);font-size:20px;text-align:right}
+.pc-r{padding:16px 18px;display:flex;flex-direction:column;gap:12px;background:repeating-linear-gradient(0deg,#FFFBF1 0 30px,#EFE3CA 30px 31px)}
+.pc-stamp{align-self:flex-end;width:74px;height:88px;border:3px dotted #C9B489;background:#F7E7E1;display:flex;align-items:center;justify-content:center;transform:rotate(4deg)}
+.pc-word{background:#fff;border-left:4px solid var(--gold);border-radius:8px;padding:8px 12px;font-size:15px;color:var(--soft)}
+.pc-word b{color:var(--navy)}
+/* hook styles (the variety log keeps them apart) */
+.postcard.telegram{transform:none;border-radius:4px;background:#F7F1DE;border-color:#C9B489}.postcard.telegram .pc-l p{font-family:'Courier New',monospace;font-style:normal;text-transform:uppercase;font-size:15.5px;letter-spacing:.5px;line-height:1.75}.postcard.telegram .pc-sign{font-family:'Courier New',monospace;font-style:normal;text-transform:uppercase;font-size:15px}.postcard.telegram .pc-r{background:#F7F1DE}
+.postcard.diary{transform:rotate(.5deg);background:#FFFDF7 repeating-linear-gradient(0deg,transparent 0 29px,#E6DCC7 29px 30px);border-color:#D9C49A}.postcard.diary .pc-l{border-right-color:#E7B3C2;border-right-style:solid}.postcard.diary .pc-r{background:#FFFDF7}
+.postcard.letter{transform:none;background:#FFFEFA;border-radius:6px;box-shadow:0 10px 24px rgba(43,29,18,.14)}.postcard.letter .pc-l p{font-style:normal}.postcard.letter .pc-sign{text-align:left}
+.postcard.log{transform:none;background:#F1F4F7;border-color:#9AA6C4;border-radius:8px}.postcard.log .pc-l p{font-family:'Nunito',sans-serif;font-style:normal;font-size:16.5px;color:#2B2F3F}.postcard.log .pc-l p::before{content:'▸ ';color:var(--teal)}.postcard.log .pc-r{background:#F1F4F7}
+.postcard.note{transform:rotate(-1.4deg);background:#FFF4B8;border-color:#E9D27A;box-shadow:0 8px 18px rgba(43,29,18,.14)}.postcard.note .pc-l{border-right:0}.postcard.note .pc-r{background:#FFF4B8}
+.postcard.clipping{transform:rotate(.8deg);background:#F6F1E6;border-color:#B9AE98;border-radius:0}.postcard.clipping .pc-l p{font-family:Georgia,serif;font-style:normal;font-size:16px;column-count:1;color:#2B2F3F}.postcard.clipping h2{font-family:Georgia,serif;text-transform:uppercase;letter-spacing:.5px}.postcard.clipping .pc-r{background:#F6F1E6}
+.postcard.program{transform:none;background:#FFFDF7;border:3px double #C7922C;border-radius:0}.postcard.program h2{text-align:center}.postcard.program .pc-l p{text-align:center}.postcard.program .pc-sign{text-align:center}
+.postcard.scroll{transform:none;background:#F5E6C4;border-color:#C9A55A;border-radius:18px/60px}.postcard.scroll .pc-l p{font-style:normal;color:#4A3324}.postcard.scroll .pc-r{background:#F5E6C4}
+/* path bar */
+.pathbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 22px}
+.pb{display:flex;gap:12px;align-items:center;text-align:left;border:2.5px solid #E2D6C4;background:#fff;border-radius:16px;padding:12px 14px;cursor:pointer;color:var(--ink)}
+.pb:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.pb-ic{font-size:30px}
+.pb-t b{display:block;font-size:17px;color:var(--navy)}
+.pb-t small{display:block;font-size:13.5px;color:var(--soft);line-height:1.35}
+.pb[aria-pressed="true"]{border-color:var(--navy);background:var(--navy)}
+.pb[aria-pressed="true"] b{color:#fff}.pb[aria-pressed="true"] small{color:#D6DEF2}
+.alt{display:none}body.path-alt .alt{display:block}body.path-alt .vr-only{display:none}
+/* mission */
+.mission-top{display:flex;gap:14px;align-items:center;padding:18px 22px;border-bottom:2px solid #EFE6D3}
+.mission-ic{font-size:40px}
+.peek{margin-left:auto;text-align:center;flex-shrink:0}
+.peek small{display:block;font-size:12px;font-weight:800;color:#8A6420;line-height:1.2}
+.peek svg{width:70px;height:70px}
+.mission-body{padding:18px 22px}
+.jobline{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;background:#F4F7FD;border:1.5px solid #CBD6EE;border-radius:12px;padding:8px 12px;margin:0 0 12px;font-size:15px}
+.job-k{font-weight:900;color:var(--navy);text-transform:uppercase;font-size:11.5px;letter-spacing:1px;margin-right:4px}
+.job-s{font-weight:800;color:var(--navy)}
+.job-s i{font-style:normal;display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;align-items:center;justify-content:center;font-size:12px;margin-right:5px}
+.job-a{color:#9AA6C4}
+.meter{display:flex;align-items:center;gap:10px;margin:0 0 6px}
+.meter-bar{flex:1;height:10px;background:#EDE5D6;border-radius:999px;overflow:hidden}
+.meter-bar i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
+.meter b{font-size:14px;color:var(--navy)}
+.steps{list-style:none;margin:6px 0 14px}
+.phase{font-weight:900;color:#8A6420;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;margin:16px 0 6px;display:flex;gap:6px;align-items:center}
+.phase:first-child{margin-top:4px}
+.step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:2px solid #EADFCB;border-radius:14px;padding:12px 14px;margin:0 0 10px}
+.step.done{background:#EEF8F0;border-color:#B8E8CF}
+.chk{width:34px;height:34px;flex-shrink:0;border-radius:9px;border:2.5px solid #C9B489;background:#fff;font-weight:900;font-size:18px;color:#fff;cursor:pointer}
+.step.done .chk{background:var(--green);border-color:var(--green)}
+.chk:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.step-n{font-weight:900;color:var(--navy);font-size:15px}
+.step-t{font-size:16.5px;color:#3E4558;line-height:1.6}
+.step-t b{color:var(--navy)}
+.mlist,.road-order,.sub{margin:8px 0 8px 24px;font-size:17px;line-height:1.7}.mlist b{color:var(--navy)}
+.howto{background:#F4F7FD;border:1.5px solid #CBD6EE;border-radius:10px;padding:8px 12px;margin-top:8px;font-size:15px;color:#3E4558}
+.xtag{display:inline-block;background:var(--gold);color:#fff;font-weight:900;font-size:11px;letter-spacing:.8px;border-radius:999px;padding:1px 9px;margin-right:6px;text-transform:uppercase}
+.points{background:#FFF8E6;border:1.5px solid #F2D58E;border-radius:12px;padding:10px 14px;margin:12px 0;font-size:15.5px;color:#5A4D3E}
+.points ul{margin:4px 0 0 20px}
+.done-box{display:none;text-align:center;background:linear-gradient(180deg,#FFFDF7,var(--cream));border:2px solid var(--edge);border-radius:16px;padding:16px 18px;margin-top:12px}
+.done-box.show{display:block}
+.done-box svg.keep{width:120px;height:120px;animation:press .7s ease-out}
+@keyframes press{from{transform:scale(1.4) rotate(-12deg);opacity:0}to{transform:none;opacity:1}}
+/* help drawer */
+.helpdrawer{border:2px solid #CBD6EE;border-radius:14px;background:#F8FAFE;margin:12px 0}
+.helpdrawer summary{list-style:none;display:flex;gap:10px;align-items:center;padding:10px 14px;cursor:pointer}
+.helpdrawer summary::-webkit-details-marker{display:none}
+.helpdrawer summary b{display:block;color:var(--navy)}.helpdrawer summary small{display:block;color:var(--soft);font-size:13px}
+.hd-ic{font-size:24px}.hd-chev{margin-left:auto;transition:transform .2s}.helpdrawer[open] .hd-chev{transform:rotate(180deg)}
+.hd-body{padding:4px 14px 14px}
+.hd-frame{position:relative;padding-top:56.25%;background:#0E1C42;border-radius:10px;overflow:hidden}
+.hd-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.hd-cap{font-size:13px;text-align:center;margin-top:4px}
+.hd-note{font-size:14.5px;background:#FFF8E6;border-radius:8px;padding:6px 10px;margin:10px 0}
+.hd-group{font-size:15px;color:var(--navy);margin:14px 0 6px}
+.hd-steps{list-style:none}
+.hd-step{display:grid;grid-template-columns:200px 1fr;gap:12px;align-items:start;background:#fff;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px;margin-bottom:8px}
+.hd-step img{width:100%;border-radius:6px;border:1px solid #DDD}
+.hd-step b{color:var(--navy)}.hd-step p{font-size:14.5px;margin:2px 0 0}
+.hd-n{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;font-weight:900;align-items:center;justify-content:center;margin-right:6px}
+.hd-alt{font-size:14.5px}
+/* window seat day */
+.alt-note{display:flex;gap:10px;align-items:center;background:#F4F7FD;border-radius:10px;padding:8px 12px;font-size:14.5px;color:#3E4558;margin-top:12px}
+.msg{display:none;margin:10px 0;padding:8px 12px;border-radius:10px;font-weight:700;font-size:15.5px;background:#FDECEA;color:#8A2E22}
+.msg.show{display:block}.msg.ok{background:#EEF8F0;color:#1a6b35}
+.bmark{display:none;margin:12px auto 0;text-align:center}.bmark.show{display:block}
+.bmark svg{width:90px;height:150px;animation:press .7s ease-out}
+.bmark b{display:block;color:var(--navy)}
+.write-q{font-size:17px;color:#3E4558}
+textarea.answer{width:100%;min-height:150px;border:2px solid #E2D6C4;border-radius:12px;padding:10px 12px;font:16.5px/1.6 'Nunito',sans-serif;margin-top:8px;resize:vertical}
+textarea.answer:focus{outline:none;border-color:var(--gold)}
+.counter{font-size:14px;font-weight:800;color:#8A6420;margin:4px 0}.counter.met{color:var(--green)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
+.chips .lbl{font-size:13px;font-weight:800;color:#7A6A55}
+.chip{border:1.5px solid #D0C8BE;border-radius:999px;padding:2px 10px;font-size:13.5px;font-weight:800;color:#7A6A55;background:#fff}
+.chip.on{background:#EEF8F0;border-color:#34B76F;color:#1a6b35}.chip.on::before{content:'✓ '}
+.help-btn{background:none;border:0;color:#8A6420;font-weight:800;text-decoration:underline;cursor:pointer;font-size:14.5px;margin:4px 0}
+.helps{display:none;background:#FFF8E6;border-radius:10px;padding:8px 14px;font-size:15px}.helps.show{display:block}
+.helps ul{margin:4px 0 0 18px}
+.gathered-card{background:#fff;border:2px solid #CBD6EE;border-radius:18px;overflow:hidden;margin:0 0 22px}
+.gathered-header{display:flex;gap:12px;align-items:center;background:var(--navy);color:#fff;padding:12px 18px}
+.gathered-header .ic{font-size:26px}.gathered-header .k{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:#C9D2EE;font-weight:800}
+.gathered-header .t{font-family:'Lora',Georgia,serif;font-size:19px;font-weight:700}
+.gathered-body{padding:14px 18px}
+.name-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.name-row label{font-weight:800;color:var(--navy)}
+.name-row input{flex:1 1 200px;border:2px solid #E2D6C4;border-radius:10px;padding:8px 12px;font:16px 'Nunito',sans-serif}
+.name-msg{color:var(--red);font-size:14px;min-height:1em}
+.g-out{white-space:pre-wrap;background:#FAFAF6;border:1px solid #E2E8F4;border-radius:10px;padding:10px 12px;font-size:14px;margin:8px 0;max-height:260px;overflow:auto}
+.btn{border:0;border-radius:999px;padding:10px 18px;font-weight:900;font-size:16px;cursor:pointer;background:var(--navy);color:#fff}
+.btn.green{background:var(--green)}
+.turnin{font-size:15px;margin-top:8px}
+.turn-steps{margin:0 0 0 20px;font-size:16px}.turn-steps li{margin:4px 0}
+.timer-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:10px 0}.timer{font-size:22px;color:var(--navy);font-variant-numeric:tabular-nums}.timer.up{color:var(--red)}
+footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px solid #EADFCB}
+.gh{font-size:15px;color:var(--navy);margin:14px 0 6px;font-family:'Lora',Georgia,serif}
+.ladder{list-style:none;margin:8px 0 12px;border-left:4px solid #E8D3BD;padding-left:14px}
+.rung{display:flex;align-items:center;gap:10px;min-height:42px;margin:0 0 6px;position:relative}
+.rn{width:36px;height:36px;flex-shrink:0;border-radius:50%;background:#fff;border:3px solid #E2D6C4;display:flex;align-items:center;justify-content:center;font-weight:900;color:#B9A98F}
+.rung.on .rn{border-color:var(--teal);color:var(--teal)}
+.rung.next .rn{border-color:var(--gold);box-shadow:0 0 0 4px rgba(199,146,44,.18)}
+.rung i{color:#B9A98F;font-style:normal}.ric{font-size:22px}.rung b{color:var(--navy)}
+.deck{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ev{display:flex;gap:10px;align-items:center;text-align:left;background:#fff;border:2px solid #E2D6C4;border-radius:12px;padding:8px 10px;cursor:pointer}
+.ev:hover:not([disabled]){border-color:var(--gold)}
+.ev b{display:block;color:var(--navy);font-size:15px}.ev small{display:block;color:#7A6A55;font-size:13px;line-height:1.35}
+.ev.used{opacity:.35}.ev[disabled]{cursor:default}
+.ev.shake{animation:shk .35s}@keyframes shk{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media (max-width:560px){.deck{grid-template-columns:1fr}}
+.sway{animation:bsway 7s ease-in-out infinite;transform-origin:50% 100%}@keyframes bsway{50%{transform:rotate(.4deg)}}.tw circle{animation:btw 2.8s ease-in-out infinite}@keyframes btw{50%{opacity:.35}}.glow{animation:bglow 2.2s ease-in-out infinite}@keyframes bglow{50%{opacity:.75}}.bob{animation:bbob 4s ease-in-out infinite}@keyframes bbob{50%{transform:translateY(4px)}}.shine ellipse{animation:bshine 3.5s ease-in-out infinite}@keyframes bshine{50%{opacity:.15}}.smoke{animation:bsmoke 6s linear infinite}@keyframes bsmoke{to{transform:translate(-14px,-30px);opacity:0}}.wave{animation:bwave 3s ease-in-out infinite;transform-origin:4px 20px}@keyframes bwave{50%{transform:skewY(3deg)}}
+@media (max-width:700px){.postcard{grid-template-columns:1fr}.pc-l{border-right:0;border-bottom:2px dashed #D9C49A}.groups{grid-template-columns:1fr}.hd-step{grid-template-columns:1fr}.hd-title{font-size:21px}}
+@media (max-width:480px){main{padding:16px 14px 30px}.card-pad,.mission-body,.mission-top{padding:14px}.pathbar{grid-template-columns:1fr}.hd{padding:12px 14px}.peek{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hd">
+  <div class="hd-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>
+  <div>
+    <div class="hd-org">Optima Academy Online · 4th Grade ELA</div>
+    <div class="hd-title">Before and After Aslan</div>
+    <div class="hd-sub"><span class="wk">WEEK 30</span><span>Prince Caspian, Chapter 14 · Guide: <b>Nell</b></span></div>
+  </div>
+</header>
+<div class="banner" aria-hidden="true"><svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sunny river town: a bridge coming apart under climbing ivy, a schoolhouse with leaves at the windows, and a cottage with a bed in the open air"><defs><linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0.00" stop-color="#5E97D6"/><stop offset="0.33" stop-color="#8FBCE8"/><stop offset="0.67" stop-color="#C9E2F6"/><stop offset="1.00" stop-color="#EAF3FB"/></linearGradient></defs><rect width="920" height="260" fill="url(#skyg)"/><rect x="0" y="206" width="920" height="54" fill="#6B8A52"/><circle cx="140" cy="62" r="26" fill="#FFE9A8"/><circle cx="140" cy="62" r="52" fill="#FFE9A8" opacity=".25"/><path d="M0 216 Q230 208 460 216 T920 216 V260 H0 Z" fill="#7FB0C4" opacity=".95"/><g class="shine" fill="#FFFFFF" opacity=".55"><ellipse cx="40" cy="230" rx="10" ry="2.2"/><ellipse cx="110" cy="241" rx="14" ry="2.2"/><ellipse cx="180" cy="252" rx="18" ry="2.2"/><ellipse cx="250" cy="230" rx="22" ry="2.2"/><ellipse cx="320" cy="241" rx="10" ry="2.2"/><ellipse cx="390" cy="252" rx="14" ry="2.2"/><ellipse cx="460" cy="230" rx="18" ry="2.2"/><ellipse cx="530" cy="241" rx="22" ry="2.2"/><ellipse cx="600" cy="252" rx="10" ry="2.2"/><ellipse cx="670" cy="230" rx="14" ry="2.2"/><ellipse cx="740" cy="241" rx="18" ry="2.2"/><ellipse cx="810" cy="252" rx="22" ry="2.2"/><ellipse cx="880" cy="230" rx="10" ry="2.2"/></g><path d="M200 220 Q344 164 488 210 T776 204 T1064 212 V260 H200 Z" fill="#6B8A52"/><g transform="translate(330 222) scale(1.00)"><rect x="0" y="-8" width="160" height="10" fill="#A89A86"/><path d="M20 2 a30 22 0 0 1 60 0 z M90 2 a30 22 0 0 1 60 0 z" fill="#A89A86"/><path d="M0 -8 h160" stroke="#555" stroke-width="2"/></g><g transform="translate(620 236) scale(1.30)"><rect x="0" y="-40" width="70" height="40" fill="#F4EFE4"/><path d="M-6 -40 L35 -72 L76 -40 Z" fill="#B5543A"/><rect x="10" y="-30" width="12" height="12" fill="#44507E" class=""/><rect x="48" y="-30" width="12" height="12" fill="#44507E" class=""/><rect x="29" y="-22" width="12" height="22" fill="#5B3A26"/><rect x="52" y="-66" width="8" height="16" fill="#6B4A3A"/></g><g transform="translate(120 236) scale(0.90)"><rect x="0" y="-40" width="70" height="40" fill="#E8DCC3"/><path d="M-6 -40 L35 -72 L76 -40 Z" fill="#6B4A3A"/><rect x="10" y="-30" width="12" height="12" fill="#44507E" class=""/><rect x="48" y="-30" width="12" height="12" fill="#44507E" class=""/><rect x="29" y="-22" width="12" height="22" fill="#5B3A26"/></g><g class="sway"><rect x="804" y="189" width="9" height="51" fill="#5B3A26"/><circle cx="809" cy="174" r="33" fill="#3E7A4A"/><circle cx="793" cy="187" r="22" fill="#3E7A4A" opacity=".8"/><rect x="881" y="189" width="9" height="51" fill="#5B3A26"/><circle cx="886" cy="174" r="33" fill="#3E7A4A"/><circle cx="870" cy="187" r="22" fill="#3E7A4A" opacity=".8"/></g><g class="sway"><rect x="238" y="199" width="6" height="37" fill="#5B3A26"/><circle cx="241" cy="188" r="24" fill="#3E7A4A"/><circle cx="230" cy="198" r="16" fill="#3E7A4A" opacity=".8"/></g></svg></div>
+<main>
+  <section class="media">
+    <div class="vslot-ph" data-ph="vr">🎥 Teacher video slot: assets/video/teacher/g4ela-30-vr.mp4 (+ .jpg, .vtt). Hidden from students until the file exists.</div>
+    <div id="vslot-vr"></div>
+    <div class="vr-only"><div class="radio" data-clip="brief" data-label="Nell · the holiday"></div></div>
+  </section>
+
+  <section class="postcard program" aria-label="Nell · a program for a holiday">
+    <div class="pc-l"><div class="kicker">Nell · a program for a holiday</div><h2>We will make holiday</h2><p>While Peter fights Miraz, Aslan takes the girls on a holiday. Ivy pulls down a bridge. A schoolroom turns into a glade. A cottage lifts off a sick old woman.</p><p>Build three things before Aslan came, and after.</p><div class="pc-sign">Nell</div></div>
+    <div class="pc-r"><div class="pc-stamp" aria-hidden="true"><svg class="pcs" viewBox="0 0 120 120" width="60" height="60" aria-hidden="true"><rect x="12" y="12" width="96" height="96" rx="6" fill="#FFFBF1" stroke="#E5D3AE" stroke-width="2" transform="rotate(-4 60 60)"/><path d="M60 40 q-26 -10 -30 18 q-2 30 22 40 q8 3 8 0 q0 3 8 0 q24 -10 22 -40 q-4 -28 -30 -18z" fill="#E9B949" stroke="#B88A1C" stroke-width="2"/><path d="M60 40 q2 -14 10 -18" stroke="#5B3A26" stroke-width="3" fill="none"/><path d="M62 30 q14 -10 20 2 q-12 8 -20 -2z" fill="#6E8F5A"/><ellipse cx="48" cy="56" rx="6" ry="9" fill="#FFF3DC" opacity=".55"/><rect x="40" y="6" width="40" height="13" fill="#F2E3B8" opacity=".85" transform="rotate(-6 60 12)"/></svg></div><div class="pc-word">A <b>ford</b> is a shallow place where you can walk across a river.</div></div>
+  </section>
+
+  <div class="pathbar" role="group" aria-label="Choose how you will do this activity">
+    <button type="button" class="pb" id="pb-vr"><span class="pb-ic">🥽</span><span class="pb-t"><b>Imagination Trip</b><small>Use your headset and earn a golden apple</small></span></button>
+    <button type="button" class="pb" id="pb-alt"><span class="pb-ic">🪟</span><span class="pb-t"><b>No headset today?</b><small>Do Window Seat Day on your computer</small></span></button>
+  </div>
+
+  <section class="card vr-only" id="vr">
+    <div class="mission-top">
+      <div class="mission-ic" aria-hidden="true">🥽</div>
+      <div><div class="kicker">Imagination Trip · about 12 minutes</div><h2>Build three befores and three afters</h2><p>Side by side, in pairs: bridge and ford, desk and rose bush, cottage and bed in the open air.</p></div>
+      <div class="peek" aria-hidden="true"><svg class="peekart" viewBox="0 0 120 120" width="70" height="70" aria-hidden="true"><rect x="12" y="12" width="96" height="96" rx="6" fill="#FFFBF1" stroke="#E5D3AE" stroke-width="2" transform="rotate(-4 60 60)"/><path d="M60 40 q-26 -10 -30 18 q-2 30 22 40 q8 3 8 0 q0 3 8 0 q24 -10 22 -40 q-4 -28 -30 -18z" fill="#E9B949" stroke="#B88A1C" stroke-width="2"/><path d="M60 40 q2 -14 10 -18" stroke="#5B3A26" stroke-width="3" fill="none"/><path d="M62 30 q14 -10 20 2 q-12 8 -20 -2z" fill="#6E8F5A"/><ellipse cx="48" cy="56" rx="6" ry="9" fill="#FFF3DC" opacity=".55"/><rect x="40" y="6" width="40" height="13" fill="#F2E3B8" opacity=".85" transform="rotate(-6 60 12)"/></svg><small>Golden apple</small></div>
+    </div>
+    <div class="mission-body">
+      <div class="jobline"><span class="job-k">Your job</span><span class="job-s"><i>1</i>Build the pairs in VR</span><span class="job-a">→</span><span class="job-s"><i>2</i>Record a 30 second video</span><span class="job-a">→</span><span class="job-s"><i>3</i>Submit it to Canvas</span></div>
+      <div class="meter"><div class="meter-bar"><i id="vr-bar"></i></div><b id="vr-count">0 of 7 steps</b></div>
+      <p style="font-size:15px">Tap the box next to each step when you finish it.</p>
+      <ol class="steps" id="vr-steps">
+        <li class="phase">🖥️ Before you put on your headset</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 1 done"></button><div><div class="step-n">Step 1 · Know your models</div><div class="step-t">You need these models. In VR, type the first word in the <b>Filter models</b> box.<ol class="mlist"><li><b>Lumber 3</b>: the Bridge of Beruna, before</li><li><b>Water Splash 1</b>: the ford, after</li><li><b>Cafe Table</b>: Miss Prizzle’s desk, before</li><li><b>Flower Set 2</b>: the rose bush, after</li><li><b>Straw House</b>: the little cottage, before</li><li><b>Williamsburg (Straw Bed)</b>: the bed in the open air, after</li></ol>You can also see this list in VR on the <b>Canvas</b> tab.</div></div></li>
+        <li class="phase">🥽 In VR</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 2 done"></button><div><div class="step-n">Step 2 · Go in</div><div class="step-t"><div class="howto" style="margin:0 0 8px">🔗 <b>First time?</b> Connect Canvas at <a href="https://xr.optimaed.com" target="_blank" rel="noopener">xr.optimaed.com</a> first. See <b>Having trouble in VR?</b> below.</div><ol class="sub"><li>Put on your headset. Open the <b>On-Demand</b> app.</li><li>Click <b>Explore</b>. Type <b>Sunny</b> in the <b>Filter environments</b> box.</li><li>Click <b>Medieval Town (Sunny)</b>, then <b>Begin Solo</b>.</li></ol></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 3 done"></button><div><div class="step-n">Step 3 · Build it</div><div class="step-t">Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class="road-order"><li>pair 1: a board for the bridge, the splashing ford beside it</li><li>pair 2: Miss Prizzle’s desk, the rose bush it became</li><li>pair 3: the cottage, the bed in the open air</li></ol><div class="howto">✋ <b>To move a model:</b> grab it with the <b>palm trigger</b> (under your middle finger). Use <b>both</b> palm triggers to make it bigger or smaller.</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 4 done"></button><div><div class="step-n">Step 4 · Practice your 2 sentences</div><div class="step-t">Stand between the befores and afters. Practice these 2 sentences:<div class="howto">🗣 “Before Aslan, the ___ was ___. After, it ___, which shows ___.”</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 5 done"></button><div><div class="step-n">Step 5 · Extra</div><div class="step-t"><span class="xtag">VR only</span>Put the <b>Lion (OptimaED)</b> at the head of the row: Aslan, the girls on his back. Skip this step if you run out of time.</div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 6 done"></button><div><div class="step-n">Step 6 · Record and submit</div><div class="step-t"><ol class="sub"><li>Stand back so you can see all three pairs.</li><li>Open your menu. Click <b>Library</b>, then <b>Camera</b>, then <b>Video</b>.</li><li>Record. Show your build and say your 2 sentences. Stop by <b>30 seconds</b>.</li><li>Click the <b>Canvas</b> tab. Pick <b>30.2 VR · Before and After Aslan</b>.</li><li>Click <b>Choose from My Files</b>. Pick your video. Click <b>Use this file</b>.</li><li>Click <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</li></ol><div class="howto">📌 This video is the only thing you turn in. To fix it, record and submit again.</div></div></div></li>
+        <li class="phase">✅ After</li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 7 done"></button><div><div class="step-n">Step 7 · Check and leave</div><div class="step-t"><ol class="sub"><li>Press the <b>Meta button</b> on your right controller. Click <b>Quit</b>.</li><li>Open the Canvas assignment. Check that your video is there.</li></ol>Not there? Open <b>Having trouble in VR?</b> below.</div></div></li>
+      </ol>
+      <details class="helpdrawer" id="vr-help"><summary><span class="hd-ic">🛟</span><span><b>Having trouble in VR?</b><small>Steps with pictures, and a how-to video</small></span><span class="hd-chev" aria-hidden="true">▾</span></summary><div class="hd-body"><div class="hd-video"><div class="hd-frame" data-src="https://www.youtube-nocookie.com/embed/slDH-WN4scY?rel=0"></div><p class="hd-cap">How-to video: Optima On-Demand and Canvas</p></div><p class="hd-note">These pictures come from other maps. Your map will be <b>Medieval Town (Sunny)</b>, but the buttons are the same.</p><h4 class="hd-group">🖥️ First time only: connect Canvas (on your computer)</h4><ol class="hd-steps"><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-01-login.jpg" alt="The Optima On Demand login page, with the Sign In button circled."><div><span class="hd-n">1</span><b>Log in</b><p>Go to <a href="https://xr.optimaed.com" target="_blank" rel="noopener">xr.optimaed.com</a> on your computer. Log in with the same login you use in VR.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-02-authorize.jpg" alt="The Canvas box that asks to connect, with the Authorize button circled."><div><span class="hd-n">2</span><b>Connect to Canvas</b><p>Click <b>Connect to Canvas</b>. Log in with your usual Canvas username and password, then click <b>Authorize</b>. You will see <b>Canvas connection completed</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-03-connected.jpg" alt="The Canvas page on the website, with the Canvas button and the list of assignments circled."><div><span class="hd-n">3</span><b>Find our class</b><p>Click <b>Canvas</b> on the left and pick our class. Our assignments show up. You only do this part one time.</p></div></li></ol><h4 class="hd-group">📄 Only if the assignment has a file</h4><ol class="hd-steps"><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-04-upload.jpg" alt="The Upload file box, with the Upload File button circled."><div><span class="hd-n">4</span><b>Get the file ready</b><p>Open the assignment and click <b>Open in Canvas</b> to download the file. Then click <b>My Files</b> and <b>Upload File</b>.</p></div></li></ol><h4 class="hd-group">🥽 In the headset</h4><ol class="hd-steps"><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-05-explore.jpg" alt="The Explore tab in the headset, with the tab and the filter box circled."><div><span class="hd-n">5</span><b>Explore tab</b><p>Put on your headset. Click the <b>Explore</b> tab and type the map’s name in <b>Filter environments</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-06-begin-solo.jpg" alt="A map is picked and the Begin Solo button is circled."><div><span class="hd-n">6</span><b>Begin Solo</b><p>Click the map, then click <b>Begin Solo</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-07-canvas.jpg" alt="The Canvas tab in the headset, with the tab and the assignment box circled."><div><span class="hd-n">7</span><b>Read the assignment</b><p>Press the <b>top button on your right controller</b> to open your menu. Click the <b>Canvas</b> tab and pick our assignment to read the directions. Tip: point at a mint side grip and squeeze to pull the tablet to your hand.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-08-models.jpg" alt="The Models tab open in an ocean map, with a list of models."><div><span class="hd-n">8</span><b>Bring out the models</b><p>Click <b>Models</b>. Type the exact name in the search box, or scroll with your thumbstick. Click a model to bring it out.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-08b-move.jpg" alt="A controller moving a fish model in an ocean map."><div><span class="hd-n">9</span><b>Move and resize</b><p>Grab a model with the <b>palm trigger</b>. Turn and move it with the thumbstick. Use <b>both</b> palm triggers to make it bigger or smaller.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-09-placed.jpg" alt="A picture file placed in an ocean map."><div><span class="hd-n">10</span><b>Need a file?</b><p>Click <b>Library</b>, then <b>Files</b>. Pick your file to place it in the world, next to your model.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-10-camera.jpg" alt="The Library camera, with the Height slider circled."><div><span class="hd-n">11</span><b>Record a video</b><p>Click <b>Library</b>, then <b>Camera</b>. Move the tablet until your whole scene fits. Slide <b>Height</b> or the zoom bar if you need to. Switch to <b>Video</b> and start recording. Say your 2 sentences, then stop at 30 seconds or less.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-11-choose.jpg" alt="The My Files list in the headset, with the newest file circled."><div><span class="hd-n">12</span><b>Pick your video</b><p>Click the <b>Canvas</b> tab and pick our assignment. Click <b>Choose from My Files</b>, pick your newest video, then click <b>Use this file</b>.</p></div></li><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-12-submitted.jpg" alt="The Canvas tab after submitting, with the green Submitted tag circled."><div><span class="hd-n">13</span><b>Submit to Canvas</b><p>Click <b>Submit to Canvas</b> and look for the green <b>Submitted</b> tag. To leave VR, press the <b>Meta button</b> on your right controller, then click <b>Quit</b>.</p></div></li></ol><h4 class="hd-group">🔁 Didn’t work in VR? Two other ways</h4><ol class="hd-steps"><li class="hd-step"><img loading="lazy" src="assets/vr/vr-canvas-help-13-portal-submit.jpg" alt="The Canvas page on the website, with the Choose from My Files button circled."><div><span class="hd-n">14</span><b>Use the website</b><p>Go to <a href="https://xr.optimaed.com" target="_blank" rel="noopener">xr.optimaed.com</a> and click <b>Canvas</b>. Pick our assignment, click <b>Choose from My Files</b>, pick your video and submit it.</p></div></li></ol><p class="hd-alt">Your videos save to <b>My Files</b> at xr.optimaed.com on their own. You can also download your video there and upload it to the Canvas assignment yourself.</p></div></details>
+      <div class="points">⭐ <b>Full points:</b><ul><li>Your video is 30 seconds or less, shows all three pairs, and you say 2 sentences: one thing Aslan changed, before and after, and what it shows about his kind of victory, with a detail from Chapter 14.</li></ul></div>
+      <div class="done-box" id="vr-done">
+        <svg class="keep" viewBox="0 0 120 120" width="120" height="120" aria-hidden="true"><rect x="12" y="12" width="96" height="96" rx="6" fill="#FFFBF1" stroke="#E5D3AE" stroke-width="2" transform="rotate(-4 60 60)"/><path d="M60 40 q-26 -10 -30 18 q-2 30 22 40 q8 3 8 0 q0 3 8 0 q24 -10 22 -40 q-4 -28 -30 -18z" fill="#E9B949" stroke="#B88A1C" stroke-width="2"/><path d="M60 40 q2 -14 10 -18" stroke="#5B3A26" stroke-width="3" fill="none"/><path d="M62 30 q14 -10 20 2 q-12 8 -20 -2z" fill="#6E8F5A"/><ellipse cx="48" cy="56" rx="6" ry="9" fill="#FFF3DC" opacity=".55"/><rect x="40" y="6" width="40" height="13" fill="#F2E3B8" opacity=".85" transform="rotate(-6 60 12)"/></svg>
+        <h3>Golden apple earned!</h3>
+        <p style="font-size:15px">Only Imagination Trip travelers earn this one. From the moles’ orchard at Cair Paravel.</p>
+        <div class="radio" data-wait data-clip="saved" data-label="Video submitted!" style="text-align:left;margin-top:10px"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="card"><div class="card-pad">
+      <div class="kicker">Window Seat Day · no headset</div>
+      <h2>The holiday, in order</h2>
+      <div class="radio" data-clip="alt" data-label="Nell · a window seat trip" style="margin:8px 0 12px"></div>
+      <div class="jobline"><span class="job-k">Your job</span><span class="job-s"><i>1</i>Put the romp in order</span><span class="job-a">→</span><span class="job-s"><i>2</i>Plan 2 sentences</span><span class="job-a">→</span><span class="job-s"><i>3</i>Record a 30 second video</span></div>
+      <p>Aslan’s holiday moves from the hill to the battlefield. Tap the stops in order.</p>
+      <h3 class="gh">Tap the next stop on the romp</h3><ol class="ladder" id="ladder"></ol><div class="deck" id="deck"></div>
+      <div class="msg" id="g-msg" role="status" aria-live="polite"></div>
+      <div class="bmark" id="bmark"><svg viewBox="0 0 90 150" aria-hidden="true"><path d="M14 4 H76 V140 L45 118 L14 140Z" fill="#B5476B"/><path d="M20 10 H70 V128 L45 110 L20 128Z" fill="none" stroke="#FFF3DC" stroke-width="2" stroke-dasharray="4 4"/><rect x="30" y="30" width="30" height="36" rx="2" fill="#FFF3DC"/><path d="M33 34 h24 v28 h-24z" fill="#BFD9E0"/><path d="M45 34 v28 M33 48 h24" stroke="#FFF3DC" stroke-width="2"/><circle cx="45" cy="86" r="6" fill="#FFF3DC"/></svg><b>Window Seat bookmark earned!</b></div>
+      <div class="alt-note">📌 <span>Imagination Trip travelers earn a golden apple. You’ll earn the Window Seat bookmark. Got a headset after all? Pick <b>Imagination Trip</b> at the top.</span></div>
+    </div></div>
+
+    <div class="card"><div class="card-pad">
+      <div class="kicker">Explain your thinking</div>
+      <h3>Say 2 sentences on video (30 seconds or less)</h3>
+      <p class="write-q">Pick one thing Aslan changed in Chapter 14: the bridge, the schoolroom, the chained dogs, the cottage, or the old woman. In <b>2 sentences</b>, say what it was before and after, and what that shows about Aslan’s kind of victory.</p>
+      <textarea class="answer" id="para" data-label="My 2 sentences" placeholder="Plan your 2 sentences here. You do not turn this in."></textarea>
+      <div class="counter" id="para-count">0 of 2 sentences</div>
+      <div class="chips"><span class="lbl">Your sentences need</span><span class="chip" data-chip="thing">a thing he changed</span><span class="chip" data-chip="change">before and after</span><span class="chip" data-chip="shows">what it shows</span><span class="chip" data-chip="why">because</span></div>
+      <button class="help-btn" type="button" id="help-btn">💡 Need help starting?</button>
+      <div class="helps" id="helps">Try these sentence starters:<ul><li>Before Aslan, the ___ was ___.</li><li>After, it ___, which shows ___.</li></ul></div>
+      <div class="timer-row"><button class="btn" type="button" id="timer-btn">⏱ Practice with a 30 second timer</button><b class="timer" id="timer" aria-live="polite"></b></div>
+      <div class="points">⭐ <b>Full points:</b><ul><li>You finished the game.</li><li>Your video is 30 seconds or less.</li><li>Your 2 sentences have all 4 checks.</li></ul></div>
+    </div></div>
+
+    <div class="gathered-card">
+      <div class="gathered-header"><span class="ic">🎥</span><div><div class="k">Turn it in</div><div class="t">Record your video</div></div></div>
+      <div class="gathered-body">
+        <ol class="turn-steps">
+          <li>Open the Canvas assignment <b>30.2 VR · Before and After Aslan</b> and click <b>Start Assignment</b>.</li>
+          <li>Click <b>Media</b>, then <b>Record/Upload Media</b>, then <b>Start Recording</b>.</li>
+          <li>Say your 2 sentences. Stop at <b>30 seconds</b> or less. Click <b>Finish</b>, then <b>Save</b>.</li>
+          <li>Click <b>Submit Assignment</b>.</li>
+        </ol>
+        <p class="turnin">📌 This video is the only thing you turn in.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>Drawings made for this page. Prince Caspian by C. S. Lewis (1951) is quoted only in short lines.</footer>
+</div>
+<script type="application/json" id="vr-data">{"week": 30, "pre": "g4ela-30-vr", "canvas": "30.2 VR · Before and After Aslan", "guide": {"name": "Nell", "initials": "N", "color": "#7A4E8C", "folder": "nell"}, "transcripts": {"brief": "Hello, dear. It’s Nell. Chapter 14 tells two stories at once. While Peter fights Miraz in the lists, Aslan takes the girls on a holiday: ivy pulls down a bridge, a schoolroom turns into a forest glade, and a cottage lifts right off a sick old woman. Build three things as they were before Aslan came and as he left them, side by side, and tell me what one of them shows.", "alt": "No headset? Sit by my bench. Aslan’s holiday runs from the hill down to the river, through the town, past the farms, and out to the battlefield. Tap the stops in order, and you will see that his victory never needed a sword.", "saved": "Three befores, three afters, and the Lion at the head of the row. Here is your golden apple, the last of the unit. Keep it, and remember the old nurse running across the field to Caspian."}, "game": {"events": [{"t": "The girls wake and ride on Aslan’s back", "s": "flutes, cymbals, Bacchus and his wild girls", "ic": "🦁"}, {"t": "The river god asks to be loosed", "s": "ivy climbs the piers and the Bridge of Beruna falls", "ic": "🌉"}, {"t": "The girls’ school becomes a glade", "s": "Miss Prizzle’s desk is a rose bush; Gwendolen stays", "ic": "🌹"}, {"t": "Farm animals join the party", "s": "dogs break their chains, horses kick their carts to pieces", "ic": "🐎"}, {"t": "The cottage lifts off a sick old woman", "s": "colour comes back to her face; she asks for breakfast", "ic": "🏠"}, {"t": "The old woman runs to Caspian", "s": "on the field where Miraz’s army has laid down its swords: his old nurse", "ic": "🤗"}], "miss": "Not yet. Follow Aslan from the hill, down to the river, through the town, and out to the farms."}, "chips": [{"k": "thing", "rx": "\\b(bridge|ford|school\\w*|desk|rose\\w*|dogs?|chains?|horses?|carts?|cottage|house|bed|old woman|nurse|well|teacher|mistress)\\b"}, {"k": "change", "rx": "\\b(before|after|became|becomes|turned|turns|into|was|now|instead|fell|lifted|broke|free\\w*)\\b"}, {"k": "shows", "rx": "\\b(joy|holiday|alive|awake|wake\\w*|kind\\w*|gentle|power\\w*|true|old narnia|no sword\\w*|without fighting|heals?|healing|free\\w*|laugh\\w*)\\b"}, {"k": "why", "rx": "\\b(because|since|so|which)\\b"}], "writeQ": "Pick one thing Aslan changed in Chapter 14: the bridge, the schoolroom, the chained dogs, the cottage, or the old woman. In 2 sentences, say what it was before and after, and what that shows about Aslan’s kind of victory."}</script>
+<script>
+(function () {
+  'use strict';
+  var D = JSON.parse(document.getElementById('vr-data').textContent);
+  var PRE = D.pre, AUDIO = 'assets/audio/guide/' + D.guide.folder + '/', VIDEO = 'assets/video/teacher/';
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function get(k, d) { try { var v = localStorage.getItem(PRE + '-' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function set(k, v) { try { localStorage.setItem(PRE + '-' + k, JSON.stringify(v)); } catch (e) {} }
+  if (/[?&]review\b/.test(location.search)) document.documentElement.classList.add('review');
+
+  /* sounds (WebAudio, never on load) */
+  var AC = null;
+  function ac() { try { AC = AC || new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} return AC; }
+  function tone(f, t0, d, type, vol) { var c = ac(); if (!c) return; var o = c.createOscillator(), g = c.createGain(); o.type = type || 'sine'; o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, c.currentTime + t0); g.gain.exponentialRampToValueAtTime(vol || 0.08, c.currentTime + t0 + 0.015); g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + t0 + d);
+    o.connect(g); g.connect(c.destination); o.start(c.currentTime + t0); o.stop(c.currentTime + t0 + d + 0.05); }
+  function ding() { tone(660, 0, 0.18); tone(990, 0.09, 0.25); }
+  function bonk() { tone(180, 0, 0.18, 'triangle', 0.06); }
+  function fanfare() { [523, 659, 784, 1047].forEach(function (f, i) { tone(f, i * 0.11, 0.3, 'triangle', 0.07); }); }
+
+  /* guide clips: hidden until the mp3 exists */
+  var current = null;
+  function makeRadio(host) {
+    var id = host.dataset.clip, src = AUDIO + PRE + '-' + id + '.mp3', words = (D.transcripts[id] || '').split(/(\s+)/);
+    host.classList.add('hidden');
+    host.innerHTML = '<div class="av" style="--avc:' + D.guide.color + '">' + esc(D.guide.initials) + '</div>' +
+      '<div class="r-body"><div class="r-who">' + esc(D.guide.name) + '</div><div class="r-label">' + esc(host.dataset.label) + '</div>' +
+      '<div class="r-ctl"><button class="r-play" type="button">▶ Listen</button><button class="r-read" type="button">Read along</button></div>' +
+      '<div class="r-tr">' + words.map(function (w, i) { return /^\s+$/.test(w) ? w : '<span data-w="' + i + '">' + esc(w) + '</span>'; }).join('') + '</div></div>';
+    var audio = new Audio(); audio.preload = 'metadata';
+    var wait = host.hasAttribute('data-wait');
+    function showIf() { if (host.dataset.ok && (!wait || host.dataset.reveal)) host.classList.remove('hidden'); }
+    audio.addEventListener('loadedmetadata', function () { host.dataset.ok = '1'; showIf(); });
+    audio.src = src;
+    var b = $('.r-play', host), tr = $('.r-tr', host), wordEls = $$('[data-w]', tr), raf = null;
+    $('.r-read', host).addEventListener('click', function () { tr.classList.toggle('open'); });
+    function frame() { if (audio.duration) { var k = Math.floor(audio.currentTime / audio.duration * wordEls.length); wordEls.forEach(function (w, i) { w.classList.toggle('said', i < k); w.classList.toggle('now', i === k); }); } raf = requestAnimationFrame(frame); }
+    function stop() { host.classList.remove('playing'); b.textContent = '▶ Listen'; cancelAnimationFrame(raf); wordEls.forEach(function (w) { w.classList.remove('now'); }); }
+    b.addEventListener('click', function () {
+      if (!audio.paused) { audio.pause(); return; }
+      if (current && current !== audio) current.pause();
+      current = audio; tr.classList.add('open'); audio.play().then(function () { host.classList.add('playing'); b.textContent = '❚❚ Pause'; frame(); }).catch(function () {});
+    });
+    audio.addEventListener('pause', stop); audio.addEventListener('ended', function () { stop(); wordEls.forEach(function (w) { w.classList.add('said'); }); });
+    host.reveal = function () { host.dataset.reveal = '1'; showIf(); };
+  }
+  $$('.radio').forEach(makeRadio);
+
+  /* teacher video slot: hidden until the file exists */
+  function probe(url, cb) { fetch(url, { method: 'HEAD', cache: 'no-store' }).then(function (r) { cb(r.ok && !/text\/html/.test(r.headers.get('content-type') || '')); }).catch(function () { cb(false); }); }
+  (function () {
+    var file = VIDEO + PRE + '.mp4', host = $('#vslot-vr'), ph = $('[data-ph="vr"]');
+    probe(file, function (ok) {
+      if (!ok) { ph.classList.add('on'); return; }
+      host.innerHTML = '<div class="vid"><video controls playsinline preload="metadata" poster="' + file.replace('.mp4', '.jpg') + '" src="' + file + '"><track kind="captions" srclang="en" label="English" src="' + file.replace('.mp4', '.vtt') + '"></video><button class="cc-btn" type="button" aria-pressed="false">CC Captions</button></div>';
+      var v = $('video', host), cc = $('.cc-btn', host);
+      function setCC(on) { if (v.textTracks[0]) v.textTracks[0].mode = on ? 'showing' : 'hidden'; cc.setAttribute('aria-pressed', on ? 'true' : 'false'); set('cc', on); }
+      v.addEventListener('loadedmetadata', function () { setCC(!!get('cc', false)); });
+      cc.addEventListener('click', function () { setCC(cc.getAttribute('aria-pressed') !== 'true'); });
+    });
+  })();
+
+  /* help drawer: the video loads only when opened */
+  (function () { var d = $('#vr-help'); if (!d) return; d.addEventListener('toggle', function () { var f = $('.hd-frame', d); if (d.open && f && !f.firstChild) { var i = document.createElement('iframe'); i.src = f.dataset.src; i.title = 'How-to video: Optima On-Demand and Canvas'; i.allow = 'encrypted-media; picture-in-picture; fullscreen'; i.allowFullscreen = true; f.appendChild(i); } }); })();
+
+  /* path toggle (VR is the default) */
+  function setPath(p) {
+    document.body.classList.toggle('path-alt', p === 'alt'); set('path', p);
+    $('#pb-vr').setAttribute('aria-pressed', p === 'alt' ? 'false' : 'true'); $('#pb-alt').setAttribute('aria-pressed', p === 'alt' ? 'true' : 'false');
+  }
+  $('#pb-alt').addEventListener('click', function () { setPath('alt'); });
+  $('#pb-vr').addEventListener('click', function () { setPath('vr'); });
+  setPath(get('path', 'vr'));
+
+  /* VR checklist: index 4 is the Extra; the keepsake needs the other six */
+  var steps = $$('#vr-steps .step'), vrDone = get('steps', []);
+  function vrUpd(celebrate) {
+    var n = 0; steps.forEach(function (s, i) { var on = vrDone.indexOf(i) >= 0; s.classList.toggle('done', on); $('.chk', s).textContent = on ? '✓' : ''; $('.chk', s).setAttribute('aria-pressed', on ? 'true' : 'false'); if (on) n++; });
+    $('#vr-bar').style.width = (n / steps.length * 100) + '%'; $('#vr-count').textContent = n + ' of ' + steps.length + ' steps';
+    var req = [0, 1, 2, 3, 5, 6].every(function (i) { return vrDone.indexOf(i) >= 0; });
+    var box = $('#vr-done'), was = box.classList.contains('show');
+    box.classList.toggle('show', req);
+    if (req) $('#vr-done .radio').reveal();
+    if (req && !was && celebrate) { fanfare(); setTimeout(function () { box.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 200); }
+  }
+  steps.forEach(function (s, i) { $('.chk', s).addEventListener('click', function () { var k = vrDone.indexOf(i); if (k >= 0) vrDone.splice(k, 1); else { vrDone.push(i); ding(); } set('steps', vrDone); vrUpd(true); }); });
+  vrUpd(false);
+
+  /* shared helpers for the game */
+  var msg = $('#g-msg');
+  var KIT = {
+    D: D, $: $, $$: $$, esc: esc, get: get, set: set, ding: ding, bonk: bonk, fanfare: fanfare,
+    say: function (t, ok) { msg.textContent = t; msg.className = 'msg show' + (ok ? ' ok' : ''); },
+    done: function (yes) { $('#bmark').classList.toggle('show', !!yes); },
+    refresh: function () { refreshG(); }
+  };
+  /* ── Window Seat Day game: sequence ──
+     Tap the events in story order. Each right tap fills the next rung of the ladder. */
+  var GAME = (function () {
+    var G = D.game, $ = KIT.$, $$ = KIT.$$, esc = KIT.esc;
+    var st = KIT.get('game', { ord: [] });
+    var deck = (function () { var a = G.events.map(function (_, i) { return i; }), s = 5; for (var i = a.length - 1; i > 0; i--) { s = (s * 9301 + 49297) % 233280; var j = Math.floor(s / 233280 * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } if (a.join() === G.events.map(function (_, i) { return i; }).join()) a.reverse(); return a; })();
+    function complete() { return st.ord.length === G.events.length; }
+    function save() { KIT.set('game', st); }
+    function render() {
+      $('#ladder').innerHTML = G.events.map(function (_, i) {
+        var k = st.ord[i], on = k !== undefined;
+        return '<li class="rung' + (on ? ' on' : '') + (i === st.ord.length ? ' next' : '') + '"><span class="rn">' + (i + 1) + '</span>' + (on ? '<span class="ric">' + G.events[k].ic + '</span><b>' + esc(G.events[k].t) + '</b>' : '<i>?</i>') + '</li>';
+      }).join('');
+      $('#deck').innerHTML = deck.map(function (k) {
+        var used = st.ord.indexOf(k) > -1, o = G.events[k];
+        return '<button type="button" class="ev' + (used ? ' used' : '') + '" data-k="' + k + '"' + (used ? ' disabled' : '') + '><span class="ric">' + o.ic + '</span><span><b>' + esc(o.t) + '</b><small>' + esc(o.s) + '</small></span></button>';
+      }).join('');
+      $$('.ev', $('#deck')).forEach(function (b) { b.addEventListener('click', function () {
+        var k = +b.dataset.k;
+        if (k === st.ord.length) { st.ord.push(k); save(); KIT.ding(); KIT.say(complete() ? '✓ The whole chapter, in order! Now plan your 2 sentences.' : '✓ That’s number ' + st.ord.length + '.', true); if (complete()) KIT.fanfare(); }
+        else { KIT.bonk(); b.classList.add('shake'); setTimeout(function () { b.classList.remove('shake'); }, 400); KIT.say(G.miss); return; }
+        render();
+      }); });
+      KIT.done(complete()); KIT.refresh();
+    }
+    return { render: render, complete: complete };
+  })();
+
+
+  /* 2 sentences: counter + chips + help (planning only, not turned in) */
+  var para = $('#para'), MIN = 2, RX = {};
+  D.chips.forEach(function (c) { RX[c.k] = new RegExp(c.rx, 'i'); });
+  function sentences(t) { return t.split(/[.!?]+/).filter(function (s) { return /[A-Za-z]{2,}/.test(s); }).length; }
+  function updPara() {
+    var t = para.value, n = sentences(t), cnt = $('#para-count');
+    cnt.textContent = Math.min(n, 9) + ' of ' + MIN + ' sentences' + (n >= MIN ? ' ✓' : ''); cnt.classList.toggle('met', n >= MIN);
+    $$('[data-chip]').forEach(function (c) { c.classList.toggle('on', RX[c.dataset.chip].test(t)); });
+    set('para', t);
+  }
+  para.value = get('para', ''); para.addEventListener('input', updPara);
+  $('#help-btn').addEventListener('click', function () { $('#helps').classList.toggle('show'); });
+  function refreshG() {}
+
+  /* 30 second practice timer */
+  var tick = null;
+  $('#timer-btn').addEventListener('click', function () {
+    var left = 30, el = $('#timer'), btn = this;
+    if (tick) { clearInterval(tick); tick = null; el.textContent = ''; el.classList.remove('up'); btn.textContent = '⏱ Practice with a 30 second timer'; return; }
+    btn.textContent = '■ Stop the timer'; el.classList.remove('up'); el.textContent = '0:30'; ding();
+    tick = setInterval(function () {
+      left--; el.textContent = '0:' + (left < 10 ? '0' : '') + left;
+      if (left <= 0) { clearInterval(tick); tick = null; el.textContent = 'Time!'; el.classList.add('up'); bonk(); btn.textContent = '⏱ Practice again'; }
+    }, 1000);
+  });
+
+  GAME.render(); updPara();
+})();
+</script>
+</body>
+</html>

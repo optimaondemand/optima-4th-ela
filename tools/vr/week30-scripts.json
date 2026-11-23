@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-30-vr",
+ "voice": "VNHNa6nN6yJdVF3YRyuF",
+ "folder": "nell",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/nell/g4ela-30-vr-brief.mp3",
+   "prompt": "Hello, dear. It’s Nell. Chapter 14 tells two stories at once. While Peter fights Miraz in the lists, Aslan takes the girls on a holiday: ivy pulls down a bridge, a schoolroom turns into a forest glade, and a cottage lifts right off a sick old woman. Build three things as they were before Aslan came and as he left them, side by side, and tell me what one of them shows.",
+   "transcript": "Hello, dear. It’s Nell. Chapter 14 tells two stories at once. While Peter fights Miraz in the lists, Aslan takes the girls on a holiday: ivy pulls down a bridge, a schoolroom turns into a forest glade, and a cottage lifts right off a sick old woman. Build three things as they were before Aslan came and as he left them, side by side, and tell me what one of them shows."
+  },
+  "alt": {
+   "file": "assets/audio/guide/nell/g4ela-30-vr-alt.mp3",
+   "prompt": "No headset? Sit by my bench. Aslan’s holiday runs from the hill down to the river, through the town, past the farms, and out to the battlefield. Tap the stops in order, and you will see that his victory never needed a sword.",
+   "transcript": "No headset? Sit by my bench. Aslan’s holiday runs from the hill down to the river, through the town, past the farms, and out to the battlefield. Tap the stops in order, and you will see that his victory never needed a sword."
+  },
+  "saved": {
+   "file": "assets/audio/guide/nell/g4ela-30-vr-saved.mp3",
+   "prompt": "Three befores, three afters, and the Lion at the head of the row. Here is your golden apple, the last of the unit. Keep it, and remember the old nurse running across the field to Caspian.",
+   "transcript": "Three befores, three afters, and the Lion at the head of the row. Here is your golden apple, the last of the unit. Keep it, and remember the old nurse running across the field to Caspian."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-30-vr.mp4",
+  "script": ""
+ }
+}
