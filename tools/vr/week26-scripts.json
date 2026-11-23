@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-26-vr",
+ "voice": "VNHNa6nN6yJdVF3YRyuF",
+ "folder": "nell",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/nell/g4ela-26-vr-brief.mp3",
+   "prompt": "Hello, dear. It’s Nell. I have mended this chapter’s pages more than once, and I still hold my breath at the sixteenth step. The children find a well, a golden chess knight, and a door under the ivy. Build what Edmund’s torch finds at the bottom: a path up the middle, chests and treasures along both sides, and the gifts hanging at the far wall. Then tell me what one of them brought back.",
+   "transcript": "Hello, dear. It’s Nell. I have mended this chapter’s pages more than once, and I still hold my breath at the sixteenth step. The children find a well, a golden chess knight, and a door under the ivy. Build what Edmund’s torch finds at the bottom: a path up the middle, chests and treasures along both sides, and the gifts hanging at the far wall. Then tell me what one of them brought back."
+  },
+  "alt": {
+   "file": "assets/audio/guide/nell/g4ela-26-vr-alt.mp3",
+   "prompt": "No headset? Sit by my bench and we will go through the hall together. Peter lays out his points one by one, like a mender checking each page. Five questions, one at a time, and every answer is in Chapter 2.",
+   "transcript": "No headset? Sit by my bench and we will go through the hall together. Peter lays out his points one by one, like a mender checking each page. Five questions, one at a time, and every answer is in Chapter 2."
+  },
+  "saved": {
+   "file": "assets/audio/guide/nell/g4ela-26-vr-saved.mp3",
+   "prompt": "The chamber is built, and the gifts are back where they hung. I kept a golden apple for you from the orchard the moles planted. Keep it, and remember how a small twang of a bowstring brought the old days rushing back.",
+   "transcript": "The chamber is built, and the gifts are back where they hung. I kept a golden apple for you from the orchard the moles planted. Keep it, and remember how a small twang of a bowstring brought the old days rushing back."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-26-vr.mp4",
+  "script": ""
+ }
+}

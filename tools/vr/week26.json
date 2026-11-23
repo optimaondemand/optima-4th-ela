@@ -1,0 +1,260 @@
+{
+ "week": 26,
+ "day": 2,
+ "bookId": "pc",
+ "book": "Prince Caspian",
+ "bookCredit": "Prince Caspian by C. S. Lewis (1951) is quoted only in short lines.",
+ "chapters": "Chapter 2",
+ "title": "Sixteen Steps Down",
+ "guide": {
+  "name": "Nell",
+  "short": "Nell",
+  "initials": "N",
+  "color": "#7A4E8C",
+  "folder": "nell",
+  "voice": "VNHNa6nN6yJdVF3YRyuF"
+ },
+ "map": "Medieval Castle (Night)",
+ "mapFilter": "Castle",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "dusk",
+  "alt": "A ruined castle on an island at dusk, ivy on its walls, a campfire on the old dais, and the first stars coming out",
+  "ground": "#3A4A34",
+  "groundY": 206,
+  "motifs": [
+   [
+    "stars",
+    0,
+    1,
+    {
+     "n": 14,
+     "y": 80,
+     "seed": 26
+    }
+   ],
+   [
+    "water",
+    0,
+    1,
+    {
+     "y": 200,
+     "color": "#5A6E8C",
+     "shine": "#D9C49A"
+    }
+   ],
+   [
+    "hills",
+    120,
+    1.0,
+    {
+     "color": "#3A4A34",
+     "y": 212
+    }
+   ],
+   [
+    "castle",
+    330,
+    1.6,
+    {
+     "y": 250,
+     "color": "#6E7488",
+     "ruin": true
+    }
+   ],
+   [
+    "trees",
+    120,
+    1.1,
+    {
+     "n": 2,
+     "color": "#2F4A34",
+     "y": 250
+    }
+   ],
+   [
+    "trees",
+    660,
+    1.0,
+    {
+     "n": 3,
+     "color": "#2F4A34",
+     "y": 250
+    }
+   ],
+   [
+    "torch",
+    470,
+    1.0,
+    {
+     "y": 216
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "golden apple",
+  "art": "apple",
+  "line": "Only Imagination Trip travelers earn this one. From the orchard the moles planted, grown wild right up to the walls."
+ },
+ "postcard": {
+  "style": "scroll",
+  "kicker": "From Nell’s binding bench",
+  "h": "Count the steps as you go",
+  "body": [
+   "A hall of grass and daisies, a well in the weeds, a golden chess knight by the fire. Then Edmund’s torch goes down sixteen steps.",
+   "Build what the light finds there."
+  ],
+  "sign": "Nell",
+  "word": "A <b>dais</b> is a raised platform at the end of a hall."
+ },
+ "mission": {
+  "h": "Build the treasure chamber",
+  "p": "A path up the middle, treasures on both sides, the gifts at the far wall."
+ },
+ "job": "Build the chamber in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>a torch at the foot of the steps</li><li>a path up the middle, oak chests on both sides</li><li>goblets and coronets on the shelves</li><li>at the far wall: the bottle, the bow, the shield</li></ol>",
+  "say": "Stand at the far wall, where the gifts hung. Practice these 2 sentences:",
+  "frame": "“The ___ brought back ___. In Chapter 2, ___.”",
+  "extra": "Lay the <b>Great Sword (Optima Domi)</b> by the shield: Rhindon, shining in the torchlight.",
+  "extraModels": [
+   "Great Sword (Optima Domi)"
+  ],
+  "fits": "the path and both walls"
+ },
+ "points": "Your video is 30 seconds or less, shows the path, chests, shelves and the three gifts, and you say 2 sentences: one treasure, what it brought back for the children, and a detail from Chapter 2.",
+ "alt": {
+  "h": "Peter’s points",
+  "job": "Answer 5 questions",
+  "p": "Five questions about Chapter 2. Pick the answer the book gives.",
+  "game": "choose",
+  "gameH": "One question at a time",
+  "qs": [
+   {
+    "q": "What does Susan find by the well?",
+    "opts": [
+     "a golden chess knight with ruby eyes",
+     "a coronation ring",
+     "Peter’s old sword"
+    ],
+    "ok": 0,
+    "why": "Small, heavy, pure gold, and one ruby eye knocked out. It is like the chessmen they played with at Cair Paravel."
+   },
+   {
+    "q": "What is Peter’s first point that this is Cair Paravel?",
+    "opts": [
+     "the apple trees",
+     "the hall is exactly the same shape and size",
+     "the island"
+    ],
+    "ok": 1,
+    "why": "Picture a roof, a coloured pavement and tapestries, he says, and you have the banqueting hall."
+   },
+   {
+    "q": "How many steps lead down to the treasure chamber?",
+    "opts": [
+     "ten",
+     "sixteen",
+     "twenty"
+    ],
+    "ok": 1,
+    "why": "Edmund counts aloud as he goes down. Lucy remembers: there were sixteen."
+   },
+   {
+    "q": "Which gift is missing?",
+    "opts": [
+     "Lucy’s cordial",
+     "Peter’s shield",
+     "Susan’s horn"
+    ],
+    "ok": 2,
+    "why": "She took it hunting the White Stag on the last day and lost it stumbling back into England."
+   },
+   {
+    "q": "Why does Edmund have no gift?",
+    "opts": [
+     "he lost it",
+     "he was not with the others when the gifts were given",
+     "he gave it away"
+    ],
+    "ok": 1,
+    "why": "Lewis says it was his own fault, and that you can read about it in the other book."
+   }
+  ],
+  "miss": "Not that one. Think back to what Peter, Susan, Edmund and Lucy actually said in the hall."
+ },
+ "write": {
+  "q": "Pick one treasure in the chamber: the chess knight, a coronet, the bow, the shield, the cordial or the horn that was not there. In <b>2 sentences</b>, say what it brought back for the children and give <b>one detail from Chapter 2</b>.",
+  "chips": [
+   {
+    "k": "treasure",
+    "t": "a treasure",
+    "rx": "\\b(bow|horn|shield|sword|rhindon|cordial|bottle|chess|knight|rings?|coronets?|crowns?|chests?|armou?r|torch|goblets?|jewels?|stones)\\b"
+   },
+   {
+    "k": "back",
+    "t": "what it brought back",
+    "rx": "\\b(remember\\w*|brought back|memory|memories|old days|used to|once|reigned|kings?|queens?|feasts?|battles?|hunts?|tournament|white stag|wolf)\\b"
+   },
+   {
+    "k": "detail",
+    "t": "a detail",
+    "rx": "\\b(gold\\w*|ruby|rubies|ivory|diamond|dust\\w*|cold|dark|torchlight|battery|twang\\w*|string|red lion|heal\\w*|lost|england|sixteen|steps|padlock\\w*|oak)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "The ___ brought back ___.",
+   "In Chapter 2, ___ because ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hello, dear. It’s Nell. I have mended this chapter’s pages more than once, and I still hold my breath at the sixteenth step. The children find a well, a golden chess knight, and a door under the ivy. Build what Edmund’s torch finds at the bottom: a path up the middle, chests and treasures along both sides, and the gifts hanging at the far wall. Then tell me what one of them brought back.",
+  "alt": "No headset? Sit by my bench and we will go through the hall together. Peter lays out his points one by one, like a mender checking each page. Five questions, one at a time, and every answer is in Chapter 2.",
+  "saved": "The chamber is built, and the gifts are back where they hung. I kept a golden apple for you from the orchard the moles planted. Keep it, and remember how a small twang of a bowstring brought the old days rushing back."
+ },
+ "labels": {
+  "brief": "Nell · the treasure chamber",
+  "alt": "Nell · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "The bow brought back all the battles and hunts and feasts to the children. In Chapter 2 it mattered because one small twang of the string brought the old days back more than anything else.",
+ "models": [
+  {
+   "name": "Castle - Standing Torch",
+   "is": "Edmund’s light at the steps"
+  },
+  {
+   "name": "Castle - Crate",
+   "is": "the great oak chests (use 2)"
+  },
+  {
+   "name": "Golden Goblet",
+   "is": "golden bowls on the shelves"
+  },
+  {
+   "name": "Gold Crown (Optima Domi)",
+   "is": "the coronets"
+  },
+  {
+   "name": "Potion Bottle",
+   "is": "Lucy’s diamond bottle of cordial"
+  },
+  {
+   "name": "Bow (Optima Domi)",
+   "is": "Susan’s bow"
+  },
+  {
+   "name": "Medieval Shield",
+   "is": "Peter’s shield with the red lion"
+  }
+ ]
+}
