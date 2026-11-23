@@ -1,0 +1,251 @@
+{
+ "week": 32,
+ "day": 2,
+ "bookId": "year",
+ "book": "Year-End Project",
+ "bookCredit": "Mrs. Frisby and the Rats of NIMH (Robert C. O’Brien, 1971), Number the Stars (Lois Lowry, 1989), Freedom Train (Dorothy Sterling, 1954) and Prince Caspian (C. S. Lewis, 1951) are quoted only in short lines. Anne of Green Gables (L. M. Montgomery, 1908) is in the public domain.",
+ "chapters": "Reader’s Growth",
+ "title": "The Reader You Are Now",
+ "guide": {
+  "name": "Opti",
+  "short": "Opti",
+  "initials": "O",
+  "color": "#C7922C",
+  "folder": "opti",
+  "voice": "LRkukhGJZOFsyrZCwQaZ"
+ },
+ "map": "Optima Gallery",
+ "mapFilter": "Gallery",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "dawn",
+  "alt": "A gallery at dawn with five pedestals in a row, a reading lamp, a rocking chair, and an owl on the sill",
+  "ground": "#D9C49A",
+  "groundY": 206,
+  "motifs": [
+   [
+    "sun",
+    760,
+    0.8,
+    {
+     "y": 70
+    }
+   ],
+   [
+    "stars",
+    0,
+    1,
+    {
+     "n": 8,
+     "y": 50,
+     "seed": 32
+    }
+   ],
+   [
+    "castle",
+    90,
+    0.5,
+    {
+     "y": 250,
+     "color": "#B9AE98"
+    }
+   ],
+   [
+    "castle",
+    300,
+    0.5,
+    {
+     "y": 250,
+     "color": "#B9AE98"
+    }
+   ],
+   [
+    "castle",
+    510,
+    0.5,
+    {
+     "y": 250,
+     "color": "#B9AE98"
+    }
+   ],
+   [
+    "lantern",
+    740,
+    0.9,
+    {
+     "y": 200
+    }
+   ],
+   [
+    "owl",
+    860,
+    0.9,
+    {
+     "y": 160
+    }
+   ],
+   [
+    "books",
+    690,
+    1.1,
+    {
+     "n": 4,
+     "y": 252
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "owl feather",
+  "art": "feather",
+  "line": "Only Imagination Trip travelers earn this one. Opti left it on the last pedestal, for the reader you are now."
+ },
+ "postcard": {
+  "style": "postcard",
+  "kicker": "A postcard from Opti",
+  "h": "Five books, one reader",
+  "body": [
+   "A mouse, a carpet bag, a lunch basket, a quilt, and a lion. You read all five this year, and you are not the same reader who opened the first one.",
+   "Build a gallery of your year, in order."
+  ],
+  "sign": "Opti",
+  "word": "To <b>reflect</b> means to think back on something and what it taught you."
+ },
+ "mission": {
+  "h": "Build the gallery of your reading year",
+  "p": "Five pedestals in reading order, one object from each book, your chair at the end."
+ },
+ "job": "Build the gallery in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>five pedestals in a row</li><li>on them, in reading order: mouse, carpet bag, basket, quilt, lion</li><li>at the end: a pencil, for the reader you are now</li></ol>",
+  "say": "Walk the row from first to last. Practice these 2 sentences:",
+  "frame": "“In August I ___. Now I ___, and my proof is ___.”",
+  "extra": "Put a <b>Rocking Chair (Optima Domi)</b> past the last pedestal: your reading chair.",
+  "extraModels": [
+   "Rocking Chair (Optima Domi)"
+  ],
+  "fits": "all five pedestals"
+ },
+ "points": "Your video is 30 seconds or less, shows the five pedestals in order with the pencil at the end, and you say 2 sentences: who you were as a reader in August, who you are now, and one moment from a book as proof.",
+ "alt": {
+  "h": "Five books on one shelf",
+  "job": "Match the books",
+  "p": "Match each book you read this year to one thing you remember from it.",
+  "game": "match",
+  "gameH": "Tap a book, then tap what belongs to it",
+  "leftLabel": "The book",
+  "rightLabel": "Something from it",
+  "pairs": [
+   {
+    "a": "Mrs. Frisby and the Rats of NIMH",
+    "ic": "🐭",
+    "b": "a mother mouse with a house to move",
+    "why": "The first book of the year, back in August."
+   },
+   {
+    "a": "Anne of Green Gables",
+    "ic": "🌸",
+    "b": "a plain road renamed the White Way of Delight",
+    "why": "Anne gave the prettiest places better names on her first drive."
+   },
+   {
+    "a": "Number the Stars",
+    "ic": "🧺",
+    "b": "a lunch basket with a packet under the napkin",
+    "why": "Annemarie carried it past the soldiers to Uncle Henrik’s boat."
+   },
+   {
+    "a": "Freedom Train",
+    "ic": "🧵",
+    "b": "a quilt pieced from scraps, the household’s only treasure",
+    "why": "Old Rit sewed it by firelight. Harriet left it on a doorstep as thank you and farewell."
+   },
+   {
+    "a": "Prince Caspian",
+    "ic": "🦁",
+    "b": "a horn that brings help when it is blown",
+    "why": "Queen Susan’s horn, blown between nine and ten of the clock, pulled four children off a railway platform."
+   },
+   {
+    "a": "You, the reader",
+    "ic": "📖",
+    "b": "not the same reader who opened the first book",
+    "why": "That is the whole point of this week. Find the moment it changed."
+   }
+  ],
+  "miss": "Not that one. Think about which book that thing came from."
+ },
+ "write": {
+  "q": "Who were you as a reader in August, and who are you now? In <b>2 sentences</b>, say what changed and give <b>one moment from one of the five books</b> as proof.",
+  "chips": [
+   {
+    "k": "then",
+    "t": "then",
+    "rx": "\\b(august|september|the beginning|at first|used to|first book|back then|before)\\b"
+   },
+   {
+    "k": "now",
+    "t": "now",
+    "rx": "\\b(now|today|this year|these days|can|able)\\b"
+   },
+   {
+    "k": "book",
+    "t": "a book",
+    "rx": "\\b(frisby|nimh|anne|green gables|number the stars|annemarie|freedom train|harriet|caspian|narnia|aslan)\\b"
+   },
+   {
+    "k": "proof",
+    "t": "my proof",
+    "rx": "\\b(proof|because|when|chapter|the moment|for example|like when)\\b"
+   }
+  ],
+  "starters": [
+   "In August I ___. Now I ___.",
+   "My proof is the moment when ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hoo there, it’s Opti. A mouse, a girl with a carpet bag, a lunch basket, a patchwork quilt, and a lion. You read all five books this year, and you are not the same reader who opened the first one. Build a gallery of your year in reading order, one object from each book, and stand at the end. Then tell me who you were in August and who you are now.",
+  "alt": "No headset? Take the window seat with me one last time. Five books on one shelf, and one more thing on it: you. Match each book to something you remember from it, and notice how much you carry now.",
+  "saved": "The gallery is built, first book to last, and the pencil is waiting at the end. Here is your owl feather. Keep it, and remember that stories become part of who you are."
+ },
+ "labels": {
+  "brief": "Opti · the gallery",
+  "alt": "Opti · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "In August I read slowly and skipped the hard words. Now I read with a pencil in my hand, and my proof is the moment when I worked out what Papa's cigarettes meant in Number the Stars before Annemarie did.",
+ "models": [
+  {
+   "name": "Castle - Pillar 1",
+   "is": "the pedestals (use 5)"
+  },
+  {
+   "name": "Brown Mouse",
+   "is": "Mrs. Frisby"
+  },
+  {
+   "name": "Leather Suit Case (Closed)",
+   "is": "Anne’s carpet bag"
+  },
+  {
+   "name": "Basket",
+   "is": "Annemarie’s lunch basket"
+  },
+  {
+   "name": "Williamsburg - Blanket",
+   "is": "Harriet’s patchwork quilt"
+  },
+  {
+   "name": "Lion (OptimaED)",
+   "is": "Aslan"
+  },
+  {
+   "name": "School Supplies: Pencil",
+   "is": "the reader you are now"
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-32-vr",
+ "voice": "LRkukhGJZOFsyrZCwQaZ",
+ "folder": "opti",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/opti/g4ela-32-vr-brief.mp3",
+   "prompt": "Hoo there, it’s Opti. A mouse, a girl with a carpet bag, a lunch basket, a patchwork quilt, and a lion. You read all five books this year, and you are not the same reader who opened the first one. Build a gallery of your year in reading order, one object from each book, and stand at the end. Then tell me who you were in August and who you are now.",
+   "transcript": "Hoo there, it’s Opti. A mouse, a girl with a carpet bag, a lunch basket, a patchwork quilt, and a lion. You read all five books this year, and you are not the same reader who opened the first one. Build a gallery of your year in reading order, one object from each book, and stand at the end. Then tell me who you were in August and who you are now."
+  },
+  "alt": {
+   "file": "assets/audio/guide/opti/g4ela-32-vr-alt.mp3",
+   "prompt": "No headset? Take the window seat with me one last time. Five books on one shelf, and one more thing on it: you. Match each book to something you remember from it, and notice how much you carry now.",
+   "transcript": "No headset? Take the window seat with me one last time. Five books on one shelf, and one more thing on it: you. Match each book to something you remember from it, and notice how much you carry now."
+  },
+  "saved": {
+   "file": "assets/audio/guide/opti/g4ela-32-vr-saved.mp3",
+   "prompt": "The gallery is built, first book to last, and the pencil is waiting at the end. Here is your owl feather. Keep it, and remember that stories become part of who you are.",
+   "transcript": "The gallery is built, first book to last, and the pencil is waiting at the end. Here is your owl feather. Keep it, and remember that stories become part of who you are."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-32-vr.mp4",
+  "script": ""
+ }
+}
