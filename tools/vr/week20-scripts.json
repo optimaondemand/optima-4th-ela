@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-20-vr",
+ "voice": "FsK9b8Cv2pGkFUtfpOyM",
+ "folder": "marcus",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/marcus/g4ela-20-vr-brief.mp3",
+   "prompt": "Hey, it’s Marcus. In Chapter 2, Sterling takes us inside the Ross cabin and names what is there: the fireplace of sticks and mud, the potato hole, the straw beds, and the patchwork quilt that took Old Rit years to finish. Build that one room so every object sits where the chapter puts it, and then tell me what one of them shows about Harriet’s family.",
+   "transcript": "Hey, it’s Marcus. In Chapter 2, Sterling takes us inside the Ross cabin and names what is there: the fireplace of sticks and mud, the potato hole, the straw beds, and the patchwork quilt that took Old Rit years to finish. Build that one room so every object sits where the chapter puts it, and then tell me what one of them shows about Harriet’s family."
+  },
+  "alt": {
+   "file": "assets/audio/guide/marcus/g4ela-20-vr-alt.mp3",
+   "prompt": "No headset? Pull up a chair by the fire. Chapter 2 happens in one night and one morning, and the order matters. Tap each moment in the order Sterling tells it, from Harriet’s restless sleep to the quilt and the shining star.",
+   "transcript": "No headset? Pull up a chair by the fire. Chapter 2 happens in one night and one morning, and the order matters. Tap each moment in the order Sterling tells it, from Harriet’s restless sleep to the quilt and the shining star."
+  },
+  "saved": {
+   "file": "assets/audio/guide/marcus/g4ela-20-vr-saved.mp3",
+   "prompt": "That is the cabin, right down to the quilt. I saved you a square pieced from scraps, green and brown and yellow, like the one Old Rit made. Keep it where you will see it.",
+   "transcript": "That is the cabin, right down to the quilt. I saved you a square pieced from scraps, green and brown and yellow, like the one Old Rit made. Keep it where you will see it."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-20-vr.mp4",
+  "script": ""
+ }
+}

@@ -1,0 +1,232 @@
+{
+ "week": 20,
+ "day": 2,
+ "bookId": "ft",
+ "book": "Freedom Train",
+ "bookCredit": "Freedom Train: The Story of Harriet Tubman by Dorothy Sterling (1954) is quoted only in short lines.",
+ "chapters": "Chapter 2",
+ "title": "The Household’s Only Treasure",
+ "guide": {
+  "name": "Marcus",
+  "short": "Marcus",
+  "initials": "M",
+  "color": "#2F7A55",
+  "folder": "marcus",
+  "voice": "FsK9b8Cv2pGkFUtfpOyM"
+ },
+ "map": "Colonial Williamsburg",
+ "mapFilter": "Williamsburg",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "night",
+  "alt": "A log cabin at night under a sky full of stars, one star brighter than the rest, with a patchwork quilt in the corner",
+  "ground": "#2E3A2A",
+  "groundY": 206,
+  "motifs": [
+   [
+    "stars",
+    0,
+    1,
+    {
+     "n": 40,
+     "y": 150,
+     "big": [
+      700,
+      60
+     ],
+     "seed": 20
+    }
+   ],
+   [
+    "trees",
+    40,
+    1.1,
+    {
+     "n": 2,
+     "color": "#243A2A",
+     "y": 240
+    }
+   ],
+   [
+    "trees",
+    640,
+    0.9,
+    {
+     "n": 3,
+     "color": "#243A2A",
+     "y": 236
+    }
+   ],
+   [
+    "cabin",
+    330,
+    1.3,
+    {
+     "y": 242
+    }
+   ],
+   [
+    "fence",
+    540,
+    0.9,
+    {
+     "n": 6,
+     "y": 244
+    }
+   ],
+   [
+    "quilt",
+    20,
+    0.9,
+    {
+     "y": 250
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "quilt square",
+  "art": "quilt",
+  "line": "Only Imagination Trip travelers earn this one. It is pieced from scraps, green, brown and yellow, like the quilt Old Rit sewed by firelight."
+ },
+ "postcard": {
+  "style": "log",
+  "kicker": "Marcus · research log, Chapter 2",
+  "h": "Inside the cabin",
+  "body": [
+   "Sterling walks us around the Ross cabin: the fireplace of sticks and mud, the potato hole, the straw beds, and one glowing quilt.",
+   "Build the room the way the chapter has it."
+  ],
+  "sign": "Marcus",
+  "word": "A <b>hearth</b> is the floor in front of a fireplace, where the pots sit and Harriet watches supper cook."
+ },
+ "mission": {
+  "h": "Build the Ross family cabin",
+  "p": "Set up the one room of Chapter 2 the way Sterling describes it."
+ },
+ "job": "Build the cabin in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>the fireplace</li><li>pots and firewood by the hearth</li><li>two straw beds, the blanket on one</li><li>chairs and potatoes</li></ol>",
+  "say": "Stand by the quilt. Practice these 2 sentences out loud:",
+  "frame": "“The ___ in the cabin shows ___. I know because ___.”",
+  "extra": "Put a <b>Bread Loaf</b> by the fire: the corn bread Old Rit stirs.",
+  "extraModels": [
+   "Bread Loaf"
+  ],
+  "fits": "the fireplace and both beds"
+ },
+ "points": "Your video is 30 seconds or less, shows the fireplace, the beds and the blanket, and you say 2 sentences: one object, what it shows about Harriet’s family, and a detail from Chapter 2.",
+ "alt": {
+  "h": "One night in the cabin",
+  "job": "Put the chapter in order",
+  "p": "Tap the moments of Chapter 2 in the order they happen.",
+  "game": "sequence",
+  "gameH": "Tap the next thing that happens",
+  "events": [
+   {
+    "t": "Harriet sleeps a night and a day",
+    "s": "with nightmares of children on a long rope",
+    "ic": "😴"
+   },
+   {
+    "t": "Old Rit scolds her",
+    "s": "“You showed right bad sense.”",
+    "ic": "🧵"
+   },
+   {
+    "t": "Ben brings home a muskrat",
+    "s": "worth thirty lashes if anyone saw",
+    "ic": "🍲"
+   },
+   {
+    "t": "Ben tells what Master said",
+    "s": "no more Big House; fields instead",
+    "ic": "🏠"
+   },
+   {
+    "t": "“Like I swallowed a stone”",
+    "s": "Harriet explains why she can’t smile at Mistress",
+    "ic": "🪨"
+   },
+   {
+    "t": "The quilt and the star",
+    "s": "Rit covers her; she dreams of woods and a shining star",
+    "ic": "⭐"
+   }
+  ],
+  "miss": "Not yet. Think about what the family was doing right before this."
+ },
+ "write": {
+  "q": "Pick one object in the Ross cabin. In <b>2 sentences</b>, say what it shows about Harriet’s family and give <b>one detail from Chapter 2</b> that proves it.",
+  "chips": [
+   {
+    "k": "thing",
+    "t": "an object",
+    "rx": "\\b(quilt|blanket|fireplace|hearth|fire|beds?|pallets?|straw|pots?|pails?|chairs?|potato\\w*|corn ?bread|muskrat|pine knots?|wood|rags?)\\b"
+   },
+   {
+    "k": "shows",
+    "t": "what it shows",
+    "rx": "\\b(family|rit|ben|daddy|mother|father|parents|treasure|warm|poor|only|work\\w*|scraps?|brave|careful|strong|love\\w*|cares?|hard|together)\\b"
+   },
+   {
+    "k": "detail",
+    "t": "a detail",
+    "rx": "\\b(scraps?|big house|bleach\\w*|christmas|years?|night|firelight|green|brown|yellow|thirty lashes|master|spring|wood|sticks|mud|windowless|torn|sweet potato\\w*|supper|hire\\w*|five dollars)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "The ___ in the cabin shows ___.",
+   "I know because ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hey, it’s Marcus. In Chapter 2, Sterling takes us inside the Ross cabin and names what is there: the fireplace of sticks and mud, the potato hole, the straw beds, and the patchwork quilt that took Old Rit years to finish. Build that one room so every object sits where the chapter puts it, and then tell me what one of them shows about Harriet’s family.",
+  "alt": "No headset? Pull up a chair by the fire. Chapter 2 happens in one night and one morning, and the order matters. Tap each moment in the order Sterling tells it, from Harriet’s restless sleep to the quilt and the shining star.",
+  "saved": "That is the cabin, right down to the quilt. I saved you a square pieced from scraps, green and brown and yellow, like the one Old Rit made. Keep it where you will see it."
+ },
+ "labels": {
+  "brief": "Marcus · inside the cabin",
+  "alt": "Marcus · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "The quilt in the cabin shows the family could make something beautiful from scraps. I know because Rit collected torn dresses from the Big House for years and it was the household's only treasure.",
+ "models": [
+  {
+   "name": "Williamsburg - Fireplace Grate (With Logs)",
+   "is": "the fireplace"
+  },
+  {
+   "name": "Soup Pot",
+   "is": "the pots stacked on the hearth"
+  },
+  {
+   "name": "Fire Wood",
+   "is": "the pine knots the boys fetched"
+  },
+  {
+   "name": "Williamsburg - Straw Bed",
+   "is": "the straw pallets (use 2)"
+  },
+  {
+   "name": "Williamsburg - Blanket",
+   "is": "the patchwork quilt on Rit and Ben’s bed"
+  },
+  {
+   "name": "Williamsburg - Simple Wooden Chair",
+   "is": "the battered chairs (use 2)"
+  },
+  {
+   "name": "Potato Bowl",
+   "is": "sweet potatoes from the potato hole"
+  }
+ ]
+}
