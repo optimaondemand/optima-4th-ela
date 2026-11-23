@@ -1,0 +1,258 @@
+{
+ "week": 23,
+ "day": 2,
+ "bookId": "ft",
+ "book": "Freedom Train",
+ "bookCredit": "Freedom Train: The Story of Harriet Tubman by Dorothy Sterling (1954) is quoted only in short lines.",
+ "chapters": "Chapter 16",
+ "title": "Beaufort by Firelight",
+ "guide": {
+  "name": "Marcus",
+  "short": "Marcus",
+  "initials": "M",
+  "color": "#2F7A55",
+  "folder": "marcus",
+  "voice": "FsK9b8Cv2pGkFUtfpOyM"
+ },
+ "map": "Deserted Isles",
+ "mapFilter": "Deserted",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "gold",
+  "alt": "A low island shore at sunset with soldiers' tents, a bonfire, and a steamboat on the river",
+  "ground": "#4F6E46",
+  "groundY": 200,
+  "motifs": [
+   [
+    "sun",
+    180,
+    1.1,
+    {
+     "y": 70
+    }
+   ],
+   [
+    "water",
+    0,
+    1,
+    {
+     "y": 188,
+     "color": "#B9956A",
+     "shine": "#FFF4D6"
+    }
+   ],
+   [
+    "hills",
+    300,
+    1.0,
+    {
+     "color": "#4F6E46",
+     "y": 204
+    }
+   ],
+   [
+    "boat",
+    90,
+    0.9,
+    {
+     "y": 204,
+     "color": "#2B2F3F",
+     "sail": false
+    }
+   ],
+   [
+    "tent",
+    520,
+    1,
+    {
+     "y": 248
+    }
+   ],
+   [
+    "tent",
+    600,
+    0.8,
+    {
+     "y": 246
+    }
+   ],
+   [
+    "tent",
+    680,
+    1,
+    {
+     "y": 250
+    }
+   ],
+   [
+    "trees",
+    780,
+    1.0,
+    {
+     "n": 2,
+     "color": "#2F5A3A",
+     "y": 244
+    }
+   ],
+   [
+    "torch",
+    450,
+    1.1,
+    {
+     "y": 210
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "quilt square",
+  "art": "quilt",
+  "line": "Only Imagination Trip travelers earn this one. Pieced from scraps, like the quilt Old Rit sewed."
+ },
+ "postcard": {
+  "style": "letter",
+  "kicker": "A letter from Marcus",
+  "h": "Three stops in Beaufort",
+  "body": [
+   "Harriet steps off the Atlantic into a sea of brown faces. Half a dozen children lead her to the General, then show her their town.",
+   "Build the three stops on their tour."
+  ],
+  "sign": "Marcus",
+  "word": "<b>Contraband</b> was the Army’s word for people who had escaped slavery but were not yet called free."
+ },
+ "mission": {
+  "h": "Build the children’s tour of Beaufort",
+  "p": "Three stops from Chapter 16: the General’s parlor, the soldiers’ tents, the camp at dusk."
+ },
+ "job": "Build the tour in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>stop 1, the parlor: a plain desk and chair with a gilded mirror behind</li><li>stop 2: the soldiers’ tents in a row</li><li>stop 3, the camp: a bonfire with the spelling book beside it</li></ol>",
+  "say": "Walk the tour like the children led it. Practice these 2 sentences out loud:",
+  "frame": "“At the ___, Harriet saw ___. It showed her ___.”",
+  "extra": "Line the path with <b>Flower Set 4</b>: scarlet poinsettias along Beaufort’s crooked streets.",
+  "extraModels": [
+   "Flower Set 4"
+  ],
+  "fits": "all three stops"
+ },
+ "points": "Your video is 30 seconds or less, shows the desk and mirror, the tents and the bonfire, and you say 2 sentences: one stop, what Harriet saw there, and what it showed her about freedom, with a detail from Chapter 16.",
+ "alt": {
+  "h": "Whose idea was it?",
+  "job": "Sort the ideas",
+  "p": "In General Hunter’s parlor, two people trade ideas about the war. Sort each idea by who had it.",
+  "game": "sort",
+  "gameH": "Tap the person who had this idea",
+  "bins": [
+   {
+    "name": "Harriet",
+    "ic": "⭐"
+   },
+   {
+    "name": "General Hunter",
+    "ic": "🎖️"
+   }
+  ],
+  "cards": [
+   {
+    "t": "Set the slaves free, and the war will be won sooner and cheaper",
+    "bin": 0,
+    "why": "She tells him she can show Mr. Lincoln how to save money and young men."
+   },
+   {
+    "t": "Mr. Lincoln is afraid of losing Maryland and Kentucky",
+    "bin": 1,
+    "why": "That is why, he explains, the President will not come right out for abolition."
+   },
+   {
+    "t": "A snake keeps biting until you kill it, not just cut the bite",
+    "bin": 0,
+    "why": "Her story for the General: half measures cannot win this war."
+   },
+   {
+    "t": "Form a regiment of freedmen without waiting for Washington",
+    "bin": 1,
+    "why": "He already has: the First South Carolina Infantry is drilling outside his window."
+   },
+   {
+    "t": "Join the First South Carolinas herself",
+    "bin": 0,
+    "why": "She asks to. He has other plans for her."
+   },
+   {
+    "t": "Make Harriet the go-between with the local people",
+    "bin": 1,
+    "why": "They do not fully trust any white man, he says. They must be fed and taught."
+   }
+  ],
+  "miss": "Not that one. Think about who was arguing for freedom right away, and who was explaining the Army’s problems."
+ },
+ "write": {
+  "q": "Pick one stop on the children’s tour: the parlor, the tents or the camp at dusk. In <b>2 sentences</b>, say what Harriet saw there and what it showed her about freedom in Beaufort, with <b>one detail from Chapter 16</b>.",
+  "chips": [
+   {
+    "k": "stop",
+    "t": "a stop",
+    "rx": "\\b(parlor|desk|chairs?|mirrors?|tents?|parade|drill\\w*|camp|bonfires?|fire|book|flag|school|dock|streets?)\\b"
+   },
+   {
+    "k": "saw",
+    "t": "what she saw",
+    "rx": "\\b(saw|sees|see|watched|noticed|found|heard|met|looked)\\b"
+   },
+   {
+    "k": "free",
+    "t": "about freedom",
+    "rx": "\\b(free\\w*|contraband|half|not yet|learn\\w*|read\\w*|spell\\w*|pay|paid|land|army|soldiers?|country|our time)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "At the ___, Harriet saw ___.",
+   "It showed her ___ because ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hey, it’s Marcus. In Chapter 16 Harriet sails south and steps off the dock in Beaufort into a sea of brown faces. Half a dozen children lead her to General Hunter, then show her their town. Build the three stops on that tour: the parlor with its plain desk and gilded mirrors, the soldiers’ tents, and the camp at dusk. Then tell me what one stop showed her.",
+  "alt": "No headset? Pull up a chair in the General’s parlor with me. Harriet and General Hunter trade ideas about how to win the war. Sort each idea by who had it, and you will hear two people who want the same thing and see different roads to it.",
+  "saved": "The tour is built, from the gilded mirrors to the bonfires. Here is your quilt square. Keep it, and remember the woman by the fire who was sewing a flag out of scraps."
+ },
+ "labels": {
+  "brief": "Marcus · Beaufort",
+  "alt": "Marcus · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "At the camp, Harriet saw a woman spelling from a book by the bonfire. It showed her people were learning to be free because they were teaching themselves to read.",
+ "models": [
+  {
+   "name": "Wooden Table",
+   "is": "General Hunter’s plain desk"
+  },
+  {
+   "name": "Small Chair",
+   "is": "his plain chairs (use 2)"
+  },
+  {
+   "name": "Williamsburg - Wall Mirror",
+   "is": "the gilded mirrors left in the parlor"
+  },
+  {
+   "name": "Optima Domi Tent",
+   "is": "the soldiers’ tents (use 3)"
+  },
+  {
+   "name": "Fire Pit",
+   "is": "a bonfire in the camp"
+  },
+  {
+   "name": "School Supplies: Notebook",
+   "is": "the spelling book by the fire"
+  }
+ ]
+}

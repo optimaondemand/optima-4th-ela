@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-23-vr",
+ "voice": "FsK9b8Cv2pGkFUtfpOyM",
+ "folder": "marcus",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/marcus/g4ela-23-vr-brief.mp3",
+   "prompt": "Hey, it’s Marcus. In Chapter 16 Harriet sails south and steps off the dock in Beaufort into a sea of brown faces. Half a dozen children lead her to General Hunter, then show her their town. Build the three stops on that tour: the parlor with its plain desk and gilded mirrors, the soldiers’ tents, and the camp at dusk. Then tell me what one stop showed her.",
+   "transcript": "Hey, it’s Marcus. In Chapter 16 Harriet sails south and steps off the dock in Beaufort into a sea of brown faces. Half a dozen children lead her to General Hunter, then show her their town. Build the three stops on that tour: the parlor with its plain desk and gilded mirrors, the soldiers’ tents, and the camp at dusk. Then tell me what one stop showed her."
+  },
+  "alt": {
+   "file": "assets/audio/guide/marcus/g4ela-23-vr-alt.mp3",
+   "prompt": "No headset? Pull up a chair in the General’s parlor with me. Harriet and General Hunter trade ideas about how to win the war. Sort each idea by who had it, and you will hear two people who want the same thing and see different roads to it.",
+   "transcript": "No headset? Pull up a chair in the General’s parlor with me. Harriet and General Hunter trade ideas about how to win the war. Sort each idea by who had it, and you will hear two people who want the same thing and see different roads to it."
+  },
+  "saved": {
+   "file": "assets/audio/guide/marcus/g4ela-23-vr-saved.mp3",
+   "prompt": "The tour is built, from the gilded mirrors to the bonfires. Here is your quilt square. Keep it, and remember the woman by the fire who was sewing a flag out of scraps.",
+   "transcript": "The tour is built, from the gilded mirrors to the bonfires. Here is your quilt square. Keep it, and remember the woman by the fire who was sewing a flag out of scraps."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-23-vr.mp4",
+  "script": ""
+ }
+}
