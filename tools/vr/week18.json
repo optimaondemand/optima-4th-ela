@@ -1,0 +1,242 @@
+{
+ "week": 18,
+ "day": 2,
+ "bookId": "nts",
+ "book": "Number the Stars",
+ "bookCredit": "Number the Stars by Lois Lowry (1989) is quoted only in short lines.",
+ "chapters": "Chapter 10",
+ "title": "Candlelight at Uncle Henrik’s",
+ "guide": {
+  "name": "Grete",
+  "short": "Grete",
+  "initials": "G",
+  "color": "#1F4E8C",
+  "folder": "narrator",
+  "voice": "ONFS8Q3TuiPLQCXXa4dy"
+ },
+ "map": "Lighthouse (Night)",
+ "mapFilter": "Lighthouse",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "night",
+  "alt": "A dark house by the sea at night, its windows lit by candles, under a sky speckled with stars",
+  "ground": "#1E2A2A",
+  "groundY": 200,
+  "motifs": [
+   [
+    "stars",
+    0,
+    1,
+    {
+     "n": 60,
+     "y": 170,
+     "seed": 18
+    }
+   ],
+   [
+    "water",
+    0,
+    1,
+    {
+     "y": 190,
+     "color": "#1C2F4A",
+     "shine": "#9CB3C9"
+    }
+   ],
+   [
+    "hills",
+    -60,
+    1,
+    {
+     "color": "#1E2A2A",
+     "y": 206
+    }
+   ],
+   [
+    "house",
+    380,
+    1.5,
+    {
+     "y": 246,
+     "wall": "#B9AE98",
+     "roof": "#4A3324",
+     "lit": true
+    }
+   ],
+   [
+    "candles",
+    150,
+    1.2,
+    {
+     "n": 4,
+     "y": 246
+    }
+   ],
+   [
+    "pines",
+    700,
+    0.9,
+    {
+     "n": 4,
+     "color": "#102018"
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "scallop shell",
+  "art": "shell",
+  "line": "Only Imagination Trip travelers earn this one. It comes from the shore below the meadow, where you can look across to Sweden."
+ },
+ "postcard": {
+  "style": "note",
+  "kicker": "A note from Grete, tucked in the psalm book",
+  "h": "Pull the curtains",
+  "body": [
+   "A closed casket in the living room. Candles. Strangers who do not speak. Then headlights sweep across the curtains.",
+   "Build the room as it was when the officer came."
+  ],
+  "sign": "Grete",
+  "word": "A <b>psalm</b> is an old song or prayer. Peter reads one about numbering the stars."
+ },
+ "mission": {
+  "h": "Build the room around the casket",
+  "p": "Place the casket first, then everything else in a ring around it."
+ },
+ "job": "Build the room in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>the casket in the middle, long and low</li><li>candles around it</li><li>the armchairs, and the rocking chair in a corner</li><li>the Bible and the cups</li></ol>",
+  "say": "Stand in the doorway, like Annemarie. Practice these 2 sentences out loud:",
+  "frame": "“The ___ helped keep everyone safe. In Chapter 10, ___.”",
+  "extra": "Put a <b>Williamsburg (Ornate Fireplace Grate)</b> on one wall: the mantel where the Bible always sat.",
+  "extraModels": [
+   "Williamsburg - Ornate Fireplace Grate"
+  ],
+  "fits": "the casket and the whole ring around it"
+ },
+ "points": "Your video is 30 seconds or less, shows the casket with candles and chairs around it, and you say 2 sentences: one thing in the room that helped keep everyone safe, and a detail from Chapter 10.",
+ "alt": {
+  "h": "What the officer saw",
+  "job": "Sort the night",
+  "p": "Some things in Chapter 10 the officer could see. Some only Annemarie knew. Sort them.",
+  "game": "sort",
+  "gameH": "Tap the bin each card belongs in",
+  "bins": [
+   {
+    "name": "The officer sees it",
+    "ic": "👁️"
+   },
+   {
+    "name": "Only Annemarie knows it",
+    "ic": "💭"
+   }
+  ],
+  "cards": [
+   {
+    "t": "A casket, closed up tight",
+    "bin": 0,
+    "why": "He stares at it a long time and puts a gloved hand on the lid."
+   },
+   {
+    "t": "To be brave is easier if you know nothing",
+    "bin": 1,
+    "why": "Annemarie understands now what Uncle Henrik meant in the barn."
+   },
+   {
+    "t": "A firm voice: “My Great-aunt Birte.”",
+    "bin": 0,
+    "why": "She answers his question without her voice shaking."
+   },
+   {
+    "t": "Ellen has moved into a different world, the world of her own family",
+    "bin": 1,
+    "why": "Annemarie feels it when Ellen looks up and does not smile."
+   },
+   {
+    "t": "Candles burning, with the curtains open",
+    "bin": 0,
+    "why": "He presses one flame out with his thumb and orders the rest put out."
+   },
+   {
+    "t": "The sky is too cold, too big, and too cruel",
+    "bin": 1,
+    "why": "She thinks it while Peter reads about numbering the stars."
+   },
+   {
+    "t": "An unusual number of people gathered at night",
+    "bin": 0,
+    "why": "That is the first thing he says when he comes in."
+   }
+  ],
+  "miss": "Not that bin. Ask: could the officer see or hear this, or was it inside Annemarie’s head?"
+ },
+ "write": {
+  "q": "Pick one thing in the room: the casket, the candles, the curtains, the Bible, or a chair. In <b>2 sentences</b>, say how it helped keep everyone safe that night, with <b>one detail from Chapter 10</b>.",
+  "chips": [
+   {
+    "k": "thing",
+    "t": "a thing in the room",
+    "rx": "\\b(casket|coffin|candles?|curtains?|bible|psalm|chairs?|rocking chair|sofa|cups?|tea|window)\\b"
+   },
+   {
+    "k": "safe",
+    "t": "how it kept them safe",
+    "rx": "\\b(safe\\w*|hid\\w*|hide|secret|fool\\w*|calm\\w*|believ\\w*|trick\\w*|protect\\w*|cover\\w*|dark|quiet|closed)\\b"
+   },
+   {
+    "k": "detail",
+    "t": "a detail",
+    "rx": "\\b(typhus|germs|doctor|great.?aunt|birte|officer|gloved|thumb|lid|headlights|boots|peter|mama|henrik|stars|number\\w*|strangers|customs?|respects)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "The ___ helped keep everyone safe.",
+   "In Chapter 10, ___."
+  ]
+ },
+ "scripts": {
+  "brief": "It is Grete. Uncle Henrik’s living room is full of strangers who do not speak. A closed casket sits in the middle, candles burn, and then headlights sweep across the curtains. Build the room exactly as it was: the casket first, then the candles, the chairs, the Bible and the cups in a ring around it. Then tell me what in that room kept everyone safe.",
+  "alt": "No headset? Sit in the rocking chair in the corner with me. Some of what happened that night the officer could see. Some of it only Annemarie knew. Sort the cards, and you will see how much of the night was hidden in plain sight.",
+  "saved": "The room is just as it was, and the candles are lit again. Here is your scallop shell from the shore below the meadow. Keep it, and remember a night when being brave meant speaking in a firm voice."
+ },
+ "labels": {
+  "brief": "Grete · the night of the casket",
+  "alt": "Grete · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "The closed casket helped keep everyone safe because the officer could not see inside it. In Chapter 10, Mama said Aunt Birte died of typhus so he would not want to open it.",
+ "models": [
+  {
+   "name": "Crate",
+   "is": "the casket, closed up tight"
+  },
+  {
+   "name": "Williamsburg - Candle Stick (Lit)",
+   "is": "the candles (use 4)"
+  },
+  {
+   "name": "Antique Armchair",
+   "is": "chairs for Ellen’s family (use 3)"
+  },
+  {
+   "name": "Rocking Chair (Optima Domi)",
+   "is": "the rocking chair where Annemarie dozed"
+  },
+  {
+   "name": "Book - Courage",
+   "is": "the old Bible Peter reads from"
+  },
+  {
+   "name": "Cup",
+   "is": "the cups Mama passed (use 3)"
+  }
+ ]
+}

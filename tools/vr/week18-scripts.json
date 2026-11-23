@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-18-vr",
+ "voice": "ONFS8Q3TuiPLQCXXa4dy",
+ "folder": "narrator",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/narrator/g4ela-18-vr-brief.mp3",
+   "prompt": "It is Grete. Uncle Henrik’s living room is full of strangers who do not speak. A closed casket sits in the middle, candles burn, and then headlights sweep across the curtains. Build the room exactly as it was: the casket first, then the candles, the chairs, the Bible and the cups in a ring around it. Then tell me what in that room kept everyone safe.",
+   "transcript": "It is Grete. Uncle Henrik’s living room is full of strangers who do not speak. A closed casket sits in the middle, candles burn, and then headlights sweep across the curtains. Build the room exactly as it was: the casket first, then the candles, the chairs, the Bible and the cups in a ring around it. Then tell me what in that room kept everyone safe."
+  },
+  "alt": {
+   "file": "assets/audio/guide/narrator/g4ela-18-vr-alt.mp3",
+   "prompt": "No headset? Sit in the rocking chair in the corner with me. Some of what happened that night the officer could see. Some of it only Annemarie knew. Sort the cards, and you will see how much of the night was hidden in plain sight.",
+   "transcript": "No headset? Sit in the rocking chair in the corner with me. Some of what happened that night the officer could see. Some of it only Annemarie knew. Sort the cards, and you will see how much of the night was hidden in plain sight."
+  },
+  "saved": {
+   "file": "assets/audio/guide/narrator/g4ela-18-vr-saved.mp3",
+   "prompt": "The room is just as it was, and the candles are lit again. Here is your scallop shell from the shore below the meadow. Keep it, and remember a night when being brave meant speaking in a firm voice.",
+   "transcript": "The room is just as it was, and the candles are lit again. Here is your scallop shell from the shore below the meadow. Keep it, and remember a night when being brave meant speaking in a firm voice."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-18-vr.mp4",
+  "script": ""
+ }
+}
