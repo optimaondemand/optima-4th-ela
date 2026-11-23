@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-29-vr",
+ "voice": "VNHNa6nN6yJdVF3YRyuF",
+ "folder": "nell",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/nell/g4ela-29-vr-brief.mp3",
+   "prompt": "Hello, dear. It’s Nell. In Chapter 11 it is four to one, and Lucy is the youngest, but she follows the Lion down into the gorge anyway. One by one the others begin to see him: Edmund at the stream, Peter soon after, Susan at last on the hill. Build the path Aslan led them along, from the stepping stones to the hill where the trees woke, and tell me what changed at one stop.",
+   "transcript": "Hello, dear. It’s Nell. In Chapter 11 it is four to one, and Lucy is the youngest, but she follows the Lion down into the gorge anyway. One by one the others begin to see him: Edmund at the stream, Peter soon after, Susan at last on the hill. Build the path Aslan led them along, from the stepping stones to the hill where the trees woke, and tell me what changed at one stop."
+  },
+  "alt": {
+   "file": "assets/audio/guide/nell/g4ela-29-vr-alt.mp3",
+   "prompt": "No headset? Sit by my bench. The night’s moments happen at four places along Aslan’s path. Put each one where it belongs, and you will see how seeing him spread from one child to the next.",
+   "transcript": "No headset? Sit by my bench. The night’s moments happen at four places along Aslan’s path. Put each one where it belongs, and you will see how seeing him spread from one child to the next."
+  },
+  "saved": {
+   "file": "assets/audio/guide/nell/g4ela-29-vr-saved.mp3",
+   "prompt": "The path is built, and the trees are dancing at the top. Here is your golden apple. Keep it, and remember that Susan did not need to say much.",
+   "transcript": "The path is built, and the trees are dancing at the top. Here is your golden apple. Keep it, and remember that Susan did not need to say much."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-29-vr.mp4",
+  "script": ""
+ }
+}

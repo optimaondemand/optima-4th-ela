@@ -1,0 +1,277 @@
+{
+ "week": 29,
+ "day": 2,
+ "bookId": "pc",
+ "book": "Prince Caspian",
+ "bookCredit": "Prince Caspian by C. S. Lewis (1951) is quoted only in short lines.",
+ "chapters": "Chapter 11",
+ "title": "Follow the Lion’s Shadow",
+ "guide": {
+  "name": "Nell",
+  "short": "Nell",
+  "initials": "N",
+  "color": "#7A4E8C",
+  "folder": "nell",
+  "voice": "VNHNa6nN6yJdVF3YRyuF"
+ },
+ "map": "Tranquil Forest MEGA",
+ "mapFilter": "MEGA",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "night",
+  "alt": "A moonlit gorge with a stream, a path zigzagging up the far cliff to a hill with white rocks, and trees leaning in as if they were waking",
+  "ground": "#2A3A2A",
+  "groundY": 190,
+  "motifs": [
+   [
+    "stars",
+    0,
+    1,
+    {
+     "n": 30,
+     "y": 120,
+     "big": [
+      820,
+      70
+     ],
+     "seed": 29
+    }
+   ],
+   [
+    "moon",
+    460,
+    1.2,
+    {
+     "y": 48
+    }
+   ],
+   [
+    "hills",
+    300,
+    1.2,
+    {
+     "color": "#3A4A34",
+     "y": 170
+    }
+   ],
+   [
+    "water",
+    0,
+    1,
+    {
+     "y": 222,
+     "w": 420,
+     "color": "#3E5A78",
+     "shine": "#C9D8E8"
+    }
+   ],
+   [
+    "path",
+    380,
+    1.0,
+    {
+     "y": 206,
+     "color": "#6B7A5A"
+    }
+   ],
+   [
+    "pines",
+    -20,
+    1.0,
+    {
+     "n": 4,
+     "color": "#102018"
+    }
+   ],
+   [
+    "trees",
+    640,
+    1.0,
+    {
+     "n": 3,
+     "color": "#2F5A3A",
+     "y": 236
+    }
+   ],
+   [
+    "owl",
+    700,
+    0.8,
+    {
+     "y": 150
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "golden apple",
+  "art": "apple",
+  "line": "Only Imagination Trip travelers earn this one. From the moles’ orchard at Cair Paravel."
+ },
+ "postcard": {
+  "style": "diary",
+  "kicker": "Nell · a page from my diary",
+  "h": "Only Lucy can see him",
+  "body": [
+   "Four to one, and she is the youngest. Still Lucy follows the Lion down into the gorge, and one by one the others begin to see him too.",
+   "Build the path he led them along."
+  ],
+  "sign": "Nell",
+  "word": "A <b>gorge</b> is a deep, narrow valley with a river at the bottom."
+ },
+ "mission": {
+  "h": "Build Aslan’s path through the gorge",
+  "p": "The stream and its stepping stones, the hill with white rocks, the romp at the top."
+ },
+ "job": "Build the path in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>the stream: stepping stones in a line</li><li>the hill: white rocks, the moon above</li><li>at the top: the Lion</li><li>around him: vines and grapes</li></ol>",
+  "say": "Stand at the stream, where Edmund first saw him. Practice these 2 sentences:",
+  "frame": "“At the ___, ___ could see Aslan. That changed ___ because ___.”",
+  "extra": "Put a <b>Barn Owl</b> in a tree. When Aslan roared, owls hooted across Narnia.",
+  "extraModels": [
+   "Barn Owl"
+  ],
+  "fits": "the stones, the hill and the Lion"
+ },
+ "points": "Your video is 30 seconds or less, shows the stepping stones, the white rocks, the Lion and the vines, and you say 2 sentences: one stop on the path, who could see Aslan there, and what changed, with a detail from Chapter 11.",
+ "alt": {
+  "h": "Where on the path?",
+  "job": "Place each moment",
+  "p": "The night’s moments happen at four places along Aslan’s path. Put each one where it belongs.",
+  "game": "spots",
+  "gameH": "Tap a moment, then tap its place",
+  "spots": [
+   {
+    "name": "At the camp",
+    "ic": "🏕️"
+   },
+   {
+    "name": "Going down into the gorge",
+    "ic": "⛰️"
+   },
+   {
+    "name": "At the stream",
+    "ic": "🌊"
+   },
+   {
+    "name": "On the hill of the Stone Table",
+    "ic": "🦁"
+   }
+  ],
+  "items": [
+   {
+    "t": "Lucy tells her story for the fourth time",
+    "ic": "🗣️",
+    "spot": 0,
+    "why": "A blank silence follows. Susan says she has been dreaming."
+   },
+   {
+    "t": "Trumpkin says he will follow the High King",
+    "ic": "🪓",
+    "spot": 0,
+    "why": "His duty, he says, though he has no use for lions nobody can see."
+   },
+   {
+    "t": "Edmund spots a shadow crawling ahead",
+    "ic": "🌑",
+    "spot": 1,
+    "why": "It is Aslan’s shadow. Edmund almost sees the Lion himself."
+   },
+   {
+    "t": "Aslan stops to drink, and Edmund sees him",
+    "ic": "💧",
+    "spot": 2,
+    "why": "He darts forward. Peter saw something too, and feels half as tired."
+   },
+   {
+    "t": "Susan says she is sorry",
+    "ic": "💬",
+    "spot": 3,
+    "why": "In a very small voice. She had believed, deep down, and would not let herself."
+   },
+   {
+    "t": "Trumpkin is tossed in the air and caught like a kitten",
+    "ic": "🐱",
+    "spot": 3,
+    "why": "Safe as if he had been in bed, though he did not feel so. Then: shall we be friends?"
+   },
+   {
+    "t": "The trees come bowing and dancing",
+    "ic": "🌳",
+    "spot": 3,
+    "why": "After the roar: birch-girls, willow-women, oak-men, all shouting his name."
+   }
+  ],
+  "miss": "Not there. Think about how far along the path they had come when it happened."
+ },
+ "write": {
+  "q": "Pick one stop on Aslan’s path: the camp, the way down, the stream, or the hill. In <b>2 sentences</b>, say who could see Aslan there and what changed for them, with <b>one detail from Chapter 11</b>.",
+  "chips": [
+   {
+    "k": "stop",
+    "t": "a stop",
+    "rx": "\\b(camp|edge|path|gorge|cliff\\w*|stream|rush|stones?|hill|stone table|mound|top)\\b"
+   },
+   {
+    "k": "who",
+    "t": "who could see him",
+    "rx": "\\b(lucy|edmund|peter|susan|trumpkin|the dwarf|everyone|all of them|nobody|only)\\b"
+   },
+   {
+    "k": "changed",
+    "t": "what changed",
+    "rx": "\\b(saw|sees?|believ\\w*|sorry|cheers|tired|friends|brave\\w*|afraid|glad|follow\\w*|trust\\w*|apolog\\w*|knelt|kneel\\w*)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "At the ___, ___ could see Aslan.",
+   "That changed ___ because ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hello, dear. It’s Nell. In Chapter 11 it is four to one, and Lucy is the youngest, but she follows the Lion down into the gorge anyway. One by one the others begin to see him: Edmund at the stream, Peter soon after, Susan at last on the hill. Build the path Aslan led them along, from the stepping stones to the hill where the trees woke, and tell me what changed at one stop.",
+  "alt": "No headset? Sit by my bench. The night’s moments happen at four places along Aslan’s path. Put each one where it belongs, and you will see how seeing him spread from one child to the next.",
+  "saved": "The path is built, and the trees are dancing at the top. Here is your golden apple. Keep it, and remember that Susan did not need to say much."
+ },
+ "labels": {
+  "brief": "Nell · the gorge",
+  "alt": "Nell · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "At the stream, Edmund could see Aslan for the first time. That changed Peter too because he said three cheers for Lucy and did not feel half so tired.",
+ "models": [
+  {
+   "name": "Stone Planter 1x1m",
+   "is": "stepping stones (use 3)"
+  },
+  {
+   "name": "Optima Domi IFX 2 Moon Rock 1",
+   "is": "white rocks on the hill (use 2)"
+  },
+  {
+   "name": "Earth's Moon",
+   "is": "the moon above the gorge"
+  },
+  {
+   "name": "Lion (OptimaED)",
+   "is": "Aslan"
+  },
+  {
+   "name": "Liana Vine",
+   "is": "the vines (use 3)"
+  },
+  {
+   "name": "Optima Domi Grapes",
+   "is": "the grapes (use 3)"
+  }
+ ]
+}
