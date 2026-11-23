@@ -1,0 +1,271 @@
+{
+ "week": 21,
+ "day": 2,
+ "bookId": "ft",
+ "book": "Freedom Train",
+ "bookCredit": "Freedom Train: The Story of Harriet Tubman by Dorothy Sterling (1954) is quoted only in short lines.",
+ "chapters": "Chapter 6",
+ "title": "The Quilt on the Doorstep",
+ "guide": {
+  "name": "Marcus",
+  "short": "Marcus",
+  "initials": "M",
+  "color": "#2F7A55",
+  "folder": "marcus",
+  "voice": "FsK9b8Cv2pGkFUtfpOyM"
+ },
+ "map": "Farm Town (Micro)",
+ "mapFilter": "Farm",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "night",
+  "alt": "A small brick cottage with a picket fence under a shining moon, a folded quilt on its doorstep, and a path leading north into the trees",
+  "ground": "#2E3A2A",
+  "groundY": 204,
+  "motifs": [
+   [
+    "stars",
+    0,
+    1,
+    {
+     "n": 36,
+     "y": 140,
+     "big": [
+      160,
+      50
+     ],
+     "seed": 21
+    }
+   ],
+   [
+    "moon",
+    760,
+    1,
+    {
+     "y": 52
+    }
+   ],
+   [
+    "trees",
+    600,
+    1.0,
+    {
+     "n": 3,
+     "color": "#243A2A",
+     "y": 240
+    }
+   ],
+   [
+    "path",
+    20,
+    1.1,
+    {
+     "y": 220,
+     "color": "#8A7A5A"
+    }
+   ],
+   [
+    "house",
+    360,
+    1.4,
+    {
+     "y": 246,
+     "wall": "#B5543A",
+     "roof": "#3B2A1C",
+     "lit": false
+    }
+   ],
+   [
+    "fence",
+    250,
+    0.8,
+    {
+     "n": 5,
+     "y": 246
+    }
+   ],
+   [
+    "fence",
+    500,
+    0.8,
+    {
+     "n": 5,
+     "y": 246
+    }
+   ],
+   [
+    "quilt",
+    392,
+    0.55,
+    {
+     "y": 248
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "quilt square",
+  "art": "quilt",
+  "line": "Only Imagination Trip travelers earn this one. Pieced from scraps, green, brown and yellow, like the quilt Old Rit sewed."
+ },
+ "postcard": {
+  "style": "diary",
+  "kicker": "Marcus · a page from my notebook",
+  "h": "What she carried, what she left",
+  "body": [
+   "Harriet takes a note and some eggs from the Quaker lady, her week’s food, her last coins, and John’s new shoes.",
+   "She leaves the quilt on a doorstep. Build both piles."
+  ],
+  "sign": "Marcus",
+  "word": "<b>Quakers</b> are plain folk who call each other Friends and say <b>thee</b>."
+ },
+ "mission": {
+  "h": "Build the two piles at the gate",
+  "p": "One side: what Harriet left behind. Other side: what she carried north."
+ },
+ "job": "Build the gate in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>the yard: chickens and hollyhocks by the fence</li><li>left behind: the quilt on the doorstep</li><li>carried north: the basket and note, the coins, the shoes</li></ol>",
+  "say": "Stand at the gate, like Harriet. Practice these 2 sentences out loud:",
+  "frame": "“Harriet ___ the ___. It mattered because ___.”",
+  "extra": "Hang <b>Earth’s Moon</b> over the yard. It was shining when she tiptoed through the gate.",
+  "extraModels": [
+   "Earth's Moon"
+  ],
+  "fits": "both piles and the fence"
+ },
+ "points": "Your video is 30 seconds or less, shows the quilt on one side and the basket, coins and shoes on the other, and you say 2 sentences: one thing Harriet took or left, why it mattered, with a detail from Chapter 6.",
+ "alt": {
+  "h": "Bound for the promised land",
+  "job": "Answer 5 questions",
+  "p": "Five questions about Chapter 6. Pick the answer the book gives.",
+  "game": "choose",
+  "gameH": "One question at a time",
+  "qs": [
+   {
+    "q": "Why does Harriet knock at the Quaker lady’s door?",
+    "opts": [
+     "to sell her pies",
+     "to ask about eggs, and really to ask about Thomas Garrett",
+     "to return a borrowed basket"
+    ],
+    "ok": 1,
+    "why": "She says she wants eggs. Over lemonade she asks about “Master Garrett up in Wilmington.”"
+   },
+   {
+    "q": "What does the Quaker lady say to follow north?",
+    "opts": [
+     "the Choptank River to its source",
+     "the railroad tracks",
+     "the road past the Big House"
+    ],
+    "ok": 0,
+    "why": "To its source at the Maryland and Delaware border, then the road to Camden and Ezekiel Hunn’s house."
+   },
+   {
+    "q": "What happens the first Saturday night?",
+    "opts": [
+     "they reach Camden by morning",
+     "rain and clouds hide the star, and the brothers turn back",
+     "John comes along"
+    ],
+    "ok": 1,
+    "why": "The woods they know so well fill with unknown fears. They walk back drenched and silent."
+   },
+   {
+    "q": "What does Harriet leave on the Quaker lady’s doorstep?",
+    "opts": [
+     "the eggs",
+     "her market basket",
+     "the patchwork quilt"
+    ],
+    "ok": 2,
+    "why": "She folds it under her arm, lays it on the step, and feels its warmth for the last time. Thank you and farewell."
+   },
+   {
+    "q": "How does Harriet say goodbye to Mary Ann and the quarters?",
+    "opts": [
+     "a note",
+     "a song about the promised land",
+     "a knock on every cabin door"
+    ],
+    "ok": 1,
+    "why": "Mary Ann runs back inside, so Harriet sings as she passes the cabins: “I’ll meet you in the morning.”"
+   }
+  ],
+  "miss": "Not that one. Think back to what the chapter actually says happened."
+ },
+ "write": {
+  "q": "Pick one thing Harriet takes with her or leaves behind in Chapter 6. In <b>2 sentences</b>, say what she does with it and why it mattered, with <b>one detail from the chapter</b>.",
+  "chips": [
+   {
+    "k": "thing",
+    "t": "a thing",
+    "rx": "\\b(quilt|bag|ticking|coins?|money|brogans|shoes|basket|note|paper|eggs?|food|ration|hoe|song)\\b"
+   },
+   {
+    "k": "did",
+    "t": "took or left",
+    "rx": "\\b(took|takes?|carried|carries|left|leaves|laid|lays|folded|packed|kicked|put|stowed|wore|sang|sings)\\b"
+   },
+   {
+    "k": "matter",
+    "t": "why it mattered",
+    "rx": "\\b(thank\\w*|farewell|goodbye|warm\\w*|guide|help\\w*|safe\\w*|food|money|trust\\w*|secret|promise|north|freedom|alone|directions?|message)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "Harriet ___ the ___.",
+   "It mattered because ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hey, it’s Marcus. In Chapter 6 Harriet decides to leave, and Sterling shows us exactly what she carries and what she leaves behind. A note and a few eggs from the Quaker lady. Her week’s food, her last coins, John’s new shoes. And the quilt, folded and laid on a doorstep. Build both piles at the Quaker lady’s gate, and then tell me which one mattered most.",
+  "alt": "No headset? Take the window seat and go back through the chapter with me. Five questions, one at a time, and every answer is right there in Sterling’s words, from the lemonade in the parlor to the song she sings past the cabins.",
+  "saved": "Both piles are at the gate, and the quilt is on the doorstep. I saved you a square pieced from scraps, like the one she left behind. Keep it, and remember how she said thank you without a word."
+ },
+ "labels": {
+  "brief": "Marcus · the gate",
+  "alt": "Marcus · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "Harriet left the quilt on the Quaker lady's doorstep. It mattered because it was her thank you and farewell, and she felt its warmth for the last time.",
+ "models": [
+  {
+   "name": "OptimaED Chicken",
+   "is": "the Quaker lady’s hens (use 3)"
+  },
+  {
+   "name": "Flower Set 3",
+   "is": "hollyhocks by the fence"
+  },
+  {
+   "name": "Williamsburg - Blanket",
+   "is": "the quilt, left on the doorstep"
+  },
+  {
+   "name": "Basket",
+   "is": "the market basket"
+  },
+  {
+   "name": "School Supplies: Paper",
+   "is": "the note for Ezekiel Hunn"
+  },
+  {
+   "name": "Gold Coin",
+   "is": "her last coins"
+  },
+  {
+   "name": "Williamsburg - 18th Century Shoe",
+   "is": "John’s new brogans"
+  }
+ ]
+}

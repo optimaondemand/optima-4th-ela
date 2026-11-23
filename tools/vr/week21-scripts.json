@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-21-vr",
+ "voice": "FsK9b8Cv2pGkFUtfpOyM",
+ "folder": "marcus",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/marcus/g4ela-21-vr-brief.mp3",
+   "prompt": "Hey, it’s Marcus. In Chapter 6 Harriet decides to leave, and Sterling shows us exactly what she carries and what she leaves behind. A note and a few eggs from the Quaker lady. Her week’s food, her last coins, John’s new shoes. And the quilt, folded and laid on a doorstep. Build both piles at the Quaker lady’s gate, and then tell me which one mattered most.",
+   "transcript": "Hey, it’s Marcus. In Chapter 6 Harriet decides to leave, and Sterling shows us exactly what she carries and what she leaves behind. A note and a few eggs from the Quaker lady. Her week’s food, her last coins, John’s new shoes. And the quilt, folded and laid on a doorstep. Build both piles at the Quaker lady’s gate, and then tell me which one mattered most."
+  },
+  "alt": {
+   "file": "assets/audio/guide/marcus/g4ela-21-vr-alt.mp3",
+   "prompt": "No headset? Take the window seat and go back through the chapter with me. Five questions, one at a time, and every answer is right there in Sterling’s words, from the lemonade in the parlor to the song she sings past the cabins.",
+   "transcript": "No headset? Take the window seat and go back through the chapter with me. Five questions, one at a time, and every answer is right there in Sterling’s words, from the lemonade in the parlor to the song she sings past the cabins."
+  },
+  "saved": {
+   "file": "assets/audio/guide/marcus/g4ela-21-vr-saved.mp3",
+   "prompt": "Both piles are at the gate, and the quilt is on the doorstep. I saved you a square pieced from scraps, like the one she left behind. Keep it, and remember how she said thank you without a word.",
+   "transcript": "Both piles are at the gate, and the quilt is on the doorstep. I saved you a square pieced from scraps, like the one she left behind. Keep it, and remember how she said thank you without a word."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-21-vr.mp4",
+  "script": ""
+ }
+}
