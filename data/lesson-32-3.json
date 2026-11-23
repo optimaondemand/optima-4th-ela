@@ -1,5 +1,5 @@
 {
- "connector": "Today you build your portfolio page: your best piece of writing from the whole year, and why it’s your best. Choose the one that shows how you think, not just the longest one.",
+ "connector": "Today you build your portfolio: three pieces of your own writing, one from each part of the year, and what each one shows. Put them side by side and you can see how you grew.",
  "dol": {
   "a": {
    "raw": "marilla she demanded presently do you think that i shall ever have a bosom friend in avonlea",
@@ -13,9 +13,9 @@
   }
  },
  "scholar": {
-  "journal-q1": "… and copy one sentence you’re proudest of.",
-  "journal-q2": "… and name the skill in one word.",
-  "journal-q3": "… and say when you learned it."
+  "journal-q1": "… and copy the exact sentence that proves it.",
+  "journal-q2": "… and say how it is different from Piece 1.",
+  "journal-q3": "… and name the week you think the change started."
  },
  "flags": {
   "journal-q1": {
@@ -28,33 +28,39 @@
   },
   "journal-q3": {
    "quote": false,
-   "count": 1
+   "count": 2
   }
  },
  "wgrd": {
   "catcher": {
-   "title": "My portfolio piece",
-   "intro": "Choose and explain.",
+   "title": "My three pieces",
+   "intro": "One from each part of the year.",
    "fields": [
     {
-     "label": "The piece I chose",
+     "label": "Piece 1 (Weeks 1–14)",
      "hint": "",
      "rows": 1
     },
     {
-     "label": "What it shows I can do",
+     "label": "Piece 2 (Weeks 15–25)",
      "hint": "",
-     "rows": 2
+     "rows": 1
+    },
+    {
+     "label": "Piece 3 (Weeks 26–32)",
+     "hint": "",
+     "rows": 1
     }
    ],
    "end": {
-    "label": "Advice to me in Week 1",
+    "label": "What changed from Piece 1 to Piece 3",
     "hint": ""
    }
   },
   "useAt": [
    "journal-q1",
-   "journal-q2"
+   "journal-q2",
+   "journal-q3"
   ]
  },
  "counters": {
@@ -120,8 +126,8 @@
   }
  },
  "transcripts": {
-  "welcome": "Hello again, it’s Opti. Today you build your portfolio page. Today’s question: what is the most important thing you learned this year?",
-  "read": "Look through your writing from the whole year. Choose the piece that shows how you think, not just the longest one. Then explain what makes it your best, and what you’d tell yourself back in Week 1.",
+  "welcome": "Hello again, it’s Opti. Today you build your portfolio. Today’s question: what can you do now that you couldn’t do in September?",
+  "read": "Find three pieces of your writing: one from the fall, one from the middle of the year, one from this spring. Pick the ones that show a skill, not the longest ones. Then put them side by side. What changed?",
   "spelling": "One last spelling check. Read your piece out loud and touch each long word. Find the part you know. Check the ending. If a word looks strange, it probably is. Fix it now, and your best piece stays your best."
  },
  "navFixes": true,
@@ -183,25 +189,29 @@
    ]
   },
   {
-   "find": "Your Portfolio",
+   "find": "Where Your Writing",
    "steps": [
-    "Read what goes in a portfolio page."
+    "Read the three parts of the year.",
+    "Open your Canvas submissions and your reading journal.",
+    "Find one piece from each part."
    ]
   },
   {
-   "find": "Build Your Portfolio",
+   "find": "Choose Your Three",
    "steps": [
-    "Choose your best piece from the year.",
-    "Fill in the boxes."
+    "Read Sample A and Sample B.",
+    "Tap the one a curator would pick.",
+    "Read the three rules."
    ]
   },
   {
    "find": "Part A",
    "steps": [
     "Pick Explorer or Scholar.",
-    "Answer every question in full sentences.",
-    "Use a detail from a book in every answer. The hint under each question helps.",
-    "Last, write one or two sentences about your reading lens."
+    "For each piece: tap the book, say where it is from, copy it in, tap what it shows.",
+    "Answer the question under each piece.",
+    "Write your title and introduction.",
+    "Tap Download My Portfolio and turn in the PDF."
    ]
   }
  ]

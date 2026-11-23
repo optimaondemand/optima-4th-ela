@@ -1,5 +1,5 @@
 {
- "connector": "The last day. Today you say it out loud: what this year of reading did for you. Look back, look forward, and write the last sentence of your 4th grade ELA year.",
+ "connector": "The last day. Yesterday you built your portfolio. Today you present it: one to two minutes, out loud, to a real listener.",
  "dol": {
   "a": {
    "raw": "matthew said it was a girl my girl my girl that im proud of",
@@ -13,18 +13,18 @@
   }
  },
  "scholar": {
-  "journal-q1": "… and name all five books.",
-  "journal-q2": "… and quote them.",
-  "journal-q3": "… and say how you’ll know you met it."
+  "journal-q1": "… and name the first book you read this year.",
+  "journal-q2": "… and say which week the change started.",
+  "journal-q3": "… and say how you will know you met it."
  },
  "flags": {
   "journal-q1": {
    "quote": false,
-   "count": 3
+   "count": 1
   },
   "journal-q2": {
-   "quote": true,
-   "count": 1
+   "quote": false,
+   "count": 2
   },
   "journal-q3": {
    "quote": false,
@@ -33,34 +33,40 @@
  },
  "wgrd": {
   "catcher": {
-   "title": "Looking back, looking forward",
-   "intro": "The whole year.",
+   "title": "My talk on one card",
+   "intro": "Four cards, about two minutes.",
    "fields": [
     {
-     "label": "What this year did for me",
+     "label": "Card 1: Open",
      "hint": "",
-     "rows": 3
+     "rows": 1
     },
     {
-     "label": "My reading goal for next year",
+     "label": "Card 2: Show the change",
      "hint": "",
      "rows": 2
+    },
+    {
+     "label": "Card 3: Look forward",
+     "hint": "",
+     "rows": 1
     }
    ],
    "end": {
-    "label": "My last sentence",
+    "label": "Card 4: My last line",
     "hint": ""
    }
   },
   "useAt": [
    "journal-q1",
+   "journal-q2",
    "journal-q3"
   ]
  },
  "counters": {
-  "journal-q1": 80,
-  "journal-q2": 32,
-  "journal-q3": 32
+  "journal-q1": 24,
+  "journal-q2": 40,
+  "journal-q3": 24
  },
  "virtue": {
   "kind": "log",
@@ -153,8 +159,8 @@
   }
  },
  "transcripts": {
-  "welcome": "Hoo! It’s Opti. The last day of 4th grade ELA. Today’s question: if you had one minute to tell someone what this year of reading did for you, what would you say first?",
-  "read": "Look back at all five books and everything you wrote. Then look forward. Set one goal for next year, a real one. And write the last sentence of your year. Make it one you’d want to remember.",
+  "welcome": "Hoo! It’s Opti. The last day of 4th grade ELA. Today you present your portfolio, out loud, to a real listener. Today’s question: if you had two minutes to show someone how you grew, which sentence would you read first?",
+  "read": "Four cue cards. Open with your title and who you were in Week 1. Read one sentence from Piece 1 and one from Piece 3, and say what changed. Share your goal. Then end with your last line. Slow down, and look up.",
   "grammar": "Your final sentence deserves your best care. Capital at the start. A complete thought. The right mark at the end. Read it out loud. If it sounds like you, it’s ready."
  },
  "navFixes": true,
@@ -217,27 +223,33 @@
    ]
   },
   {
-   "find": "Getting Ready to Celebrate",
+   "find": "Plan Your Talk",
    "steps": [
-    "Fill in the note boxes.",
-    "Then pick the pillar you’ll carry forward at the end of this tab."
+    "Read the four cue cards.",
+    "Pick your listener.",
+    "Say Card 1 out loud once."
    ]
   },
   {
-   "find": "Part A",
+   "find": "My Talk",
    "steps": [
-    "Pick Explorer or Scholar.",
-    "Answer every question in full sentences.",
-    "Use a detail from a book in every answer. The hint under each question helps.",
-    "Last, write one or two sentences about your reading lens."
+    "Write Card 1, Card 2 and Card 3 the way you will say them.",
+    "On Card 2, copy one sentence from Piece 1 and one from Piece 3."
    ]
   },
   {
-   "find": "Final Sentence",
+   "find": "My Last Line",
    "steps": [
-    "Write the last sentence of your 4th grade ELA year.",
-    "Read it out loud.",
-    "Tap Copy today’s writing."
+    "Write one true sentence to end your talk."
+   ]
+  },
+  {
+   "find": "Rehearse and Present",
+   "steps": [
+    "Tap Start, give your talk out loud, tap Stop.",
+    "Tap the speaker checks you did.",
+    "Pick video or grown-up, and present.",
+    "Turn in your video or listener card, plus your cue cards."
    ]
   }
  ]

@@ -851,6 +851,75 @@ body {
 .reading-link:hover { background: #EAF8FD; border-color: #55C8E8; }
 .reading-link-icon { font-size: 20px; }
 
+
+/* ═══════════ PORTFOLIO (32.3, Nov 22 2026) ═══════════ */
+.pf-map{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 14px;}
+@media(max-width:720px){.pf-map{grid-template-columns:1fr;}}
+.pf-third{background:#fff;border:2px solid #E2E8F4;border-radius:14px;padding:14px 14px 12px;position:relative;}
+.pf-third-top{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.pf-third-icons{font-size:24px;letter-spacing:2px;}
+.pf-third-wk{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#7A88A8;}
+.pf-third-name{font-size:16px;font-weight:800;color:#0E1C42;margin-bottom:6px;}
+.pf-third ul{margin:0;padding-left:18px;font-size:14px;line-height:1.6;color:#3A4A6B;}
+.pf-third.t1{border-top:6px solid #F9A825;} .pf-third.t2{border-top:6px solid #55C8E8;} .pf-third.t3{border-top:6px solid #34B76F;}
+.pf-why{display:flex;gap:10px;align-items:center;justify-content:center;margin:4px 0 14px;font-size:14px;color:#3A4A6B;flex-wrap:wrap;}
+.pf-why b{color:#0E1C42;}
+.pf-pick{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+@media(max-width:720px){.pf-pick{grid-template-columns:1fr;}}
+.pf-sample{background:#FFFDF6;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;cursor:pointer;font-size:14px;line-height:1.65;color:#0E1C42;text-align:left;font-family:inherit;transition:transform .15s,border-color .15s;}
+.pf-sample:hover{transform:translateY(-2px);border-color:#55C8E8;}
+.pf-sample .pf-sample-tag{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;color:#7A88A8;text-transform:uppercase;margin-bottom:4px;}
+.pf-sample.right{border-color:#34B76F;background:#E3F8ED;} .pf-sample.wrong{border-color:#F28B82;background:#FFF1F0;}
+.pf-fb{display:none;font-size:14px;line-height:1.6;padding:10px 14px;border-radius:10px;margin-top:4px;}
+.pf-fb.show{display:block;} .pf-fb.good{background:#E3F8ED;color:#1E5E3A;} .pf-fb.try{background:#FFF6E0;color:#6B4A00;}
+.pf-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0;}
+@media(max-width:720px){.pf-rules{grid-template-columns:1fr;}}
+.pf-rule{background:#F4F7FC;border-radius:12px;padding:10px 12px;font-size:14px;line-height:1.5;color:#3A4A6B;}
+.pf-rule b{display:block;color:#0E1C42;font-size:15px;margin-bottom:2px;}
+.pf-status{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;}
+.pf-status span{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:#F4F7FC;color:#7A88A8;border:2px solid #E2E8F4;}
+.pf-status span.done{background:#E3F8ED;color:#1E5E3A;border-color:#B8E8CF;}
+.pf-card{border:2px solid #E2E8F4;border-radius:16px;padding:16px;margin:0 0 18px;background:#fff;}
+.pf-card.t1{border-left:8px solid #F9A825;} .pf-card.t2{border-left:8px solid #55C8E8;} .pf-card.t3{border-left:8px solid #34B76F;}
+.pf-card-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.pf-card-title{font-size:18px;font-weight:800;color:#0E1C42;}
+.pf-card-wk{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#7A88A8;}
+.pf-label{font-size:13px;font-weight:800;color:#3A4A6B;margin:10px 0 6px;}
+.pf-chips{display:flex;gap:8px;flex-wrap:wrap;}
+.pf-chip{font-family:inherit;font-size:14px;font-weight:700;padding:7px 14px;border-radius:999px;border:2px solid #E2E8F4;background:#fff;color:#3A4A6B;cursor:pointer;}
+.pf-chip:hover{border-color:#55C8E8;}
+.pf-chip.on{background:#0E1C42;border-color:#0E1C42;color:#fff;}
+.pf-input{width:100%;box-sizing:border-box;font-family:inherit;font-size:15px;padding:10px 12px;border:2px solid #E2E8F4;border-radius:10px;color:#0E1C42;}
+.pf-input:focus{outline:none;border-color:#55C8E8;}
+.pf-card .journal-box.pf-piece{min-height:110px;background:#FFFDF6;font-family:Georgia,serif;}
+.pf-showcase{border-radius:18px;background:#0E1C42;padding:22px;margin:6px 0 18px;color:#fff;}
+.pf-sc-title{font-family:Georgia,serif;font-size:24px;font-weight:700;text-align:center;margin:0;color:#fff !important;}
+.pf-sc-books{text-align:center;font-size:24px;letter-spacing:6px;margin:6px 0 4px;}
+.pf-sc-intro{background:rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;font-family:Georgia,serif;font-size:15px;line-height:1.7;margin:12px 0;white-space:pre-wrap;}
+.pf-sc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:820px){.pf-sc-grid{grid-template-columns:1fr;}}
+.pf-sc-card{background:#FFFDF6;color:#0E1C42;border-radius:12px;padding:12px 14px;border-top:6px solid #F9A825;}
+.pf-sc-card.t2{border-top-color:#55C8E8;} .pf-sc-card.t3{border-top-color:#34B76F;}
+.pf-sc-card h4{margin:0 0 2px;font-size:15px;} .pf-sc-where{font-size:12px;color:#7A88A8;margin-bottom:6px;}
+.pf-sc-piece{font-family:Georgia,serif;font-size:14px;line-height:1.6;max-height:9.6em;overflow:hidden;white-space:pre-wrap;}
+.pf-sc-skills{margin:8px 0 4px;display:flex;gap:4px;flex-wrap:wrap;}
+.pf-sc-skills span{font-size:11px;font-weight:800;background:#0E1C42;color:#fff;border-radius:999px;padding:3px 8px;}
+.pf-sc-note{font-size:13px;line-height:1.5;color:#3A4A6B;border-top:1px dashed #E2E8F4;padding-top:6px;white-space:pre-wrap;}
+.pf-sc-empty{color:#B0B8CC;font-style:italic;}
+.pf-sc-actions{text-align:center;margin-top:16px;}
+.pf-dl{font-family:inherit;font-size:16px;font-weight:800;padding:12px 22px;border-radius:999px;border:none;background:#F9A825;color:#0E1C42;cursor:pointer;}
+.pf-dl:hover{filter:brightness(1.05);}
+
+
+/* ═══════════ OPTIONAL WORD STUDY DRAWER (wk32, Nov 22 2026) ═══════════ */
+.ws-optional{margin:6px 0 22px;border:2px dashed #C9D3E6;border-radius:14px;background:#F8FAFD;}
+.ws-optional>summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:800;color:#3A4A6B;font-size:16px;display:flex;justify-content:space-between;align-items:center;}
+.ws-optional>summary::-webkit-details-marker{display:none;}
+.ws-optional>summary::after{content:'Open ▾';font-size:13px;color:#7A88A8;}
+.ws-optional[open]>summary::after{content:'Close ▴';}
+.ws-optional>summary small{display:block;font-weight:600;color:#7A88A8;font-size:13px;margin-top:2px;}
+.ws-optional-body{padding:0 14px 6px;}
+
 /* ═══════════ RWM ═══════════ */
 .rwm-box {
   background: #FFFFFF;
@@ -2178,7 +2247,7 @@ body {
 </script>
 <script type="application/json" id="oao-data">
 {
- "connector": "Today you build your portfolio page: your best piece of writing from the whole year, and why it’s your best. Choose the one that shows how you think, not just the longest one.",
+ "connector": "Today you build your portfolio: three pieces of your own writing, one from each part of the year, and what each one shows. Put them side by side and you can see how you grew.",
  "dol": {
   "a": {
    "raw": "marilla she demanded presently do you think that i shall ever have a bosom friend in avonlea",
@@ -2192,9 +2261,9 @@ body {
   }
  },
  "scholar": {
-  "journal-q1": "… and copy one sentence you’re proudest of.",
-  "journal-q2": "… and name the skill in one word.",
-  "journal-q3": "… and say when you learned it."
+  "journal-q1": "… and copy the exact sentence that proves it.",
+  "journal-q2": "… and say how it is different from Piece 1.",
+  "journal-q3": "… and name the week you think the change started."
  },
  "flags": {
   "journal-q1": {
@@ -2207,33 +2276,39 @@ body {
   },
   "journal-q3": {
    "quote": false,
-   "count": 1
+   "count": 2
   }
  },
  "wgrd": {
   "catcher": {
-   "title": "My portfolio piece",
-   "intro": "Choose and explain.",
+   "title": "My three pieces",
+   "intro": "One from each part of the year.",
    "fields": [
     {
-     "label": "The piece I chose",
+     "label": "Piece 1 (Weeks 1–14)",
      "hint": "",
      "rows": 1
     },
     {
-     "label": "What it shows I can do",
+     "label": "Piece 2 (Weeks 15–25)",
      "hint": "",
-     "rows": 2
+     "rows": 1
+    },
+    {
+     "label": "Piece 3 (Weeks 26–32)",
+     "hint": "",
+     "rows": 1
     }
    ],
    "end": {
-    "label": "Advice to me in Week 1",
+    "label": "What changed from Piece 1 to Piece 3",
     "hint": ""
    }
   },
   "useAt": [
    "journal-q1",
-   "journal-q2"
+   "journal-q2",
+   "journal-q3"
   ]
  },
  "counters": {
@@ -2299,8 +2374,8 @@ body {
   }
  },
  "transcripts": {
-  "welcome": "Hello again, it’s Opti. Today you build your portfolio page. Today’s question: what is the most important thing you learned this year?",
-  "read": "Look through your writing from the whole year. Choose the piece that shows how you think, not just the longest one. Then explain what makes it your best, and what you’d tell yourself back in Week 1.",
+  "welcome": "Hello again, it’s Opti. Today you build your portfolio. Today’s question: what can you do now that you couldn’t do in September?",
+  "read": "Find three pieces of your writing: one from the fall, one from the middle of the year, one from this spring. Pick the ones that show a skill, not the longest ones. Then put them side by side. What changed?",
   "spelling": "One last spelling check. Read your piece out loud and touch each long word. Find the part you know. Check the ending. If a word looks strange, it probably is. Fix it now, and your best piece stays your best."
  },
  "navFixes": true,
@@ -2362,25 +2437,29 @@ body {
    ]
   },
   {
-   "find": "Your Portfolio",
+   "find": "Where Your Writing",
    "steps": [
-    "Read what goes in a portfolio page."
+    "Read the three parts of the year.",
+    "Open your Canvas submissions and your reading journal.",
+    "Find one piece from each part."
    ]
   },
   {
-   "find": "Build Your Portfolio",
+   "find": "Choose Your Three",
    "steps": [
-    "Choose your best piece from the year.",
-    "Fill in the boxes."
+    "Read Sample A and Sample B.",
+    "Tap the one a curator would pick.",
+    "Read the three rules."
    ]
   },
   {
    "find": "Part A",
    "steps": [
     "Pick Explorer or Scholar.",
-    "Answer every question in full sentences.",
-    "Use a detail from a book in every answer. The hint under each question helps.",
-    "Last, write one or two sentences about your reading lens."
+    "For each piece: tap the book, say where it is from, copy it in, tap what it shows.",
+    "Answer the question under each piece.",
+    "Write your title and introduction.",
+    "Tap Download My Portfolio and turn in the PDF."
    ]
   }
  ]
@@ -2757,7 +2836,7 @@ return all.length?all[all.length-1]:null;}
     <div class="intro-card theme-objectives">
       <div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Objectives</div><div class="intro-card-head-title">By the end of this lesson&hellip;</div></div></div>
       <div class="intro-card-body">
-        <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>curate</em> my best work and present it as my year-end portfolio.</span></div>
+        <div class="obj-line"><span class="obj-icon">📖</span><span><strong>Reading:</strong> I will <em>curate</em> a portfolio of three pieces from across the year that shows how I grew.</span></div>
         <div class="obj-line"><span class="obj-icon">✏️</span><span><strong>Writing:</strong> I will <em>reflect</em> on my growth as a reader and writer with specific examples.</span></div>
         <div class="obj-line"><span class="obj-icon">🔤</span><span><strong>Vocabulary:</strong> I will <em>celebrate</em> my three favorite vocabulary words from the entire year.</span></div>
       </div>
@@ -2882,8 +2961,24 @@ return all.length?all[all.length-1]:null;}
 <!-- ═══════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-words">
 
+  
+
+  
+
+  
+
+  <div class="activity bl-rose" data-std="ELA.4.C.3.1 ELA.4.F.1.3" data-std-id="32.3-07">
+    <div class="activity-head"><div class="activity-num" style="background:#c7627e;">1</div><div><div class="activity-title">&#x1F520; Spelling: Final Conventions Review</div><div class="activity-sub">Day 3: Revise &mdash; study the edit, practice the move, then repair a passage.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Spelling Level: Word Editor</span></div></div></div>
+    <div class="activity-body">
+<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Watch the editor work</div><p>A final pass is not one pass. It is one pass per kind of error.</p></div><div class="key-concept" style="background:#FFF8F0;border-color:#F5E6C8;margin:14px 0;"><div class="key-concept-label" style="color:#8B6914;">🔎 How the editor finishes</div><p><strong>Before:</strong> <em>One read-through, everything at once</em></p><p><strong>After:</strong> <em>Capitals &rarr; confused words &rarr; spelling &rarr; read aloud</em></p><p style="font-size:14px;color:#5A6785;">Four narrow passes catch what one wide pass misses. Capitals first because they are quickest. Confused words next, because nothing else will flag them. Then spelling. Then read it aloud, which catches what your eye has stopped seeing.</p></div><div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the <strong>correct form</strong>.</p></div><div class="fillin-game" id="s4w32c"><div class="fillin-item"><input class="fillin-input" id="s4w32cf1" data-answer="Prince Caspian" maxlength="24" placeholder="______"> &mdash; the title, capitalized</div><div class="fillin-item">It was <input class="fillin-input" id="s4w32cf2" data-answer="their" maxlength="24" placeholder="______"> final presentation.</div><div class="fillin-item"><input class="fillin-input" id="s4w32cf3" data-answer="because" maxlength="24" placeholder="______"> &mdash; spelled correctly</div><div class="fillin-item">She had to <input class="fillin-input" id="s4w32cf4" data-answer="choose" maxlength="24" placeholder="______"> between them.</div><button class="fillin-check-btn" onclick="checkFillIn(this)">Check My Work</button><div class="fillin-feedback">✅ All correct!</div></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Now correct this line: <em>i think prince caspian shows curage, and thats why its my favrite.</em></p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Write the corrected line and say which of the four passes caught each error.</div><div class="textbox-prompt">Give your corrections and justify every one.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="I changed ___ to ___ because..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
+</div>
+  </div>
+
+  <details class="ws-optional">
+    <summary><span>➕ Extra word study (optional)<small>Today is portfolio day, so only the spelling check is required. Morphology, vocabulary and grammar are here if you want more practice.</small></span></summary>
+    <div class="ws-optional-body">
   <div class="activity bl-purple" data-std="ELA.4.V.1.2 ELA.4.F.1.3" data-std-id="32.3-04">
-    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">1</div><div><div class="activity-title">&#x1F331; Morphology: Explain a Word to Your Reader</div><div class="activity-sub">A word you can take apart is a word you can explain.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#8B6FC0;">2</div><div><div class="activity-title">&#x1F331; Morphology: Explain a Word to Your Reader</div><div class="activity-sub">A word you can take apart is a word you can explain.</div></div></div>
     <div class="activity-body">
 <!-- morph-notice-first -->
 <div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">&#x1F9E9;</span><p>Before you start: pick the longest word in your draft and break it into parts.</p></div>
@@ -2932,7 +3027,7 @@ return all.length?all[all.length-1]:null;}
   </div>
 
   <div class="activity bl-cyan" data-std="ELA.4.V.1.2 ELA.4.V.1.1" data-std-id="32.3-05">
-    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">2</div><div><div class="activity-title">&#x1F524; Vocabulary: Put Them in Your Own Draft</div><div class="activity-sub">Four words, four sentences &mdash; then find a place for one of them in your project.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">3</div><div><div class="activity-title">&#x1F524; Vocabulary: Put Them in Your Own Draft</div><div class="activity-sub">Four words, four sentences &mdash; then find a place for one of them in your project.</div></div></div>
     <div class="activity-body">
             <p>Four more words from the year. Finish each sentence, then look for one place in your own draft where one of them would fit.</p>
       <div class="key-concept" style="margin-bottom:14px;">
@@ -2956,21 +3051,18 @@ return all.length?all[all.length-1]:null;}
   </div>
 
   <div class="activity bl-navy" data-std="ELA.4.C.3.1" data-std-id="32.3-06">
-    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">3</div><div><div class="activity-title">&#x270F;&#xFE0F; Grammar: Proofread Your Own Draft</div><div class="activity-sub">Day 3: Apply &mdash; revise for effect, then defend the version you kept.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Author's Editor</span></div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#0E1C42;">4</div><div><div class="activity-title">&#x270F;&#xFE0F; Grammar: Proofread Your Own Draft</div><div class="activity-sub">Day 3: Apply &mdash; revise for effect, then defend the version you kept.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Grammar Level: Author's Editor</span></div></div></div>
     <div class="activity-body">
 <div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Correct is not the goal</div><p>This is the last revision of the year, and it is the one that matters most: your own work.</p></div><div class="key-concept" style="background:#FFF8F0;border-color:#F5E6C8;margin:14px 0;"><div class="key-concept-label" style="color:#8B6914;">🔎 A worked example</div><p><strong>Before:</strong> <em>I liked this book. The ending was good. Caspian won. I would recommend it to other people.</em></p><p><strong>After:</strong> <em>Caspian wins, but only because a country that had forgotten itself remembers in time &mdash; which is why the ending earns the fight that comes before it.</em></p><p style="font-size:14px;color:#5A6785;">The first version reports a reaction. The second makes an argument. Notice it uses <em>but</em> for contrast and a dependent clause for the reason &mdash; the same two moves from Weeks 27 and 28.</p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Give both revisions, say which you are submitting, and name every grammar move you used and why.</div><div class="textbox-prompt">Two versions, a choice, and the reason.</div><textarea class="journal-box" id="journal-grammar" data-label="Grammar SWYK" placeholder="Version A: ... Version B: ... I kept... because the reader leans on..." oninput="autoSave(this,'dot-grammar');gatherAnswers();"></textarea></div>
 </div>
   </div>
+    </div>
+  </details>
 
-  <div class="activity bl-rose" data-std="ELA.4.C.3.1 ELA.4.F.1.3" data-std-id="32.3-07">
-    <div class="activity-head"><div class="activity-num" style="background:#c7627e;">4</div><div><div class="activity-title">&#x1F520; Spelling: Final Conventions Review</div><div class="activity-sub">Day 3: Revise &mdash; study the edit, practice the move, then repair a passage.</div><div style="margin-top:6px;"><span class="rung-chip" style="display:inline-block;background:#E9F8F0;color:#1E7A47;border:1px solid #34B76F;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;">✍️ Spelling Level: Word Editor</span></div></div></div>
-    <div class="activity-body">
-<div class="key-concept NOTICEBOX" style="background:#F0F7FF;border-color:#C8DCEE;margin:0 0 14px;"><div class="key-concept-label" style="color:#3D5285;">&#x1F50E; Watch the editor work</div><p>A final pass is not one pass. It is one pass per kind of error.</p></div><div class="key-concept" style="background:#FFF8F0;border-color:#F5E6C8;margin:14px 0;"><div class="key-concept-label" style="color:#8B6914;">🔎 How the editor finishes</div><p><strong>Before:</strong> <em>One read-through, everything at once</em></p><p><strong>After:</strong> <em>Capitals &rarr; confused words &rarr; spelling &rarr; read aloud</em></p><p style="font-size:14px;color:#5A6785;">Four narrow passes catch what one wide pass misses. Capitals first because they are quickest. Confused words next, because nothing else will flag them. Then spelling. Then read it aloud, which catches what your eye has stopped seeing.</p></div><div class="callout callout-info"><span class="callout-icon">🧩</span><p>Type the <strong>correct form</strong>.</p></div><div class="fillin-game" id="s4w32c"><div class="fillin-item"><input class="fillin-input" id="s4w32cf1" data-answer="Prince Caspian" maxlength="24" placeholder="______"> &mdash; the title, capitalized</div><div class="fillin-item">It was <input class="fillin-input" id="s4w32cf2" data-answer="their" maxlength="24" placeholder="______"> final presentation.</div><div class="fillin-item"><input class="fillin-input" id="s4w32cf3" data-answer="because" maxlength="24" placeholder="______"> &mdash; spelled correctly</div><div class="fillin-item">She had to <input class="fillin-input" id="s4w32cf4" data-answer="choose" maxlength="24" placeholder="______"> between them.</div><button class="fillin-check-btn" onclick="checkFillIn(this)">Check My Work</button><div class="fillin-feedback">✅ All correct!</div></div><div class="callout callout-info"><span class="callout-icon">🎯</span><p><strong>Directions:</strong> Now correct this line: <em>i think prince caspian shows curage, and thats why its my favrite.</em></p></div><div class="swyk"><div class="swyk-label">🪶 Show What You Know</div><div class="swyk-prompt">Write the corrected line and say which of the four passes caught each error.</div><div class="textbox-prompt">Give your corrections and justify every one.</div><textarea class="journal-box" id="journal-spelling" data-label="Spelling SWYK" placeholder="I changed ___ to ___ because..." oninput="autoSave(this,'dot-spelling');gatherAnswers();"></textarea></div>
-</div>
-  </div>
+  
 
   <div class="tab-next-wrap">
-    <p class="tab-transition-voice">Your vocabulary is sharp, your roots are solid, and your spelling SWYK is saved. Now let&rsquo;s put all that reading knowledge to work in your portfolio.</p>
+    <p class="tab-transition-voice">Your spelling check is done. Today is mostly portfolio work, so head to Reading and start looking back at your year.</p>
     <button class="tab-next-btn" onclick="switchTab('reading')">Continue to 📖 Reading &rarr;</button>
   </div>
 </div><!-- /tab-words -->
@@ -3029,55 +3121,57 @@ return all.length?all[all.length-1]:null;}
   </div>
 
   <div class="activity bl-green" data-std="ELA.4.C.2.1 ELA.K12.EE.6.1" data-std-id="32.3-09">
-    <div class="activity-head"><div class="activity-num" style="background:#34B76F;">2</div><div><div class="activity-title">🎓 Your Portfolio</div><div class="activity-sub">One year of your own writing</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#34B76F;">2</div><div><div class="activity-title">🗺️ Where Your Writing Lives</div><div class="activity-sub">Three parts of the year. One piece from each.</div></div></div>
     <div class="activity-body">
-      <div class="open-book-wrap">
-        <div class="open-book-cover"></div>
-        <div class="open-book-spine"></div>
-        <div class="open-book-pages-3"></div>
-        <div class="open-book-pages-2"></div>
-        <div class="open-book-pages-1"></div>
-        <div class="open-book">
-          <div class="open-book-left"><span class="open-book-left-deco">🎓</span></div>
-          <div class="open-book-right">
-            <div class="open-book-title">Your Portfolio 🎓</div>
-            <div class="open-book-chapter">Your writing from Weeks 1&ndash;32</div>
-            <div class="open-book-prompt">Look back through your writing this year. Choose your best piece.</div>
-          </div>
+      <p>A portfolio is not your one best paragraph. It is a small collection that shows a <strong>change</strong>. One piece shows what you can do. Three pieces, from the start, middle and end of the year, show how you <em>grew</em>.</p>
+      <div class="pf-why"><b>Piece 1</b> what I could do early &rarr; <b>Piece 2</b> what I was learning &rarr; <b>Piece 3</b> what I can do now</div>
+      <div class="pf-map">
+        <div class="pf-third t1">
+          <div class="pf-third-top"><span class="pf-third-icons">🐭 👩&zwj;🦰</span></div>
+          <div class="pf-third-wk">Weeks 1&ndash;14</div>
+          <div class="pf-third-name">Frisby and Anne</div>
+          <ul><li>Your Frisby end-of-book assessment (Week 5)</li><li>Any Writing Connection from <em>Anne of Green Gables</em> (Weeks 7&ndash;14)</li><li>A journal response you remember working hard on</li></ul>
+        </div>
+        <div class="pf-third t2">
+          <div class="pf-third-top"><span class="pf-third-icons">⭐ 🚆</span></div>
+          <div class="pf-third-wk">Weeks 15&ndash;25</div>
+          <div class="pf-third-name">Number the Stars and Freedom Train</div>
+          <ul><li>Your <em>Number the Stars</em> Final Project (Week 19)</li><li>Your <em>Freedom Train</em> Final Reflection (Week 24)</li><li>Comparing Sources (Week 25)</li></ul>
+        </div>
+        <div class="pf-third t3">
+          <div class="pf-third-top"><span class="pf-third-icons">🦁 📚</span></div>
+          <div class="pf-third-wk">Weeks 26&ndash;32</div>
+          <div class="pf-third-name">Prince Caspian and the Year-End</div>
+          <ul><li>Your leadership paragraph (Week 28)</li><li>Your theme paragraph (Week 29)</li><li>Your comparison paragraph, revised this week</li></ul>
         </div>
       </div>
       <div class="callout callout-info">
-        <span class="callout-icon">📖</span>
-        <p><strong>Today, no new reading.</strong> Look back through your journals and the writing you have done this year. Your job today is to choose your best piece and build your portfolio page.</p>
+        <span class="callout-icon">📂</span>
+        <p><strong>Where to find it:</strong> open your past submissions in Canvas (every lesson&rsquo;s copied work or PDF is there) and flip through your reading journal. Those lists are ideas, not rules. Any piece from that part of the year counts.</p>
       </div>
     </div>
   </div>
 
   <div class="activity bl-cyan" data-std="ELA.4.C.2.1 ELA.K12.EE.6.1" data-std-id="32.3-10">
-    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">3</div><div><div class="activity-title">🏗️ Build Your Portfolio</div><div class="activity-sub">Look back through your writing this year. Choose your best piece.</div></div></div>
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">3</div><div><div class="activity-title">🏗️ Choose Your Three</div><div class="activity-sub">Choose like a museum curator: the piece that proves something.</div></div></div>
     <div class="activity-body">
-      <p>Before you go to the Assignment tab, use this planner to help you choose your best piece. Think carefully &mdash; your portfolio should show real growth, not just your most recent work.</p>
-      <div class="task-box" style="background:#EAF8FD;border-color:#55C8E8;margin-bottom:14px;">
-        <div class="task-label">📝 Portfolio Selection Planner</div>
-        <p style="font-size:14px;line-height:1.9;margin-bottom:6px;">
-          <strong>Option 1 &mdash; My comparison paragraph from Week 31:</strong> What theme did I write about?<br>
-          <strong>Option 2 &mdash; A writing connection I&rsquo;m proud of:</strong> Which week or lesson?<br>
-          <strong>Option 3 &mdash; My reader&rsquo;s growth paragraph:</strong> What does it show I can do?<br>
-          <strong>My choice:</strong> _______________________________________________<br>
-          <strong>The skill it shows:</strong> _______________________________________________
-        </p>
-        <p style="font-size:13px;color:#7A88A8;font-style:italic;">Write these notes in your reading journal before you go to the Assignment tab.</p>
+      <p>A museum curator does not hang every painting. She picks the ones that tell the story. Try it. Both of these were written about <em>Number the Stars</em>. Which one belongs in a portfolio?</p>
+      <div class="pf-pick" id="pfPick">
+        <button type="button" class="pf-sample" data-ok="0" onclick="pfPickSample(this)"><span class="pf-sample-tag">Sample A</span>Number the Stars is about Annemarie and Ellen. They live in Copenhagen. The soldiers are everywhere. Ellen stays with Annemarie&rsquo;s family. Then they go to Uncle Henrik&rsquo;s house. Then Annemarie runs through the woods. It was a good book and I liked it a lot.</button>
+        <button type="button" class="pf-sample" data-ok="1" onclick="pfPickSample(this)"><span class="pf-sample-tag">Sample B</span>Annemarie does not think she is brave. But when the soldiers stop her in the woods, she acts like a silly little girl so they will not look closely at the basket. That shows courage can look ordinary.</button>
       </div>
-      <div class="callout callout-tip">
-        <span class="callout-icon">💡</span>
-        <p>The strongest portfolio piece is not always the longest. Choose the one that shows the most specific skill &mdash; a sentence with strong evidence, a passage with vivid vocabulary, or a response where your voice is clear and confident.</p>
+      <div class="pf-fb" id="pfPickFb"></div>
+      <div class="pf-rules">
+        <div class="pf-rule"><b>1. Not the longest</b>Pick the piece that shows a skill: evidence, word choice, voice, organization.</div>
+        <div class="pf-rule"><b>2. Point at the sentence</b>Find the one sentence inside the piece that proves the skill.</div>
+        <div class="pf-rule"><b>3. Show the change</b>Piece 3 should do something Piece 1 could not do yet.</div>
       </div>
-      <div class="thinking-stop">💭 When your planner is ready, continue to the Assignment tab to build your portfolio page.</div>
+      <div class="thinking-stop">💭 Find your three pieces now, one from each part of the year. Then build your portfolio on the Assignment tab.</div>
     </div>
   </div>
 
   <div class="tab-next-wrap">
-    <p class="tab-transition-voice">Your portfolio piece is chosen. Now head to the Assignment tab to write your portfolio page and introduction.</p>
+    <p class="tab-transition-voice">You know where to look and how to choose. Now head to the Assignment tab and build your portfolio.</p>
     <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 📬 Assignment &rarr;</button>
   </div>
 </div><!-- /tab-reading -->
@@ -3115,21 +3209,61 @@ return all.length?all[all.length-1]:null;}
   </div>
 
   <!-- Part A -->
-  <div class="activity bl-cyan" data-std="ELA.K12.EE.6.1" data-std-id="32.3-11">
-    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">A</div><div><div class="activity-title">📖 Part A: Chapter Thinking</div><div class="activity-sub">Answer in complete sentences. This is your portfolio page.</div></div></div>
+  <div class="activity bl-cyan" data-std="ELA.4.C.2.1 ELA.K12.EE.6.1" data-std-id="32.3-11">
+    <div class="activity-head"><div class="activity-num" style="background:#55C8E8;">A</div><div><div class="activity-title">🎓 Part A: My Portfolio</div><div class="activity-sub">Three pieces, one year. This is what you turn in.</div></div></div>
     <div class="activity-body">
+      <div class="pf-status" id="pfStatus"><span data-s="1">Piece 1</span><span data-s="2">Piece 2</span><span data-s="3">Piece 3</span><span data-s="i">Introduction</span></div>
+      <div class="q-block" style="display:none"><div class="q-text"></div></div><!-- anchor: Explorer/Scholar picker lands here, above all three pieces -->
 
-      <div class="q-block"><div class="q-text"><span class="q-num">1</span>Create your portfolio page: Choose your <strong>BEST piece of writing from this year</strong> (your comparison paragraph, a writing connection you&rsquo;re proud of, or your reader&rsquo;s growth paragraph). Copy it here as your showcase piece.</div><div class="q-hint">This is the piece you are most proud of. It could be a paragraph, a sentence, or a short response. Copy it here exactly.</div></div>
-      <div class="textbox-prompt">Copy your best piece of writing from this year. This is your portfolio showcase piece.</div>
-      <textarea class="journal-box" id="journal-q1" data-label="Q1: Portfolio Showcase Piece" placeholder="My showcase piece of writing from this year is..." oninput="autoSave(this,'dot-q1');gatherAnswers();"></textarea>
+      <div class="pf-card t1">
+        <div class="pf-card-head"><div class="pf-card-title">Piece 1</div><div class="pf-card-wk">Weeks 1&ndash;14</div></div>
+        <div class="pf-label">Which book?</div>
+        <div class="pf-chips"><button type="button" class="pf-chip" data-pf="book1" data-v="frisby" onclick="pfChip(this,false)">🐭 Mrs. Frisby</button><button type="button" class="pf-chip" data-pf="book1" data-v="anne" onclick="pfChip(this,false)">👩&zwj;🦰 Anne</button></div>
+        <div class="pf-label">Where is it from? (week and lesson)</div>
+        <input type="text" class="pf-input" id="pf-where-1" data-label="Piece 1: Where it is from" placeholder="Week 5 &middot; Frisby assessment" oninput="pfSaveInput(this)">
+        <div class="pf-label">Copy your piece. If it is long, copy the best part (3&ndash;6 sentences).</div>
+        <textarea class="journal-box pf-piece" id="pf-piece-1" data-label="Piece 1: My Writing" placeholder="Copy your writing here exactly as you wrote it." oninput="autoSave(this,'dot-pf1');pfRender();gatherAnswers();"></textarea>
+        <div class="pf-label">What does it show? Tap one or two.</div>
+        <div class="pf-chips"><button type="button" class="pf-chip" data-pf="skill1" data-v="Evidence" onclick="pfChip(this,true)">Evidence</button><button type="button" class="pf-chip" data-pf="skill1" data-v="Word choice" onclick="pfChip(this,true)">Word choice</button><button type="button" class="pf-chip" data-pf="skill1" data-v="Voice" onclick="pfChip(this,true)">Voice</button><button type="button" class="pf-chip" data-pf="skill1" data-v="Organization" onclick="pfChip(this,true)">Organization</button><button type="button" class="pf-chip" data-pf="skill1" data-v="Comparing" onclick="pfChip(this,true)">Comparing</button><button type="button" class="pf-chip" data-pf="skill1" data-v="Revising" onclick="pfChip(this,true)">Revising</button></div>
+        <div class="q-block" style="margin-top:14px;"><div class="q-text"><span class="q-num">1</span>What does Piece 1 show you could already do early in the year? Point at the one sentence that proves it.</div><div class="q-hint">Name the skill. Then copy or point to the sentence that shows it.</div></div>
+        <textarea class="journal-box" id="journal-q1" data-label="Piece 1: What It Shows" placeholder="Early in the year I could already... The sentence that shows it is..." oninput="autoSave(this,'dot-q1');pfRender();gatherAnswers();"></textarea>
+      </div>
+      <div class="pf-card t2">
+        <div class="pf-card-head"><div class="pf-card-title">Piece 2</div><div class="pf-card-wk">Weeks 15&ndash;25</div></div>
+        <div class="pf-label">Which book?</div>
+        <div class="pf-chips"><button type="button" class="pf-chip" data-pf="book2" data-v="nts" onclick="pfChip(this,false)">⭐ Number the Stars</button><button type="button" class="pf-chip" data-pf="book2" data-v="ft" onclick="pfChip(this,false)">🚆 Freedom Train</button></div>
+        <div class="pf-label">Where is it from? (week and lesson)</div>
+        <input type="text" class="pf-input" id="pf-where-2" data-label="Piece 2: Where it is from" placeholder="Week 19 &middot; Number the Stars Final Project" oninput="pfSaveInput(this)">
+        <div class="pf-label">Copy your piece. If it is long, copy the best part (3&ndash;6 sentences).</div>
+        <textarea class="journal-box pf-piece" id="pf-piece-2" data-label="Piece 2: My Writing" placeholder="Copy your writing here exactly as you wrote it." oninput="autoSave(this,'dot-pf2');pfRender();gatherAnswers();"></textarea>
+        <div class="pf-label">What does it show? Tap one or two.</div>
+        <div class="pf-chips"><button type="button" class="pf-chip" data-pf="skill2" data-v="Evidence" onclick="pfChip(this,true)">Evidence</button><button type="button" class="pf-chip" data-pf="skill2" data-v="Word choice" onclick="pfChip(this,true)">Word choice</button><button type="button" class="pf-chip" data-pf="skill2" data-v="Voice" onclick="pfChip(this,true)">Voice</button><button type="button" class="pf-chip" data-pf="skill2" data-v="Organization" onclick="pfChip(this,true)">Organization</button><button type="button" class="pf-chip" data-pf="skill2" data-v="Comparing" onclick="pfChip(this,true)">Comparing</button><button type="button" class="pf-chip" data-pf="skill2" data-v="Revising" onclick="pfChip(this,true)">Revising</button></div>
+        <div class="q-block" style="margin-top:14px;"><div class="q-text"><span class="q-num">2</span>What does Piece 2 show you were learning to do in the middle of the year? Point at the sentence that proves it.</div><div class="q-hint">Pick a different skill from Piece 1, or show the same skill getting stronger.</div></div>
+        <textarea class="journal-box" id="journal-q2" data-label="Piece 2: What It Shows" placeholder="In the middle of the year I was learning to... You can see it when I wrote..." oninput="autoSave(this,'dot-q2');pfRender();gatherAnswers();"></textarea>
+      </div>
+      <div class="pf-card t3">
+        <div class="pf-card-head"><div class="pf-card-title">Piece 3</div><div class="pf-card-wk">Weeks 26&ndash;32</div></div>
+        <div class="pf-label">Which book?</div>
+        <div class="pf-chips"><button type="button" class="pf-chip" data-pf="book3" data-v="pc" onclick="pfChip(this,false)">🦁 Prince Caspian</button><button type="button" class="pf-chip" data-pf="book3" data-v="ye" onclick="pfChip(this,false)">📚 Year-End comparison</button></div>
+        <div class="pf-label">Where is it from? (week and lesson)</div>
+        <input type="text" class="pf-input" id="pf-where-3" data-label="Piece 3: Where it is from" placeholder="Week 31 &middot; comparison paragraph, revised" oninput="pfSaveInput(this)">
+        <div class="pf-label">Copy your piece. If it is long, copy the best part (3&ndash;6 sentences).</div>
+        <textarea class="journal-box pf-piece" id="pf-piece-3" data-label="Piece 3: My Writing" placeholder="Copy your writing here exactly as you wrote it." oninput="autoSave(this,'dot-pf3');pfRender();gatherAnswers();"></textarea>
+        <div class="pf-label">What does it show? Tap one or two.</div>
+        <div class="pf-chips"><button type="button" class="pf-chip" data-pf="skill3" data-v="Evidence" onclick="pfChip(this,true)">Evidence</button><button type="button" class="pf-chip" data-pf="skill3" data-v="Word choice" onclick="pfChip(this,true)">Word choice</button><button type="button" class="pf-chip" data-pf="skill3" data-v="Voice" onclick="pfChip(this,true)">Voice</button><button type="button" class="pf-chip" data-pf="skill3" data-v="Organization" onclick="pfChip(this,true)">Organization</button><button type="button" class="pf-chip" data-pf="skill3" data-v="Comparing" onclick="pfChip(this,true)">Comparing</button><button type="button" class="pf-chip" data-pf="skill3" data-v="Revising" onclick="pfChip(this,true)">Revising</button></div>
+        <div class="q-block" style="margin-top:14px;"><div class="q-text"><span class="q-num">3</span>What can you do in Piece 3 that you could not do yet in Piece 1? Put the two pieces side by side and name the change.</div><div class="q-hint">This is the growth answer. Use one detail from Piece 1 and one from Piece 3.</div></div>
+        <textarea class="journal-box" id="journal-q3" data-label="Piece 3: What It Shows" placeholder="In Piece 1 I... Now in Piece 3 I... The change is..." oninput="autoSave(this,'dot-q3');pfRender();gatherAnswers();"></textarea>
+      </div>
+      <div class="pf-card">
+        <div class="pf-card-head"><div class="pf-card-title">🖋️ Your Portfolio Introduction</div><div class="pf-card-wk">The first page</div></div>
+        <div class="pf-label">Give your portfolio a title.</div>
+        <input type="text" class="pf-input" id="pf-title" data-label="Portfolio Title" placeholder="A Year of Reading: From Frisby to Caspian" oninput="pfSaveInput(this)">
+        <div class="q-block" style="margin-top:14px;"><div class="q-text"><span class="q-num">4</span>Write 3&ndash;5 sentences to whoever opens your portfolio. Who were you as a reader in Week 1? Who are you now? End with one piece of advice for your Week 1 self.</div><div class="q-hint">This is the welcome sign on the door. Make the reader want to look at your three pieces.</div></div>
+        <textarea class="journal-box" id="journal-intro" data-label="Portfolio Introduction" placeholder="When I started 4th grade, I read... Now I... If I could tell my Week 1 self one thing, it would be..." oninput="autoSave(this,'dot-intro');pfRender();gatherAnswers();"></textarea>
+      </div>
 
-      <div class="q-block" style="margin-top:16px;"><div class="q-text"><span class="q-num">2</span>Why did you choose this piece? What makes it your best work? What specific skill does it show &mdash; use of evidence, strong vocabulary, clear organization, powerful voice?</div><div class="q-hint">Be specific. Don&rsquo;t just say &ldquo;I like it.&rdquo; Name the skill and explain why this piece shows it better than your other writing.</div></div>
-      <div class="textbox-prompt">Name what makes this your best work. What specific writing skill does it show?</div>
-      <textarea class="journal-box" id="journal-q2" data-label="Q2: Why This Is My Best Work" placeholder="I chose this piece because... The skill it shows best is... I know it&rsquo;s my best work because..." oninput="autoSave(this,'dot-q2');gatherAnswers();"></textarea>
-
-      <div class="q-block" style="margin-top:16px;"><div class="q-text"><span class="q-num">3</span>If you could go back to Week 1 and give yourself one piece of reading advice, what would it be? What do you know now that you wish you&rsquo;d known then?</div><div class="q-hint">Think about how you have grown as a reader. What habit, strategy, or idea changed the way you read?</div></div>
-      <div class="textbox-prompt">Give your Week 1 self one specific piece of reading advice. What do you know now that would have helped you then?</div>
-      <textarea class="journal-box" id="journal-q3" data-label="Q3: Advice to My Past Self" placeholder="If I could go back to Week 1, I would tell myself... I know this because now I understand that..." oninput="autoSave(this,'dot-q3');gatherAnswers();"></textarea>
+      <div class="pf-label" style="font-size:15px;">✨ Your portfolio, so far</div>
+      <div class="pf-showcase" id="pfShowcase"></div>
     </div>
   </div>
 
@@ -3154,10 +3288,11 @@ return all.length?all[all.length-1]:null;}
     <div class="turn-in-header"><div class="turn-in-header-icon">📬</div><div><div class="turn-in-header-label">Ready?</div><div class="turn-in-header-title">Before You Submit</div></div></div>
     <div class="turn-in-body">
       <div class="turn-in-checklist" id="checklistItems">
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I completed my Vocabulary SWYK with three favorite words, their roots, and sentences.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I chose my best piece of writing and explained why it is my best work.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I wrote advice to my Week 1 self and wrote my portfolio introduction.</div></div>
-        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I copied or downloaded my work and submitted it to Canvas.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I did my spelling final check on the Word Study tab.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I chose three pieces, one from each part of the year, and copied them in.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I said what each piece shows, and what I can do now that I could not do in Piece 1.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I gave my portfolio a title and wrote the introduction, with advice for my Week 1 self.</div></div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div><div class="turn-in-item-text">I tapped Download My Portfolio and turned in the PDF on Canvas.</div></div>
       </div>
     </div>
   </div>
@@ -3198,11 +3333,8 @@ function gatherAnswers(){
   output+='🔤 SPELLING SWYK\n────────────────────────────────\n';
   var gEl=document.getElementById('journal-spelling');
   if(gEl){output+='\n'+(gEl.getAttribute('data-label')||'Spelling SWYK: Root Word Review')+'\n'+(gEl.value.trim()||'(no answer)')+'\n';}
-  output+='\n📖 CHAPTER THINKING\n────────────────────────────────\n';
-  ['journal-q1','journal-q2','journal-q3'].forEach(function(id){
-    var el=document.getElementById(id); if(!el)return;
-    output+='\n'+(el.getAttribute('data-label')||id)+'\n'+(el.value.trim()||'(no answer)')+'\n';
-  });
+  output+='\n🎓 MY PORTFOLIO\n────────────────────────────────\n';
+  output+=pfGatherText();
   var gRmEl=document.getElementById('journal-grammar');
   if(gRmEl){
     output+='\n✏️ GRAMMAR\n────────────────────────────────\n';
@@ -3484,12 +3616,121 @@ window.addEventListener('beforeunload', function(e){
     e.returnValue = '';
   }
 });
+
+/* ═══════════ PORTFOLIO BUILDER (32.3) ═══════════ */
+var PF_BOOKS={frisby:['🐭','Mrs. Frisby and the Rats of NIMH'],anne:['👩‍🦰','Anne of Green Gables'],nts:['⭐','Number the Stars'],ft:['🚆','Freedom Train'],pc:['🦁','Prince Caspian'],ye:['📚','Year-End comparison']};
+var PF_WEEKS=['Weeks 1–14','Weeks 15–25','Weeks 26–32'];
+function pfK(s){return (typeof _lessonKey!=='undefined'?_lessonKey:'g4-32-3')+'-'+s;}
+function pfGet(s,d){try{var v=localStorage.getItem(pfK(s));return v===null?d:JSON.parse(v);}catch(e){return d;}}
+function pfSet(s,v){try{localStorage.setItem(pfK(s),JSON.stringify(v));}catch(e){}}
+function pfEsc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function pfVal(id){var e=document.getElementById(id);return e?e.value.trim():'';}
+function pfChip(b,multi){
+  var key=b.getAttribute('data-pf'),v=b.getAttribute('data-v'),cur=pfGet(key,multi?[]:'');
+  if(multi){var i=cur.indexOf(v);if(i>=0)cur.splice(i,1);else{cur.push(v);if(cur.length>2)cur.shift();}}
+  else cur=(cur===v?'':v);
+  pfSet(key,cur);pfPaintChips();pfRender();gatherAnswers();
+}
+function pfPaintChips(){
+  document.querySelectorAll('.pf-chip').forEach(function(b){
+    var key=b.getAttribute('data-pf'),v=b.getAttribute('data-v'),cur=pfGet(key,key.indexOf('skill')===0?[]:'');
+    b.classList.toggle('on',Array.isArray(cur)?cur.indexOf(v)>=0:cur===v);
+  });
+}
+function pfSaveInput(el){try{localStorage.setItem(pfK(el.id),el.value);}catch(e){} pfRender();gatherAnswers();}
+function pfPiece(n){
+  var b=pfGet('book'+n,''),bk=PF_BOOKS[b]||null;
+  return {n:n,book:bk,where:pfVal('pf-where-'+n),text:pfVal('pf-piece-'+n),skills:pfGet('skill'+n,[]),note:pfVal('journal-q'+n)};
+}
+function pfRender(){
+  var sc=document.getElementById('pfShowcase');if(!sc)return;
+  var title=pfVal('pf-title'),intro=pfVal('journal-intro'),h='';
+  h+='<p class="pf-sc-title">'+(title?pfEsc(title):'<span style="opacity:.55">Your portfolio title</span>')+'</p>';
+  h+='<div class="pf-sc-books">🐭 👩‍🦰 ⭐ 🚆 🦁</div>';
+  h+='<div class="pf-sc-intro">'+(intro?pfEsc(intro):'<span style="opacity:.55">Your introduction will show here.</span>')+'</div>';
+  h+='<div class="pf-sc-grid">';
+  for(var n=1;n<=3;n++){
+    var p=pfPiece(n);
+    h+='<div class="pf-sc-card t'+n+'"><h4>'+(p.book?p.book[0]+' '+pfEsc(p.book[1]):'Piece '+n)+'</h4>';
+    h+='<div class="pf-sc-where">'+(p.where?pfEsc(p.where):PF_WEEKS[n-1])+'</div>';
+    h+='<div class="pf-sc-piece">'+(p.text?pfEsc(p.text):'<span class="pf-sc-empty">Your writing goes here.</span>')+'</div>';
+    if(p.skills.length)h+='<div class="pf-sc-skills">'+p.skills.map(function(s){return '<span>'+pfEsc(s)+'</span>';}).join('')+'</div>';
+    h+='<div class="pf-sc-note">'+(p.note?pfEsc(p.note):'<span class="pf-sc-empty">What it shows goes here.</span>')+'</div></div>';
+  }
+  h+='</div><div class="pf-sc-actions"><button type="button" class="pf-dl" onclick="pfDownload()">📄 Download My Portfolio</button></div>';
+  sc.innerHTML=h;
+  var st=document.getElementById('pfStatus');
+  if(st)st.querySelectorAll('span').forEach(function(s){
+    var k=s.getAttribute('data-s'),ok;
+    if(k==='i')ok=!!(title&&intro);else{var p=pfPiece(+k);ok=!!(p.book&&p.text&&p.note);}
+    s.classList.toggle('done',ok);s.textContent=(ok?'✓ ':'')+(k==='i'?'Introduction':'Piece '+k);
+  });
+}
+function pfGatherText(){
+  var o='\nPortfolio Title\n'+(pfVal('pf-title')||'(no answer)')+'\n';
+  o+='\nPortfolio Introduction\n'+(pfVal('journal-intro')||'(no answer)')+'\n';
+  for(var n=1;n<=3;n++){
+    var p=pfPiece(n);
+    o+='\n— PIECE '+n+' ('+PF_WEEKS[n-1]+') —\n';
+    o+='Book: '+(p.book?p.book[1]:'(not chosen)')+'\n';
+    o+='Where it is from: '+(p.where||'(no answer)')+'\n';
+    o+='What it shows: '+(p.skills.length?p.skills.join(', '):'(not chosen)')+'\n';
+    o+='My writing:\n'+(p.text||'(no answer)')+'\n';
+    o+='Why it belongs here:\n'+(p.note||'(no answer)')+'\n';
+  }
+  return o;
+}
+function pfDownload(){
+  gatherAnswers();
+  var title=pfVal('pf-title')||'My 4th Grade Reading Portfolio',intro=pfVal('journal-intro');
+  var css='body{font-family:Georgia,serif;color:#0E1C42;max-width:760px;margin:30px auto;padding:0 24px;line-height:1.7;}'+
+    '.cover{text-align:center;border:3px solid #0E1C42;border-radius:18px;padding:40px 30px;margin-bottom:28px;}'+
+    '.cover h1{font-size:30px;margin:6px 0;} .books{font-size:30px;letter-spacing:8px;} .sub{font-family:Arial,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#7A88A8;}'+
+    '.intro{font-size:16px;text-align:left;margin-top:20px;white-space:pre-wrap;}'+
+    '.pc{border-radius:14px;border:2px solid #E2E8F4;border-left:10px solid #F9A825;padding:18px 20px;margin:0 0 22px;page-break-inside:avoid;}'+
+    '.pc.t2{border-left-color:#55C8E8;} .pc.t3{border-left-color:#34B76F;}'+
+    '.pc h2{margin:0;font-size:20px;} .wk{font-family:Arial,sans-serif;font-size:12px;color:#7A88A8;letter-spacing:.08em;text-transform:uppercase;}'+
+    '.txt{background:#FFFDF6;border-radius:10px;padding:12px 14px;margin:10px 0;white-space:pre-wrap;font-size:15px;}'+
+    '.sk span{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;background:#0E1C42;color:#fff;border-radius:999px;padding:3px 9px;margin-right:4px;}'+
+    '.note{font-size:14px;color:#3A4A6B;white-space:pre-wrap;margin-top:8px;} .lab{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;color:#7A88A8;}'+
+    '.na{color:#B0B8CC;font-style:italic;} .foot{font-family:Arial,sans-serif;font-size:11px;color:#7A88A8;text-align:center;margin-top:30px;}';
+  var h='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>'+pfEsc(title)+'</title><style>'+css+'</style></head><body>';
+  h+='<div class="cover"><div class="sub">4th Grade ELA &middot; Year-End Portfolio</div><h1>'+pfEsc(title)+'</h1><div class="books">🐭 👩‍🦰 ⭐ 🚆 🦁</div>';
+  h+='<div class="intro">'+(intro?pfEsc(intro):'<span class="na">(no introduction yet)</span>')+'</div></div>';
+  for(var n=1;n<=3;n++){
+    var p=pfPiece(n);
+    h+='<div class="pc t'+n+'"><div class="wk">Piece '+n+' &middot; '+PF_WEEKS[n-1]+(p.where?' &middot; '+pfEsc(p.where):'')+'</div>';
+    h+='<h2>'+(p.book?p.book[0]+' '+pfEsc(p.book[1]):'<span class="na">(book not chosen)</span>')+'</h2>';
+    h+='<div class="txt">'+(p.text?pfEsc(p.text):'<span class="na">(no writing yet)</span>')+'</div>';
+    if(p.skills.length)h+='<div class="sk">'+p.skills.map(function(s){return '<span>'+pfEsc(s)+'</span>';}).join('')+'</div>';
+    h+='<div class="lab" style="margin-top:10px;">'+(n===3?'How I grew':'What it shows')+'</div><div class="note">'+(p.note?pfEsc(p.note):'<span class="na">(no answer yet)</span>')+'</div></div>';
+  }
+  h+='<div class="foot">Optima Academy Online &middot; 4th Grade ELA &middot; Lesson 32.3</div></body></html>';
+  var win=window.open('','_blank');if(!win)return;win.document.write(h);win.document.close();setTimeout(function(){win.print();},400);
+}
+function pfPickSample(b){
+  var ok=b.getAttribute('data-ok')==='1',fb=document.getElementById('pfPickFb');
+  document.querySelectorAll('#pfPick .pf-sample').forEach(function(x){x.classList.remove('right','wrong');});
+  b.classList.add(ok?'right':'wrong');
+  fb.className='pf-fb show '+(ok?'good':'try');
+  fb.innerHTML=ok?'<strong>That is the curator&rsquo;s pick.</strong> Sample B is shorter, but it makes a point (courage can look ordinary) and proves it with one moment from the book. That last sentence is the one you would point at.'
+                 :'<strong>Look again.</strong> Sample A is longer, but it only retells what happened. Which sentence proves a skill? None of them yet. Try the other one.';
+}
+(function pfInit(){
+  ['pf-title','pf-where-1','pf-where-2','pf-where-3'].forEach(function(id){
+    var e=document.getElementById(id);if(!e)return;
+    try{var v=localStorage.getItem(pfK(id));if(v)e.value=v;}catch(x){}
+  });
+  pfPaintChips();
+  setTimeout(function(){pfRender();},0);
+})();
+
 /* DOWNLOAD PDF */
 function downloadJournal(){
   gatherAnswers();
   var sections=[
     {title:'🔤 SPELLING SWYK',ids:['journal-spelling']},
-    {title:'📖 CROSS-NOVEL THINKING',ids:['journal-q1','journal-q2','journal-q3']},
+    {title:'🎓 MY PORTFOLIO',ids:['pf-title','journal-intro','pf-where-1','pf-piece-1','journal-q1','pf-where-2','pf-piece-2','journal-q2','pf-where-3','pf-piece-3','journal-q3']},
     { title: '✏️ GRAMMAR', ids: ['journal-grammar'] },
     {title:'✍️ WRITING CONNECTION',ids:['journal-writing']},
     {title:'✏️ RWM — MIMIC SENTENCE',ids:['journal-rwm']}
@@ -4279,6 +4520,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <link rel="stylesheet" href="sparkle.css">
 <script src="sparkle.js" defer></script>
 <!-- ═════════ END OAO SPARKLE ═════════ -->
-<script type="application/json" id="oao-standards">{"page": "lesson-32-3-project-final.html", "lesson": "32.3", "week": 32, "grade": 4, "crosswalk": "standards/crosswalk-g4.json", "standards_bar": ["ELA.4.C.1.1", "ELA.4.C.2.1", "ELA.4.C.3.1", "ELA.4.F.1.3", "ELA.4.F.1.4", "ELA.4.R.1.4", "ELA.4.V.1.1", "ELA.4.V.1.2", "ELA.K12.EE.6.1"], "lesson_tags": {"FL": ["ELA.K12.EE.6.1", "ELA.4.C.3.1", "ELA.4.C.1.1", "ELA.4.V.1.2", "ELA.4.F.1.3", "ELA.4.V.1.1", "ELA.4.C.2.1"], "TX": ["110.6(b)(11)(D)", "110.6(b)(2)(B)", "110.6(b)(2)(C)", "110.6(b)(3)(C)", "110.6(b)(2)(A)", "110.6(b)(7)(F)", "110.6(b)(1)(C)"], "AR": ["4.CC.5.P", "4.W.8.P", "4.FR.5.H", "4.V.7", "4.FR.1.PD", "4.V.5", "4.CC.3.P"], "MO": ["4.SL.4.A.f", "4.L.1.A", "4.L.1.B", "4.L.1.B.a", "4.R.1.B.a", "4.RF.3.A.a", "4.R.1.B.f", "4.SL.4.A"], "AL": ["R6", "38", "39", "34", "3", "1", "9", "13", "42"], "TN": ["4.SL.PKI.6", "4.FL.SC.6", "4.FL.WC.4a", "4.FL.WC.4b", "4.FL.VA.7a.ii", "5.FL.PWR.3", "4.FL.VA.7c", "4.SL.PKI.4"], "PR": "pending"}, "blocks": [{"id": "32.3-01", "title": "Big Question / Today's Wonder", "FL": ["ELA.K12.EE.6.1"], "TX": [], "AR": ["4.CC.5.P"], "MO": ["4.SL.4.A.f"], "AL": ["R6"], "TN": ["4.SL.PKI.6"], "PR": "pending"}, {"id": "32.3-02", "title": "✏️ Daily Oral Language", "FL": ["ELA.4.C.3.1"], "TX": ["110.6(b)(11)(D)", "110.6(b)(2)(B)"], "AR": ["4.W.8.P"], "MO": ["4.L.1.A", "4.L.1.B"], "AL": ["38", "39"], "TN": ["4.FL.SC.6", "4.FL.WC.4a"], "PR": "pending"}, {"id": "32.3-03", "title": "✍️ Copywork", "FL": ["ELA.4.C.1.1"], "TX": ["110.6(b)(2)(C)"], "AR": ["4.FR.5.H"], "MO": ["4.L.1.B.a"], "AL": ["34"], "TN": ["4.FL.WC.4b"], "PR": "pending"}, {"id": "32.3-04", "title": "🌱 Morphology: Explain a Word to Your Reader", "FL": ["ELA.4.V.1.2", "ELA.4.F.1.3"], "TX": ["110.6(b)(3)(C)", "110.6(b)(2)(A)"], "AR": ["4.V.7", "4.FR.1.PD"], "MO": ["4.R.1.B.a", "4.RF.3.A.a"], "AL": ["3", "1"], "TN": ["4.FL.VA.7a.ii", "5.FL.PWR.3"], "PR": "pending"}, {"id": "32.3-05", "title": "🔤 Vocabulary: Put Them in Your Own Draft", "FL": ["ELA.4.V.1.2", "ELA.4.V.1.1"], "TX": ["110.6(b)(3)(C)", "110.6(b)(7)(F)"], "AR": ["4.V.7", "4.V.5"], "MO": ["4.R.1.B.a", "4.R.1.B.f"], "AL": ["3", "9", "13"], "TN": ["4.FL.VA.7a.ii", "4.FL.VA.7c"], "PR": "pending"}, {"id": "32.3-06", "title": "✏️ Grammar: Proofread Your Own Draft", "FL": ["ELA.4.C.3.1"], "TX": ["110.6(b)(11)(D)", "110.6(b)(2)(B)"], "AR": ["4.W.8.P"], "MO": ["4.L.1.A", "4.L.1.B"], "AL": ["38", "39"], "TN": ["4.FL.SC.6", "4.FL.WC.4a"], "PR": "pending"}, {"id": "32.3-07", "title": "🔠 Spelling: Final Conventions Review", "FL": ["ELA.4.C.3.1", "ELA.4.F.1.3"], "TX": ["110.6(b)(11)(D)", "110.6(b)(2)(B)", "110.6(b)(2)(A)"], "AR": ["4.W.8.P", "4.FR.1.PD"], "MO": ["4.L.1.A", "4.L.1.B", "4.RF.3.A.a"], "AL": ["38", "39", "1", "3"], "TN": ["4.FL.SC.6", "4.FL.WC.4a", "5.FL.PWR.3"], "PR": "pending"}, {"id": "32.3-08", "title": "📚 What Good Readers Do", "FL": ["ELA.K12.EE.6.1"], "TX": [], "AR": ["4.CC.5.P"], "MO": ["4.SL.4.A.f"], "AL": ["R6"], "TN": ["4.SL.PKI.6"], "PR": "pending"}, {"id": "32.3-09", "title": "🎓 Your Portfolio", "FL": ["ELA.4.C.2.1", "ELA.K12.EE.6.1"], "TX": ["110.6(b)(1)(C)"], "AR": ["4.CC.3.P", "4.CC.5.P"], "MO": ["4.SL.4.A", "4.SL.4.A.f"], "AL": ["42", "R6"], "TN": ["4.SL.PKI.4", "4.SL.PKI.6"], "PR": "pending"}, {"id": "32.3-10", "title": "🏗️ Build Your Portfolio", "FL": ["ELA.4.C.2.1", "ELA.K12.EE.6.1"], "TX": ["110.6(b)(1)(C)"], "AR": ["4.CC.3.P", "4.CC.5.P"], "MO": ["4.SL.4.A", "4.SL.4.A.f"], "AL": ["42", "R6"], "TN": ["4.SL.PKI.4", "4.SL.PKI.6"], "PR": "pending"}, {"id": "32.3-11", "title": "📖 Part A: Chapter Thinking", "FL": ["ELA.K12.EE.6.1"], "TX": [], "AR": ["4.CC.5.P"], "MO": ["4.SL.4.A.f"], "AL": ["R6"], "TN": ["4.SL.PKI.6"], "PR": "pending"}]}</script>
+<script type="application/json" id="oao-standards">{"page": "lesson-32-3-project-final.html", "lesson": "32.3", "week": 32, "grade": 4, "crosswalk": "standards/crosswalk-g4.json", "standards_bar": ["ELA.4.C.1.1", "ELA.4.C.2.1", "ELA.4.C.3.1", "ELA.4.F.1.3", "ELA.4.F.1.4", "ELA.4.R.1.4", "ELA.4.V.1.1", "ELA.4.V.1.2", "ELA.K12.EE.6.1"], "lesson_tags": {"FL": ["ELA.K12.EE.6.1", "ELA.4.C.3.1", "ELA.4.C.1.1", "ELA.4.V.1.2", "ELA.4.F.1.3", "ELA.4.V.1.1", "ELA.4.C.2.1"], "TX": ["110.6(b)(11)(D)", "110.6(b)(2)(B)", "110.6(b)(2)(C)", "110.6(b)(3)(C)", "110.6(b)(2)(A)", "110.6(b)(7)(F)", "110.6(b)(1)(C)"], "AR": ["4.CC.5.P", "4.W.8.P", "4.FR.5.H", "4.V.7", "4.FR.1.PD", "4.V.5", "4.CC.3.P"], "MO": ["4.SL.4.A.f", "4.L.1.A", "4.L.1.B", "4.L.1.B.a", "4.R.1.B.a", "4.RF.3.A.a", "4.R.1.B.f", "4.SL.4.A"], "AL": ["R6", "38", "39", "34", "3", "1", "9", "13", "42"], "TN": ["4.SL.PKI.6", "4.FL.SC.6", "4.FL.WC.4a", "4.FL.WC.4b", "4.FL.VA.7a.ii", "5.FL.PWR.3", "4.FL.VA.7c", "4.SL.PKI.4"], "PR": "pending"}, "blocks": [{"id": "32.3-01", "title": "Big Question / Today's Wonder", "FL": ["ELA.K12.EE.6.1"], "TX": [], "AR": ["4.CC.5.P"], "MO": ["4.SL.4.A.f"], "AL": ["R6"], "TN": ["4.SL.PKI.6"], "PR": "pending"}, {"id": "32.3-02", "title": "✏️ Daily Oral Language", "FL": ["ELA.4.C.3.1"], "TX": ["110.6(b)(11)(D)", "110.6(b)(2)(B)"], "AR": ["4.W.8.P"], "MO": ["4.L.1.A", "4.L.1.B"], "AL": ["38", "39"], "TN": ["4.FL.SC.6", "4.FL.WC.4a"], "PR": "pending"}, {"id": "32.3-03", "title": "✍️ Copywork", "FL": ["ELA.4.C.1.1"], "TX": ["110.6(b)(2)(C)"], "AR": ["4.FR.5.H"], "MO": ["4.L.1.B.a"], "AL": ["34"], "TN": ["4.FL.WC.4b"], "PR": "pending"}, {"id": "32.3-04", "title": "🌱 Morphology: Explain a Word to Your Reader", "FL": ["ELA.4.V.1.2", "ELA.4.F.1.3"], "TX": ["110.6(b)(3)(C)", "110.6(b)(2)(A)"], "AR": ["4.V.7", "4.FR.1.PD"], "MO": ["4.R.1.B.a", "4.RF.3.A.a"], "AL": ["3", "1"], "TN": ["4.FL.VA.7a.ii", "5.FL.PWR.3"], "PR": "pending"}, {"id": "32.3-05", "title": "🔤 Vocabulary: Put Them in Your Own Draft", "FL": ["ELA.4.V.1.2", "ELA.4.V.1.1"], "TX": ["110.6(b)(3)(C)", "110.6(b)(7)(F)"], "AR": ["4.V.7", "4.V.5"], "MO": ["4.R.1.B.a", "4.R.1.B.f"], "AL": ["3", "9", "13"], "TN": ["4.FL.VA.7a.ii", "4.FL.VA.7c"], "PR": "pending"}, {"id": "32.3-06", "title": "✏️ Grammar: Proofread Your Own Draft", "FL": ["ELA.4.C.3.1"], "TX": ["110.6(b)(11)(D)", "110.6(b)(2)(B)"], "AR": ["4.W.8.P"], "MO": ["4.L.1.A", "4.L.1.B"], "AL": ["38", "39"], "TN": ["4.FL.SC.6", "4.FL.WC.4a"], "PR": "pending"}, {"id": "32.3-07", "title": "🔠 Spelling: Final Conventions Review", "FL": ["ELA.4.C.3.1", "ELA.4.F.1.3"], "TX": ["110.6(b)(11)(D)", "110.6(b)(2)(B)", "110.6(b)(2)(A)"], "AR": ["4.W.8.P", "4.FR.1.PD"], "MO": ["4.L.1.A", "4.L.1.B", "4.RF.3.A.a"], "AL": ["38", "39", "1", "3"], "TN": ["4.FL.SC.6", "4.FL.WC.4a", "5.FL.PWR.3"], "PR": "pending"}, {"id": "32.3-08", "title": "📚 What Good Readers Do", "FL": ["ELA.K12.EE.6.1"], "TX": [], "AR": ["4.CC.5.P"], "MO": ["4.SL.4.A.f"], "AL": ["R6"], "TN": ["4.SL.PKI.6"], "PR": "pending"}, {"id": "32.3-09", "title": "🗺️ Where Your Writing Lives", "FL": ["ELA.4.C.2.1", "ELA.K12.EE.6.1"], "TX": ["110.6(b)(1)(C)"], "AR": ["4.CC.3.P", "4.CC.5.P"], "MO": ["4.SL.4.A", "4.SL.4.A.f"], "AL": ["42", "R6"], "TN": ["4.SL.PKI.4", "4.SL.PKI.6"], "PR": "pending"}, {"id": "32.3-10", "title": "🏗️ Choose Your Three", "FL": ["ELA.4.C.2.1", "ELA.K12.EE.6.1"], "TX": ["110.6(b)(1)(C)"], "AR": ["4.CC.3.P", "4.CC.5.P"], "MO": ["4.SL.4.A", "4.SL.4.A.f"], "AL": ["42", "R6"], "TN": ["4.SL.PKI.4", "4.SL.PKI.6"], "PR": "pending"}, {"id": "32.3-11", "title": "🎓 Part A: My Portfolio", "FL": ["ELA.4.C.2.1", "ELA.K12.EE.6.1"], "TX": ["110.6(b)(1)(C)"], "AR": ["4.CC.3.P", "4.CC.5.P"], "MO": ["4.SL.4.A", "4.SL.4.A.f"], "AL": ["42", "R6"], "TN": ["4.SL.PKI.4", "4.SL.PKI.6"], "PR": "pending"}]}</script>
 </body>
 </html>
