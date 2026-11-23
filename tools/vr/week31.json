@@ -1,0 +1,246 @@
+{
+ "week": 31,
+ "day": 2,
+ "bookId": "year",
+ "book": "Year-End Synthesis",
+ "bookCredit": "Number the Stars (Lois Lowry, 1989), Freedom Train (Dorothy Sterling, 1954) and Prince Caspian (C. S. Lewis, 1951) are quoted only in short lines. Anne of Green Gables (L. M. Montgomery, 1908) is in the public domain.",
+ "chapters": "Themes across two books",
+ "title": "Two Books, One Shelf",
+ "guide": {
+  "name": "Opti",
+  "short": "Opti",
+  "initials": "O",
+  "color": "#C7922C",
+  "folder": "opti",
+  "voice": "LRkukhGJZOFsyrZCwQaZ"
+ },
+ "map": "National Library",
+ "mapFilter": "Library",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "gold",
+  "alt": "A warm library at golden hour, tall shelves of books, a reading lamp, and an owl perched on the top shelf",
+  "ground": "#5B3A26",
+  "groundY": 214,
+  "motifs": [
+   [
+    "books",
+    40,
+    1.6,
+    {
+     "n": 9,
+     "y": 258
+    }
+   ],
+   [
+    "books",
+    300,
+    1.4,
+    {
+     "n": 7,
+     "y": 258
+    }
+   ],
+   [
+    "books",
+    640,
+    1.6,
+    {
+     "n": 8,
+     "y": 258
+    }
+   ],
+   [
+    "lantern",
+    560,
+    1.0,
+    {
+     "y": 196
+    }
+   ],
+   [
+    "owl",
+    860,
+    1.0,
+    {
+     "y": 150
+    }
+   ],
+   [
+    "stars",
+    0,
+    1,
+    {
+     "n": 10,
+     "y": 60,
+     "seed": 31
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "owl feather",
+  "art": "feather",
+  "line": "Only Imagination Trip travelers earn this one. Opti left it between your two books."
+ },
+ "postcard": {
+  "style": "letter",
+  "kicker": "A letter from Opti",
+  "h": "Ask both books the same question",
+  "body": [
+   "You chose a theme last time. Today you need the same question for two books, and one moment from each that answers it.",
+   "Build a shelf: two books, one object from each."
+  ],
+  "sign": "Opti",
+  "word": "A <b>theme</b> is the big idea about life that a story keeps showing."
+ },
+ "mission": {
+  "h": "Build your theme shelf",
+  "p": "Two books side by side, one object in front of each, both answering the same question."
+ },
+ "job": "Build the shelf in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>two books on a shelf, one for each novel</li><li>in front of book 1: an object from a moment that shows your theme</li><li>in front of book 2: an object from the other book’s moment</li></ol>Only objects from the list, only chapters you have read.",
+  "say": "Stand in front of your shelf. Practice these 2 sentences:",
+  "frame": "“In ___, ___ shows ___ when ___. In ___, ___ shows it when ___.”",
+  "extra": "Perch a <b>Barn Owl</b> on the shelf. That is me, watching your comparison.",
+  "extraModels": [
+   "Barn Owl"
+  ],
+  "fits": "both books and both objects"
+ },
+ "points": "Your video is 30 seconds or less, shows two books with one object in front of each, and you say 2 sentences: your theme and one moment from each book that shows it, naming the character each time.",
+ "alt": {
+  "h": "Same question, same shape",
+  "job": "Answer 5 questions",
+  "p": "Five questions about comparing this year’s books. Pick the answer that fits.",
+  "game": "choose",
+  "gameH": "One question at a time",
+  "qs": [
+   {
+    "q": "Which moment shows courage that does not look brave?",
+    "opts": [
+     "Annemarie giggling like Kirsti while soldiers search her basket",
+     "Peter drawing his sword in the treasure chamber",
+     "Harriet building a carriage from the junk heap"
+    ],
+    "ok": 0,
+    "why": "Number the Stars, Ch. 15: acting silly is how she keeps the packet safe."
+   },
+   {
+    "q": "Harriet going back for her parents, who are past eighty, is most like which moment?",
+    "opts": [
+     "Caspian riding away from the castle alone",
+     "Mama taking the girls to Uncle Henrik’s by herself",
+     "Susan shooting the apple"
+    ],
+    "ok": 1,
+    "why": "Both are grown-ups taking the danger on themselves for family. Same question, same shape of answer."
+   },
+   {
+    "q": "Which moment shows a leader admitting a mistake?",
+    "opts": [
+     "Peter kneeling to Aslan and saying he led them wrong",
+     "Trumpkin refusing to believe in lions",
+     "Edmund disarming the Dwarf"
+    ],
+    "ok": 0,
+    "why": "Prince Caspian, Ch. 11: the High King says he is so glad, and so sorry."
+   },
+   {
+    "q": "Which moment shows holding on to what you believe when others doubt?",
+    "opts": [
+     "Trufflehunter saying beasts do not change, they hold on",
+     "Nikabrik putting a hand on his dagger",
+     "the Quaker lady pouring lemonade"
+    ],
+    "ok": 0,
+    "why": "Prince Caspian, Ch. 5: the Badger believes in the old kings as firmly as in Aslan."
+   },
+   {
+    "q": "Which pair is a true comparison?",
+    "opts": [
+     "Annemarie risks the soldiers’ dogs; Harriet makes me feel brave",
+     "Annemarie risks the soldiers on the path; Harriet risks the road north alone",
+     "Anne renames the Avenue; Harriet sings a song"
+    ],
+    "ok": 1,
+    "why": "Same question for both: what does this character risk? Both answers are moments, not feelings."
+   }
+  ],
+  "miss": "Not that one. Ask the same question of both books; each answer must be a moment."
+ },
+ "write": {
+  "q": "Name your theme and your two characters. In <b>2 sentences</b>, give <b>one moment from each book</b> that shows the theme, naming the character each time.",
+  "chips": [
+   {
+    "k": "theme",
+    "t": "a theme",
+    "rx": "\\b(courage|brave\\w*|honest\\w*|persever\\w*|service|respect\\w*|responsib\\w*|courtesy|family|freedom|hope|trust\\w*|friendship|loyal\\w*|kindness|sacrifice|growing up|belonging|home)\\b"
+   },
+   {
+    "k": "two",
+    "t": "two characters",
+    "rx": "\\b(anne|matthew|marilla|annemarie|ellen|mama|papa|henrik|harriet|ben|rit|caspian|peter|susan|lucy|edmund|trumpkin|trufflehunter|mrs\\.? frisby|frisby|nicodemus|justin)\\b.*\\b(anne|matthew|marilla|annemarie|ellen|mama|papa|henrik|harriet|ben|rit|caspian|peter|susan|lucy|edmund|trumpkin|trufflehunter|mrs\\.? frisby|frisby|nicodemus|justin)\\b"
+   },
+   {
+    "k": "moment",
+    "t": "a moment",
+    "rx": "\\b(when|while|as|after|before|the night|the day|chapter)\\b"
+   },
+   {
+    "k": "both",
+    "t": "both books",
+    "rx": "\\b(both|also|too|same|alike|different\\w*|while|but)\\b"
+   }
+  ],
+  "starters": [
+   "In ___, ___ shows ___ when ___.",
+   "In ___, ___ shows it when ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hoo there, it’s Opti. You picked a theme last time. Today you need the same question for two books, and one moment from each that answers it. In the library, build a shelf with your two books and set one object in front of each, an object from the moment that shows your theme. Then stand back and tell me the two moments, with the character named each time.",
+  "alt": "No headset? Pull up a library chair with me. Comparing means asking both books the same question and getting the same shape of answer. Five questions, one at a time, and every moment comes from a chapter you have read.",
+  "saved": "Two books, two objects, one theme. I left an owl feather on the shelf between them. Keep it, and remember that the same big idea can live in two very different stories."
+ },
+ "labels": {
+  "brief": "Opti · the theme shelf",
+  "alt": "Opti · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "In Number the Stars, Annemarie shows courage when she carries the basket past the soldiers. In Freedom Train, Harriet shows it too when she leaves the plantation alone at night.",
+ "models": [
+  {
+   "name": "Book - Courage",
+   "is": "your two books (use 2)"
+  },
+  {
+   "name": "Leather Suit Case (Closed)",
+   "is": "Anne’s carpet bag"
+  },
+  {
+   "name": "Basket",
+   "is": "Annemarie’s lunch basket"
+  },
+  {
+   "name": "Fishing Net",
+   "is": "Uncle Henrik’s net"
+  },
+  {
+   "name": "Williamsburg - Blanket",
+   "is": "Harriet’s patchwork quilt"
+  },
+  {
+   "name": "Gold Coin",
+   "is": "Harriet’s last coins"
+  },
+  {
+   "name": "Bow (Optima Domi)",
+   "is": "Susan’s bow"
+  }
+ ]
+}

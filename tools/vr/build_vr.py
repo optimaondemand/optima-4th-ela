@@ -114,7 +114,7 @@ REPL = {
  '{{L_BRIEF}}': e(D['labels']['brief']), '{{L_ALT}}': e(D['labels']['alt']), '{{L_SAVED}}': e(D['labels']['saved']),
  '{{PC_KICKER}}': e(D['postcard']['kicker']), '{{PC_H}}': e(D['postcard']['h']), '{{PC_BODY}}': ''.join('<p>%s</p>' % e(p) for p in D['postcard']['body']),
  '{{PC_SIGN}}': e(D['postcard']['sign']), '{{PC_STYLE}}': e(D['postcard'].get('style', 'postcard')), '{{PC_WORD}}': D['postcard']['word'], '{{STAMP_ART}}': art.STAMPS[K['art']](),
- '{{KEEP_NAME}}': e(K['name']), '{{KEEP_SHORT}}': e(K['name'][0].upper() + K['name'][1:]), '{{KEEP_TITLE}}': e(K['name'][0].upper() + K['name'][1:] + ' earned!'),
+ '{{KEEP_NAME}}': e(K['name']), '{{KEEP_A}}': 'an' if K['name'][0].lower() in 'aeiou' else 'a', '{{KEEP_SHORT}}': e(K['name'][0].upper() + K['name'][1:]), '{{KEEP_TITLE}}': e(K['name'][0].upper() + K['name'][1:] + ' earned!'),
  '{{KEEP_LINE}}': e(K['line']), '{{KEEP_ART}}': keep(70, 'peekart'), '{{KEEP_ART_BIG}}': keep(120, 'keep'), '{{BMARK_ART}}': art.bookmark(),
  '{{MINUTES}}': str(D['minutes']), '{{MISSION_H}}': e(D['mission']['h']), '{{MISSION_P}}': e(D['mission']['p']), '{{JOB}}': e(D['job']),
  '{{GROUPS}}': groups, '{{MAP}}': e(D['map']), '{{MAP_FILTER}}': e(D['mapFilter']),

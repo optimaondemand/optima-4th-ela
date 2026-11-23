@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-31-vr",
+ "voice": "LRkukhGJZOFsyrZCwQaZ",
+ "folder": "opti",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/opti/g4ela-31-vr-brief.mp3",
+   "prompt": "Hoo there, it’s Opti. You picked a theme last time. Today you need the same question for two books, and one moment from each that answers it. In the library, build a shelf with your two books and set one object in front of each, an object from the moment that shows your theme. Then stand back and tell me the two moments, with the character named each time.",
+   "transcript": "Hoo there, it’s Opti. You picked a theme last time. Today you need the same question for two books, and one moment from each that answers it. In the library, build a shelf with your two books and set one object in front of each, an object from the moment that shows your theme. Then stand back and tell me the two moments, with the character named each time."
+  },
+  "alt": {
+   "file": "assets/audio/guide/opti/g4ela-31-vr-alt.mp3",
+   "prompt": "No headset? Pull up a library chair with me. Comparing means asking both books the same question and getting the same shape of answer. Five questions, one at a time, and every moment comes from a chapter you have read.",
+   "transcript": "No headset? Pull up a library chair with me. Comparing means asking both books the same question and getting the same shape of answer. Five questions, one at a time, and every moment comes from a chapter you have read."
+  },
+  "saved": {
+   "file": "assets/audio/guide/opti/g4ela-31-vr-saved.mp3",
+   "prompt": "Two books, two objects, one theme. I left an owl feather on the shelf between them. Keep it, and remember that the same big idea can live in two very different stories.",
+   "transcript": "Two books, two objects, one theme. I left an owl feather on the shelf between them. Keep it, and remember that the same big idea can live in two very different stories."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-31-vr.mp4",
+  "script": ""
+ }
+}
