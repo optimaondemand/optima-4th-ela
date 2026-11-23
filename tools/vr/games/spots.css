@@ -1,0 +1,13 @@
+.gh{font-size:15px;color:var(--navy);margin:14px 0 6px;font-family:'Lora',Georgia,serif}
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:8px 0 12px;background:#EDE5D6;border-radius:14px;padding:8px}
+.spot{display:flex;flex-direction:column;align-items:center;gap:4px;background:#FFFBF1;border:2.5px dashed #C9B489;border-radius:12px;padding:10px 8px;cursor:pointer;min-height:96px}
+.spot:hover{border-color:var(--gold);border-style:solid}
+.spot b{color:var(--navy);font-size:14.5px;text-align:center}.spic{font-size:24px}
+.spin{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}.spin em{font-style:normal;font-size:12.5px;background:#EEF8F0;border:1px solid #B8E8CF;border-radius:999px;padding:1px 8px;color:#1a6b35;font-weight:800}
+.spot.shake{animation:shk .35s}@keyframes shk{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.things{display:flex;flex-wrap:wrap;gap:8px}
+.thing{display:flex;gap:6px;align-items:center;background:#fff;border:2px solid #E2D6C4;border-radius:999px;padding:7px 14px;font-weight:800;font-size:15px;color:var(--navy);cursor:pointer}
+.thing:hover:not([disabled]){border-color:var(--gold)}
+.thing.pick{background:var(--navy);border-color:var(--navy);color:#fff}
+.thing.got{opacity:.4}
+.mwhy{list-style:none;margin:8px 0 0;font-size:14.5px;color:#1a6b35}.mwhy li{margin:3px 0}

@@ -3,7 +3,7 @@
 usage: python3 tools/vr/check_vr.py tools/vr/week7.json
 Fails on: a model/map not in Planning docs/vr-assets.csv, wrong day or step count, a missing help image,
 a duplicate <title> anywhere in the repo, an inlined data:image, a dash or a banned word in student text,
-a VR mention in any lesson, an empty transcript, or too many words."""
+a VR mention in any lesson, an empty transcript, or too many words (Bethany, 23 Nov 2026: about 550 visible words per path; fails over 600)."""
 import csv, glob, html, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -61,10 +61,15 @@ cut = body.find('<section class="alt">')
 top = body[:body.find('<section class="card vr-only" id="vr">')]
 vr_words = count(body[:cut])
 game = json.loads(re.search(r'(?s)id="vr-data">(.*?)</script>', page).group(1))['game']
-gtxt = ' '.join(str(v) for v in re.findall(r'"(?:plain|hint|t|s|why)":\s*"([^"]*)"', json.dumps(game, ensure_ascii=False)))
-alt_words = count(top) + count(body[cut:]) + count(gtxt) + sum(len(o) for r in game.get('rename', []) for o in r['opts']) // 6
+def walk(v):
+    if isinstance(v, str): return [v]
+    if isinstance(v, list): return [x for i in v for x in walk(i)]
+    if isinstance(v, dict): return [x for k, i in v.items() if k not in ('ic', 'rx', 'k') for x in walk(i)]
+    return []
+gtxt = ' '.join(walk(game))
+alt_words = count(top) + count(body[cut:]) + count(gtxt)
 for nm, nw in (('Imagination Trip path', vr_words), ('Window Seat Day path', alt_words)):
-    (errs if nw > 780 else notes).append('%s: about %d visible words (fail over 780; the help drawer is not counted)' % (nm, nw))
+    (errs if nw > 600 else notes).append('%s: about %d visible words (Bethany: about 550 at most; fail over 600; the help drawer is not counted)' % (nm, nw))
 if re.search(r'\s[-–—]\s|—|–', text): errs.append('dash in student text: ' + re.search(r'.{0,30}(\s[-–—]\s|—|–).{0,30}', text).group(0))
 for bad in ['bonus', 'backup']:
     if re.search(r'\b%s\b' % bad, text, re.I): errs.append('banned word: ' + bad)

@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-17-vr",
+ "voice": "ONFS8Q3TuiPLQCXXa4dy",
+ "folder": "narrator",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/narrator/g4ela-17-vr-brief.mp3",
+   "prompt": "Hello again. It is Grete. The soldiers have gone, but no one in the Johansen apartment feels safe. Before sunrise, Papa makes a phone call that sounds perfectly ordinary, and by afternoon Mama and the girls are walking a path through the woods toward the sea. Build what Annemarie sees when she runs ahead: the meadow, the house in the clearing, and the water beyond it.",
+   "transcript": "Hello again. It is Grete. The soldiers have gone, but no one in the Johansen apartment feels safe. Before sunrise, Papa makes a phone call that sounds perfectly ordinary, and by afternoon Mama and the girls are walking a path through the woods toward the sea. Build what Annemarie sees when she runs ahead: the meadow, the house in the clearing, and the water beyond it."
+  },
+  "alt": {
+   "file": "assets/audio/guide/narrator/g4ela-17-vr-alt.mp3",
+   "prompt": "No headset today? Then take the train north with me from your window seat. Klampenborg, Helsingør, Gilleleje. Match each place on the way to what Annemarie knows about it, and you will have made the whole trip.",
+   "transcript": "No headset today? Then take the train north with me from your window seat. Klampenborg, Helsingør, Gilleleje. Match each place on the way to what Annemarie knows about it, and you will have made the whole trip."
+  },
+  "saved": {
+   "file": "assets/audio/guide/narrator/g4ela-17-vr-saved.mp3",
+   "prompt": "There it is, the house in the clearing, just as Annemarie saw it. I have a scallop shell for you from the shore below the meadow. Keep it, and remember the day a carton of cigarettes meant a friend.",
+   "transcript": "There it is, the house in the clearing, just as Annemarie saw it. I have a scallop shell for you from the shore below the meadow. Keep it, and remember the day a carton of cigarettes meant a friend."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-17-vr.mp4",
+  "script": ""
+ }
+}

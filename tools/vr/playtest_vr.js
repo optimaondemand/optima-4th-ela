@@ -12,6 +12,55 @@ const srv = http.createServer((q, r) => {
   r.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream' }); fs.createReadStream(f).pipe(r);
 }).listen(PORT);
 
+
+// One play-through per Window Seat Day mechanic: a wrong move first (it must not count), then the right ones.
+async function playGame(page, A, ok) {
+  const G = A.game;
+  if (G === 'rename-order') {
+    ok(await page.$$eval('.stop', b => b.every(x => x.disabled)), 'order is locked until part 1 is done');
+    const R = A.rename;
+    for (let i = 0; i < R.length; i++) {
+      const wrong = R[i].ok === 0 ? 1 : 0;
+      await page.click(`.ropt[data-i="${i}"][data-k="${wrong}"]`);
+      if (i === 0) ok(!(await page.$eval('#g-msg', m => m.classList.contains('ok'))), 'a wrong name gets a nudge');
+      await page.click(`.ropt[data-i="${i}"][data-k="${R[i].ok}"]`);
+    }
+    await page.click(`.stop[data-k="${A.order.length - 1}"]`);
+    ok(await page.$$eval('.ms.on', a => a.length) === 0, 'a stop out of order is not placed');
+    for (let k = 0; k < A.order.length; k++) await page.click(`.stop[data-k="${k}"]`);
+  } else if (G === 'match') {
+    const n = A.pairs.length;
+    await page.click('[data-l="0"]'); await page.click(`[data-r="${n - 1}"]`);
+    ok(!(await page.$eval('#g-msg', m => m.classList.contains('ok'))), 'a wrong match gets a nudge');
+    ok(await page.$$eval('.mc.got', a => a.length) === 0, 'a wrong match is not locked');
+    for (let i = 0; i < n; i++) { await page.click(`[data-l="${i}"]`); await page.click(`[data-r="${i}"]`); }
+    ok(await page.$$eval('#match-why li', a => a.length) === n, 'every matched pair shows its why');
+  } else if (G === 'sort') {
+    const wrong = A.cards[0].bin === 0 ? 1 : 0;
+    await page.click(`.sbin-b[data-b="${wrong}"]`);
+    ok(!(await page.$eval('#g-msg', m => m.classList.contains('ok'))), 'a wrong bin gets a nudge');
+    for (const c of A.cards) await page.click(`.sbin-b[data-b="${c.bin}"]`);
+    ok(await page.$$eval('.sin li', a => a.length) === A.cards.length, 'every card is filed with its why');
+  } else if (G === 'sequence') {
+    await page.click(`.ev[data-k="${A.events.length - 1}"]`);
+    ok(await page.$$eval('.rung.on', a => a.length) === 0, 'an event out of order is not placed');
+    for (let k = 0; k < A.events.length; k++) await page.click(`.ev[data-k="${k}"]`);
+  } else if (G === 'spots') {
+    const wrong = A.items[0].spot === 0 ? 1 : 0;
+    await page.click('.thing[data-i="0"]'); await page.click(`.spot[data-s="${wrong}"]`);
+    ok(!(await page.$eval('#g-msg', m => m.classList.contains('ok'))), 'a wrong spot gets a nudge');
+    for (let i = 0; i < A.items.length; i++) { await page.click(`.thing[data-i="${i}"]`); await page.click(`.spot[data-s="${A.items[i].spot}"]`); }
+    ok(await page.$$eval('#spot-why li', a => a.length) === A.items.length, 'every placed thing shows its why');
+  } else if (G === 'choose') {
+    for (let i = 0; i < A.qs.length; i++) {
+      const wrong = A.qs[i].ok === 0 ? 1 : 0;
+      await page.click(`.copt[data-i="${i}"][data-k="${wrong}"]`);
+      if (i === 0) ok(!(await page.$eval('#g-msg', m => m.classList.contains('ok'))), 'a wrong answer gets a nudge');
+      await page.click(`.copt[data-i="${i}"][data-k="${A.qs[i].ok}"]`);
+    }
+  } else throw new Error('playtest has no play-through for game ' + G);
+}
+
 (async () => {
   const browser = await chromium.launch(); let fails = 0;
   const ok = (c, m) => { console.log((c ? '  ✓ ' : '  ✗ ') + m); if (!c) fails++; };
@@ -40,21 +89,10 @@ const srv = http.createServer((q, r) => {
 
     await page.click('#pb-alt');
     ok(await page.$eval('#vr', s => getComputedStyle(s).display) === 'none', 'Window Seat Day hides the VR card');
-    ok(await page.$$eval('.stop', b => b.every(x => x.disabled)), 'order is locked until part 1 is done');
-    const R = data.alt.rename;
-    for (let i = 0; i < R.length; i++) {
-      const wrong = R[i].ok === 0 ? 1 : 0;
-      await page.click(`.ropt[data-i="${i}"][data-k="${wrong}"]`);
-      if (i === 0) ok(!(await page.$eval('#g-msg', m => m.classList.contains('ok'))), 'a wrong name gets a nudge');
-      await page.click(`.ropt[data-i="${i}"][data-k="${R[i].ok}"]`);
-    }
-    const order = data.alt.order;
-    await page.click(`.stop[data-k="${order.length - 1}"]`);
-    ok(await page.$$eval('.ms.on', a => a.length) === 0, 'a stop out of order is not placed');
-    for (let k = 0; k < order.length; k++) await page.click(`.stop[data-k="${k}"]`);
+    await playGame(page, data.alt, ok);
     ok(await page.$eval('#bmark', b => b.classList.contains('show')), 'bookmark shows when the game is done');
     ok(await scrollW() <= 0, 'no horizontal scroll (Window Seat Day)');
-    const para = 'Anne renamed the Avenue the White Way of Delight. She chose that name because the apple blossoms made a white roof over the road.';
+    const para = data.testPara || 'Anne renamed the Avenue the White Way of Delight. She chose that name because the apple blossoms made a white roof over the road.';
     await page.fill('#para', para);
     ok(await page.$$eval('.chip', c => c.every(x => x.classList.contains('on'))), '2 good sentences light every chip');
     ok(/2 of 2 sentences ✓/.test(await page.textContent('#para-count')), 'sentence counter reaches 2');

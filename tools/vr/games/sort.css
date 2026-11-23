@@ -1,0 +1,11 @@
+.gh{font-size:15px;color:var(--navy);margin:14px 0 6px;font-family:'Lora',Georgia,serif}
+.sdeck{margin:8px 0 12px}
+.scard{background:#FFFBF1;border:2px solid #E5D3AE;border-radius:14px;padding:14px 16px;font-family:'Lora',Georgia,serif;font-size:18px;color:#3D2E1E;box-shadow:0 4px 12px rgba(43,29,18,.08)}
+.scard small{display:block;font-family:'Nunito',sans-serif;font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#8A6420;margin-bottom:4px}
+.scard.done{background:#EEF8F0;border-color:#B8E8CF;color:#1a6b35}
+.sbins{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sbin-b{width:100%;display:flex;gap:8px;align-items:center;justify-content:center;background:#fff;border:2.5px solid #E2D6C4;border-radius:12px;padding:10px;font-weight:900;font-size:15.5px;color:var(--navy);cursor:pointer}
+.sbin-b:hover:not([disabled]){border-color:var(--gold)}.sic{font-size:22px}
+.sbin-b.shake{animation:shk .35s}@keyframes shk{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.sin{list-style:none;margin:8px 0 0}.sin li{background:#F6FCF8;border:1.5px solid #B8E8CF;border-radius:10px;padding:6px 10px;margin:0 0 6px;font-size:14px;color:#3E4558}.sin li b{color:#1a6b35}.sin li span{color:#1a6b35;font-size:13.5px}
+@media (max-width:560px){.sbins{grid-template-columns:1fr}}

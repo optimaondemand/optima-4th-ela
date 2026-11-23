@@ -1,0 +1,238 @@
+{
+ "week": 17,
+ "day": 2,
+ "bookId": "nts",
+ "book": "Number the Stars",
+ "bookCredit": "Number the Stars by Lois Lowry (1989) is quoted only in short lines.",
+ "chapters": "Chapter 6",
+ "title": "The Clearing by the Sea",
+ "guide": {
+  "name": "Grete",
+  "short": "Grete",
+  "initials": "G",
+  "color": "#1F4E8C",
+  "folder": "narrator",
+  "voice": "ONFS8Q3TuiPLQCXXa4dy"
+ },
+ "map": "Tranquil Forest",
+ "mapFilter": "Tranquil",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "grey",
+  "alt": "A path through dark pines opens on a meadow with cows, a white house in a clearing, and the grey sea beyond",
+  "ground": "#5E7F4C",
+  "groundY": 176,
+  "motifs": [
+   [
+    "water",
+    0,
+    1,
+    {
+     "y": 166,
+     "color": "#8FA3B3",
+     "shine": "#DCE6EC"
+    }
+   ],
+   [
+    "hills",
+    -40,
+    1.1,
+    {
+     "color": "#4F6E46",
+     "y": 178
+    }
+   ],
+   [
+    "boat",
+    760,
+    0.6,
+    {
+     "y": 176,
+     "color": "#6B4A3A"
+    }
+   ],
+   [
+    "house",
+    560,
+    1.1,
+    {
+     "y": 236,
+     "lit": true
+    }
+   ],
+   [
+    "path",
+    120,
+    1,
+    {
+     "y": 215,
+     "color": "#C9A97A"
+    }
+   ],
+   [
+    "pines",
+    -10,
+    1.1,
+    {
+     "n": 5
+    }
+   ],
+   [
+    "pines",
+    780,
+    1.0,
+    {
+     "n": 4
+    }
+   ],
+   [
+    "fence",
+    380,
+    0.9,
+    {
+     "n": 7,
+     "y": 240
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "scallop shell",
+  "art": "shell",
+  "line": "Only Imagination Trip travelers earn this one. It comes from the shore below the meadow, where you can look across to Sweden."
+ },
+ "postcard": {
+  "style": "letter",
+  "kicker": "A letter from Grete",
+  "h": "Run ahead and tell the house we’ve come",
+  "body": [
+   "Papa’s phone call sounded ordinary. A carton of cigarettes, he said. But Annemarie knew: the carton was Ellen.",
+   "Now build what she sees when she runs ahead through the woods."
+  ],
+  "sign": "Grete",
+  "word": "<b>Code</b> means words that say one thing and mean another. Papa used it on the phone."
+ },
+ "mission": {
+  "h": "Build Uncle Henrik’s clearing",
+  "p": "Make the end of the walk in Chapter 6: the meadow, the house, and the sea."
+ },
+ "job": "Build the clearing in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>the house in the clearing</li><li>the cows in the meadow</li><li>the boat and the net on the water</li><li>Mama’s bag by the path</li></ol>",
+  "say": "Stand where Annemarie stops. Practice these 2 sentences out loud:",
+  "frame": "“Mama and Papa ___ to keep Ellen safe. I know it was careful because ___.”",
+  "extra": "Put a <b>Dog</b> at the bend of the path: Trofast, waiting for Mama.",
+  "extraModels": [
+   "Dog"
+  ],
+  "fits": "the house, the meadow and the water"
+ },
+ "points": "Your video is 30 seconds or less, shows the house, cows and boat, and you say 2 sentences: one careful thing Mama or Papa did to keep Ellen safe, with a detail from Chapter 6.",
+ "alt": {
+  "h": "The way north",
+  "job": "Match the places",
+  "p": "Match each place from the trip to what Annemarie knows about it.",
+  "game": "match",
+  "gameH": "Tap a place, then tap what Chapter 6 says about it",
+  "leftLabel": "Places on the way",
+  "rightLabel": "What the chapter says",
+  "pairs": [
+   {
+    "a": "Klampenborg",
+    "ic": "🦌",
+    "b": "the Deer Park, with hundreds of tame, free deer",
+    "why": "Annemarie points it out from the train and wishes they could stop."
+   },
+   {
+    "a": "Helsingør",
+    "ic": "🏰",
+    "b": "Kronborg Castle, sprawling beside the sea",
+    "why": "Kirsti is sure kings and queens live there. Annemarie says they did, in the old days."
+   },
+   {
+    "a": "Gilleleje",
+    "ic": "⚓",
+    "b": "the fishing village where Uncle Henrik lives",
+    "why": "Mama tells the soldier that is where they are going, to visit her brother."
+   },
+   {
+    "a": "The dirt path by the trees",
+    "ic": "🐕",
+    "b": "where Trofast waited for Mama after school",
+    "why": "Mama still half expects to see her faithful dog at the bend."
+   },
+   {
+    "a": "The meadow by the fence",
+    "ic": "🐄",
+    "b": "cows, and the grey sea ruffled by wind",
+    "why": "Past the meadow, the woods begin again, and the house is in a clearing beyond them."
+   }
+  ],
+  "miss": "Not that one. Think about where that place came on the trip, and what Mama or Annemarie said there."
+ },
+ "write": {
+  "q": "Pick one careful thing Mama or Papa does in Chapter 6 to keep Ellen safe. In <b>2 sentences</b>, say what they do and give <b>one detail from the chapter</b> that shows how careful it was.",
+  "chips": [
+   {
+    "k": "who",
+    "t": "Mama or Papa",
+    "rx": "\\b(mama|papa|mrs\\.? johansen|mr\\.? johansen|her parents|the grown.?ups)\\b"
+   },
+   {
+    "k": "what",
+    "t": "what they did",
+    "rx": "\\b(phone|call\\w*|code|cigarettes?|train|walk\\w*|path|woods|school|alone|by herself|plan\\w*|pack\\w*|told|said|answer\\w*)\\b"
+   },
+   {
+    "k": "detail",
+    "t": "a detail",
+    "rx": "\\b(soldiers?|henrik|ellen|kirsti|fishing|carton|ordinary|safer?|danger\\w*|suspect\\w*|new year|october|shoes|woman|children|early|five|dark hair|hair)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "Mama and Papa ___ to keep Ellen safe.",
+   "I know it was careful because ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hello again. It is Grete. The soldiers have gone, but no one in the Johansen apartment feels safe. Before sunrise, Papa makes a phone call that sounds perfectly ordinary, and by afternoon Mama and the girls are walking a path through the woods toward the sea. Build what Annemarie sees when she runs ahead: the meadow, the house in the clearing, and the water beyond it.",
+  "alt": "No headset today? Then take the train north with me from your window seat. Klampenborg, Helsingør, Gilleleje. Match each place on the way to what Annemarie knows about it, and you will have made the whole trip.",
+  "saved": "There it is, the house in the clearing, just as Annemarie saw it. I have a scallop shell for you from the shore below the meadow. Keep it, and remember the day a carton of cigarettes meant a friend."
+ },
+ "labels": {
+  "brief": "Grete · the walk to the sea",
+  "alt": "Grete · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "Mama walked the girls to Henrik's by herself to keep Ellen safe. I know it was careful because she said the soldiers would not suspect a woman and her children.",
+ "models": [
+  {
+   "name": "Williamsburg - Full House",
+   "is": "Uncle Henrik’s house in the clearing"
+  },
+  {
+   "name": "OptimaED Dairy Cow",
+   "is": "the cows in the meadow (use 2 or 3)"
+  },
+  {
+   "name": "Olympic Sailboat",
+   "is": "a fishing boat, out at sunrise"
+  },
+  {
+   "name": "Fishing Net",
+   "is": "Uncle Henrik’s net"
+  },
+  {
+   "name": "Leather Suit Case (Closed)",
+   "is": "the bag Mama carried"
+  }
+ ]
+}

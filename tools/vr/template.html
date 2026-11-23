@@ -65,6 +65,15 @@ p:last-child{margin-bottom:0}
 .pc-stamp{align-self:flex-end;width:74px;height:88px;border:3px dotted #C9B489;background:#F7E7E1;display:flex;align-items:center;justify-content:center;transform:rotate(4deg)}
 .pc-word{background:#fff;border-left:4px solid var(--gold);border-radius:8px;padding:8px 12px;font-size:15px;color:var(--soft)}
 .pc-word b{color:var(--navy)}
+/* hook styles (the variety log keeps them apart) */
+.postcard.telegram{transform:none;border-radius:4px;background:#F7F1DE;border-color:#C9B489}.postcard.telegram .pc-l p{font-family:'Courier New',monospace;font-style:normal;text-transform:uppercase;font-size:15.5px;letter-spacing:.5px;line-height:1.75}.postcard.telegram .pc-sign{font-family:'Courier New',monospace;font-style:normal;text-transform:uppercase;font-size:15px}.postcard.telegram .pc-r{background:#F7F1DE}
+.postcard.diary{transform:rotate(.5deg);background:#FFFDF7 repeating-linear-gradient(0deg,transparent 0 29px,#E6DCC7 29px 30px);border-color:#D9C49A}.postcard.diary .pc-l{border-right-color:#E7B3C2;border-right-style:solid}.postcard.diary .pc-r{background:#FFFDF7}
+.postcard.letter{transform:none;background:#FFFEFA;border-radius:6px;box-shadow:0 10px 24px rgba(43,29,18,.14)}.postcard.letter .pc-l p{font-style:normal}.postcard.letter .pc-sign{text-align:left}
+.postcard.log{transform:none;background:#F1F4F7;border-color:#9AA6C4;border-radius:8px}.postcard.log .pc-l p{font-family:'Nunito',sans-serif;font-style:normal;font-size:16.5px;color:#2B2F3F}.postcard.log .pc-l p::before{content:'▸ ';color:var(--teal)}.postcard.log .pc-r{background:#F1F4F7}
+.postcard.note{transform:rotate(-1.4deg);background:#FFF4B8;border-color:#E9D27A;box-shadow:0 8px 18px rgba(43,29,18,.14)}.postcard.note .pc-l{border-right:0}.postcard.note .pc-r{background:#FFF4B8}
+.postcard.clipping{transform:rotate(.8deg);background:#F6F1E6;border-color:#B9AE98;border-radius:0}.postcard.clipping .pc-l p{font-family:Georgia,serif;font-style:normal;font-size:16px;column-count:1;color:#2B2F3F}.postcard.clipping h2{font-family:Georgia,serif;text-transform:uppercase;letter-spacing:.5px}.postcard.clipping .pc-r{background:#F6F1E6}
+.postcard.program{transform:none;background:#FFFDF7;border:3px double #C7922C;border-radius:0}.postcard.program h2{text-align:center}.postcard.program .pc-l p{text-align:center}.postcard.program .pc-sign{text-align:center}
+.postcard.scroll{transform:none;background:#F5E6C4;border-color:#C9A55A;border-radius:18px/60px}.postcard.scroll .pc-l p{font-style:normal;color:#4A3324}.postcard.scroll .pc-r{background:#F5E6C4}
 /* path bar */
 .pathbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 22px}
 .pb{display:flex;gap:12px;align-items:center;text-align:left;border:2.5px solid #E2D6C4;background:#fff;border-radius:16px;padding:12px 14px;cursor:pointer;color:var(--ink)}
@@ -187,7 +196,7 @@ footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px soli
     <div class="vr-only"><div class="radio" data-clip="brief" data-label="{{L_BRIEF}}"></div></div>
   </section>
 
-  <section class="postcard" aria-label="{{PC_KICKER}}">
+  <section class="postcard {{PC_STYLE}}" aria-label="{{PC_KICKER}}">
     <div class="pc-l"><div class="kicker">{{PC_KICKER}}</div><h2>{{PC_H}}</h2>{{PC_BODY}}<div class="pc-sign">{{PC_SIGN}}</div></div>
     <div class="pc-r"><div class="pc-stamp" aria-hidden="true">{{STAMP_ART}}</div><div class="pc-word">{{PC_WORD}}</div></div>
   </section>
@@ -215,7 +224,7 @@ footer{font-size:12.5px;color:#7A6A55;padding:14px 22px 26px;border-top:1px soli
         <li class="step"><button class="chk" type="button" aria-label="Mark step 3 done"></button><div><div class="step-n">Step 3 · Build it</div><div class="step-t">{{S_BUILD}}<div class="howto">✋ <b>To move a model:</b> grab it with the <b>palm trigger</b> (under your middle finger). Use <b>both</b> palm triggers to make it bigger or smaller.</div></div></div></li>
         <li class="step"><button class="chk" type="button" aria-label="Mark step 4 done"></button><div><div class="step-n">Step 4 · Practice your 2 sentences</div><div class="step-t">{{S_SAY}}<div class="howto">🗣 {{S_FRAME}}</div></div></div></li>
         <li class="step"><button class="chk" type="button" aria-label="Mark step 5 done"></button><div><div class="step-n">Step 5 · Extra</div><div class="step-t"><span class="xtag">VR only</span>{{S_EXTRA}} Skip this step if you run out of time.</div></div></li>
-        <li class="step"><button class="chk" type="button" aria-label="Mark step 6 done"></button><div><div class="step-n">Step 6 · Record and submit</div><div class="step-t"><ol class="sub"><li>Stand back so you can see {{FITS}}.</li><li>Open your menu. Click <b>Library</b>, then <b>Camera</b>, then <b>Video</b>.</li><li>Record. Show your build and say your 2 sentences. Stop by <b>30 seconds</b>.</li><li>Click the <b>Canvas</b> tab. Pick <b>{{CANVAS}}</b>.</li><li>Click <b>Choose from My Files</b>. Pick your video. Click <b>Use this file</b>.</li><li>Click <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</li></ol><div class="howto">📌 This video is the only thing you turn in. Want to fix it? Record again and submit again.</div></div></div></li>
+        <li class="step"><button class="chk" type="button" aria-label="Mark step 6 done"></button><div><div class="step-n">Step 6 · Record and submit</div><div class="step-t"><ol class="sub"><li>Stand back so you can see {{FITS}}.</li><li>Open your menu. Click <b>Library</b>, then <b>Camera</b>, then <b>Video</b>.</li><li>Record. Show your build and say your 2 sentences. Stop by <b>30 seconds</b>.</li><li>Click the <b>Canvas</b> tab. Pick <b>{{CANVAS}}</b>.</li><li>Click <b>Choose from My Files</b>. Pick your video. Click <b>Use this file</b>.</li><li>Click <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</li></ol><div class="howto">📌 This video is the only thing you turn in. To fix it, record and submit again.</div></div></div></li>
         <li class="phase">✅ After</li>
         <li class="step"><button class="chk" type="button" aria-label="Mark step 7 done"></button><div><div class="step-n">Step 7 · Check and leave</div><div class="step-t"><ol class="sub"><li>Press the <b>Meta button</b> on your right controller. Click <b>Quit</b>.</li><li>Open the Canvas assignment. Check that your video is there.</li></ol>Not there? Open <b>Having trouble in VR?</b> below.</div></div></li>
       </ol>

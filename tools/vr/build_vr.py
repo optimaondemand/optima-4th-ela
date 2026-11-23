@@ -67,20 +67,37 @@ HELP = ('<details class="helpdrawer" id="vr-help"><summary><span class="hd-ic">�
         '<p class="hd-note">These pictures come from other maps. Your map will be <b>%s</b>, but the buttons are the same.</p>%s'
         '<p class="hd-alt">Your videos save to <b>My Files</b> at xr.optimaed.com on their own. You can also download your video there and upload it to the Canvas assignment yourself.</p></div></details>') % (e(D['map']), hd)
 
-# ── Window Seat Day game ──
+# ── Window Seat Day game (one mechanic per week; the variety log keeps them apart) ──
 A = D['alt']
 G = A['game']
+gh = lambda t: '<h3 class="gh">%s</h3>' % e(t) if t else ''
 if G == 'rename-order':
     GAME_HTML = ('<h3 class="gh">1 · Anne’s names</h3><div id="ren"></div>'
                  '<h3 class="gh">2 · The drive, in order</h3><p class="lock" id="order-lock">Finish part 1 first.</p><p style="font-size:16px">%s</p>'
                  '<div class="road" id="road"><ol class="mile" id="mile"></ol></div><div class="stops" id="stops"></div>') % e(A['orderQ'])
     GAME_CFG = {'rename': A['rename'], 'order': A['order'], 'orderMiss': A['orderMiss']}
+elif G == 'match':
+    GAME_HTML = gh(A.get('gameH')) + '<div id="match"></div><ul class="mwhy" id="match-why"></ul>'
+    GAME_CFG = {'pairs': A['pairs'], 'leftLabel': A['leftLabel'], 'rightLabel': A['rightLabel'], 'miss': A['miss']}
+elif G == 'sort':
+    GAME_HTML = gh(A.get('gameH')) + '<div id="sort"></div>'
+    GAME_CFG = {'bins': A['bins'], 'cards': A['cards'], 'miss': A['miss']}
+elif G == 'sequence':
+    GAME_HTML = gh(A.get('gameH')) + '<ol class="ladder" id="ladder"></ol><div class="deck" id="deck"></div>'
+    GAME_CFG = {'events': A['events'], 'miss': A['miss']}
+elif G == 'spots':
+    GAME_HTML = gh(A.get('gameH')) + '<div class="board" id="board"></div><div class="things" id="things"></div><ul class="mwhy" id="spot-why"></ul>'
+    GAME_CFG = {'spots': A['spots'], 'items': A['items'], 'miss': A['miss']}
+elif G == 'choose':
+    GAME_HTML = gh(A.get('gameH')) + '<div id="choose"></div>'
+    GAME_CFG = {'qs': A['qs'], 'miss': A['miss']}
 else:
     sys.exit('unknown game: ' + G)
 GAME_JS = open(os.path.join(HERE, 'games', G + '.js'), encoding='utf-8').read()
 GAME_CSS = open(os.path.join(HERE, 'games', G + '.css'), encoding='utf-8').read()
 
-banner, banner_css = art.BANNERS[D.get('banner', 'avenue')]()
+B = D.get('banner', 'avenue')
+banner, banner_css = art.banner_scene(B) if isinstance(B, dict) else art.BANNERS[B]()
 K = D['keepsake']
 keep = art.KEEPSAKES[K['art']]
 WR = D['write']
@@ -96,7 +113,7 @@ REPL = {
  '{{GUIDE}}': e(g['name']), '{{BANNER}}': banner, '{{PRE}}': PRE,
  '{{L_BRIEF}}': e(D['labels']['brief']), '{{L_ALT}}': e(D['labels']['alt']), '{{L_SAVED}}': e(D['labels']['saved']),
  '{{PC_KICKER}}': e(D['postcard']['kicker']), '{{PC_H}}': e(D['postcard']['h']), '{{PC_BODY}}': ''.join('<p>%s</p>' % e(p) for p in D['postcard']['body']),
- '{{PC_SIGN}}': e(D['postcard']['sign']), '{{PC_WORD}}': D['postcard']['word'], '{{STAMP_ART}}': art.STAMPS[K['art']](),
+ '{{PC_SIGN}}': e(D['postcard']['sign']), '{{PC_STYLE}}': e(D['postcard'].get('style', 'postcard')), '{{PC_WORD}}': D['postcard']['word'], '{{STAMP_ART}}': art.STAMPS[K['art']](),
  '{{KEEP_NAME}}': e(K['name']), '{{KEEP_SHORT}}': e(K['name'][0].upper() + K['name'][1:]), '{{KEEP_TITLE}}': e(K['name'][0].upper() + K['name'][1:] + ' earned!'),
  '{{KEEP_LINE}}': e(K['line']), '{{KEEP_ART}}': keep(70, 'peekart'), '{{KEEP_ART_BIG}}': keep(120, 'keep'), '{{BMARK_ART}}': art.bookmark(),
  '{{MINUTES}}': str(D['minutes']), '{{MISSION_H}}': e(D['mission']['h']), '{{MISSION_P}}': e(D['mission']['p']), '{{JOB}}': e(D['job']),
@@ -106,7 +123,7 @@ REPL = {
  '{{ALT_H}}': e(A['h']), '{{ALT_JOB}}': e(A['job']), '{{ALT_P}}': e(A['p']), '{{GAME_HTML}}': GAME_HTML, '{{GAME_CSS}}': GAME_CSS + banner_css, '{{GAME_JS}}': GAME_JS,
  '{{WRITE_Q}}': WR['q'], '{{CHIPS}}': ''.join('<span class="chip" data-chip="%s">%s</span>' % (c['k'], e(c['t'])) for c in WR['chips']),
  '{{NCHIPS}}': str(len(WR['chips'])), '{{STARTERS}}': ''.join('<li>%s</li>' % e(s) for s in WR['starters']),
- '{{CREDITS}}': (e(D['credits']) + ' ' if D.get('credits') else '') + 'Drawings made for this page. ' + e(D['book']) + ' by L. M. Montgomery (1908) is in the public domain.' if D['bookId'] == 'anne' else e(D.get('credits', '')),
+ '{{CREDITS}}': ' '.join(x for x in [e(D.get('credits', '')), 'Drawings made for this page.', e(D.get('bookCredit', 'Anne of Green Gables by L. M. Montgomery (1908) is in the public domain.' if D['bookId'] == 'anne' else ''))] if x),
  '{{DATA}}': json.dumps({'week': W, 'pre': PRE, 'canvas': CANVAS, 'guide': {k: g[k] for k in ('name', 'initials', 'color', 'folder')},
                           'transcripts': TRANSCRIPTS, 'game': GAME_CFG, 'chips': [{'k': c['k'], 'rx': c['rx']} for c in WR['chips']],
                           'writeQ': strip(WR['q'])}, ensure_ascii=False).replace('</', '<\\/'),
