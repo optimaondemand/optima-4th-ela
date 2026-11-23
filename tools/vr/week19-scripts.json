@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-19-vr",
+ "voice": "ONFS8Q3TuiPLQCXXa4dy",
+ "folder": "narrator",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/narrator/g4ela-19-vr-brief.mp3",
+   "prompt": "It is Grete. Annemarie is on the path with the basket when she hears a growl. In Chapter 15 she has only her voice, her face, and her mother’s advice. Build the harbor end of the chapter: the Ingeborg at the dock, the nets, and the basket as it reached Uncle Henrik. Then tell me which moment on the path was the closest call.",
+   "transcript": "It is Grete. Annemarie is on the path with the basket when she hears a growl. In Chapter 15 she has only her voice, her face, and her mother’s advice. Build the harbor end of the chapter: the Ingeborg at the dock, the nets, and the basket as it reached Uncle Henrik. Then tell me which moment on the path was the closest call."
+  },
+  "alt": {
+   "file": "assets/audio/guide/narrator/g4ela-19-vr-alt.mp3",
+   "prompt": "No headset? Sit by the window with me and think about the lunch. By the end of the chapter, every part of it has a place: in plain sight, hidden at the bottom, gone to the dogs, or safe by the dock. Put each thing where it belongs.",
+   "transcript": "No headset? Sit by the window with me and think about the lunch. By the end of the chapter, every part of it has a place: in plain sight, hidden at the bottom, gone to the dogs, or safe by the dock. Put each thing where it belongs."
+  },
+  "saved": {
+   "file": "assets/audio/guide/narrator/g4ela-19-vr-saved.mp3",
+   "prompt": "The basket reached the boat, and Uncle Henrik says everything is all right because of Annemarie. Here is your scallop shell from the shore below the meadow. Keep it, and remember that sometimes being brave looks like being a silly little girl.",
+   "transcript": "The basket reached the boat, and Uncle Henrik says everything is all right because of Annemarie. Here is your scallop shell from the shore below the meadow. Keep it, and remember that sometimes being brave looks like being a silly little girl."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-19-vr.mp4",
+  "script": ""
+ }
+}
