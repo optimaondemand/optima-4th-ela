@@ -1,0 +1,257 @@
+{
+ "week": 25,
+ "day": 2,
+ "bookId": "ft",
+ "book": "Freedom Train",
+ "bookCredit": "The 1863 newspaper accounts and Sarah Bradford’s 1869 biography are in the public domain. Freedom Train by Dorothy Sterling (1954) is quoted only in short lines.",
+ "chapters": "Comparing Sources",
+ "title": "Three Tellings of One Night",
+ "guide": {
+  "name": "Marcus",
+  "short": "Marcus",
+  "initials": "M",
+  "color": "#2F7A55",
+  "folder": "marcus",
+  "voice": "FsK9b8Cv2pGkFUtfpOyM"
+ },
+ "map": "Optima News",
+ "mapFilter": "News",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "night",
+  "alt": "A moonlit river with a steamboat and small boats pulling toward it, seen past a newsroom desk stacked with papers and books",
+  "ground": "#1E2A2A",
+  "groundY": 196,
+  "motifs": [
+   [
+    "stars",
+    0,
+    1,
+    {
+     "n": 40,
+     "y": 140,
+     "big": [
+      600,
+      44
+     ],
+     "seed": 25
+    }
+   ],
+   [
+    "moon",
+    120,
+    0.9,
+    {
+     "y": 50
+    }
+   ],
+   [
+    "water",
+    0,
+    1,
+    {
+     "y": 186,
+     "color": "#1C2F4A",
+     "shine": "#9CB3C9"
+    }
+   ],
+   [
+    "boat",
+    420,
+    1.1,
+    {
+     "y": 200,
+     "color": "#2B2F3F",
+     "sail": false
+    }
+   ],
+   [
+    "boat",
+    640,
+    0.5,
+    {
+     "y": 212,
+     "color": "#4A3324",
+     "sail": false
+    }
+   ],
+   [
+    "boat",
+    760,
+    0.45,
+    {
+     "y": 218,
+     "color": "#4A3324",
+     "sail": false
+    }
+   ],
+   [
+    "trees",
+    -20,
+    1.1,
+    {
+     "n": 2,
+     "color": "#102018",
+     "y": 246
+    }
+   ],
+   [
+    "books",
+    90,
+    1.2,
+    {
+     "n": 6,
+     "y": 256
+    }
+   ],
+   [
+    "lantern",
+    300,
+    0.9,
+    {
+     "y": 212
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "quilt square",
+  "art": "quilt",
+  "line": "Only Imagination Trip travelers earn this one. Pieced from scraps, like Old Rit’s quilt."
+ },
+ "postcard": {
+  "style": "clipping",
+  "kicker": "A clipping Marcus saved",
+  "h": "Near 800, or 756?",
+  "body": [
+   "One raid on the Combahee River, three writers. An unnamed reporter says near 800 were freed. Harriet’s own words say 756. Bradford, six years later, repeats Harriet.",
+   "Build a desk that holds all three."
+  ],
+  "sign": "Marcus",
+  "word": "A <b>primary source</b> was made at the time. A <b>secondary source</b> came later and used the primary ones."
+ },
+ "mission": {
+  "h": "Build the sources desk",
+  "p": "Lay the three accounts side by side, labeled A, B and C, with a clock for when."
+ },
+ "job": "Build the desk in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>the desk</li><li>left: a newspaper under A (Wisconsin State Journal, 1863)</li><li>middle: a newspaper under B (The Commonwealth, 1863)</li><li>right: the book under C (Bradford, 1869), the clock beside it</li></ol>",
+  "say": "Stand at the desk like an editor. Practice these 2 sentences:",
+  "frame": "“Source ___ says ___, but Source ___ says ___. I trust ___ more because ___.”",
+  "extra": "Put a <b>Handheld Microphone</b> in front of the source you trust most.",
+  "extraModels": [
+   "Handheld Microphone"
+  ],
+  "fits": "the whole desk, A to C"
+ },
+ "points": "Your video is 30 seconds or less, shows A, B and C on the desk with the clock, and you say 2 sentences: one fact two sources tell differently, and which you trust more and why.",
+ "alt": {
+  "h": "Who told it first?",
+  "job": "Put the tellings in order",
+  "p": "Tap the tellings of the raid in the order they happened, from the night itself to today.",
+  "game": "sequence",
+  "gameH": "Tap the next one in time",
+  "events": [
+   {
+    "t": "The raid on the Combahee River",
+    "s": "June 1863: the gunboats, the song, almost 800 aboard",
+    "ic": "🚢"
+   },
+   {
+    "t": "An unnamed reporter writes it up",
+    "s": "Wisconsin State Journal, 1863: a Black woman, near 800 freed",
+    "ic": "📰"
+   },
+   {
+    "t": "Sanborn prints Harriet’s own words",
+    "s": "The Commonwealth, July 17, 1863: 756, and she is named",
+    "ic": "🗞️"
+   },
+   {
+    "t": "Bradford’s biography",
+    "s": "1869, six years later, reprinting Harriet’s letter",
+    "ic": "📕"
+   },
+   {
+    "t": "You lay all three side by side",
+    "s": "today, at your own desk",
+    "ic": "🧑‍💻"
+   }
+  ],
+  "miss": "Not yet. Ask which telling had to exist before this one could."
+ },
+ "write": {
+  "q": "Pick one fact: how many people were freed, or what Harriet is called. In <b>2 sentences</b>, say how two of the sources tell it differently, and which source you trust more and <b>why</b>.",
+  "chips": [
+   {
+    "k": "fact",
+    "t": "a fact",
+    "rx": "\\b(freed|free|near 800|800|eight hundred|756|seven hundred|name\\w*|she.?moses|black woman|harriet|tubman|contrabands|livestock|slaves)\\b"
+   },
+   {
+    "k": "sources",
+    "t": "two sources",
+    "rx": "\\b(source [abc]|journal|sanborn|commonwealth|bradford|reporter|newspaper|biography|book)\\b.*\\b(source [abc]|journal|sanborn|commonwealth|bradford|reporter|newspaper|biography|book)\\b"
+   },
+   {
+    "k": "trust",
+    "t": "which you trust",
+    "rx": "\\b(trust\\w*|believ\\w*|closer|later|knew her|own words|primary|secondary|there|present|reliable|exact)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "Source ___ says ___, but Source ___ says ___.",
+   "I trust Source ___ more because ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hey, it’s Marcus. This week there is no new chapter. Instead you have three tellings of one night on the Combahee River: a newspaper that never names Harriet, a newspaper that prints her own words, and a biography written six years later. Build a newsroom desk that lays them side by side, A, B and C, with a clock for when each was written. Then tell me which one you trust most.",
+  "alt": "No headset? Take the editor’s chair. Three writers told the story of the raid, and they told it at different times. Put the tellings in order, from the night itself to you at your desk today, and notice who had to go first.",
+  "saved": "The desk is set, A to C. Here is your quilt square, the last one of the unit. Keep it, and remember that a story can be true three different ways."
+ },
+ "labels": {
+  "brief": "Marcus · the sources desk",
+  "alt": "Marcus · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "Source A says near 800 were freed, but Source B says 756. I trust Source B more because Sanborn knew Harriet and printed her own words.",
+ "models": [
+  {
+   "name": "Optima Domi Table",
+   "is": "the newsroom desk"
+  },
+  {
+   "name": "Folded Newspaper",
+   "is": "the 1863 newspapers (use 2)"
+  },
+  {
+   "name": "Book - Courage",
+   "is": "Bradford’s 1869 biography"
+  },
+  {
+   "name": "Capital Letter - A",
+   "is": "the label for Source A"
+  },
+  {
+   "name": "Capital Letter - B",
+   "is": "the label for Source B"
+  },
+  {
+   "name": "Capital Letter - C",
+   "is": "the label for Source C"
+  },
+  {
+   "name": "Analog Clock",
+   "is": "when each was written"
+  }
+ ]
+}

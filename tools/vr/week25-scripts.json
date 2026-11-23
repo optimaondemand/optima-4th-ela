@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-25-vr",
+ "voice": "FsK9b8Cv2pGkFUtfpOyM",
+ "folder": "marcus",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/marcus/g4ela-25-vr-brief.mp3",
+   "prompt": "Hey, it’s Marcus. This week there is no new chapter. Instead you have three tellings of one night on the Combahee River: a newspaper that never names Harriet, a newspaper that prints her own words, and a biography written six years later. Build a newsroom desk that lays them side by side, A, B and C, with a clock for when each was written. Then tell me which one you trust most.",
+   "transcript": "Hey, it’s Marcus. This week there is no new chapter. Instead you have three tellings of one night on the Combahee River: a newspaper that never names Harriet, a newspaper that prints her own words, and a biography written six years later. Build a newsroom desk that lays them side by side, A, B and C, with a clock for when each was written. Then tell me which one you trust most."
+  },
+  "alt": {
+   "file": "assets/audio/guide/marcus/g4ela-25-vr-alt.mp3",
+   "prompt": "No headset? Take the editor’s chair. Three writers told the story of the raid, and they told it at different times. Put the tellings in order, from the night itself to you at your desk today, and notice who had to go first.",
+   "transcript": "No headset? Take the editor’s chair. Three writers told the story of the raid, and they told it at different times. Put the tellings in order, from the night itself to you at your desk today, and notice who had to go first."
+  },
+  "saved": {
+   "file": "assets/audio/guide/marcus/g4ela-25-vr-saved.mp3",
+   "prompt": "The desk is set, A to C. Here is your quilt square, the last one of the unit. Keep it, and remember that a story can be true three different ways.",
+   "transcript": "The desk is set, A to C. Here is your quilt square, the last one of the unit. Keep it, and remember that a story can be true three different ways."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-25-vr.mp4",
+  "script": ""
+ }
+}
