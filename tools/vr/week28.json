@@ -1,0 +1,249 @@
+{
+ "week": 28,
+ "day": 2,
+ "bookId": "pc",
+ "book": "Prince Caspian",
+ "bookCredit": "Prince Caspian by C. S. Lewis (1951) is quoted only in short lines.",
+ "chapters": "Chapter 8",
+ "title": "Who Takes an Oar",
+ "guide": {
+  "name": "Nell",
+  "short": "Nell",
+  "initials": "N",
+  "color": "#7A4E8C",
+  "folder": "nell",
+  "voice": "VNHNa6nN6yJdVF3YRyuF"
+ },
+ "map": "Skull Cove",
+ "mapFilter": "Skull",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "day",
+  "alt": "A small boat pulling away from a green wooded island into a bright, bubbly green sea, a ruined castle behind it",
+  "ground": "#4F6E46",
+  "groundY": 212,
+  "motifs": [
+   [
+    "sun",
+    760,
+    0.9,
+    {
+     "y": 64
+    }
+   ],
+   [
+    "water",
+    0,
+    1,
+    {
+     "y": 176,
+     "color": "#6FAE9E",
+     "shine": "#FFFFFF"
+    }
+   ],
+   [
+    "hills",
+    -120,
+    1.0,
+    {
+     "color": "#4F6E46",
+     "y": 196
+    }
+   ],
+   [
+    "castle",
+    150,
+    0.9,
+    {
+     "y": 212,
+     "color": "#8E97A8",
+     "ruin": true
+    }
+   ],
+   [
+    "trees",
+    20,
+    0.9,
+    {
+     "n": 2,
+     "color": "#2F5A3A",
+     "y": 214
+    }
+   ],
+   [
+    "boat",
+    560,
+    1.2,
+    {
+     "y": 212,
+     "color": "#6B4A3A",
+     "sail": false
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "golden apple",
+  "art": "apple",
+  "line": "Only Imagination Trip travelers earn this one. From the moles’ orchard, grown wild up to the walls."
+ },
+ "postcard": {
+  "style": "log",
+  "kicker": "Nell · binding log, Chapter 8",
+  "h": "Nobody shouts orders",
+  "body": [
+   "The Dwarf thinks children are no help in a war. Then Edmund disarms him, Susan drops the apple, and Lucy cures his shoulder.",
+   "Build the boat they leave in, and who sits where."
+  ],
+  "sign": "Nell",
+  "word": "The <b>bows</b> are the front of a boat, where the girls sit."
+ },
+ "mission": {
+  "h": "Load the boat and pick the crew",
+  "p": "The boat below the ruins, the well behind, and what each person brings aboard."
+ },
+ "job": "Build the boat in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>the well by the ruins</li><li>the boat on the shore below</li><li>in the boat: apples, the bow, the helmet and shield</li><li>on the wall: the red apple Susan shot</li></ol>",
+  "say": "Stand at the oars, like Peter and Edmund. Practice these 2 sentences:",
+  "frame": "“___ takes the job of ___. It fits because ___.”",
+  "extra": "Hang a <b>Lantern On</b> at the stern, like the Splendour Hyaline’s lanterns.",
+  "extraModels": [
+   "Lantern On"
+  ],
+  "fits": "the boat and the well"
+ },
+ "points": "Your video is 30 seconds or less, shows the well, the loaded boat and the red apple, and you say 2 sentences: one person in the boat, the job they take, and why it fits them, with a detail from Chapter 8.",
+ "alt": {
+  "h": "Three ways to change a Dwarf’s mind",
+  "job": "Sort the moments",
+  "p": "Edmund, Susan and Lucy each prove something to Trumpkin. Sort each moment by who did it.",
+  "game": "sort",
+  "gameH": "Tap the person who did this",
+  "bins": [
+   {
+    "name": "Edmund",
+    "ic": "⚔️"
+   },
+   {
+    "name": "Susan",
+    "ic": "🏹"
+   },
+   {
+    "name": "Lucy",
+    "ic": "💧"
+   }
+  ],
+  "cards": [
+   {
+    "t": "flashes a sword round with a twist, and the Dwarf’s sword flies out of his hand",
+    "bin": 0,
+    "why": "A trick Trumpkin never learned. All his old battles had come back to him."
+   },
+   {
+    "t": "drops the red apple off the battlement with a soft thump",
+    "bin": 1,
+    "why": "The Dwarf’s arrow only shook it. Hers has it on the grass."
+   },
+   {
+    "t": "says there was a tiny breath of wind for the other shot",
+    "bin": 1,
+    "why": "Too tenderhearted to enjoy beating someone already beaten."
+   },
+   {
+    "t": "one drop of cordial, and the cut on the shoulder is cured",
+    "bin": 2,
+    "why": "Trumpkin swings his arm, jumps up, and calls himself a fool for doubting."
+   },
+   {
+    "t": "suggests rowing south to Glasswater Creek instead of walking",
+    "bin": 0,
+    "why": "Safe at sea, and up behind the Hill of the Stone Table by morning."
+   },
+   {
+    "t": "whispers that Peter is the High King and has an idea",
+    "bin": 2,
+    "why": "That is why Edmund agrees to go back down to the treasure chamber."
+   },
+   {
+    "t": "starts calling the Dwarf the D.L.F.",
+    "bin": 0,
+    "why": "Our Dear Little Friend. Trumpkin says a jibe won’t raise a blister."
+   }
+  ],
+  "miss": "Not that one. Think about who was holding the sword, the bow, or the cordial."
+ },
+ "write": {
+  "q": "Pick one person in the boat: Peter, Edmund, Susan, Lucy or Trumpkin. In <b>2 sentences</b>, say the job they take as they leave the island and why it fits them, with <b>one detail from Chapter 8</b>.",
+  "chips": [
+   {
+    "k": "who",
+    "t": "a person",
+    "rx": "\\b(peter|edmund|ed\\b|susan|su\\b|lucy|trumpkin|the dwarf|d\\.?l\\.?f\\.?)\\b"
+   },
+   {
+    "k": "job",
+    "t": "their job",
+    "rx": "\\b(oars?|rows?|rowing|steers?|steering|bows|directions?|shout\\w*|apples?|bag|mail|lead\\w*|plan\\w*|navigat\\w*)\\b"
+   },
+   {
+    "k": "fits",
+    "t": "why it fits",
+    "rx": "\\b(strong\\w*|knows?|knew|coast|tender\\w*|small\\w*|high king|bowman|archer|trick|older|taller|idea|way)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so)\\b"
+   }
+  ],
+  "starters": [
+   "___ takes the job of ___.",
+   "It fits because in Chapter 8 ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hello, dear. It’s Nell. In Chapter 8 the Dwarf admits he thinks children are no help in a war. Then Edmund, Susan and Lucy each show him otherwise, and the five of them fill a raincoat with apples and row away from Cair Paravel. Build the boat on the shore below the ruins, with the well behind it and what each person brings aboard. Then tell me who takes which job.",
+  "alt": "No headset? Sit by my bench. Three children change one Dwarf’s mind in a single morning, each in a different way. Sort the moments by who did them, and notice that not one of them shouted an order.",
+  "saved": "The boat is loaded and the crew is set. Here is your golden apple, like the one over the battlement. Keep it, and remember that leading can look like picking up an oar."
+ },
+ "labels": {
+  "brief": "Nell · the boat",
+  "alt": "Nell · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "Edmund takes the job of rowing with Peter. It fits because in Chapter 8 he is strong enough after his sword match and he knows the coast well enough to plan the way up Glasswater Creek.",
+ "models": [
+  {
+   "name": "Stone Ring",
+   "is": "the well, cleared of weeds"
+  },
+  {
+   "name": "Olympic Sailboat",
+   "is": "the boat (make it small)"
+  },
+  {
+   "name": "Fruit Basket",
+   "is": "the raincoat full of apples"
+  },
+  {
+   "name": "Bow (Optima Domi)",
+   "is": "Susan’s bow"
+  },
+  {
+   "name": "Spartan Helmet",
+   "is": "a helmet from the chamber"
+  },
+  {
+   "name": "Medieval Shield",
+   "is": "a shield, taken off to row"
+  },
+  {
+   "name": "Apple 2",
+   "is": "the red apple on the wall"
+  }
+ ]
+}

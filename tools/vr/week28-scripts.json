@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-28-vr",
+ "voice": "VNHNa6nN6yJdVF3YRyuF",
+ "folder": "nell",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/nell/g4ela-28-vr-brief.mp3",
+   "prompt": "Hello, dear. It’s Nell. In Chapter 8 the Dwarf admits he thinks children are no help in a war. Then Edmund, Susan and Lucy each show him otherwise, and the five of them fill a raincoat with apples and row away from Cair Paravel. Build the boat on the shore below the ruins, with the well behind it and what each person brings aboard. Then tell me who takes which job.",
+   "transcript": "Hello, dear. It’s Nell. In Chapter 8 the Dwarf admits he thinks children are no help in a war. Then Edmund, Susan and Lucy each show him otherwise, and the five of them fill a raincoat with apples and row away from Cair Paravel. Build the boat on the shore below the ruins, with the well behind it and what each person brings aboard. Then tell me who takes which job."
+  },
+  "alt": {
+   "file": "assets/audio/guide/nell/g4ela-28-vr-alt.mp3",
+   "prompt": "No headset? Sit by my bench. Three children change one Dwarf’s mind in a single morning, each in a different way. Sort the moments by who did them, and notice that not one of them shouted an order.",
+   "transcript": "No headset? Sit by my bench. Three children change one Dwarf’s mind in a single morning, each in a different way. Sort the moments by who did them, and notice that not one of them shouted an order."
+  },
+  "saved": {
+   "file": "assets/audio/guide/nell/g4ela-28-vr-saved.mp3",
+   "prompt": "The boat is loaded and the crew is set. Here is your golden apple, like the one over the battlement. Keep it, and remember that leading can look like picking up an oar.",
+   "transcript": "The boat is loaded and the crew is set. Here is your golden apple, like the one over the battlement. Keep it, and remember that leading can look like picking up an oar."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-28-vr.mp4",
+  "script": ""
+ }
+}
