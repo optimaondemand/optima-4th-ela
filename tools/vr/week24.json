@@ -1,0 +1,254 @@
+{
+ "week": 24,
+ "day": 2,
+ "bookId": "ft",
+ "book": "Freedom Train",
+ "bookCredit": "Freedom Train: The Story of Harriet Tubman by Dorothy Sterling (1954) is quoted only in short lines.",
+ "chapters": "Chapter 19",
+ "title": "The House on South Street",
+ "guide": {
+  "name": "Marcus",
+  "short": "Marcus",
+  "initials": "M",
+  "color": "#2F7A55",
+  "folder": "marcus",
+  "voice": "FsK9b8Cv2pGkFUtfpOyM"
+ },
+ "map": "Historical City (Day)",
+ "mapFilter": "Historical",
+ "minutes": 12,
+ "noAudio": true,
+ "banner": {
+  "sky": "day",
+  "alt": "A small white house with a porch on a town street, a woodpile beside it, and a train on the horizon",
+  "ground": "#7A8F5A",
+  "groundY": 206,
+  "motifs": [
+   [
+    "sun",
+    820,
+    0.8,
+    {
+     "y": 60
+    }
+   ],
+   [
+    "hills",
+    -20,
+    1.1,
+    {
+     "color": "#6B8A52",
+     "y": 200
+    }
+   ],
+   [
+    "train",
+    40,
+    0.7,
+    {
+     "y": 222
+    }
+   ],
+   [
+    "house",
+    420,
+    1.6,
+    {
+     "y": 250,
+     "wall": "#F4EFE4",
+     "roof": "#6B4A3A",
+     "lit": false
+    }
+   ],
+   [
+    "fence",
+    620,
+    0.9,
+    {
+     "n": 7,
+     "y": 250
+    }
+   ],
+   [
+    "trees",
+    760,
+    1.0,
+    {
+     "n": 2,
+     "color": "#3E7A4A",
+     "y": 248
+    }
+   ]
+  ]
+ },
+ "keepsake": {
+  "name": "quilt square",
+  "art": "quilt",
+  "line": "Only Imagination Trip travelers earn this one. Pieced from scraps, like Old Rit’s quilt."
+ },
+ "postcard": {
+  "style": "program",
+  "kicker": "Marcus · notes for a victory celebration",
+  "h": "What did Harriet win?",
+  "body": [
+   "The war ends, and Secretary Seward calls it her victory. At home in Auburn, her parents ask where her pay is.",
+   "Build the house on South Street, stocked and ready for peace."
+  ],
+  "sign": "Marcus",
+  "word": "A <b>furlough</b> is leave from the army. Harriet finally takes one."
+ },
+ "mission": {
+  "h": "Stock the house on South Street",
+  "p": "Fill the woodshed and shelves, set the rockers on the porch, lay out her papers."
+ },
+ "job": "Build the house in VR",
+ "steps": {
+  "build": "Open your menu (top button, right controller) and click <b>Models</b>. Build in this order:<ol class=\"road-order\"><li>the house, two rocking chairs on the porch</li><li>the woodshed: a pile of firewood</li><li>the shelves: a flour sack and the jars of jelly</li><li>on a chair: her pocketful of papers</li></ol>",
+  "say": "Sit on the porch, like Harriet planned to. Practice these 2 sentences out loud:",
+  "frame": "“The ___ shows Harriet won ___. But ___.”",
+  "extra": "Put the <b>Western Town Red Train Cart</b> down the street: the train home.",
+  "extraModels": [
+   "Western Town Red Train Cart"
+  ],
+  "fits": "the house, the porch and the woodpile"
+ },
+ "points": "Your video is 30 seconds or less, shows the house, rockers, firewood and shelves, and you say 2 sentences: one thing at the house, what it shows Harriet won, and what she was still owed, with a detail from Chapter 19.",
+ "alt": {
+  "h": "Where did it happen?",
+  "job": "Place each moment",
+  "p": "Chapter 19 moves between four places. Put each moment where it happened.",
+  "game": "spots",
+  "gameH": "Tap a moment, then tap its place",
+  "spots": [
+   {
+    "name": "Auburn, at home",
+    "ic": "🏠"
+   },
+   {
+    "name": "Washington",
+    "ic": "🏛️"
+   },
+   {
+    "name": "Fortress Monroe hospital",
+    "ic": "🏥"
+   },
+   {
+    "name": "The train home",
+    "ic": "🚂"
+   }
+  ],
+  "items": [
+   {
+    "t": "neighbors bring more calf’s-foot jelly than anyone could eat",
+    "ic": "🫙",
+    "spot": 0,
+    "why": "Auburn’s leading citizens flock to the little house when word spreads that Hat is sick."
+   },
+   {
+    "t": "seven dollars a month against thirteen",
+    "ic": "💵",
+    "spot": 0,
+    "why": "Old Rit asks where the pay is. Harriet explains the colored troops refused the unequal seven dollars."
+   },
+   {
+    "t": "cannon boom: Charleston has fallen",
+    "ic": "📯",
+    "spot": 1,
+    "why": "She hears it sitting in Secretary Seward’s office while he sorts her papers."
+   },
+   {
+    "t": "Seward says it is her victory",
+    "ic": "🎖️",
+    "spot": 1,
+    "why": "She fought for it long before the rest of us did, he tells her."
+   },
+   {
+    "t": "an army armed with scrub brushes and mops",
+    "ic": "🧹",
+    "spot": 2,
+    "why": "In a few days she organizes freedmen and women to clean the filthy hospital."
+   },
+   {
+    "t": "she is made Matron of the Hospital",
+    "ic": "📜",
+    "spot": 1,
+    "why": "The Surgeon General tells her so in Washington, in the mourning city."
+   },
+   {
+    "t": "a pass that says Hospital nurse, half fare",
+    "ic": "🎫",
+    "spot": 3,
+    "why": "The conductor does not care what the paper says. It takes three men to force her into the baggage car."
+   }
+  ],
+  "miss": "Not there. Think about where Harriet was standing when it happened."
+ },
+ "write": {
+  "q": "Pick one thing at the house on South Street: the porch rockers, the woodshed, the shelves, the jars of jelly or the papers. In <b>2 sentences</b>, say what it shows Harriet won and what she was still owed, with <b>one detail from Chapter 19</b>.",
+  "chips": [
+   {
+    "k": "thing",
+    "t": "a thing at the house",
+    "rx": "\\b(porch|rock\\w*|chairs?|woodshed|firewood|wood|shelves|shelf|kitchen|flour|jelly|jars?|papers?|pass|house)\\b"
+   },
+   {
+    "k": "won",
+    "t": "what she won",
+    "rx": "\\b(won|victory|free\\w*|home|peace|friends|neighbors|respect|country|matron|nurse|proud)\\b"
+   },
+   {
+    "k": "owed",
+    "t": "what she was owed",
+    "rx": "\\b(owed|pay|paid|wages|money|dollars|seven|thirteen|baggage|conductor|fair|unfair|equal|claim|bounties)\\b"
+   },
+   {
+    "k": "why",
+    "t": "because",
+    "rx": "\\b(because|since|so|but)\\b"
+   }
+  ],
+  "starters": [
+   "The ___ shows Harriet won ___.",
+   "But she was still owed ___ because ___."
+  ]
+ },
+ "scripts": {
+  "brief": "Hey, it’s Marcus. In Chapter 19 the war ends. Secretary Seward tells Harriet it is her victory. But at home in Auburn, Old Rit wants to know where her pay is, and the woodshed and the kitchen shelves are empty. Build the little house on South Street the way Harriet meant to leave it: stocked, warm, and ready for a life of peace. Then tell me what she won, and what she was still owed.",
+  "alt": "No headset? Sit on the porch with me. Chapter 19 moves between Auburn, Washington, the hospital at Fortress Monroe, and a train. Put each moment where it happened, and you will see how far Harriet traveled in one chapter.",
+  "saved": "The house is stocked and the rockers are on the porch. Here is your quilt square. Keep it, and remember that the people Harriet fought for still owed her something."
+ },
+ "labels": {
+  "brief": "Marcus · South Street",
+  "alt": "Marcus · a window seat trip",
+  "saved": "Video submitted!"
+ },
+ "credits": "",
+ "video": "",
+ "testPara": "The jars of jelly show Harriet won friends and neighbors in Auburn. But she was still owed her pay because the government never sent the eighteen hundred dollars.",
+ "models": [
+  {
+   "name": "Williamsburg - Full House",
+   "is": "the little house on South Street"
+  },
+  {
+   "name": "Rocking Chair (Optima Domi)",
+   "is": "rockers for Old Rit and Ben (use 2)"
+  },
+  {
+   "name": "Fire Wood",
+   "is": "the woodshed (use 3)"
+  },
+  {
+   "name": "Flour Sack",
+   "is": "the kitchen shelves"
+  },
+  {
+   "name": "Glass Jar Medium (Optima Domi)",
+   "is": "the neighbors’ jelly (use 3)"
+  },
+  {
+   "name": "School Supplies: Paper",
+   "is": "her pocketful of papers"
+  }
+ ]
+}

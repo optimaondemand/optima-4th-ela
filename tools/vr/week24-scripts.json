@@ -1,0 +1,26 @@
+{
+ "pre": "g4ela-24-vr",
+ "voice": "FsK9b8Cv2pGkFUtfpOyM",
+ "folder": "marcus",
+ "clips": {
+  "brief": {
+   "file": "assets/audio/guide/marcus/g4ela-24-vr-brief.mp3",
+   "prompt": "Hey, it’s Marcus. In Chapter 19 the war ends. Secretary Seward tells Harriet it is her victory. But at home in Auburn, Old Rit wants to know where her pay is, and the woodshed and the kitchen shelves are empty. Build the little house on South Street the way Harriet meant to leave it: stocked, warm, and ready for a life of peace. Then tell me what she won, and what she was still owed.",
+   "transcript": "Hey, it’s Marcus. In Chapter 19 the war ends. Secretary Seward tells Harriet it is her victory. But at home in Auburn, Old Rit wants to know where her pay is, and the woodshed and the kitchen shelves are empty. Build the little house on South Street the way Harriet meant to leave it: stocked, warm, and ready for a life of peace. Then tell me what she won, and what she was still owed."
+  },
+  "alt": {
+   "file": "assets/audio/guide/marcus/g4ela-24-vr-alt.mp3",
+   "prompt": "No headset? Sit on the porch with me. Chapter 19 moves between Auburn, Washington, the hospital at Fortress Monroe, and a train. Put each moment where it happened, and you will see how far Harriet traveled in one chapter.",
+   "transcript": "No headset? Sit on the porch with me. Chapter 19 moves between Auburn, Washington, the hospital at Fortress Monroe, and a train. Put each moment where it happened, and you will see how far Harriet traveled in one chapter."
+  },
+  "saved": {
+   "file": "assets/audio/guide/marcus/g4ela-24-vr-saved.mp3",
+   "prompt": "The house is stocked and the rockers are on the porch. Here is your quilt square. Keep it, and remember that the people Harriet fought for still owed her something.",
+   "transcript": "The house is stocked and the rockers are on the porch. Here is your quilt square. Keep it, and remember that the people Harriet fought for still owed her something."
+  }
+ },
+ "video": {
+  "file": "assets/video/teacher/g4ela-24-vr.mp4",
+  "script": ""
+ }
+}
